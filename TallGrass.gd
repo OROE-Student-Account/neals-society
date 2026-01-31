@@ -12,7 +12,7 @@ var player_inside: bool = false
 func _ready():
 	var player = Utils.get_player()
 	player.connect("player_moving_signal", Callable(self, "player_exiting_grass"))
-	player.connect("player_stopped_signal", Callable(self, "player_in_grass"))
+	player.connect("player_stop_signal", Callable(self, "player_in_grass"))
 
 func player_exiting_grass():
 	player_inside = false
