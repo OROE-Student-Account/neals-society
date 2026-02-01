@@ -20,14 +20,14 @@ const TILE_SIZE = 16
 var entering_door := false
 var jumping_over_ledge := false
 
-enum PlayerState { IDLE, TURNING }
+enum PlayerState { IDLE, TURNING, WALKING }
 enum FacingDirection { LEFT, RIGHT, UP, DOWN }
 
 var player_state = PlayerState.IDLE
 var facing_direction = FacingDirection.DOWN
 
 var initial_position := Vector2.ZERO
-var input_direction := Vector2(0,1)
+var input_direction := Vector2(0,0)
 var is_moving := false
 var stop_input := false
 var percent_moved_to_next_tile := 0.0
@@ -63,12 +63,14 @@ func set_spawn(location: Vector2, direction: Vector2):
 func _physics_process(delta):
 	if stop_input or player_state == PlayerState.TURNING:
 		return
-
-	if not is_moving:
+	elif not is_moving:
 		process_player_input()
-	else:
+	elif input_direction != Vector2.ZERO:
 		anim_state.travel("Walk")
 		move(delta)
+	else:
+		anim_state.travel("Idle")
+		is_moving = false
 
 func process_player_input():
 	input_direction = Vector2.ZERO
@@ -78,19 +80,22 @@ func process_player_input():
 	elif Input.is_action_pressed("ui_down") != Input.is_action_pressed("ui_up"):
 		input_direction.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
 
-	if input_direction == Vector2.ZERO:
-		anim_state.travel("Idle")
-		return
-
-	if need_to_turn():
-		player_state = PlayerState.TURNING
-		anim_state.travel("Turn")
+	if input_direction != Vector2.ZERO:
+		anim_tree.set("parameters/Idle/blend_position", input_direction)
+		anim_tree.set("parameters/Walk/blend_position", input_direction)
+		anim_tree.set("parameters/Turn/blend_position", input_direction)
+		
+		if need_to_turn():
+			player_state = PlayerState.TURNING
+			anim_state.travel("Turn")
+		else:
+			initial_position = global_position
+			is_moving = true
 	else:
-		initial_position = global_position
-		is_moving = true
+		anim_state.travel("Idle")
 
 func need_to_turn() -> bool:
-	var new_dir: FacingDirection = facing_direction
+	var new_dir
 	if input_direction.x < 0: new_dir = FacingDirection.LEFT
 	elif input_direction.x > 0: new_dir = FacingDirection.RIGHT
 	elif input_direction.y < 0: new_dir = FacingDirection.UP
