@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 signal player_moving_signal
 signal player_stop_signal
+
 signal player_entering_door_signal
 signal player_entered_door_signal
 
@@ -113,6 +114,9 @@ func need_to_turn() -> bool:
 func finished_turning():
 	player_state = PlayerState.IDLE
 
+func entered_door():
+	emit_signal("player_entered_door_signal")
+
 func move(delta):
 	var step := input_direction * TILE_SIZE / 2
 	ray.target_position = step
@@ -134,8 +138,11 @@ func move(delta):
 			position = initial_position + input_direction * TILE_SIZE
 			entering_door = false
 			is_moving = false
+			stop_input = true
 			percent_moved_to_next_tile = 0.0
 			emit_signal("player_entered_door_signal")
+			$AnimationPlayer.play("Disappear")
+			$Camera2D.clear_current()
 		else:
 			position = initial_position + input_direction * TILE_SIZE * percent_moved_to_next_tile
 

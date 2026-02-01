@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" path="res://Flower.tscn" id="5"]
 [ext_resource type="PackedScene" path="res://TallGrass.tscn" id="6"]
 [ext_resource type="Texture2D" uid="uid://ff3i1gl2wpma" path="res://Assets/Buildings/oaks_lab.png" id="7"]
-[ext_resource type="PackedScene" path="res://Door.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://fsubo0lgcrfo" path="res://Door.tscn" id="8"]
 [ext_resource type="PackedScene" path="res://House.tscn" id="9"]
 [ext_resource type="Texture2D" uid="uid://22jrr0rxhcd3" path="res://Assets/Buildings/Door Animations/oaks_lab.png" id="10"]
 
@@ -2155,6 +2155,7 @@ texture_filter = 1
 position = Vector2(528, 352)
 
 [node name="House" parent="Collision Stuff" instance=ExtResource("9")]
+texture_filter = 1
 position = Vector2(-80, 0)
 
 [node name="Door" parent="Collision Stuff/House" instance=ExtResource("8")]
@@ -2164,6 +2165,7 @@ spawn_location = Vector2(64, 128)
 spawn_direction = Vector2(0, -1)
 
 [node name="RivalHouse" parent="Collision Stuff" instance=ExtResource("9")]
+texture_filter = 1
 position = Vector2(176, 0)
 
 [node name="Door" parent="Collision Stuff/RivalHouse" instance=ExtResource("8")]
@@ -2176,6 +2178,7 @@ spawn_direction = Vector2(0, -1)
 position = Vector2(176, 128)
 
 [node name="Sprite2D" parent="Collision Stuff/OaksLab" index="0"]
+texture_filter = 1
 texture = ExtResource("7")
 
 [node name="CollisionShape2D" parent="Collision Stuff/OaksLab" index="1"]
@@ -2189,7 +2192,6 @@ spawn_location = Vector2(64, 192)
 spawn_direction = Vector2(0, -1)
 
 [node name="Sprite2D" parent="Collision Stuff/OaksLab/Door" index="0"]
-visible = true
 texture = ExtResource("10")
 frame = 2
 
