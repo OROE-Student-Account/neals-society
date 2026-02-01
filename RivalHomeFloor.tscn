@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://diop6sdp2hnw6"]
+[gd_scene load_steps=9 format=3 uid="uid://cim2rkd4pde8"]
 
 [ext_resource type="Texture2D" uid="uid://blplx1yihnwi5" path="res://Assets/Buildings/pallet town/rival_home.png" id="1"]
 [ext_resource type="PackedScene" uid="uid://i70qso44vgve" path="res://Player.tscn" id="2"]
@@ -18,6 +18,7 @@ size = Vector2(128, 16)
 size = Vector2(64, 16)
 
 [node name="RivalHomeFloor" type="Node2D"]
+texture_filter = 1
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -208.0

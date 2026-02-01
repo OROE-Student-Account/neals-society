@@ -131,9 +131,6 @@ func move(delta):
 	ray.force_raycast_update()
 	ledge_ray.force_raycast_update()
 	door_ray.force_raycast_update()
-
-	# --- Door --
-
 	# --- Ledge ---
 	if (ledge_ray.is_colliding() and input_direction == Vector2.DOWN) or jumping_over_ledge:
 		percent_moved_to_next_tile += jump_speed * delta
@@ -152,7 +149,6 @@ func move(delta):
 			var input = input_direction.y * TILE_SIZE * percent_moved_to_next_tile
 			position.y = initial_position.y + (-0.96 - 0.53 * input + 0.05 * pow(input, 2))
 			
-
 	# --- Normal ---
 	elif not ray.is_colliding():
 		if percent_moved_to_next_tile == 0:
@@ -165,21 +161,21 @@ func move(delta):
 			emit_signal("player_stop_signal")
 		else:
 			position = initial_position + input_direction * TILE_SIZE * percent_moved_to_next_tile
-	elif door_ray.is_colliding() and not entering_door: # when moving towads the door and not in the animation
+	# when moving towads the door and not in the animation
+	elif door_ray.is_colliding() and not entering_door: 
 		entering_door = true
 		percent_moved_to_next_tile = 0.0
 		emit_signal("player_entering_door_signal")
-
+	# --- Door ---
 	elif entering_door:
-		percent_moved_to_next_tile += walk_speed * delta #
+		percent_moved_to_next_tile += walk_speed * delta 
 		if percent_moved_to_next_tile >= 1.0:
 			position = initial_position + input_direction * TILE_SIZE
-			entering_door = false
 			is_moving = false
 			stop_input = true
-			percent_moved_to_next_tile = 0.0
-			# emit_signal("player_entered_door_signal")
-			anim_player.play("Disappear")
 			anim_tree.active = false
+			anim_player.play("Disappear")
+		#else:
+			#position = initial_position + input_direction * TILE_SIZE * percent_moved_to_next_tile
 	else:
 		is_moving = false

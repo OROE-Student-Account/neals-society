@@ -55,6 +55,7 @@ _data = {
 }
 
 [node name="SceneManager" type="Node2D"]
+texture_filter = 1
 script = ExtResource("2")
 
 [node name="CurrentScene" type="Node2D" parent="."]
