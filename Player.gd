@@ -5,15 +5,19 @@ signal player_stop_signal
 signal player_entering_door_signal
 signal player_entered_door_signal
 
+const LandingDustEffect = preload("res://LandingDustEffect.tscn")
+
 @export var walk_speed = 6.0
 @export var jump_speed = 4.0
 const TILE_SIZE = 16
 
 @onready var anim_tree = $AnimationTree
 @onready var anim_state = anim_tree.get("parameters/playback")
+
 @onready var ray = $BlockingRayCast2D
 @onready var ledge_ray = $LedgeRayCast2D
 @onready var door_ray = $DoorRayCast2D
+
 @onready var shadow = $Shadow
 @onready var sprite = $PlayerSprite
 
@@ -44,7 +48,7 @@ func _ready():
 
 	anim_tree.active = true
 	initial_position = position
-	shadow.visible = true
+	shadow.visible = false
 
 func set_spawn(location: Vector2, direction: Vector2):
 	entering_door = false
@@ -134,11 +138,9 @@ func move(delta):
 			emit_signal("player_entered_door_signal")
 		else:
 			position = initial_position + input_direction * TILE_SIZE * percent_moved_to_next_tile
-		return
 
 	# --- Ledge ---
-	if (ledge_ray.is_colliding() and input_direction == Vector2.DOWN) or jumping_over_ledge:
-		jumping_over_ledge = true
+	elif (ledge_ray.is_colliding() and input_direction == Vector2.DOWN) or jumping_over_ledge:
 		percent_moved_to_next_tile += jump_speed * delta
 		if percent_moved_to_next_tile >= 2.0:
 			position = initial_position + input_direction * TILE_SIZE * 2
@@ -146,12 +148,20 @@ func move(delta):
 			percent_moved_to_next_tile = 0.0
 			is_moving = false
 			shadow.visible = false
+			var dust_effect = LandingDustEffect.instantiate()
+			dust_effect.position = position
+			get_tree().current_scene.add_child(dust_effect)
 		else:
+			jumping_over_ledge = true
 			shadow.visible = true
-		return
+			var input = input_direction.y * TILE_SIZE * percent_moved_to_next_tile
+			position.y = initial_position.y + (-0.96 - 0.53 * input + 0.05 * pow(input, 2))
+			
 
 	# --- Normal ---
-	if not ray.is_colliding():
+	elif not ray.is_colliding():
+		if percent_moved_to_next_tile == 0:
+			emit_signal("player_moving_signal")
 		percent_moved_to_next_tile += walk_speed * delta
 		if percent_moved_to_next_tile >= 1.0:
 			position = initial_position + input_direction * TILE_SIZE
