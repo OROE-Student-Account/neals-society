@@ -1,28 +1,29 @@
-[gd_resource type="AnimatedTexture" load_steps=9 format=2]
+[gd_resource type="AnimatedTexture" load_steps=9 format=3 uid="uid://bvqoocn8ivy6n"]
 
-[ext_resource path="res://Assets/Water/water_tileset8.png" type="Texture2D" id=1]
-[ext_resource path="res://Assets/Water/water_tileset2.png" type="Texture2D" id=2]
-[ext_resource path="res://Assets/Water/water_tileset5.png" type="Texture2D" id=3]
-[ext_resource path="res://Assets/Water/water_tileset6.png" type="Texture2D" id=4]
-[ext_resource path="res://Assets/Water/water_tileset7.png" type="Texture2D" id=5]
-[ext_resource path="res://Assets/Water/water_tileset1.png" type="Texture2D" id=6]
-[ext_resource path="res://Assets/Water/water_tileset3.png" type="Texture2D" id=7]
-[ext_resource path="res://Assets/Water/water_tileset4.png" type="Texture2D" id=8]
+[ext_resource type="Texture2D" uid="uid://qp0o5uwkxrmx" path="res://Assets/Water/water_tileset8.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://bv7yhmbk7v2dm" path="res://Assets/Water/water_tileset2.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://sywvuj4lm7jy" path="res://Assets/Water/water_tileset5.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bu8jpduud1b2c" path="res://Assets/Water/water_tileset6.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dk0iotqsj24fl" path="res://Assets/Water/water_tileset7.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://cjjfsh5muvsee" path="res://Assets/Water/water_tileset1.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://b65ctb8txpepy" path="res://Assets/Water/water_tileset3.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://c2wo1d6xgtbjr" path="res://Assets/Water/water_tileset4.png" id="8"]
 
 [resource]
 frames = 8
-frame_0/texture = ExtResource( 6 )
-frame_1/texture = ExtResource( 2 )
-frame_1/delay_sec = 0.0
-frame_2/texture = ExtResource( 7 )
-frame_2/delay_sec = 0.0
-frame_3/texture = ExtResource( 8 )
-frame_3/delay_sec = 0.0
-frame_4/texture = ExtResource( 3 )
-frame_4/delay_sec = 0.0
-frame_5/texture = ExtResource( 4 )
-frame_5/delay_sec = 0.0
-frame_6/texture = ExtResource( 5 )
-frame_6/delay_sec = 0.0
-frame_7/texture = ExtResource( 1 )
-frame_7/delay_sec = 0.0
+frame_0/texture = ExtResource("6")
+frame_0/duration = 0.5
+frame_1/texture = ExtResource("2")
+frame_1/duration = 0.5
+frame_2/texture = ExtResource("7")
+frame_2/duration = 0.5
+frame_3/texture = ExtResource("8")
+frame_3/duration = 0.5
+frame_4/texture = ExtResource("3")
+frame_4/duration = 0.5
+frame_5/texture = ExtResource("4")
+frame_5/duration = 0.5
+frame_6/texture = ExtResource("5")
+frame_6/duration = 0.5
+frame_7/texture = ExtResource("1")
+frame_7/duration = 0.5

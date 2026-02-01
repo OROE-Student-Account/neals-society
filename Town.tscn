@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://i70qso44vgve" path="res://Player.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://b1naadaw8hidy" path="res://Assets/Tilesets/grass1_tileset.png" id="1_r47vw"]
-[ext_resource type="Texture2D" path="res://Assets/Water/WaterTexture.tres" id="2_ykxim"]
+[ext_resource type="Texture2D" uid="uid://bvqoocn8ivy6n" path="res://Assets/Water/WaterTexture.tres" id="2_ykxim"]
 [ext_resource type="Texture2D" uid="uid://c82fjenaaxuwf" path="res://Assets/Tilesets/grass2_tileset.png" id="3_i4tu1"]
 [ext_resource type="PackedScene" uid="uid://buoi562c5t04c" path="res://Tree.tscn" id="4"]
 [ext_resource type="Texture2D" uid="uid://c20wvxucaup1k" path="res://Assets/Flowers/red_flower.png" id="4_n4wug"]
 [ext_resource type="Texture2D" uid="uid://0mdt7n5qygaa" path="res://Assets/Tilesets/ledge.png" id="4_r47vw"]
 [ext_resource type="PackedScene" path="res://Flower.tscn" id="5"]
-[ext_resource type="PackedScene" path="res://TallGrass.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://biarm5343j6g5" path="res://TallGrass.tscn" id="6"]
 [ext_resource type="Texture2D" uid="uid://ff3i1gl2wpma" path="res://Assets/Buildings/oaks_lab.png" id="7"]
 [ext_resource type="PackedScene" uid="uid://fsubo0lgcrfo" path="res://Door.tscn" id="8"]
 [ext_resource type="PackedScene" path="res://House.tscn" id="9"]
@@ -215,6 +215,7 @@ texture = ExtResource("1_r47vw")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fduux"]
 texture = ExtResource("2_ykxim")
+use_texture_padding = false
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 1

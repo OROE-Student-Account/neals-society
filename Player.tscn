@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://i70qso44vgve"]
+[gd_scene load_steps=44 format=3 uid="uid://i70qso44vgve"]
 
 [ext_resource type="Texture2D" uid="uid://c0j35px6j8da2" path="res://Assets/Player/Male_Spritesheet.png" id="1"]
 [ext_resource type="Script" uid="uid://doksqu5xa217" path="res://Player.gd" id="2"]
@@ -497,6 +497,8 @@ states/Walk/position = Vector2(437.667, 86.3333)
 transitions = ["Idle", "Walk", SubResource("30"), "Walk", "Idle", SubResource("31"), "Idle", "Turn", SubResource("32"), "Turn", "Idle", SubResource("33"), "Turn", "Walk", SubResource("34"), "Walk", "Turn", SubResource("35"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_kne1u")]
 graph_offset = Vector2(-100.8, 11.5876)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kne1u"]
+
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 14
 script = ExtResource("2")
@@ -566,3 +568,15 @@ offset = Vector2(-16, -4)
 hframes = 3
 vframes = 3
 frame = 3
+
+[node name="Area2D" type="Area2D" parent="PlayerSprite"]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerSprite/Area2D"]
+position = Vector2(-8, 8)
+scale = Vector2(0.8, 0.8)
+shape = SubResource("RectangleShape2D_kne1u")
+
+[node name="ColorRect" type="ColorRect" parent="PlayerSprite"]
+offset_left = -16.0
+offset_bottom = 16.0

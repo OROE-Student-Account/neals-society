@@ -22,6 +22,7 @@ const TILE_SIZE = 16
 
 @onready var shadow = $Shadow
 @onready var sprite = $PlayerSprite
+@onready var camera = $Camera2D
 
 var entering_door := false
 var jumping_over_ledge := false
@@ -46,7 +47,7 @@ func _ready():
 	sprite.scale = Vector2.ONE
 
 	if has_node("Camera2D"):
-		$Camera2D.make_current()
+		camera.make_current()
 
 	anim_tree.active = true
 	initial_position = position
@@ -72,9 +73,8 @@ func set_spawn(location: Vector2, direction: Vector2):
 	anim_tree.set("parameters/Turn/blend_position", input_direction)
 
 func _physics_process(delta):
-	if stop_input or player_state == PlayerState.TURNING:
-		return
-	elif not is_moving:
+	if stop_input or player_state == PlayerState.TURNING: return
+	if not is_moving:
 		process_player_input()
 	elif input_direction != Vector2.ZERO:
 		anim_state.travel("Walk")
@@ -100,7 +100,7 @@ func process_player_input():
 			player_state = PlayerState.TURNING
 			anim_state.travel("Turn")
 		else:
-			initial_position = global_position
+			initial_position = position
 			is_moving = true
 	else:
 		anim_state.travel("Idle")
@@ -131,11 +131,57 @@ func move(delta):
 	ray.force_raycast_update()
 	ledge_ray.force_raycast_update()
 	door_ray.force_raycast_update()
+			
+	# --- Normal ---
+	if not ray.is_colliding():
+		if percent_moved_to_next_tile == 0:
+			emit_signal("player_moving_signal")
+		percent_moved_to_next_tile += walk_speed * delta
+		if percent_moved_to_next_tile >= 1.0:
+			position = initial_position + input_direction * TILE_SIZE
+			var sprite_pos = Vector2.ZERO
+			sprite_pos.x = 16
+			sprite.position = sprite_pos
+			camera.position = Vector2.ZERO
+			is_moving = false
+			percent_moved_to_next_tile = 0.0
+			emit_signal("player_stop_signal")
+		else:
+			sprite.position = input_direction * TILE_SIZE * percent_moved_to_next_tile
+			sprite.position.x += 16
+			camera.position = input_direction * TILE_SIZE * percent_moved_to_next_tile
+	# when moving towads the door and not in the animation
+	elif door_ray.is_colliding() and not entering_door: 
+		entering_door = true
+		percent_moved_to_next_tile = 0.0
+		emit_signal("player_entering_door_signal")
+	# --- Door ---
+	elif entering_door:
+		percent_moved_to_next_tile += walk_speed * delta 
+		if percent_moved_to_next_tile >= 1.0:
+			position = initial_position + input_direction * TILE_SIZE
+			var sprite_pos = Vector2.ZERO
+			sprite_pos.x = 16
+			sprite.position = sprite_pos
+			camera.position = Vector2.ZERO
+			is_moving = false
+			stop_input = true
+			anim_tree.active = false
+			anim_player.play("Disappear")
+		else:
+			sprite.position = input_direction * TILE_SIZE * percent_moved_to_next_tile
+			sprite.position.x += 16
+			camera.position = input_direction * TILE_SIZE * percent_moved_to_next_tile
 	# --- Ledge ---
-	if (ledge_ray.is_colliding() and input_direction == Vector2.DOWN) or jumping_over_ledge:
+	elif (ledge_ray.is_colliding() and input_direction == Vector2.DOWN) or jumping_over_ledge:
 		percent_moved_to_next_tile += jump_speed * delta
 		if percent_moved_to_next_tile >= 2.0:
 			position = initial_position + input_direction * TILE_SIZE * 2
+			var sprite_pos = Vector2.ZERO
+			sprite_pos.x = 16
+			sprite.position = sprite_pos
+			shadow.position = Vector2.ZERO
+			camera.position = Vector2.ZERO
 			jumping_over_ledge = false
 			percent_moved_to_next_tile = 0.0
 			is_moving = false
@@ -147,35 +193,9 @@ func move(delta):
 			jumping_over_ledge = true
 			shadow.visible = true
 			var input = input_direction.y * TILE_SIZE * percent_moved_to_next_tile
-			position.y = initial_position.y + (-0.96 - 0.53 * input + 0.05 * pow(input, 2))
-			
-	# --- Normal ---
-	elif not ray.is_colliding():
-		if percent_moved_to_next_tile == 0:
-			emit_signal("player_moving_signal")
-		percent_moved_to_next_tile += walk_speed * delta
-		if percent_moved_to_next_tile >= 1.0:
-			position = initial_position + input_direction * TILE_SIZE
-			is_moving = false
-			percent_moved_to_next_tile = 0.0
-			emit_signal("player_stop_signal")
-		else:
-			position = initial_position + input_direction * TILE_SIZE * percent_moved_to_next_tile
-	# when moving towads the door and not in the animation
-	elif door_ray.is_colliding() and not entering_door: 
-		entering_door = true
-		percent_moved_to_next_tile = 0.0
-		emit_signal("player_entering_door_signal")
-	# --- Door ---
-	elif entering_door:
-		percent_moved_to_next_tile += walk_speed * delta 
-		if percent_moved_to_next_tile >= 1.0:
-			position = initial_position + input_direction * TILE_SIZE
-			is_moving = false
-			stop_input = true
-			anim_tree.active = false
-			anim_player.play("Disappear")
-		#else:
-			#position = initial_position + input_direction * TILE_SIZE * percent_moved_to_next_tile
+			var move = (-0.96 - 0.53 * input + 0.05 * pow(input, 2))
+			sprite.position.y = move
+			shadow.position.y = move
+			camera.position.y = move
 	else:
 		is_moving = false
