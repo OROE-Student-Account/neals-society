@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://frwrpo21spv1"]
+[gd_scene load_steps=33 format=4 uid="uid://frwrpo21spv1"]
 
 [ext_resource type="PackedScene" uid="uid://i70qso44vgve" path="res://Player.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://b1naadaw8hidy" path="res://Assets/Tilesets/grass1_tileset.png" id="1_r47vw"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://fsubo0lgcrfo" path="res://Door.tscn" id="8"]
 [ext_resource type="PackedScene" path="res://House.tscn" id="9"]
 [ext_resource type="Texture2D" uid="uid://22jrr0rxhcd3" path="res://Assets/Buildings/Door Animations/oaks_lab.png" id="10"]
+[ext_resource type="Script" uid="uid://duoegh7gbj541" path="res://Door.gd" id="13_ykxim"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fmg7l"]
 texture = ExtResource("1_r47vw")
@@ -488,7 +489,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hxns"]
 size = Vector2(112, 64)
 
-[sub_resource type="Animation" id="Animation_r47vw"]
+[sub_resource type="Animation" id="Animation_i4tu1"]
 resource_name = "CloseDoor"
 length = 0.3
 tracks/0/type = "value"
@@ -530,7 +531,7 @@ tracks/2/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_ykxim"]
+[sub_resource type="Animation" id="Animation_tbyl1"]
 resource_name = "OpenDoor"
 length = 0.3
 tracks/0/type = "value"
@@ -557,12 +558,26 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_i4tu1"]
-_data = {
-&"CloseDoor": SubResource("Animation_r47vw"),
-&"OpenDoor": SubResource("Animation_ykxim")
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
 }
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iu8q0"]
+_data = {
+&"CloseDoor": SubResource("Animation_i4tu1"),
+&"OpenDoor": SubResource("Animation_tbyl1")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fllgw"]
+size = Vector2(16, 16)
 
 [node name="Town" type="Node2D"]
 
@@ -2185,20 +2200,34 @@ texture = ExtResource("7")
 position = Vector2(56, 48)
 shape = SubResource("RectangleShape2D_2hxns")
 
-[node name="Door" parent="Collision Stuff/OaksLab" instance=ExtResource("8")]
+[node name="Door" type="Area2D" parent="Collision Stuff/OaksLab"]
 position = Vector2(48, 64)
+collision_layer = 8
+script = ExtResource("13_ykxim")
 next_scene_path = "res://OaksLab.tscn"
 spawn_location = Vector2(64, 192)
 spawn_direction = Vector2(0, -1)
 
-[node name="Sprite2D" parent="Collision Stuff/OaksLab/Door" index="0"]
+[node name="Sprite2D" type="Sprite2D" parent="Collision Stuff/OaksLab/Door"]
+visible = false
+texture_filter = 1
 texture = ExtResource("10")
+centered = false
+vframes = 3
 frame = 2
 
-[node name="AnimationPlayer" parent="Collision Stuff/OaksLab/Door" index="1"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Collision Stuff/OaksLab/Door"]
 libraries = {
-&"": SubResource("AnimationLibrary_i4tu1")
+&"": SubResource("AnimationLibrary_iu8q0")
 }
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Stuff/OaksLab/Door"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_fllgw")
+
+[connection signal="body_entered" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_body_entered"]
+[connection signal="body_entered" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_Door_body_entered"]
+[connection signal="body_exited" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_body_exited"]
+[connection signal="body_exited" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_Door_body_exited"]
+
 [editable path="Collision Stuff/OaksLab"]
-[editable path="Collision Stuff/OaksLab/Door"]

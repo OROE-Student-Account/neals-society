@@ -7,36 +7,6 @@
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(16, 16)
 
-[sub_resource type="Animation" id="2"]
-resource_name = "Disappear"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"entered_door"
-}]
-}
-
 [sub_resource type="Animation" id="3"]
 loop_mode = 1
 tracks/0/type = "value"
@@ -126,34 +96,22 @@ resource_name = "RESET"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/path = NodePath("PlayerSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [3]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite:frame")
+tracks/1/path = NodePath("PlayerSprite:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [3]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("PlayerSprite:flip_h")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -396,9 +354,39 @@ tracks/0/keys = {
 "values": [3, 4, 5, 4]
 }
 
+[sub_resource type="Animation" id="Animation_e80uo"]
+resource_name = "Disappear"
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.00838861),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"entered_door"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kne1u"]
 _data = {
-&"Disappear": SubResource("2"),
+&"Disappear": SubResource("Animation_e80uo"),
 &"IdleDown": SubResource("3"),
 &"IdleLeft": SubResource("4"),
 &"IdleRight": SubResource("5"),
@@ -507,7 +495,7 @@ states/Turn/position = Vector2(337.667, 169)
 states/Walk/node = SubResource("29")
 states/Walk/position = Vector2(437.667, 86.3333)
 transitions = ["Idle", "Walk", SubResource("30"), "Walk", "Idle", SubResource("31"), "Idle", "Turn", SubResource("32"), "Turn", "Idle", SubResource("33"), "Turn", "Walk", SubResource("34"), "Walk", "Turn", SubResource("35"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_kne1u")]
-graph_offset = Vector2(-175.68, 19.3126)
+graph_offset = Vector2(-100.8, 11.5876)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 14
@@ -539,7 +527,6 @@ shape = SubResource("1")
 libraries = {
 &"": SubResource("AnimationLibrary_kne1u")
 }
-autoplay = "RESET"
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("36")
@@ -575,7 +562,6 @@ position = Vector2(16, 0)
 texture = ExtResource("1")
 centered = false
 offset = Vector2(-16, -4)
-flip_h = true
 hframes = 3
 vframes = 3
 frame = 3

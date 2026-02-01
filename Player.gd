@@ -13,6 +13,7 @@ const LandingDustEffect = preload("res://LandingDustEffect.tscn")
 const TILE_SIZE = 16
 
 @onready var anim_tree = $AnimationTree
+@onready var anim_player = $AnimationPlayer
 @onready var anim_state = anim_tree.get("parameters/playback")
 
 @onready var ray = $BlockingRayCast2D
@@ -50,6 +51,10 @@ func _ready():
 	anim_tree.active = true
 	initial_position = position
 	shadow.visible = false
+	
+	anim_tree.set("parameters/Idle/blend_position", input_direction)
+	anim_tree.set("parameters/Walk/blend_position", input_direction)
+	anim_tree.set("parameters/Turn/blend_position", input_direction)
 
 func set_spawn(location: Vector2, direction: Vector2):
 	entering_door = false
@@ -62,8 +67,9 @@ func set_spawn(location: Vector2, direction: Vector2):
 	initial_position = location
 	sprite.visible = true
 	anim_state.travel("Idle")
-
-
+	anim_tree.set("parameters/Idle/blend_position", input_direction)
+	anim_tree.set("parameters/Walk/blend_position", input_direction)
+	anim_tree.set("parameters/Turn/blend_position", input_direction)
 
 func _physics_process(delta):
 	if stop_input or player_state == PlayerState.TURNING:
@@ -140,9 +146,11 @@ func move(delta):
 			is_moving = false
 			stop_input = true
 			percent_moved_to_next_tile = 0.0
-			emit_signal("player_entered_door_signal")
-			$AnimationPlayer.play("Disappear")
-			$Camera2D.clear_current()
+			# emit_signal("player_entered_door_signal")
+			anim_player.play("Disappear")
+			anim_tree.active = false
+			
+			# $Camera2D.enabled = false
 		else:
 			position = initial_position + input_direction * TILE_SIZE * percent_moved_to_next_tile
 

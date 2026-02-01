@@ -9,7 +9,6 @@ extends Area2D
 @onready var sprite = $Sprite2D
 @onready var anim_player = $AnimationPlayer
 
-
 var player_entered = false
 
 func _ready():
@@ -19,7 +18,7 @@ func _ready():
 	var player = Utils.get_player()
 	player.connect("player_entering_door_signal", Callable(self, "enter_door"))
 	player.connect("player_entered_door_signal", Callable(self, "close_door"))
-	
+
 func enter_door():
 	if player_entered:
 		anim_player.play("OpenDoor")
@@ -33,9 +32,9 @@ func door_closed():
 		Utils.get_scene_manager().transition_to_scene(next_scene_path, spawn_location, spawn_direction)
 
 
-func _on_Door_body_entered(body):
+func _on_body_entered(body: Node2D) -> void:
 	player_entered = true
 
 
-func _on_Door_body_exited(body):
+func _on_body_exited(body: Node2D) -> void:
 	player_entered = false
