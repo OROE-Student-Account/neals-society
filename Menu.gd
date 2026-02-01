@@ -31,7 +31,6 @@ func _unhandled_input(event):
 		ScreenLoaded.NOTHING:
 			if event.is_action_pressed("menu"):
 				var player = Utils.get_player()
-				if !player.is_moving:
 					player.set_physics_process(false)
 					menu.visible = true
 					screen_loaded = ScreenLoaded.JUST_MENU

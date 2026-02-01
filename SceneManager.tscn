@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://frwrpo21spv1" path="res://Town.tscn" id="1"]
 [ext_resource type="Script" path="res://SceneManager.gd" id="2"]
-[ext_resource type="PackedScene" path="res://Menu.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://bkml6dq0xfdp7" path="res://Menu.tscn" id="3"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "FadeToBlack"
