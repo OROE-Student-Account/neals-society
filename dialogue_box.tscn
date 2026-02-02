@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://i0am2murs47p"]
+
+[ext_resource type="Texture2D" uid="uid://dw17mm63araxi" path="res://Assets/UI/menu_box_1.png" id="1_senjy"]
+[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="2_0nste"]
+[ext_resource type="Texture2D" uid="uid://bofmcuxvqsoyg" path="res://Assets/UI/ui_arrow_left_right.png" id="3_if77y"]
+
+[node name="DialogueBox" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 111.0
+offset_right = 237.0
+offset_bottom = 157.0
+texture = ExtResource("1_senjy")
+region_rect = Rect2(0, 0, 22, 22)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/NinePatchRect"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 9.0
+offset_right = 117.0
+offset_bottom = 49.0
+theme_override_constants/separation = 7
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0.439216, 0.407843, 0.501961, 1)
+theme_override_fonts/normal_font = ExtResource("2_0nste")
+theme_override_font_sizes/normal_font_size = 12
+text = "Option 1"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0.439216, 0.407843, 0.501961, 1)
+theme_override_fonts/normal_font = ExtResource("2_0nste")
+theme_override_font_sizes/normal_font_size = 12
+text = "Option 2"
+fit_content = true
+
+[node name="TextureRect" type="TextureRect" parent="Control/NinePatchRect"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 15.0
+offset_bottom = 19.0
+texture = ExtResource("3_if77y")

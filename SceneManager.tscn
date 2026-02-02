@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dcrhfjxf127us"]
+[gd_scene load_steps=9 format=3 uid="uid://dcrhfjxf127us"]
 
 [ext_resource type="PackedScene" uid="uid://frwrpo21spv1" path="res://Town.tscn" id="1"]
-[ext_resource type="Script" path="res://SceneManager.gd" id="2"]
+[ext_resource type="Script" uid="uid://bgjd8lvacu6gg" path="res://SceneManager.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://bkml6dq0xfdp7" path="res://Menu.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://i0am2murs47p" path="res://dialogue_box.tscn" id="4_026ex"]
+[ext_resource type="Script" uid="uid://dvw8x5lu45aba" path="res://dialogue.gd" id="5_8epxt"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "FadeToBlack"
@@ -76,3 +78,8 @@ color = Color(0, 0, 0, 0)
 libraries = {
 &"": SubResource("AnimationLibrary_ik8mu")
 }
+
+[node name="DialogueBox" parent="." instance=ExtResource("4_026ex")]
+scale = Vector2(5, 5)
+transform = Transform2D(5, 0, 0, 5, 0, 0)
+script = ExtResource("5_8epxt")

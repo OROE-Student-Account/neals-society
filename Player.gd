@@ -133,7 +133,7 @@ func move(delta):
 	door_ray.force_raycast_update()
 			
 	# --- Normal ---
-	if not ray.is_colliding():
+	if not ray.is_colliding() or ((input_direction == Vector2.LEFT or input_direction == Vector2.RIGHT) and door_ray.is_colliding()):
 		if percent_moved_to_next_tile == 0:
 			emit_signal("player_moving_signal")
 		percent_moved_to_next_tile += walk_speed * delta

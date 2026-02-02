@@ -12,7 +12,6 @@ var player_inside: bool = false
 func _ready():
 	var player = Utils.get_player()
 	player.connect("player_moving_signal", Callable(self, "player_exiting_grass"))
-	player.connect("player_stop_signal", Callable(self, "player_in_grass"))
 
 func player_exiting_grass():
 	player_inside = false
@@ -21,18 +20,22 @@ func player_exiting_grass():
 	
 func player_in_grass():
 	if player_inside == true:
-		var grass_step_effect = GrassStepEffect.instantiate()
-		grass_step_effect.position = position
-		get_tree().current_scene.add_child(grass_step_effect)
-		
 		
 		grass_overlay = TextureRect.new()
 		grass_overlay.texture = grass_overlay_texture
 		grass_overlay.position = position
 		grass_overlay.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 		get_tree().current_scene.add_child(grass_overlay)
+		
+		
+		var grass_step_effect = GrassStepEffect.instantiate()
+		grass_step_effect.position = position
+		get_tree().current_scene.add_child(grass_step_effect)
+		
+
 
 
 func _on_Area2D_body_entered(body):
 	player_inside = true
 	anim_player.play("Stepped")
+	player_in_grass()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://frwrpo21spv1"]
+[gd_scene load_steps=34 format=4 uid="uid://frwrpo21spv1"]
 
 [ext_resource type="PackedScene" uid="uid://i70qso44vgve" path="res://Player.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://b1naadaw8hidy" path="res://Assets/Tilesets/grass1_tileset.png" id="1_r47vw"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" path="res://House.tscn" id="9"]
 [ext_resource type="Texture2D" uid="uid://22jrr0rxhcd3" path="res://Assets/Buildings/Door Animations/oaks_lab.png" id="10"]
 [ext_resource type="Script" uid="uid://duoegh7gbj541" path="res://Door.gd" id="13_ykxim"]
+[ext_resource type="PackedScene" uid="uid://dqyx1gi8mtgjv" path="res://Trainer.tscn" id="15_i4tu1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fmg7l"]
 texture = ExtResource("1_r47vw")
@@ -2225,6 +2226,11 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Stuff/OaksLab/Door"]
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_fllgw")
+
+[node name="Rival" parent="Collision Stuff" instance=ExtResource("15_i4tu1")]
+position = Vector2(176, -368)
+option1 = "Uhhh"
+option2 = "Who are you?"
 
 [connection signal="body_entered" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_body_entered"]
 [connection signal="body_entered" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_Door_body_entered"]

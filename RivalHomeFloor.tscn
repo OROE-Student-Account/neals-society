@@ -11,11 +11,11 @@ size = Vector2(16, 176)
 [sub_resource type="RectangleShape2D" id="2"]
 size = Vector2(208, 16)
 
-[sub_resource type="RectangleShape2D" id="4"]
-size = Vector2(128, 16)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0m57j"]
+size = Vector2(30, 31)
 
-[sub_resource type="RectangleShape2D" id="5"]
-size = Vector2(64, 16)
+[sub_resource type="RectangleShape2D" id="4"]
+size = Vector2(208, 16)
 
 [node name="RivalHomeFloor" type="Node2D"]
 texture_filter = 1
@@ -55,13 +55,13 @@ shape = SubResource("1")
 position = Vector2(104, 24)
 shape = SubResource("2")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(144, 152)
-shape = SubResource("4")
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(112, 80.5)
+shape = SubResource("RectangleShape2D_0m57j")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(32, 152)
-shape = SubResource("5")
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(104, 152)
+shape = SubResource("4")
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -70,7 +70,7 @@ position = Vector2(64, 128)
 
 [node name="Door" parent="." instance=ExtResource("3")]
 modulate = Color(0.12549, 0.313726, 0.85098, 1)
-position = Vector2(64, 144)
+position = Vector2(64, 128)
 next_scene_path = "res://Town.tscn"
 is_invisible = true
 spawn_location = Vector2(192, 80)

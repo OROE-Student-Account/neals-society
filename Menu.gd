@@ -37,14 +37,14 @@ func _unhandled_input(event):
 					screen_loaded = ScreenLoaded.JUST_MENU
 		
 		ScreenLoaded.JUST_MENU:
-			if event.is_action_pressed("menu") or event.is_action_pressed("x"):
+			if event.is_action_pressed("menu") or event.is_action_pressed("x") or (event.is_action_pressed("z") and selected_option == 5):
 				var player = Utils.get_player()
 				player.set_physics_process(true)
 				menu.visible = false
 				screen_loaded = ScreenLoaded.NOTHING
 				
 			elif event.is_action_pressed("ui_down"):
-				selected_option += 1
+				selected_option =  (selected_option + 1) % 6
 				select_arrow.position.y = 6 + (selected_option % 6) * 15
 				
 			elif event.is_action_pressed("ui_up"):
@@ -53,7 +53,7 @@ func _unhandled_input(event):
 				else:
 					selected_option -= 1
 				select_arrow.position.y = 6 + (selected_option % 6) * 15
-			elif event.is_action_pressed("z"):
+			elif event.is_action_pressed("z") and selected_option == 0:
 				Utils.get_scene_manager().transition_to_party_screen()
 			
 		ScreenLoaded.PARTY_SCREEN:
