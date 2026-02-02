@@ -14,6 +14,10 @@ func _ready():
 	select_arrow.position.y = 9 + (selected_option % 2) * 16
 
 func load_dialogue(option1, option2):
+	var player = Utils.get_player()
+	player.set_physics_process(false)
+	player.anim_tree.active = false
+	
 	var vbox = box.get_child(0).get_child(0)
 	vbox.get_child(0).text = option1
 	vbox.get_child(1).text = option2

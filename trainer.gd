@@ -23,6 +23,7 @@ func approach_until_hit():
 		Utils.get_scene_manager().transition_to_dialogue(option1, option2)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	visible = true
 	var player = Utils.get_player()
 	player.set_physics_process(false)
 	player.anim_tree.active = false
