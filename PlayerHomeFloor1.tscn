@@ -18,7 +18,7 @@ size = Vector2(32, 16)
 size = Vector2(192, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tifnb"]
-size = Vector2(30, 31)
+size = Vector2(32, 32)
 
 [node name="PlayerHomeFloor1" type="Node2D"]
 
@@ -66,7 +66,7 @@ position = Vector2(96, 152)
 shape = SubResource("4")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(96, 80.5)
+position = Vector2(96, 80)
 shape = SubResource("RectangleShape2D_tifnb")
 
 [node name="Node2D" type="Node2D" parent="."]

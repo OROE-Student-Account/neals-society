@@ -79,6 +79,7 @@ z={
 2d_physics/layer_2="World"
 2d_physics/layer_3="Ledge"
 2d_physics/layer_4="Door"
+2d_physics/layer_5="Item"
 
 [rendering]
 

@@ -12,7 +12,7 @@ size = Vector2(16, 176)
 size = Vector2(208, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0m57j"]
-size = Vector2(30, 31)
+size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="4"]
 size = Vector2(208, 16)
@@ -56,7 +56,7 @@ position = Vector2(104, 24)
 shape = SubResource("2")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(112, 80.5)
+position = Vector2(112, 80)
 shape = SubResource("RectangleShape2D_0m57j")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
@@ -66,7 +66,7 @@ shape = SubResource("4")
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Player" parent="Node2D" instance=ExtResource("2")]
-position = Vector2(64, 128)
+position = Vector2(80, 80)
 
 [node name="Door" parent="." instance=ExtResource("3")]
 modulate = Color(0.12549, 0.313726, 0.85098, 1)
