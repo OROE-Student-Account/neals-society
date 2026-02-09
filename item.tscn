@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://bdykq75yoljv"]
 
-[ext_resource type="Texture2D" uid="uid://d042hjjepovvf" path="res://Assets/Pokemon/Bulbasaur.png" id="1_tnite"]
 [ext_resource type="Script" uid="uid://ce4pot6j3i8r8" path="res://item.gd" id="1_ttk8k"]
+[ext_resource type="Texture2D" uid="uid://7srfvp6q7hmo" path="res://Assets/items/poke ball.png" id="2_ttk8k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttk8k"]
 size = Vector2(16, 16)
 
 [node name="Item" type="Area2D" unique_id=270907436]
+position = Vector2(-1, 0)
 collision_layer = 2
 script = ExtResource("1_ttk8k")
 
@@ -17,11 +18,11 @@ shape = SubResource("RectangleShape2D_ttk8k")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=849609961]
 texture_filter = 1
-position = Vector2(8, 8)
-scale = Vector2(0.666667, 0.666667)
-texture = ExtResource("1_tnite")
+position = Vector2(7.9999995, 8.000003)
+scale = Vector2(0.022435972, 0.022435967)
+texture = ExtResource("2_ttk8k")
 region_enabled = true
-region_rect = Rect2(35, 9, 24, 24)
+region_rect = Rect2(224, 160, 416, 416)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
