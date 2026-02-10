@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://i70qso44vgve"]
+[gd_scene format=3 uid="uid://i70qso44vgve"]
 
 [ext_resource type="Texture2D" uid="uid://c0j35px6j8da2" path="res://Assets/Player/Male_Spritesheet.png" id="1"]
 [ext_resource type="Script" uid="uid://doksqu5xa217" path="res://Player.gd" id="2"]
@@ -499,16 +499,16 @@ graph_offset = Vector2(-100.8, 11.5876)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kne1u"]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=736689713]
 collision_mask = 14
 script = ExtResource("2")
 
-[node name="Shadow" type="Sprite2D" parent="."]
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1451148835]
 texture_filter = 1
 texture = ExtResource("3")
 centered = false
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=878727720]
 visible = false
 top_level = true
 y_sort_enabled = true
@@ -520,45 +520,46 @@ offset = Vector2(-20, -4)
 hframes = 3
 vframes = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1884176364]
 y_sort_enabled = true
 position = Vector2(8, 8)
 shape = SubResource("1")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_kne1u")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1755703032]
+libraries/ = SubResource("AnimationLibrary_kne1u")
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=852895772]
 tree_root = SubResource("36")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(-0.659973, -0.285714)
 parameters/Turn/blend_position = Vector2(0, 0)
 parameters/Walk/blend_position = Vector2(-0.997323, 0)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=577857197]
 zoom = Vector2(4, 4)
 
-[node name="BlockingRayCast2D" type="RayCast2D" parent="."]
+[node name="BlockingRayCast2D" type="RayCast2D" parent="." unique_id=1269999703]
 position = Vector2(8, 8)
 target_position = Vector2(0, 8)
 collision_mask = 14
 collide_with_areas = true
 
-[node name="LedgeRayCast2D" type="RayCast2D" parent="."]
+[node name="LedgeRayCast2D" type="RayCast2D" parent="." unique_id=1113495752]
 position = Vector2(8, 8)
 target_position = Vector2(0, 8)
 collision_mask = 4
 
-[node name="DoorRayCast2D" type="RayCast2D" parent="."]
+[node name="DoorRayCast2D" type="RayCast2D" parent="." unique_id=1591196415]
 position = Vector2(8, 8)
 target_position = Vector2(0, 8)
 collision_mask = 8
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="PlayerSprite" type="Sprite2D" parent="."]
+[node name="ItemRayCast2D" type="RayCast2D" parent="." unique_id=724677302]
+collision_mask = 16
+
+[node name="PlayerSprite" type="Sprite2D" parent="." unique_id=1066054326]
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(16, 0)
@@ -569,10 +570,10 @@ hframes = 3
 vframes = 3
 frame = 3
 
-[node name="Area2D" type="Area2D" parent="PlayerSprite"]
+[node name="Area2D" type="Area2D" parent="PlayerSprite" unique_id=485651240]
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerSprite/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerSprite/Area2D" unique_id=1359344770]
 position = Vector2(-8, 8)
 scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_kne1u")
