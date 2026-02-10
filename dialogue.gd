@@ -87,7 +87,6 @@ func show_options():
 	
 	# Check if this is an end node
 	if current_node.is_end_node:
-		print("end node")
 		end_dialogue()
 		return
 	

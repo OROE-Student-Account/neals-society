@@ -2967,29 +2967,29 @@ target_position = Vector2(0, 16)
 
 [node name="dialogue root" type="Node" parent="Collision Stuff/Rival" unique_id=848313096]
 script = ExtResource("18_6xtxr")
-text = "Hello, are you ready. Don't tell me you forgpt my name"
+text = "Hello, are you ready. Don't tell me you forgot my name!"
 
 [node name="Node" type="Node" parent="Collision Stuff/Rival/dialogue root" unique_id=1981140640]
 script = ExtResource("18_6xtxr")
-text = "then what is my name?"
+text = "Then what is my name?"
 option_name = "Uhh no"
 
 [node name="Node" type="Node" parent="Collision Stuff/Rival/dialogue root/Node" unique_id=1441066781]
 script = ExtResource("18_6xtxr")
 is_end_node = true
-text = "incorrect"
-option_name = "george"
+text = "Incorrect"
+option_name = "George"
 
 [node name="Node2" type="Node" parent="Collision Stuff/Rival/dialogue root/Node" unique_id=472778936]
 script = ExtResource("18_6xtxr")
 is_end_node = true
-text = "wrong"
-option_name = "nicholas"
+text = "Wrong"
+option_name = "Nicholas"
 
 [node name="Node2" type="Node" parent="Collision Stuff/Rival/dialogue root" unique_id=78218579]
 script = ExtResource("18_6xtxr")
 is_end_node = true
-option_name = "who are you. I am leaving"
+option_name = "Who are you? Goodbye"
 
 [node name="Item" parent="Collision Stuff" unique_id=799843636 instance=ExtResource("16_tbyl1")]
 position = Vector2(32, 96)
