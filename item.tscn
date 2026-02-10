@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ce4pot6j3i8r8" path="res://item.gd" id="1_ttk8k"]
 [ext_resource type="Texture2D" uid="uid://7srfvp6q7hmo" path="res://Assets/items/poke ball.png" id="2_ttk8k"]
+[ext_resource type="Script" uid="uid://bp28l32amhxsf" path="res://dialogue_node.gd" id="3_kg5e7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttk8k"]
 size = Vector2(16, 16)
@@ -23,6 +24,20 @@ scale = Vector2(0.022435972, 0.022435967)
 texture = ExtResource("2_ttk8k")
 region_enabled = true
 region_rect = Rect2(224, 160, 416, 416)
+
+[node name="Pickup Dialogue" type="Node" parent="." unique_id=378581256]
+script = ExtResource("3_kg5e7")
+text = "Would you like to take this pokeball?"
+
+[node name="Node" type="Node" parent="Pickup Dialogue" unique_id=1734410170]
+script = ExtResource("3_kg5e7")
+is_end_node = true
+option_name = "Pickup"
+
+[node name="Node2" type="Node" parent="Pickup Dialogue" unique_id=904981415]
+script = ExtResource("3_kg5e7")
+is_end_node = true
+option_name = "Leave"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,19 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://i0am2murs47p"]
+[gd_scene format=3 uid="uid://i0am2murs47p"]
 
+[ext_resource type="Script" uid="uid://dvw8x5lu45aba" path="res://dialogue.gd" id="1_if77y"]
 [ext_resource type="Texture2D" uid="uid://dw17mm63araxi" path="res://Assets/UI/menu_box_1.png" id="1_senjy"]
 [ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="2_0nste"]
 [ext_resource type="Texture2D" uid="uid://bofmcuxvqsoyg" path="res://Assets/UI/ui_arrow_left_right.png" id="3_if77y"]
 
-[node name="DialogueBox" type="CanvasLayer"]
+[node name="DialogueBox" type="CanvasLayer" unique_id=1172649497]
+script = ExtResource("1_if77y")
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=568555715]
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Control" unique_id=986054179]
 texture_filter = 1
 layout_mode = 0
 offset_left = 3.0
@@ -27,15 +29,15 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/NinePatchRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/NinePatchRect" unique_id=558597678]
 layout_mode = 0
 offset_left = 17.0
 offset_top = 9.0
-offset_right = 117.0
+offset_right = 224.0
 offset_bottom = 49.0
 theme_override_constants/separation = 7
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
+[node name="Option1" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer" unique_id=1011470783]
 clip_contents = false
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
@@ -45,7 +47,7 @@ theme_override_font_sizes/normal_font_size = 12
 text = "Option 1"
 fit_content = true
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
+[node name="Option2" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer" unique_id=1802055845]
 clip_contents = false
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
@@ -55,10 +57,25 @@ theme_override_font_sizes/normal_font_size = 12
 text = "Option 2"
 fit_content = true
 
-[node name="TextureRect" type="TextureRect" parent="Control/NinePatchRect"]
+[node name="Arrow" type="TextureRect" parent="Control/NinePatchRect" unique_id=581928813]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 9.0
 offset_right = 15.0
 offset_bottom = 19.0
 texture = ExtResource("3_if77y")
+
+[node name="Text" type="RichTextLabel" parent="Control/NinePatchRect" unique_id=1409618473]
+visible = false
+clip_contents = false
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 9.0
+offset_right = 224.0
+offset_bottom = 36.0
+theme_override_colors/default_color = Color(0.439216, 0.407843, 0.501961, 1)
+theme_override_fonts/normal_font = ExtResource("2_0nste")
+theme_override_font_sizes/normal_font_size = 12
+text = "Lots of text here for testing. The quick brown fox jumped over the lazy dog. Hello world. Hello world. Hello world. Hello world. "
+fit_content = true

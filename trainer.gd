@@ -1,7 +1,7 @@
 extends AnimatedSprite2D
 
-@export var option1 = "" 
-@export var option2: = ""
+@export var root_node: Node = null # root of the dialogue tree
+@export var func_node: Node = null
 
 @onready var ray = $RayCast2D
 
@@ -20,7 +20,8 @@ func approach_until_hit():
 		position.y += 8
 	else:
 		$AnimationPlayer.stop()
-		Utils.get_scene_manager().transition_to_dialogue(option1, option2)
+		
+		Utils.get_scene_manager().transition_to_dialogue(root_node, func_node)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	visible = true

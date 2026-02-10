@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dqyx1gi8mtgjv"]
+[gd_scene format=3 uid="uid://dqyx1gi8mtgjv"]
 
 [ext_resource type="Texture2D" uid="uid://c0j35px6j8da2" path="res://Assets/Player/Male_Spritesheet.png" id="1_7kahx"]
 [ext_resource type="Script" uid="uid://yexcpjuauyul" path="res://trainer.gd" id="2_e4t5b"]
@@ -139,25 +139,23 @@ _data = {
 &"RESET": SubResource("Animation_vbc83")
 }
 
-[node name="Trainer" type="AnimatedSprite2D"]
+[node name="Trainer" type="AnimatedSprite2D" unique_id=1381438602]
 sprite_frames = SubResource("SpriteFrames_hg0i7")
 frame = 1
 centered = false
 offset = Vector2(0, -3)
 script = ExtResource("2_e4t5b")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1506649704]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1357964769]
 position = Vector2(8, 64)
 shape = SubResource("RectangleShape2D_qhiut")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_0ljn5")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2126887194]
+libraries/ = SubResource("AnimationLibrary_0ljn5")
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1547218494]
 position = Vector2(8, 16)
 target_position = Vector2(0, 16)
 
