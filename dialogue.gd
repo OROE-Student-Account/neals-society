@@ -53,10 +53,10 @@ func display_current_node():
 	
 	# Execute any function associated with this node
 	if current_node.function != "" and target_node != null:
-		if target_node.has_method(current_node.function_name):
-			target_node.call(current_node.function_name)
+		if target_node.has_method(current_node.function):
+			target_node.call(current_node.function)
 		else:
-			push_warning("DialogueManager: Function '%s' not found on target node" % current_node.function_name)
+			push_warning("DialogueManager: Function '%s' not found on target node" % current_node.function)
 	
 	# Show the text first
 	show_text()

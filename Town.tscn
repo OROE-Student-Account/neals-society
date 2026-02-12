@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bdykq75yoljv" path="res://item.tscn" id="16_tbyl1"]
 [ext_resource type="Texture2D" uid="uid://c0j35px6j8da2" path="res://Assets/Player/Male_Spritesheet.png" id="16_yv7ed"]
 [ext_resource type="Script" uid="uid://yexcpjuauyul" path="res://trainer.gd" id="17_typi0"]
-[ext_resource type="Script" uid="uid://bp28l32amhxsf" path="res://dialogue_node.gd" id="18_6xtxr"]
+[ext_resource type="Script" path="res://dialogue_node.gd" id="18_6xtxr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fmg7l"]
 texture = ExtResource("1_r47vw")
@@ -2993,6 +2993,7 @@ option_name = "Who are you? Goodbye"
 
 [node name="Item" parent="Collision Stuff" unique_id=799843636 instance=ExtResource("16_tbyl1")]
 position = Vector2(32, 96)
+collision_mask = 3
 
 [connection signal="body_entered" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_Door_body_entered"]
 [connection signal="body_entered" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_body_entered"]
