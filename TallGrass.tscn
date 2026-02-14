@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://biarm5343j6g5"]
+[gd_scene format=3 uid="uid://biarm5343j6g5"]
 
 [ext_resource type="Texture2D" uid="uid://dxtpbcw3vk7v7" path="res://Assets/Grass/tall_grass.png" id="1"]
 [ext_resource type="Script" uid="uid://c7qjag23gf5r8" path="res://TallGrass.gd" id="2"]
@@ -43,23 +43,22 @@ _data = {
 &"Stepped": SubResource("3")
 }
 
-[node name="TallGrass" type="Node2D"]
+[node name="TallGrass" type="Node2D" unique_id=1008989153]
+y_sort_enabled = true
 script = ExtResource("2")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1737318946]
 texture = ExtResource("1")
 centered = false
 hframes = 2
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=463537133]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=401601347]
 position = Vector2(8, 8)
 shape = SubResource("1")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_wxgnp")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1418082169]
+libraries/ = SubResource("AnimationLibrary_wxgnp")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

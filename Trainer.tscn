@@ -75,7 +75,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhiut"]
-size = Vector2(12, 124)
+size = Vector2(12, 110)
 
 [sub_resource type="Animation" id="Animation_nci3w"]
 resource_name = "Approach"
@@ -149,7 +149,7 @@ script = ExtResource("2_e4t5b")
 [node name="Area2D" type="Area2D" parent="." unique_id=1506649704]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1357964769]
-position = Vector2(8, 64)
+position = Vector2(8, 71)
 shape = SubResource("RectangleShape2D_qhiut")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2126887194]

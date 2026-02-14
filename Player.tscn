@@ -497,8 +497,6 @@ states/Walk/position = Vector2(437.667, 86.3333)
 transitions = ["Idle", "Walk", SubResource("30"), "Walk", "Idle", SubResource("31"), "Idle", "Turn", SubResource("32"), "Turn", "Idle", SubResource("33"), "Turn", "Walk", SubResource("34"), "Walk", "Turn", SubResource("35"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_kne1u")]
 graph_offset = Vector2(-100.8, 11.5876)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kne1u"]
-
 [node name="Player" type="CharacterBody2D" unique_id=736689713]
 collision_mask = 14
 script = ExtResource("2")
@@ -507,18 +505,6 @@ script = ExtResource("2")
 texture_filter = 1
 texture = ExtResource("3")
 centered = false
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=878727720]
-visible = false
-top_level = true
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(20, 1)
-texture = ExtResource("1")
-centered = false
-offset = Vector2(-20, -4)
-hframes = 3
-vframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1884176364]
 y_sort_enabled = true
@@ -556,9 +542,6 @@ collision_mask = 8
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="ItemRayCast2D" type="RayCast2D" parent="." unique_id=724677302]
-collision_mask = 16
-
 [node name="PlayerSprite" type="Sprite2D" parent="." unique_id=1066054326]
 y_sort_enabled = true
 texture_filter = 1
@@ -569,11 +552,3 @@ offset = Vector2(-16, -4)
 hframes = 3
 vframes = 3
 frame = 3
-
-[node name="Area2D" type="Area2D" parent="PlayerSprite" unique_id=485651240]
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerSprite/Area2D" unique_id=1359344770]
-position = Vector2(-8, 8)
-scale = Vector2(0.8, 0.8)
-shape = SubResource("RectangleShape2D_kne1u")

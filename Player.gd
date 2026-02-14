@@ -198,4 +198,5 @@ func move(delta):
 			shadow.position.y = move
 			camera.position.y = move
 	else:
+		if (percent_moved_to_next_tile != 0): print("test")
 		is_moving = false

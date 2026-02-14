@@ -1177,333 +1177,8 @@ texture_filter = 1
 position = Vector2(88, -304)
 sprite_frames = SubResource("6")
 
-[node name="Grasses" type="Node2D" parent="." unique_id=1117573699]
-
-[node name="TallGrass64" parent="Grasses" unique_id=287164644 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(224, -160)
-
-[node name="TallGrass" parent="Grasses" unique_id=653430904 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(160, -144)
-
-[node name="TallGrass2" parent="Grasses" unique_id=588821338 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(176, -144)
-
-[node name="TallGrass3" parent="Grasses" unique_id=554207 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(192, -144)
-
-[node name="TallGrass4" parent="Grasses" unique_id=1280992661 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(160, -160)
-
-[node name="TallGrass5" parent="Grasses" unique_id=703992870 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(176, -160)
-
-[node name="TallGrass6" parent="Grasses" unique_id=1861072934 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(224, -128)
-
-[node name="TallGrass7" parent="Grasses" unique_id=379519307 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(160, -176)
-
-[node name="TallGrass46" parent="Grasses" unique_id=2116885395 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(160, -496)
-
-[node name="TallGrass47" parent="Grasses" unique_id=1092706825 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(160, -512)
-
-[node name="TallGrass48" parent="Grasses" unique_id=2074660712 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(160, -528)
-
-[node name="TallGrass52" parent="Grasses" unique_id=1777141723 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(160, -544)
-
-[node name="TallGrass53" parent="Grasses" unique_id=1962071243 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(160, -560)
-
-[node name="TallGrass56" parent="Grasses" unique_id=1934258226 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(160, -576)
-
-[node name="TallGrass57" parent="Grasses" unique_id=1766977438 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(160, -592)
-
-[node name="TallGrass60" parent="Grasses" unique_id=1259047319 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(160, -608)
-
-[node name="TallGrass8" parent="Grasses" unique_id=2038886455 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(176, -176)
-
-[node name="TallGrass9" parent="Grasses" unique_id=1721465574 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(224, -144)
-
-[node name="TallGrass10" parent="Grasses" unique_id=1405723833 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(160, -128)
-
-[node name="TallGrass11" parent="Grasses" unique_id=1325635428 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(176, -128)
-
-[node name="TallGrass12" parent="Grasses" unique_id=1717141067 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(192, -128)
-
-[node name="TallGrass13" parent="Grasses" unique_id=204062280 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(160, -144)
-
-[node name="TallGrass63" parent="Grasses" unique_id=331426927 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(416, -288)
-
-[node name="TallGrass14" parent="Grasses" unique_id=565642417 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(208, -144)
-
-[node name="TallGrass15" parent="Grasses" unique_id=84521607 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(192, -144)
-
-[node name="TallGrass16" parent="Grasses" unique_id=931629102 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(240, -128)
-
-[node name="TallGrass17" parent="Grasses" unique_id=49356803 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(256, -128)
-
-[node name="TallGrass18" parent="Grasses" unique_id=1090982266 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(272, -128)
-
-[node name="TallGrass19" parent="Grasses" unique_id=951621158 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(240, -144)
-
-[node name="TallGrass20" parent="Grasses" unique_id=1438273273 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(256, -144)
-
-[node name="TallGrass21" parent="Grasses" unique_id=1102609329 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(272, -144)
-
-[node name="TallGrass22" parent="Grasses" unique_id=1649790791 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(-64, -128)
-
-[node name="TallGrass23" parent="Grasses" unique_id=1868566551 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(-48, -128)
-
-[node name="TallGrass24" parent="Grasses" unique_id=87919573 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(-32, -128)
-
-[node name="TallGrass25" parent="Grasses" unique_id=850217194 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(-64, -144)
-
-[node name="TallGrass26" parent="Grasses" unique_id=1867902772 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(-48, -144)
-
-[node name="TallGrass27" parent="Grasses" unique_id=382979218 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(-32, -144)
-
-[node name="TallGrass28" parent="Grasses" unique_id=491751146 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(-16, -128)
-
-[node name="TallGrass29" parent="Grasses" unique_id=1123904507 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(0, -128)
-
-[node name="TallGrass30" parent="Grasses" unique_id=1415938506 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(16, -128)
-
-[node name="TallGrass49" parent="Grasses" unique_id=225889292 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(16, -112)
-
-[node name="TallGrass31" parent="Grasses" unique_id=2008586555 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(-16, -144)
-
-[node name="TallGrass50" parent="Grasses" unique_id=976642724 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(0, -112)
-
-[node name="TallGrass32" parent="Grasses" unique_id=506633351 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(0, -144)
-
-[node name="TallGrass33" parent="Grasses" unique_id=1139082676 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(16, -144)
-
-[node name="TallGrass34" parent="Grasses" unique_id=1805398489 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(192, -160)
-
-[node name="TallGrass35" parent="Grasses" unique_id=1109024644 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(208, -128)
-
-[node name="TallGrass36" parent="Grasses" unique_id=391610529 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(192, -176)
-
-[node name="TallGrass51" parent="Grasses" unique_id=2139258069 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(-16, -112)
-
-[node name="TallGrass54" parent="Grasses" unique_id=1526298421 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(-64, -112)
-
-[node name="TallGrass37" parent="Grasses" unique_id=103639747 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(208, -160)
-
-[node name="TallGrass38" parent="Grasses" unique_id=1519727525 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(208, -176)
-
-[node name="TallGrass39" parent="Grasses" unique_id=1281385078 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(224, -176)
-
-[node name="TallGrass40" parent="Grasses" unique_id=164872568 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(240, -160)
-
-[node name="TallGrass41" parent="Grasses" unique_id=1355935330 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(256, -160)
-
-[node name="TallGrass55" parent="Grasses" unique_id=983780036 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(-48, -112)
-
-[node name="TallGrass42" parent="Grasses" unique_id=1143211965 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(272, -160)
-
-[node name="TallGrass43" parent="Grasses" unique_id=842541676 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(240, -176)
-
-[node name="TallGrass59" parent="Grasses" unique_id=1966857148 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(32, -144)
-
-[node name="TallGrass61" parent="Grasses" unique_id=788659096 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(32, -128)
-
-[node name="TallGrass62" parent="Grasses" unique_id=1905389112 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(-32, -112)
-
-[node name="TallGrass44" parent="Grasses" unique_id=301519218 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(256, -176)
-
-[node name="TallGrass58" parent="Grasses" unique_id=478102453 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(32, -112)
-
-[node name="TallGrass45" parent="Grasses" unique_id=613339862 instance=ExtResource("6")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(272, -176)
-
 [node name="Collision Stuff" type="Node2D" parent="." unique_id=2070835712]
 y_sort_enabled = true
-
-[node name="Player" parent="Collision Stuff" unique_id=464513584 instance=ExtResource("1")]
-position = Vector2(80, 96)
 
 [node name="Trees" type="Node2D" parent="Collision Stuff" unique_id=233214413]
 y_sort_enabled = true
@@ -3244,9 +2919,271 @@ position = Vector2(528, 320)
 texture_filter = 1
 position = Vector2(528, 352)
 
+[node name="Grasses" type="Node2D" parent="Collision Stuff" unique_id=1117573699]
+y_sort_enabled = true
+
+[node name="TallGrass64" parent="Collision Stuff/Grasses" unique_id=287164644 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(224, -160)
+
+[node name="TallGrass" parent="Collision Stuff/Grasses" unique_id=653430904 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(160, -144)
+
+[node name="TallGrass2" parent="Collision Stuff/Grasses" unique_id=588821338 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(176, -144)
+
+[node name="TallGrass3" parent="Collision Stuff/Grasses" unique_id=554207 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(192, -144)
+
+[node name="TallGrass4" parent="Collision Stuff/Grasses" unique_id=1280992661 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(160, -160)
+
+[node name="TallGrass5" parent="Collision Stuff/Grasses" unique_id=703992870 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(176, -160)
+
+[node name="TallGrass6" parent="Collision Stuff/Grasses" unique_id=1861072934 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(224, -128)
+
+[node name="TallGrass7" parent="Collision Stuff/Grasses" unique_id=379519307 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(160, -176)
+
+[node name="TallGrass46" parent="Collision Stuff/Grasses" unique_id=2116885395 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(160, -496)
+
+[node name="TallGrass47" parent="Collision Stuff/Grasses" unique_id=1092706825 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(160, -512)
+
+[node name="TallGrass48" parent="Collision Stuff/Grasses" unique_id=2074660712 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(160, -528)
+
+[node name="TallGrass52" parent="Collision Stuff/Grasses" unique_id=1777141723 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(160, -544)
+
+[node name="TallGrass53" parent="Collision Stuff/Grasses" unique_id=1962071243 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(160, -560)
+
+[node name="TallGrass56" parent="Collision Stuff/Grasses" unique_id=1934258226 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(160, -576)
+
+[node name="TallGrass57" parent="Collision Stuff/Grasses" unique_id=1766977438 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(160, -592)
+
+[node name="TallGrass60" parent="Collision Stuff/Grasses" unique_id=1259047319 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(160, -608)
+
+[node name="TallGrass8" parent="Collision Stuff/Grasses" unique_id=2038886455 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(176, -176)
+
+[node name="TallGrass9" parent="Collision Stuff/Grasses" unique_id=1721465574 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(224, -144)
+
+[node name="TallGrass10" parent="Collision Stuff/Grasses" unique_id=1405723833 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(160, -128)
+
+[node name="TallGrass11" parent="Collision Stuff/Grasses" unique_id=1325635428 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(176, -128)
+
+[node name="TallGrass12" parent="Collision Stuff/Grasses" unique_id=1717141067 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(192, -128)
+
+[node name="TallGrass13" parent="Collision Stuff/Grasses" unique_id=204062280 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(160, -144)
+
+[node name="TallGrass63" parent="Collision Stuff/Grasses" unique_id=331426927 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(416, -288)
+
+[node name="TallGrass14" parent="Collision Stuff/Grasses" unique_id=565642417 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(208, -144)
+
+[node name="TallGrass15" parent="Collision Stuff/Grasses" unique_id=84521607 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(192, -144)
+
+[node name="TallGrass16" parent="Collision Stuff/Grasses" unique_id=931629102 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(240, -128)
+
+[node name="TallGrass17" parent="Collision Stuff/Grasses" unique_id=49356803 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(256, -128)
+
+[node name="TallGrass18" parent="Collision Stuff/Grasses" unique_id=1090982266 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(272, -128)
+
+[node name="TallGrass19" parent="Collision Stuff/Grasses" unique_id=951621158 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(240, -144)
+
+[node name="TallGrass20" parent="Collision Stuff/Grasses" unique_id=1438273273 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(256, -144)
+
+[node name="TallGrass21" parent="Collision Stuff/Grasses" unique_id=1102609329 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(272, -144)
+
+[node name="TallGrass22" parent="Collision Stuff/Grasses" unique_id=1649790791 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(-64, -128)
+
+[node name="TallGrass23" parent="Collision Stuff/Grasses" unique_id=1868566551 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(-48, -128)
+
+[node name="TallGrass24" parent="Collision Stuff/Grasses" unique_id=87919573 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(-32, -128)
+
+[node name="TallGrass25" parent="Collision Stuff/Grasses" unique_id=850217194 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(-64, -144)
+
+[node name="TallGrass26" parent="Collision Stuff/Grasses" unique_id=1867902772 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(-48, -144)
+
+[node name="TallGrass27" parent="Collision Stuff/Grasses" unique_id=382979218 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(-32, -144)
+
+[node name="TallGrass28" parent="Collision Stuff/Grasses" unique_id=491751146 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(-16, -128)
+
+[node name="TallGrass29" parent="Collision Stuff/Grasses" unique_id=1123904507 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(0, -128)
+
+[node name="TallGrass30" parent="Collision Stuff/Grasses" unique_id=1415938506 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(16, -128)
+
+[node name="TallGrass49" parent="Collision Stuff/Grasses" unique_id=225889292 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(16, -112)
+
+[node name="TallGrass31" parent="Collision Stuff/Grasses" unique_id=2008586555 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(-16, -144)
+
+[node name="TallGrass50" parent="Collision Stuff/Grasses" unique_id=976642724 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(0, -112)
+
+[node name="TallGrass32" parent="Collision Stuff/Grasses" unique_id=506633351 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(0, -144)
+
+[node name="TallGrass33" parent="Collision Stuff/Grasses" unique_id=1139082676 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(16, -144)
+
+[node name="TallGrass34" parent="Collision Stuff/Grasses" unique_id=1805398489 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(192, -160)
+
+[node name="TallGrass35" parent="Collision Stuff/Grasses" unique_id=1109024644 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(208, -128)
+
+[node name="TallGrass36" parent="Collision Stuff/Grasses" unique_id=391610529 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(192, -176)
+
+[node name="TallGrass51" parent="Collision Stuff/Grasses" unique_id=2139258069 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(-16, -112)
+
+[node name="TallGrass54" parent="Collision Stuff/Grasses" unique_id=1526298421 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(-64, -112)
+
+[node name="TallGrass37" parent="Collision Stuff/Grasses" unique_id=103639747 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(208, -160)
+
+[node name="TallGrass38" parent="Collision Stuff/Grasses" unique_id=1519727525 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(208, -176)
+
+[node name="TallGrass39" parent="Collision Stuff/Grasses" unique_id=1281385078 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(224, -176)
+
+[node name="TallGrass40" parent="Collision Stuff/Grasses" unique_id=164872568 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(240, -160)
+
+[node name="TallGrass41" parent="Collision Stuff/Grasses" unique_id=1355935330 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(256, -160)
+
+[node name="TallGrass55" parent="Collision Stuff/Grasses" unique_id=983780036 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(-48, -112)
+
+[node name="TallGrass42" parent="Collision Stuff/Grasses" unique_id=1143211965 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(272, -160)
+
+[node name="TallGrass43" parent="Collision Stuff/Grasses" unique_id=842541676 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(240, -176)
+
+[node name="TallGrass59" parent="Collision Stuff/Grasses" unique_id=1966857148 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(32, -144)
+
+[node name="TallGrass61" parent="Collision Stuff/Grasses" unique_id=788659096 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(32, -128)
+
+[node name="TallGrass62" parent="Collision Stuff/Grasses" unique_id=1905389112 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(-32, -112)
+
+[node name="TallGrass44" parent="Collision Stuff/Grasses" unique_id=301519218 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(256, -176)
+
+[node name="TallGrass58" parent="Collision Stuff/Grasses" unique_id=478102453 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(32, -112)
+
+[node name="TallGrass45" parent="Collision Stuff/Grasses" unique_id=613339862 instance=ExtResource("6")]
+texture_filter = 1
+position = Vector2(272, -176)
+
+[node name="Player" parent="Collision Stuff" unique_id=464513584 instance=ExtResource("1")]
+position = Vector2(80, 96)
+
 [node name="House" parent="Collision Stuff" unique_id=541117870 instance=ExtResource("9")]
 texture_filter = 1
-position = Vector2(-80, 1)
+position = Vector2(-80, 0)
 
 [node name="Door" parent="Collision Stuff/House" unique_id=93452912 instance=ExtResource("8")]
 position = Vector2(16, 64)
@@ -3325,6 +3262,7 @@ func_node = NodePath("Second Dialogue Root")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Stuff/Rival/Area2D" unique_id=1357964769]
 position = Vector2(8, 64)
+scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_qhiut")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Collision Stuff/Rival" unique_id=2126887194]

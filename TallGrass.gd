@@ -3,10 +3,9 @@ extends Node2D
 @onready var anim_player = $AnimationPlayer
 const grass_overlay_texture = preload("res://Assets/Grass/stepped_tall_grass.png")
 const GrassStepEffect = preload("res://GrassStepEffect.tscn")
-var grass_overlay: TextureRect = null
 
+var grass_overlay: Node2D = null
 
-var player_inside: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,28 +13,30 @@ func _ready():
 	player.connect("player_moving_signal", Callable(self, "player_exiting_grass"))
 
 func player_exiting_grass():
-	player_inside = false
 	if is_instance_valid(grass_overlay):
 		grass_overlay.queue_free()
-	
+
 func player_in_grass():
-	if player_inside == true:
-		
-		grass_overlay = TextureRect.new()
-		grass_overlay.texture = grass_overlay_texture
-		grass_overlay.position = position
-		grass_overlay.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-		get_tree().current_scene.add_child(grass_overlay)
-		
-		
-		var grass_step_effect = GrassStepEffect.instantiate()
-		grass_step_effect.position = position
-		get_tree().current_scene.add_child(grass_step_effect)
-		
-
-
+	var down_offset_pos = Vector2.ZERO
+	down_offset_pos.y = 1
+	var up_offset_pos = Vector2.ZERO
+	up_offset_pos.y = -1
+	
+	
+	grass_overlay = Node2D.new()
+	grass_overlay.position = down_offset_pos
+	
+	var texture_overlay = TextureRect.new()
+	texture_overlay.texture = grass_overlay_texture
+	texture_overlay.position = up_offset_pos
+	
+	var grass_step_effect = GrassStepEffect.instantiate()
+	grass_step_effect.position = up_offset_pos
+	
+	grass_overlay.add_child(grass_step_effect)
+	grass_overlay.add_child(texture_overlay)
+	self.add_child(grass_overlay)
 
 func _on_Area2D_body_entered(body):
-	player_inside = true
 	anim_player.play("Stepped")
 	player_in_grass()
