@@ -159,4 +159,6 @@ libraries/ = SubResource("AnimationLibrary_0ljn5")
 position = Vector2(8, 16)
 target_position = Vector2(0, 16)
 
+[node name="Dialogue Root" type="Node" parent="." unique_id=1360333292]
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
