@@ -5,9 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bvqoocn8ivy6n" path="res://Assets/Water/WaterTexture.tres" id="2_ykxim"]
 [ext_resource type="Texture2D" uid="uid://c82fjenaaxuwf" path="res://Assets/Tilesets/grass2_tileset.png" id="3_i4tu1"]
 [ext_resource type="PackedScene" uid="uid://buoi562c5t04c" path="res://Tree.tscn" id="4"]
-[ext_resource type="Texture2D" uid="uid://c20wvxucaup1k" path="res://Assets/Flowers/red_flower.png" id="4_n4wug"]
 [ext_resource type="Texture2D" uid="uid://0mdt7n5qygaa" path="res://Assets/Tilesets/ledge.png" id="4_r47vw"]
-[ext_resource type="PackedScene" path="res://Flower.tscn" id="5"]
 [ext_resource type="Texture2D" uid="uid://xr8x53oopdd0" path="res://Assets/Tilesets/fence1_tileset.png" id="5_fllgw"]
 [ext_resource type="PackedScene" uid="uid://biarm5343j6g5" path="res://TallGrass.tscn" id="6"]
 [ext_resource type="Texture2D" uid="uid://ff3i1gl2wpma" path="res://Assets/Buildings/oaks_lab.png" id="7"]
@@ -15,12 +13,13 @@
 [ext_resource type="PackedScene" path="res://House.tscn" id="9"]
 [ext_resource type="Texture2D" uid="uid://22jrr0rxhcd3" path="res://Assets/Buildings/Door Animations/oaks_lab.png" id="10"]
 [ext_resource type="Script" uid="uid://duoegh7gbj541" path="res://Door.gd" id="13_ykxim"]
-[ext_resource type="PackedScene" uid="uid://bdykq75yoljv" path="res://item.tscn" id="16_tbyl1"]
+[ext_resource type="PackedScene" path="res://item.tscn" id="16_tbyl1"]
 [ext_resource type="Texture2D" uid="uid://c0j35px6j8da2" path="res://Assets/Player/Male_Spritesheet.png" id="16_yv7ed"]
-[ext_resource type="Script" uid="uid://yexcpjuauyul" path="res://trainer.gd" id="17_typi0"]
+[ext_resource type="Script" path="res://trainer.gd" id="17_typi0"]
 [ext_resource type="Texture2D" uid="uid://dphmrelo4jug1" path="res://Assets/Buildings/house_spritesheet.png" id="18_4jyq1"]
-[ext_resource type="Script" uid="uid://bp28l32amhxsf" path="res://dialogue_node.gd" id="18_6xtxr"]
-[ext_resource type="Script" uid="uid://d4hprd03iheli" path="res://animated_house.gd" id="19_yv7ed"]
+[ext_resource type="Script" path="res://dialogue_node.gd" id="18_6xtxr"]
+[ext_resource type="Script" path="res://animated_house.gd" id="19_yv7ed"]
+[ext_resource type="Texture2D" uid="uid://c30k7loev38oa" path="res://Assets/Flowers/flower.tres" id="22_6xtxr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fmg7l"]
 texture = ExtResource("1_r47vw")
@@ -496,6 +495,11 @@ texture = ExtResource("5_fllgw")
 0:3/0 = 0
 1:3/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_typi0"]
+texture = ExtResource("22_6xtxr")
+use_texture_padding = false
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="13"]
 physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 0
@@ -508,49 +512,7 @@ terrain_set_0/terrain_1/name = "Fence"
 terrain_set_0/terrain_1/color = Color(0.501961, 0.498039, 0.509804, 1)
 sources/0 = SubResource("TileSetAtlasSource_ykxim")
 sources/1 = SubResource("TileSetAtlasSource_76vxh")
-
-[sub_resource type="AtlasTexture" id="1"]
-atlas = ExtResource("4_n4wug")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="2"]
-atlas = ExtResource("4_n4wug")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="3"]
-atlas = ExtResource("4_n4wug")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="4"]
-atlas = ExtResource("4_n4wug")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="5"]
-atlas = ExtResource("4_n4wug")
-region = Rect2(64, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="6"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("1")
-}, {
-"duration": 1.0,
-"texture": SubResource("2")
-}, {
-"duration": 1.0,
-"texture": SubResource("3")
-}, {
-"duration": 1.0,
-"texture": SubResource("4")
-}, {
-"duration": 1.0,
-"texture": SubResource("5")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+sources/2 = SubResource("TileSetAtlasSource_typi0")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hxns"]
 size = Vector2(112, 64)
@@ -867,315 +829,8 @@ tile_set = SubResource("9")
 [node name="Ledge" type="TileMapLayer" parent="." unique_id=1114365057]
 texture_filter = 1
 use_parent_material = true
-tile_map_data = PackedByteArray("AAD+/xIAAQACAAAAAAD9/xIAAQABAAAAAAD8/xIAAQAAAAAAAAD8/xMAAQAAAAEAAAD8/xQAAQAAAAIAAAD9/xQAAQABAAIAAAD+/xQAAQACAAIAAAD+/xMAAQACAAEAAAAHAPn/AQAAAAEAAAADAPj/AQACAAEAAAADAPn/AQACAAEAAAADAPb/AQACAAEAAAADAPf/AQACAAEAAAAHAPf/AQAAAAEAAAAHAPj/AQAAAAEAAAAHAPb/AQAAAAEAAAD5//D/AQAAAAIAAAD6//D/AQACAAIAAAD6/+3/AQACAAAAAAD6/+7/AQACAAEAAAD6/+//AQACAAEAAAD1/+3/AQAAAAAAAAD1/+7/AQAAAAEAAAD1/+//AQAAAAEAAAD3//D/AQAAAAIAAAD4//D/AQACAAIAAAD1//D/AQAAAAIAAAD2//D/AQACAAIAAAADAOf/AAABAAAAAAAEAOf/AAABAAAAAAAFAOf/AAABAAAAAAAGAOf/AAABAAAAAAAHAOf/AAABAAAAAAAIAOf/AAABAAAAAAAJAOf/AAABAAAAAAAKAOf/AAABAAAAAAALAOf/AAABAAAAAAAMAOf/AAABAAAAAAANAOf/AAABAAAAAAAOAOf/AAABAAAAAAAPAOf/AAABAAAAAAAQAOf/AAABAAAAAAARAOf/AAABAAAAAAASAOf/AAABAAAAAAATAOf/AAABAAAAAAAUAOf/AAABAAAAAAAVAOf/AAABAAAAAAAWAOf/AAABAAAAAAAXAOf/AAABAAAAAAABAOf/AAABAAAAAAACAOf/AAABAAAAAAD//+f/AAABAAAAAAAAAOf/AAABAAAAAAD8/+f/AAABAAAAAAD9/+f/AAABAAAAAAD+/+f/AAABAAAAAAD7/+f/AAABAAAAAAD6/+f/AAABAAAAAAD1/+f/AAACAAAAAAD2/+3/AQACAAIAAAD5/+3/AQAAAAIAAAD5/+z/AQAAAAEAAAD2/+z/AQACAAEAAAD5/+f/AAAAAAAAAAAYAOf/AAACAAAAAAD0/+f/AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD+/xIAAQACAAAAAAD9/xIAAQABAAAAAAD8/xIAAQAAAAAAAAD8/xMAAQAAAAEAAAD8/xQAAQAAAAIAAAD9/xQAAQABAAIAAAD+/xQAAQACAAIAAAD+/xMAAQACAAEAAAAHAPn/AQAAAAEAAAADAPj/AQACAAEAAAADAPn/AQACAAEAAAADAPb/AQACAAEAAAADAPf/AQACAAEAAAAHAPf/AQAAAAEAAAAHAPj/AQAAAAEAAAAHAPb/AQAAAAEAAAD5//D/AQAAAAIAAAD6//D/AQACAAIAAAD6/+3/AQACAAAAAAD6/+7/AQACAAEAAAD6/+//AQACAAEAAAD1/+3/AQAAAAAAAAD1/+7/AQAAAAEAAAD1/+//AQAAAAEAAAD3//D/AQAAAAIAAAD4//D/AQACAAIAAAD1//D/AQAAAAIAAAD2//D/AQACAAIAAAADAOf/AAABAAAAAAAEAOf/AAABAAAAAAAFAOf/AAABAAAAAAAGAOf/AAABAAAAAAAHAOf/AAABAAAAAAAIAOf/AAABAAAAAAAJAOf/AAABAAAAAAAKAOf/AAABAAAAAAALAOf/AAABAAAAAAAMAOf/AAABAAAAAAANAOf/AAABAAAAAAAOAOf/AAABAAAAAAAPAOf/AAABAAAAAAAQAOf/AAABAAAAAAARAOf/AAABAAAAAAASAOf/AAABAAAAAAATAOf/AAABAAAAAAAUAOf/AAABAAAAAAAVAOf/AAABAAAAAAAWAOf/AAABAAAAAAAXAOf/AAABAAAAAAABAOf/AAABAAAAAAACAOf/AAABAAAAAAD//+f/AAABAAAAAAAAAOf/AAABAAAAAAD8/+f/AAABAAAAAAD9/+f/AAABAAAAAAD+/+f/AAABAAAAAAD7/+f/AAABAAAAAAD6/+f/AAABAAAAAAD1/+f/AAACAAAAAAD2/+3/AQACAAIAAAD5/+3/AQAAAAIAAAD5/+z/AQAAAAEAAAD2/+z/AQACAAEAAAD5/+f/AAAAAAAAAAAYAOf/AAACAAAAAAD0/+f/AAAAAAAAAAD7/+3/AgAAAAAAAAD8/+3/AgAAAAAAAAD9/+3/AgAAAAAAAAD+/+3/AgAAAAAAAAD//+3/AgAAAAAAAAAAAO3/AgAAAAAAAAABAO3/AgAAAAAAAAACAO3/AgAAAAAAAAADAO3/AgAAAAAAAAAEAO3/AgAAAAAAAAAFAO3/AgAAAAAAAAAHAO3/AgAAAAAAAAAGAO3/AgAAAAAAAAAIAO3/AgAAAAAAAAAJAO3/AgAAAAAAAAAKAO3/AgAAAAAAAAAMAO3/AgAAAAAAAAALAO3/AgAAAAAAAAANAO3/AgAAAAAAAAAOAO3/AgAAAAAAAAAPAO3/AgAAAAAAAAAQAO3/AgAAAAAAAAARAO3/AgAAAAAAAAASAO3/AgAAAAAAAAASAO7/AgAAAAAAAAARAO7/AgAAAAAAAAAQAO7/AgAAAAAAAAAPAO7/AgAAAAAAAAAOAO7/AgAAAAAAAAANAO7/AgAAAAAAAAAMAO7/AgAAAAAAAAALAO7/AgAAAAAAAAAKAO7/AgAAAAAAAAAJAO7/AgAAAAAAAAAIAO7/AgAAAAAAAAAHAO7/AgAAAAAAAAAGAO7/AgAAAAAAAAAFAO7/AgAAAAAAAAAEAO7/AgAAAAAAAAADAO7/AgAAAAAAAAACAO7/AgAAAAAAAAABAO7/AgAAAAAAAAAAAO7/AgAAAAAAAAD//+7/AgAAAAAAAAD+/+7/AgAAAAAAAAD9/+7/AgAAAAAAAAD7/+7/AgAAAAAAAAD8/+7/AgAAAAAAAAA=")
 tile_set = SubResource("13")
-
-[node name="Flowers" type="Node2D" parent="." unique_id=1003402662]
-
-[node name="Flower18" parent="Flowers" unique_id=1308889450 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(120, -304)
-sprite_frames = SubResource("6")
-
-[node name="Flower10" parent="Flowers" unique_id=2096122694 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(280, -288)
-sprite_frames = SubResource("6")
-
-[node name="Flower11" parent="Flowers" unique_id=480175020 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(248, -304)
-sprite_frames = SubResource("6")
-
-[node name="Flower13" parent="Flowers" unique_id=852653800 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(232, -304)
-sprite_frames = SubResource("6")
-
-[node name="Flower14" parent="Flowers" unique_id=851281131 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(264, -288)
-sprite_frames = SubResource("6")
-
-[node name="Flower14" parent="Flowers/Flower14" unique_id=2126792966 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(-48, 0)
-sprite_frames = SubResource("6")
-
-[node name="Flower15" parent="Flowers" unique_id=1815903724 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(248, -288)
-sprite_frames = SubResource("6")
-
-[node name="Flower16" parent="Flowers" unique_id=1826493002 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(232, -288)
-sprite_frames = SubResource("6")
-
-[node name="Flower17" parent="Flowers" unique_id=1384548205 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(280, -304)
-sprite_frames = SubResource("6")
-
-[node name="Flower10" parent="Flowers/Flower17" unique_id=446273262 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(-144, 0)
-sprite_frames = SubResource("6")
-
-[node name="Flower11" parent="Flowers/Flower17" unique_id=40014741 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(248, -304)
-sprite_frames = SubResource("6")
-
-[node name="Flower12" parent="Flowers/Flower17" unique_id=624155424 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(264, -304)
-sprite_frames = SubResource("6")
-frame_progress = 0.213817
-
-[node name="Flower13" parent="Flowers/Flower17" unique_id=1121911811 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(232, -304)
-sprite_frames = SubResource("6")
-
-[node name="Flower14" parent="Flowers/Flower17" unique_id=1560932509 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(264, -288)
-sprite_frames = SubResource("6")
-
-[node name="Flower14" parent="Flowers/Flower17/Flower14" unique_id=1720299899 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(-48, 0)
-sprite_frames = SubResource("6")
-
-[node name="Flower15" parent="Flowers/Flower17" unique_id=1679115938 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(248, -288)
-sprite_frames = SubResource("6")
-
-[node name="Flower16" parent="Flowers/Flower17" unique_id=1134054446 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(232, -288)
-sprite_frames = SubResource("6")
-
-[node name="Flower17" parent="Flowers/Flower17" unique_id=2118919670 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(-144, 16)
-sprite_frames = SubResource("6")
-
-[node name="Flower38" parent="Flowers" unique_id=1028189971 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(-24, -304)
-sprite_frames = SubResource("6")
-
-[node name="Flower39" parent="Flowers" unique_id=637912445 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(-24, -288)
-sprite_frames = SubResource("6")
-
-[node name="Flower40" parent="Flowers" unique_id=1230861388 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(-72, -304)
-sprite_frames = SubResource("6")
-
-[node name="Flower41" parent="Flowers" unique_id=378712123 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(-56, -288)
-sprite_frames = SubResource("6")
-
-[node name="Flower42" parent="Flowers" unique_id=1938502667 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(40, -304)
-sprite_frames = SubResource("6")
-
-[node name="Flower43" parent="Flowers" unique_id=872861253 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(24, -304)
-sprite_frames = SubResource("6")
-
-[node name="Flower22" parent="Flowers" unique_id=1666665385 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(432, -592)
-sprite_frames = SubResource("6")
-
-[node name="Flower44" parent="Flowers" unique_id=1544988696 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(56, -304)
-sprite_frames = SubResource("6")
-
-[node name="Flower45" parent="Flowers" unique_id=1098304144 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(120, -288)
-sprite_frames = SubResource("6")
-
-[node name="Flower21" parent="Flowers" unique_id=122483932 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(304, -608)
-sprite_frames = SubResource("6")
-
-[node name="Flower20" parent="Flowers" unique_id=734795240 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(152, -304)
-sprite_frames = SubResource("6")
-
-[node name="Flower19" parent="Flowers" unique_id=1093983829 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(104, -304)
-sprite_frames = SubResource("6")
-
-[node name="Flowers" type="Node2D" parent="Flowers" unique_id=2085754157]
-
-[node name="Flower13" parent="Flowers/Flowers" unique_id=747231199 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(216, -304)
-sprite_frames = SubResource("6")
-
-[node name="Flower13" parent="Flowers/Flowers/Flower13" unique_id=1031669101 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(232, -304)
-sprite_frames = SubResource("6")
-
-[node name="Flower18" parent="Flowers/Flowers" unique_id=503444978 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(184, -304)
-sprite_frames = SubResource("6")
-
-[node name="Flower13" parent="Flowers/Flowers/Flower18" unique_id=403307053 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(232, -304)
-sprite_frames = SubResource("6")
-
-[node name="Flower14" parent="Flowers/Flowers" unique_id=31636930 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(264, -288)
-sprite_frames = SubResource("6")
-
-[node name="Flower14" parent="Flowers/Flowers/Flower14" unique_id=1387365974 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(-64, 0)
-sprite_frames = SubResource("6")
-
-[node name="Flower15" parent="Flowers/Flowers" unique_id=150428780 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(248, -288)
-sprite_frames = SubResource("6")
-
-[node name="Flower16" parent="Flowers/Flowers" unique_id=704459208 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(232, -288)
-sprite_frames = SubResource("6")
-
-[node name="Flower17" parent="Flowers/Flowers" unique_id=1763409309 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(263, -304)
-sprite_frames = SubResource("6")
-
-[node name="Flower38" parent="Flowers/Flowers" unique_id=375271240 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(8, -288)
-sprite_frames = SubResource("6")
-
-[node name="Flower39" parent="Flowers/Flowers" unique_id=72095783 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(-8, -288)
-sprite_frames = SubResource("6")
-
-[node name="Flower40" parent="Flowers/Flowers" unique_id=498688805 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(-40, -288)
-sprite_frames = SubResource("6")
-
-[node name="Flower41" parent="Flowers/Flowers" unique_id=1240814103 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(-8, -304)
-sprite_frames = SubResource("6")
-
-[node name="Flower42" parent="Flowers/Flowers" unique_id=836420509 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(56, -288)
-sprite_frames = SubResource("6")
-
-[node name="Flower43" parent="Flowers/Flowers" unique_id=607736804 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(72, -304)
-sprite_frames = SubResource("6")
-
-[node name="Flower44" parent="Flowers/Flowers" unique_id=1408298744 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(24, -288)
-sprite_frames = SubResource("6")
-
-[node name="Flower45" parent="Flowers/Flowers" unique_id=342421633 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(40, -288)
-sprite_frames = SubResource("6")
-
-[node name="Flowers" type="Node2D" parent="Flowers/Flowers" unique_id=2099908984]
-
-[node name="Flower10" parent="Flowers/Flowers/Flowers" unique_id=904524959 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(184, -288)
-sprite_frames = SubResource("6")
-
-[node name="Flower11" parent="Flowers/Flowers/Flowers" unique_id=1915047364 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(168, -304)
-sprite_frames = SubResource("6")
-
-[node name="Flower13" parent="Flowers/Flowers/Flowers" unique_id=1646804355 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(168, -288)
-sprite_frames = SubResource("6")
-
-[node name="Flower14" parent="Flowers/Flowers/Flowers" unique_id=1450432826 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(152, -288)
-sprite_frames = SubResource("6")
-
-[node name="Flower17" parent="Flowers/Flowers/Flowers" unique_id=445457368 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(200, -304)
-sprite_frames = SubResource("6")
-
-[node name="Flower38" parent="Flowers/Flowers/Flowers" unique_id=219940204 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(8, -304)
-sprite_frames = SubResource("6")
-
-[node name="Flower39" parent="Flowers/Flowers/Flowers" unique_id=1051971011 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(-72, -288)
-sprite_frames = SubResource("6")
-
-[node name="Flower40" parent="Flowers/Flowers/Flowers" unique_id=1001894616 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(-56, -304)
-sprite_frames = SubResource("6")
-
-[node name="Flower41" parent="Flowers/Flowers/Flowers" unique_id=418818138 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(-40, -304)
-sprite_frames = SubResource("6")
-
-[node name="Flower42" parent="Flowers/Flowers/Flowers" unique_id=786211824 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(72, -288)
-sprite_frames = SubResource("6")
-
-[node name="Flower43" parent="Flowers/Flowers/Flowers" unique_id=1606033578 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(88, -288)
-sprite_frames = SubResource("6")
-
-[node name="Flower44" parent="Flowers/Flowers/Flowers" unique_id=169707417 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(104, -288)
-sprite_frames = SubResource("6")
-
-[node name="Flower45" parent="Flowers/Flowers/Flowers" unique_id=2001030271 instance=ExtResource("5")]
-texture_filter = 1
-position = Vector2(88, -304)
-sprite_frames = SubResource("6")
 
 [node name="Collision Stuff" type="Node2D" parent="." unique_id=2070835712]
 y_sort_enabled = true

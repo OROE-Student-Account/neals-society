@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c20wvxucaup1k"
-path="res://.godot/imported/red_flower.png-fba92182192500370b7a6cf410129cbb.ctex"
+uid="uid://jadu8jmnyss6"
+path="res://.godot/imported/tile002.png-e7b56316ca9ffcd478f5f52241270570.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Flowers/red_flower.png"
-dest_files=["res://.godot/imported/red_flower.png-fba92182192500370b7a6cf410129cbb.ctex"]
+source_file="res://Assets/Flowers/tile002.png"
+dest_files=["res://.godot/imported/tile002.png-e7b56316ca9ffcd478f5f52241270570.ctex"]
 
 [params]
 

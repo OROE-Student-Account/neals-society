@@ -1,4 +1,4 @@
-[gd_resource type="AnimatedTexture" load_steps=9 format=3 uid="uid://bvqoocn8ivy6n"]
+[gd_resource type="AnimatedTexture" format=3 uid="uid://bvqoocn8ivy6n"]
 
 [ext_resource type="Texture2D" uid="uid://qp0o5uwkxrmx" path="res://Assets/Water/water_tileset8.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://bv7yhmbk7v2dm" path="res://Assets/Water/water_tileset2.png" id="2"]
