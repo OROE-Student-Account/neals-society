@@ -14,10 +14,22 @@ func _on_body_entered(body):
 		)
 		pickup()
 
+@onready var dialogue_root = $"Pickup Dialogue"
+
 func pickup():
+	if !picked_up:
+		return
 	picked_up = true
 	visible = false
-	$CollisionShape2D.disabled = true
+	$CollisionShape2D.disabled = true  # disable collision so it can't be triggered again
 
-func on_dialogue_closed():
-	dialogue_open = false
+
+
+
+func _on_body_entered(body: Node2D) -> void:
+	picked_up = true
+	Utils.get_scene_manager().transition_to_dialogue(dialogue_root, self) 
+
+
+func _on_body_exited(body: Node2D) -> void:
+	picked_up = false

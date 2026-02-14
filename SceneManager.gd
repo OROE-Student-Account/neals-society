@@ -20,8 +20,8 @@ func transition_exit_party_screen():
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 	transition_type = TransitionType.MENU_ONLY
 
-func transition_to_dialogue(option1, option2):
-	$DialogueBox.load_dialogue(option1, option2)
+func transition_to_dialogue(root_node, func_node):
+	$DialogueBox.start_dialogue(root_node, func_node)
 
 
 func transition_to_scene(new_scene: String, spawn_location, spawn_direction):
