@@ -40,6 +40,7 @@ offset_left = -221.0
 offset_top = 4.0
 offset_right = -121.0
 offset_bottom = 44.0
+theme_override_fonts/font = ExtResource("4_qxnh6")
 text = "BEEDRILL"
 
 [node name="Level" type="Label" parent="EnemyGrammarite" unique_id=1905606221]
@@ -81,6 +82,7 @@ offset_left = 99.0
 offset_top = -76.0
 offset_right = 199.0
 offset_bottom = -36.0
+theme_override_fonts/font = ExtResource("4_qxnh6")
 text = "BEEDRILL"
 
 [node name="Level" type="Label" parent="Grammarite" unique_id=711573346]
@@ -100,6 +102,24 @@ scale = Vector2(2, 1)
 texture = ExtResource("5_262jj")
 region_enabled = true
 region_rect = Rect2(24, 0, 24, 3)
+
+[node name="Health" type="Label" parent="Grammarite" unique_id=1393091545]
+offset_left = 195.0
+offset_top = -66.0
+offset_right = 235.0
+offset_bottom = -43.0
+theme_override_fonts/font = ExtResource("4_qxnh6")
+theme_override_font_sizes/font_size = 9
+text = "41"
+
+[node name="MaxHealth" type="Label" parent="Grammarite" unique_id=958881348]
+offset_left = 210.0
+offset_top = -66.0
+offset_right = 250.0
+offset_bottom = -43.0
+theme_override_fonts/font = ExtResource("4_qxnh6")
+theme_override_font_sizes/font_size = 9
+text = "230"
 
 [node name="DialogueBox" parent="." unique_id=1172649497 instance=ExtResource("6_l0uqe")]
 scale = Vector2(5, 5)

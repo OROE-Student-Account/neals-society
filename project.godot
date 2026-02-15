@@ -16,7 +16,9 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Pokemon Godot"
 run/main_scene="res://Scenes/SceneManager.tscn"
+config/quit_on_go_back=false
 config/features=PackedStringArray("4.6")
+config/icon="uid://bu6npg7f5rog8"
 
 [autoload]
 
