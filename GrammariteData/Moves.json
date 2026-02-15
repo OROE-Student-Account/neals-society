@@ -1,0 +1,6 @@
+{
+	"Bite": { "Damage": 10, "Accuracy": 0.5, "Type": "Animal" },
+	"Papercut": {}, 
+	"Howl": {}, 
+	"Dragon Dance": {}
+}

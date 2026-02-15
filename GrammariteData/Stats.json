@@ -1,0 +1,5 @@
+{
+	"Dog of Wood": { "Types": [ "Animal", "Nature" ], "Attack": 10, "Health": 25, "Speed": 1 },
+	"Sculpupture": { "Types": [ "Animal", "Nature" ], "Attack": 20, "Health": 50, "Speed": 2 },
+	"Orawolfi": { "Types": [ "Animal", "Paper" ], "Attack": 40, "Health": 100, "Speed": 4 }
+}

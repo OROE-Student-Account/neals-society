@@ -1,26 +1,158 @@
 [gd_scene format=3 uid="uid://bmbwuyg1k52wa"]
 
-[ext_resource type="Script" uid="uid://68man2oy86ff" path="res://Scripts/Battle.gd" id="1_c5ef4"]
+[ext_resource type="Script" uid="uid://68man2oy86ff" path="res://Scripts/BattleUI.gd" id="1_c5ef4"]
+[ext_resource type="Script" uid="uid://oiemmmw7t3ir" path="res://Scripts/BattleManager.gd" id="1_qxnh6"]
 [ext_resource type="Texture2D" uid="uid://ceuhh3g2in3j4" path="res://Assets/Pokemon/Pokemon15.png" id="2_u22qb"]
 [ext_resource type="Texture2D" uid="uid://b4nmamhpm0fsg" path="res://Assets/UI/Pokemon Party/standby_pokemon_background.png" id="3_6yjxy"]
 [ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="4_qxnh6"]
-[ext_resource type="Texture2D" uid="uid://cxd28r33uafik" path="res://Assets/UI/Pokemon Party/healthbar.png" id="5_262jj"]
-[ext_resource type="PackedScene" uid="uid://i0am2murs47p" path="res://Scenes/Dialogue.tscn" id="6_l0uqe"]
+[ext_resource type="Script" uid="uid://cshmcr6ld2cga" path="res://Scripts/Grammarite.gd" id="6_6yjxy"]
+[ext_resource type="Texture2D" uid="uid://dw17mm63araxi" path="res://Assets/UI/menu_box_1.png" id="7_6yjxy"]
 [ext_resource type="Texture2D" uid="uid://hpyxtuycfcbw" path="res://Assets/UI/Pokemon Party/exit_background_button.png" id="7_xmk5i"]
+[ext_resource type="Texture2D" uid="uid://bofmcuxvqsoyg" path="res://Assets/UI/ui_arrow_left_right.png" id="9_qxnh6"]
+
+[sub_resource type="Animation" id="Animation_6yjxy"]
+resource_name = "Attack"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Grammarite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.36666667, 0.46666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-32, 32), Vector2(-56, 48), Vector2(-96, 72), Vector2(-64, 56), Vector2(-32, 32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Grammarite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.23333333, 0.33333334, 0.46666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.23561946, -0.42586035, -0.111823216, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_qxnh6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Grammarite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-32, 32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Grammarite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_262jj"]
+_data = {
+&"Attack": SubResource("Animation_6yjxy"),
+&"RESET": SubResource("Animation_qxnh6")
+}
+
+[sub_resource type="Animation" id="Animation_l0uqe"]
+resource_name = "Attack"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Grammarite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.36666667, 0.46666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(48, -32), Vector2(72, -64), Vector2(128, -88), Vector2(72, -64), Vector2(48, -32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Grammarite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.23333333, 0.33333334, 0.46666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.23561946, 0.4712389, 0.23561946, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_xmk5i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Grammarite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(48, -32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Grammarite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tiokb"]
+_data = {
+&"Attack": SubResource("Animation_l0uqe"),
+&"RESET": SubResource("Animation_xmk5i")
+}
 
 [node name="BattleScene" type="Node2D" unique_id=1956242669]
-script = ExtResource("1_c5ef4")
+
+[node name="Background" type="ColorRect" parent="." unique_id=703872017]
+offset_right = 240.0
+offset_bottom = 160.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1995767346]
 anchor_mode = 0
 zoom = Vector2(5, 5)
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=703872017]
-offset_right = 240.0
-offset_bottom = 160.0
+[node name="BattleManager" type="Node2D" parent="." unique_id=346605181 node_paths=PackedStringArray("player_grammarite", "enemy_grammarite", "battle_ui")]
+script = ExtResource("1_qxnh6")
+player_grammarite = NodePath("../Grammarite")
+enemy_grammarite = NodePath("../EnemyGrammarite")
+battle_ui = NodePath("../BattleUI")
 
 [node name="EnemyGrammarite" type="Node2D" parent="." unique_id=1611356939]
 position = Vector2(240, 0)
+script = ExtResource("6_6yjxy")
+is_enemy = true
+grammarite_name = "Orawolfi"
 
 [node name="Grammarite" type="Sprite2D" parent="EnemyGrammarite" unique_id=617380561]
 texture_filter = 1
@@ -53,15 +185,21 @@ theme_override_fonts/font = ExtResource("4_qxnh6")
 theme_override_font_sizes/font_size = 11
 text = "67"
 
-[node name="HealthBar" type="Sprite2D" parent="EnemyGrammarite" unique_id=353080983]
-position = Vector2(-120, 11)
-scale = Vector2(2, 1)
-texture = ExtResource("5_262jj")
-region_enabled = true
-region_rect = Rect2(24, 0, 24, 3)
+[node name="HealthBar" type="ColorRect" parent="EnemyGrammarite" unique_id=646738303]
+offset_left = -144.0
+offset_top = 9.0
+offset_right = -96.0
+offset_bottom = 12.0
+color = Color(0, 1, 0, 1)
 
-[node name="Grammarite" type="Node2D" parent="." unique_id=1000370286]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="EnemyGrammarite" unique_id=1377091192]
+libraries/ = SubResource("AnimationLibrary_262jj")
+
+[node name="Grammarite" type="Node2D" parent="." unique_id=1000370286 node_paths=PackedStringArray("move_vbox")]
 position = Vector2(0, 160)
+script = ExtResource("6_6yjxy")
+grammarite_name = "Orawolfi"
+move_vbox = NodePath("../BattleUI/MoveList/VBoxContainer")
 
 [node name="Grammarite" type="Sprite2D" parent="Grammarite" unique_id=93670101]
 texture_filter = 1
@@ -96,13 +234,6 @@ theme_override_fonts/font = ExtResource("4_qxnh6")
 theme_override_font_sizes/font_size = 11
 text = "67"
 
-[node name="HealthBar" type="Sprite2D" parent="Grammarite" unique_id=319711873]
-position = Vector2(200, -69)
-scale = Vector2(2, 1)
-texture = ExtResource("5_262jj")
-region_enabled = true
-region_rect = Rect2(24, 0, 24, 3)
-
 [node name="Health" type="Label" parent="Grammarite" unique_id=1393091545]
 offset_left = 195.0
 offset_top = -66.0
@@ -121,29 +252,95 @@ theme_override_fonts/font = ExtResource("4_qxnh6")
 theme_override_font_sizes/font_size = 9
 text = "230"
 
-[node name="DialogueBox" parent="." unique_id=1172649497 instance=ExtResource("6_l0uqe")]
-scale = Vector2(5, 5)
-transform = Transform2D(5, 0, 0, 5, 0, 0)
+[node name="HealthBar" type="ColorRect" parent="Grammarite" unique_id=1225750269]
+offset_left = 176.0
+offset_top = -71.0
+offset_right = 224.0
+offset_bottom = -68.0
+color = Color(0, 1, 0, 1)
 
-[node name="Buttons" type="Node2D" parent="." unique_id=967738820]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Grammarite" unique_id=515459137]
+libraries/ = SubResource("AnimationLibrary_tiokb")
+
+[node name="BattleUI" type="Node2D" parent="." unique_id=1605048733 node_paths=PackedStringArray("grammarite_node")]
+script = ExtResource("1_c5ef4")
+grammarite_node = NodePath("../Grammarite")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="BattleUI" unique_id=1834684650]
+offset_left = 112.0
+offset_top = 104.0
+offset_right = 240.0
+offset_bottom = 160.0
+texture = ExtResource("7_6yjxy")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Buttons" type="Node2D" parent="BattleUI" unique_id=967738820]
 position = Vector2(240, 160)
 
-[node name="switchPkmn" type="Sprite2D" parent="Buttons" unique_id=698753109]
-position = Vector2(-32, -48)
+[node name="switchPkmn" type="Sprite2D" parent="BattleUI/Buttons" unique_id=698753109]
+position = Vector2(-32, -40)
 texture = ExtResource("7_xmk5i")
 hframes = 2
 
-[node name="run" type="Sprite2D" parent="Buttons" unique_id=1097383952]
+[node name="run" type="Sprite2D" parent="BattleUI/Buttons" unique_id=1097383952]
 position = Vector2(-32, -16)
 texture = ExtResource("7_xmk5i")
 hframes = 2
 
-[node name="item" type="Sprite2D" parent="Buttons" unique_id=1814780476]
+[node name="item" type="Sprite2D" parent="BattleUI/Buttons" unique_id=1814780476]
 position = Vector2(-96, -16)
 texture = ExtResource("7_xmk5i")
 hframes = 2
 
-[node name="fight" type="Sprite2D" parent="Buttons" unique_id=1244250863]
-position = Vector2(-96, -48)
+[node name="fight" type="Sprite2D" parent="BattleUI/Buttons" unique_id=1244250863]
+position = Vector2(-96, -40)
 texture = ExtResource("7_xmk5i")
 hframes = 2
+
+[node name="MoveList" type="Node2D" parent="BattleUI" unique_id=577308921]
+visible = false
+position = Vector2(112, 104)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BattleUI/MoveList" unique_id=675319034]
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 128.0
+offset_bottom = 128.0
+
+[node name="Move1" type="Label" parent="BattleUI/MoveList/VBoxContainer" unique_id=1697623063]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_qxnh6")
+theme_override_font_sizes/font_size = 10
+text = "Fireball"
+
+[node name="Move2" type="Label" parent="BattleUI/MoveList/VBoxContainer" unique_id=691485838]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_qxnh6")
+theme_override_font_sizes/font_size = 10
+text = "Earthquake"
+
+[node name="Move3" type="Label" parent="BattleUI/MoveList/VBoxContainer" unique_id=1698969560]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_qxnh6")
+theme_override_font_sizes/font_size = 10
+text = "Dragon Dance"
+
+[node name="Move4" type="Label" parent="BattleUI/MoveList/VBoxContainer" unique_id=238561716]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_qxnh6")
+theme_override_font_sizes/font_size = 10
+text = "Dig"
+
+[node name="Arrow" type="TextureRect" parent="BattleUI/MoveList" unique_id=1491524785]
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 14.0
+offset_bottom = 17.0
+texture = ExtResource("9_qxnh6")
