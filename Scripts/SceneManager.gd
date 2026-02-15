@@ -1,11 +1,11 @@
 extends Node2D
 
-var next_scene = null
+var next_scene: = ""
 
 var player_location = Vector2(0, 0)
 var player_direction = Vector2(0, 0)
 
-enum TransitionType { NEW_SCENE, PARTY_SCREEN, MENU_ONLY }
+enum TransitionType { NEW_SCENE, PARTY_SCREEN, MENU_ONLY, BATTLE }
 var transition_type = TransitionType.NEW_SCENE
 
 # Called when the node enters the scene tree for the first time.
@@ -23,6 +23,18 @@ func transition_exit_party_screen():
 func transition_to_dialogue(root_node, func_node):
 	$DialogueBox.start_dialogue(root_node, func_node)
 
+func transition_to_battle():
+	next_scene = $CurrentScene.get_child(0).scene_file_path
+	transition_type = TransitionType.BATTLE
+	var player = Utils.get_player()
+	player.set_physics_process(false)
+	player_location = player.position
+	player_direction = player.input_direction
+	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
+
+func transition_exit_battle():
+	transition_type = TransitionType.NEW_SCENE
+	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 
 func transition_to_scene(new_scene: String, spawn_location, spawn_direction):
 	next_scene = new_scene
@@ -30,7 +42,7 @@ func transition_to_scene(new_scene: String, spawn_location, spawn_direction):
 	player_direction = spawn_direction
 	transition_type = TransitionType.NEW_SCENE
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
-	
+
 func finished_fading():
 	match transition_type:
 		TransitionType.NEW_SCENE:
@@ -43,6 +55,8 @@ func finished_fading():
 			$Menu.load_party_screen()
 		TransitionType.MENU_ONLY:
 			$Menu.unload_party_screen()
-		
+		TransitionType.BATTLE:
+			$CurrentScene.get_child(0).queue_free()
+			$CurrentScene.add_child(load("res://Scenes/Battle.tscn").instantiate())
 	
 	$ScreenTransition/AnimationPlayer.play("FadeToNormal")

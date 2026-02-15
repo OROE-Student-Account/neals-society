@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkml6dq0xfdp7"]
+[gd_scene format=3 uid="uid://bkml6dq0xfdp7"]
 
 [ext_resource type="Texture2D" uid="uid://dw17mm63araxi" path="res://Assets/UI/menu_box_1.png" id="1"]
 [ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="2"]
 [ext_resource type="Texture2D" uid="uid://bofmcuxvqsoyg" path="res://Assets/UI/ui_arrow_left_right.png" id="3"]
-[ext_resource type="Script" uid="uid://by1tek04w14jl" path="res://Menu.gd" id="4"]
+[ext_resource type="Script" uid="uid://by1tek04w14jl" path="res://Scripts/Menu.gd" id="4"]
 
 [sub_resource type="FontFile" id="1"]
 fallbacks = Array[Font]([ExtResource("2"), ExtResource("2")])

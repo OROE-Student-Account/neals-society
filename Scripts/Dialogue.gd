@@ -10,8 +10,8 @@ var vbox: Node = null # options container
 
 
 # Dialogue tree variables
-var current_node: DialogueNode = null
-var dialogue_root: DialogueNode = null
+var current_node: Node = null
+var dialogue_root: Node = null
 var target_node: Node = null  # Node that will receive function calls
 
 

@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-const PokemonPartyScreen = preload("res://PokemonPartyScreen.tscn")
+const PokemonPartyScreen = preload("res://Scenes/PokemonPartyScreen.tscn")
 
 @onready var select_arrow = $Control/NinePatchRect/TextureRect
 @onready var menu = $Control

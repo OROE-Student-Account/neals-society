@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dcrhfjxf127us"]
+[gd_scene format=3 uid="uid://dcrhfjxf127us"]
 
-[ext_resource type="PackedScene" uid="uid://frwrpo21spv1" path="res://Town.tscn" id="1"]
-[ext_resource type="Script" uid="uid://bgjd8lvacu6gg" path="res://SceneManager.gd" id="2"]
-[ext_resource type="PackedScene" uid="uid://bkml6dq0xfdp7" path="res://Menu.tscn" id="3"]
-[ext_resource type="PackedScene" uid="uid://i0am2murs47p" path="res://dialogue_box.tscn" id="4_026ex"]
-[ext_resource type="Script" uid="uid://dvw8x5lu45aba" path="res://dialogue.gd" id="5_8epxt"]
+[ext_resource type="PackedScene" uid="uid://frwrpo21spv1" path="res://Scenes/Town.tscn" id="1"]
+[ext_resource type="Script" uid="uid://bgjd8lvacu6gg" path="res://Scripts/SceneManager.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://bkml6dq0xfdp7" path="res://Scenes/Menu.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://i0am2murs47p" path="res://Scenes/Dialogue.tscn" id="4_026ex"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "FadeToBlack"
@@ -56,30 +55,28 @@ _data = {
 &"FadeToNormal": SubResource("2")
 }
 
-[node name="SceneManager" type="Node2D"]
+[node name="SceneManager" type="Node2D" unique_id=1577685840]
 texture_filter = 1
 script = ExtResource("2")
 
-[node name="CurrentScene" type="Node2D" parent="."]
+[node name="CurrentScene" type="Node2D" parent="." unique_id=1558434157]
 
-[node name="Town" parent="CurrentScene" instance=ExtResource("1")]
+[node name="Town" parent="CurrentScene" unique_id=202960931 instance=ExtResource("1")]
 
-[node name="Menu" parent="." instance=ExtResource("3")]
+[node name="Menu" parent="." unique_id=1728288558 instance=ExtResource("3")]
 
-[node name="ScreenTransition" type="CanvasLayer" parent="."]
+[node name="ScreenTransition" type="CanvasLayer" parent="." unique_id=987668559]
 
-[node name="ColorRect" type="ColorRect" parent="ScreenTransition"]
+[node name="ColorRect" type="ColorRect" parent="ScreenTransition" unique_id=294414973]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color(0, 0, 0, 0)
+color = Color(0, 0, 0, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ScreenTransition"]
-libraries = {
-&"": SubResource("AnimationLibrary_ik8mu")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScreenTransition" unique_id=434253100]
+libraries/ = SubResource("AnimationLibrary_ik8mu")
+autoplay = &"FadeToNormal"
 
-[node name="DialogueBox" parent="." instance=ExtResource("4_026ex")]
+[node name="DialogueBox" parent="." unique_id=1573204064 instance=ExtResource("4_026ex")]
 scale = Vector2(5, 5)
 transform = Transform2D(5, 0, 0, 5, 0, 0)
-script = ExtResource("5_8epxt")

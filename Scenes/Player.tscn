@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://i70qso44vgve"]
 
 [ext_resource type="Texture2D" uid="uid://c0j35px6j8da2" path="res://Assets/Player/Male_Spritesheet.png" id="1"]
-[ext_resource type="Script" uid="uid://doksqu5xa217" path="res://Player.gd" id="2"]
+[ext_resource type="Script" uid="uid://doksqu5xa217" path="res://Scripts/Player.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://0w0ax3ywv5qt" path="res://Assets/Player/player_shadow.png" id="3"]
 
 [sub_resource type="RectangleShape2D" id="1"]

@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://bmbwuyg1k52wa"]
+
+[ext_resource type="Script" uid="uid://68man2oy86ff" path="res://Scripts/Battle.gd" id="1_c5ef4"]
+[ext_resource type="Texture2D" uid="uid://ceuhh3g2in3j4" path="res://Assets/Pokemon/Pokemon15.png" id="2_u22qb"]
+[ext_resource type="Texture2D" uid="uid://b4nmamhpm0fsg" path="res://Assets/UI/Pokemon Party/standby_pokemon_background.png" id="3_6yjxy"]
+[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="4_qxnh6"]
+[ext_resource type="Texture2D" uid="uid://cxd28r33uafik" path="res://Assets/UI/Pokemon Party/healthbar.png" id="5_262jj"]
+[ext_resource type="PackedScene" uid="uid://i0am2murs47p" path="res://Scenes/Dialogue.tscn" id="6_l0uqe"]
+[ext_resource type="Texture2D" uid="uid://hpyxtuycfcbw" path="res://Assets/UI/Pokemon Party/exit_background_button.png" id="7_xmk5i"]
+
+[node name="BattleScene" type="Node2D" unique_id=1956242669]
+script = ExtResource("1_c5ef4")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1995767346]
+anchor_mode = 0
+zoom = Vector2(5, 5)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=703872017]
+offset_right = 240.0
+offset_bottom = 160.0
+
+[node name="EnemyGrammarite" type="Node2D" parent="." unique_id=1611356939]
+position = Vector2(240, 0)
+
+[node name="Grammarite" type="Sprite2D" parent="EnemyGrammarite" unique_id=617380561]
+texture_filter = 1
+position = Vector2(-32, 32)
+texture = ExtResource("2_u22qb")
+region_enabled = true
+region_rect = Rect2(0, 34, 64, 64)
+
+[node name="Sprite2D2" type="Sprite2D" parent="EnemyGrammarite" unique_id=16898034]
+position = Vector2(-165, 12)
+texture = ExtResource("3_6yjxy")
+hframes = 2
+
+[node name="Name" type="Label" parent="EnemyGrammarite" unique_id=330716404]
+custom_minimum_size = Vector2(100, 0)
+offset_left = -221.0
+offset_top = 4.0
+offset_right = -121.0
+offset_bottom = 44.0
+text = "BEEDRILL"
+
+[node name="Level" type="Label" parent="EnemyGrammarite" unique_id=1905606221]
+offset_left = -189.0
+offset_top = 16.0
+offset_right = -149.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0.26666668, 0.26666668, 0.49803922, 1)
+theme_override_fonts/font = ExtResource("4_qxnh6")
+theme_override_font_sizes/font_size = 11
+text = "67"
+
+[node name="HealthBar" type="Sprite2D" parent="EnemyGrammarite" unique_id=353080983]
+position = Vector2(-120, 11)
+scale = Vector2(2, 1)
+texture = ExtResource("5_262jj")
+region_enabled = true
+region_rect = Rect2(24, 0, 24, 3)
+
+[node name="Grammarite" type="Node2D" parent="." unique_id=1000370286]
+position = Vector2(0, 160)
+
+[node name="Grammarite" type="Sprite2D" parent="Grammarite" unique_id=93670101]
+texture_filter = 1
+position = Vector2(48, -32)
+texture = ExtResource("2_u22qb")
+region_enabled = true
+region_rect = Rect2(0, 99, 64, 64)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Grammarite" unique_id=1506915906]
+position = Vector2(155, -68)
+texture = ExtResource("3_6yjxy")
+hframes = 2
+
+[node name="Name" type="Label" parent="Grammarite" unique_id=760755875]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 0)
+offset_left = 99.0
+offset_top = -76.0
+offset_right = 199.0
+offset_bottom = -36.0
+text = "BEEDRILL"
+
+[node name="Level" type="Label" parent="Grammarite" unique_id=711573346]
+texture_filter = 1
+offset_left = 131.0
+offset_top = -64.0
+offset_right = 171.0
+offset_bottom = -41.0
+theme_override_colors/font_color = Color(0.26666668, 0.26666668, 0.49803922, 1)
+theme_override_fonts/font = ExtResource("4_qxnh6")
+theme_override_font_sizes/font_size = 11
+text = "67"
+
+[node name="HealthBar" type="Sprite2D" parent="Grammarite" unique_id=319711873]
+position = Vector2(200, -69)
+scale = Vector2(2, 1)
+texture = ExtResource("5_262jj")
+region_enabled = true
+region_rect = Rect2(24, 0, 24, 3)
+
+[node name="DialogueBox" parent="." unique_id=1172649497 instance=ExtResource("6_l0uqe")]
+scale = Vector2(5, 5)
+transform = Transform2D(5, 0, 0, 5, 0, 0)
+
+[node name="Buttons" type="Node2D" parent="." unique_id=967738820]
+position = Vector2(240, 160)
+
+[node name="switchPkmn" type="Sprite2D" parent="Buttons" unique_id=698753109]
+position = Vector2(-32, -48)
+texture = ExtResource("7_xmk5i")
+hframes = 2
+
+[node name="run" type="Sprite2D" parent="Buttons" unique_id=1097383952]
+position = Vector2(-32, -16)
+texture = ExtResource("7_xmk5i")
+hframes = 2
+
+[node name="item" type="Sprite2D" parent="Buttons" unique_id=1814780476]
+position = Vector2(-96, -16)
+texture = ExtResource("7_xmk5i")
+hframes = 2
+
+[node name="fight" type="Sprite2D" parent="Buttons" unique_id=1244250863]
+position = Vector2(-96, -48)
+texture = ExtResource("7_xmk5i")
+hframes = 2

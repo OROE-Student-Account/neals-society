@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://s48ynud6ed77"]
+[gd_scene format=3 uid="uid://s48ynud6ed77"]
 
 [ext_resource type="Texture2D" uid="uid://fblj6wvub8hg" path="res://Assets/UI/Pokemon Party/party_background.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://cuxb2blx126im" path="res://Assets/UI/Pokemon Party/main_pokemon_background.png" id="2"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://x2r2smipejox" path="res://Assets/Pokemon/Pikachu.png" id="11"]
 [ext_resource type="Texture2D" uid="uid://b81iqrvr8ywd1" path="res://Assets/Pokemon/Onix.png" id="12"]
 [ext_resource type="Texture2D" uid="uid://hpyxtuycfcbw" path="res://Assets/UI/Pokemon Party/exit_background_button.png" id="13"]
-[ext_resource type="Script" path="res://PokemonPartyScreen.gd" id="14"]
+[ext_resource type="Script" uid="uid://gtkl713auage" path="res://Scripts/PokemonPartyScreen.gd" id="14"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "Idle"
@@ -41,6 +41,15 @@ fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -242,42 +251,40 @@ _data = {
 &"Idle": SubResource("7")
 }
 
-[node name="PokemonPartyScreen" type="Node2D"]
+[node name="PokemonPartyScreen" type="Node2D" unique_id=100946892]
 texture_filter = 1
 script = ExtResource("14")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1930431935]
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1")
 
-[node name="FirstPokemonSlot" type="Node2D" parent="."]
+[node name="FirstPokemonSlot" type="Node2D" parent="." unique_id=766143109]
 
-[node name="Background" type="Sprite2D" parent="FirstPokemonSlot"]
+[node name="Background" type="Sprite2D" parent="FirstPokemonSlot" unique_id=794630042]
 position = Vector2(44, 47)
 texture = ExtResource("2")
 hframes = 2
 
-[node name="PokemonPartySprite" type="Sprite2D" parent="FirstPokemonSlot"]
+[node name="PokemonPartySprite" type="Sprite2D" parent="FirstPokemonSlot" unique_id=85660275]
 position = Vector2(18, 40)
 texture = ExtResource("3")
 hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
 
-[node name="PokemonName" type="Sprite2D" parent="FirstPokemonSlot"]
+[node name="PokemonName" type="Sprite2D" parent="FirstPokemonSlot" unique_id=1880021042]
 position = Vector2(68, 42)
 texture = ExtResource("3")
 region_enabled = true
 region_rect = Rect2(0, -1, 73, 10)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="FirstPokemonSlot"]
-libraries = {
-&"": SubResource("AnimationLibrary_4tkum")
-}
-autoplay = "Idle"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FirstPokemonSlot" unique_id=661708953]
+libraries/ = SubResource("AnimationLibrary_4tkum")
+autoplay = &"Idle"
 
-[node name="LevelLabel" type="Label" parent="FirstPokemonSlot"]
+[node name="LevelLabel" type="Label" parent="FirstPokemonSlot" unique_id=2141775284]
 offset_left = 50.0
 offset_top = 48.0
 offset_right = 90.0
@@ -286,7 +293,7 @@ theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "4"
 
-[node name="HealthLabel" type="Label" parent="FirstPokemonSlot"]
+[node name="HealthLabel" type="Label" parent="FirstPokemonSlot" unique_id=445894989]
 offset_left = 49.0
 offset_top = 64.0
 offset_right = 89.0
@@ -295,7 +302,7 @@ theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "23"
 
-[node name="MaxHealthLabel" type="Label" parent="FirstPokemonSlot"]
+[node name="MaxHealthLabel" type="Label" parent="FirstPokemonSlot" unique_id=1493653083]
 offset_left = 67.0
 offset_top = 64.0
 offset_right = 107.0
@@ -304,46 +311,44 @@ theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "30"
 
-[node name="GenderIcon" type="Sprite2D" parent="FirstPokemonSlot"]
+[node name="GenderIcon" type="Sprite2D" parent="FirstPokemonSlot" unique_id=1588046005]
 position = Vector2(75, 52)
 texture = ExtResource("5")
 hframes = 2
 
-[node name="HealthBar" type="Sprite2D" parent="FirstPokemonSlot"]
+[node name="HealthBar" type="Sprite2D" parent="FirstPokemonSlot" unique_id=1230465089]
 position = Vector2(56, 61)
 scale = Vector2(2, 1)
 texture = ExtResource("6")
 region_enabled = true
 region_rect = Rect2(24, 0, 24, 3)
 
-[node name="SecondPokemonSlot" type="Node2D" parent="."]
+[node name="SecondPokemonSlot" type="Node2D" parent="." unique_id=2092387560]
 position = Vector2(119, -26)
 
-[node name="Background" type="Sprite2D" parent="SecondPokemonSlot"]
+[node name="Background" type="Sprite2D" parent="SecondPokemonSlot" unique_id=1700462057]
 position = Vector2(44, 47)
 texture = ExtResource("7")
 hframes = 2
 
-[node name="PokemonPartySprite" type="Sprite2D" parent="SecondPokemonSlot"]
+[node name="PokemonPartySprite" type="Sprite2D" parent="SecondPokemonSlot" unique_id=932377883]
 position = Vector2(-16, 48)
 texture = ExtResource("8")
 hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
 
-[node name="PokemonName" type="Sprite2D" parent="SecondPokemonSlot"]
+[node name="PokemonName" type="Sprite2D" parent="SecondPokemonSlot" unique_id=1404058218]
 position = Vector2(35, 44)
 texture = ExtResource("8")
 region_enabled = true
 region_rect = Rect2(0, -1, 73, 10)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPokemonSlot"]
-libraries = {
-&"": SubResource("AnimationLibrary_yeqs3")
-}
-autoplay = "Idle"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPokemonSlot" unique_id=853748675]
+libraries/ = SubResource("AnimationLibrary_yeqs3")
+autoplay = &"Idle"
 
-[node name="LevelLabel" type="Label" parent="SecondPokemonSlot"]
+[node name="LevelLabel" type="Label" parent="SecondPokemonSlot" unique_id=65533669]
 offset_left = 19.0
 offset_top = 49.0
 offset_right = 59.0
@@ -352,7 +357,7 @@ theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "4"
 
-[node name="HealthLabel" type="Label" parent="SecondPokemonSlot"]
+[node name="HealthLabel" type="Label" parent="SecondPokemonSlot" unique_id=1204895558]
 offset_left = 82.0
 offset_top = 49.0
 offset_right = 122.0
@@ -361,7 +366,7 @@ theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "23"
 
-[node name="MaxHealthLabel" type="Label" parent="SecondPokemonSlot"]
+[node name="MaxHealthLabel" type="Label" parent="SecondPokemonSlot" unique_id=1888917229]
 offset_left = 100.0
 offset_top = 49.0
 offset_right = 140.0
@@ -370,46 +375,44 @@ theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "30"
 
-[node name="GenderIcon" type="Sprite2D" parent="SecondPokemonSlot"]
+[node name="GenderIcon" type="Sprite2D" parent="SecondPokemonSlot" unique_id=17974113]
 position = Vector2(44, 54)
 texture = ExtResource("5")
 hframes = 2
 
-[node name="HealthBar" type="Sprite2D" parent="SecondPokemonSlot"]
+[node name="HealthBar" type="Sprite2D" parent="SecondPokemonSlot" unique_id=198419045]
 position = Vector2(89, 46)
 scale = Vector2(2, 1)
 texture = ExtResource("6")
 region_enabled = true
 region_rect = Rect2(24, 0, 24, 3)
 
-[node name="ThirdPokemonSlot" type="Node2D" parent="."]
+[node name="ThirdPokemonSlot" type="Node2D" parent="." unique_id=529554492]
 position = Vector2(119, -2)
 
-[node name="Background" type="Sprite2D" parent="ThirdPokemonSlot"]
+[node name="Background" type="Sprite2D" parent="ThirdPokemonSlot" unique_id=207660173]
 position = Vector2(44, 47)
 texture = ExtResource("7")
 hframes = 2
 
-[node name="PokemonPartySprite" type="Sprite2D" parent="ThirdPokemonSlot"]
+[node name="PokemonPartySprite" type="Sprite2D" parent="ThirdPokemonSlot" unique_id=1381254744]
 position = Vector2(-16, 48)
 texture = ExtResource("9")
 hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
 
-[node name="PokemonName" type="Sprite2D" parent="ThirdPokemonSlot"]
+[node name="PokemonName" type="Sprite2D" parent="ThirdPokemonSlot" unique_id=634138031]
 position = Vector2(35, 44)
 texture = ExtResource("9")
 region_enabled = true
 region_rect = Rect2(0, -1, 73, 10)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ThirdPokemonSlot"]
-libraries = {
-&"": SubResource("AnimationLibrary_qb61y")
-}
-autoplay = "Idle"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ThirdPokemonSlot" unique_id=1314531005]
+libraries/ = SubResource("AnimationLibrary_qb61y")
+autoplay = &"Idle"
 
-[node name="LevelLabel" type="Label" parent="ThirdPokemonSlot"]
+[node name="LevelLabel" type="Label" parent="ThirdPokemonSlot" unique_id=421201060]
 offset_left = 19.0
 offset_top = 49.0
 offset_right = 59.0
@@ -418,7 +421,7 @@ theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "4"
 
-[node name="HealthLabel" type="Label" parent="ThirdPokemonSlot"]
+[node name="HealthLabel" type="Label" parent="ThirdPokemonSlot" unique_id=2081258015]
 offset_left = 82.0
 offset_top = 49.0
 offset_right = 122.0
@@ -427,7 +430,7 @@ theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "23"
 
-[node name="MaxHealthLabel" type="Label" parent="ThirdPokemonSlot"]
+[node name="MaxHealthLabel" type="Label" parent="ThirdPokemonSlot" unique_id=965856757]
 offset_left = 100.0
 offset_top = 49.0
 offset_right = 140.0
@@ -436,46 +439,44 @@ theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "30"
 
-[node name="GenderIcon" type="Sprite2D" parent="ThirdPokemonSlot"]
+[node name="GenderIcon" type="Sprite2D" parent="ThirdPokemonSlot" unique_id=1187279616]
 position = Vector2(44, 54)
 texture = ExtResource("5")
 hframes = 2
 
-[node name="HealthBar" type="Sprite2D" parent="ThirdPokemonSlot"]
+[node name="HealthBar" type="Sprite2D" parent="ThirdPokemonSlot" unique_id=760523594]
 position = Vector2(89, 46)
 scale = Vector2(2, 1)
 texture = ExtResource("6")
 region_enabled = true
 region_rect = Rect2(24, 0, 24, 3)
 
-[node name="FourthPokemonSlot" type="Node2D" parent="."]
+[node name="FourthPokemonSlot" type="Node2D" parent="." unique_id=800206905]
 position = Vector2(119, 22)
 
-[node name="Background" type="Sprite2D" parent="FourthPokemonSlot"]
+[node name="Background" type="Sprite2D" parent="FourthPokemonSlot" unique_id=467079812]
 position = Vector2(44, 47)
 texture = ExtResource("7")
 hframes = 2
 
-[node name="PokemonPartySprite" type="Sprite2D" parent="FourthPokemonSlot"]
+[node name="PokemonPartySprite" type="Sprite2D" parent="FourthPokemonSlot" unique_id=754777814]
 position = Vector2(-16, 48)
 texture = ExtResource("10")
 hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
 
-[node name="PokemonName" type="Sprite2D" parent="FourthPokemonSlot"]
+[node name="PokemonName" type="Sprite2D" parent="FourthPokemonSlot" unique_id=854313703]
 position = Vector2(35, 44)
 texture = ExtResource("10")
 region_enabled = true
 region_rect = Rect2(0, -1, 73, 10)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="FourthPokemonSlot"]
-libraries = {
-&"": SubResource("AnimationLibrary_ipa8c")
-}
-autoplay = "Idle"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FourthPokemonSlot" unique_id=2032902628]
+libraries/ = SubResource("AnimationLibrary_ipa8c")
+autoplay = &"Idle"
 
-[node name="LevelLabel" type="Label" parent="FourthPokemonSlot"]
+[node name="LevelLabel" type="Label" parent="FourthPokemonSlot" unique_id=1621439726]
 offset_left = 19.0
 offset_top = 49.0
 offset_right = 59.0
@@ -484,7 +485,7 @@ theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "4"
 
-[node name="HealthLabel" type="Label" parent="FourthPokemonSlot"]
+[node name="HealthLabel" type="Label" parent="FourthPokemonSlot" unique_id=318959310]
 offset_left = 82.0
 offset_top = 49.0
 offset_right = 122.0
@@ -493,7 +494,7 @@ theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "23"
 
-[node name="MaxHealthLabel" type="Label" parent="FourthPokemonSlot"]
+[node name="MaxHealthLabel" type="Label" parent="FourthPokemonSlot" unique_id=2052646217]
 offset_left = 100.0
 offset_top = 49.0
 offset_right = 140.0
@@ -502,46 +503,44 @@ theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "30"
 
-[node name="GenderIcon" type="Sprite2D" parent="FourthPokemonSlot"]
+[node name="GenderIcon" type="Sprite2D" parent="FourthPokemonSlot" unique_id=74480805]
 position = Vector2(44, 54)
 texture = ExtResource("5")
 hframes = 2
 
-[node name="HealthBar" type="Sprite2D" parent="FourthPokemonSlot"]
+[node name="HealthBar" type="Sprite2D" parent="FourthPokemonSlot" unique_id=1544817251]
 position = Vector2(89, 46)
 scale = Vector2(2, 1)
 texture = ExtResource("6")
 region_enabled = true
 region_rect = Rect2(24, 0, 24, 3)
 
-[node name="FifthPokemonSlot" type="Node2D" parent="."]
+[node name="FifthPokemonSlot" type="Node2D" parent="." unique_id=2133650784]
 position = Vector2(119, 46)
 
-[node name="Background" type="Sprite2D" parent="FifthPokemonSlot"]
+[node name="Background" type="Sprite2D" parent="FifthPokemonSlot" unique_id=725329517]
 position = Vector2(44, 47)
 texture = ExtResource("7")
 hframes = 2
 
-[node name="PokemonPartySprite" type="Sprite2D" parent="FifthPokemonSlot"]
+[node name="PokemonPartySprite" type="Sprite2D" parent="FifthPokemonSlot" unique_id=128367754]
 position = Vector2(-16, 48)
 texture = ExtResource("11")
 hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
 
-[node name="PokemonName" type="Sprite2D" parent="FifthPokemonSlot"]
+[node name="PokemonName" type="Sprite2D" parent="FifthPokemonSlot" unique_id=1133011864]
 position = Vector2(35, 44)
 texture = ExtResource("11")
 region_enabled = true
 region_rect = Rect2(0, -1, 73, 10)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="FifthPokemonSlot"]
-libraries = {
-&"": SubResource("AnimationLibrary_1xij3")
-}
-autoplay = "Idle"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FifthPokemonSlot" unique_id=1658595765]
+libraries/ = SubResource("AnimationLibrary_1xij3")
+autoplay = &"Idle"
 
-[node name="LevelLabel" type="Label" parent="FifthPokemonSlot"]
+[node name="LevelLabel" type="Label" parent="FifthPokemonSlot" unique_id=551678485]
 offset_left = 19.0
 offset_top = 49.0
 offset_right = 59.0
@@ -550,7 +549,7 @@ theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "4"
 
-[node name="HealthLabel" type="Label" parent="FifthPokemonSlot"]
+[node name="HealthLabel" type="Label" parent="FifthPokemonSlot" unique_id=1796174006]
 offset_left = 82.0
 offset_top = 49.0
 offset_right = 122.0
@@ -559,7 +558,7 @@ theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "23"
 
-[node name="MaxHealthLabel" type="Label" parent="FifthPokemonSlot"]
+[node name="MaxHealthLabel" type="Label" parent="FifthPokemonSlot" unique_id=1794014537]
 offset_left = 100.0
 offset_top = 49.0
 offset_right = 140.0
@@ -568,46 +567,44 @@ theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "30"
 
-[node name="GenderIcon" type="Sprite2D" parent="FifthPokemonSlot"]
+[node name="GenderIcon" type="Sprite2D" parent="FifthPokemonSlot" unique_id=2083567754]
 position = Vector2(44, 54)
 texture = ExtResource("5")
 hframes = 2
 
-[node name="HealthBar" type="Sprite2D" parent="FifthPokemonSlot"]
+[node name="HealthBar" type="Sprite2D" parent="FifthPokemonSlot" unique_id=1808368921]
 position = Vector2(89, 46)
 scale = Vector2(2, 1)
 texture = ExtResource("6")
 region_enabled = true
 region_rect = Rect2(24, 0, 24, 3)
 
-[node name="SixthPokemonSlot" type="Node2D" parent="."]
+[node name="SixthPokemonSlot" type="Node2D" parent="." unique_id=802830800]
 position = Vector2(119, 70)
 
-[node name="Background" type="Sprite2D" parent="SixthPokemonSlot"]
+[node name="Background" type="Sprite2D" parent="SixthPokemonSlot" unique_id=1872033623]
 position = Vector2(44, 47)
 texture = ExtResource("7")
 hframes = 2
 
-[node name="PokemonPartySprite" type="Sprite2D" parent="SixthPokemonSlot"]
+[node name="PokemonPartySprite" type="Sprite2D" parent="SixthPokemonSlot" unique_id=1445359980]
 position = Vector2(-16, 48)
 texture = ExtResource("12")
 hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
 
-[node name="PokemonName" type="Sprite2D" parent="SixthPokemonSlot"]
+[node name="PokemonName" type="Sprite2D" parent="SixthPokemonSlot" unique_id=1224511204]
 position = Vector2(35, 44)
 texture = ExtResource("12")
 region_enabled = true
 region_rect = Rect2(0, -1, 73, 10)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SixthPokemonSlot"]
-libraries = {
-&"": SubResource("AnimationLibrary_2rexr")
-}
-autoplay = "Idle"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SixthPokemonSlot" unique_id=1518322910]
+libraries/ = SubResource("AnimationLibrary_2rexr")
+autoplay = &"Idle"
 
-[node name="LevelLabel" type="Label" parent="SixthPokemonSlot"]
+[node name="LevelLabel" type="Label" parent="SixthPokemonSlot" unique_id=632342310]
 offset_left = 19.0
 offset_top = 49.0
 offset_right = 59.0
@@ -616,7 +613,7 @@ theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "4"
 
-[node name="HealthLabel" type="Label" parent="SixthPokemonSlot"]
+[node name="HealthLabel" type="Label" parent="SixthPokemonSlot" unique_id=805811202]
 offset_left = 82.0
 offset_top = 49.0
 offset_right = 122.0
@@ -625,7 +622,7 @@ theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "23"
 
-[node name="MaxHealthLabel" type="Label" parent="SixthPokemonSlot"]
+[node name="MaxHealthLabel" type="Label" parent="SixthPokemonSlot" unique_id=1305587335]
 offset_left = 100.0
 offset_top = 49.0
 offset_right = 140.0
@@ -634,19 +631,19 @@ theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "30"
 
-[node name="GenderIcon" type="Sprite2D" parent="SixthPokemonSlot"]
+[node name="GenderIcon" type="Sprite2D" parent="SixthPokemonSlot" unique_id=264234531]
 position = Vector2(44, 54)
 texture = ExtResource("5")
 hframes = 2
 
-[node name="HealthBar" type="Sprite2D" parent="SixthPokemonSlot"]
+[node name="HealthBar" type="Sprite2D" parent="SixthPokemonSlot" unique_id=733588326]
 position = Vector2(89, 46)
 scale = Vector2(2, 1)
 texture = ExtResource("6")
 region_enabled = true
 region_rect = Rect2(24, 0, 24, 3)
 
-[node name="CancelSprite" type="Sprite2D" parent="."]
+[node name="CancelSprite" type="Sprite2D" parent="." unique_id=1901885376]
 position = Vector2(211, 144)
 texture = ExtResource("13")
 hframes = 2

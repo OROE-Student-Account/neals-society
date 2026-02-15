@@ -2,7 +2,7 @@ extends Area2D
 
 var picked_up := false
 
-@onready var dialogue_root = $"Pickup Dialogue"
+@onready var dialogue_root = $PickupDialogue
 
 func pickup():
 	if !picked_up:

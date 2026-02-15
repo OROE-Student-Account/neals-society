@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cb3m1occc8fou"]
+[gd_scene format=3 uid="uid://cb3m1occc8fou"]
 
 [ext_resource type="Texture2D" uid="uid://drqotpiwp3yxl" path="res://Assets/Player/jump_landing_dust.png" id="1"]
-[ext_resource type="Script" uid="uid://uc2sww0men7k" path="res://LandingDustEffect.gd" id="2"]
+[ext_resource type="Script" uid="uid://uc2sww0men7k" path="res://Scripts/LandingDustEffect.gd" id="2"]
 
 [sub_resource type="AtlasTexture" id="1"]
 atlas = ExtResource("1")
