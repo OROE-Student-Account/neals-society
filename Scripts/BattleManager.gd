@@ -18,8 +18,6 @@ func _ready():
 	start_battle()
 
 func start_battle():
-	print("Player: ", player_grammarite.grammarite_name, " (", player_grammarite.health, " HP)")
-	print("Enemy: ", enemy_grammarite.grammarite_name, " (", enemy_grammarite.health, " HP)")
 	current_state = BattleState.PLAYER_TURN
 
 func _on_player_move_selected(move_index: int):
@@ -50,7 +48,7 @@ func _on_player_move_selected(move_index: int):
 func enemy_turn():
 	current_state = BattleState.ENEMY_TURN
 	
-	print("\nEnemy's turn...")
+	battle_ui.set_info_text("Enemy's turn")
 	await get_tree().create_timer(1.0).timeout
 	
 	# pick random move
@@ -62,19 +60,19 @@ func enemy_turn():
 func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 	current_state = BattleState.ANIMATING
 	
-	print("\n", attacker.grammarite_name, " used ", move["Name"], "!")
+	battle_ui.set_info_text(attacker.grammarite_name+" used "+move["Name"]+"!")
 	
 	# Check accuracy
-	var accuracy = move.get("Accuracy", 0) # If no accuracy, auto miss
+	var accuracy = move.get("Accuracy", 0) # If no accuracy included, auto miss
 	var hit_roll = randf()
 	
 	if hit_roll > accuracy:
-		print("The attack missed!")
+		battle_ui.set_info_text("The attack missed!")
 		await get_tree().create_timer(1.0).timeout
 		return
 	
 	# Calculate damage
-	var base_damage = move.get("Damage", 0) # if no damage, too bad
+	var base_damage = move.get("Damage", 0) # if no damage included, no damage
 	var attack_stat = attacker.grammarite_info["Stats"].get("Attack")
 	
 	# Simple formula = base damage * (attack / 10)
@@ -88,22 +86,19 @@ func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 	# Apply damage
 	defender.update_health(-damage)
 	
-	print(defender.grammarite_name, " took ", damage, " damage!")
-	print(defender.grammarite_name, " has ", defender.health, " HP remaining")
+	battle_ui.set_info_text("The attack hit!")
 	
 	attacker.anim_player.play("Attack")
-	# Wait for animation/message display
-	await get_tree().create_timer(1.5).timeout
+	# Wait for animation and message display
+	await get_tree().create_timer(1.2).timeout
 
 func end_battle(player_won: bool):
 	current_state = BattleState.BATTLE_END
 	
 	if player_won:
-		print("\n=== YOU WON! ===")
-		print(enemy_grammarite.grammarite_name, " fainted!")
+		battle_ui.set_info_text("You won!")
 	else:
-		print("\n=== YOU LOST! ===")
-		print(player_grammarite.grammarite_name, " fainted!")
+		battle_ui.set_info_text("You lost!")
 	
 	battle_ended.emit(player_won)
 	

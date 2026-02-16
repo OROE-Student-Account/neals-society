@@ -154,35 +154,26 @@ script = ExtResource("6_6yjxy")
 is_enemy = true
 grammarite_name = "Orawolfi"
 
-[node name="Grammarite" type="Sprite2D" parent="EnemyGrammarite" unique_id=617380561]
-texture_filter = 1
-position = Vector2(-32, 32)
-texture = ExtResource("2_u22qb")
-region_enabled = true
-region_rect = Rect2(0, 34, 64, 64)
-
 [node name="Sprite2D2" type="Sprite2D" parent="EnemyGrammarite" unique_id=16898034]
 position = Vector2(-165, 12)
 texture = ExtResource("3_6yjxy")
 hframes = 2
 
-[node name="Name" type="Label" parent="EnemyGrammarite" unique_id=330716404]
-custom_minimum_size = Vector2(100, 0)
-offset_left = -221.0
-offset_top = 4.0
-offset_right = -121.0
-offset_bottom = 44.0
-theme_override_fonts/font = ExtResource("4_qxnh6")
-text = "BEEDRILL"
+[node name="Name" type="Sprite2D" parent="EnemyGrammarite" unique_id=1788122954]
+texture_filter = 1
+position = Vector2(-152, 8)
+texture = ExtResource("2_u22qb")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 9)
 
 [node name="Level" type="Label" parent="EnemyGrammarite" unique_id=1905606221]
-offset_left = -189.0
-offset_top = 16.0
-offset_right = -149.0
-offset_bottom = 39.0
+offset_left = -188.0
+offset_top = 13.0
+offset_right = -148.0
+offset_bottom = 36.0
 theme_override_colors/font_color = Color(0.26666668, 0.26666668, 0.49803922, 1)
 theme_override_fonts/font = ExtResource("4_qxnh6")
-theme_override_font_sizes/font_size = 11
+theme_override_font_sizes/font_size = 12
 text = "67"
 
 [node name="HealthBar" type="ColorRect" parent="EnemyGrammarite" unique_id=646738303]
@@ -191,6 +182,13 @@ offset_top = 9.0
 offset_right = -96.0
 offset_bottom = 12.0
 color = Color(0, 1, 0, 1)
+
+[node name="Grammarite" type="Sprite2D" parent="EnemyGrammarite" unique_id=617380561]
+texture_filter = 1
+position = Vector2(-32, 32)
+texture = ExtResource("2_u22qb")
+region_enabled = true
+region_rect = Rect2(0, 34, 64, 64)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="EnemyGrammarite" unique_id=1377091192]
 libraries/ = SubResource("AnimationLibrary_262jj")
@@ -201,63 +199,61 @@ script = ExtResource("6_6yjxy")
 grammarite_name = "Orawolfi"
 move_vbox = NodePath("../BattleUI/MoveList/VBoxContainer")
 
+[node name="Sprite2D2" type="Sprite2D" parent="Grammarite" unique_id=1506915906]
+position = Vector2(163, -68)
+texture = ExtResource("3_6yjxy")
+hframes = 2
+
+[node name="Name" type="Sprite2D" parent="Grammarite" unique_id=197120462]
+texture_filter = 1
+position = Vector2(176, -72)
+texture = ExtResource("2_u22qb")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 9)
+
+[node name="Level" type="Label" parent="Grammarite" unique_id=711573346]
+texture_filter = 1
+offset_left = 140.0
+offset_top = -67.0
+offset_right = 180.0
+offset_bottom = -44.0
+theme_override_colors/font_color = Color(0.26666668, 0.26666668, 0.49803922, 1)
+theme_override_fonts/font = ExtResource("4_qxnh6")
+theme_override_font_sizes/font_size = 12
+text = "67"
+
+[node name="Health" type="Label" parent="Grammarite" unique_id=1393091545]
+offset_left = 173.0
+offset_top = -67.0
+offset_right = 213.0
+offset_bottom = -44.0
+theme_override_fonts/font = ExtResource("4_qxnh6")
+theme_override_font_sizes/font_size = 12
+text = "410"
+horizontal_alignment = 2
+
+[node name="MaxHealth" type="Label" parent="Grammarite" unique_id=958881348]
+offset_left = 219.0
+offset_top = -67.0
+offset_right = 259.0
+offset_bottom = -44.0
+theme_override_fonts/font = ExtResource("4_qxnh6")
+theme_override_font_sizes/font_size = 12
+text = "230"
+
+[node name="HealthBar" type="ColorRect" parent="Grammarite" unique_id=1225750269]
+offset_left = 184.0
+offset_top = -71.0
+offset_right = 232.0
+offset_bottom = -68.0
+color = Color(0, 1, 0, 1)
+
 [node name="Grammarite" type="Sprite2D" parent="Grammarite" unique_id=93670101]
 texture_filter = 1
 position = Vector2(48, -32)
 texture = ExtResource("2_u22qb")
 region_enabled = true
 region_rect = Rect2(0, 99, 64, 64)
-
-[node name="Sprite2D2" type="Sprite2D" parent="Grammarite" unique_id=1506915906]
-position = Vector2(155, -68)
-texture = ExtResource("3_6yjxy")
-hframes = 2
-
-[node name="Name" type="Label" parent="Grammarite" unique_id=760755875]
-texture_filter = 1
-custom_minimum_size = Vector2(100, 0)
-offset_left = 99.0
-offset_top = -76.0
-offset_right = 199.0
-offset_bottom = -36.0
-theme_override_fonts/font = ExtResource("4_qxnh6")
-text = "BEEDRILL"
-
-[node name="Level" type="Label" parent="Grammarite" unique_id=711573346]
-texture_filter = 1
-offset_left = 131.0
-offset_top = -64.0
-offset_right = 171.0
-offset_bottom = -41.0
-theme_override_colors/font_color = Color(0.26666668, 0.26666668, 0.49803922, 1)
-theme_override_fonts/font = ExtResource("4_qxnh6")
-theme_override_font_sizes/font_size = 11
-text = "67"
-
-[node name="Health" type="Label" parent="Grammarite" unique_id=1393091545]
-offset_left = 195.0
-offset_top = -66.0
-offset_right = 235.0
-offset_bottom = -43.0
-theme_override_fonts/font = ExtResource("4_qxnh6")
-theme_override_font_sizes/font_size = 9
-text = "41"
-
-[node name="MaxHealth" type="Label" parent="Grammarite" unique_id=958881348]
-offset_left = 210.0
-offset_top = -66.0
-offset_right = 250.0
-offset_bottom = -43.0
-theme_override_fonts/font = ExtResource("4_qxnh6")
-theme_override_font_sizes/font_size = 9
-text = "230"
-
-[node name="HealthBar" type="ColorRect" parent="Grammarite" unique_id=1225750269]
-offset_left = 176.0
-offset_top = -71.0
-offset_right = 224.0
-offset_bottom = -68.0
-color = Color(0, 1, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Grammarite" unique_id=515459137]
 libraries/ = SubResource("AnimationLibrary_tiokb")
@@ -278,6 +274,7 @@ patch_margin_right = 6
 patch_margin_bottom = 6
 
 [node name="Buttons" type="Node2D" parent="BattleUI" unique_id=967738820]
+visible = false
 position = Vector2(240, 160)
 
 [node name="switchPkmn" type="Sprite2D" parent="BattleUI/Buttons" unique_id=698753109]
@@ -301,46 +298,59 @@ texture = ExtResource("7_xmk5i")
 hframes = 2
 
 [node name="MoveList" type="Node2D" parent="BattleUI" unique_id=577308921]
-visible = false
 position = Vector2(112, 104)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BattleUI/MoveList" unique_id=675319034]
 offset_left = 16.0
 offset_top = 8.0
 offset_right = 128.0
-offset_bottom = 128.0
+offset_bottom = 58.0
+scale = Vector2(0.8, 0.8)
 
 [node name="Move1" type="Label" parent="BattleUI/MoveList/VBoxContainer" unique_id=1697623063]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_qxnh6")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 12
 text = "Fireball"
 
 [node name="Move2" type="Label" parent="BattleUI/MoveList/VBoxContainer" unique_id=691485838]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_qxnh6")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 12
 text = "Earthquake"
 
 [node name="Move3" type="Label" parent="BattleUI/MoveList/VBoxContainer" unique_id=1698969560]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_qxnh6")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 12
 text = "Dragon Dance"
 
 [node name="Move4" type="Label" parent="BattleUI/MoveList/VBoxContainer" unique_id=238561716]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_qxnh6")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 12
 text = "Dig"
 
 [node name="Arrow" type="TextureRect" parent="BattleUI/MoveList" unique_id=1491524785]
 offset_left = 8.0
-offset_top = 7.0
+offset_top = 7.5
 offset_right = 14.0
-offset_bottom = 17.0
+offset_bottom = 17.5
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("9_qxnh6")
+
+[node name="InfoText" type="Label" parent="BattleUI" unique_id=111149462]
+visible = false
+offset_left = 120.0
+offset_top = 112.0
+offset_right = 232.0
+offset_bottom = 152.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_qxnh6")
+theme_override_font_sizes/font_size = 12
+text = "testing hello world this is neal's society. this text should not"
+autowrap_mode = 3

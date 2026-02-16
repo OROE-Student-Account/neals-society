@@ -17,10 +17,18 @@ var selected_button: int = Buttons.FIGHT
 	Buttons.RUN: $Buttons/run,
 }
 
-var SELECT_ARROW_Y = 7
-var DISTANCE_BETWEEN_MOVES = 11
+var SELECT_ARROW_Y = 7.5
+var DISTANCE_BETWEEN_MOVES = 10.5
 
+@onready var info_text = $InfoText
 
+func set_info_text(content):
+	info_text.text = content
+	info_text.visible = true
+
+func hide_info_text():
+	info_text.text = ""
+	info_text.visible = false
 
 func unset_active_option():
 	for i in range(len(buttons)):
@@ -36,11 +44,13 @@ func show_correct_menu():
 		$MoveList.visible = false
 		unset_active_option()
 		set_active_option()
+		hide_info_text()
 	elif input_state == InputState.MOVE_LIST:
 		$Buttons.visible = false
 		$MoveList.visible = true
 		grammarite_node.update_moves()
 		update_arrow_pos()
+		hide_info_text()
 	elif input_state == InputState.WAITING:
 		$Buttons.visible = false
 		$MoveList.visible = false
