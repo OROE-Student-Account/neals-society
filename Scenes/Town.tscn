@@ -2830,6 +2830,9 @@ position = Vector2(32, -112)
 texture_filter = 1
 position = Vector2(272, -176)
 
+[node name="Item" parent="Collision Stuff" unique_id=968186873 instance=ExtResource("16_tbyl1")]
+position = Vector2(32, 96)
+
 [node name="Player" parent="Collision Stuff" unique_id=464513584 instance=ExtResource("1")]
 position = Vector2(80, 96)
 
@@ -2967,7 +2970,6 @@ option_name = "Neal Sehgal."
 text = "What a handsome person you are."
 
 [node name="Rival2" type="AnimatedSprite2D" parent="Collision Stuff" unique_id=804693821 node_paths=PackedStringArray("root_node", "func_node")]
-visible = false
 position = Vector2(48, 32)
 sprite_frames = SubResource("SpriteFrames_hg0i7")
 frame = 1
@@ -3007,9 +3009,6 @@ script = ExtResource("19_5qjph")
 is_end_node = true
 option_name = "No"
 function = "begin_battle"
-
-[node name="Item" parent="Collision Stuff" unique_id=968186873 instance=ExtResource("16_tbyl1")]
-position = Vector2(32, 96)
 
 [connection signal="body_entered" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_Door_body_entered"]
 [connection signal="body_entered" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_body_entered"]

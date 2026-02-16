@@ -5,5 +5,6 @@
 	"Dragon Dance": {  "Damage": 15, "Accuracy": 0.4, "Type": "Animal", "PP": 5 },
 	"Play": { "Damage": 7, "Accuracy": 0.7, "Type": "Animal", "PP": 20 },
 	"Sit": { "Damage": 11, "Accuracy": 0.55, "Type": "Animal", "PP": 15 },
-	"Sculpt": { "Damage": 15, "Accuracy": 0.5, "Type": "Nature", "PP": 5 }
+	"Sculpt": { "Damage": 15, "Accuracy": 0.5, "Type": "Nature", "PP": 5 },
+	"Woodchip": { "Damage": 20, "Accuracy": 0.1, "Type": "Nature", "PP": 1 }
 }

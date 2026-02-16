@@ -1,0 +1,16 @@
+{
+	"Abilities": [ 
+		"Bicycle"
+	],
+	"Items": [ 
+		"Berry"
+	],
+	"Party": [
+		{ "Name": "Dog of Wood", "Level": 1, "Item": "", "Health": 25, "Moves": [ "Bite", "Play", "Howl", "Woodchip" ] },
+		{ "Name": "Sculpupture", "Level": 14, "Item": "", "Health": 25, "Moves": [ "Bite", "Play", "Sit", "Sculpt" ] },
+		{ "Name": "", "Level": 1, "Item": "", "Health": 0, "Moves": [] },
+		{ "Name": "", "Level": 1, "Item": "", "Health": 0, "Moves": [] },
+		{ "Name": "", "Level": 1, "Item": "", "Health": 0, "Moves": [] },
+		{ "Name": "", "Level": 1, "Item": "", "Health": 0, "Moves": [] }
+	]
+}

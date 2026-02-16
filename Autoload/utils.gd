@@ -30,13 +30,6 @@ func get_grammarite_details(grammarite_name):
 	
 	return details
 
-func load_json_file(file_path: String):
-	var file = FileAccess.open(file_path, FileAccess.READ)
-	var json = JSON.new()
-	json.parse(file.get_as_text())
-	file.close()
-	return json.data
-
 var type_chart_dict = {
 	"Weak": 0.5,
 	"None": 1.0,
@@ -53,3 +46,18 @@ func get_damage_multiplier(attack_type, defend_type1, defend_type2 = "None"):
 		mult *= type_chart_dict[type_chart[attack_type][defend_type2]]
 	
 	return mult
+
+
+
+
+func get_party():
+	return load_json_file("res://Data/Inventory.json")["Party"]
+
+
+
+func load_json_file(file_path: String):
+	var file = FileAccess.open(file_path, FileAccess.READ)
+	var json = JSON.new()
+	json.parse(file.get_as_text())
+	file.close()
+	return json.data

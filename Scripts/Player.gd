@@ -8,7 +8,8 @@ signal player_entered_door_signal
 
 const LandingDustEffect = preload("res://Scenes/LandingDustEffect.tscn")
 
-@export var walk_speed = 6.0
+# 60 fps, so this is 1 pixel per frame
+@export var walk_speed = 3.75
 @export var jump_speed = 4.0
 const TILE_SIZE = 16
 
@@ -19,6 +20,8 @@ const TILE_SIZE = 16
 @onready var ray = $BlockingRayCast2D
 @onready var ledge_ray = $LedgeRayCast2D
 @onready var door_ray = $DoorRayCast2D
+@onready var inside_door_ray = $BehindDoorRayCast2D # checks the inside doors so it looks good
+
 
 @onready var shadow = $Shadow
 @onready var sprite = $PlayerSprite
@@ -128,10 +131,11 @@ func move(delta):
 	ray.target_position = step
 	ledge_ray.target_position = step
 	door_ray.target_position = step
+	inside_door_ray.target_position = step
 	ray.force_raycast_update()
 	ledge_ray.force_raycast_update()
 	door_ray.force_raycast_update()
-			
+	inside_door_ray.force_raycast_update()
 	# --- Normal ---
 	if not ray.is_colliding() or ((input_direction == Vector2.LEFT or input_direction == Vector2.RIGHT) and door_ray.is_colliding()):
 		if percent_moved_to_next_tile == 0:
@@ -151,19 +155,22 @@ func move(delta):
 			sprite.position.x += 16
 			camera.position = input_direction * TILE_SIZE * percent_moved_to_next_tile
 	# when moving towads the door and not in the animation
-	elif door_ray.is_colliding() and not entering_door: 
+	elif (door_ray.is_colliding() or inside_door_ray.is_colliding()) and not entering_door: 
 		entering_door = true
 		percent_moved_to_next_tile = 0.0
 		emit_signal("player_entering_door_signal")
+		if inside_door_ray.is_colliding():
+			percent_moved_to_next_tile = 1.0
 	# --- Door ---
 	elif entering_door:
 		percent_moved_to_next_tile += walk_speed * delta 
 		if percent_moved_to_next_tile >= 1.0:
-			position = initial_position + input_direction * TILE_SIZE
-			var sprite_pos = Vector2.ZERO
-			sprite_pos.x = 16
-			sprite.position = sprite_pos
-			camera.position = Vector2.ZERO
+			if not inside_door_ray.is_colliding():
+				position = initial_position + input_direction * TILE_SIZE
+				var sprite_pos = Vector2.ZERO
+				sprite_pos.x = 16
+				sprite.position = sprite_pos
+				camera.position = Vector2.ZERO
 			is_moving = false
 			stop_input = true
 			anim_tree.active = false

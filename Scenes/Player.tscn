@@ -552,3 +552,10 @@ target_position = Vector2(0, 8)
 collision_mask = 8
 collide_with_areas = true
 collide_with_bodies = false
+
+[node name="BehindDoorRayCast2D" type="RayCast2D" parent="." unique_id=1085386912]
+position = Vector2(8, -8)
+target_position = Vector2(0, 8)
+collision_mask = 8
+collide_with_areas = true
+collide_with_bodies = false

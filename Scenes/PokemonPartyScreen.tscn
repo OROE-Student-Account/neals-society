@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://fblj6wvub8hg" path="res://Assets/UI/Pokemon Party/party_background.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://cuxb2blx126im" path="res://Assets/UI/Pokemon Party/main_pokemon_background.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://r8qwb6kwhbpx" path="res://Assets/Pokemon/Charmander.png" id="3"]
+[ext_resource type="Script" uid="uid://dpvpht1pik0j" path="res://Scripts/PartySlot.gd" id="3_3dpfl"]
 [ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="4"]
 [ext_resource type="Texture2D" uid="uid://bjpgrwhpuv2dn" path="res://Assets/UI/Pokemon Party/gender_icons.png" id="5"]
-[ext_resource type="Texture2D" uid="uid://cxd28r33uafik" path="res://Assets/UI/Pokemon Party/healthbar.png" id="6"]
 [ext_resource type="Texture2D" uid="uid://b4nmamhpm0fsg" path="res://Assets/UI/Pokemon Party/standby_pokemon_background.png" id="7"]
 [ext_resource type="Texture2D" uid="uid://d042hjjepovvf" path="res://Assets/Pokemon/Bulbasaur.png" id="8"]
 [ext_resource type="Texture2D" uid="uid://djti4nrbbo2kk" path="res://Assets/Pokemon/Squirtle.png" id="9"]
@@ -261,9 +261,10 @@ offset_bottom = 40.0
 texture = ExtResource("1")
 
 [node name="FirstPokemonSlot" type="Node2D" parent="." unique_id=766143109]
+script = ExtResource("3_3dpfl")
 
 [node name="Background" type="Sprite2D" parent="FirstPokemonSlot" unique_id=794630042]
-position = Vector2(44, 47)
+position = Vector2(44, 47.5)
 texture = ExtResource("2")
 hframes = 2
 
@@ -294,19 +295,21 @@ theme_override_font_sizes/font_size = 12
 text = "4"
 
 [node name="HealthLabel" type="Label" parent="FirstPokemonSlot" unique_id=445894989]
-offset_left = 49.0
-offset_top = 64.0
-offset_right = 89.0
-offset_bottom = 78.0
+offset_left = 50.000004
+offset_top = 66.0
+offset_right = 90.0
+offset_bottom = 80.0
+scale = Vector2(0.8, 0.8)
 theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "23"
 
 [node name="MaxHealthLabel" type="Label" parent="FirstPokemonSlot" unique_id=1493653083]
-offset_left = 67.0
-offset_top = 64.0
-offset_right = 107.0
-offset_bottom = 78.0
+offset_left = 66.0
+offset_top = 66.0
+offset_right = 106.0
+offset_bottom = 80.0
+scale = Vector2(0.8, 0.8)
 theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "30"
@@ -316,15 +319,16 @@ position = Vector2(75, 52)
 texture = ExtResource("5")
 hframes = 2
 
-[node name="HealthBar" type="Sprite2D" parent="FirstPokemonSlot" unique_id=1230465089]
-position = Vector2(56, 61)
-scale = Vector2(2, 1)
-texture = ExtResource("6")
-region_enabled = true
-region_rect = Rect2(24, 0, 24, 3)
+[node name="HealthBar" type="ColorRect" parent="FirstPokemonSlot" unique_id=823102362]
+offset_left = 32.0
+offset_top = 60.0
+offset_right = 80.0
+offset_bottom = 63.0
+color = Color(0, 1, 0, 1)
 
 [node name="SecondPokemonSlot" type="Node2D" parent="." unique_id=2092387560]
 position = Vector2(119, -26)
+script = ExtResource("3_3dpfl")
 
 [node name="Background" type="Sprite2D" parent="SecondPokemonSlot" unique_id=1700462057]
 position = Vector2(44, 47)
@@ -358,19 +362,21 @@ theme_override_font_sizes/font_size = 12
 text = "4"
 
 [node name="HealthLabel" type="Label" parent="SecondPokemonSlot" unique_id=1204895558]
-offset_left = 82.0
-offset_top = 49.0
-offset_right = 122.0
-offset_bottom = 63.0
+offset_left = 84.0
+offset_top = 50.0
+offset_right = 124.0
+offset_bottom = 64.0
+scale = Vector2(0.8, 0.8)
 theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "23"
 
 [node name="MaxHealthLabel" type="Label" parent="SecondPokemonSlot" unique_id=1888917229]
 offset_left = 100.0
-offset_top = 49.0
+offset_top = 50.0
 offset_right = 140.0
-offset_bottom = 63.0
+offset_bottom = 64.0
+scale = Vector2(0.8, 0.8)
 theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "30"
@@ -380,15 +386,16 @@ position = Vector2(44, 54)
 texture = ExtResource("5")
 hframes = 2
 
-[node name="HealthBar" type="Sprite2D" parent="SecondPokemonSlot" unique_id=198419045]
-position = Vector2(89, 46)
-scale = Vector2(2, 1)
-texture = ExtResource("6")
-region_enabled = true
-region_rect = Rect2(24, 0, 24, 3)
+[node name="HealthBar" type="ColorRect" parent="SecondPokemonSlot" unique_id=1665329341]
+offset_left = 65.0
+offset_top = 44.0
+offset_right = 113.0
+offset_bottom = 47.0
+color = Color(0, 1, 0, 1)
 
 [node name="ThirdPokemonSlot" type="Node2D" parent="." unique_id=529554492]
 position = Vector2(119, -2)
+script = ExtResource("3_3dpfl")
 
 [node name="Background" type="Sprite2D" parent="ThirdPokemonSlot" unique_id=207660173]
 position = Vector2(44, 47)
@@ -422,19 +429,21 @@ theme_override_font_sizes/font_size = 12
 text = "4"
 
 [node name="HealthLabel" type="Label" parent="ThirdPokemonSlot" unique_id=2081258015]
-offset_left = 82.0
-offset_top = 49.0
-offset_right = 122.0
-offset_bottom = 63.0
+offset_left = 84.0
+offset_top = 50.0
+offset_right = 124.0
+offset_bottom = 64.0
+scale = Vector2(0.8, 0.8)
 theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "23"
 
 [node name="MaxHealthLabel" type="Label" parent="ThirdPokemonSlot" unique_id=965856757]
 offset_left = 100.0
-offset_top = 49.0
+offset_top = 50.0
 offset_right = 140.0
-offset_bottom = 63.0
+offset_bottom = 64.0
+scale = Vector2(0.8, 0.8)
 theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "30"
@@ -444,15 +453,16 @@ position = Vector2(44, 54)
 texture = ExtResource("5")
 hframes = 2
 
-[node name="HealthBar" type="Sprite2D" parent="ThirdPokemonSlot" unique_id=760523594]
-position = Vector2(89, 46)
-scale = Vector2(2, 1)
-texture = ExtResource("6")
-region_enabled = true
-region_rect = Rect2(24, 0, 24, 3)
+[node name="HealthBar" type="ColorRect" parent="ThirdPokemonSlot" unique_id=92183091]
+offset_left = 65.0
+offset_top = 44.0
+offset_right = 113.0
+offset_bottom = 47.0
+color = Color(0, 1, 0, 1)
 
 [node name="FourthPokemonSlot" type="Node2D" parent="." unique_id=800206905]
 position = Vector2(119, 22)
+script = ExtResource("3_3dpfl")
 
 [node name="Background" type="Sprite2D" parent="FourthPokemonSlot" unique_id=467079812]
 position = Vector2(44, 47)
@@ -486,19 +496,21 @@ theme_override_font_sizes/font_size = 12
 text = "4"
 
 [node name="HealthLabel" type="Label" parent="FourthPokemonSlot" unique_id=318959310]
-offset_left = 82.0
-offset_top = 49.0
-offset_right = 122.0
-offset_bottom = 63.0
+offset_left = 84.0
+offset_top = 50.0
+offset_right = 124.0
+offset_bottom = 64.0
+scale = Vector2(0.8, 0.8)
 theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "23"
 
 [node name="MaxHealthLabel" type="Label" parent="FourthPokemonSlot" unique_id=2052646217]
 offset_left = 100.0
-offset_top = 49.0
+offset_top = 50.0
 offset_right = 140.0
-offset_bottom = 63.0
+offset_bottom = 64.0
+scale = Vector2(0.8, 0.8)
 theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "30"
@@ -508,15 +520,16 @@ position = Vector2(44, 54)
 texture = ExtResource("5")
 hframes = 2
 
-[node name="HealthBar" type="Sprite2D" parent="FourthPokemonSlot" unique_id=1544817251]
-position = Vector2(89, 46)
-scale = Vector2(2, 1)
-texture = ExtResource("6")
-region_enabled = true
-region_rect = Rect2(24, 0, 24, 3)
+[node name="HealthBar" type="ColorRect" parent="FourthPokemonSlot" unique_id=47004701]
+offset_left = 65.0
+offset_top = 44.0
+offset_right = 113.0
+offset_bottom = 47.0
+color = Color(0, 1, 0, 1)
 
 [node name="FifthPokemonSlot" type="Node2D" parent="." unique_id=2133650784]
 position = Vector2(119, 46)
+script = ExtResource("3_3dpfl")
 
 [node name="Background" type="Sprite2D" parent="FifthPokemonSlot" unique_id=725329517]
 position = Vector2(44, 47)
@@ -550,19 +563,21 @@ theme_override_font_sizes/font_size = 12
 text = "4"
 
 [node name="HealthLabel" type="Label" parent="FifthPokemonSlot" unique_id=1796174006]
-offset_left = 82.0
-offset_top = 49.0
-offset_right = 122.0
-offset_bottom = 63.0
+offset_left = 84.0
+offset_top = 50.0
+offset_right = 124.0
+offset_bottom = 64.0
+scale = Vector2(0.8, 0.8)
 theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "23"
 
 [node name="MaxHealthLabel" type="Label" parent="FifthPokemonSlot" unique_id=1794014537]
 offset_left = 100.0
-offset_top = 49.0
+offset_top = 50.0
 offset_right = 140.0
-offset_bottom = 63.0
+offset_bottom = 64.0
+scale = Vector2(0.8, 0.8)
 theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "30"
@@ -572,15 +587,16 @@ position = Vector2(44, 54)
 texture = ExtResource("5")
 hframes = 2
 
-[node name="HealthBar" type="Sprite2D" parent="FifthPokemonSlot" unique_id=1808368921]
-position = Vector2(89, 46)
-scale = Vector2(2, 1)
-texture = ExtResource("6")
-region_enabled = true
-region_rect = Rect2(24, 0, 24, 3)
+[node name="HealthBar" type="ColorRect" parent="FifthPokemonSlot" unique_id=1251322606]
+offset_left = 65.0
+offset_top = 44.0
+offset_right = 113.0
+offset_bottom = 47.0
+color = Color(0, 1, 0, 1)
 
 [node name="SixthPokemonSlot" type="Node2D" parent="." unique_id=802830800]
 position = Vector2(119, 70)
+script = ExtResource("3_3dpfl")
 
 [node name="Background" type="Sprite2D" parent="SixthPokemonSlot" unique_id=1872033623]
 position = Vector2(44, 47)
@@ -614,19 +630,21 @@ theme_override_font_sizes/font_size = 12
 text = "4"
 
 [node name="HealthLabel" type="Label" parent="SixthPokemonSlot" unique_id=805811202]
-offset_left = 82.0
-offset_top = 49.0
-offset_right = 122.0
-offset_bottom = 63.0
+offset_left = 84.0
+offset_top = 50.0
+offset_right = 124.0
+offset_bottom = 64.0
+scale = Vector2(0.8, 0.8)
 theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "23"
 
 [node name="MaxHealthLabel" type="Label" parent="SixthPokemonSlot" unique_id=1305587335]
 offset_left = 100.0
-offset_top = 49.0
+offset_top = 50.0
 offset_right = 140.0
-offset_bottom = 63.0
+offset_bottom = 64.0
+scale = Vector2(0.8, 0.8)
 theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "30"
@@ -636,12 +654,12 @@ position = Vector2(44, 54)
 texture = ExtResource("5")
 hframes = 2
 
-[node name="HealthBar" type="Sprite2D" parent="SixthPokemonSlot" unique_id=733588326]
-position = Vector2(89, 46)
-scale = Vector2(2, 1)
-texture = ExtResource("6")
-region_enabled = true
-region_rect = Rect2(24, 0, 24, 3)
+[node name="HealthBar" type="ColorRect" parent="SixthPokemonSlot" unique_id=1092379564]
+offset_left = 65.0
+offset_top = 44.0
+offset_right = 113.0
+offset_bottom = 47.0
+color = Color(0, 1, 0, 1)
 
 [node name="CancelSprite" type="Sprite2D" parent="." unique_id=1901885376]
 position = Vector2(211, 144)
