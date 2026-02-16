@@ -1,9 +1,10 @@
 extends Node2D
 class_name BattleManager
 
-@export var player_grammarite: Node2D  # Your Grammarite node
-@export var enemy_grammarite: Node2D   # Enemy Grammarite node
-@export var battle_ui: Node2D          # Your Battle.gd node
+@export var player_grammarite: Node2D 
+@export var enemy_grammarite: Node2D  
+@export var battle_ui: Node2D          
+
 
 signal battle_ended(player_won: bool)
 
@@ -62,6 +63,7 @@ func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 	
 	battle_ui.set_info_text(attacker.grammarite_name+" used "+move["Name"]+"!")
 	
+	await get_tree().create_timer(0.9).timeout
 	# Check accuracy
 	var accuracy = move.get("Accuracy", 0) # If no accuracy included, auto miss
 	var hit_roll = randf()
@@ -71,26 +73,54 @@ func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 		await get_tree().create_timer(1.0).timeout
 		return
 	
+	attacker.anim_player.play("Attack")
+	
+	var crit = false
+	
 	# Calculate damage
+	var attack_level = attacker.level
 	var base_damage = move.get("Damage", 0) # if no damage included, no damage
-	var attack_stat = attacker.grammarite_info["Stats"].get("Attack")
+	var attack_stat = attacker.grammarite_info["Stats"]["Attack"]
+	var defense_stat = defender.grammarite_info["Stats"]["Defense"]
+	var effectiveness = 1
+	if len(defender.grammarite_info["Stats"]["Types"]) == 2:
+		effectiveness = Utils.get_damage_multiplier(move["Type"], defender.grammarite_info["Stats"]["Types"][0], defender.grammarite_info["Stats"]["Types"][1])
+	else:
+		effectiveness =  Utils.get_damage_multiplier(move["Type"], defender.grammarite_info["Stats"]["Types"][0])
 	
-	# Simple formula = base damage * (attack / 10)
-	var damage = base_damage * (attack_stat / 10.0)
 	
-	# Add some randomness (90% to 100% of calculated damage)
-	damage = damage * randf_range(0.9, 1.0)
+	var damage = (((2*attack_level) / 5 + 2) * base_damage * attack_stat / defense_stat) / 50 + 2
+	
+	# Makes the type chart matter
+	damage *= effectiveness
+	# Add some randomness (85% to 100% of calculated damage)
+	damage = damage * randf_range(0.85, 1.0)
+	# same type attack bonus
+	if move["Type"] == attacker.grammarite_info["Stats"]["Types"][0] or move["Type"] == attacker.grammarite_info["Stats"]["Types"][1]:
+		damage *= 1.5
+	# crit
+	if randf() > 0.95:
+		damage *= 2.0
+		crit = true
+		
 	# no negative damage
 	damage = max(0, int(damage)) 
 	
 	# Apply damage
 	defender.update_health(-damage)
 	
-	battle_ui.set_info_text("The attack hit!")
+	if crit:
+		battle_ui.set_info_text("It crits!")
+	elif effectiveness > 1:
+		battle_ui.set_info_text("It is super effective!")
+	elif effectiveness < 1:
+		battle_ui.set_info_text("It is not very effective.")
+	else:
+		battle_ui.set_info_text("It hits!")
 	
-	attacker.anim_player.play("Attack")
+	
 	# Wait for animation and message display
-	await get_tree().create_timer(1.2).timeout
+	await get_tree().create_timer(0.9).timeout
 
 func end_battle(player_won: bool):
 	current_state = BattleState.BATTLE_END

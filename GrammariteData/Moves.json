@@ -1,6 +1,9 @@
 {
-	"Bite": { "Damage": 10, "Accuracy": 0.6, "Type": "Animal" },
-	"Papercut": { "Damage": 1, "Accuracy": 1, "Type": "Paper" }, 
-	"Howl": { "Damage": 5, "Accuracy": 0.7, "Type": "Animal" }, 
-	"Dragon Dance": {  "Damage": 15, "Accuracy": 0.4, "Type": "Animal" }
+	"Bite": { "Damage": 10, "Accuracy": 0.6, "Type": "Animal", "PP": 15 },
+	"Papercut": { "Damage": 3, "Accuracy": 1, "Type": "Paper", "PP": 25 }, 
+	"Howl": { "Damage": 5, "Accuracy": 0.7, "Type": "Animal", "PP": 10 }, 
+	"Dragon Dance": {  "Damage": 15, "Accuracy": 0.4, "Type": "Animal", "PP": 5 },
+	"Play": { "Damage": 7, "Accuracy": 0.7, "Type": "Animal", "PP": 20 },
+	"Sit": { "Damage": 11, "Accuracy": 0.55, "Type": "Animal", "PP": 15 },
+	"Sculpt": { "Damage": 15, "Accuracy": 0.5, "Type": "Nature", "PP": 5 }
 }

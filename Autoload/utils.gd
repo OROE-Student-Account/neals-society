@@ -36,3 +36,20 @@ func load_json_file(file_path: String):
 	json.parse(file.get_as_text())
 	file.close()
 	return json.data
+
+var type_chart_dict = {
+	"Weak": 0.5,
+	"None": 1.0,
+	"Strong": 2.0
+}
+
+func get_damage_multiplier(attack_type, defend_type1, defend_type2 = "None"):
+	var mult = 1.0
+	
+	var type_chart = load_json_file("res://GrammariteData/TypeChart.json")
+	
+	mult *= type_chart_dict[type_chart[attack_type][defend_type1]]
+	if defend_type2 != "None":
+		mult *= type_chart_dict[type_chart[attack_type][defend_type2]]
+	
+	return mult

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ceuhh3g2in3j4" path="res://Assets/Pokemon/Pokemon15.png" id="2_u22qb"]
 [ext_resource type="Texture2D" uid="uid://b4nmamhpm0fsg" path="res://Assets/UI/Pokemon Party/standby_pokemon_background.png" id="3_6yjxy"]
 [ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="4_qxnh6"]
-[ext_resource type="Script" uid="uid://cshmcr6ld2cga" path="res://Scripts/Grammarite.gd" id="6_6yjxy"]
+[ext_resource type="Script" uid="uid://cshmcr6ld2cga" path="res://Scripts/BattleGrammarite.gd" id="6_6yjxy"]
 [ext_resource type="Texture2D" uid="uid://dw17mm63araxi" path="res://Assets/UI/menu_box_1.png" id="7_6yjxy"]
 [ext_resource type="Texture2D" uid="uid://hpyxtuycfcbw" path="res://Assets/UI/Pokemon Party/exit_background_button.png" id="7_xmk5i"]
 [ext_resource type="Texture2D" uid="uid://bofmcuxvqsoyg" path="res://Assets/UI/ui_arrow_left_right.png" id="9_qxnh6"]
@@ -153,6 +153,7 @@ position = Vector2(240, 0)
 script = ExtResource("6_6yjxy")
 is_enemy = true
 grammarite_name = "Orawolfi"
+level = 8
 
 [node name="Sprite2D2" type="Sprite2D" parent="EnemyGrammarite" unique_id=16898034]
 position = Vector2(-165, 12)
@@ -196,8 +197,9 @@ libraries/ = SubResource("AnimationLibrary_262jj")
 [node name="Grammarite" type="Node2D" parent="." unique_id=1000370286 node_paths=PackedStringArray("move_vbox")]
 position = Vector2(0, 160)
 script = ExtResource("6_6yjxy")
-grammarite_name = "Orawolfi"
-move_vbox = NodePath("../BattleUI/MoveList/VBoxContainer")
+grammarite_name = "Sculpupture"
+move_vbox = NodePath("../BattleUI/MoveList/Moves")
+level = 16
 
 [node name="Sprite2D2" type="Sprite2D" parent="Grammarite" unique_id=1506915906]
 position = Vector2(163, -68)
@@ -300,35 +302,35 @@ hframes = 2
 [node name="MoveList" type="Node2D" parent="BattleUI" unique_id=577308921]
 position = Vector2(112, 104)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BattleUI/MoveList" unique_id=675319034]
+[node name="Moves" type="VBoxContainer" parent="BattleUI/MoveList" unique_id=675319034]
 offset_left = 16.0
 offset_top = 8.0
 offset_right = 128.0
 offset_bottom = 58.0
 scale = Vector2(0.8, 0.8)
 
-[node name="Move1" type="Label" parent="BattleUI/MoveList/VBoxContainer" unique_id=1697623063]
+[node name="Move1" type="Label" parent="BattleUI/MoveList/Moves" unique_id=1697623063]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_qxnh6")
 theme_override_font_sizes/font_size = 12
 text = "Fireball"
 
-[node name="Move2" type="Label" parent="BattleUI/MoveList/VBoxContainer" unique_id=691485838]
+[node name="Move2" type="Label" parent="BattleUI/MoveList/Moves" unique_id=691485838]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_qxnh6")
 theme_override_font_sizes/font_size = 12
 text = "Earthquake"
 
-[node name="Move3" type="Label" parent="BattleUI/MoveList/VBoxContainer" unique_id=1698969560]
+[node name="Move3" type="Label" parent="BattleUI/MoveList/Moves" unique_id=1698969560]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_qxnh6")
 theme_override_font_sizes/font_size = 12
 text = "Dragon Dance"
 
-[node name="Move4" type="Label" parent="BattleUI/MoveList/VBoxContainer" unique_id=238561716]
+[node name="Move4" type="Label" parent="BattleUI/MoveList/Moves" unique_id=238561716]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_qxnh6")
