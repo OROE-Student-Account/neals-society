@@ -681,81 +681,86 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e4t5b"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qjph"]
 atlas = ExtResource("16_yv7ed")
 region = Rect2(0, 0, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qhiut"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8mj4"]
 atlas = ExtResource("16_yv7ed")
 region = Rect2(16, 0, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vbc83"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ix0ol"]
 atlas = ExtResource("16_yv7ed")
 region = Rect2(32, 0, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qbpfr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gb3n1"]
 atlas = ExtResource("16_yv7ed")
 region = Rect2(0, 32, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bnpfn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4fij"]
 atlas = ExtResource("16_yv7ed")
 region = Rect2(16, 32, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5cspk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnmbb"]
 atlas = ExtResource("16_yv7ed")
 region = Rect2(32, 32, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vw5jk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vk81e"]
 atlas = ExtResource("16_yv7ed")
 region = Rect2(0, 64, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_flofw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qwwy"]
 atlas = ExtResource("16_yv7ed")
 region = Rect2(16, 64, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w3vwf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3k5x"]
 atlas = ExtResource("16_yv7ed")
 region = Rect2(32, 64, 16, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_hg0i7"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_d5kfv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_e4t5b")
+"texture": SubResource("AtlasTexture_5qjph")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qhiut")
+"texture": SubResource("AtlasTexture_e8mj4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vbc83")
+"texture": SubResource("AtlasTexture_ix0ol")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qbpfr")
+"texture": SubResource("AtlasTexture_gb3n1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bnpfn")
+"texture": SubResource("AtlasTexture_j4fij")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5cspk")
+"texture": SubResource("AtlasTexture_jnmbb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vw5jk")
+"texture": SubResource("AtlasTexture_vk81e")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_flofw")
+"texture": SubResource("AtlasTexture_1qwwy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w3vwf")
+"texture": SubResource("AtlasTexture_q3k5x")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhiut"]
-size = Vector2(12, 124)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbevu"]
+size = Vector2(12, 110)
 
-[sub_resource type="Animation" id="Animation_nci3w"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lh2gh"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pe55j"]
+
+[sub_resource type="Animation" id="Animation_60ruy"]
 resource_name = "Approach"
 length = 0.4
 loop_mode = 1
@@ -796,7 +801,7 @@ tracks/1/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_vbc83"]
+[sub_resource type="Animation" id="Animation_gn7iv"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -810,11 +815,101 @@ tracks/0/keys = {
 "update": 1,
 "values": [1]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_0ljn5"]
+[sub_resource type="Animation" id="Animation_lh2gh"]
+resource_name = "TurnAround"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_pe55j"]
+resource_name = "TurnLeft"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_avwyw"]
+resource_name = "TurnRight"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_35qta"]
 _data = {
-&"Approach": SubResource("Animation_nci3w"),
-&"RESET": SubResource("Animation_vbc83")
+&"Approach": SubResource("Animation_60ruy"),
+&"RESET": SubResource("Animation_gn7iv"),
+&"TurnAround": SubResource("Animation_lh2gh"),
+&"TurnLeft": SubResource("Animation_pe55j"),
+&"TurnRight": SubResource("Animation_avwyw")
 }
 
 [node name="Town" type="Node2D" unique_id=1494243782]
@@ -2904,118 +2999,141 @@ shape = SubResource("RectangleShape2D_typi0")
 sprite_frames = SubResource("SpriteFrames_n33s8")
 script = ExtResource("19_yv7ed")
 
-[node name="Rival" type="AnimatedSprite2D" parent="Collision Stuff" unique_id=21294840 node_paths=PackedStringArray("root_node", "func_node")]
+[node name="Trainer" type="AnimatedSprite2D" parent="Collision Stuff" unique_id=1381438602]
 position = Vector2(160, 16)
-sprite_frames = SubResource("SpriteFrames_hg0i7")
+sprite_frames = SubResource("SpriteFrames_d5kfv")
 frame = 1
 centered = false
 offset = Vector2(0, -3)
 script = ExtResource("17_typi0")
-root_node = NodePath("Dialogue Root")
-func_node = NodePath("Second Dialogue Root")
 
-[node name="Area2D" type="Area2D" parent="Collision Stuff/Rival" unique_id=1506649704]
+[node name="LineOfSight" type="Area2D" parent="Collision Stuff/Trainer" unique_id=1506649704]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Stuff/Rival/Area2D" unique_id=1357964769]
-position = Vector2(8, 64)
-scale = Vector2(0.8, 0.8)
-shape = SubResource("RectangleShape2D_qhiut")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Stuff/Trainer/LineOfSight" unique_id=1357964769]
+position = Vector2(8, 71)
+shape = SubResource("RectangleShape2D_vbevu")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Collision Stuff/Rival" unique_id=2126887194]
-libraries/ = SubResource("AnimationLibrary_0ljn5")
+[node name="HitBox" type="Area2D" parent="Collision Stuff/Trainer" unique_id=534457599]
+collision_layer = 16
 
-[node name="RayCast2D" type="RayCast2D" parent="Collision Stuff/Rival" unique_id=1547218494]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Stuff/Trainer/HitBox" unique_id=651429316]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_lh2gh")
+
+[node name="DetectPlayer" type="CollisionShape2D" parent="Collision Stuff/Trainer/HitBox" unique_id=620086875]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_pe55j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Collision Stuff/Trainer" unique_id=2126887194]
+libraries/ = SubResource("AnimationLibrary_35qta")
+
+[node name="RayCast2D" type="RayCast2D" parent="Collision Stuff/Trainer" unique_id=1547218494]
 position = Vector2(8, 16)
 target_position = Vector2(0, 16)
 
-[node name="Dialogue Root" type="Node" parent="Collision Stuff/Rival" unique_id=1360333292]
+[node name="DialogueRoot" type="Node" parent="Collision Stuff/Trainer" unique_id=553674537]
 script = ExtResource("19_5qjph")
 text = "Are you ready for school? Wait, do you not know who I am?"
 
-[node name="Talk" type="Node" parent="Collision Stuff/Rival/Dialogue Root" unique_id=907995647]
+[node name="Talk" type="Node" parent="Collision Stuff/Trainer/DialogueRoot" unique_id=1754155299]
 script = ExtResource("19_5qjph")
 option_name = "Of course I do."
 text = "Then what is my name?"
 
-[node name="Node" type="Node" parent="Collision Stuff/Rival/Dialogue Root/Talk" unique_id=1966713095]
+[node name="Node" type="Node" parent="Collision Stuff/Trainer/DialogueRoot/Talk" unique_id=1798472997 node_paths=PackedStringArray("func_node")]
 script = ExtResource("19_5qjph")
 is_end_node = true
 option_name = "George"
 function = "begin_from_self"
+func_node = NodePath("../../../Second Dialogue Root")
 
-[node name="Node2" type="Node" parent="Collision Stuff/Rival/Dialogue Root/Talk" unique_id=565837938]
+[node name="Node2" type="Node" parent="Collision Stuff/Trainer/DialogueRoot/Talk" unique_id=75411017 node_paths=PackedStringArray("func_node")]
 script = ExtResource("19_5qjph")
 is_end_node = true
 option_name = "Nicholas"
 function = "begin_from_self"
+func_node = NodePath("../../../Second Dialogue Root")
 
-[node name="Run" type="Node" parent="Collision Stuff/Rival/Dialogue Root" unique_id=1688209234]
+[node name="Run" type="Node" parent="Collision Stuff/Trainer/DialogueRoot" unique_id=200656403]
 script = ExtResource("19_5qjph")
 is_end_node = true
 option_name = "No."
 
-[node name="Second Dialogue Root" type="Node" parent="Collision Stuff/Rival" unique_id=558572881]
+[node name="Second Dialogue Root" type="Node" parent="Collision Stuff/Trainer" unique_id=484231483]
 script = ExtResource("19_5qjph")
 text = "WRONG. I live next door to you, how do you not know my name? By the way, what is your name?"
 
-[node name="Node" type="Node" parent="Collision Stuff/Rival/Second Dialogue Root" unique_id=1949427335]
+[node name="Node" type="Node" parent="Collision Stuff/Trainer/Second Dialogue Root" unique_id=1253206485]
 script = ExtResource("19_5qjph")
 is_end_node = true
 option_name = "Donald Jesus Trump"
 text = "Oh."
 
-[node name="Node2" type="Node" parent="Collision Stuff/Rival/Second Dialogue Root" unique_id=1504572414]
+[node name="Node2" type="Node" parent="Collision Stuff/Trainer/Second Dialogue Root" unique_id=831567257]
 script = ExtResource("19_5qjph")
 is_end_node = true
 option_name = "Neal Sehgal."
 text = "What a handsome person you are."
 
-[node name="Rival2" type="AnimatedSprite2D" parent="Collision Stuff" unique_id=804693821 node_paths=PackedStringArray("root_node", "func_node")]
-position = Vector2(48, 32)
-sprite_frames = SubResource("SpriteFrames_hg0i7")
+[node name="Trainer2" type="AnimatedSprite2D" parent="Collision Stuff" unique_id=193013468]
+position = Vector2(48, 16)
+sprite_frames = SubResource("SpriteFrames_d5kfv")
 frame = 1
 centered = false
 offset = Vector2(0, -3)
 script = ExtResource("17_typi0")
-root_node = NodePath("Dialogue Root")
-func_node = NodePath("Dialogue Root")
 
-[node name="Area2D" type="Area2D" parent="Collision Stuff/Rival2" unique_id=61606715]
+[node name="LineOfSight" type="Area2D" parent="Collision Stuff/Trainer2" unique_id=2090578945]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Stuff/Rival2/Area2D" unique_id=1327528157]
-position = Vector2(8, 64)
-scale = Vector2(0.8, 0.8)
-shape = SubResource("RectangleShape2D_qhiut")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Stuff/Trainer2/LineOfSight" unique_id=1339421913]
+position = Vector2(8, 71)
+shape = SubResource("RectangleShape2D_vbevu")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Collision Stuff/Rival2" unique_id=1202115840]
-root_node = NodePath("../../Rival2")
-libraries/ = SubResource("AnimationLibrary_0ljn5")
+[node name="HitBox" type="Area2D" parent="Collision Stuff/Trainer2" unique_id=657593903]
+collision_layer = 16
 
-[node name="RayCast2D" type="RayCast2D" parent="Collision Stuff/Rival2" unique_id=547337297]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Stuff/Trainer2/HitBox" unique_id=2063049093]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_lh2gh")
+
+[node name="DetectPlayer" type="CollisionShape2D" parent="Collision Stuff/Trainer2/HitBox" unique_id=82195743]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_pe55j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Collision Stuff/Trainer2" unique_id=1250727746]
+libraries/ = SubResource("AnimationLibrary_35qta")
+
+[node name="RayCast2D" type="RayCast2D" parent="Collision Stuff/Trainer2" unique_id=1493087215]
 position = Vector2(8, 16)
 target_position = Vector2(0, 16)
 
-[node name="Dialogue Root" type="Node" parent="Collision Stuff/Rival2" unique_id=2069086413]
+[node name="DialogueRoot" type="Node" parent="Collision Stuff/Trainer2" unique_id=1360333292]
 script = ExtResource("19_5qjph")
-text = "Fight me"
+text = "fight me"
 
-[node name="Talk" type="Node" parent="Collision Stuff/Rival2/Dialogue Root" unique_id=1200469643]
+[node name="Node" type="Node" parent="Collision Stuff/Trainer2/DialogueRoot" unique_id=2033607425 node_paths=PackedStringArray("func_node")]
 script = ExtResource("19_5qjph")
 is_end_node = true
-option_name = "Ok"
+option_name = "yes"
 function = "begin_battle"
+func_node = NodePath("..")
 
-[node name="Run" type="Node" parent="Collision Stuff/Rival2/Dialogue Root" unique_id=2047807464]
+[node name="Node2" type="Node" parent="Collision Stuff/Trainer2/DialogueRoot" unique_id=1149167236 node_paths=PackedStringArray("func_node")]
 script = ExtResource("19_5qjph")
 is_end_node = true
-option_name = "No"
+option_name = "no"
 function = "begin_battle"
+func_node = NodePath("..")
 
 [connection signal="body_entered" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_Door_body_entered"]
 [connection signal="body_entered" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_body_entered"]
 [connection signal="body_exited" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_Door_body_exited"]
 [connection signal="body_exited" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_body_exited"]
-[connection signal="body_entered" from="Collision Stuff/Rival/Area2D" to="Collision Stuff/Rival" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Collision Stuff/Rival2/Area2D" to="Collision Stuff/Rival2" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Collision Stuff/Trainer/LineOfSight" to="Collision Stuff/Trainer" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Collision Stuff/Trainer/HitBox" to="Collision Stuff/Trainer" method="_on_hit_box_body_entered"]
+[connection signal="body_exited" from="Collision Stuff/Trainer/HitBox" to="Collision Stuff/Trainer" method="_on_hit_box_body_exited"]
+[connection signal="body_entered" from="Collision Stuff/Trainer2/LineOfSight" to="Collision Stuff/Trainer2" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Collision Stuff/Trainer2/HitBox" to="Collision Stuff/Trainer2" method="_on_hit_box_body_entered"]
+[connection signal="body_exited" from="Collision Stuff/Trainer2/HitBox" to="Collision Stuff/Trainer2" method="_on_hit_box_body_exited"]
 
 [editable path="Collision Stuff/OaksLab"]

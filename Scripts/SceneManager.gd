@@ -20,8 +20,8 @@ func transition_exit_party_screen():
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 	transition_type = TransitionType.MENU_ONLY
 
-func transition_to_dialogue(root_node, func_node):
-	$DialogueBox.start_dialogue(root_node, func_node)
+func transition_to_dialogue(root_node):
+	$DialogueBox.start_dialogue(root_node)
 
 func transition_to_battle():
 	next_scene = $CurrentScene.get_child(0).scene_file_path

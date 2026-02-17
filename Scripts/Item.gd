@@ -21,7 +21,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	var player = Utils.get_player()
 	if player.can_interact_with_object and event.is_action_pressed("z") and picked_up and not used_up:
 		used_up = true
-		Utils.get_scene_manager().transition_to_dialogue(dialogue_root, self) 
+		Utils.get_scene_manager().transition_to_dialogue(dialogue_root) 
 
 
 

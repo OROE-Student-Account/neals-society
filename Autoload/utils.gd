@@ -59,9 +59,6 @@ func add_to_inventory(item: String):
 	var inv = load_json_file("res://Data/Inventory.json")
 	inv["Items"].append(item)
 	save_json_file("res://Data/Inventory.json", inv)
-	print(item)
-	print(inv)
-
 
 
 

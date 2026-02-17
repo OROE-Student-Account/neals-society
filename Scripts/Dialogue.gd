@@ -32,10 +32,10 @@ func _ready():
 	select_arrow.position.y = 9 + (selected_option % 2) * 16
 
 # starts a dialogue tree
-func start_dialogue(root, function_target: Node = null):
+func start_dialogue(root):
 	dialogue_root = root
 	current_node = root
-	target_node = function_target
+	target_node = root.func_node
 	selected_option = 0
 	
 	# Disable player
@@ -135,6 +135,7 @@ func _unhandled_input(event):
 				# Select the next node and move to that node
 				if num_options > selected_option:
 					current_node = children[selected_option]
+					target_node = current_node.func_node
 					selected_option = 0  # Reset option selection for next node
 					display_current_node()
 
@@ -144,6 +145,7 @@ func end_dialogue():
 	dialogue_state = DialogueState.SHOWING_TEXT
 	current_node = null
 	dialogue_root = null
+	target_node = null
 	
 	var player = Utils.get_player()
 	player.set_physics_process(true)

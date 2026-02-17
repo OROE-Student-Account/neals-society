@@ -5,6 +5,7 @@ class_name DialogueTreeNode
 @export var option_name = "" # if this has a parent, this is the option name
 @export var text = "" # text to show when this option is selected
 @export var function = "" # what to do after this is selected
+@export var func_node : Node = null
 
 
 func get_children_nodes() -> Array[Node]:
@@ -16,7 +17,9 @@ func get_children_nodes() -> Array[Node]:
 
 
 func begin_from_self():
-	Utils.get_scene_manager().transition_to_dialogue(self, self)
+	Utils.get_scene_manager().transition_to_dialogue(self)
 
+
+# make a better way for starting battles
 func begin_battle():
 	Utils.get_scene_manager().transition_to_battle()

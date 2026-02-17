@@ -35,11 +35,12 @@ region_rect = Rect2(224, 160, 416, 416)
 script = ExtResource("3_kg5e7")
 text = "Would you like to take this pokeball?"
 
-[node name="Node" type="Node" parent="PickupDialogue" unique_id=1734410170]
+[node name="Node" type="Node" parent="PickupDialogue" unique_id=1734410170 node_paths=PackedStringArray("func_node")]
 script = ExtResource("3_kg5e7")
 is_end_node = true
 option_name = "Pickup"
 function = "pickup"
+func_node = NodePath("../..")
 
 [node name="Node2" type="Node" parent="PickupDialogue" unique_id=904981415]
 script = ExtResource("3_kg5e7")
