@@ -17,7 +17,6 @@ func get_scene_manager():
 	return get_node("/root/SceneManager")
 
 
-# NEED TO IMPROVE, RIGHT NOW IT JUST TAKES BASE MOVES AND BASE INFORMATION.
 func get_grammarite_details(grammarite_name):
 	if not name: return
 	var available_moves = load_json_file("res://GrammariteData/BaseMoves.json")[grammarite_name]
@@ -51,13 +50,28 @@ func get_damage_multiplier(attack_type, defend_type1, defend_type2 = "None"):
 func get_party():
 	return load_json_file("res://Data/Inventory.json")["Party"]
 
-
 func get_poke_num(grammarite_name):
 	var names = load_json_file("res://GrammariteData/Names.json")
 	return names.find(grammarite_name)
 
 
-func load_json_file(file_path: String):
+func add_to_inventory(item: String):
+	var inv = load_json_file("res://Data/Inventory.json")
+	inv["Items"].append(item)
+	save_json_file("res://Data/Inventory.json", inv)
+	print(item)
+	print(inv)
+
+
+
+
+func save_json_file(file_path, data):
+	var file = FileAccess.open(file_path, FileAccess.WRITE)
+	var json_string = JSON.stringify(data, "\t")  # "\t" adds good formatting with tabs
+	file.store_string(json_string)
+	file.close()
+
+func load_json_file(file_path):
 	var file = FileAccess.open(file_path, FileAccess.READ)
 	var json = JSON.new()
 	json.parse(file.get_as_text())

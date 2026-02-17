@@ -21,6 +21,7 @@ const TILE_SIZE = 16
 @onready var ledge_ray = $LedgeRayCast2D
 @onready var door_ray = $DoorRayCast2D
 @onready var inside_door_ray = $BehindDoorRayCast2D # checks the inside doors so it looks good
+@onready var item_ray = $ItemRayCast2D
 
 
 @onready var shadow = $Shadow
@@ -29,6 +30,8 @@ const TILE_SIZE = 16
 
 var entering_door := false
 var jumping_over_ledge := false
+var can_interact_with_object := false
+
 
 enum PlayerState { IDLE, TURNING, WALKING }
 enum FacingDirection { LEFT, RIGHT, UP, DOWN }
@@ -132,10 +135,17 @@ func move(delta):
 	ledge_ray.target_position = step
 	door_ray.target_position = step
 	inside_door_ray.target_position = step
+	item_ray.target_position = step
 	ray.force_raycast_update()
 	ledge_ray.force_raycast_update()
 	door_ray.force_raycast_update()
 	inside_door_ray.force_raycast_update()
+	item_ray.force_raycast_update()
+	
+	can_interact_with_object = false
+	if item_ray.is_colliding():
+		can_interact_with_object = true
+	
 	# --- Normal ---
 	if not ray.is_colliding() or ((input_direction == Vector2.LEFT or input_direction == Vector2.RIGHT) and door_ray.is_colliding()):
 		if percent_moved_to_next_tile == 0:
@@ -205,5 +215,4 @@ func move(delta):
 			shadow.position.y = move
 			camera.position.y = move
 	else:
-		if (percent_moved_to_next_tile != 0): print("test")
 		is_moving = false

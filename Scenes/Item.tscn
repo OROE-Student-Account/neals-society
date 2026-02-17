@@ -7,16 +7,20 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttk8k"]
 size = Vector2(16, 16)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_08o4a"]
+
 [node name="Item" type="Area2D" unique_id=270907436]
 y_sort_enabled = true
-position = Vector2(-1, 0)
-collision_layer = 2
+collision_layer = 16
 script = ExtResource("1_ttk8k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=595209277]
 position = Vector2(8, 8)
-scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_ttk8k")
+
+[node name="DetectPlayer" type="CollisionShape2D" parent="." unique_id=1145340014]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_08o4a")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=849609961]
 y_sort_enabled = true

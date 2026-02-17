@@ -2832,6 +2832,7 @@ position = Vector2(272, -176)
 
 [node name="Item" parent="Collision Stuff" unique_id=968186873 instance=ExtResource("16_tbyl1")]
 position = Vector2(32, 96)
+item_name = "Pokeball"
 
 [node name="Player" parent="Collision Stuff" unique_id=464513584 instance=ExtResource("1")]
 position = Vector2(80, 96)
