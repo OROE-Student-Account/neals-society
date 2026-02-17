@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dxtpbcw3vk7v7" path="res://Assets/Grass/tall_grass.png" id="1"]
 [ext_resource type="Script" uid="uid://c7qjag23gf5r8" path="res://Scripts/TallGrass.gd" id="2"]
+[ext_resource type="Script" uid="uid://bp28l32amhxsf" path="res://Scripts/DialogueNode.gd" id="3_bfhjh"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(14, 14)
@@ -60,5 +61,12 @@ shape = SubResource("1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1418082169]
 libraries/ = SubResource("AnimationLibrary_wxgnp")
+
+[node name="DialogueRoot" type="Node" parent="." unique_id=1220795094 node_paths=PackedStringArray("func_node")]
+script = ExtResource("3_bfhjh")
+is_end_node = true
+text = "A wild grammarite appears!"
+function = "begin_battle"
+func_node = NodePath(".")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

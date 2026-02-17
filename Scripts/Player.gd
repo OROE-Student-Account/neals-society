@@ -142,6 +142,7 @@ func move(delta):
 	inside_door_ray.force_raycast_update()
 	item_ray.force_raycast_update()
 	
+	# --- objects --- 
 	can_interact_with_object = false
 	if item_ray.is_colliding():
 		can_interact_with_object = true

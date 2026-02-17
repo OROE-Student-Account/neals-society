@@ -51,17 +51,7 @@ func display_current_node():
 		end_dialogue()
 		return
 	
-	# Execute any function associated with this node
-	if current_node.function != "" and target_node != null:
-		if target_node.has_method(current_node.function):
-			target_node.call(current_node.function)
-		else:
-			push_warning("DialogueManager: Function '%s' not found on target node" % current_node.function)
-	
 	# Show the text first
-	show_text()
-
-func show_text():
 	if current_node.text == "":
 		end_dialogue()
 		return
@@ -78,8 +68,12 @@ func show_text():
 	select_arrow.visible = false
 	
 	box.visible = true
+	
 
 func show_options():
+	if current_node == null:
+		end_dialogue()
+		return
 	dialogue_state = DialogueState.SHOWING_OPTIONS
 	
 	# Hide text
@@ -119,6 +113,12 @@ func _unhandled_input(event):
 		if dialogue_state == DialogueState.SHOWING_TEXT:
 			# Waiting for Z to advance to options
 			if event.is_action_pressed("z"):
+				# Execute any function associated with this node
+				if current_node.function != "" and target_node != null:
+					if target_node.has_method(current_node.function):
+						target_node.call(current_node.function)
+					else:
+						print("DialogueManager: Function not found on target node")
 				show_options()
 		
 		elif dialogue_state == DialogueState.SHOWING_OPTIONS:

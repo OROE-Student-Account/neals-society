@@ -40,3 +40,8 @@ func player_in_grass():
 func _on_Area2D_body_entered(body):
 	anim_player.play("Stepped")
 	player_in_grass()
+	encounter_grammarite(0.1)
+
+func encounter_grammarite(chance):
+	if randf() < chance:
+		Utils.get_scene_manager().transition_to_dialogue($DialogueRoot)
