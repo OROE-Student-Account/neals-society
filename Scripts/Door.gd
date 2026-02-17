@@ -16,6 +16,7 @@ func _ready():
 		$Sprite2D.texture = null
 	sprite.visible = false
 	var player = Utils.get_player()
+	
 	player.connect("player_entering_door_signal", Callable(self, "enter_door"))
 	player.connect("player_entered_door_signal", Callable(self, "close_door"))
 

@@ -7,11 +7,22 @@ var used_up := false
 
 @export var item_name := ""
 
+
+func _ready() -> void:
+	var scene = get_node("/root/SceneManager/CurrentScene").get_child(0).name
+	if Utils.check_item_picked_up(name, scene):
+		self.queue_free()
+	else:
+		visible = true
+
+
 func pickup():
 	if !picked_up:
 		return
 	if item_name != "":
 		Utils.add_to_inventory(item_name)
+	var scene = get_node("/root/SceneManager/CurrentScene").get_child(0).name
+	Utils.update_item_picked_up(name, true, scene)
 	self.queue_free()
 
 func reset():

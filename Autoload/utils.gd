@@ -62,6 +62,31 @@ func add_to_inventory(item: String):
 
 
 
+func check_item_picked_up(item: String, scene = "Town"):
+	var data = load_json_file("res://Data/"+scene+".json")
+	
+	return data["Items"][item]["Collected"]
+
+func update_item_picked_up(item: String, value: bool, scene = "Town"):
+	var file_path = "res://Data/"+scene+".json"
+	var data = load_json_file(file_path)
+	data["Items"][item]["Collected"] = value
+	save_json_file(file_path, data)
+
+
+func check_trainer_attacked(name: String, scene = "Town"):
+	var data = load_json_file("res://Data/"+scene+".json")
+	
+	return data["Trainers"][name]["Talked"]
+
+func update_trainer_attacked(name: String, value: bool, scene = "Town"):
+	var file_path = "res://Data/"+scene+".json"
+	var data = load_json_file(file_path)
+	data["Trainers"][name]["Talked"] = value
+	save_json_file(file_path, data)
+
+
+
 func save_json_file(file_path, data):
 	var file = FileAccess.open(file_path, FileAccess.WRITE)
 	var json_string = JSON.stringify(data, "\t")  # "\t" adds good formatting with tabs

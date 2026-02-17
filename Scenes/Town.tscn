@@ -2995,11 +2995,12 @@ shape = SubResource("RectangleShape2D_typi0")
 sprite_frames = SubResource("SpriteFrames_n33s8")
 script = ExtResource("19_yv7ed")
 
-[node name="Item" parent="Collision Stuff" unique_id=968186873 instance=ExtResource("16_tbyl1")]
+[node name="Pokeball" parent="Collision Stuff" unique_id=968186873 instance=ExtResource("16_tbyl1")]
+unique_name_in_owner = true
 position = Vector2(32, 96)
 item_name = "Pokeball"
 
-[node name="Trainer" type="AnimatedSprite2D" parent="Collision Stuff" unique_id=1381438602]
+[node name="Rival" type="AnimatedSprite2D" parent="Collision Stuff" unique_id=1381438602]
 position = Vector2(160, 16)
 sprite_frames = SubResource("SpriteFrames_d5kfv")
 frame = 1
@@ -3007,75 +3008,75 @@ centered = false
 offset = Vector2(0, -3)
 script = ExtResource("17_typi0")
 
-[node name="LineOfSight" type="Area2D" parent="Collision Stuff/Trainer" unique_id=1506649704]
+[node name="LineOfSight" type="Area2D" parent="Collision Stuff/Rival" unique_id=1506649704]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Stuff/Trainer/LineOfSight" unique_id=1357964769]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Stuff/Rival/LineOfSight" unique_id=1357964769]
 position = Vector2(8, 71)
 shape = SubResource("RectangleShape2D_vbevu")
 
-[node name="HitBox" type="Area2D" parent="Collision Stuff/Trainer" unique_id=534457599]
+[node name="HitBox" type="Area2D" parent="Collision Stuff/Rival" unique_id=534457599]
 collision_layer = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Stuff/Trainer/HitBox" unique_id=651429316]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Stuff/Rival/HitBox" unique_id=651429316]
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_lh2gh")
 
-[node name="DetectPlayer" type="CollisionShape2D" parent="Collision Stuff/Trainer/HitBox" unique_id=620086875]
+[node name="DetectPlayer" type="CollisionShape2D" parent="Collision Stuff/Rival/HitBox" unique_id=620086875]
 position = Vector2(8, 8)
 shape = SubResource("CircleShape2D_pe55j")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Collision Stuff/Trainer" unique_id=2126887194]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Collision Stuff/Rival" unique_id=2126887194]
 libraries/ = SubResource("AnimationLibrary_35qta")
 
-[node name="RayCast2D" type="RayCast2D" parent="Collision Stuff/Trainer" unique_id=1547218494]
+[node name="RayCast2D" type="RayCast2D" parent="Collision Stuff/Rival" unique_id=1547218494]
 position = Vector2(8, 16)
 target_position = Vector2(0, 16)
 
-[node name="DialogueRoot" type="Node" parent="Collision Stuff/Trainer" unique_id=553674537]
+[node name="DialogueRoot" type="Node" parent="Collision Stuff/Rival" unique_id=553674537]
 script = ExtResource("19_5qjph")
 text = "Are you ready for school? Wait, do you not know who I am?"
 
-[node name="Talk" type="Node" parent="Collision Stuff/Trainer/DialogueRoot" unique_id=1754155299]
+[node name="Talk" type="Node" parent="Collision Stuff/Rival/DialogueRoot" unique_id=1754155299]
 script = ExtResource("19_5qjph")
 option_name = "Of course I do."
 text = "Then what is my name?"
 
-[node name="Node" type="Node" parent="Collision Stuff/Trainer/DialogueRoot/Talk" unique_id=1798472997 node_paths=PackedStringArray("func_node")]
+[node name="Node" type="Node" parent="Collision Stuff/Rival/DialogueRoot/Talk" unique_id=1798472997 node_paths=PackedStringArray("func_node")]
 script = ExtResource("19_5qjph")
 is_end_node = true
 option_name = "George"
 function = "begin_from_self"
 func_node = NodePath("../../../Second Dialogue Root")
 
-[node name="Node2" type="Node" parent="Collision Stuff/Trainer/DialogueRoot/Talk" unique_id=75411017 node_paths=PackedStringArray("func_node")]
+[node name="Node2" type="Node" parent="Collision Stuff/Rival/DialogueRoot/Talk" unique_id=75411017 node_paths=PackedStringArray("func_node")]
 script = ExtResource("19_5qjph")
 is_end_node = true
 option_name = "Nicholas"
 function = "begin_from_self"
 func_node = NodePath("../../../Second Dialogue Root")
 
-[node name="Run" type="Node" parent="Collision Stuff/Trainer/DialogueRoot" unique_id=200656403]
+[node name="Run" type="Node" parent="Collision Stuff/Rival/DialogueRoot" unique_id=200656403]
 script = ExtResource("19_5qjph")
 is_end_node = true
 option_name = "No."
 
-[node name="Second Dialogue Root" type="Node" parent="Collision Stuff/Trainer" unique_id=484231483]
+[node name="Second Dialogue Root" type="Node" parent="Collision Stuff/Rival" unique_id=484231483]
 script = ExtResource("19_5qjph")
 text = "WRONG. I live next door to you, how do you not know my name? By the way, what is your name?"
 
-[node name="Node" type="Node" parent="Collision Stuff/Trainer/Second Dialogue Root" unique_id=1253206485]
+[node name="Node" type="Node" parent="Collision Stuff/Rival/Second Dialogue Root" unique_id=1253206485]
 script = ExtResource("19_5qjph")
 is_end_node = true
 option_name = "Donald Jesus Trump"
 text = "Oh."
 
-[node name="Node2" type="Node" parent="Collision Stuff/Trainer/Second Dialogue Root" unique_id=831567257]
+[node name="Node2" type="Node" parent="Collision Stuff/Rival/Second Dialogue Root" unique_id=831567257]
 script = ExtResource("19_5qjph")
 is_end_node = true
 option_name = "Neal Sehgal."
 text = "What a handsome person you are."
 
-[node name="Trainer2" type="AnimatedSprite2D" parent="Collision Stuff" unique_id=193013468]
+[node name="Fighter" type="AnimatedSprite2D" parent="Collision Stuff" unique_id=193013468]
 position = Vector2(48, 16)
 sprite_frames = SubResource("SpriteFrames_d5kfv")
 frame = 1
@@ -3083,42 +3084,42 @@ centered = false
 offset = Vector2(0, -3)
 script = ExtResource("17_typi0")
 
-[node name="LineOfSight" type="Area2D" parent="Collision Stuff/Trainer2" unique_id=2090578945]
+[node name="LineOfSight" type="Area2D" parent="Collision Stuff/Fighter" unique_id=2090578945]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Stuff/Trainer2/LineOfSight" unique_id=1339421913]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Stuff/Fighter/LineOfSight" unique_id=1339421913]
 position = Vector2(8, 71)
 shape = SubResource("RectangleShape2D_vbevu")
 
-[node name="HitBox" type="Area2D" parent="Collision Stuff/Trainer2" unique_id=657593903]
+[node name="HitBox" type="Area2D" parent="Collision Stuff/Fighter" unique_id=657593903]
 collision_layer = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Stuff/Trainer2/HitBox" unique_id=2063049093]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Stuff/Fighter/HitBox" unique_id=2063049093]
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_lh2gh")
 
-[node name="DetectPlayer" type="CollisionShape2D" parent="Collision Stuff/Trainer2/HitBox" unique_id=82195743]
+[node name="DetectPlayer" type="CollisionShape2D" parent="Collision Stuff/Fighter/HitBox" unique_id=82195743]
 position = Vector2(8, 8)
 shape = SubResource("CircleShape2D_pe55j")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Collision Stuff/Trainer2" unique_id=1250727746]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Collision Stuff/Fighter" unique_id=1250727746]
 libraries/ = SubResource("AnimationLibrary_35qta")
 
-[node name="RayCast2D" type="RayCast2D" parent="Collision Stuff/Trainer2" unique_id=1493087215]
+[node name="RayCast2D" type="RayCast2D" parent="Collision Stuff/Fighter" unique_id=1493087215]
 position = Vector2(8, 16)
 target_position = Vector2(0, 16)
 
-[node name="DialogueRoot" type="Node" parent="Collision Stuff/Trainer2" unique_id=1360333292]
+[node name="DialogueRoot" type="Node" parent="Collision Stuff/Fighter" unique_id=1360333292]
 script = ExtResource("19_5qjph")
 text = "fight me"
 
-[node name="Node" type="Node" parent="Collision Stuff/Trainer2/DialogueRoot" unique_id=2033607425 node_paths=PackedStringArray("func_node")]
+[node name="Node" type="Node" parent="Collision Stuff/Fighter/DialogueRoot" unique_id=2033607425 node_paths=PackedStringArray("func_node")]
 script = ExtResource("19_5qjph")
 is_end_node = true
 option_name = "yes"
 function = "begin_battle"
 func_node = NodePath("..")
 
-[node name="Node2" type="Node" parent="Collision Stuff/Trainer2/DialogueRoot" unique_id=1149167236 node_paths=PackedStringArray("func_node")]
+[node name="Node2" type="Node" parent="Collision Stuff/Fighter/DialogueRoot" unique_id=1149167236 node_paths=PackedStringArray("func_node")]
 script = ExtResource("19_5qjph")
 is_end_node = true
 option_name = "no"
@@ -3129,11 +3130,11 @@ func_node = NodePath("..")
 [connection signal="body_entered" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_body_entered"]
 [connection signal="body_exited" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_Door_body_exited"]
 [connection signal="body_exited" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_body_exited"]
-[connection signal="body_entered" from="Collision Stuff/Trainer/LineOfSight" to="Collision Stuff/Trainer" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Collision Stuff/Trainer/HitBox" to="Collision Stuff/Trainer" method="_on_hit_box_body_entered"]
-[connection signal="body_exited" from="Collision Stuff/Trainer/HitBox" to="Collision Stuff/Trainer" method="_on_hit_box_body_exited"]
-[connection signal="body_entered" from="Collision Stuff/Trainer2/LineOfSight" to="Collision Stuff/Trainer2" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Collision Stuff/Trainer2/HitBox" to="Collision Stuff/Trainer2" method="_on_hit_box_body_entered"]
-[connection signal="body_exited" from="Collision Stuff/Trainer2/HitBox" to="Collision Stuff/Trainer2" method="_on_hit_box_body_exited"]
+[connection signal="body_entered" from="Collision Stuff/Rival/LineOfSight" to="Collision Stuff/Rival" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Collision Stuff/Rival/HitBox" to="Collision Stuff/Rival" method="_on_hit_box_body_entered"]
+[connection signal="body_exited" from="Collision Stuff/Rival/HitBox" to="Collision Stuff/Rival" method="_on_hit_box_body_exited"]
+[connection signal="body_entered" from="Collision Stuff/Fighter/LineOfSight" to="Collision Stuff/Fighter" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Collision Stuff/Fighter/HitBox" to="Collision Stuff/Fighter" method="_on_hit_box_body_entered"]
+[connection signal="body_exited" from="Collision Stuff/Fighter/HitBox" to="Collision Stuff/Fighter" method="_on_hit_box_body_exited"]
 
 [editable path="Collision Stuff/OaksLab"]

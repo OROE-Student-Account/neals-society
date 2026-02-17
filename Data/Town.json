@@ -1,1 +1,15 @@
-{ }
+{
+	"Items": {
+		"Pokeball": {
+			"Collected": false
+		}
+	},
+	"Trainers": {
+		"Fighter": {
+			"Talked": false
+		},
+		"Rival": {
+			"Talked": false
+		}
+	}
+}

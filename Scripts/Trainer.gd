@@ -9,6 +9,12 @@ var player_in_range := false
 var used_up := false
 
 
+func _ready():
+	var scene = get_node("/root/SceneManager/CurrentScene").get_child(0).name
+	if Utils.check_trainer_attacked(name, scene):
+		used_up = true
+
+
 func approach_until_hit():
 	var step = Vector2.ZERO
 	step.y = 16
@@ -21,6 +27,8 @@ func approach_until_hit():
 	else:
 		anim_player.stop()
 		used_up = true
+		var scene = get_node("/root/SceneManager/CurrentScene").get_child(0).name
+		Utils.update_trainer_attacked(name, true, scene)
 		Utils.get_scene_manager().transition_to_dialogue(root_node)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -45,6 +53,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	var player = Utils.get_player()
 	if  not used_up and player_in_range and event.is_action_pressed("z") and player.can_interact_with_object:
 		used_up = true
+		var scene = get_node("/root/SceneManager/CurrentScene").get_child(0).name
+		Utils.update_trainer_attacked(name, true, scene)
 		
 		var player_facing = player.facing_direction
 		if player_facing == 0:
