@@ -11,7 +11,7 @@ func _ready():
 	pass # Replace with function body.
 
 func get_player():
-	return get_node("/root/SceneManager/CurrentScene").get_children().back().find_child("Player")
+	return get_node("/root/SceneManager/CurrentScene").get_child(0).find_child("Player")
 
 func get_scene_manager():
 	return get_node("/root/SceneManager")

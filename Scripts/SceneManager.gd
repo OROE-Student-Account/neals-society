@@ -5,7 +5,7 @@ var next_scene: = ""
 var player_location = Vector2(0, 0)
 var player_direction = Vector2(0, 0)
 
-enum TransitionType { NEW_SCENE, PARTY_SCREEN, MENU_ONLY, BATTLE }
+enum TransitionType { NEW_SCENE, PARTY_SCREEN, MENU_ONLY, BATTLE, BATTLE_EXIT }
 var transition_type = TransitionType.NEW_SCENE
 
 # Called when the node enters the scene tree for the first time.
@@ -27,13 +27,13 @@ func transition_to_battle():
 	next_scene = $CurrentScene.get_child(0).scene_file_path
 	transition_type = TransitionType.BATTLE
 	var player = Utils.get_player()
-	player.set_physics_process(false)
+	player.stop_input = true
 	player_location = player.position
 	player_direction = player.input_direction
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 
 func transition_exit_battle():
-	transition_type = TransitionType.NEW_SCENE
+	transition_type = TransitionType.BATTLE_EXIT
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 
 func transition_to_scene(new_scene: String, spawn_location, spawn_direction):
@@ -44,19 +44,22 @@ func transition_to_scene(new_scene: String, spawn_location, spawn_direction):
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 
 func finished_fading():
+	var player = Utils.get_player()
 	match transition_type:
 		TransitionType.NEW_SCENE:
 			$CurrentScene.get_child(0).queue_free()
 			$CurrentScene.add_child(load(next_scene).instantiate())
 			
-			var player = Utils.get_player()
 			player.set_spawn(player_location, player_direction)
 		TransitionType.PARTY_SCREEN:
 			$Menu.load_party_screen()
 		TransitionType.MENU_ONLY:
 			$Menu.unload_party_screen()
 		TransitionType.BATTLE:
-			$CurrentScene.get_child(0).queue_free()
 			$CurrentScene.add_child(load("res://Scenes/Battle.tscn").instantiate())
+			$CurrentScene.get_children().back().get_child(0).make_current()
+		TransitionType.BATTLE_EXIT:
+			$CurrentScene.get_children().back().queue_free()
+			player.stop_input = false
 	
 	$ScreenTransition/AnimationPlayer.play("FadeToNormal")

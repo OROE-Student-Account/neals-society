@@ -50,16 +50,20 @@ func display_current_node():
 	if current_node == null:
 		end_dialogue()
 		return
-	
+
 	# Show the text first
 	if current_node.text == "":
+		var save_node = current_node
+		var tar_node = target_node 
+		end_dialogue()
+		
 		# Execute any function associated with this node
-		if current_node.function != "" and target_node != null:
-			if target_node.has_method(current_node.function):
-				target_node.call(current_node.function)
+		if save_node.function != "" and tar_node != null:
+			if tar_node.has_method(save_node.function):
+				tar_node.call(save_node.function)
 			else:
 				print("DialogueManager: Function not found on target node")
-		end_dialogue()
+		
 		return
 	
 	dialogue_state = DialogueState.SHOWING_TEXT
@@ -85,18 +89,14 @@ func show_options():
 	# Hide text
 	text_label.visible = false
 	
-	# Check if this is an end node
-	if current_node.is_end_node:
-		end_dialogue()
-		return
-	
 	# Get children (options)
 	var children = current_node.get_children_nodes()
 	
-	if children.size() == 0:
-		# No children treat as end
+	# Check if this is an end node
+	if current_node.is_end_node or children.size() == 0:
 		end_dialogue()
 		return
+	
 	
 	# Set up the option buttons
 	var option1_text = children[0].option_name if children.size() > 0 else ""

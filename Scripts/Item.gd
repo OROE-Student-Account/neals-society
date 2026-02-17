@@ -8,19 +8,32 @@ var used_up := false
 @export var item_name := ""
 
 func pickup():
-	print
 	if !picked_up:
 		return
 	if item_name != "":
 		Utils.add_to_inventory(item_name)
 	self.queue_free()
 
-
+func reset():
+	await get_tree().create_timer(0.1).timeout
+	used_up = false
 
 
 func _unhandled_input(event: InputEvent) -> void:
 	var player = Utils.get_player()
 	if player.can_interact_with_object and event.is_action_pressed("z") and picked_up and not used_up:
+		
+		var player_facing = player.facing_direction
+		var player_pos = player.position
+		if player_facing != 0 && player_pos.x > position.x && player_pos.y == position.y:
+			return
+		if player_facing != 1 && player_pos.x < position.x && player_pos.y == position.y:
+			return
+		if player_facing != 2 && player_pos.x == position.x && player_pos.y > position.y:
+			return
+		if player_facing != 3  && player_pos.x == position.x && player_pos.y < position.y:
+			return
+		
 		used_up = true
 		Utils.get_scene_manager().transition_to_dialogue(dialogue_root) 
 

@@ -2925,10 +2925,6 @@ position = Vector2(32, -112)
 texture_filter = 1
 position = Vector2(272, -176)
 
-[node name="Item" parent="Collision Stuff" unique_id=968186873 instance=ExtResource("16_tbyl1")]
-position = Vector2(32, 96)
-item_name = "Pokeball"
-
 [node name="Player" parent="Collision Stuff" unique_id=464513584 instance=ExtResource("1")]
 position = Vector2(80, 96)
 
@@ -2998,6 +2994,10 @@ shape = SubResource("RectangleShape2D_typi0")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Collision Stuff/Animated House" unique_id=1649021043]
 sprite_frames = SubResource("SpriteFrames_n33s8")
 script = ExtResource("19_yv7ed")
+
+[node name="Item" parent="Collision Stuff" unique_id=968186873 instance=ExtResource("16_tbyl1")]
+position = Vector2(32, 96)
+item_name = "Pokeball"
 
 [node name="Trainer" type="AnimatedSprite2D" parent="Collision Stuff" unique_id=1381438602]
 position = Vector2(160, 16)

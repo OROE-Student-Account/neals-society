@@ -11,7 +11,7 @@ var used_up := false
 
 func approach_until_hit():
 	var step = Vector2.ZERO
-	step.y = 8
+	step.y = 16
 	
 	ray.target_position = step
 	ray.force_raycast_update()
@@ -43,7 +43,7 @@ func _on_hit_box_body_exited(body: Node2D) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	var player = Utils.get_player()
-	if  not used_up and player.can_interact_with_object and event.is_action_pressed("z") and player_in_range:
+	if  not used_up and player_in_range and event.is_action_pressed("z") and player.can_interact_with_object:
 		used_up = true
 		
 		var player_facing = player.facing_direction

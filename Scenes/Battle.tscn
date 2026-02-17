@@ -134,13 +134,13 @@ _data = {
 
 [node name="BattleScene" type="Node2D" unique_id=1956242669]
 
-[node name="Background" type="ColorRect" parent="." unique_id=703872017]
-offset_right = 240.0
-offset_bottom = 160.0
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1995767346]
 anchor_mode = 0
 zoom = Vector2(5, 5)
+
+[node name="Background" type="ColorRect" parent="." unique_id=703872017]
+offset_right = 240.0
+offset_bottom = 160.0
 
 [node name="BattleManager" type="Node2D" parent="." unique_id=346605181 node_paths=PackedStringArray("player_grammarite", "enemy_grammarite", "battle_ui")]
 script = ExtResource("1_qxnh6")

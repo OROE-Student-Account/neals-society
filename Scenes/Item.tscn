@@ -42,10 +42,12 @@ option_name = "Pickup"
 function = "pickup"
 func_node = NodePath("../..")
 
-[node name="Node2" type="Node" parent="PickupDialogue" unique_id=904981415]
+[node name="Node2" type="Node" parent="PickupDialogue" unique_id=904981415 node_paths=PackedStringArray("func_node")]
 script = ExtResource("3_kg5e7")
 is_end_node = true
 option_name = "Leave"
+function = "reset"
+func_node = NodePath("../..")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
