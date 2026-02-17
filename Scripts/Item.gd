@@ -8,6 +8,7 @@ var used_up := false
 @export var item_name := ""
 
 func pickup():
+	print
 	if !picked_up:
 		return
 	if item_name != "":
