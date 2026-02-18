@@ -1,9 +1,11 @@
 extends Node2D
 
 @onready var lvl = $LevelLabel
+@onready var summary = $SummaryScreen
 
 
-
+enum States { NONE, SUMMARY }
+var state = States.NONE
 
 
 func set_health(max_health, current):
@@ -22,3 +24,22 @@ func set_sprites(num):
 	var file_path = "res://Assets/Pokemon/Pokemon"+str(num+1)+".png"
 	$PokemonPartySprite.texture = load(file_path)
 	$PokemonName.texture = load(file_path)
+
+
+
+
+
+func show_screen():
+	match state:
+		States.NONE:
+			summary.visible = false
+		States.SUMMARY:
+			summary.visible = true
+
+
+func _input(event):
+	match state:
+		States.SUMMARY:
+			if event.is_action_pressed("x"):
+				state = States.NONE
+				show_screen()

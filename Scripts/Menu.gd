@@ -55,7 +55,3 @@ func _unhandled_input(event):
 				select_arrow.position.y = 6 + (selected_option % 6) * 15
 			elif event.is_action_pressed("z") and selected_option == 0:
 				Utils.get_scene_manager().transition_to_party_screen()
-			
-		ScreenLoaded.PARTY_SCREEN:
-			if event.is_action_pressed("x"):
-				Utils.get_scene_manager().transition_exit_party_screen()

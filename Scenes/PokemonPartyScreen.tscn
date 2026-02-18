@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://b81iqrvr8ywd1" path="res://Assets/Pokemon/Pokemon95.png" id="12"]
 [ext_resource type="Texture2D" uid="uid://hpyxtuycfcbw" path="res://Assets/UI/Pokemon Party/exit_background_button.png" id="13"]
 [ext_resource type="Script" uid="uid://gtkl713auage" path="res://Scripts/PokemonPartyScreen.gd" id="14"]
+[ext_resource type="Texture2D" uid="uid://dw17mm63araxi" path="res://Assets/UI/menu_box_1.png" id="15_ajrs2"]
+[ext_resource type="Texture2D" uid="uid://bofmcuxvqsoyg" path="res://Assets/UI/ui_arrow_left_right.png" id="16_jqn4x"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "Idle"
@@ -259,6 +261,21 @@ script = ExtResource("14")
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1")
+
+[node name="InfoText" type="Label" parent="." unique_id=633513612]
+offset_left = 8.0
+offset_top = 136.0
+offset_right = 145.0
+offset_bottom = 159.0
+theme_override_colors/font_color = Color(1, 0, 1, 1)
+theme_override_fonts/font = ExtResource("4")
+theme_override_font_sizes/font_size = 12
+text = "CHOOSE THE GUY"
+
+[node name="CancelSprite" type="Sprite2D" parent="." unique_id=1901885376]
+position = Vector2(211, 144)
+texture = ExtResource("13")
+hframes = 2
 
 [node name="FirstPokemonSlot" type="Node2D" parent="." unique_id=766143109]
 script = ExtResource("3_3dpfl")
@@ -661,7 +678,64 @@ offset_right = 113.0
 offset_bottom = 47.0
 color = Color(0, 1, 0, 1)
 
-[node name="CancelSprite" type="Sprite2D" parent="." unique_id=1901885376]
-position = Vector2(211, 144)
-texture = ExtResource("13")
-hframes = 2
+[node name="PageOptions" type="NinePatchRect" parent="." unique_id=1769560236]
+visible = false
+offset_left = 176.0
+offset_top = 80.0
+offset_right = 238.0
+offset_bottom = 154.0
+texture = ExtResource("15_ajrs2")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PageOptions" unique_id=1857093073]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 6.0
+offset_right = 56.0
+offset_bottom = 67.0
+
+[node name="Label" type="Label" parent="PageOptions/VBoxContainer" unique_id=1051197184]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
+theme_override_fonts/font = ExtResource("4")
+theme_override_font_sizes/font_size = 12
+text = "Summary"
+
+[node name="Label2" type="Label" parent="PageOptions/VBoxContainer" unique_id=819748401]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
+theme_override_fonts/font = ExtResource("4")
+theme_override_font_sizes/font_size = 12
+text = "swit"
+
+[node name="Label3" type="Label" parent="PageOptions/VBoxContainer" unique_id=195601569]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
+theme_override_fonts/font = ExtResource("4")
+theme_override_font_sizes/font_size = 12
+text = "it"
+
+[node name="Label4" type="Label" parent="PageOptions/VBoxContainer" unique_id=1416390290]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
+theme_override_fonts/font = ExtResource("4")
+theme_override_font_sizes/font_size = 12
+text = "mo"
+
+[node name="Label5" type="Label" parent="PageOptions/VBoxContainer" unique_id=1558371454]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
+theme_override_fonts/font = ExtResource("4")
+theme_override_font_sizes/font_size = 12
+text = "Cancel"
+
+[node name="Arrow" type="TextureRect" parent="PageOptions" unique_id=1040011129]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 13.0
+offset_bottom = 16.0
+texture = ExtResource("16_jqn4x")
