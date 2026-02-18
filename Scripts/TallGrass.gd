@@ -43,5 +43,9 @@ func _on_Area2D_body_entered(body):
 	encounter_grammarite(0.1)
 
 func encounter_grammarite(chance):
+	var player = Utils.get_player()
+	if player.walk_speed > 4:
+		chance *= 2
+	
 	if randf() < chance:
 		Utils.get_scene_manager().transition_to_dialogue($DialogueRoot)

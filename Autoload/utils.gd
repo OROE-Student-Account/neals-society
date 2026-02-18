@@ -74,16 +74,32 @@ func update_item_picked_up(item: String, value: bool, scene = "Town"):
 	save_json_file(file_path, data)
 
 
-func check_trainer_attacked(name: String, scene = "Town"):
+func check_trainer_attacked(node_name: String, scene = "Town"):
 	var data = load_json_file("res://Data/"+scene+".json")
 	
-	return data["Trainers"][name]["Talked"]
+	return data["Trainers"][node_name]["Talked"]
 
-func update_trainer_attacked(name: String, value: bool, scene = "Town"):
+func update_trainer_attacked(node_name: String, value: bool, scene = "Town"):
 	var file_path = "res://Data/"+scene+".json"
 	var data = load_json_file(file_path)
-	data["Trainers"][name]["Talked"] = value
+	data["Trainers"][node_name]["Talked"] = value
 	save_json_file(file_path, data)
+
+
+
+
+func reset_town():
+	var town = load_json_file("res://Data/Town.json")
+	
+	# Iterate over the values in the Items dictionary
+	for item_name in town["Items"]:
+		town["Items"][item_name]["Collected"] = false
+	
+	# Iterate over the values in the Trainers dictionary
+	for trainer_name in town["Trainers"]:
+		town["Trainers"][trainer_name]["Talked"] = false
+	
+	save_json_file("res://Data/Town.json", town)
 
 
 

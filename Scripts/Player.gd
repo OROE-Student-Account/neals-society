@@ -8,9 +8,14 @@ signal player_entered_door_signal
 
 const LandingDustEffect = preload("res://Scenes/LandingDustEffect.tscn")
 
+
+var base_walk_speed = 3.75
+var base_jump_speed = 4.0
+var run_speed = 7.5
+
 # 60 fps, so this is 1 pixel per frame
-@export var walk_speed = 3.75
-@export var jump_speed = 4.0
+var walk_speed = 3.75
+var jump_speed = 4.0
 const TILE_SIZE = 16
 
 @onready var anim_tree = $AnimationTree
@@ -51,6 +56,9 @@ func _ready():
 	sprite.visible = true
 	sprite.modulate = Color.WHITE
 	sprite.scale = Vector2.ONE
+	
+	jump_speed = base_jump_speed
+	walk_speed = base_walk_speed
 
 	if has_node("Camera2D"):
 		camera.make_current()
@@ -217,3 +225,13 @@ func move(delta):
 			camera.position.y = move
 	else:
 		is_moving = false
+
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("q"):
+		walk_speed = run_speed
+		jump_speed = run_speed
+	elif event.is_action_released("q"):
+		walk_speed = base_walk_speed
+		jump_speed = base_jump_speed

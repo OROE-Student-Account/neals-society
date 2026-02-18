@@ -845,6 +845,23 @@ tracks/0/keys = {
 "values": [4]
 }
 
+[sub_resource type="Animation" id="Animation_slan3"]
+resource_name = "TurnDown"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
 [sub_resource type="Animation" id="Animation_pe55j"]
 resource_name = "TurnLeft"
 length = 0.1
@@ -908,6 +925,7 @@ _data = {
 &"Approach": SubResource("Animation_60ruy"),
 &"RESET": SubResource("Animation_gn7iv"),
 &"TurnAround": SubResource("Animation_lh2gh"),
+&"TurnDown": SubResource("Animation_slan3"),
 &"TurnLeft": SubResource("Animation_pe55j"),
 &"TurnRight": SubResource("Animation_avwyw")
 }
@@ -3032,79 +3050,86 @@ libraries/ = SubResource("AnimationLibrary_35qta")
 position = Vector2(8, 16)
 target_position = Vector2(0, 16)
 
-[node name="DialogueRoot" type="Node" parent="Collision Stuff/Rival" unique_id=553674537]
+[node name="DialogueRoot" type="Node" parent="Collision Stuff/Rival" unique_id=642039714]
 script = ExtResource("19_5qjph")
 text = "Are you ready for school? Wait, do you not know who I am?"
 
-[node name="Talk" type="Node" parent="Collision Stuff/Rival/DialogueRoot" unique_id=1754155299]
+[node name="Talk" type="Node" parent="Collision Stuff/Rival/DialogueRoot" unique_id=1466338209]
 script = ExtResource("19_5qjph")
 option_name = "Of course I do."
 text = "Then what is my name?"
 
-[node name="Node" type="Node" parent="Collision Stuff/Rival/DialogueRoot/Talk" unique_id=1798472997 node_paths=PackedStringArray("func_node")]
+[node name="Node" type="Node" parent="Collision Stuff/Rival/DialogueRoot/Talk" unique_id=2147137166 node_paths=PackedStringArray("func_node")]
 script = ExtResource("19_5qjph")
 is_end_node = true
 option_name = "George"
 function = "begin_from_self"
 func_node = NodePath("../../../Second Dialogue Root")
 
-[node name="Node2" type="Node" parent="Collision Stuff/Rival/DialogueRoot/Talk" unique_id=75411017 node_paths=PackedStringArray("func_node")]
+[node name="Node2" type="Node" parent="Collision Stuff/Rival/DialogueRoot/Talk" unique_id=1290035315 node_paths=PackedStringArray("func_node")]
 script = ExtResource("19_5qjph")
 is_end_node = true
 option_name = "Nicholas"
 function = "begin_from_self"
 func_node = NodePath("../../../Second Dialogue Root")
 
-[node name="Run" type="Node" parent="Collision Stuff/Rival/DialogueRoot" unique_id=200656403]
+[node name="Run" type="Node" parent="Collision Stuff/Rival/DialogueRoot" unique_id=2047477546]
 script = ExtResource("19_5qjph")
 is_end_node = true
 option_name = "No."
 
-[node name="Second Dialogue Root" type="Node" parent="Collision Stuff/Rival" unique_id=484231483]
+[node name="Second Dialogue Root" type="Node" parent="Collision Stuff/Rival" unique_id=56998859]
 script = ExtResource("19_5qjph")
 text = "WRONG. I live next door to you, how do you not know my name? By the way, what is your name?"
 
-[node name="Node" type="Node" parent="Collision Stuff/Rival/Second Dialogue Root" unique_id=1253206485]
+[node name="Node" type="Node" parent="Collision Stuff/Rival/Second Dialogue Root" unique_id=967599914]
 script = ExtResource("19_5qjph")
 is_end_node = true
 option_name = "Donald Jesus Trump"
 text = "Oh."
 
-[node name="Node2" type="Node" parent="Collision Stuff/Rival/Second Dialogue Root" unique_id=831567257]
+[node name="Node2" type="Node" parent="Collision Stuff/Rival/Second Dialogue Root" unique_id=371669198]
 script = ExtResource("19_5qjph")
 is_end_node = true
 option_name = "Neal Sehgal."
 text = "What a handsome person you are."
 
-[node name="Fighter" type="AnimatedSprite2D" parent="Collision Stuff" unique_id=193013468]
-position = Vector2(48, 16)
+[node name="FinalDialogue" type="Node" parent="Collision Stuff/Rival" unique_id=1380263649 node_paths=PackedStringArray("func_node")]
+script = ExtResource("19_5qjph")
+is_end_node = true
+text = "I can't believe you forgot my name."
+function = "reset"
+func_node = NodePath("..")
+
+[node name="Fighter" type="AnimatedSprite2D" parent="Collision Stuff" unique_id=1722283528]
+position = Vector2(48, 32)
 sprite_frames = SubResource("SpriteFrames_d5kfv")
 frame = 1
 centered = false
 offset = Vector2(0, -3)
 script = ExtResource("17_typi0")
 
-[node name="LineOfSight" type="Area2D" parent="Collision Stuff/Fighter" unique_id=2090578945]
+[node name="LineOfSight" type="Area2D" parent="Collision Stuff/Fighter" unique_id=1135081039]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Stuff/Fighter/LineOfSight" unique_id=1339421913]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Stuff/Fighter/LineOfSight" unique_id=1061387851]
 position = Vector2(8, 71)
 shape = SubResource("RectangleShape2D_vbevu")
 
-[node name="HitBox" type="Area2D" parent="Collision Stuff/Fighter" unique_id=657593903]
+[node name="HitBox" type="Area2D" parent="Collision Stuff/Fighter" unique_id=1836980757]
 collision_layer = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Stuff/Fighter/HitBox" unique_id=2063049093]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Stuff/Fighter/HitBox" unique_id=1933397601]
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_lh2gh")
 
-[node name="DetectPlayer" type="CollisionShape2D" parent="Collision Stuff/Fighter/HitBox" unique_id=82195743]
+[node name="DetectPlayer" type="CollisionShape2D" parent="Collision Stuff/Fighter/HitBox" unique_id=1851812786]
 position = Vector2(8, 8)
 shape = SubResource("CircleShape2D_pe55j")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Collision Stuff/Fighter" unique_id=1250727746]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Collision Stuff/Fighter" unique_id=750478437]
 libraries/ = SubResource("AnimationLibrary_35qta")
 
-[node name="RayCast2D" type="RayCast2D" parent="Collision Stuff/Fighter" unique_id=1493087215]
+[node name="RayCast2D" type="RayCast2D" parent="Collision Stuff/Fighter" unique_id=292022228]
 position = Vector2(8, 16)
 target_position = Vector2(0, 16)
 
@@ -3124,6 +3149,13 @@ script = ExtResource("19_5qjph")
 is_end_node = true
 option_name = "no"
 function = "begin_battle"
+func_node = NodePath("..")
+
+[node name="FinalDialogue" type="Node" parent="Collision Stuff/Fighter" unique_id=775037070 node_paths=PackedStringArray("func_node")]
+script = ExtResource("19_5qjph")
+is_end_node = true
+text = "I cannot believe I lost to YOU!"
+function = "reset"
 func_node = NodePath("..")
 
 [connection signal="body_entered" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_Door_body_entered"]

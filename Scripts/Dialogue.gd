@@ -125,6 +125,7 @@ func _unhandled_input(event):
 						target_node.call(current_node.function)
 					else:
 						print("DialogueManager: Function not found on target node")
+				
 				show_options()
 		
 		elif dialogue_state == DialogueState.SHOWING_OPTIONS:
@@ -146,6 +147,7 @@ func _unhandled_input(event):
 					display_current_node()
 
 func end_dialogue():
+	
 	box.visible = false
 	screen_loaded = ScreenLoaded.NOTHING
 	dialogue_state = DialogueState.SHOWING_TEXT
