@@ -312,20 +312,21 @@ theme_override_font_sizes/font_size = 12
 text = "4"
 
 [node name="HealthLabel" type="Label" parent="FirstPokemonSlot" unique_id=445894989]
-offset_left = 50.000004
-offset_top = 66.0
-offset_right = 90.0
-offset_bottom = 80.0
+offset_left = 29.00001
+offset_top = 66.00001
+offset_right = 69.0
+offset_bottom = 80.00001
 scale = Vector2(0.8, 0.8)
 theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "23"
+horizontal_alignment = 2
 
 [node name="MaxHealthLabel" type="Label" parent="FirstPokemonSlot" unique_id=1493653083]
-offset_left = 66.0
-offset_top = 66.0
-offset_right = 106.0
-offset_bottom = 80.0
+offset_left = 67.00001
+offset_top = 66.00001
+offset_right = 107.00001
+offset_bottom = 80.00001
 scale = Vector2(0.8, 0.8)
 theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
@@ -379,14 +380,15 @@ theme_override_font_sizes/font_size = 12
 text = "4"
 
 [node name="HealthLabel" type="Label" parent="SecondPokemonSlot" unique_id=1204895558]
-offset_left = 84.0
+offset_left = 62.0
 offset_top = 50.0
-offset_right = 124.0
+offset_right = 102.0
 offset_bottom = 64.0
 scale = Vector2(0.8, 0.8)
 theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "23"
+horizontal_alignment = 2
 
 [node name="MaxHealthLabel" type="Label" parent="SecondPokemonSlot" unique_id=1888917229]
 offset_left = 100.0
@@ -446,14 +448,15 @@ theme_override_font_sizes/font_size = 12
 text = "4"
 
 [node name="HealthLabel" type="Label" parent="ThirdPokemonSlot" unique_id=2081258015]
-offset_left = 84.0
+offset_left = 62.0
 offset_top = 50.0
-offset_right = 124.0
+offset_right = 102.0
 offset_bottom = 64.0
 scale = Vector2(0.8, 0.8)
 theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "23"
+horizontal_alignment = 2
 
 [node name="MaxHealthLabel" type="Label" parent="ThirdPokemonSlot" unique_id=965856757]
 offset_left = 100.0
@@ -513,14 +516,15 @@ theme_override_font_sizes/font_size = 12
 text = "4"
 
 [node name="HealthLabel" type="Label" parent="FourthPokemonSlot" unique_id=318959310]
-offset_left = 84.0
+offset_left = 62.0
 offset_top = 50.0
-offset_right = 124.0
+offset_right = 102.0
 offset_bottom = 64.0
 scale = Vector2(0.8, 0.8)
 theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "23"
+horizontal_alignment = 2
 
 [node name="MaxHealthLabel" type="Label" parent="FourthPokemonSlot" unique_id=2052646217]
 offset_left = 100.0
@@ -580,14 +584,15 @@ theme_override_font_sizes/font_size = 12
 text = "4"
 
 [node name="HealthLabel" type="Label" parent="FifthPokemonSlot" unique_id=1796174006]
-offset_left = 84.0
+offset_left = 62.0
 offset_top = 50.0
-offset_right = 124.0
+offset_right = 102.0
 offset_bottom = 64.0
 scale = Vector2(0.8, 0.8)
 theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "23"
+horizontal_alignment = 2
 
 [node name="MaxHealthLabel" type="Label" parent="FifthPokemonSlot" unique_id=1794014537]
 offset_left = 100.0
@@ -647,14 +652,15 @@ theme_override_font_sizes/font_size = 12
 text = "4"
 
 [node name="HealthLabel" type="Label" parent="SixthPokemonSlot" unique_id=805811202]
-offset_left = 84.0
+offset_left = 62.0
 offset_top = 50.0
-offset_right = 124.0
+offset_right = 102.0
 offset_bottom = 64.0
 scale = Vector2(0.8, 0.8)
 theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "23"
+horizontal_alignment = 2
 
 [node name="MaxHealthLabel" type="Label" parent="SixthPokemonSlot" unique_id=1305587335]
 offset_left = 100.0
@@ -697,19 +703,19 @@ offset_top = 6.0
 offset_right = 56.0
 offset_bottom = 67.0
 
-[node name="Label" type="Label" parent="PageOptions/VBoxContainer" unique_id=1051197184]
+[node name="Summary" type="Label" parent="PageOptions/VBoxContainer" unique_id=1051197184]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
 theme_override_fonts/font = ExtResource("4")
 theme_override_font_sizes/font_size = 12
 text = "Summary"
 
-[node name="Label2" type="Label" parent="PageOptions/VBoxContainer" unique_id=819748401]
+[node name="Switch" type="Label" parent="PageOptions/VBoxContainer" unique_id=819748401]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
 theme_override_fonts/font = ExtResource("4")
 theme_override_font_sizes/font_size = 12
-text = "swit"
+text = "Switch"
 
 [node name="Label3" type="Label" parent="PageOptions/VBoxContainer" unique_id=195601569]
 layout_mode = 2
@@ -725,7 +731,7 @@ theme_override_fonts/font = ExtResource("4")
 theme_override_font_sizes/font_size = 12
 text = "mo"
 
-[node name="Label5" type="Label" parent="PageOptions/VBoxContainer" unique_id=1558371454]
+[node name="Cancel" type="Label" parent="PageOptions/VBoxContainer" unique_id=1558371454]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
 theme_override_fonts/font = ExtResource("4")
@@ -733,6 +739,82 @@ theme_override_font_sizes/font_size = 12
 text = "Cancel"
 
 [node name="Arrow" type="TextureRect" parent="PageOptions" unique_id=1040011129]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 13.0
+offset_bottom = 16.0
+texture = ExtResource("16_jqn4x")
+
+[node name="SwitchLocation" type="NinePatchRect" parent="." unique_id=724356943]
+visible = false
+offset_left = 176.0
+offset_top = 54.0
+offset_right = 238.0
+offset_bottom = 154.0
+texture = ExtResource("15_ajrs2")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SwitchLocation" unique_id=1858512796]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 6.0
+offset_right = 56.0
+offset_bottom = 67.0
+
+[node name="1" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=2011019407]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
+theme_override_fonts/font = ExtResource("4")
+theme_override_font_sizes/font_size = 12
+text = "Slot 1"
+
+[node name="2" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=1346129559]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
+theme_override_fonts/font = ExtResource("4")
+theme_override_font_sizes/font_size = 12
+text = "Slot 2"
+
+[node name="3" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=1933598985]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
+theme_override_fonts/font = ExtResource("4")
+theme_override_font_sizes/font_size = 12
+text = "Slot 3"
+
+[node name="4" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=1979807380]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
+theme_override_fonts/font = ExtResource("4")
+theme_override_font_sizes/font_size = 12
+text = "Slot 4"
+
+[node name="5" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=1544587729]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
+theme_override_fonts/font = ExtResource("4")
+theme_override_font_sizes/font_size = 12
+text = "Slot 5"
+
+[node name="6" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=1079065639]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
+theme_override_fonts/font = ExtResource("4")
+theme_override_font_sizes/font_size = 12
+text = "Slot 6"
+
+[node name="Cancel" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=769751161]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
+theme_override_fonts/font = ExtResource("4")
+theme_override_font_sizes/font_size = 12
+text = "Cancel"
+
+[node name="Arrow" type="TextureRect" parent="SwitchLocation" unique_id=585775761]
 layout_mode = 0
 offset_left = 7.0
 offset_top = 6.0

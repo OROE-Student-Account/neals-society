@@ -9,19 +9,6 @@
 		{
 			"Health": 25.0,
 			"Item": "",
-			"Level": 1.0,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Howl",
-				"Woodchip"
-			],
-			"Name": "Dog of Wood",
-			"Nickname": ""
-		},
-		{
-			"Health": 25.0,
-			"Item": "",
 			"Level": 14.56,
 			"Moves": [
 				"Bite",
@@ -43,6 +30,19 @@
 				"Sculpt"
 			],
 			"Name": "Orawolfi",
+			"Nickname": ""
+		},
+		{
+			"Health": 25.0,
+			"Item": "",
+			"Level": 1.0,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Howl",
+				"Woodchip"
+			],
+			"Name": "Dog of Wood",
 			"Nickname": ""
 		},
 		{

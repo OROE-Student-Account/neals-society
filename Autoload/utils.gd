@@ -50,6 +50,13 @@ func get_damage_multiplier(attack_type, defend_type1, defend_type2 = "None"):
 func get_party():
 	return load_json_file("res://Data/Inventory.json")["Party"]
 
+func set_party(party):
+	var inv = load_json_file("res://Data/Inventory.json")
+	
+	inv["Party"] = party
+	
+	save_json_file("res://Data/Inventory.json", inv)
+
 func get_poke_num(grammarite_name):
 	var names = load_json_file("res://GrammariteData/Names.json")
 	return names.find(grammarite_name)

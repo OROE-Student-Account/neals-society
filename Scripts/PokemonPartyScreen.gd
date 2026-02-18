@@ -3,10 +3,12 @@ extends Node2D
 var pause = false
 
 
-enum Page { MAIN, CHOSEN, SUMMARY }
+enum Page { MAIN, CHOSEN, SUMMARY, SWITCH }
 var page: int = Page.MAIN
 
 var selected_sub_page: int = 0
+
+var num_of_slots = 7
 
 enum Options { FIRST_SLOT, SECOND_SLOT, THIRD_SLOT, FOURTH_SLOT, FIFTH_SLOT, SIXTH_SLOT, CANCEL }
 var selected_option: int = Options.FIRST_SLOT
@@ -40,6 +42,10 @@ func set_active_option():
 func _ready():
 	set_active_option()
 	
+	load_party()
+
+
+func load_party():
 	var party = Utils.get_party()
 	for i in range(6):
 		var slot = options[i].get_parent()
@@ -53,7 +59,6 @@ func _ready():
 			slot.set_health(max_health, slot_data["Health"])
 			slot.set_sprites(Utils.get_poke_num(slot_data["Name"]))
 			slots_enabled[i] = true
-
 
 func stop():
 	pause = true
@@ -84,20 +89,20 @@ func load_summary(slot_num):
 	# do the polygon
 	var polygon = $SummaryScreen/Stats/BG/Actual.polygon
 	
-	# 32 / Max stat
-	HP *= 0.32
+	# 40 / Max stat
+	HP *= 0.4
 	polygon[0].x = -HP
 	polygon[0].y = -HP
 	
-	DEF *= 3.2
+	DEF *= 4.0
 	polygon[1].x = DEF
 	polygon[1].y = -DEF
 	
-	ATK *= 0.32
+	ATK *= 0.4
 	polygon[2].x = ATK
 	polygon[2].y = ATK
 	
-	SPD *= 3.2
+	SPD *= 4.0
 	polygon[3].x = -SPD
 	polygon[3].y = SPD
 	
@@ -135,6 +140,7 @@ func load_summary(slot_num):
 func update_page():
 	selected_sub_page = 0
 	$PageOptions/Arrow.position.y = 6 + (selected_sub_page % 5) * 13
+	$SwitchLocation/Arrow.position.y = 6 + (selected_sub_page % 5) * 13
 	
 	if $SummaryScreen:
 		$SummaryScreen.queue_free()
@@ -143,12 +149,31 @@ func update_page():
 		Page.MAIN:
 			$InfoText.text = "Choose a Grammarite."
 			$PageOptions.visible = false
+			$SwitchLocation.visible = false
 		Page.CHOSEN:
 			$InfoText.text = "Do what with this Grammarite?"
 			$PageOptions.visible = true
+			$SwitchLocation.visible = false
 		Page.SUMMARY:
 			$PageOptions.visible = false
 			load_summary(selected_option)
+		Page.SWITCH:
+			$InfoText.text = "Put this Grammarite where?"
+			$PageOptions.visible = false
+			$SwitchLocation.visible = true
+			
+			var children = $SwitchLocation/VBoxContainer.get_children()
+			var count = 0
+			for i in range(len(children)):
+				if slots_enabled[i]:
+					children[i].visible = true
+					count += 1
+				else:
+					children[i].visible = false
+			num_of_slots = count
+			
+			$SwitchLocation.position.y = 54 + 13 * (7 - count)
+			$SwitchLocation.size.y = 100 - 13 * (7 - count)
 
 
 
@@ -199,11 +224,41 @@ func _input(event):
 			elif event.is_action_pressed("ui_up"):
 				selected_sub_page =  (selected_sub_page + 4) % 5
 				$PageOptions/Arrow.position.y = 6 + (selected_sub_page % 5) * 13
-			elif event.is_action_pressed("z") and selected_sub_page == 0:
-				page = Page.SUMMARY
-				update_page()
+			elif event.is_action_pressed("z"):
+				if selected_sub_page == 0:
+					page = Page.SUMMARY
+					update_page()
+				elif selected_sub_page == 1:
+					page = Page.SWITCH
+					update_page()
 		Page.SUMMARY:
 			if event.is_action_pressed("x"):
 				page = Page.CHOSEN
 				update_page()
 				stop()
+		Page.SWITCH:
+			if event.is_action_pressed("x") or (event.is_action_pressed("z") and selected_sub_page == num_of_slots - 1):
+				page = Page.CHOSEN
+				update_page()
+				stop()
+			elif event.is_action_pressed("ui_down"):
+				selected_sub_page =  (selected_sub_page + 1) % num_of_slots
+				$SwitchLocation/Arrow.position.y = 6 + (selected_sub_page % num_of_slots) * 13
+			elif event.is_action_pressed("ui_up"):
+				selected_sub_page =  (selected_sub_page + num_of_slots - 1) % num_of_slots
+				$SwitchLocation/Arrow.position.y = 6 + (selected_sub_page % num_of_slots) * 13
+			elif event.is_action_pressed("z"):
+				var party = Utils.get_party()
+				
+				var temp = party[selected_option]
+				party[selected_option] = party[selected_sub_page]
+				party[selected_sub_page] = temp
+				
+				Utils.set_party(party)
+				
+				load_party()
+				
+				page = Page.MAIN
+				update_page()
+				
+				
