@@ -687,7 +687,7 @@ color = Color(0, 1, 0, 1)
 [node name="PageOptions" type="NinePatchRect" parent="." unique_id=1769560236]
 visible = false
 offset_left = 176.0
-offset_top = 80.0
+offset_top = 93.0
 offset_right = 238.0
 offset_bottom = 154.0
 texture = ExtResource("15_ajrs2")
@@ -723,13 +723,6 @@ theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
 theme_override_fonts/font = ExtResource("4")
 theme_override_font_sizes/font_size = 12
 text = "it"
-
-[node name="Label4" type="Label" parent="PageOptions/VBoxContainer" unique_id=1416390290]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("4")
-theme_override_font_sizes/font_size = 12
-text = "mo"
 
 [node name="Cancel" type="Label" parent="PageOptions/VBoxContainer" unique_id=1558371454]
 layout_mode = 2

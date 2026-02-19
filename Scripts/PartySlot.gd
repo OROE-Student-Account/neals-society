@@ -24,7 +24,7 @@ func set_sprites(num):
 	var file_path = "res://Assets/Pokemon/Pokemon"+str(num+1)+".png"
 	$PokemonPartySprite.texture = load(file_path)
 	$PokemonName.texture = load(file_path)
-
+	
 
 
 

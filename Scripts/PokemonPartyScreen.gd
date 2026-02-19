@@ -3,7 +3,7 @@ extends Node2D
 var pause = false
 
 
-enum Page { MAIN, CHOSEN, SUMMARY, SWITCH }
+enum Page { MAIN, CHOSEN, SUMMARY, SWITCH, MOVES }
 var page: int = Page.MAIN
 
 var selected_sub_page: int = 0
@@ -136,14 +136,37 @@ func load_summary(slot_num):
 	info.get_child(4).text = slot_data["Name"]
 	info.get_child(5).text = "DEX #: "+str(Utils.get_poke_num(slot_data["Name"])+1)
 
+func load_moves(slot_num):
+	self.add_child(load("res://Scenes/MovesScreen.tscn").instantiate())
+	
+	var slot_data = Utils.get_party()[slot_num]
+	var details = Utils.get_grammarite_details(slot_data["Name"])
+	var moves = details["Moves"]
+	
+	var PP = slot_data["PP"]
+	
+	var move_nodes = $MovesScreen/Moves.get_children()
+	for i in range(len(move_nodes)):
+		var box = move_nodes[i]
+		box.get_child(0).text = moves[i]["Name"]
+		box.get_child(1).text = moves[i]["Type"]
+		box.get_child(2).text = "PP: " + str(int(PP[i])) + "/" + str(int(moves[i]["PP"]))
+		box.get_child(3).text = "DMG: " + str(int(moves[i]["Damage"]))
+		box.get_child(4).text = "ACC: " + str(int(100 * moves[i]["Accuracy"])) + "%"
+	
+	
+	
+	
 
 func update_page():
 	selected_sub_page = 0
-	$PageOptions/Arrow.position.y = 6 + (selected_sub_page % 5) * 13
-	$SwitchLocation/Arrow.position.y = 6 + (selected_sub_page % 5) * 13
+	$PageOptions/Arrow.position.y = 6 + (selected_sub_page % 4) * 13
+	$SwitchLocation/Arrow.position.y = 6 + (selected_sub_page % num_of_slots) * 13
 	
 	if $SummaryScreen:
 		$SummaryScreen.queue_free()
+	if $MovesScreen:
+		$MovesScreen.queue_free()
 	
 	match page:
 		Page.MAIN:
@@ -157,6 +180,9 @@ func update_page():
 		Page.SUMMARY:
 			$PageOptions.visible = false
 			load_summary(selected_option)
+		Page.MOVES:
+			$PageOptions.visible = false
+			load_moves(selected_option)
 		Page.SWITCH:
 			$InfoText.text = "Put this Grammarite where?"
 			$PageOptions.visible = false
@@ -218,12 +244,12 @@ func _input(event):
 				stop()
 				
 			elif event.is_action_pressed("ui_down"):
-				selected_sub_page =  (selected_sub_page + 1) % 5
-				$PageOptions/Arrow.position.y = 6 + (selected_sub_page % 5) * 13
+				selected_sub_page =  (selected_sub_page + 1) % 4
+				$PageOptions/Arrow.position.y = 6 + (selected_sub_page % 4) * 13
 				
 			elif event.is_action_pressed("ui_up"):
-				selected_sub_page =  (selected_sub_page + 4) % 5
-				$PageOptions/Arrow.position.y = 6 + (selected_sub_page % 5) * 13
+				selected_sub_page =  (selected_sub_page + 3) % 4
+				$PageOptions/Arrow.position.y = 6 + (selected_sub_page % 4) * 13
 			elif event.is_action_pressed("z"):
 				if selected_sub_page == 0:
 					page = Page.SUMMARY
@@ -236,6 +262,17 @@ func _input(event):
 				page = Page.CHOSEN
 				update_page()
 				stop()
+			if event.is_action_pressed("z"):
+				page = Page.MOVES
+				update_page()
+		Page.MOVES:
+			if event.is_action_pressed("x"):
+				page = Page.CHOSEN
+				update_page()
+				stop()
+			if event.is_action_pressed("z"):
+				page = Page.SUMMARY
+				update_page()
 		Page.SWITCH:
 			if event.is_action_pressed("x") or (event.is_action_pressed("z") and selected_sub_page == num_of_slots - 1):
 				page = Page.CHOSEN
