@@ -1,0 +1,267 @@
+[gd_scene format=3 uid="uid://brovjf0d8yomh"]
+
+[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="1_nfakk"]
+[ext_resource type="Texture2D" uid="uid://dw17mm63araxi" path="res://Assets/UI/menu_box_1.png" id="2_3se8e"]
+
+[node name="SummaryScreen" type="Node2D" unique_id=1754632819]
+
+[node name="Background" type="ColorRect" parent="." unique_id=75780336]
+offset_right = 240.0
+offset_bottom = 160.0
+
+[node name="Stats" type="Node2D" parent="." unique_id=1049182960]
+
+[node name="BG" type="Control" parent="Stats" unique_id=1637545736]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Outline" type="ColorRect" parent="Stats/BG" unique_id=91150727]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = 9.0
+offset_right = 61.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 1, 1, 1)
+
+[node name="Max" type="ColorRect" parent="Stats/BG" unique_id=578228405]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 30.0
+offset_right = 80.0
+offset_bottom = 94.0
+
+[node name="Line2D" type="Line2D" parent="Stats/BG" unique_id=501395015]
+position = Vector2(0, -2)
+points = PackedVector2Array(16, 32, 80, 96)
+width = 1.0
+default_color = Color(0, 1, 1, 1)
+
+[node name="Line2D2" type="Line2D" parent="Stats/BG" unique_id=609585383]
+position = Vector2(0, -2)
+points = PackedVector2Array(80, 32, 16, 96)
+width = 1.0
+default_color = Color(0, 1, 1, 1)
+
+[node name="Actual" type="Polygon2D" parent="Stats/BG" unique_id=1930384969]
+position = Vector2(48, 62)
+scale = Vector2(0.75, 0.75)
+color = Color(0, 1, 0, 1)
+polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[node name="Hex" type="Polygon2D" parent="Stats/BG" unique_id=824555323]
+visible = false
+position = Vector2(8, -8)
+scale = Vector2(0.3, 0.3)
+color = Color(0.050980393, 1, 1, 1)
+polygon = PackedVector2Array(120, 0, 0, 64, 0, 200, 120, 264, 240, 200, 240, 64)
+
+[node name="Labels" type="Control" parent="Stats" unique_id=1807623146]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HP" type="VBoxContainer" parent="Stats/Labels" unique_id=172946645]
+layout_mode = 0
+offset_top = 3.0
+offset_right = 40.0
+offset_bottom = 43.0
+
+[node name="Label" type="Label" parent="Stats/Labels/HP" unique_id=820239236]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_nfakk")
+theme_override_font_sizes/font_size = 12
+text = "HP"
+
+[node name="Stat" type="Label" parent="Stats/Labels/HP" unique_id=274506898]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_nfakk")
+theme_override_font_sizes/font_size = 12
+text = "100"
+
+[node name="DEF" type="VBoxContainer" parent="Stats/Labels" unique_id=134561905]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 3.0
+offset_right = 96.0
+offset_bottom = 43.0
+
+[node name="Label" type="Label" parent="Stats/Labels/DEF" unique_id=346669060]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_nfakk")
+theme_override_font_sizes/font_size = 12
+text = "DEF"
+
+[node name="Stat" type="Label" parent="Stats/Labels/DEF" unique_id=1588435018]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_nfakk")
+theme_override_font_sizes/font_size = 12
+text = "100"
+
+[node name="SPD" type="VBoxContainer" parent="Stats/Labels" unique_id=1660413002]
+layout_mode = 0
+offset_top = 98.0
+offset_right = 40.0
+offset_bottom = 138.0
+
+[node name="Label" type="Label" parent="Stats/Labels/SPD" unique_id=1802207166]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_nfakk")
+theme_override_font_sizes/font_size = 12
+text = "SPD"
+
+[node name="Stat" type="Label" parent="Stats/Labels/SPD" unique_id=208081788]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_nfakk")
+theme_override_font_sizes/font_size = 12
+text = "100"
+
+[node name="ATK" type="VBoxContainer" parent="Stats/Labels" unique_id=1328904515]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 98.0
+offset_right = 96.0
+offset_bottom = 138.0
+
+[node name="Label" type="Label" parent="Stats/Labels/ATK" unique_id=168941680]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_nfakk")
+theme_override_font_sizes/font_size = 12
+text = "ATK"
+
+[node name="Stat" type="Label" parent="Stats/Labels/ATK" unique_id=1979521994]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_nfakk")
+theme_override_font_sizes/font_size = 12
+text = "100"
+
+[node name="Info" type="Node2D" parent="." unique_id=1140226239]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Info" unique_id=710610327]
+offset_left = 128.0
+offset_top = 8.0
+offset_right = 232.0
+offset_bottom = 152.0
+texture = ExtResource("2_3se8e")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Types" type="Label" parent="Info/NinePatchRect" unique_id=1783673475]
+layout_direction = 2
+layout_mode = 0
+offset_left = 35.0
+offset_top = 8.0
+offset_right = 83.0
+offset_bottom = 17.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_nfakk")
+theme_override_font_sizes/font_size = 12
+text = "Types:"
+
+[node name="DoubleTypes" type="HBoxContainer" parent="Info/NinePatchRect/Types" unique_id=1624464371]
+visible = false
+layout_mode = 1
+offset_left = -45.0
+offset_right = 47.0
+offset_bottom = 40.0
+
+[node name="TypeOne" type="Label" parent="Info/NinePatchRect/Types/DoubleTypes" unique_id=1537552426]
+custom_minimum_size = Vector2(60, 0)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_nfakk")
+theme_override_font_sizes/font_size = 12
+text = "TEST"
+horizontal_alignment = 2
+
+[node name="TypeTwo" type="Label" parent="Info/NinePatchRect/Types/DoubleTypes" unique_id=1597478939]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_nfakk")
+theme_override_font_sizes/font_size = 12
+text = "TEST"
+
+[node name="SingleTypes" type="Label" parent="Info/NinePatchRect" unique_id=1428585398]
+layout_direction = 2
+layout_mode = 0
+offset_left = 11.0
+offset_top = 23.0
+offset_right = 92.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_nfakk")
+theme_override_font_sizes/font_size = 12
+text = "TEST"
+horizontal_alignment = 1
+
+[node name="LVL" type="Label" parent="Info/NinePatchRect" unique_id=58632423]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 40.0
+offset_right = 52.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_nfakk")
+theme_override_font_sizes/font_size = 12
+text = "LVL: 1"
+
+[node name="XP" type="Label" parent="Info/NinePatchRect" unique_id=1500388549]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 40.0
+offset_right = 96.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_nfakk")
+theme_override_font_sizes/font_size = 12
+text = "XP: 1"
+
+[node name="RealName" type="Label" parent="Info/NinePatchRect" unique_id=2028660572]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 56.0
+offset_right = 52.0
+offset_bottom = 79.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_nfakk")
+theme_override_font_sizes/font_size = 12
+text = "name"
+
+[node name="GrammadexNum" type="Label" parent="Info/NinePatchRect" unique_id=1714340404]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 72.0
+offset_right = 52.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_nfakk")
+theme_override_font_sizes/font_size = 12
+text = "#"

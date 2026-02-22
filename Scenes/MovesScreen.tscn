@@ -1,0 +1,305 @@
+[gd_scene format=3 uid="uid://c0o0w0a78qi5r"]
+
+[ext_resource type="Texture2D" uid="uid://dw17mm63araxi" path="res://Assets/UI/menu_box_1.png" id="1_au4ge"]
+[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="2_44pqi"]
+
+[node name="MovesScreen" type="Node2D" unique_id=236429404]
+texture_filter = 1
+
+[node name="Background" type="ColorRect" parent="." unique_id=175241576]
+offset_right = 240.0
+offset_bottom = 160.0
+
+[node name="Moves" type="Node2D" parent="." unique_id=2047609668]
+
+[node name="Move1" type="NinePatchRect" parent="Moves" unique_id=723739800]
+offset_left = 8.0
+offset_top = 24.000002
+offset_right = 137.99998
+offset_bottom = 75.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_au4ge")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Name" type="Label" parent="Moves/Move1" unique_id=754873394]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 68.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_44pqi")
+theme_override_font_sizes/font_size = 12
+text = "Dragon Dance"
+
+[node name="Type" type="Label" parent="Moves/Move1" unique_id=1558293445]
+layout_direction = 2
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 62.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_44pqi")
+theme_override_font_sizes/font_size = 12
+text = "Literature"
+
+[node name="PP" type="Label" parent="Moves/Move1" unique_id=1239686362]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 19.0
+offset_right = 123.0
+offset_bottom = 30.999994
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_44pqi")
+theme_override_font_sizes/font_size = 12
+text = "PP: 10/10"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="DMG" type="Label" parent="Moves/Move1" unique_id=169073294]
+layout_direction = 2
+layout_mode = 0
+offset_left = 9.0
+offset_top = 33.0
+offset_right = 62.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_44pqi")
+theme_override_font_sizes/font_size = 12
+text = "DMG: 100"
+
+[node name="ACC" type="Label" parent="Moves/Move1" unique_id=861235607]
+layout_direction = 2
+layout_mode = 0
+offset_left = 44.75001
+offset_top = 33.000004
+offset_right = 123.75
+offset_bottom = 42.000004
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_44pqi")
+theme_override_font_sizes/font_size = 12
+text = "ACC: 100%"
+horizontal_alignment = 2
+
+[node name="Move2" type="NinePatchRect" parent="Moves" unique_id=587213104]
+offset_left = 128.0
+offset_top = 24.000002
+offset_right = 257.99997
+offset_bottom = 75.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_au4ge")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Name" type="Label" parent="Moves/Move2" unique_id=379255052]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 68.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_44pqi")
+theme_override_font_sizes/font_size = 12
+text = "Dragon Dance"
+
+[node name="Type" type="Label" parent="Moves/Move2" unique_id=989105260]
+layout_direction = 2
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 62.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_44pqi")
+theme_override_font_sizes/font_size = 12
+text = "Literature"
+
+[node name="PP" type="Label" parent="Moves/Move2" unique_id=1795636655]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 19.0
+offset_right = 123.0
+offset_bottom = 30.999994
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_44pqi")
+theme_override_font_sizes/font_size = 12
+text = "PP: 10/10"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="DMG" type="Label" parent="Moves/Move2" unique_id=1588417956]
+layout_direction = 2
+layout_mode = 0
+offset_left = 9.0
+offset_top = 33.0
+offset_right = 62.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_44pqi")
+theme_override_font_sizes/font_size = 12
+text = "DMG: 100"
+
+[node name="ACC" type="Label" parent="Moves/Move2" unique_id=714356878]
+layout_direction = 2
+layout_mode = 0
+offset_left = 44.75001
+offset_top = 33.000004
+offset_right = 123.75
+offset_bottom = 42.000004
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_44pqi")
+theme_override_font_sizes/font_size = 12
+text = "ACC: 100%"
+horizontal_alignment = 2
+
+[node name="Move3" type="NinePatchRect" parent="Moves" unique_id=1660357408]
+offset_left = 8.0
+offset_top = 95.00001
+offset_right = 137.99998
+offset_bottom = 146.00003
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_au4ge")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Name" type="Label" parent="Moves/Move3" unique_id=1637427221]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 68.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_44pqi")
+theme_override_font_sizes/font_size = 12
+text = "Dragon Dance"
+
+[node name="Type" type="Label" parent="Moves/Move3" unique_id=626251501]
+layout_direction = 2
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 62.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_44pqi")
+theme_override_font_sizes/font_size = 12
+text = "Literature"
+
+[node name="PP" type="Label" parent="Moves/Move3" unique_id=1970809396]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 19.0
+offset_right = 123.0
+offset_bottom = 30.999994
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_44pqi")
+theme_override_font_sizes/font_size = 12
+text = "PP: 10/10"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="DMG" type="Label" parent="Moves/Move3" unique_id=1058647251]
+layout_direction = 2
+layout_mode = 0
+offset_left = 9.0
+offset_top = 33.0
+offset_right = 62.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_44pqi")
+theme_override_font_sizes/font_size = 12
+text = "DMG: 100"
+
+[node name="ACC" type="Label" parent="Moves/Move3" unique_id=1731540398]
+layout_direction = 2
+layout_mode = 0
+offset_left = 44.75001
+offset_top = 33.000004
+offset_right = 123.75
+offset_bottom = 42.000004
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_44pqi")
+theme_override_font_sizes/font_size = 12
+text = "ACC: 100%"
+horizontal_alignment = 2
+
+[node name="Move4" type="NinePatchRect" parent="Moves" unique_id=1135850226]
+offset_left = 128.0
+offset_top = 95.00001
+offset_right = 257.99997
+offset_bottom = 146.00003
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_au4ge")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Name" type="Label" parent="Moves/Move4" unique_id=406597673]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 68.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_44pqi")
+theme_override_font_sizes/font_size = 12
+text = "Dragon Dance"
+
+[node name="Type" type="Label" parent="Moves/Move4" unique_id=352794809]
+layout_direction = 2
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 62.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_44pqi")
+theme_override_font_sizes/font_size = 12
+text = "Literature"
+
+[node name="PP" type="Label" parent="Moves/Move4" unique_id=57883208]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 19.0
+offset_right = 123.0
+offset_bottom = 30.999994
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_44pqi")
+theme_override_font_sizes/font_size = 12
+text = "PP: 10/10"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="DMG" type="Label" parent="Moves/Move4" unique_id=1601812911]
+layout_direction = 2
+layout_mode = 0
+offset_left = 9.0
+offset_top = 33.0
+offset_right = 62.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_44pqi")
+theme_override_font_sizes/font_size = 12
+text = "DMG: 100"
+
+[node name="ACC" type="Label" parent="Moves/Move4" unique_id=1402567731]
+layout_direction = 2
+layout_mode = 0
+offset_left = 44.75001
+offset_top = 33.000004
+offset_right = 123.75
+offset_bottom = 42.000004
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_44pqi")
+theme_override_font_sizes/font_size = 12
+text = "ACC: 100%"
+horizontal_alignment = 2

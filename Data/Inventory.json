@@ -7,6 +7,44 @@
 	],
 	"Party": [
 		{
+			"Health": 100.0,
+			"Item": "",
+			"Level": 50.23,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Sculpt"
+			],
+			"PP": [
+				10,
+				0,
+				5,
+				3
+			],
+			"Name": "Orawolfi",
+			"Nickname": ""
+		},
+		{
+			"Health": 25.0,
+			"Item": "",
+			"Level": 14.56,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Sculpt"
+			],
+			"PP": [
+				10,
+				0,
+				5,
+				3
+			],
+			"Name": "Sculpupture",
+			"Nickname": ""
+		},
+		{
 			"Health": 25.0,
 			"Item": "",
 			"Level": 1.0,
@@ -16,47 +54,41 @@
 				"Howl",
 				"Woodchip"
 			],
-			"Name": "Dog of Wood"
-		},
-		{
-			"Health": 25.0,
-			"Item": "",
-			"Level": 14.0,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Sit",
-				"Sculpt"
+			"PP": [
+				10,
+				0,
+				5,
+				1
 			],
-			"Name": "Sculpupture"
+			"Name": "Dog of Wood",
+			"Nickname": ""
 		},
 		{
 			"Health": 0.0,
 			"Item": "",
 			"Level": 1.0,
 			"Moves": [],
-			"Name": ""
+			"PP": [],
+			"Name": "",
+			"Nickname": ""
 		},
 		{
 			"Health": 0.0,
 			"Item": "",
 			"Level": 1.0,
 			"Moves": [],
-			"Name": ""
+			"PP": [],
+			"Name": "",
+			"Nickname": ""
 		},
 		{
 			"Health": 0.0,
 			"Item": "",
 			"Level": 1.0,
 			"Moves": [],
-			"Name": ""
-		},
-		{
-			"Health": 0.0,
-			"Item": "",
-			"Level": 1.0,
-			"Moves": [],
-			"Name": ""
+			"PP": [],
+			"Name": "",
+			"Nickname": ""
 		}
 	]
 }
