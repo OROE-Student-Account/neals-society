@@ -1,11 +1,12 @@
 extends CanvasLayer
 
 const PokemonPartyScreen = preload("res://Scenes/PokemonPartyScreen.tscn")
+const PokemonItemScreen = preload("res://Scenes/ItemScreen.tscn")
 
 @onready var select_arrow = $Control/NinePatchRect/TextureRect
 @onready var menu = $Control
 
-enum ScreenLoaded { NOTHING, JUST_MENU, PARTY_SCREEN, }
+enum ScreenLoaded { NOTHING, JUST_MENU, ITEM_SCREEN, PARTY_SCREEN, }
 var screen_loaded = ScreenLoaded.NOTHING
 
 var selected_option: int = 0
@@ -19,12 +20,24 @@ func load_party_screen():
 	screen_loaded = ScreenLoaded.PARTY_SCREEN
 	var party_screen = PokemonPartyScreen.instantiate()
 	add_child(party_screen)
-	
-	
+
 func unload_party_screen():
 	menu.visible = true
 	screen_loaded = ScreenLoaded.JUST_MENU
 	remove_child($PokemonPartyScreen)
+
+
+func load_item_screen():
+	menu.visible = false
+	screen_loaded = ScreenLoaded.ITEM_SCREEN
+	var item_screen = PokemonItemScreen.instantiate()
+	add_child(item_screen)
+
+func unload_item_screen():
+	menu.visible = true
+	screen_loaded = ScreenLoaded.JUST_MENU
+	remove_child($PokemonItemScreen)
+
 
 func _unhandled_input(event):
 	match screen_loaded:
@@ -55,3 +68,5 @@ func _unhandled_input(event):
 				select_arrow.position.y = 6 + (selected_option % 6) * 15
 			elif event.is_action_pressed("z") and selected_option == 0:
 				Utils.get_scene_manager().transition_to_party_screen()
+			elif event.is_action_pressed("z") and selected_option == 1:
+				Utils.get_scene_manager().transition_to_item_screen()

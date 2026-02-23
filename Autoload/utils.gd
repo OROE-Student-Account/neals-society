@@ -68,6 +68,15 @@ func add_to_inventory(item: String):
 	save_json_file("res://Data/Inventory.json", inv)
 
 
+func get_items():
+	var inv = load_json_file("res://Data/Inventory.json")["Items"]
+	
+	return inv
+
+func get_item(name):
+	var item = load_json_file("res://GrammariteData/Items.json")[name]
+	return item
+
 
 func check_item_picked_up(item: String, scene = "Town"):
 	var data = load_json_file("res://Data/"+scene+".json")
