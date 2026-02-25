@@ -36,7 +36,7 @@ func load_item_screen():
 func unload_item_screen():
 	menu.visible = true
 	screen_loaded = ScreenLoaded.JUST_MENU
-	remove_child($PokemonItemScreen)
+	remove_child($ItemScreen)
 
 
 func _unhandled_input(event):

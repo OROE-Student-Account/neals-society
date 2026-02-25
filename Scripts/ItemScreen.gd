@@ -155,7 +155,7 @@ func use_item_on_grammarite():
 func _unhandled_input(event: InputEvent) -> void:
 	match current_state:
 		State.ITEM_LIST:
-			if event.is_action_pressed("ui_left"):
+			if event.is_action_pressed("z"):
 				# Check if current item is Grammarite type
 				var selected_indices = $ItemList.get_selected_items()
 				if selected_indices.size() > 0:
@@ -166,10 +166,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			
 			elif event.is_action_pressed("x"):
 				# Exit back to menu/game
-				Utils.get_scene_manager().transition_exit_party_screen()  # Or whatever your exit function is
+				Utils.get_scene_manager().transition_exit_item_screen()  # Or whatever your exit function is
 		
 		State.GRAMMARITE_SELECT:
-			if event.is_action_pressed("ui_right"):
+			if event.is_action_pressed("x"):
 				# Go back to item list
 				current_state = State.ITEM_LIST
 				hide_grammarite_selection()
@@ -180,29 +180,41 @@ func _unhandled_input(event: InputEvent) -> void:
 					_on_item_list_item_selected(selected_indices[0])
 			
 			elif event.is_action_pressed("ui_down"):
-				set_active_grammarite()
-				grammarite_slots[selected_grammarite].frame = 0
-				selected_grammarite = (selected_grammarite + 1) % 6
-				while not slots_enabled[selected_grammarite]:
-					selected_grammarite = (selected_grammarite + 1) % 6
-				set_active_grammarite()
+				if selected_grammarite < 4:
+					set_active_grammarite()
+					grammarite_slots[selected_grammarite].frame = 0
+					selected_grammarite = (selected_grammarite + 2) % 6
+					while not slots_enabled[selected_grammarite]:
+						selected_grammarite = (selected_grammarite + 2) % 6
+					set_active_grammarite()
 			
 			elif event.is_action_pressed("ui_up"):
-				grammarite_slots[selected_grammarite].frame = 0
-				selected_grammarite = (selected_grammarite + 5) % 6
-				while not slots_enabled[selected_grammarite]:
+				if selected_grammarite > 1:
+					grammarite_slots[selected_grammarite].frame = 0
+					selected_grammarite = (selected_grammarite + 4) % 6
+					while not slots_enabled[selected_grammarite]:
+						selected_grammarite = (selected_grammarite + 4) % 6
+					set_active_grammarite()
+			
+			elif event.is_action_pressed("ui_right"):
+				if selected_grammarite % 2 == 0:
+					set_active_grammarite()
+					grammarite_slots[selected_grammarite].frame = 0
+					selected_grammarite = (selected_grammarite + 1) % 6
+					while not slots_enabled[selected_grammarite]:
+						selected_grammarite = (selected_grammarite + 1) % 6
+					set_active_grammarite()
+			
+			elif event.is_action_pressed("ui_left"):
+				if selected_grammarite % 2 != 0:
+					set_active_grammarite()
+					grammarite_slots[selected_grammarite].frame = 0
 					selected_grammarite = (selected_grammarite + 5) % 6
-				set_active_grammarite()
+					while not slots_enabled[selected_grammarite]:
+						selected_grammarite = (selected_grammarite + 5) % 6
+					set_active_grammarite()
+			
 			
 			elif event.is_action_pressed("z"):
 				# Use item on selected grammarite
 				use_item_on_grammarite()
-			
-			elif event.is_action_pressed("x"):
-				# Cancel grammarite selection
-				current_state = State.ITEM_LIST
-				hide_grammarite_selection()
-				$ItemList.grab_focus()
-				var selected_indices = $ItemList.get_selected_items()
-				if selected_indices.size() > 0:
-					_on_item_list_item_selected(selected_indices[0])

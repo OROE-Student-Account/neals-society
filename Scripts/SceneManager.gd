@@ -17,8 +17,16 @@ func _ready():
 func transition_to_party_screen():
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 	transition_type = TransitionType.PARTY_SCREEN
-	
+
 func transition_exit_party_screen():
+	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
+	transition_type = TransitionType.MENU_ONLY
+
+func transition_to_item_screen():
+	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
+	transition_type = TransitionType.ITEM_SCREEN
+
+func transition_exit_item_screen():
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 	transition_type = TransitionType.MENU_ONLY
 
@@ -38,14 +46,6 @@ func transition_exit_battle():
 	transition_type = TransitionType.BATTLE_EXIT
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 
-func transition_to_item_screen():
-	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
-	transition_type = TransitionType.ITEM_SCREEN
-	
-func transition_exit_item_screen():
-	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
-	transition_type = TransitionType.MENU_ONLY
-
 func transition_to_scene(new_scene: String, spawn_location, spawn_direction):
 	next_scene = new_scene
 	player_location = spawn_location
@@ -62,8 +62,10 @@ func finished_fading():
 			player.set_spawn(player_location, player_direction)
 		TransitionType.PARTY_SCREEN:
 			$Menu.load_party_screen()
+			$Menu.unload_item_screen()
 		TransitionType.ITEM_SCREEN:
 			$Menu.load_item_screen()
+			$Menu.unload_party_screen()
 		TransitionType.MENU_ONLY:
 			$Menu.unload_party_screen()
 			$Menu.unload_item_screen()
