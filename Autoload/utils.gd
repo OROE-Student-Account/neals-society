@@ -67,6 +67,16 @@ func add_to_inventory(item: String):
 	inv["Items"].append(item)
 	save_json_file("res://Data/Inventory.json", inv)
 
+func remove_from_inventory(item: String) -> bool: # whether or not removed something
+	var inv = load_json_file("res://Data/Inventory.json")
+	for i in range(len(inv["Items"])):
+		if inv["Items"][i] == item:
+			inv["Items"].pop_at(i)
+			
+			save_json_file("res://Data/Inventory.json", inv)
+			return true
+	return false
+
 
 func get_items():
 	var inv = load_json_file("res://Data/Inventory.json")["Items"]

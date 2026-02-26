@@ -30,21 +30,7 @@ var slots_enabled: Dictionary = {
 func _ready() -> void:
 	$ItemList.grab_focus()
 	
-	# Load items
-	var inv = Utils.get_items()
-	items.append({"Name": inv[0], "Count": 0})
-	for i in inv:
-		var found = false
-		for j in items:
-			if j["Name"] == i:
-				j["Count"] += 1
-				found = true
-				break
-		if not found:
-			items.append({"Name": i, "Count": 1})
-	
-	for i in items:
-		$ItemList.add_item(i["Name"] + " " + str(i["Count"]) + "x")
+	load_inventory()
 	
 	_on_item_list_item_selected(0)
 	
@@ -127,16 +113,49 @@ func show_based_on_type(type):
 			show_grammarite_selection()
 			stop()
 		"Held":
-			pass
+			current_state = State.GRAMMARITE_SELECT
+			show_grammarite_selection()
+			stop()
 		"Consumable":
 			pass
 		"Passive":
 			pass
 
 
+func load_inventory():
+	# Load items
+	var inv = Utils.get_items()
+	
+	items.clear()
+	$ItemList.clear()
+	
+	items.append({"Name": inv[0], "Count": 0})
+	for i in inv:
+		var found = false
+		for j in items:
+			if j["Name"] == i:
+				j["Count"] += 1
+				found = true
+				break
+		if not found:
+			items.append({"Name": i, "Count": 1})
+	
+	for i in items:
+		$ItemList.add_item(i["Name"] + " " + str(i["Count"]) + "x")
+
+
 func use_item_on_grammarite():
 	var selected_item_index = $ItemList.get_selected_items()[0]
 	var item = Utils.get_item(items[selected_item_index]["Name"])
+	
+	if item["Type"] == "Held":
+		var party = Utils.get_party()
+		var temp = party[selected_grammarite]["Item"]
+		party[selected_grammarite]["Item"] = items[selected_item_index]["Name"]
+		
+		if temp != "":
+			Utils.add_to_inventory(temp)
+		
 	
 	# TODO: Apply item effect to the grammarite
 	# For example:
@@ -144,19 +163,15 @@ func use_item_on_grammarite():
 	# party[selected_grammarite]["Health"] += 20  # If it's a potion
 	# Utils.set_party(party)
 	
-	# Decrease item count
-	items[selected_item_index]["Count"] -= 1
 	
-	if items[selected_item_index]["Count"] <= 0:
-		items.remove_at(selected_item_index)
-		$ItemList.remove_item(selected_item_index)
-		if $ItemList.item_count > 0:
-			$ItemList.select(min(selected_item_index, $ItemList.item_count - 1))
-			_on_item_list_item_selected($ItemList.get_selected_items()[0])
-	else:
-		# Update display
-		$ItemList.set_item_text(selected_item_index, 
-			items[selected_item_index]["Name"] + " " + str(items[selected_item_index]["Count"]) + "x")
+	
+	# Decrease item count
+	if not Utils.remove_from_inventory(items[selected_item_index]["Name"]):
+		print("Never was there?")
+	
+	load_inventory()
+	
+	_on_item_list_item_selected(min(selected_item_index, len(items)))
 	
 	# Go back to item list
 	current_state = State.ITEM_LIST
