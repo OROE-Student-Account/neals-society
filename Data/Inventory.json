@@ -50,7 +50,7 @@
 		},
 		{
 			"Health": 25.0,
-			"Item": "",
+			"Item": "Pokeball",
 			"Level": 1.0,
 			"Moves": [
 				"Bite",
@@ -73,7 +73,7 @@
 			"Level": 1.0,
 			"Moves": [],
 			"PP": [],
-			"Name": "Dog of Wood",
+			"Name": "",
 			"Nickname": ""
 		},
 		{
@@ -82,7 +82,7 @@
 			"Level": 1.0,
 			"Moves": [],
 			"PP": [],
-			"Name": "Dog of Wood",
+			"Name": "",
 			"Nickname": ""
 		},
 		{
@@ -91,7 +91,7 @@
 			"Level": 1.0,
 			"Moves": [],
 			"PP": [],
-			"Name": "Dog of Wood",
+			"Name": "",
 			"Nickname": ""
 		}
 	]

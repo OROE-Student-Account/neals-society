@@ -61,11 +61,11 @@ func finished_fading():
 			var player = Utils.get_player()
 			player.set_spawn(player_location, player_direction)
 		TransitionType.PARTY_SCREEN:
-			$Menu.load_party_screen()
 			$Menu.unload_item_screen()
+			$Menu.load_party_screen()
 		TransitionType.ITEM_SCREEN:
-			$Menu.load_item_screen()
 			$Menu.unload_party_screen()
+			$Menu.load_item_screen()
 		TransitionType.MENU_ONLY:
 			$Menu.unload_party_screen()
 			$Menu.unload_item_screen()

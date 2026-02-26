@@ -1,5 +1,7 @@
 extends Node2D
 
+var pause = false
+
 var items : Array
 
 enum State { ITEM_LIST, GRAMMARITE_SELECT }
@@ -51,6 +53,12 @@ func _ready() -> void:
 	
 	# Hide grammarite selection initially
 	hide_grammarite_selection()
+
+func stop():
+	pause = true
+	await get_tree().create_timer(0.1).timeout
+	pause = false
+
 
 func load_party():
 	var party = Utils.get_party()
@@ -115,13 +123,16 @@ func show_based_on_type(type):
 		"Book":
 			pass
 		"Grammarite":
-			pass
+			current_state = State.GRAMMARITE_SELECT
+			show_grammarite_selection()
+			stop()
 		"Held":
 			pass
 		"Consumable":
 			pass
 		"Passive":
 			pass
+
 
 func use_item_on_grammarite():
 	var selected_item_index = $ItemList.get_selected_items()[0]
@@ -152,7 +163,9 @@ func use_item_on_grammarite():
 	hide_grammarite_selection()
 	$ItemList.grab_focus()
 
+
 func _unhandled_input(event: InputEvent) -> void:
+	if pause: return
 	match current_state:
 		State.ITEM_LIST:
 			if event.is_action_pressed("z"):
@@ -160,9 +173,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				var selected_indices = $ItemList.get_selected_items()
 				if selected_indices.size() > 0:
 					var item = Utils.get_item(items[selected_indices[0]]["Name"])
-					if item["Type"] == "Grammarite":
-						current_state = State.GRAMMARITE_SELECT
-						show_grammarite_selection()
+					show_based_on_type(item["Type"])
 			
 			elif event.is_action_pressed("x"):
 				# Exit back to menu/game

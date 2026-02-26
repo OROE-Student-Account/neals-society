@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://ba4bgv7q8bqd5"]
+
+[ext_resource type="Texture2D" uid="uid://dw17mm63araxi" path="res://Assets/UI/menu_box_1.png" id="1_e6h8y"]
+[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="2_6v7vv"]
+[ext_resource type="Texture2D" uid="uid://bxjfugenktmee" path="res://Assets/Items/Story Book.png" id="3_7tl51"]
+
+[node name="ItemPartyScreen" type="Node2D" unique_id=236429404]
+texture_filter = 1
+
+[node name="Background" type="ColorRect" parent="." unique_id=175241576]
+offset_right = 240.0
+offset_bottom = 160.0
+
+[node name="Box" type="NinePatchRect" parent="." unique_id=723739800]
+offset_left = 8.0
+offset_top = 95.99999
+offset_right = 287.99997
+offset_bottom = 167.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_e6h8y")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Description" type="Label" parent="Box" unique_id=754873394]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 269.99997
+offset_bottom = 40.000015
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_6v7vv")
+theme_override_font_sizes/font_size = 12
+text = "Description of the item thing"
+autowrap_mode = 2
+
+[node name="Function" type="Label" parent="Box" unique_id=303674606]
+visible = false
+layout_mode = 0
+offset_left = 9.999999
+offset_top = 40.000008
+offset_right = 270.99997
+offset_bottom = 63.000023
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_6v7vv")
+theme_override_font_sizes/font_size = 12
+text = "Description of what the item function"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1369411215]
+offset_left = 80.0
+offset_right = 160.0
+offset_bottom = 80.0
+texture = ExtResource("3_7tl51")
