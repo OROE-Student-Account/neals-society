@@ -278,6 +278,7 @@ texture = ExtResource("13")
 hframes = 2
 
 [node name="FirstPokemonSlot" type="Node2D" parent="." unique_id=766143109]
+position = Vector2(0, -1)
 script = ExtResource("3_3dpfl")
 
 [node name="Background" type="Sprite2D" parent="FirstPokemonSlot" unique_id=794630042]

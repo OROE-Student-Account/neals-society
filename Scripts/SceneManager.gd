@@ -5,7 +5,7 @@ var next_scene: = ""
 var player_location = Vector2(0, 0)
 var player_direction = Vector2(0, 0)
 
-enum TransitionType { NEW_SCENE, PARTY_SCREEN, MENU_ONLY, BATTLE, BATTLE_EXIT }
+enum TransitionType { NEW_SCENE, PARTY_SCREEN, ITEM_SCREEN, MENU_ONLY, BATTLE, BATTLE_EXIT }
 var transition_type = TransitionType.NEW_SCENE
 
 @onready var scene = $CurrentScene
@@ -17,8 +17,16 @@ func _ready():
 func transition_to_party_screen():
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 	transition_type = TransitionType.PARTY_SCREEN
-	
+
 func transition_exit_party_screen():
+	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
+	transition_type = TransitionType.MENU_ONLY
+
+func transition_to_item_screen():
+	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
+	transition_type = TransitionType.ITEM_SCREEN
+
+func transition_exit_item_screen():
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 	transition_type = TransitionType.MENU_ONLY
 
@@ -53,9 +61,14 @@ func finished_fading():
 			var player = Utils.get_player()
 			player.set_spawn(player_location, player_direction)
 		TransitionType.PARTY_SCREEN:
+			$Menu.unload_item_screen()
 			$Menu.load_party_screen()
+		TransitionType.ITEM_SCREEN:
+			$Menu.unload_party_screen()
+			$Menu.load_item_screen()
 		TransitionType.MENU_ONLY:
 			$Menu.unload_party_screen()
+			$Menu.unload_item_screen()
 		TransitionType.BATTLE:
 			scene.add_child(load("res://Scenes/Battle.tscn").instantiate())
 			scene.get_children().back().get_child(0).make_current()
