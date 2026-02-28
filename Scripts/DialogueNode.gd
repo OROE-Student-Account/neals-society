@@ -18,8 +18,3 @@ func get_children_nodes() -> Array[Node]:
 
 func begin_from_self():
 	Utils.get_scene_manager().transition_to_dialogue(self)
-
-
-# make a better way for starting battles
-func begin_battle():
-	Utils.get_scene_manager().transition_to_battle()

@@ -5,6 +5,8 @@ class_name BattleManager
 @export var enemy_grammarite: Node2D  
 @export var battle_ui: Node2D          
 
+var trainer = "random"
+
 
 signal battle_ended(player_won: bool)
 
@@ -18,8 +20,10 @@ func _ready():
 	
 	start_battle()
 
+
 func start_battle():
 	current_state = BattleState.PLAYER_TURN
+
 
 func _on_player_move_selected(move_index: int):
 	if current_state != BattleState.PLAYER_TURN:

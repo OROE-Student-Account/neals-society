@@ -6,26 +6,28 @@
 		"Pokeball",
 		"Story Book",
 		"Pokeball",
-		"Story Book"
+		"Story Book",
+		"Pokeball",
+		"Pokeball"
 	],
 	"Party": [
 		{
-			"Health": 100.0,
-			"Item": "",
-			"Level": 50.23,
+			"Health": 25.0,
+			"Item": "Pokeball",
+			"Level": 1.0,
 			"Moves": [
 				"Bite",
 				"Play",
-				"Sit",
-				"Sculpt"
+				"Howl",
+				"Woodchip"
 			],
-			"Name": "Orawolfi",
+			"Name": "Dog of Wood",
 			"Nickname": "",
 			"PP": [
 				10.0,
 				0.0,
 				5.0,
-				3.0
+				1.0
 			]
 		},
 		{
@@ -48,22 +50,22 @@
 			]
 		},
 		{
-			"Health": 25.0,
-			"Item": "Pokeball",
-			"Level": 1.0,
+			"Health": 100.0,
+			"Item": "",
+			"Level": 50.23,
 			"Moves": [
 				"Bite",
 				"Play",
-				"Howl",
-				"Woodchip"
+				"Sit",
+				"Sculpt"
 			],
-			"Name": "Dog of Wood",
+			"Name": "Orawolfi",
 			"Nickname": "",
 			"PP": [
 				10.0,
 				0.0,
 				5.0,
-				1.0
+				3.0
 			]
 		},
 		{

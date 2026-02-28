@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://bp28l32amhxsf" path="res://Scripts/DialogueNode.gd" id="19_5qjph"]
 [ext_resource type="Script" uid="uid://d4hprd03iheli" path="res://Scripts/AnimatedHouse.gd" id="19_yv7ed"]
 [ext_resource type="Texture2D" uid="uid://c30k7loev38oa" path="res://Assets/Flowers/flower.tres" id="22_6xtxr"]
+[ext_resource type="Script" uid="uid://hvnvpuwe5g0b" path="res://Scripts/BattleStarter.gd" id="22_ix0ol"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ix0ol"]
 texture = ExtResource("1_e8mj4")
@@ -3153,14 +3154,14 @@ script = ExtResource("19_5qjph")
 is_end_node = true
 option_name = "yes"
 function = "begin_battle"
-func_node = NodePath("..")
+func_node = NodePath("../../BattleStart")
 
 [node name="Node2" type="Node" parent="Collision Stuff/Fighter/DialogueRoot" unique_id=1149167236 node_paths=PackedStringArray("func_node")]
 script = ExtResource("19_5qjph")
 is_end_node = true
 option_name = "no"
 function = "begin_battle"
-func_node = NodePath("..")
+func_node = NodePath("../../BattleStart")
 
 [node name="FinalDialogue" type="Node" parent="Collision Stuff/Fighter" unique_id=775037070 node_paths=PackedStringArray("func_node")]
 script = ExtResource("19_5qjph")
@@ -3168,6 +3169,10 @@ is_end_node = true
 text = "I cannot believe I lost to YOU!"
 function = "reset"
 func_node = NodePath("..")
+
+[node name="BattleStart" type="Node" parent="Collision Stuff/Fighter" unique_id=1934092355]
+script = ExtResource("22_ix0ol")
+trainer_name = "Rival"
 
 [connection signal="body_entered" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_Door_body_entered"]
 [connection signal="body_entered" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_body_entered"]

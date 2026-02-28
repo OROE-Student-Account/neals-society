@@ -1,6 +1,5 @@
 extends Node
 
-
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -8,7 +7,7 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	reset_town()
 
 func get_player():
 	return get_node("/root/SceneManager/CurrentScene").get_child(0).find_child("Player")
@@ -28,6 +27,10 @@ func get_grammarite_details(grammarite_name):
 		details["Moves"].append(move_info)
 	
 	return details
+
+func get_trainer(trainer):
+	return load_json_file("res://GrammariteData/Trainers.json")[trainer]
+
 
 var type_chart_dict = {
 	"Weak": 0.5,
@@ -111,7 +114,9 @@ func update_trainer_attacked(node_name: String, value: bool, scene = "Town"):
 	data["Trainers"][node_name]["Talked"] = value
 	save_json_file(file_path, data)
 
-
+func get_random_grammarite():
+	var grams = load_json_file("res://GrammariteData/Names.json")
+	return grams.pick_random()
 
 
 func reset_town():
