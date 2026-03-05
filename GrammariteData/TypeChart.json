@@ -9,7 +9,7 @@
 		"Supply": "None",
 		"Knowledge": "Strong",
 		"Ink": "Strong",
-		"Animal": "Weak",
+		"Animal": "None",
 		"Machine/Device/Engineering": "None"
 	},
 	"Literature": {
@@ -28,7 +28,7 @@
 	"Homework": {
 		"Grammar": "Weak",
 		"Literature": "Weak",
-		"Homework": "Strong",
+		"Homework": "None",
 		"Slang": "Strong",
 		"Paper": "None",
 		"Nature": "None",
@@ -42,7 +42,7 @@
 		"Grammar": "Weak",
 		"Literature": "Weak",
 		"Homework": "None",
-		"Slang": "Strong",
+		"Slang": "None",
 		"Paper": "Strong",
 		"Nature": "None",
 		"Supply": "None",
@@ -59,7 +59,7 @@
 		"Paper": "None",
 		"Nature": "Weak",
 		"Supply": "Weak",
-		"Knowledge": "Strong",
+		"Knowledge": "None",
 		"Ink": "Weak",
 		"Animal": "None",
 		"Machine/Device/Engineering": "Strong"
@@ -84,7 +84,7 @@
 		"Slang": "None",
 		"Paper": "Weak",
 		"Nature": "Strong",
-		"Supply": "Strong",
+		"Supply": "None",
 		"Knowledge": "None",
 		"Ink": "Weak",
 		"Animal": "None",
@@ -98,10 +98,10 @@
 		"Paper": "None",
 		"Nature": "None",
 		"Supply": "None",
-		"Knowledge": "Weak",
+		"Knowledge": "None",
 		"Ink": "None",
 		"Animal": "None",
-		"Machine/Device/Engineering": "None"
+		"Machine/Device/Engineering": "Strong"
 	},
 	"Ink": {
 		"Grammar": "Strong",
@@ -122,11 +122,11 @@
 		"Homework": "Strong",
 		"Slang": "None",
 		"Paper": "Strong",
-		"Nature": "Strong",
+		"Nature": "Weak",
 		"Supply": "None",
 		"Knowledge": "None",
-		"Ink": "None",
-		"Animal": "Strong",
+		"Ink": "Weak",
+		"Animal": "None",
 		"Machine/Device/Engineering": "Strong"
 	},
 	"Machine/Device/Engineering": {
