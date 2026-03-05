@@ -3,27 +3,32 @@
 	"Items": [
 		"Pokeball",
 		"Pokeball",
+		"Pokeball",
+		"Story Book",
+		"Pokeball",
+		"Story Book",
+		"Pokeball",
 		"Pokeball"
 	],
 	"Party": [
 		{
-			"Health": 100.0,
-			"Item": "",
-			"Level": 50.23,
+			"Health": 25.0,
+			"Item": "Pokeball",
+			"Level": 1.0,
 			"Moves": [
 				"Bite",
 				"Play",
-				"Sit",
-				"Sculpt"
+				"Howl",
+				"Woodchip"
 			],
+			"Name": "Dog of Wood",
+			"Nickname": "",
 			"PP": [
-				10,
-				0,
-				5,
-				3
-			],
-			"Name": "Orawolfi",
-			"Nickname": ""
+				10.0,
+				0.0,
+				5.0,
+				1.0
+			]
 		},
 		{
 			"Health": 25.0,
@@ -35,60 +40,60 @@
 				"Sit",
 				"Sculpt"
 			],
-			"PP": [
-				10,
-				0,
-				5,
-				3
-			],
 			"Name": "Sculpupture",
-			"Nickname": ""
+			"Nickname": "",
+			"PP": [
+				10.0,
+				0.0,
+				5.0,
+				3.0
+			]
 		},
 		{
-			"Health": 25.0,
+			"Health": 100.0,
 			"Item": "",
-			"Level": 1.0,
+			"Level": 50.23,
 			"Moves": [
 				"Bite",
 				"Play",
-				"Howl",
-				"Woodchip"
+				"Sit",
+				"Sculpt"
 			],
+			"Name": "Orawolfi",
+			"Nickname": "",
 			"PP": [
-				10,
-				0,
-				5,
-				1
-			],
-			"Name": "Dog of Wood",
-			"Nickname": ""
+				10.0,
+				0.0,
+				5.0,
+				3.0
+			]
 		},
 		{
 			"Health": 0.0,
 			"Item": "",
 			"Level": 1.0,
 			"Moves": [],
-			"PP": [],
 			"Name": "",
-			"Nickname": ""
+			"Nickname": "",
+			"PP": []
 		},
 		{
 			"Health": 0.0,
 			"Item": "",
 			"Level": 1.0,
 			"Moves": [],
-			"PP": [],
 			"Name": "",
-			"Nickname": ""
+			"Nickname": "",
+			"PP": []
 		},
 		{
 			"Health": 0.0,
 			"Item": "",
 			"Level": 1.0,
 			"Moves": [],
-			"PP": [],
 			"Name": "",
-			"Nickname": ""
+			"Nickname": "",
+			"PP": []
 		}
 	]
 }

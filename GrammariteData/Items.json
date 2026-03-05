@@ -1,0 +1,14 @@
+{
+	"Pokeball": {
+		"Description": "The pokeball is used to confine pokmon and battle them.",
+		"Type": "Book"
+	},
+	"Story Book": {
+		"Description": "Absorb Grammarites for use throughout your adventure.",
+		"Type": "Book"
+	},
+	"Potion": {
+		"Description": "Heals half of the missing health from a hurt Grammarites.",
+		"Type": "Grammarite"
+	}
+}

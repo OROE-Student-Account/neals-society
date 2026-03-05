@@ -1,6 +1,5 @@
 extends Node
 
-
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -8,7 +7,7 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	reset_town()
 
 func get_player():
 	return get_node("/root/SceneManager/CurrentScene").get_child(0).find_child("Player")
@@ -28,6 +27,10 @@ func get_grammarite_details(grammarite_name):
 		details["Moves"].append(move_info)
 	
 	return details
+
+func get_trainer(trainer):
+	return load_json_file("res://GrammariteData/Trainers.json")[trainer]
+
 
 var type_chart_dict = {
 	"Weak": 0.5,
@@ -67,6 +70,25 @@ func add_to_inventory(item: String):
 	inv["Items"].append(item)
 	save_json_file("res://Data/Inventory.json", inv)
 
+func remove_from_inventory(item: String) -> bool: # whether or not removed something
+	var inv = load_json_file("res://Data/Inventory.json")
+	for i in range(len(inv["Items"])):
+		if inv["Items"][i] == item:
+			inv["Items"].pop_at(i)
+			
+			save_json_file("res://Data/Inventory.json", inv)
+			return true
+	return false
+
+
+func get_items():
+	var inv = load_json_file("res://Data/Inventory.json")["Items"]
+	
+	return inv
+
+func get_item(name):
+	var item = load_json_file("res://GrammariteData/Items.json")[name]
+	return item
 
 
 func check_item_picked_up(item: String, scene = "Town"):
@@ -92,7 +114,9 @@ func update_trainer_attacked(node_name: String, value: bool, scene = "Town"):
 	data["Trainers"][node_name]["Talked"] = value
 	save_json_file(file_path, data)
 
-
+func get_random_grammarite():
+	var grams = load_json_file("res://GrammariteData/Names.json")
+	return grams.pick_random()
 
 
 func reset_town():

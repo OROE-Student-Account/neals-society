@@ -1,11 +1,13 @@
 extends Node2D
 
 @export var is_enemy := false
-@export var grammarite_name := ""
 @export var move_vbox : Node = null
-@export var level = 1
 
-@onready var grammarite_info = Utils.get_grammarite_details(grammarite_name) 
+
+var grammarite_name = ""
+var nickname = ""
+var level := 1
+var grammarite_info = null
 @onready var health_bar = $HealthBar
 @onready var anim_player = $AnimationPlayer
 
@@ -13,9 +15,28 @@ var health : int = 1
 var max_health : int = 1
 
 func _ready():
-	health = grammarite_info["Stats"]["Health"]
-	max_health = health
+	
+	if not is_enemy:
+		var first_grammarite = Utils.get_party()[0]
+		grammarite_name = first_grammarite["Name"]
+		nickname = first_grammarite["Nickname"]
+		level = int(first_grammarite["Level"])
+		health = first_grammarite["Health"]
+	
+	grammarite_info = Utils.get_grammarite_details(grammarite_name) 
+	
+	
+	max_health = grammarite_info["Stats"]["Health"] + level
+	if is_enemy: health = max_health
+	
 	$Level.text = str(level)
+	if nickname == "":
+		$Name.text = grammarite_name.to_upper()
+	else:
+		$Name.text = nickname.to_upper()
+	
+	var grammadex_num = str(Utils.get_poke_num(grammarite_name)+1)
+	$Grammarite.texture = load("res://Assets/Pokemon/Pokemon"+grammadex_num+".png")
 	
 	update_health(0)
 	if not is_enemy:

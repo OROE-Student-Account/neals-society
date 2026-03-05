@@ -88,7 +88,8 @@ func _input(event):
 			elif event.is_action_pressed("z"):
 				match selected_button:
 					Buttons.RUN:
-						Utils.get_scene_manager().transition_exit_battle()	
+						if get_parent().get_node("BattleManager").trainer == "random":
+							Utils.get_scene_manager().transition_exit_battle()	
 					Buttons.FIGHT:
 						input_state = InputState.MOVE_LIST
 						show_correct_menu()

@@ -3,7 +3,7 @@ extends Node2D
 var pause = false
 
 
-enum Page { MAIN, CHOSEN, SUMMARY, SWITCH, MOVES }
+enum Page { MAIN, CHOSEN, SUMMARY, ITEM, SWITCH, MOVES }
 var page: int = Page.MAIN
 
 var selected_sub_page: int = 0
@@ -54,7 +54,7 @@ func load_party():
 			slot.visible = false
 			slots_enabled[i] = false
 		else:
-			var max_health = Utils.get_grammarite_details(slot_data["Name"])["Stats"]["Health"]
+			var max_health = Utils.get_grammarite_details(slot_data["Name"])["Stats"]["Health"] + int(slot_data["Level"])
 			slot.lvl.text = str(int(slot_data["Level"]))
 			slot.set_health(max_health, slot_data["Health"])
 			slot.set_sprites(Utils.get_poke_num(slot_data["Name"]))
@@ -137,7 +137,7 @@ func load_summary(slot_num):
 	info.get_child(5).text = "DEX #: "+str(Utils.get_poke_num(slot_data["Name"])+1)
 
 func load_moves(slot_num):
-	self.add_child(load("res://Scenes/MovesScreen.tscn").instantiate())
+	self.add_child(load("res://Scenes/MovesPartyScreen.tscn").instantiate())
 	
 	var slot_data = Utils.get_party()[slot_num]
 	var details = Utils.get_grammarite_details(slot_data["Name"])
@@ -153,10 +153,23 @@ func load_moves(slot_num):
 		box.get_child(2).text = "PP: " + str(int(PP[i])) + "/" + str(int(moves[i]["PP"]))
 		box.get_child(3).text = "DMG: " + str(int(moves[i]["Damage"]))
 		box.get_child(4).text = "ACC: " + str(int(100 * moves[i]["Accuracy"])) + "%"
+
+func load_item(slot_num):
+	self.add_child(load("res://Scenes/ItemPartyScreen.tscn").instantiate())
 	
+	var slot_data = Utils.get_party()[slot_num]
 	
+	if slot_data["Item"] != "":
+		
+		var item = Utils.get_item(slot_data["Item"])
+		
+		$ItemPartyScreen/Box/Description.text = item["Description"]
+		var file_path = "res://Assets/Items/" + slot_data["Item"] + ".png"
+		$ItemPartyScreen/TextureRect.texture = load(file_path)
 	
-	
+	else:
+		$ItemPartyScreen/Box/Description.text = "No item equipped"
+		$ItemPartyScreen/TextureRect.texture = null
 
 func update_page():
 	selected_sub_page = 0
@@ -167,6 +180,8 @@ func update_page():
 		$SummaryScreen.queue_free()
 	if $MovesScreen:
 		$MovesScreen.queue_free()
+	if $ItemPartyScreen:
+		$ItemPartyScreen.queue_free()
 	
 	match page:
 		Page.MAIN:
@@ -183,6 +198,9 @@ func update_page():
 		Page.MOVES:
 			$PageOptions.visible = false
 			load_moves(selected_option)
+		Page.ITEM:
+			$PageOptions.visible = false
+			load_item(selected_option)
 		Page.SWITCH:
 			$InfoText.text = "Put this Grammarite where?"
 			$PageOptions.visible = false
@@ -238,7 +256,7 @@ func _input(event):
 			elif event.is_action_pressed("x"):
 				Utils.get_scene_manager().transition_exit_party_screen()
 		Page.CHOSEN:
-			if event.is_action_pressed("x") or (event.is_action_pressed("z") and selected_sub_page == 4):
+			if event.is_action_pressed("x") or (event.is_action_pressed("z") and selected_sub_page == 3):
 				page = Page.MAIN
 				update_page()
 				stop()
@@ -257,6 +275,9 @@ func _input(event):
 				elif selected_sub_page == 1:
 					page = Page.SWITCH
 					update_page()
+				elif selected_sub_page == 2:
+					page = Page.ITEM
+					update_page()
 		Page.SUMMARY:
 			if event.is_action_pressed("x"):
 				page = Page.CHOSEN
@@ -273,6 +294,13 @@ func _input(event):
 			if event.is_action_pressed("z"):
 				page = Page.SUMMARY
 				update_page()
+		Page.ITEM:
+			if event.is_action_pressed("x"):
+				page = Page.CHOSEN
+				update_page()
+				stop()
+			if event.is_action_pressed("z"):
+				Utils.get_scene_manager().transition_to_item_screen()
 		Page.SWITCH:
 			if event.is_action_pressed("x") or (event.is_action_pressed("z") and selected_sub_page == num_of_slots - 1):
 				page = Page.CHOSEN
