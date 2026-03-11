@@ -3160,8 +3160,26 @@ func_node = NodePath("../../BattleStart")
 script = ExtResource("19_5qjph")
 is_end_node = true
 option_name = "no"
-function = "begin_battle"
-func_node = NodePath("../../BattleStart")
+function = "begin_from_self"
+func_node = NodePath("../../AreYouSure")
+
+[node name="AreYouSure" type="Node" parent="Collision Stuff/Fighter" unique_id=643615499]
+script = ExtResource("19_5qjph")
+text = "Are you sure?"
+
+[node name="Node3" type="Node" parent="Collision Stuff/Fighter/AreYouSure" unique_id=1896772610 node_paths=PackedStringArray("func_node")]
+script = ExtResource("19_5qjph")
+is_end_node = true
+option_name = "no"
+function = "begin_from_self"
+func_node = NodePath("../../DialogueRoot")
+
+[node name="Node4" type="Node" parent="Collision Stuff/Fighter/AreYouSure" unique_id=963153471 node_paths=PackedStringArray("func_node")]
+script = ExtResource("19_5qjph")
+is_end_node = true
+option_name = "yes"
+function = "begin_from_self"
+func_node = NodePath("..")
 
 [node name="FinalDialogue" type="Node" parent="Collision Stuff/Fighter" unique_id=775037070 node_paths=PackedStringArray("func_node")]
 script = ExtResource("19_5qjph")
