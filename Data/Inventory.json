@@ -16,25 +16,6 @@
 	],
 	"Party": [
 		{
-			"Health": 25.0,
-			"Item": "Pokeball",
-			"Level": 1.0,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Howl",
-				"Woodchip"
-			],
-			"Name": "Dog of Wood",
-			"Nickname": "",
-			"PP": [
-				10.0,
-				0.0,
-				5.0,
-				1.0
-			]
-		},
-		{
 			"Health": 100.0,
 			"Item": "",
 			"Level": 50.23,
@@ -51,6 +32,25 @@
 				0.0,
 				5.0,
 				3.0
+			]
+		},
+		{
+			"Health": 25.0,
+			"Item": "Pokeball",
+			"Level": 1.0,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Howl",
+				"Woodchip"
+			],
+			"Name": "Dog of Wood",
+			"Nickname": "",
+			"PP": [
+				10.0,
+				0.0,
+				5.0,
+				1.0
 			]
 		},
 		{

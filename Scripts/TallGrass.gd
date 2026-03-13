@@ -48,4 +48,5 @@ func encounter_grammarite(chance):
 		chance *= 2
 	
 	if randf() < chance:
+		player.set_physics_process(false)
 		Utils.get_scene_manager().transition_to_dialogue($DialogueRoot)

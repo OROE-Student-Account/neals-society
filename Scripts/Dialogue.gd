@@ -53,14 +53,14 @@ func display_current_node():
 
 	# Show the text first
 	if current_node.text == "":
-		var save_node = current_node
+		var function = current_node.function
 		var tar_node = target_node 
 		end_dialogue()
 		
 		# Execute any function associated with this node
-		if save_node.function != "" and tar_node != null:
-			if tar_node.has_method(save_node.function):
-				tar_node.call(save_node.function)
+		if function != "" and tar_node != null:
+			if tar_node.has_method(function):
+				tar_node.call(function)
 			else:
 				print("DialogueManager: Function not found on target node")
 		
@@ -119,8 +119,21 @@ func _unhandled_input(event):
 		if dialogue_state == DialogueState.SHOWING_TEXT:
 			# Waiting for Z to advance to options
 			if event.is_action_pressed("z"):
+				if current_node.is_end_node:
+					var function = current_node.function
+					var tar_node = target_node 
+					end_dialogue()
+					
+					# Execute any function associated with this node
+					if function != "" and tar_node != null:
+						if tar_node.has_method(function):
+							tar_node.call(function)
+						else:
+							print("DialogueManager: Function not found on target node")
+					return
+				
 				# Execute any function associated with this node
-				if current_node.function != "" and target_node != null:
+				elif current_node.function != "" and target_node != null:
 					if target_node.has_method(current_node.function):
 						target_node.call(current_node.function)
 					else:
