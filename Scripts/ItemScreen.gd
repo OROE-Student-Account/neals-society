@@ -3,11 +3,13 @@ extends Node2D
 var pause = false
 
 var items : Array
+var filtered_items : Array  # Items after filtering by type
 
-enum State { ITEM_LIST, GRAMMARITE_SELECT }
-var current_state = State.ITEM_LIST
+enum State { ITEM_TYPE_SELECT, ITEM_LIST, GRAMMARITE_SELECT }
+var current_state = State.ITEM_TYPE_SELECT
 
 var selected_grammarite: int = 0
+var selected_item_type: int = 0  # Which type filter is selected
 
 @onready var grammarite_slots: Array[Sprite2D] = [
 	$Slots/FirstPokemonSlot/Background,
@@ -27,24 +29,37 @@ var slots_enabled: Dictionary = {
 	5: true,
 }
 
+@onready var item_type_buttons: Array[Sprite2D] = [
+	$ItemTypes/Book,
+	$ItemTypes/Held,
+	$ItemTypes/Grammarite,
+	$ItemTypes/Consumable,
+	$ItemTypes/Passive
+]
+
+@onready var item_type_names: Array[String] = [
+	"Book",
+	"Held",
+	"Grammarite",
+	"Consumable",
+	"Passive"
+]
+
 func _ready() -> void:
-	$ItemList.grab_focus()
-	
 	load_inventory()
-	
-	_on_item_list_item_selected(0)
-	
-	# Load party into slots
 	load_party()
 	
-	# Hide grammarite selection initially
+	# Start with item type selection
+	current_state = State.ITEM_TYPE_SELECT
+	set_active_item_type()
+	filter_items_by_type()
+	
 	hide_grammarite_selection()
 
 func stop():
 	pause = true
 	await get_tree().create_timer(0.1).timeout
 	pause = false
-
 
 func load_party():
 	var party = Utils.get_party()
@@ -84,7 +99,6 @@ func hide_grammarite_selection():
 		grammarite_slots[i].frame = 0
 	
 	$ItemList.focus_mode = Control.FOCUS_ALL
-	$ItemList.grab_focus()
 
 func set_active_grammarite():
 	# Unset all first
@@ -93,11 +107,45 @@ func set_active_grammarite():
 	# Set selected
 	grammarite_slots[selected_grammarite].frame = 1
 
+func set_active_item_type():
+	# Unset all item type buttons
+	for i in range(len(item_type_buttons)):
+		item_type_buttons[i].frame = 1  # 1 = unselected
+	# Set selected
+	item_type_buttons[selected_item_type].frame = 0  # 0 = selected
+
+func filter_items_by_type():
+	# Filter items array by the selected type
+	var selected_type = item_type_names[selected_item_type]
+	
+	filtered_items.clear()
+	for item_data in items:
+		var item_details = Utils.get_item(item_data["Name"])
+		if item_details["Type"] == selected_type:
+			filtered_items.append(item_data)
+	
+	# Rebuild the ItemList
+	$ItemList.clear()
+	for i in filtered_items:
+		$ItemList.add_item(i["Name"] + " " + str(i["Count"]) + "x")
+	
+	# Select first item if any exist
+	if $ItemList.item_count > 0:
+		$ItemList.select(0)
+		_on_item_list_item_selected(0)
+	else:
+		# No items of this type
+		$Info/Description.text = "No items of this type."
+		$Info/ItemSprite.texture = null
+
 func _on_item_list_item_selected(index: int) -> void:
-	var item = Utils.get_item(items[index]["Name"])
+	if index >= len(filtered_items):
+		return
+	
+	var item = Utils.get_item(filtered_items[index]["Name"])
 	
 	$Info/Description.text = item["Description"]
-	var file_path = "res://Assets/Items/" + items[index]["Name"] + ".png"
+	var file_path = "res://Assets/Items/" + filtered_items[index]["Name"] + ".png"
 	$Info/ItemSprite.texture = load(file_path)
 	
 	# Don't show grammarite selection when just browsing
@@ -108,11 +156,11 @@ func show_based_on_type(type):
 	match type:
 		"Book":
 			pass
-		"Grammarite":
+		"Held":
 			current_state = State.GRAMMARITE_SELECT
 			show_grammarite_selection()
 			stop()
-		"Held":
+		"Grammarite":
 			current_state = State.GRAMMARITE_SELECT
 			show_grammarite_selection()
 			stop()
@@ -121,15 +169,17 @@ func show_based_on_type(type):
 		"Passive":
 			pass
 
-
 func load_inventory():
 	# Load items
 	var inv = Utils.get_items()
 	
 	items.clear()
+	filtered_items.clear()
 	$ItemList.clear()
 	
-	items.append({"Name": inv[0], "Count": 0})
+	if len(inv) > 0:
+		items.append({"Name": inv[0], "Count": 0})
+	
 	for i in inv:
 		var found = false
 		for j in items:
@@ -139,60 +189,78 @@ func load_inventory():
 				break
 		if not found:
 			items.append({"Name": i, "Count": 1})
-	
-	for i in items:
-		$ItemList.add_item(i["Name"] + " " + str(i["Count"]) + "x")
-
 
 func use_item_on_grammarite():
 	var selected_item_index = $ItemList.get_selected_items()[0]
-	var item = Utils.get_item(items[selected_item_index]["Name"])
+	var item = Utils.get_item(filtered_items[selected_item_index]["Name"])
 	
 	if item["Type"] == "Held":
 		var party = Utils.get_party()
 		var temp = party[selected_grammarite]["Item"]
-		party[selected_grammarite]["Item"] = items[selected_item_index]["Name"]
+		party[selected_grammarite]["Item"] = filtered_items[selected_item_index]["Name"]
 		
 		if temp != "":
 			Utils.add_to_inventory(temp)
-		
 	
 	# TODO: Apply item effect to the grammarite
-	# For example:
-	# var party = Utils.get_party()
-	# party[selected_grammarite]["Health"] += 20  # If it's a potion
-	# Utils.set_party(party)
-	
-	
 	
 	# Decrease item count
-	if not Utils.remove_from_inventory(items[selected_item_index]["Name"]):
+	if not Utils.remove_from_inventory(filtered_items[selected_item_index]["Name"]):
 		print("Never was there?")
 	
 	load_inventory()
-	
-	_on_item_list_item_selected(min(selected_item_index, len(items)))
+	filter_items_by_type()  # Refilter after inventory change
 	
 	# Go back to item list
 	current_state = State.ITEM_LIST
 	hide_grammarite_selection()
 	$ItemList.grab_focus()
 
-
 func _unhandled_input(event: InputEvent) -> void:
 	if pause: return
+	
 	match current_state:
+		State.ITEM_TYPE_SELECT:
+			if event.is_action_pressed("ui_right"):
+				selected_item_type = (selected_item_type + 1) % len(item_type_buttons)
+				set_active_item_type()
+				filter_items_by_type()
+			
+			elif event.is_action_pressed("ui_left"):
+				selected_item_type = (selected_item_type + len(item_type_buttons) - 1) % len(item_type_buttons)
+				set_active_item_type()
+				filter_items_by_type()
+			
+			elif event.is_action_pressed("ui_down") or event.is_action_pressed("z"):
+				# Go to item list
+				if $ItemList.item_count > 0:
+					current_state = State.ITEM_LIST
+					$ItemList.grab_focus()
+			
+			elif event.is_action_pressed("x"):
+				# Exit
+				Utils.get_scene_manager().transition_exit_item_screen()
+		
 		State.ITEM_LIST:
-			if event.is_action_pressed("z"):
+			if event.is_action_pressed("ui_up"):
+				# Check if we're at the top of the list
+				var selected_indices = $ItemList.get_selected_items()
+				if selected_indices.size() > 0 and selected_indices[0] == 0:
+					# Go back to type selection
+					current_state = State.ITEM_TYPE_SELECT
+					$ItemList.release_focus()
+			
+			elif event.is_action_pressed("z"):
 				# Check if current item is Grammarite type
 				var selected_indices = $ItemList.get_selected_items()
 				if selected_indices.size() > 0:
-					var item = Utils.get_item(items[selected_indices[0]]["Name"])
+					var item = Utils.get_item(filtered_items[selected_indices[0]]["Name"])
 					show_based_on_type(item["Type"])
 			
 			elif event.is_action_pressed("x"):
-				# Exit back to menu/game
-				Utils.get_scene_manager().transition_exit_item_screen()  # Or whatever your exit function is
+				# Go back to type selection
+				current_state = State.ITEM_TYPE_SELECT
+				$ItemList.release_focus()
 		
 		State.GRAMMARITE_SELECT:
 			if event.is_action_pressed("x"):
@@ -207,7 +275,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			
 			elif event.is_action_pressed("ui_down"):
 				if selected_grammarite < 4:
-					set_active_grammarite()
 					grammarite_slots[selected_grammarite].frame = 0
 					selected_grammarite = (selected_grammarite + 2) % 6
 					while not slots_enabled[selected_grammarite]:
@@ -224,7 +291,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			
 			elif event.is_action_pressed("ui_right"):
 				if selected_grammarite % 2 == 0:
-					set_active_grammarite()
 					grammarite_slots[selected_grammarite].frame = 0
 					selected_grammarite = (selected_grammarite + 1) % 6
 					while not slots_enabled[selected_grammarite]:
@@ -233,13 +299,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			
 			elif event.is_action_pressed("ui_left"):
 				if selected_grammarite % 2 != 0:
-					set_active_grammarite()
 					grammarite_slots[selected_grammarite].frame = 0
 					selected_grammarite = (selected_grammarite + 5) % 6
 					while not slots_enabled[selected_grammarite]:
 						selected_grammarite = (selected_grammarite + 5) % 6
 					set_active_grammarite()
-			
 			
 			elif event.is_action_pressed("z"):
 				# Use item on selected grammarite

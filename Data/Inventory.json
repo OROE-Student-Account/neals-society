@@ -1,6 +1,7 @@
 {
 	"Abilities": [],
 	"Items": [
+		"Potion",
 		"Pokeball",
 		"Pokeball",
 		"Pokeball",
@@ -8,7 +9,10 @@
 		"Pokeball",
 		"Story Book",
 		"Pokeball",
-		"Pokeball"
+		"Pokeball",
+		"Potion",
+		"Potion",
+		"Potion",
 	],
 	"Party": [
 		{
