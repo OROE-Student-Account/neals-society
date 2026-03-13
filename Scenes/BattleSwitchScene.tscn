@@ -1,21 +1,19 @@
-[gd_scene format=3 uid="uid://s48ynud6ed77"]
+[gd_scene format=3 uid="uid://dvpfferedor81"]
 
-[ext_resource type="Texture2D" uid="uid://fblj6wvub8hg" path="res://Assets/UI/Pokemon Party/party_background.png" id="1"]
-[ext_resource type="Texture2D" uid="uid://cuxb2blx126im" path="res://Assets/UI/Pokemon Party/main_pokemon_background.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://r8qwb6kwhbpx" path="res://Assets/Pokemon/Pokemon4.png" id="3"]
-[ext_resource type="Script" uid="uid://dpvpht1pik0j" path="res://Scripts/PartySlot.gd" id="3_3dpfl"]
-[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="4"]
-[ext_resource type="Texture2D" uid="uid://bjpgrwhpuv2dn" path="res://Assets/UI/Pokemon Party/gender_icons.png" id="5"]
-[ext_resource type="Texture2D" uid="uid://b4nmamhpm0fsg" path="res://Assets/UI/Pokemon Party/standby_pokemon_background.png" id="7"]
-[ext_resource type="Texture2D" uid="uid://d042hjjepovvf" path="res://Assets/Pokemon/Pokemon1.png" id="8"]
-[ext_resource type="Texture2D" uid="uid://djti4nrbbo2kk" path="res://Assets/Pokemon/Pokemon7.png" id="9"]
-[ext_resource type="Texture2D" uid="uid://ynuirmpk2ja1" path="res://Assets/Pokemon/Pokemon16.png" id="10"]
-[ext_resource type="Texture2D" uid="uid://x2r2smipejox" path="res://Assets/Pokemon/Pokemon25.png" id="11"]
-[ext_resource type="Texture2D" uid="uid://b81iqrvr8ywd1" path="res://Assets/Pokemon/Pokemon95.png" id="12"]
-[ext_resource type="Texture2D" uid="uid://hpyxtuycfcbw" path="res://Assets/UI/Pokemon Party/exit_background_button.png" id="13"]
-[ext_resource type="Script" uid="uid://gtkl713auage" path="res://Scripts/PokemonPartyScreen.gd" id="14"]
-[ext_resource type="Texture2D" uid="uid://dw17mm63araxi" path="res://Assets/UI/menu_box_1.png" id="15_ajrs2"]
-[ext_resource type="Texture2D" uid="uid://bofmcuxvqsoyg" path="res://Assets/UI/ui_arrow_left_right.png" id="16_jqn4x"]
+[ext_resource type="Script" uid="uid://bkcn4evftav85" path="res://Scripts/BattleSwitchScene.gd" id="1_ryap2"]
+[ext_resource type="Texture2D" uid="uid://fblj6wvub8hg" path="res://Assets/UI/Pokemon Party/party_background.png" id="2_jlluh"]
+[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="3_b7gqt"]
+[ext_resource type="Texture2D" uid="uid://hpyxtuycfcbw" path="res://Assets/UI/Pokemon Party/exit_background_button.png" id="4_gc4c6"]
+[ext_resource type="Script" uid="uid://dpvpht1pik0j" path="res://Scripts/PartySlot.gd" id="5_25w2i"]
+[ext_resource type="Texture2D" uid="uid://cuxb2blx126im" path="res://Assets/UI/Pokemon Party/main_pokemon_background.png" id="6_xhfb6"]
+[ext_resource type="Texture2D" uid="uid://r8qwb6kwhbpx" path="res://Assets/Pokemon/Pokemon4.png" id="7_7ei88"]
+[ext_resource type="Texture2D" uid="uid://bjpgrwhpuv2dn" path="res://Assets/UI/Pokemon Party/gender_icons.png" id="8_ke1sm"]
+[ext_resource type="Texture2D" uid="uid://b4nmamhpm0fsg" path="res://Assets/UI/Pokemon Party/standby_pokemon_background.png" id="9_g8int"]
+[ext_resource type="Texture2D" uid="uid://d042hjjepovvf" path="res://Assets/Pokemon/Pokemon1.png" id="10_54ria"]
+[ext_resource type="Texture2D" uid="uid://djti4nrbbo2kk" path="res://Assets/Pokemon/Pokemon7.png" id="11_wmv81"]
+[ext_resource type="Texture2D" uid="uid://ynuirmpk2ja1" path="res://Assets/Pokemon/Pokemon16.png" id="12_da81f"]
+[ext_resource type="Texture2D" uid="uid://x2r2smipejox" path="res://Assets/Pokemon/Pokemon25.png" id="13_8kbsw"]
+[ext_resource type="Texture2D" uid="uid://b81iqrvr8ywd1" path="res://Assets/Pokemon/Pokemon95.png" id="14_xykx3"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "Idle"
@@ -39,7 +37,7 @@ _data = {
 }
 
 [sub_resource type="FontFile" id="2"]
-fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+fallbacks = Array[Font]([ExtResource("3_b7gqt"), ExtResource("3_b7gqt")])
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
@@ -253,14 +251,13 @@ _data = {
 &"Idle": SubResource("7")
 }
 
-[node name="PokemonPartyScreen" type="Node2D" unique_id=100946892]
-texture_filter = 1
-script = ExtResource("14")
+[node name="BattleSwitchScene" type="Node2D" unique_id=945001003]
+script = ExtResource("1_ryap2")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1930431935]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1")
+offset_right = 240.0
+offset_bottom = 160.0
+texture = ExtResource("2_jlluh")
 
 [node name="InfoText" type="Label" parent="." unique_id=633513612]
 offset_left = 8.0
@@ -268,34 +265,34 @@ offset_top = 136.0
 offset_right = 145.0
 offset_bottom = 159.0
 theme_override_colors/font_color = Color(1, 0, 1, 1)
-theme_override_fonts/font = ExtResource("4")
+theme_override_fonts/font = ExtResource("3_b7gqt")
 theme_override_font_sizes/font_size = 12
 text = "CHOOSE THE GUY"
 
 [node name="CancelSprite" type="Sprite2D" parent="." unique_id=1901885376]
 position = Vector2(211, 144)
-texture = ExtResource("13")
+texture = ExtResource("4_gc4c6")
 hframes = 2
 
 [node name="FirstPokemonSlot" type="Node2D" parent="." unique_id=766143109]
 position = Vector2(0, -1)
-script = ExtResource("3_3dpfl")
+script = ExtResource("5_25w2i")
 
 [node name="Background" type="Sprite2D" parent="FirstPokemonSlot" unique_id=794630042]
 position = Vector2(44, 47.5)
-texture = ExtResource("2")
+texture = ExtResource("6_xhfb6")
 hframes = 2
 
 [node name="PokemonPartySprite" type="Sprite2D" parent="FirstPokemonSlot" unique_id=85660275]
 position = Vector2(18, 40)
-texture = ExtResource("3")
+texture = ExtResource("7_7ei88")
 hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
 
 [node name="PokemonName" type="Sprite2D" parent="FirstPokemonSlot" unique_id=1880021042]
 position = Vector2(68, 42)
-texture = ExtResource("3")
+texture = ExtResource("7_7ei88")
 region_enabled = true
 region_rect = Rect2(0, -1, 73, 10)
 
@@ -335,7 +332,7 @@ text = "30"
 
 [node name="GenderIcon" type="Sprite2D" parent="FirstPokemonSlot" unique_id=1588046005]
 position = Vector2(75, 52)
-texture = ExtResource("5")
+texture = ExtResource("8_ke1sm")
 hframes = 2
 
 [node name="HealthBar" type="ColorRect" parent="FirstPokemonSlot" unique_id=823102362]
@@ -347,23 +344,23 @@ color = Color(0, 1, 0, 1)
 
 [node name="SecondPokemonSlot" type="Node2D" parent="." unique_id=2092387560]
 position = Vector2(119, -26)
-script = ExtResource("3_3dpfl")
+script = ExtResource("5_25w2i")
 
 [node name="Background" type="Sprite2D" parent="SecondPokemonSlot" unique_id=1700462057]
 position = Vector2(44, 47)
-texture = ExtResource("7")
+texture = ExtResource("9_g8int")
 hframes = 2
 
 [node name="PokemonPartySprite" type="Sprite2D" parent="SecondPokemonSlot" unique_id=932377883]
 position = Vector2(-16, 48)
-texture = ExtResource("8")
+texture = ExtResource("10_54ria")
 hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
 
 [node name="PokemonName" type="Sprite2D" parent="SecondPokemonSlot" unique_id=1404058218]
 position = Vector2(35, 44)
-texture = ExtResource("8")
+texture = ExtResource("10_54ria")
 region_enabled = true
 region_rect = Rect2(0, -1, 73, 10)
 
@@ -403,7 +400,7 @@ text = "30"
 
 [node name="GenderIcon" type="Sprite2D" parent="SecondPokemonSlot" unique_id=17974113]
 position = Vector2(44, 54)
-texture = ExtResource("5")
+texture = ExtResource("8_ke1sm")
 hframes = 2
 
 [node name="HealthBar" type="ColorRect" parent="SecondPokemonSlot" unique_id=1665329341]
@@ -415,23 +412,23 @@ color = Color(0, 1, 0, 1)
 
 [node name="ThirdPokemonSlot" type="Node2D" parent="." unique_id=529554492]
 position = Vector2(119, -2)
-script = ExtResource("3_3dpfl")
+script = ExtResource("5_25w2i")
 
 [node name="Background" type="Sprite2D" parent="ThirdPokemonSlot" unique_id=207660173]
 position = Vector2(44, 47)
-texture = ExtResource("7")
+texture = ExtResource("9_g8int")
 hframes = 2
 
 [node name="PokemonPartySprite" type="Sprite2D" parent="ThirdPokemonSlot" unique_id=1381254744]
 position = Vector2(-16, 48)
-texture = ExtResource("9")
+texture = ExtResource("11_wmv81")
 hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
 
 [node name="PokemonName" type="Sprite2D" parent="ThirdPokemonSlot" unique_id=634138031]
 position = Vector2(35, 44)
-texture = ExtResource("9")
+texture = ExtResource("11_wmv81")
 region_enabled = true
 region_rect = Rect2(0, -1, 73, 10)
 
@@ -471,7 +468,7 @@ text = "30"
 
 [node name="GenderIcon" type="Sprite2D" parent="ThirdPokemonSlot" unique_id=1187279616]
 position = Vector2(44, 54)
-texture = ExtResource("5")
+texture = ExtResource("8_ke1sm")
 hframes = 2
 
 [node name="HealthBar" type="ColorRect" parent="ThirdPokemonSlot" unique_id=92183091]
@@ -483,23 +480,23 @@ color = Color(0, 1, 0, 1)
 
 [node name="FourthPokemonSlot" type="Node2D" parent="." unique_id=800206905]
 position = Vector2(119, 22)
-script = ExtResource("3_3dpfl")
+script = ExtResource("5_25w2i")
 
 [node name="Background" type="Sprite2D" parent="FourthPokemonSlot" unique_id=467079812]
 position = Vector2(44, 47)
-texture = ExtResource("7")
+texture = ExtResource("9_g8int")
 hframes = 2
 
 [node name="PokemonPartySprite" type="Sprite2D" parent="FourthPokemonSlot" unique_id=754777814]
 position = Vector2(-16, 48)
-texture = ExtResource("10")
+texture = ExtResource("12_da81f")
 hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
 
 [node name="PokemonName" type="Sprite2D" parent="FourthPokemonSlot" unique_id=854313703]
 position = Vector2(35, 44)
-texture = ExtResource("10")
+texture = ExtResource("12_da81f")
 region_enabled = true
 region_rect = Rect2(0, -1, 73, 10)
 
@@ -539,7 +536,7 @@ text = "30"
 
 [node name="GenderIcon" type="Sprite2D" parent="FourthPokemonSlot" unique_id=74480805]
 position = Vector2(44, 54)
-texture = ExtResource("5")
+texture = ExtResource("8_ke1sm")
 hframes = 2
 
 [node name="HealthBar" type="ColorRect" parent="FourthPokemonSlot" unique_id=47004701]
@@ -551,23 +548,23 @@ color = Color(0, 1, 0, 1)
 
 [node name="FifthPokemonSlot" type="Node2D" parent="." unique_id=2133650784]
 position = Vector2(119, 46)
-script = ExtResource("3_3dpfl")
+script = ExtResource("5_25w2i")
 
 [node name="Background" type="Sprite2D" parent="FifthPokemonSlot" unique_id=725329517]
 position = Vector2(44, 47)
-texture = ExtResource("7")
+texture = ExtResource("9_g8int")
 hframes = 2
 
 [node name="PokemonPartySprite" type="Sprite2D" parent="FifthPokemonSlot" unique_id=128367754]
 position = Vector2(-16, 48)
-texture = ExtResource("11")
+texture = ExtResource("13_8kbsw")
 hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
 
 [node name="PokemonName" type="Sprite2D" parent="FifthPokemonSlot" unique_id=1133011864]
 position = Vector2(35, 44)
-texture = ExtResource("11")
+texture = ExtResource("13_8kbsw")
 region_enabled = true
 region_rect = Rect2(0, -1, 73, 10)
 
@@ -607,7 +604,7 @@ text = "30"
 
 [node name="GenderIcon" type="Sprite2D" parent="FifthPokemonSlot" unique_id=2083567754]
 position = Vector2(44, 54)
-texture = ExtResource("5")
+texture = ExtResource("8_ke1sm")
 hframes = 2
 
 [node name="HealthBar" type="ColorRect" parent="FifthPokemonSlot" unique_id=1251322606]
@@ -619,23 +616,23 @@ color = Color(0, 1, 0, 1)
 
 [node name="SixthPokemonSlot" type="Node2D" parent="." unique_id=802830800]
 position = Vector2(119, 70)
-script = ExtResource("3_3dpfl")
+script = ExtResource("5_25w2i")
 
 [node name="Background" type="Sprite2D" parent="SixthPokemonSlot" unique_id=1872033623]
 position = Vector2(44, 47)
-texture = ExtResource("7")
+texture = ExtResource("9_g8int")
 hframes = 2
 
 [node name="PokemonPartySprite" type="Sprite2D" parent="SixthPokemonSlot" unique_id=1445359980]
 position = Vector2(-16, 48)
-texture = ExtResource("12")
+texture = ExtResource("14_xykx3")
 hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
 
 [node name="PokemonName" type="Sprite2D" parent="SixthPokemonSlot" unique_id=1224511204]
 position = Vector2(35, 44)
-texture = ExtResource("12")
+texture = ExtResource("14_xykx3")
 region_enabled = true
 region_rect = Rect2(0, -1, 73, 10)
 
@@ -675,7 +672,7 @@ text = "30"
 
 [node name="GenderIcon" type="Sprite2D" parent="SixthPokemonSlot" unique_id=264234531]
 position = Vector2(44, 54)
-texture = ExtResource("5")
+texture = ExtResource("8_ke1sm")
 hframes = 2
 
 [node name="HealthBar" type="ColorRect" parent="SixthPokemonSlot" unique_id=1092379564]
@@ -684,134 +681,3 @@ offset_top = 44.0
 offset_right = 113.0
 offset_bottom = 47.0
 color = Color(0, 1, 0, 1)
-
-[node name="PageOptions" type="NinePatchRect" parent="." unique_id=1769560236]
-visible = false
-offset_left = 176.0
-offset_top = 93.0
-offset_right = 238.0
-offset_bottom = 154.0
-texture = ExtResource("15_ajrs2")
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PageOptions" unique_id=1857093073]
-layout_mode = 0
-offset_left = 15.0
-offset_top = 6.0
-offset_right = 56.0
-offset_bottom = 67.0
-
-[node name="Summary" type="Label" parent="PageOptions/VBoxContainer" unique_id=1051197184]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("4")
-theme_override_font_sizes/font_size = 12
-text = "Summary"
-
-[node name="Switch" type="Label" parent="PageOptions/VBoxContainer" unique_id=819748401]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("4")
-theme_override_font_sizes/font_size = 12
-text = "Switch"
-
-[node name="Item" type="Label" parent="PageOptions/VBoxContainer" unique_id=195601569]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("4")
-theme_override_font_sizes/font_size = 12
-text = "Item"
-
-[node name="Cancel" type="Label" parent="PageOptions/VBoxContainer" unique_id=1558371454]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("4")
-theme_override_font_sizes/font_size = 12
-text = "Cancel"
-
-[node name="Arrow" type="TextureRect" parent="PageOptions" unique_id=1040011129]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 6.0
-offset_right = 13.0
-offset_bottom = 16.0
-texture = ExtResource("16_jqn4x")
-
-[node name="SwitchLocation" type="NinePatchRect" parent="." unique_id=724356943]
-visible = false
-offset_left = 176.0
-offset_top = 54.0
-offset_right = 238.0
-offset_bottom = 154.0
-texture = ExtResource("15_ajrs2")
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="VBoxContainer" type="VBoxContainer" parent="SwitchLocation" unique_id=1858512796]
-layout_mode = 0
-offset_left = 15.0
-offset_top = 6.0
-offset_right = 56.0
-offset_bottom = 67.0
-
-[node name="1" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=2011019407]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("4")
-theme_override_font_sizes/font_size = 12
-text = "Slot 1"
-
-[node name="2" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=1346129559]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("4")
-theme_override_font_sizes/font_size = 12
-text = "Slot 2"
-
-[node name="3" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=1933598985]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("4")
-theme_override_font_sizes/font_size = 12
-text = "Slot 3"
-
-[node name="4" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=1979807380]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("4")
-theme_override_font_sizes/font_size = 12
-text = "Slot 4"
-
-[node name="5" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=1544587729]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("4")
-theme_override_font_sizes/font_size = 12
-text = "Slot 5"
-
-[node name="6" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=1079065639]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("4")
-theme_override_font_sizes/font_size = 12
-text = "Slot 6"
-
-[node name="Cancel" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=769751161]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("4")
-theme_override_font_sizes/font_size = 12
-text = "Cancel"
-
-[node name="Arrow" type="TextureRect" parent="SwitchLocation" unique_id=585775761]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 6.0
-offset_right = 13.0
-offset_bottom = 16.0
-texture = ExtResource("16_jqn4x")

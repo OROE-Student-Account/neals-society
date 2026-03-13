@@ -2,7 +2,11 @@ extends Node2D
 
 signal move_selected(move_index: int)  # ADD THIS LINE
 
+var pause = false
+
 @export var grammarite_node : Node = null
+
+@onready var switch_screen = preload("res://Scenes/BattleSwitchScene.tscn")
 
 enum InputState { ACTION_BUTTONS, MOVE_LIST, WAITING }
 var input_state = InputState.ACTION_BUTTONS
@@ -64,9 +68,16 @@ func _ready():
 	set_active_option()
 	show_correct_menu()
 	update_arrow_pos()
+	
+func stop():
+	pause = true
+	await get_tree().create_timer(0.1).timeout
+	pause = false
+
 
 
 func _input(event):
+	if pause: return
 	match input_state:
 		InputState.ACTION_BUTTONS:
 			if event.is_action_pressed("ui_down"):
@@ -93,6 +104,11 @@ func _input(event):
 					Buttons.FIGHT:
 						input_state = InputState.MOVE_LIST
 						show_correct_menu()
+					Buttons.SWITCH:
+						input_state = InputState.WAITING
+						show_correct_menu()
+						get_parent().add_child(switch_screen.instantiate())
+						
 
 		InputState.MOVE_LIST:
 			if event.is_action_pressed("x"):

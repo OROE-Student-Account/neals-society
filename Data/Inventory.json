@@ -12,7 +12,7 @@
 		"Pokeball",
 		"Potion",
 		"Potion",
-		"Potion",
+		"Potion"
 	],
 	"Party": [
 		{
@@ -35,25 +35,6 @@
 			]
 		},
 		{
-			"Health": 25.0,
-			"Item": "",
-			"Level": 14.56,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Sit",
-				"Sculpt"
-			],
-			"Name": "Sculpupture",
-			"Nickname": "",
-			"PP": [
-				10.0,
-				0.0,
-				5.0,
-				3.0
-			]
-		},
-		{
 			"Health": 100.0,
 			"Item": "",
 			"Level": 50.23,
@@ -64,6 +45,25 @@
 				"Sculpt"
 			],
 			"Name": "Orawolfi",
+			"Nickname": "",
+			"PP": [
+				10.0,
+				0.0,
+				5.0,
+				3.0
+			]
+		},
+		{
+			"Health": 25.0,
+			"Item": "",
+			"Level": 14.56,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Sculpt"
+			],
+			"Name": "Sculpupture",
 			"Nickname": "",
 			"PP": [
 				10.0,

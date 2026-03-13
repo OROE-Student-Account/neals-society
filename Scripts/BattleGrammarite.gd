@@ -15,6 +15,9 @@ var health : int = 1
 var max_health : int = 1
 
 func _ready():
+	setup()
+
+func setup():
 	
 	if not is_enemy:
 		var first_grammarite = Utils.get_party()[0]
