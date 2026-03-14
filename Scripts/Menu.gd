@@ -3,17 +3,29 @@ extends CanvasLayer
 const PokemonPartyScreen = preload("res://Scenes/PokemonPartyScreen.tscn")
 const PokemonItemScreen = preload("res://Scenes/ItemScreen.tscn")
 
-@onready var select_arrow = $Control/NinePatchRect/TextureRect
+@onready var arrow = $Control/Arrow 
 @onready var menu = $Control
 
 enum ScreenLoaded { NOTHING, JUST_MENU, ITEM_SCREEN, PARTY_SCREEN, }
 var screen_loaded = ScreenLoaded.NOTHING
-
 var selected_option: int = 0
+
+# SelectBox positions for 2x3 grid (adjust these to match your layout)
+var select_box_positions: Array[Vector2] = [
+	Vector2(80, 62),   # Option 0 (top-left)
+	Vector2(146, 63),   # Option 1 (top-right)
+	Vector2(80, 80),   # Option 2 (middle-left)
+	Vector2(146, 80),   # Option 3 (middle-right)
+	Vector2(80, 97),   # Option 4 (bottom-left)
+	Vector2(146, 97),   # Option 5 (bottom-right)
+]
 
 func _ready():
 	menu.visible = false
-	select_arrow.position.y = 6 + (selected_option % 6) * 15
+	update_select_box()
+
+func update_select_box():
+	arrow.position = select_box_positions[selected_option]
 
 func load_party_screen():
 	menu.visible = false
@@ -26,7 +38,6 @@ func unload_party_screen():
 	screen_loaded = ScreenLoaded.JUST_MENU
 	remove_child($PokemonPartyScreen)
 
-
 func load_item_screen():
 	menu.visible = false
 	screen_loaded = ScreenLoaded.ITEM_SCREEN
@@ -37,7 +48,6 @@ func unload_item_screen():
 	menu.visible = true
 	screen_loaded = ScreenLoaded.JUST_MENU
 	remove_child($ItemScreen)
-
 
 func _unhandled_input(event):
 	match screen_loaded:
@@ -51,22 +61,51 @@ func _unhandled_input(event):
 		
 		ScreenLoaded.JUST_MENU:
 			if event.is_action_pressed("menu") or event.is_action_pressed("x") or (event.is_action_pressed("z") and selected_option == 5):
+				selected_option = 0
+				update_select_box()
 				var player = Utils.get_player()
 				player.set_physics_process(true)
 				menu.visible = false
 				screen_loaded = ScreenLoaded.NOTHING
-				
+			
 			elif event.is_action_pressed("ui_down"):
-				selected_option =  (selected_option + 1) % 6
-				select_arrow.position.y = 6 + (selected_option % 6) * 15
-				
+				# Move down 2 positions (next row)
+				if selected_option <= 3:  # Not in bottom row (0-3)
+					selected_option += 2
+					update_select_box()
+			
 			elif event.is_action_pressed("ui_up"):
-				if selected_option == 0:
-					selected_option = 5
-				else:
+				# Move up 2 positions (previous row)
+				if selected_option >= 2:  # Not in top row (2-5)
+					selected_option -= 2
+					update_select_box()
+			
+			elif event.is_action_pressed("ui_left"):
+				# Move left only if in right column (odd indices: 1, 3, 5)
+				if selected_option % 2 == 1:
 					selected_option -= 1
-				select_arrow.position.y = 6 + (selected_option % 6) * 15
-			elif event.is_action_pressed("z") and selected_option == 0:
-				Utils.get_scene_manager().transition_to_party_screen()
-			elif event.is_action_pressed("z") and selected_option == 1:
-				Utils.get_scene_manager().transition_to_item_screen()
+					update_select_box()
+			
+			elif event.is_action_pressed("ui_right"):
+				# Move right only if in left column (even indices: 0, 2, 4)
+				if selected_option % 2 == 0:
+					selected_option += 1
+					update_select_box()
+			
+			elif event.is_action_pressed("z"):
+				match selected_option:
+					0:
+						Utils.get_scene_manager().transition_to_party_screen()
+					1:
+						pass
+					2:
+						Utils.get_scene_manager().transition_to_item_screen()
+					3:
+						# Add action for option 3
+						pass
+					4:
+						# Add action for option 4
+						pass
+					5:
+						# Close menu (already handled above)
+						pass

@@ -1,98 +1,34 @@
 [gd_scene format=3 uid="uid://bkml6dq0xfdp7"]
 
-[ext_resource type="Texture2D" uid="uid://dw17mm63araxi" path="res://Assets/UI/menu_box_1.png" id="1"]
-[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="2"]
-[ext_resource type="Texture2D" uid="uid://bofmcuxvqsoyg" path="res://Assets/UI/ui_arrow_left_right.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://cjtiykoj2k11s" path="res://Assets/UI/menuUI1-1.png.png" id="2_syfuq"]
+[ext_resource type="Texture2D" uid="uid://cbtw8iq0poli" path="res://Assets/UI/menuUI2-1.png.png" id="3_s2c3o"]
 [ext_resource type="Script" uid="uid://by1tek04w14jl" path="res://Scripts/Menu.gd" id="4"]
 
-[sub_resource type="FontFile" id="1"]
-fallbacks = Array[Font]([ExtResource("2"), ExtResource("2")])
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-
-[node name="Menu" type="CanvasLayer"]
+[node name="Menu" type="CanvasLayer" unique_id=2032028044]
 scale = Vector2(5, 5)
 transform = Transform2D(5, 0, 0, 5, 0, 0)
 script = ExtResource("4")
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1969050045]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1947784219]
 texture_filter = 1
 layout_mode = 0
-offset_left = 164.0
-offset_top = 1.0
-offset_right = 239.0
-offset_bottom = 98.0
-texture = ExtResource("1")
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
+offset_left = 56.0
+offset_top = 48.0
+offset_right = 184.0
+offset_bottom = 113.0
+texture = ExtResource("2_syfuq")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/NinePatchRect"]
+[node name="Arrow" type="TextureRect" parent="Control" unique_id=25043628]
 layout_mode = 0
-offset_left = 14.0
-offset_top = 6.0
-offset_right = 64.0
-offset_bottom = 92.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
-custom_minimum_size = Vector2(70, 11)
-layout_mode = 2
-theme_override_colors/default_color = Color(0.435294, 0.435294, 0.533333, 1)
-theme_override_fonts/normal_font = SubResource("1")
-text = "POKeMON"
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
-custom_minimum_size = Vector2(50, 11)
-layout_mode = 2
-theme_override_colors/default_color = Color(0.435294, 0.435294, 0.533333, 1)
-theme_override_fonts/normal_font = SubResource("1")
-text = "BAG"
-
-[node name="RichTextLabel3" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
-custom_minimum_size = Vector2(50, 11)
-layout_mode = 2
-theme_override_colors/default_color = Color(0.435294, 0.435294, 0.533333, 1)
-theme_override_fonts/normal_font = SubResource("1")
-text = "Arkeve"
-
-[node name="RichTextLabel4" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
-custom_minimum_size = Vector2(50, 11)
-layout_mode = 2
-theme_override_colors/default_color = Color(0.435294, 0.435294, 0.533333, 1)
-theme_override_fonts/normal_font = SubResource("1")
-text = "SAVE"
-
-[node name="RichTextLabel5" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
-custom_minimum_size = Vector2(50, 11)
-layout_mode = 2
-theme_override_colors/default_color = Color(0.435294, 0.435294, 0.533333, 1)
-theme_override_fonts/normal_font = SubResource("1")
-text = "OPTION"
-
-[node name="RichTextLabel6" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
-custom_minimum_size = Vector2(50, 11)
-layout_mode = 2
-theme_override_colors/default_color = Color(0.435294, 0.435294, 0.533333, 1)
-theme_override_fonts/normal_font = SubResource("1")
-text = "EXIT"
-
-[node name="TextureRect" type="TextureRect" parent="Control/NinePatchRect"]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 6.0
-offset_right = 13.0
-offset_bottom = 16.0
-texture = ExtResource("3")
+offset_left = 146.0
+offset_top = 80.0
+offset_right = 157.0
+offset_bottom = 87.0
+texture = ExtResource("3_s2c3o")

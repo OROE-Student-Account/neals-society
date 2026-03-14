@@ -533,6 +533,7 @@ parameters/Turn/blend_position = Vector2(0, 0)
 parameters/Walk/blend_position = Vector2(-0.997323, 0)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=577857197]
+position = Vector2(8, 8)
 zoom = Vector2(4, 4)
 
 [node name="BlockingRayCast2D" type="RayCast2D" parent="." unique_id=1269999703]

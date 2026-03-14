@@ -162,17 +162,15 @@ func move(delta):
 		percent_moved_to_next_tile += walk_speed * delta
 		if percent_moved_to_next_tile >= 1.0:
 			position = initial_position + input_direction * TILE_SIZE
-			var sprite_pos = Vector2.ZERO
-			sprite_pos.x = 16
-			sprite.position = sprite_pos
-			camera.position = Vector2.ZERO
+			sprite.position = Vector2(16,0)
+			camera.position = Vector2(8, 8)
 			is_moving = false
 			percent_moved_to_next_tile = 0.0
 			emit_signal("player_stop_signal")
 		else:
-			sprite.position = input_direction * TILE_SIZE * percent_moved_to_next_tile
-			sprite.position.x += 16
-			camera.position = input_direction * TILE_SIZE * percent_moved_to_next_tile
+			sprite.position = input_direction * TILE_SIZE * percent_moved_to_next_tile + Vector2(16, 0)
+			camera.position = input_direction * TILE_SIZE * percent_moved_to_next_tile + Vector2(8, 8)
+			
 	# when moving towads the door and not in the animation
 	elif (door_ray.is_colliding() or inside_door_ray.is_colliding()) and not entering_door: 
 		entering_door = true
@@ -186,28 +184,23 @@ func move(delta):
 		if percent_moved_to_next_tile >= 1.0:
 			if not inside_door_ray.is_colliding():
 				position = initial_position + input_direction * TILE_SIZE
-				var sprite_pos = Vector2.ZERO
-				sprite_pos.x = 16
-				sprite.position = sprite_pos
-				camera.position = Vector2.ZERO
+			sprite.position = Vector2(16,0)
+			camera.position = Vector2(8, 8)
 			is_moving = false
 			stop_input = true
 			anim_tree.active = false
 			anim_player.play("Disappear")
 		else:
-			sprite.position = input_direction * TILE_SIZE * percent_moved_to_next_tile
-			sprite.position.x += 16
-			camera.position = input_direction * TILE_SIZE * percent_moved_to_next_tile
+			sprite.position = input_direction * TILE_SIZE * percent_moved_to_next_tile + Vector2(16, 0)
+			camera.position = input_direction * TILE_SIZE * percent_moved_to_next_tile + Vector2(8, 8)
 	# --- Ledge ---
 	elif (ledge_ray.is_colliding() and input_direction == Vector2.DOWN) or jumping_over_ledge:
 		percent_moved_to_next_tile += jump_speed * delta
 		if percent_moved_to_next_tile >= 2.0:
 			position = initial_position + input_direction * TILE_SIZE * 2
-			var sprite_pos = Vector2.ZERO
-			sprite_pos.x = 16
-			sprite.position = sprite_pos
+			sprite.position = Vector2(16,0)
+			camera.position = Vector2(8, 8)
 			shadow.position = Vector2.ZERO
-			camera.position = Vector2.ZERO
 			jumping_over_ledge = false
 			percent_moved_to_next_tile = 0.0
 			is_moving = false
@@ -222,7 +215,7 @@ func move(delta):
 			var move = (-0.96 - 0.53 * input + 0.05 * pow(input, 2))
 			sprite.position.y = move
 			shadow.position.y = move
-			camera.position.y = move
+			camera.position.y = move + 8
 	else:
 		is_moving = false
 

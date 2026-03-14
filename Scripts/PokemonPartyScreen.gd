@@ -30,7 +30,7 @@ var select_box_positions: Dictionary = {
 	Options.FOURTH_SLOT: Vector2(137, 49),
 	Options.FIFTH_SLOT: Vector2(25, 92),
 	Options.SIXTH_SLOT: Vector2(137, 92),
-	Options.CANCEL: Vector2(50, 130),         # Cancel button position
+	Options.CANCEL: Vector2(50, 130),         # does nothing
 }
 
 var slots_enabled: Dictionary = {
@@ -143,6 +143,9 @@ func load_summary(slot_num):
 	# name and grammadex num
 	info.get_child(4).text = slot_data["Name"]
 	info.get_child(5).text = "DEX #: "+str(Utils.get_poke_num(slot_data["Name"])+1)
+	
+	# hp
+	info.get_child(6).text = "HP: "+str(int(slot_data["Health"]))
 
 func load_moves(slot_num):
 	self.add_child(load("res://Scenes/MovesPartyScreen.tscn").instantiate())
