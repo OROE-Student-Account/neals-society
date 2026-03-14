@@ -52,7 +52,6 @@ func load_party():
 			slot.set_health(max_health, slot_data["Health"])
 			slot.set_sprites(Utils.get_poke_num(slot_data["Name"]))
 			slots_enabled[i] = true
-	slots_enabled[0] = false
 
 
 func exit():

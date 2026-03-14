@@ -7,6 +7,7 @@ var pause = false
 @export var grammarite_node : Node = null
 
 @onready var switch_screen = preload("res://Scenes/BattleSwitchScene.tscn")
+@onready var item_screen = preload("res://Scenes/BattleItemScreen.tscn")
 
 enum InputState { ACTION_BUTTONS, MOVE_LIST, WAITING }
 var input_state = InputState.ACTION_BUTTONS
@@ -108,7 +109,10 @@ func _input(event):
 						input_state = InputState.WAITING
 						show_correct_menu()
 						get_parent().add_child(switch_screen.instantiate())
-						
+					Buttons.ITEM:
+						input_state = InputState.WAITING
+						show_correct_menu()
+						get_parent().add_child(item_screen.instantiate())
 
 		InputState.MOVE_LIST:
 			if event.is_action_pressed("x"):
