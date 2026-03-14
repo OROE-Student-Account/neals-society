@@ -131,6 +131,12 @@ func end_battle(player_won: bool):
 	
 	if player_won:
 		battle_ui.set_info_text("You won!")
+		
+		var xp = Utils.get_trainer(trainer)["XP"]
+		var party = Utils.get_party()
+		party[0]["Level"] += 0.01*xp
+		Utils.set_party(party)
+		
 	else:
 		battle_ui.set_info_text("You lost!")
 	

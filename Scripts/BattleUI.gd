@@ -113,7 +113,6 @@ func _input(event):
 						input_state = InputState.WAITING
 						show_correct_menu()
 						get_parent().add_child(item_screen.instantiate())
-
 		InputState.MOVE_LIST:
 			if event.is_action_pressed("x"):
 				input_state = InputState.ACTION_BUTTONS
@@ -125,7 +124,13 @@ func _input(event):
 				selected_button = (selected_button + 3) % 4
 				update_arrow_pos()
 			elif event.is_action_pressed("z"):
-				# emit signal
+				
+				var party = Utils.get_party()
+				if party[0]["PP"][selected_button] <= 0: return
+				
+				party[0]["PP"][selected_button] -= 1
+				Utils.set_party(party)
 				input_state = InputState.WAITING
+				# emit signal
 				move_selected.emit(selected_button) 
 				show_correct_menu()

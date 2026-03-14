@@ -14,13 +14,23 @@ enum Options { FIRST_SLOT, SECOND_SLOT, THIRD_SLOT, FOURTH_SLOT, FIFTH_SLOT, SIX
 var selected_option: int = Options.FIRST_SLOT
 
 @onready var options: Dictionary = {
-	Options.FIRST_SLOT: $FirstPokemonSlot/Background,
-	Options.SECOND_SLOT: $SecondPokemonSlot/Background,
-	Options.THIRD_SLOT: $ThirdPokemonSlot/Background,
-	Options.FOURTH_SLOT: $FourthPokemonSlot/Background,
-	Options.FIFTH_SLOT: $FifthPokemonSlot/Background,
-	Options.SIXTH_SLOT: $SixthPokemonSlot/Background,
-	Options.CANCEL: $CancelSprite,
+	Options.FIRST_SLOT: $FirstPokemonSlot,
+	Options.SECOND_SLOT: $SecondPokemonSlot,
+	Options.THIRD_SLOT: $ThirdPokemonSlot,
+	Options.FOURTH_SLOT: $FourthPokemonSlot,
+	Options.FIFTH_SLOT: $FifthPokemonSlot,
+	Options.SIXTH_SLOT: $SixthPokemonSlot
+}
+
+# SelectBox positions for each slot
+var select_box_positions: Dictionary = {
+	Options.FIRST_SLOT: Vector2(25, 6),      # Adjust these coordinates to match your layout
+	Options.SECOND_SLOT: Vector2(137, 6),
+	Options.THIRD_SLOT: Vector2(25, 49),
+	Options.FOURTH_SLOT: Vector2(137, 49),
+	Options.FIFTH_SLOT: Vector2(25, 92),
+	Options.SIXTH_SLOT: Vector2(137, 92),
+	Options.CANCEL: Vector2(50, 130),         # Cancel button position
 }
 
 var slots_enabled: Dictionary = {
@@ -33,42 +43,43 @@ var slots_enabled: Dictionary = {
 	Options.CANCEL: true
 }
 
-func unset_active_option():
-	options[selected_option].frame = 0
-	
-func set_active_option():
-	options[selected_option].frame = 1
+func update_select_box():
+	if selected_option == Options.CANCEL:
+		$SelectBox.visible = false
+		$CancelSprite.frame = 1
+	else:
+		$CancelSprite.frame = 0
+		$SelectBox.visible = true
+		$SelectBox.position = select_box_positions[selected_option]
 
 func _ready():
-	set_active_option()
-	
+	update_select_box()
 	load_party()
-
 
 func load_party():
 	var party = Utils.get_party()
 	for i in range(6):
-		var slot = options[i].get_parent()
+		var slot = options[i]
 		var slot_data = party[i]
 		if slot_data["Name"] == "":
 			slot.visible = false
 			slots_enabled[i] = false
+			$Covers.get_child(i).visible = true
 		else:
 			var max_health = Utils.get_grammarite_details(slot_data["Name"])["Stats"]["Health"] + int(slot_data["Level"])
 			slot.lvl.text = str(int(slot_data["Level"]))
 			slot.set_health(max_health, slot_data["Health"])
 			slot.set_sprites(Utils.get_poke_num(slot_data["Name"]))
 			slots_enabled[i] = true
+			$Covers.get_child(i).visible = false
 
 func stop():
 	pause = true
 	await get_tree().create_timer(0.1).timeout
 	pause = false
 
-
 func load_summary(slot_num):
 	self.add_child(load("res://Scenes/SummaryScreen.tscn").instantiate())
-	
 	
 	var slot_data = Utils.get_party()[slot_num]
 	var details = Utils.get_grammarite_details(slot_data["Name"])
@@ -108,8 +119,6 @@ func load_summary(slot_num):
 	
 	$SummaryScreen/Stats/BG/Actual.polygon = polygon
 	
-	
-	
 	# types
 	var info = $SummaryScreen/Info/NinePatchRect
 	if len(stats["Types"]) == 1:
@@ -123,7 +132,6 @@ func load_summary(slot_num):
 		info.get_child(1).visible = false
 		info.get_child(0).get_child(0).get_child(0).text = str(stats["Types"][0])
 		info.get_child(0).get_child(0).get_child(1).text = str(stats["Types"][1])
-	
 	
 	# LVL and XP
 	var lvl = int(slot_data["Level"])
@@ -160,13 +168,11 @@ func load_item(slot_num):
 	var slot_data = Utils.get_party()[slot_num]
 	
 	if slot_data["Item"] != "":
-		
 		var item = Utils.get_item(slot_data["Item"])
 		
 		$ItemPartyScreen/Box/Description.text = item["Description"]
 		var file_path = "res://Assets/Items/" + slot_data["Item"] + ".png"
 		$ItemPartyScreen/TextureRect.texture = load(file_path)
-	
 	else:
 		$ItemPartyScreen/Box/Description.text = "No item equipped"
 		$ItemPartyScreen/TextureRect.texture = null
@@ -219,40 +225,95 @@ func update_page():
 			$SwitchLocation.position.y = 54 + 13 * (7 - count)
 			$SwitchLocation.size.y = 100 - 13 * (7 - count)
 
-
-
 func _input(event):
 	if pause: return
 	match page:
 		Page.MAIN:
 			if event.is_action_pressed("ui_down"):
-				unset_active_option()
-				selected_option = (selected_option + 1) % 7
-				while not slots_enabled[selected_option]:
-					selected_option = (selected_option + 1) % 7
-				set_active_option()
+				if selected_option == Options.CANCEL:
+					# Already at bottom, do nothing
+					pass
+				elif selected_option == Options.FIFTH_SLOT or selected_option == Options.SIXTH_SLOT:
+					# From bottom row, go to cancel
+					selected_option = Options.CANCEL
+					update_select_box()
+				else:
+					# Move down two slots (to next row)
+					var next_option = selected_option + 2
+					if next_option <= Options.SIXTH_SLOT:
+						selected_option = next_option
+						# Skip if not enabled
+						while not slots_enabled[selected_option] and selected_option <= Options.SIXTH_SLOT:
+							selected_option += 2
+							if selected_option > Options.SIXTH_SLOT:
+								selected_option = Options.CANCEL
+								break
+						update_select_box()
+				
 			elif event.is_action_pressed("ui_up"):
-				unset_active_option()
-				selected_option = (selected_option + 6) % 7
-				while not slots_enabled[selected_option]:
-					selected_option = (selected_option + 6) % 7
-				set_active_option()
+				if selected_option == Options.CANCEL:
+					# From cancel, go to bottom row
+					# Try to go to the same column we came from, or just go to FIFTH_SLOT
+					selected_option = Options.FIFTH_SLOT
+					while not slots_enabled[selected_option] and selected_option < Options.CANCEL:
+						selected_option -= 1
+						if selected_option == Options.CANCEL:
+							selected_option = Options.FIRST_SLOT
+							break
+					update_select_box()
+				elif selected_option >= Options.FIRST_SLOT and selected_option <= Options.SIXTH_SLOT:
+					# Move up two slots (to previous row)
+					var prev_option = selected_option - 2
+					if prev_option >= Options.FIRST_SLOT:
+						selected_option = prev_option
+						# Skip if not enabled
+						while not slots_enabled[selected_option] and selected_option >= Options.FIRST_SLOT:
+							selected_option -= 2
+							if selected_option < Options.FIRST_SLOT:
+								# Wrap around or stay
+								selected_option += 2
+								break
+						update_select_box()
+			
 			elif event.is_action_pressed("ui_left"):
-				unset_active_option()
-				selected_option = 0
-				set_active_option()
-			elif event.is_action_pressed("ui_right") and selected_option == Options.FIRST_SLOT:
-				unset_active_option()
-				selected_option = 1
-				while not slots_enabled[selected_option]:
-					selected_option = (selected_option + 1) % 7
-				set_active_option()
+				if selected_option == Options.CANCEL:
+					# Cancel has no left movement
+					pass
+				elif selected_option % 2 == 1:  # Right column (odd indices: 1, 3, 5)
+					# Move to left column
+					selected_option -= 1
+					# Skip if not enabled
+					while not slots_enabled[selected_option] and selected_option >= Options.FIRST_SLOT:
+						selected_option -= 2
+						if selected_option < Options.FIRST_SLOT:
+							selected_option += 1  # Go back
+							break
+					update_select_box()
+				# If already in left column (even indices: 0, 2, 4), do nothing
+			
+			elif event.is_action_pressed("ui_right"):
+				if selected_option == Options.CANCEL:
+					# Cancel has no right movement
+					pass
+				elif selected_option % 2 == 0:  # Left column (even indices: 0, 2, 4)
+					# Move to right column
+					selected_option += 1
+					# Skip if not enabled
+					while not slots_enabled[selected_option] and selected_option <= Options.SIXTH_SLOT:
+						selected_option += 2
+						if selected_option > Options.SIXTH_SLOT:
+							selected_option -= 1  # Go back
+							break
+					update_select_box()
+				# If already in right column (odd indices: 1, 3, 5), do nothing
+			
 			elif event.is_action_pressed("z"):
 				if selected_option == Options.CANCEL:
 					Utils.get_scene_manager().transition_exit_party_screen()
 				else:
 					page = Page.CHOSEN
 					update_page()
+			
 			elif event.is_action_pressed("x"):
 				Utils.get_scene_manager().transition_exit_party_screen()
 		Page.CHOSEN:
@@ -325,5 +386,3 @@ func _input(event):
 				
 				page = Page.MAIN
 				update_page()
-				
-				

@@ -1,12 +1,10 @@
 [gd_scene format=3 uid="uid://s48ynud6ed77"]
 
-[ext_resource type="Texture2D" uid="uid://fblj6wvub8hg" path="res://Assets/UI/Pokemon Party/party_background.png" id="1"]
-[ext_resource type="Texture2D" uid="uid://cuxb2blx126im" path="res://Assets/UI/Pokemon Party/main_pokemon_background.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bw3bqnx3kggm6" path="res://Assets/UI/Pokemon Party/PartyScreen1.png" id="2_jqn4x"]
 [ext_resource type="Texture2D" uid="uid://r8qwb6kwhbpx" path="res://Assets/Pokemon/Pokemon4.png" id="3"]
 [ext_resource type="Script" uid="uid://dpvpht1pik0j" path="res://Scripts/PartySlot.gd" id="3_3dpfl"]
+[ext_resource type="Texture2D" uid="uid://cf0txma36318t" path="res://Assets/UI/Pokemon Party/PartyScreen2-1.png.png" id="3_b4nyv"]
 [ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="4"]
-[ext_resource type="Texture2D" uid="uid://bjpgrwhpuv2dn" path="res://Assets/UI/Pokemon Party/gender_icons.png" id="5"]
-[ext_resource type="Texture2D" uid="uid://b4nmamhpm0fsg" path="res://Assets/UI/Pokemon Party/standby_pokemon_background.png" id="7"]
 [ext_resource type="Texture2D" uid="uid://d042hjjepovvf" path="res://Assets/Pokemon/Pokemon1.png" id="8"]
 [ext_resource type="Texture2D" uid="uid://djti4nrbbo2kk" path="res://Assets/Pokemon/Pokemon7.png" id="9"]
 [ext_resource type="Texture2D" uid="uid://ynuirmpk2ja1" path="res://Assets/Pokemon/Pokemon16.png" id="10"]
@@ -260,7 +258,14 @@ script = ExtResource("14")
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1930431935]
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1")
+texture = ExtResource("2_jqn4x")
+
+[node name="SelectBox" type="TextureRect" parent="." unique_id=2102279412]
+offset_left = 137.0
+offset_top = 49.0
+offset_right = 216.0
+offset_bottom = 89.0
+texture = ExtResource("3_b4nyv")
 
 [node name="InfoText" type="Label" parent="." unique_id=633513612]
 offset_left = 8.0
@@ -278,17 +283,13 @@ texture = ExtResource("13")
 hframes = 2
 
 [node name="FirstPokemonSlot" type="Node2D" parent="." unique_id=766143109]
-position = Vector2(0, -1)
+position = Vector2(2, -25)
 script = ExtResource("3_3dpfl")
 
-[node name="Background" type="Sprite2D" parent="FirstPokemonSlot" unique_id=794630042]
-position = Vector2(44, 47.5)
-texture = ExtResource("2")
-hframes = 2
-
 [node name="PokemonPartySprite" type="Sprite2D" parent="FirstPokemonSlot" unique_id=85660275]
-position = Vector2(18, 40)
+position = Vector2(22, 33)
 texture = ExtResource("3")
+centered = false
 hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
@@ -304,39 +305,14 @@ libraries/ = SubResource("AnimationLibrary_4tkum")
 autoplay = &"Idle"
 
 [node name="LevelLabel" type="Label" parent="FirstPokemonSlot" unique_id=2141775284]
-offset_left = 50.0
-offset_top = 48.0
-offset_right = 90.0
-offset_bottom = 62.0
+offset_left = 85.0
+offset_top = 47.0
+offset_right = 125.0
+offset_bottom = 61.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "4"
-
-[node name="HealthLabel" type="Label" parent="FirstPokemonSlot" unique_id=445894989]
-offset_left = 29.00001
-offset_top = 66.00001
-offset_right = 69.0
-offset_bottom = 80.00001
-scale = Vector2(0.8, 0.8)
-theme_override_fonts/font = SubResource("2")
-theme_override_font_sizes/font_size = 12
-text = "23"
-horizontal_alignment = 2
-
-[node name="MaxHealthLabel" type="Label" parent="FirstPokemonSlot" unique_id=1493653083]
-offset_left = 67.00001
-offset_top = 66.00001
-offset_right = 107.00001
-offset_bottom = 80.00001
-scale = Vector2(0.8, 0.8)
-theme_override_fonts/font = SubResource("2")
-theme_override_font_sizes/font_size = 12
-text = "30"
-
-[node name="GenderIcon" type="Sprite2D" parent="FirstPokemonSlot" unique_id=1588046005]
-position = Vector2(75, 52)
-texture = ExtResource("5")
-hframes = 2
 
 [node name="HealthBar" type="ColorRect" parent="FirstPokemonSlot" unique_id=823102362]
 offset_left = 32.0
@@ -349,20 +325,16 @@ color = Color(0, 1, 0, 1)
 position = Vector2(119, -26)
 script = ExtResource("3_3dpfl")
 
-[node name="Background" type="Sprite2D" parent="SecondPokemonSlot" unique_id=1700462057]
-position = Vector2(44, 47)
-texture = ExtResource("7")
-hframes = 2
-
 [node name="PokemonPartySprite" type="Sprite2D" parent="SecondPokemonSlot" unique_id=932377883]
-position = Vector2(-16, 48)
+position = Vector2(17, 34)
 texture = ExtResource("8")
+centered = false
 hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
 
 [node name="PokemonName" type="Sprite2D" parent="SecondPokemonSlot" unique_id=1404058218]
-position = Vector2(35, 44)
+position = Vector2(89, 42)
 texture = ExtResource("8")
 region_enabled = true
 region_rect = Rect2(0, -1, 73, 10)
@@ -372,65 +344,36 @@ libraries/ = SubResource("AnimationLibrary_yeqs3")
 autoplay = &"Idle"
 
 [node name="LevelLabel" type="Label" parent="SecondPokemonSlot" unique_id=65533669]
-offset_left = 19.0
-offset_top = 49.0
-offset_right = 59.0
-offset_bottom = 63.0
+offset_left = 80.0
+offset_top = 48.0
+offset_right = 120.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "4"
 
-[node name="HealthLabel" type="Label" parent="SecondPokemonSlot" unique_id=1204895558]
-offset_left = 62.0
-offset_top = 50.0
-offset_right = 102.0
-offset_bottom = 64.0
-scale = Vector2(0.8, 0.8)
-theme_override_fonts/font = SubResource("2")
-theme_override_font_sizes/font_size = 12
-text = "23"
-horizontal_alignment = 2
-
-[node name="MaxHealthLabel" type="Label" parent="SecondPokemonSlot" unique_id=1888917229]
-offset_left = 100.0
-offset_top = 50.0
-offset_right = 140.0
-offset_bottom = 64.0
-scale = Vector2(0.8, 0.8)
-theme_override_fonts/font = SubResource("2")
-theme_override_font_sizes/font_size = 12
-text = "30"
-
-[node name="GenderIcon" type="Sprite2D" parent="SecondPokemonSlot" unique_id=17974113]
-position = Vector2(44, 54)
-texture = ExtResource("5")
-hframes = 2
-
 [node name="HealthBar" type="ColorRect" parent="SecondPokemonSlot" unique_id=1665329341]
-offset_left = 65.0
-offset_top = 44.0
-offset_right = 113.0
-offset_bottom = 47.0
+offset_left = 27.0
+offset_top = 61.0
+offset_right = 75.0
+offset_bottom = 64.0
 color = Color(0, 1, 0, 1)
 
 [node name="ThirdPokemonSlot" type="Node2D" parent="." unique_id=529554492]
 position = Vector2(119, -2)
 script = ExtResource("3_3dpfl")
 
-[node name="Background" type="Sprite2D" parent="ThirdPokemonSlot" unique_id=207660173]
-position = Vector2(44, 47)
-texture = ExtResource("7")
-hframes = 2
-
 [node name="PokemonPartySprite" type="Sprite2D" parent="ThirdPokemonSlot" unique_id=1381254744]
-position = Vector2(-16, 48)
+position = Vector2(-95, 54)
 texture = ExtResource("9")
+centered = false
 hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
 
 [node name="PokemonName" type="Sprite2D" parent="ThirdPokemonSlot" unique_id=634138031]
-position = Vector2(35, 44)
+position = Vector2(-23, 60)
 texture = ExtResource("9")
 region_enabled = true
 region_rect = Rect2(0, -1, 73, 10)
@@ -440,65 +383,36 @@ libraries/ = SubResource("AnimationLibrary_qb61y")
 autoplay = &"Idle"
 
 [node name="LevelLabel" type="Label" parent="ThirdPokemonSlot" unique_id=421201060]
-offset_left = 19.0
-offset_top = 49.0
-offset_right = 59.0
-offset_bottom = 63.0
+offset_left = -32.0
+offset_top = 67.0
+offset_right = 8.0
+offset_bottom = 81.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "4"
 
-[node name="HealthLabel" type="Label" parent="ThirdPokemonSlot" unique_id=2081258015]
-offset_left = 62.0
-offset_top = 50.0
-offset_right = 102.0
-offset_bottom = 64.0
-scale = Vector2(0.8, 0.8)
-theme_override_fonts/font = SubResource("2")
-theme_override_font_sizes/font_size = 12
-text = "23"
-horizontal_alignment = 2
-
-[node name="MaxHealthLabel" type="Label" parent="ThirdPokemonSlot" unique_id=965856757]
-offset_left = 100.0
-offset_top = 50.0
-offset_right = 140.0
-offset_bottom = 64.0
-scale = Vector2(0.8, 0.8)
-theme_override_fonts/font = SubResource("2")
-theme_override_font_sizes/font_size = 12
-text = "30"
-
-[node name="GenderIcon" type="Sprite2D" parent="ThirdPokemonSlot" unique_id=1187279616]
-position = Vector2(44, 54)
-texture = ExtResource("5")
-hframes = 2
-
 [node name="HealthBar" type="ColorRect" parent="ThirdPokemonSlot" unique_id=92183091]
-offset_left = 65.0
-offset_top = 44.0
-offset_right = 113.0
-offset_bottom = 47.0
+offset_left = -85.0
+offset_top = 80.0
+offset_right = -37.0
+offset_bottom = 83.0
 color = Color(0, 1, 0, 1)
 
 [node name="FourthPokemonSlot" type="Node2D" parent="." unique_id=800206905]
 position = Vector2(119, 22)
 script = ExtResource("3_3dpfl")
 
-[node name="Background" type="Sprite2D" parent="FourthPokemonSlot" unique_id=467079812]
-position = Vector2(44, 47)
-texture = ExtResource("7")
-hframes = 2
-
 [node name="PokemonPartySprite" type="Sprite2D" parent="FourthPokemonSlot" unique_id=754777814]
-position = Vector2(-16, 48)
+position = Vector2(17, 30)
 texture = ExtResource("10")
+centered = false
 hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
 
 [node name="PokemonName" type="Sprite2D" parent="FourthPokemonSlot" unique_id=854313703]
-position = Vector2(35, 44)
+position = Vector2(89, 34)
 texture = ExtResource("10")
 region_enabled = true
 region_rect = Rect2(0, -1, 73, 10)
@@ -508,65 +422,36 @@ libraries/ = SubResource("AnimationLibrary_ipa8c")
 autoplay = &"Idle"
 
 [node name="LevelLabel" type="Label" parent="FourthPokemonSlot" unique_id=1621439726]
-offset_left = 19.0
-offset_top = 49.0
-offset_right = 59.0
-offset_bottom = 63.0
+offset_left = 80.0
+offset_top = 43.0
+offset_right = 120.0
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "4"
 
-[node name="HealthLabel" type="Label" parent="FourthPokemonSlot" unique_id=318959310]
-offset_left = 62.0
-offset_top = 50.0
-offset_right = 102.0
-offset_bottom = 64.0
-scale = Vector2(0.8, 0.8)
-theme_override_fonts/font = SubResource("2")
-theme_override_font_sizes/font_size = 12
-text = "23"
-horizontal_alignment = 2
-
-[node name="MaxHealthLabel" type="Label" parent="FourthPokemonSlot" unique_id=2052646217]
-offset_left = 100.0
-offset_top = 50.0
-offset_right = 140.0
-offset_bottom = 64.0
-scale = Vector2(0.8, 0.8)
-theme_override_fonts/font = SubResource("2")
-theme_override_font_sizes/font_size = 12
-text = "30"
-
-[node name="GenderIcon" type="Sprite2D" parent="FourthPokemonSlot" unique_id=74480805]
-position = Vector2(44, 54)
-texture = ExtResource("5")
-hframes = 2
-
 [node name="HealthBar" type="ColorRect" parent="FourthPokemonSlot" unique_id=47004701]
-offset_left = 65.0
-offset_top = 44.0
-offset_right = 113.0
-offset_bottom = 47.0
+offset_left = 27.0
+offset_top = 56.0
+offset_right = 75.0
+offset_bottom = 59.0
 color = Color(0, 1, 0, 1)
 
 [node name="FifthPokemonSlot" type="Node2D" parent="." unique_id=2133650784]
 position = Vector2(119, 46)
 script = ExtResource("3_3dpfl")
 
-[node name="Background" type="Sprite2D" parent="FifthPokemonSlot" unique_id=725329517]
-position = Vector2(44, 47)
-texture = ExtResource("7")
-hframes = 2
-
 [node name="PokemonPartySprite" type="Sprite2D" parent="FifthPokemonSlot" unique_id=128367754]
-position = Vector2(-16, 48)
+position = Vector2(-95, 49)
 texture = ExtResource("11")
+centered = false
 hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
 
 [node name="PokemonName" type="Sprite2D" parent="FifthPokemonSlot" unique_id=1133011864]
-position = Vector2(35, 44)
+position = Vector2(-31, 50)
 texture = ExtResource("11")
 region_enabled = true
 region_rect = Rect2(0, -1, 73, 10)
@@ -576,65 +461,36 @@ libraries/ = SubResource("AnimationLibrary_1xij3")
 autoplay = &"Idle"
 
 [node name="LevelLabel" type="Label" parent="FifthPokemonSlot" unique_id=551678485]
-offset_left = 19.0
-offset_top = 49.0
-offset_right = 59.0
-offset_bottom = 63.0
+offset_left = -32.0
+offset_top = 62.0
+offset_right = 8.0
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "4"
 
-[node name="HealthLabel" type="Label" parent="FifthPokemonSlot" unique_id=1796174006]
-offset_left = 62.0
-offset_top = 50.0
-offset_right = 102.0
-offset_bottom = 64.0
-scale = Vector2(0.8, 0.8)
-theme_override_fonts/font = SubResource("2")
-theme_override_font_sizes/font_size = 12
-text = "23"
-horizontal_alignment = 2
-
-[node name="MaxHealthLabel" type="Label" parent="FifthPokemonSlot" unique_id=1794014537]
-offset_left = 100.0
-offset_top = 50.0
-offset_right = 140.0
-offset_bottom = 64.0
-scale = Vector2(0.8, 0.8)
-theme_override_fonts/font = SubResource("2")
-theme_override_font_sizes/font_size = 12
-text = "30"
-
-[node name="GenderIcon" type="Sprite2D" parent="FifthPokemonSlot" unique_id=2083567754]
-position = Vector2(44, 54)
-texture = ExtResource("5")
-hframes = 2
-
 [node name="HealthBar" type="ColorRect" parent="FifthPokemonSlot" unique_id=1251322606]
-offset_left = 65.0
-offset_top = 44.0
-offset_right = 113.0
-offset_bottom = 47.0
+offset_left = -85.0
+offset_top = 75.0
+offset_right = -37.0
+offset_bottom = 78.0
 color = Color(0, 1, 0, 1)
 
 [node name="SixthPokemonSlot" type="Node2D" parent="." unique_id=802830800]
 position = Vector2(119, 70)
 script = ExtResource("3_3dpfl")
 
-[node name="Background" type="Sprite2D" parent="SixthPokemonSlot" unique_id=1872033623]
-position = Vector2(44, 47)
-texture = ExtResource("7")
-hframes = 2
-
 [node name="PokemonPartySprite" type="Sprite2D" parent="SixthPokemonSlot" unique_id=1445359980]
-position = Vector2(-16, 48)
+position = Vector2(17, 25)
 texture = ExtResource("12")
+centered = false
 hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
 
 [node name="PokemonName" type="Sprite2D" parent="SixthPokemonSlot" unique_id=1224511204]
-position = Vector2(35, 44)
+position = Vector2(97, 26)
 texture = ExtResource("12")
 region_enabled = true
 region_rect = Rect2(0, -1, 73, 10)
@@ -644,46 +500,71 @@ libraries/ = SubResource("AnimationLibrary_2rexr")
 autoplay = &"Idle"
 
 [node name="LevelLabel" type="Label" parent="SixthPokemonSlot" unique_id=632342310]
-offset_left = 19.0
-offset_top = 49.0
-offset_right = 59.0
-offset_bottom = 63.0
+offset_left = 80.0
+offset_top = 38.0
+offset_right = 120.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
 theme_override_font_sizes/font_size = 12
 text = "4"
 
-[node name="HealthLabel" type="Label" parent="SixthPokemonSlot" unique_id=805811202]
-offset_left = 62.0
-offset_top = 50.0
-offset_right = 102.0
-offset_bottom = 64.0
-scale = Vector2(0.8, 0.8)
-theme_override_fonts/font = SubResource("2")
-theme_override_font_sizes/font_size = 12
-text = "23"
-horizontal_alignment = 2
-
-[node name="MaxHealthLabel" type="Label" parent="SixthPokemonSlot" unique_id=1305587335]
-offset_left = 100.0
-offset_top = 50.0
-offset_right = 140.0
-offset_bottom = 64.0
-scale = Vector2(0.8, 0.8)
-theme_override_fonts/font = SubResource("2")
-theme_override_font_sizes/font_size = 12
-text = "30"
-
-[node name="GenderIcon" type="Sprite2D" parent="SixthPokemonSlot" unique_id=264234531]
-position = Vector2(44, 54)
-texture = ExtResource("5")
-hframes = 2
-
 [node name="HealthBar" type="ColorRect" parent="SixthPokemonSlot" unique_id=1092379564]
-offset_left = 65.0
-offset_top = 44.0
-offset_right = 113.0
-offset_bottom = 47.0
+offset_left = 27.0
+offset_top = 51.0
+offset_right = 75.0
+offset_bottom = 54.0
 color = Color(0, 1, 0, 1)
+
+[node name="Covers" type="Node2D" parent="." unique_id=1902649142]
+
+[node name="ColorRect" type="ColorRect" parent="Covers" unique_id=1171907661]
+visible = false
+offset_left = 26.0
+offset_top = 7.0
+offset_right = 103.0
+offset_bottom = 44.0
+color = Color(0.8509804, 0.627451, 0.4, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Covers" unique_id=98934594]
+visible = false
+offset_left = 138.0
+offset_top = 7.0
+offset_right = 215.0
+offset_bottom = 44.0
+color = Color(0.8509804, 0.627451, 0.4, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Covers" unique_id=266436837]
+visible = false
+offset_left = 26.0
+offset_top = 50.0
+offset_right = 103.0
+offset_bottom = 87.0
+color = Color(0.8509804, 0.627451, 0.4, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Covers" unique_id=2096027585]
+visible = false
+offset_left = 138.0
+offset_top = 50.0
+offset_right = 215.0
+offset_bottom = 87.0
+color = Color(0.8509804, 0.627451, 0.4, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Covers" unique_id=1793156496]
+visible = false
+offset_left = 26.0
+offset_top = 93.0
+offset_right = 103.0
+offset_bottom = 130.0
+color = Color(0.8509804, 0.627451, 0.4, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="Covers" unique_id=1261721978]
+visible = false
+offset_left = 138.0
+offset_top = 93.0
+offset_right = 215.0
+offset_bottom = 130.0
+color = Color(0.8509804, 0.627451, 0.4, 1)
 
 [node name="PageOptions" type="NinePatchRect" parent="." unique_id=1769560236]
 visible = false

@@ -12,9 +12,6 @@ func set_health(max_health, current):
 	max_health = int(max_health)
 	current = int(current)
 	
-	$MaxHealthLabel.text = str(max_health)
-	$HealthLabel.text = str(current)
-	
 	var pecent_health = float(current) / max_health
 	$HealthBar.scale.x = pecent_health
 	$HealthBar.color.g = pecent_health
