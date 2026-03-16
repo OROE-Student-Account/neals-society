@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://ciw55w24bjn2h"]
 
+[ext_resource type="Script" uid="uid://c0n0ilwytxyyv" path="res://Scripts/GrammariteStorage.gd" id="1_xyv62"]
+
 [node name="GrammariteStorage" type="Node2D" unique_id=66661717]
+script = ExtResource("1_xyv62")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1283574639]
 offset_right = 240.0

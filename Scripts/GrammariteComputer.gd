@@ -2,6 +2,7 @@ extends Area2D
 
 var picked_up = false
 var in_menu = false
+var used_up = false
 
 @onready var dialogue_root = $DialogueRoot
 
@@ -13,12 +14,12 @@ func open_grammarite_storage():
 	player.set_physics_process(false)
 	in_menu = true
 	
-	Utils.get_scene_manager().get_node("CurrentScene").add_child(menu_scene.instantiate())
+	Utils.get_scene_manager().transition_to_grammarite_storage()
 
 
 func _unhandled_input(event: InputEvent) -> void:
 	var player = Utils.get_player()
-	if player.can_interact_with_object and event.is_action_pressed("z") and picked_up and !in_menu:
+	if player.can_interact_with_object and event.is_action_pressed("z") and picked_up and !in_menu and !used_up:
 		
 		var player_facing = player.facing_direction
 		var player_pos = player.position
@@ -31,12 +32,18 @@ func _unhandled_input(event: InputEvent) -> void:
 		if player_facing != 3  && player_pos.x == position.x && player_pos.y < position.y:
 			return
 		
+		used_up = true
+		
 		Utils.get_scene_manager().transition_to_dialogue(dialogue_root) 
 
 
-func _on_body_entered(body: Node2D) -> void:
+func reset():
+	await get_tree().create_timer(0.1).timeout
+	used_up = false
+
+func _on_body_entered(_body: Node2D) -> void:
 	picked_up = true
 
-
-func _on_body_exited(body: Node2D) -> void:
+func _on_body_exited(_body: Node2D) -> void:
 	picked_up = false
+	used_up = false

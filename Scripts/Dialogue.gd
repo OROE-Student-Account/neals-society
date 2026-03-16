@@ -43,6 +43,8 @@ func start_dialogue(root):
 	player.set_physics_process(false)
 	player.anim_tree.active = false
 	
+	Utils.get_scene_manager().get_node("Menu").screen_loaded = 1
+	
 	# Display the current node
 	display_current_node()
 
@@ -167,6 +169,8 @@ func end_dialogue():
 	current_node = null
 	dialogue_root = null
 	target_node = null
+	
+	Utils.get_scene_manager().get_node("Menu").screen_loaded = 0
 	
 	var player = Utils.get_player()
 	player.set_physics_process(true)

@@ -150,8 +150,13 @@ func load_moves(slot_num):
 	self.add_child(load("res://Scenes/MovesPartyScreen.tscn").instantiate())
 	
 	var slot_data = Utils.get_party()[slot_num]
-	var details = Utils.get_grammarite_details(slot_data["Name"])
-	var moves = details["Moves"]
+	var moves = []
+	
+	for i in range(4):
+		var move_info = Utils.get_move(slot_data["Moves"][i])
+		move_info["Name"] = slot_data["Moves"][i]
+		moves.append(move_info)
+	
 	
 	var PP = slot_data["PP"]
 	

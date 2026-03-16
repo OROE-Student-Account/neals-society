@@ -119,7 +119,7 @@ func filter_items_by_type():
 	
 	filtered_items.clear()
 	for item_data in items:
-		var item_details = Utils.get_item(item_data["Name"])
+		var item_details = Utils.get_item_data(item_data["Name"])
 		if item_details["Type"] == selected_type:
 			filtered_items.append(item_data)
 	
@@ -141,7 +141,7 @@ func _on_item_list_item_selected(index: int) -> void:
 	if index >= len(filtered_items):
 		return
 	
-	var item = Utils.get_item(filtered_items[index]["Name"])
+	var item = Utils.get_item_data(filtered_items[index]["Name"])
 	
 	$Info/Description.text = item["Description"]
 	var file_path = "res://Assets/Items/" + filtered_items[index]["Name"] + ".png"
@@ -191,7 +191,7 @@ func load_inventory():
 
 func use_item_on_grammarite():
 	var selected_item_index = $ItemList.get_selected_items()[0]
-	var item = Utils.get_item(filtered_items[selected_item_index]["Name"])
+	var item = Utils.get_item_data(filtered_items[selected_item_index]["Name"])
 	
 	if item["Type"] == "Held":
 		var party = Utils.get_party()
@@ -253,7 +253,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				# Check if current item is Grammarite type
 				var selected_indices = $ItemList.get_selected_items()
 				if selected_indices.size() > 0:
-					var item = Utils.get_item(filtered_items[selected_indices[0]]["Name"])
+					var item = Utils.get_item_data(filtered_items[selected_indices[0]]["Name"])
 					show_based_on_type(item["Type"])
 			
 			elif event.is_action_pressed("x"):

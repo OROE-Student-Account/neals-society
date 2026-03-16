@@ -7,7 +7,7 @@ var player_direction = Vector2(0, 0)
 
 var next_trainer = ""
 
-enum TransitionType { NEW_SCENE, PARTY_SCREEN, ITEM_SCREEN, MENU_ONLY, BATTLE, BATTLE_EXIT }
+enum TransitionType { NEW_SCENE, PARTY_SCREEN, ITEM_SCREEN, MENU_ONLY, BATTLE, BATTLE_EXIT, STORAGE, EXIT_STORAGE }
 var transition_type = TransitionType.NEW_SCENE
 
 @onready var scene = $CurrentScene
@@ -29,6 +29,14 @@ func transition_to_item_screen():
 func transition_exit_item_screen():
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 	transition_type = TransitionType.MENU_ONLY
+
+func transition_to_grammarite_storage():
+	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
+	transition_type = TransitionType.STORAGE
+
+func transition_exit_grammarite_storage():
+	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
+	transition_type = TransitionType.EXIT_STORAGE
 
 
 func transition_to_dialogue(root_node):
@@ -93,6 +101,12 @@ func finished_fading():
 			load_battle()
 		TransitionType.BATTLE_EXIT:
 			scene.get_children().back().free()
+			var player = Utils.get_player()
+			player.set_physics_process(true)
+		TransitionType.STORAGE:
+			$Menu.load_storage_screen()
+		TransitionType.EXIT_STORAGE:
+			$Menu.unload_storage_screen()
 			var player = Utils.get_player()
 			player.set_physics_process(true)
 	

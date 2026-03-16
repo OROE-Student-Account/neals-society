@@ -9,11 +9,13 @@ extends Node
 func _ready():
 	reset_town()
 
+
 func get_player():
 	return get_node("/root/SceneManager/CurrentScene").get_child(0).find_child("Player")
 
 func get_scene_manager():
 	return get_node("/root/SceneManager")
+
 
 
 func get_grammarite_details(grammarite_name):
@@ -28,26 +30,13 @@ func get_grammarite_details(grammarite_name):
 	
 	return details
 
+
 func get_trainer(trainer):
 	return load_json_file("res://GrammariteData/Trainers.json")[trainer]
 
 
-var type_chart_dict = {
-	"Weak": 0.5,
-	"None": 1.0,
-	"Strong": 2.0
-}
-
-func get_damage_multiplier(attack_type, defend_type1, defend_type2 = "None"):
-	var mult = 1.0
-	
-	var type_chart = load_json_file("res://GrammariteData/TypeChart.json")
-	
-	mult *= type_chart_dict[type_chart[attack_type][defend_type1]]
-	if defend_type2 != "None":
-		mult *= type_chart_dict[type_chart[attack_type][defend_type2]]
-	
-	return mult
+func get_move(move):
+	return load_json_file("res://GrammariteData/Moves.json")[move]
 
 
 func get_party():
@@ -60,9 +49,6 @@ func set_party(party):
 	
 	save_json_file("res://Data/Inventory.json", inv)
 
-func get_poke_num(grammarite_name):
-	var names = load_json_file("res://GrammariteData/Names.json")
-	return names.find(grammarite_name)
 
 
 func add_to_inventory(item: String):
@@ -81,14 +67,16 @@ func remove_from_inventory(item: String) -> bool: # whether or not removed somet
 	return false
 
 
+
 func get_items():
 	var inv = load_json_file("res://Data/Inventory.json")["Items"]
 	
 	return inv
 
-func get_item(item_name):
+func get_item_data(item_name):
 	var item = load_json_file("res://GrammariteData/Items.json")[item_name]
 	return item
+
 
 
 func check_item_picked_up(item: String, scene = "Town"):
@@ -114,6 +102,9 @@ func update_trainer_attacked(node_name: String, value: bool, scene = "Town"):
 	data["Trainers"][node_name]["Talked"] = value
 	save_json_file(file_path, data)
 
+
+
+
 func get_random_grammarite():
 	var grams = load_json_file("res://GrammariteData/Names.json")
 	return grams.pick_random()
@@ -133,7 +124,29 @@ func reset_town():
 	save_json_file("res://Data/Town.json", town)
 
 func max_hp(grammarite_name, level):
-	return get_grammarite_details(grammarite_name) ["Stats"]["Health"] + level
+	return 10 + level + 0.02 * level * (14 + load_json_file("res://GrammariteData/Stats.json")[grammarite_name]["Health"])
+
+
+
+var type_chart_dict = {
+	"Weak": 0.5,
+	"None": 1.0,
+	"Strong": 2.0
+}
+func get_damage_multiplier(attack_type, defend_type1, defend_type2 = "None"):
+	var mult = 1.0
+	
+	var type_chart = load_json_file("res://GrammariteData/TypeChart.json")
+	
+	mult *= type_chart_dict[type_chart[attack_type][defend_type1]]
+	if defend_type2 != "None":
+		mult *= type_chart_dict[type_chart[attack_type][defend_type2]]
+	
+	return mult
+
+func get_poke_num(grammarite_name):
+	var names = load_json_file("res://GrammariteData/Names.json")
+	return names.find(grammarite_name)
 
 
 

@@ -2,11 +2,12 @@ extends CanvasLayer
 
 const PokemonPartyScreen = preload("res://Scenes/PokemonPartyScreen.tscn")
 const PokemonItemScreen = preload("res://Scenes/ItemScreen.tscn")
+const StorageScreen = preload("res://Scenes/GrammariteStorage.tscn")
 
 @onready var arrow = $Control/Arrow 
 @onready var menu = $Control
 
-enum ScreenLoaded { NOTHING, JUST_MENU, ITEM_SCREEN, PARTY_SCREEN, }
+enum ScreenLoaded { NOTHING, DIALOGUE, JUST_MENU, ITEM_SCREEN, PARTY_SCREEN, STORAGE }
 var screen_loaded = ScreenLoaded.NOTHING
 var selected_option: int = 0
 
@@ -48,6 +49,16 @@ func unload_item_screen():
 	menu.visible = true
 	screen_loaded = ScreenLoaded.JUST_MENU
 	remove_child($ItemScreen)
+
+func load_storage_screen():
+	screen_loaded = ScreenLoaded.STORAGE
+	var storage_screen = StorageScreen.instantiate()
+	add_child(storage_screen)
+
+func unload_storage_screen():
+	screen_loaded = ScreenLoaded.NOTHING
+	remove_child($GrammariteStorage)
+
 
 func _unhandled_input(event):
 	match screen_loaded:

@@ -124,7 +124,6 @@ func _input(event):
 				selected_button = (selected_button + 3) % 4
 				update_arrow_pos()
 			elif event.is_action_pressed("z"):
-				
 				var party = Utils.get_party()
 				if party[0]["PP"][selected_button] > 0: 
 					party[0]["PP"][selected_button] -= 1

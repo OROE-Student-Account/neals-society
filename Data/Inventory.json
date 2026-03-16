@@ -16,9 +16,9 @@
 	],
 	"Party": [
 		{
-			"Health": 100.0,
+			"Health": 109.0,
 			"Item": "",
-			"Level": 50.93,
+			"Level": 53.21,
 			"Moves": [
 				"Bite",
 				"Play",
@@ -28,33 +28,15 @@
 			"Name": "Orawolfi",
 			"Nickname": "",
 			"PP": [
-				7.0,
-				0.0,
-				0.0,
-				2.0
-			]
-		},
-		{
-			"Health": 25.0,
-			"Item": "",
-			"Level": 15.36,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Sit",
-				"Sculpt"
+				11.0,
+				20.0,
+				15.0,
+				4.0
 			],
-			"Name": "Sculpupture",
-			"Nickname": "",
-			"PP": [
-				0.0,
-				0.0,
-				0.0,
-				0.0
-			]
+			"health": 93.0
 		},
 		{
-			"Health": 25.0,
+			"Health": 0.0,
 			"Item": "Pokeball",
 			"Level": 1.0,
 			"Moves": [
@@ -66,10 +48,29 @@
 			"Name": "Dog of Wood",
 			"Nickname": "",
 			"PP": [
-				6.0,
-				0.0,
-				5.0,
+				13.0,
+				20.0,
+				9.0,
 				0.0
+			]
+		},
+		{
+			"Health": 42.0,
+			"Item": "",
+			"Level": 15.71,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Sculpt"
+			],
+			"Name": "Sculpupture",
+			"Nickname": "",
+			"PP": [
+				13.0,
+				20.0,
+				15.0,
+				5.0
 			]
 		},
 		{

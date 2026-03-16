@@ -89,8 +89,8 @@ func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 		# Calculate damage
 		var attack_level = attacker.level
 		var base_damage = move.get("Damage", 0) # if no damage included, no damage
-		var attack_stat = attacker.grammarite_info["Stats"]["Attack"]
-		var defense_stat = defender.grammarite_info["Stats"]["Defense"]
+		var attack_stat = calc_stat(attacker.grammarite_info["Stats"]["Attack"], attack_level)
+		var defense_stat = calc_stat(defender.grammarite_info["Stats"]["Defense"], defender.level)
 		var effectiveness = 1
 		if len(defender.grammarite_info["Stats"]["Types"]) == 2:
 			effectiveness = Utils.get_damage_multiplier(move["Type"], defender.grammarite_info["Stats"]["Types"][0], defender.grammarite_info["Stats"]["Types"][1])
@@ -130,10 +130,20 @@ func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 	else:
 		attacker.update_health(-int(15*randf_range(0.85, 1.0)))
 		defender.update_health(-int(7*randf_range(6.0/7.0, 1.1))) # 6 or 7 damage 
+		
+		attacker.anim_player.play("Attack")
+		
 		battle_ui.set_info_text(attacker.grammarite_name+ " hurts itself.")
 	
+	var party = Utils.get_party()
+	party[0]["Health"] = player_grammarite.health
+	Utils.set_party(party)
 	# Wait for animation and message display
 	await get_tree().create_timer(0.9).timeout
+
+func calc_stat(base, level):
+	return 5 + 0.02 * level * (14 + base) 
+
 
 func end_battle(player_won: bool):
 	current_state = BattleState.BATTLE_END

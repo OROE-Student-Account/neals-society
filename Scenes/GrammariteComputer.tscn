@@ -31,10 +31,12 @@ option_name = "Yes"
 function = "open_grammarite_storage"
 func_node = NodePath("../..")
 
-[node name="No" type="Node" parent="DialogueRoot" unique_id=1750463814]
+[node name="No" type="Node" parent="DialogueRoot" unique_id=1750463814 node_paths=PackedStringArray("func_node")]
 script = ExtResource("2_ub35v")
 is_end_node = true
 option_name = "No"
+function = "reset"
+func_node = NodePath("../..")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

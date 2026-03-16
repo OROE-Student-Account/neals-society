@@ -22,11 +22,18 @@ func setup():
 	if not is_enemy:
 		var first_grammarite = Utils.get_party()[0]
 		grammarite_name = first_grammarite["Name"]
+		grammarite_info = Utils.get_grammarite_details(grammarite_name)
 		nickname = first_grammarite["Nickname"]
 		level = int(first_grammarite["Level"])
 		health = first_grammarite["Health"]
-	
-	grammarite_info = Utils.get_grammarite_details(grammarite_name) 
+		
+		for i in range(4):
+			var move_info = Utils.get_move(first_grammarite["Moves"][i])
+			move_info["Name"] = first_grammarite["Moves"][i]
+			grammarite_info["Moves"][i] = move_info
+		
+	else:
+		grammarite_info = Utils.get_grammarite_details(grammarite_name) 
 	
 	
 	max_health = Utils.max_hp(grammarite_name, level)
