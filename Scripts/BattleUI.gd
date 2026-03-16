@@ -126,11 +126,15 @@ func _input(event):
 			elif event.is_action_pressed("z"):
 				
 				var party = Utils.get_party()
-				if party[0]["PP"][selected_button] <= 0: return
-				
-				party[0]["PP"][selected_button] -= 1
-				Utils.set_party(party)
-				input_state = InputState.WAITING
-				# emit signal
-				move_selected.emit(selected_button) 
-				show_correct_menu()
+				if party[0]["PP"][selected_button] > 0: 
+					party[0]["PP"][selected_button] -= 1
+					Utils.set_party(party)
+					input_state = InputState.WAITING
+					# emit signal
+					move_selected.emit(selected_button) 
+					show_correct_menu()
+				else:
+					input_state = InputState.WAITING
+					# emit signal
+					move_selected.emit(-1) 
+					show_correct_menu()

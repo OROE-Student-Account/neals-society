@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dvj3haqadph3a"]
+
+[ext_resource type="Script" uid="uid://bqc301lib67s5" path="res://Scripts/GrammariteComputer.gd" id="1_ofbqr"]
+[ext_resource type="Script" uid="uid://bp28l32amhxsf" path="res://Scripts/DialogueNode.gd" id="2_ub35v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ub35v"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0vywm"]
+
+[node name="GrammariteComputer" type="Area2D" unique_id=1918101138]
+collision_layer = 16
+script = ExtResource("1_ofbqr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=700573511]
+shape = SubResource("RectangleShape2D_ub35v")
+debug_color = Color(0.8529407, 0.00083169935, 0.894327, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1136819181]
+shape = SubResource("CircleShape2D_0vywm")
+debug_color = Color(0.8863375, 0.00029860318, 0.8066901, 0.41960785)
+
+[node name="DialogueRoot" type="Node" parent="." unique_id=488375812]
+script = ExtResource("2_ub35v")
+text = "Do you want to open your Grammarite storage?"
+
+[node name="Yes" type="Node" parent="DialogueRoot" unique_id=1751864514 node_paths=PackedStringArray("func_node")]
+script = ExtResource("2_ub35v")
+is_end_node = true
+option_name = "Yes"
+function = "open_grammarite_storage"
+func_node = NodePath("../..")
+
+[node name="No" type="Node" parent="DialogueRoot" unique_id=1750463814]
+script = ExtResource("2_ub35v")
+is_end_node = true
+option_name = "No"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

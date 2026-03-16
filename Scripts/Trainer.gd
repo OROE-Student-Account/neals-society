@@ -33,7 +33,7 @@ func approach_until_hit():
 		Utils.update_trainer_attacked(name, true, scene)
 		Utils.get_scene_manager().transition_to_dialogue(root_node)
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 	if used_up: return
 	
 	visible = true
@@ -55,10 +55,10 @@ func used_up_dialogue():
 
 
 
-func _on_hit_box_body_entered(body: Node2D) -> void:
+func _on_hit_box_body_entered(_body: Node2D) -> void:
 	player_in_range = true
 
-func _on_hit_box_body_exited(body: Node2D) -> void:
+func _on_hit_box_body_exited(_body: Node2D) -> void:
 	player_in_range = false
 
 func _unhandled_input(event: InputEvent) -> void:

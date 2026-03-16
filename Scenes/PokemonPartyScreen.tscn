@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dpvpht1pik0j" path="res://Scripts/PartySlot.gd" id="3_3dpfl"]
 [ext_resource type="Texture2D" uid="uid://cf0txma36318t" path="res://Assets/UI/Pokemon Party/PartyScreen2-1.png.png" id="3_b4nyv"]
 [ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="4"]
+[ext_resource type="Texture2D" uid="uid://ckbbwuf8tfh1" path="res://Assets/UI/Dialogue.png" id="4_b4nyv"]
 [ext_resource type="Texture2D" uid="uid://d042hjjepovvf" path="res://Assets/Pokemon/Pokemon1.png" id="8"]
 [ext_resource type="Texture2D" uid="uid://3ndqiat65p8r" path="res://Assets/Pokemon/Pokemon59.png" id="8_jqn4x"]
 [ext_resource type="Texture2D" uid="uid://djti4nrbbo2kk" path="res://Assets/Pokemon/Pokemon7.png" id="9"]
@@ -270,15 +271,27 @@ offset_right = 216.0
 offset_bottom = 89.0
 texture = ExtResource("3_b4nyv")
 
-[node name="InfoText" type="Label" parent="." unique_id=633513612]
-offset_left = 8.0
-offset_top = 136.0
-offset_right = 145.0
-offset_bottom = 159.0
-theme_override_colors/font_color = Color(1, 0, 1, 1)
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1705518557]
+offset_left = 4.0
+offset_top = 134.0
+offset_right = 168.0
+offset_bottom = 158.0
+texture = ExtResource("4_b4nyv")
+patch_margin_left = 7
+patch_margin_top = 3
+patch_margin_right = 7
+patch_margin_bottom = 4
+
+[node name="InfoText" type="Label" parent="NinePatchRect" unique_id=633513612]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 6.0
+offset_right = 146.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4")
 theme_override_font_sizes/font_size = 12
-text = "CHOOSE THE GUY"
+text = "Choose a Grammarite."
 
 [node name="CancelSprite" type="Sprite2D" parent="." unique_id=1901885376]
 position = Vector2(211, 144)

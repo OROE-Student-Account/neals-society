@@ -37,7 +37,7 @@ func player_in_grass():
 	grass_overlay.add_child(texture_overlay)
 	self.add_child(grass_overlay)
 
-func _on_Area2D_body_entered(body):
+func _on_Area2D_body_entered(_body):
 	anim_player.play("Stepped")
 	player_in_grass()
 	encounter_grammarite(0.1)

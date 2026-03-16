@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://bpskqf1t586cd"]
+
+[ext_resource type="Texture2D" uid="uid://b24dvlaonqsyl" path="res://Assets/Buildings/pallet town/player_home_floor_1.png" id="1_078wu"]
+[ext_resource type="Texture2D" uid="uid://botopew3mmoy0" path="res://Assets/Buildings/pallet town/mat.png" id="2_5pw7d"]
+[ext_resource type="PackedScene" uid="uid://dvj3haqadph3a" path="res://Scenes/GrammariteComputer.tscn" id="3_bidd3"]
+[ext_resource type="PackedScene" uid="uid://i70qso44vgve" path="res://Scenes/Player.tscn" id="4_oxtqq"]
+[ext_resource type="PackedScene" uid="uid://fsubo0lgcrfo" path="res://Scenes/Door.tscn" id="5_d12qb"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(16, 176)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d88bl"]
+size = Vector2(80, 16)
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(192, 16)
+
+[sub_resource type="RectangleShape2D" id="3"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="4"]
+size = Vector2(192, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tifnb"]
+size = Vector2(32, 32)
+
+[node name="GrammariteCenter" type="Node2D" unique_id=252097820]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2070795569]
+offset_left = -208.0
+offset_top = -208.0
+offset_right = 392.0
+offset_bottom = 392.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=295499838]
+offset_right = 192.0
+offset_bottom = 144.0
+texture = ExtResource("1_078wu")
+
+[node name="Mat" type="TextureRect" parent="." unique_id=253375383]
+offset_left = 56.0
+offset_top = 128.0
+offset_right = 88.0
+offset_bottom = 144.0
+texture = ExtResource("2_5pw7d")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1552400742]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=492745545]
+position = Vector2(-8, 88)
+shape = SubResource("1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1047770475]
+position = Vector2(200, 88)
+shape = SubResource("1")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=655978765]
+position = Vector2(40, 24)
+shape = SubResource("RectangleShape2D_d88bl")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=407092087]
+position = Vector2(144, 24)
+shape = SubResource("2")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=238628892]
+position = Vector2(176, 40)
+shape = SubResource("3")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=1286562843]
+position = Vector2(96, 152)
+shape = SubResource("4")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=908130315]
+position = Vector2(96, 80)
+shape = SubResource("RectangleShape2D_tifnb")
+
+[node name="GrammariteComputer" parent="." unique_id=1918101138 instance=ExtResource("3_bidd3")]
+position = Vector2(88, 24)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=340670768]
+
+[node name="Player" parent="Node2D" unique_id=802010568 instance=ExtResource("4_oxtqq")]
+position = Vector2(160, 64)
+
+[node name="Door" parent="." unique_id=305209293 instance=ExtResource("5_d12qb")]
+modulate = Color(0.12549, 0.313726, 0.85098, 1)
+position = Vector2(64, 128)
+next_scene_path = "res://Scenes/Town.tscn"
+is_invisible = true
+spawn_location = Vector2(-112, 208)
+spawn_direction = Vector2(0, 1)

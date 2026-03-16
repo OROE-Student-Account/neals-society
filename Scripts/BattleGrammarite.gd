@@ -29,7 +29,7 @@ func setup():
 	grammarite_info = Utils.get_grammarite_details(grammarite_name) 
 	
 	
-	max_health = grammarite_info["Stats"]["Health"] + level
+	max_health = Utils.max_hp(grammarite_name, level)
 	if is_enemy: health = max_health
 	
 	$Level.text = str(level)

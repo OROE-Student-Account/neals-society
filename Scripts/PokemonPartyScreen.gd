@@ -66,9 +66,8 @@ func load_party():
 			slots_enabled[i] = false
 			$Covers.get_child(i).visible = true
 		else:
-			var max_health = Utils.get_grammarite_details(slot_data["Name"])["Stats"]["Health"] + int(slot_data["Level"])
 			slot.lvl.text = str(int(slot_data["Level"]))
-			slot.set_health(max_health, slot_data["Health"])
+			slot.set_health(Utils.max_hp(slot_data["Name"], slot_data["Level"]), slot_data["Health"])
 			slot.set_sprites(Utils.get_poke_num(slot_data["Name"]))
 			slots_enabled[i] = true
 			$Covers.get_child(i).visible = false
@@ -135,10 +134,10 @@ func load_summary(slot_num):
 	
 	# LVL and XP
 	var lvl = int(slot_data["Level"])
-	var exp = int(100 * (slot_data["Level"] - lvl))
+	var xp = int(100 * (slot_data["Level"] - lvl))
 	
 	info.get_child(2).text = "LVL: "+str(lvl)
-	info.get_child(3).text = "XP: "+str(exp)
+	info.get_child(3).text = "XP: "+str(xp)
 	
 	# name and grammadex num
 	info.get_child(4).text = slot_data["Name"]
@@ -185,20 +184,20 @@ func update_page():
 	$PageOptions/Arrow.position.y = 6 + (selected_sub_page % 4) * 13
 	$SwitchLocation/Arrow.position.y = 6 + (selected_sub_page % num_of_slots) * 13
 	
-	if $SummaryScreen:
+	if has_node("SummaryScreen"):
 		$SummaryScreen.queue_free()
-	if $MovesScreen:
+	if has_node("MovesScreen"):
 		$MovesScreen.queue_free()
-	if $ItemPartyScreen:
+	if has_node("ItemPartyScreen"):
 		$ItemPartyScreen.queue_free()
 	
 	match page:
 		Page.MAIN:
-			$InfoText.text = "Choose a Grammarite."
+			$NinePatchRect/InfoText.text = "Choose a Grammarite."
 			$PageOptions.visible = false
 			$SwitchLocation.visible = false
 		Page.CHOSEN:
-			$InfoText.text = "Do what with this Grammarite?"
+			$NinePatchRect/InfoText.text = "Do what with this Grammarite?"
 			$PageOptions.visible = true
 			$SwitchLocation.visible = false
 		Page.SUMMARY:
@@ -211,7 +210,7 @@ func update_page():
 			$PageOptions.visible = false
 			load_item(selected_option)
 		Page.SWITCH:
-			$InfoText.text = "Put this Grammarite where?"
+			$NinePatchRect/InfoText.text = "Put this Grammarite where?"
 			$PageOptions.visible = false
 			$SwitchLocation.visible = true
 			

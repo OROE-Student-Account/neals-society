@@ -70,9 +70,8 @@ func load_party():
 			slot.visible = false
 			slots_enabled[i] = false
 		else:
-			var max_health = Utils.get_grammarite_details(slot_data["Name"])["Stats"]["Health"]
 			slot.lvl.text = str(int(slot_data["Level"]))
-			slot.set_health(max_health, slot_data["Health"])
+			slot.set_health(Utils.max_hp(slot_data["Name"], slot_data["Level"]), slot_data["Health"])
 			slot.set_sprites(Utils.get_poke_num(slot_data["Name"]))
 			slots_enabled[i] = true
 

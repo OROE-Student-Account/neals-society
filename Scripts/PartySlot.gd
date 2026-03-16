@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var lvl = $LevelLabel
-@onready var summary = $SummaryScreen
 
 
 enum States { NONE, SUMMARY }
@@ -29,9 +28,9 @@ func set_sprites(num):
 func show_screen():
 	match state:
 		States.NONE:
-			summary.visible = false
+			$SummaryScreen.visible = false
 		States.SUMMARY:
-			summary.visible = true
+			$SummaryScreen.visible = true
 
 
 func _input(event):

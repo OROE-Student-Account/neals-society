@@ -29,8 +29,11 @@ func _on_player_move_selected(move_index: int):
 	if current_state != BattleState.PLAYER_TURN:
 		return  # Ignore if not player's turn
 	
-	var player_move = player_grammarite.grammarite_info["Moves"][move_index]
-	await execute_attack(player_grammarite, enemy_grammarite, player_move)
+	if move_index != -1:
+		var player_move = player_grammarite.grammarite_info["Moves"][move_index]
+		await execute_attack(player_grammarite, enemy_grammarite, player_move)
+	else:
+		await execute_attack(player_grammarite, enemy_grammarite, { "Name": "Struggle" })
 	
 	# Check if enemy fainted
 	if enemy_grammarite.health <= 0:
@@ -68,60 +71,66 @@ func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 	battle_ui.set_info_text(attacker.grammarite_name+" used "+move["Name"]+"!")
 	
 	await get_tree().create_timer(0.9).timeout
-	# Check accuracy
-	var accuracy = move.get("Accuracy", 0) # If no accuracy included, auto miss
-	var hit_roll = randf()
 	
-	if hit_roll > accuracy:
-		battle_ui.set_info_text("The attack missed!")
-		await get_tree().create_timer(1.0).timeout
-		return
-	
-	attacker.anim_player.play("Attack")
-	
-	var crit = false
-	
-	# Calculate damage
-	var attack_level = attacker.level
-	var base_damage = move.get("Damage", 0) # if no damage included, no damage
-	var attack_stat = attacker.grammarite_info["Stats"]["Attack"]
-	var defense_stat = defender.grammarite_info["Stats"]["Defense"]
-	var effectiveness = 1
-	if len(defender.grammarite_info["Stats"]["Types"]) == 2:
-		effectiveness = Utils.get_damage_multiplier(move["Type"], defender.grammarite_info["Stats"]["Types"][0], defender.grammarite_info["Stats"]["Types"][1])
-	else:
-		effectiveness =  Utils.get_damage_multiplier(move["Type"], defender.grammarite_info["Stats"]["Types"][0])
-	
-	
-	var damage = (((2*attack_level) / 5 + 2) * base_damage * attack_stat / defense_stat) / 50 + 2
-	
-	# Makes the type chart matter
-	damage *= effectiveness
-	# Add some randomness (85% to 100% of calculated damage)
-	damage = damage * randf_range(0.85, 1.0)
-	# same type attack bonus
-	if move["Type"] == attacker.grammarite_info["Stats"]["Types"][0] or move["Type"] == attacker.grammarite_info["Stats"]["Types"][1]:
-		damage *= 1.5
-	# crit
-	if randf() > 0.95:
-		damage *= 2.0
-		crit = true
+	if move["Name"] != "Struggle":
+		# Check accuracy
+		var accuracy = move.get("Accuracy", 0) # If no accuracy included, auto miss
+		var hit_roll = randf()
 		
-	# no negative damage
-	damage = max(0, int(damage)) 
-	
-	# Apply damage
-	defender.update_health(-damage)
-	
-	if crit:
-		battle_ui.set_info_text("It crits!")
-	elif effectiveness > 1:
-		battle_ui.set_info_text("It is super effective!")
-	elif effectiveness < 1:
-		battle_ui.set_info_text("It is not very effective.")
+		if hit_roll > accuracy:
+			battle_ui.set_info_text("The attack missed!")
+			await get_tree().create_timer(1.0).timeout
+			return
+		
+		attacker.anim_player.play("Attack")
+		
+		var crit = false
+		
+		# Calculate damage
+		var attack_level = attacker.level
+		var base_damage = move.get("Damage", 0) # if no damage included, no damage
+		var attack_stat = attacker.grammarite_info["Stats"]["Attack"]
+		var defense_stat = defender.grammarite_info["Stats"]["Defense"]
+		var effectiveness = 1
+		if len(defender.grammarite_info["Stats"]["Types"]) == 2:
+			effectiveness = Utils.get_damage_multiplier(move["Type"], defender.grammarite_info["Stats"]["Types"][0], defender.grammarite_info["Stats"]["Types"][1])
+		else:
+			effectiveness =  Utils.get_damage_multiplier(move["Type"], defender.grammarite_info["Stats"]["Types"][0])
+		
+		
+		var damage = (((2*attack_level) / 5 + 2) * base_damage * attack_stat / defense_stat) / 50 + 2
+		
+		# Makes the type chart matter
+		damage *= effectiveness
+		# Add some randomness (85% to 100% of calculated damage)
+		damage = damage * randf_range(0.85, 1.0)
+		# same type attack bonus
+		if move["Type"] == attacker.grammarite_info["Stats"]["Types"][0] or move["Type"] == attacker.grammarite_info["Stats"]["Types"][1]:
+			damage *= 1.5
+		# crit
+		if randf() > 0.95:
+			damage *= 2.0
+			crit = true
+			
+		# no negative damage
+		damage = max(0, int(damage)) 
+		
+		# Apply damage
+		defender.update_health(-damage)
+		
+		if crit:
+			battle_ui.set_info_text("It crits!")
+		elif effectiveness > 1:
+			battle_ui.set_info_text("It is super effective!")
+		elif effectiveness < 1:
+			battle_ui.set_info_text("It is not very effective.")
+		else:
+			battle_ui.set_info_text("It hits!")
+		
 	else:
-		battle_ui.set_info_text("It hits!")
-	
+		attacker.update_health(-int(15*randf_range(0.85, 1.0)))
+		defender.update_health(-int(7*randf_range(6.0/7.0, 1.1))) # 6 or 7 damage 
+		battle_ui.set_info_text(attacker.grammarite_name+ " hurts itself.")
 	
 	# Wait for animation and message display
 	await get_tree().create_timer(0.9).timeout
@@ -130,13 +139,19 @@ func end_battle(player_won: bool):
 	current_state = BattleState.BATTLE_END
 	
 	if player_won:
-		battle_ui.set_info_text("You won!")
-		
-		var xp = Utils.get_trainer(trainer)["XP"]
-		var party = Utils.get_party()
-		party[0]["Level"] += 0.01*xp
-		Utils.set_party(party)
-		
+		if trainer != "random":
+			battle_ui.set_info_text("You won!")
+			
+			var xp = Utils.get_trainer(trainer)["XP"]
+			var party = Utils.get_party()
+			party[0]["Level"] += 0.01 * xp
+			Utils.set_party(party)
+		else:
+			battle_ui.set_info_text("You won!")
+			var xp = enemy_grammarite.level
+			var party = Utils.get_party()
+			party[0]["Level"] += 0.01 * xp
+			Utils.set_party(party)
 	else:
 		battle_ui.set_info_text("You lost!")
 	

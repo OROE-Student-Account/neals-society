@@ -86,8 +86,8 @@ func get_items():
 	
 	return inv
 
-func get_item(name):
-	var item = load_json_file("res://GrammariteData/Items.json")[name]
+func get_item(item_name):
+	var item = load_json_file("res://GrammariteData/Items.json")[item_name]
 	return item
 
 
@@ -131,6 +131,9 @@ func reset_town():
 		town["Trainers"][trainer_name]["Talked"] = false
 	
 	save_json_file("res://Data/Town.json", town)
+
+func max_hp(grammarite_name, level):
+	return get_grammarite_details(grammarite_name) ["Stats"]["Health"] + level
 
 
 

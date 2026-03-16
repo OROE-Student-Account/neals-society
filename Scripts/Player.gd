@@ -212,10 +212,10 @@ func move(delta):
 			jumping_over_ledge = true
 			shadow.visible = true
 			var input = input_direction.y * TILE_SIZE * percent_moved_to_next_tile
-			var move = (-0.96 - 0.53 * input + 0.05 * pow(input, 2))
-			sprite.position.y = move
-			shadow.position.y = move
-			camera.position.y = move + 8
+			var movement = (-0.96 - 0.53 * input + 0.05 * pow(input, 2))
+			sprite.position.y = movement
+			shadow.position.y = movement
+			camera.position.y = movement + 8
 	else:
 		is_moving = false
 
