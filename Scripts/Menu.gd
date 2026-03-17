@@ -7,7 +7,7 @@ const StorageScreen = preload("res://Scenes/GrammariteStorage.tscn")
 @onready var arrow = $Control/Arrow 
 @onready var menu = $Control
 
-enum ScreenLoaded { NOTHING, DIALOGUE, JUST_MENU, ITEM_SCREEN, PARTY_SCREEN, STORAGE }
+enum ScreenLoaded { NOTHING, DIALOGUE, JUST_MENU, ITEM_SCREEN, PARTY_SCREEN, STORAGE, NAMING }
 var screen_loaded = ScreenLoaded.NOTHING
 var selected_option: int = 0
 
@@ -24,6 +24,7 @@ var select_box_positions: Array[Vector2] = [
 func _ready():
 	menu.visible = false
 	update_select_box()
+	Utils.get_scene_manager().name_selected.connect(_recieve_player_name)
 
 func update_select_box():
 	arrow.position = select_box_positions[selected_option]
@@ -33,7 +34,6 @@ func load_party_screen():
 	screen_loaded = ScreenLoaded.PARTY_SCREEN
 	var party_screen = PokemonPartyScreen.instantiate()
 	add_child(party_screen)
-
 func unload_party_screen():
 	menu.visible = true
 	screen_loaded = ScreenLoaded.JUST_MENU
@@ -44,7 +44,6 @@ func load_item_screen():
 	screen_loaded = ScreenLoaded.ITEM_SCREEN
 	var item_screen = PokemonItemScreen.instantiate()
 	add_child(item_screen)
-
 func unload_item_screen():
 	menu.visible = true
 	screen_loaded = ScreenLoaded.JUST_MENU
@@ -54,11 +53,15 @@ func load_storage_screen():
 	screen_loaded = ScreenLoaded.STORAGE
 	var storage_screen = StorageScreen.instantiate()
 	add_child(storage_screen)
-
 func unload_storage_screen():
 	screen_loaded = ScreenLoaded.NOTHING
 	remove_child($GrammariteStorage)
 
+
+func _recieve_player_name(chosen_name, from_node):
+	if from_node != self: return
+	print("Player name is "+chosen_name)
+	
 
 func _unhandled_input(event):
 	match screen_loaded:
@@ -112,11 +115,9 @@ func _unhandled_input(event):
 					2:
 						Utils.get_scene_manager().transition_to_item_screen()
 					3:
-						# Add action for option 3
 						pass
 					4:
-						# Add action for option 4
-						pass
+						Utils.get_scene_manager().transition_to_naming_screen(self)
 					5:
 						# Close menu (already handled above)
 						pass

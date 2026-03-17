@@ -1,6 +1,6 @@
 extends Node2D
 
-signal move_selected(move_index: int)  # ADD THIS LINE
+signal move_selected(move_index: int)
 
 var pause = false
 

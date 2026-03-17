@@ -18,7 +18,7 @@
 		{
 			"Health": 109.0,
 			"Item": "",
-			"Level": 53.21,
+			"Level": 53.56,
 			"Moves": [
 				"Bite",
 				"Play",
@@ -28,7 +28,7 @@
 			"Name": "Orawolfi",
 			"Nickname": "",
 			"PP": [
-				11.0,
+				10.0,
 				20.0,
 				15.0,
 				4.0

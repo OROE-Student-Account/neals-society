@@ -7,7 +7,10 @@ var player_direction = Vector2(0, 0)
 
 var next_trainer = ""
 
-enum TransitionType { NEW_SCENE, PARTY_SCREEN, ITEM_SCREEN, MENU_ONLY, BATTLE, BATTLE_EXIT, STORAGE, EXIT_STORAGE }
+signal name_selected(chosen_name: String, requester_node: Node)
+var name_request_node: Node = null
+
+enum TransitionType { NEW_SCENE, PARTY_SCREEN, ITEM_SCREEN, MENU_ONLY, BATTLE, BATTLE_EXIT, STORAGE, EXIT_STORAGE, NAMING }
 var transition_type = TransitionType.NEW_SCENE
 
 @onready var scene = $CurrentScene
@@ -17,7 +20,6 @@ var transition_type = TransitionType.NEW_SCENE
 func transition_to_party_screen():
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 	transition_type = TransitionType.PARTY_SCREEN
-
 func transition_exit_party_screen():
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 	transition_type = TransitionType.MENU_ONLY
@@ -25,7 +27,6 @@ func transition_exit_party_screen():
 func transition_to_item_screen():
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 	transition_type = TransitionType.ITEM_SCREEN
-
 func transition_exit_item_screen():
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 	transition_type = TransitionType.MENU_ONLY
@@ -33,10 +34,15 @@ func transition_exit_item_screen():
 func transition_to_grammarite_storage():
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 	transition_type = TransitionType.STORAGE
-
 func transition_exit_grammarite_storage():
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 	transition_type = TransitionType.EXIT_STORAGE
+
+
+func transition_to_naming_screen(from_node: Node):
+	transition_type = TransitionType.NAMING
+	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
+	name_request_node = from_node
 
 
 func transition_to_dialogue(root_node):
@@ -81,7 +87,9 @@ func transition_to_scene(new_scene: String, spawn_location, spawn_direction):
 	transition_type = TransitionType.NEW_SCENE
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 
+
 func finished_fading():
+	$ScreenTransition/AnimationPlayer.play("FadeToNormal")
 	match transition_type:
 		TransitionType.NEW_SCENE:
 			scene.get_child(0).free()
@@ -109,5 +117,6 @@ func finished_fading():
 			$Menu.unload_storage_screen()
 			var player = Utils.get_player()
 			player.set_physics_process(true)
-	
-	$ScreenTransition/AnimationPlayer.play("FadeToNormal")
+		TransitionType.NAMING:
+			$Menu.screen_loaded = 6
+			name_selected.emit(await $NamingScreen.load_naming_screen(), name_request_node)
