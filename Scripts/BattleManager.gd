@@ -149,10 +149,17 @@ func throw_book(book_name):
 	if current_state != BattleState.PLAYER_TURN or trainer != "random": return
 	current_state = BattleState.ANIMATING
 	
+	
 	battle_ui.set_info_text("You threw a "+book_name+"!")
 	
 	
+	
+	
 	get_parent().get_node("BookAnimation/AnimationPlayer").play("ThrowBook")
+	
+	await get_tree().create_timer(0.6).timeout
+	
+	get_parent().get_node("BookAnimation/AnimationPlayer").play("BookShake")
 	
 	await get_tree().create_timer(0.6).timeout
 	
@@ -164,10 +171,15 @@ func throw_book(book_name):
 		base_chance *= 1.5
 	
 	
-	if caught > base_chance:
+	if caught < base_chance:
+		battle_ui.set_info_text("You caught it!")
+		await get_tree().create_timer(0.6).timeout
 		# enemy_grammarite goes to your storage
 		end_battle(true)
 		return
+	
+	battle_ui.set_info_text("It broke free.")
+	await get_tree().create_timer(0.6).timeout
 	
 	
 	

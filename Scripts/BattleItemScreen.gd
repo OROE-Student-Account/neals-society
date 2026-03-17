@@ -50,11 +50,12 @@ func _ready() -> void:
 	
 	hide_grammarite_selection()
 
-func exit():
+func exit(thrown):
 	var UI = get_parent().get_node("BattleUI")
 	UI.stop()
-	UI.input_state = 0
-	UI.show_correct_menu()
+	if !thrown:
+		UI.input_state = 0
+		UI.show_correct_menu()
 	get_parent().get_node("Grammarite").setup()
 	queue_free()
 
@@ -160,9 +161,13 @@ func show_based_on_type(type):
 			var selected_item_index = $ItemList.get_selected_items()[0]
 			var battle_manager = get_parent().get_node("BattleManager")
 			battle_manager.throw_book(filtered_items[selected_item_index]["Name"])
+			
+			var file_path = "res://Assets/Items/" + filtered_items[selected_item_index]["Name"] + ".png"
+			get_parent().get_node("BookAnimation/Book").texture = load(file_path)
+			
 			if not Utils.remove_from_inventory(filtered_items[selected_item_index]["Name"]):
 				print("Never was there?")
-			exit()
+			exit(true)
 		"Grammarite":
 			current_state = State.GRAMMARITE_SELECT
 			show_grammarite_selection()
@@ -229,7 +234,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			
 			elif event.is_action_pressed("x"):
 				# Exit
-				exit()
+				exit(false)
 		
 		State.ITEM_LIST:
 			if event.is_action_pressed("ui_up"):

@@ -120,4 +120,4 @@ func finished_fading():
 			var player = Utils.get_player()
 			player.set_physics_process(true)
 		TransitionType.NAMING:
-			name_selected.emit(await $NamingScreen.load_naming_screen(), name_request_node)
+			name_selected.emit(await $NamingScreen.load_naming_screen(name_request_node.name_prompt), name_request_node)

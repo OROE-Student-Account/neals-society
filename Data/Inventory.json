@@ -1,16 +1,14 @@
 {
 	"Abilities": [],
 	"Items": [
-		"Pokeball",
 		"Potion",
 		"Potion",
 		"Potion",
-		"Pokeball",
 		"Pokeball"
 	],
 	"Party": [
 		{
-			"Health": 42.0,
+			"Health": 0.0,
 			"Item": "",
 			"Level": 18.01,
 			"Moves": [

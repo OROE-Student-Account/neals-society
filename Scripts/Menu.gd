@@ -26,6 +26,14 @@ func _ready():
 	update_select_box()
 	Utils.get_scene_manager().name_selected.connect(_recieve_player_name)
 
+
+var name_prompt = "What should your name be?"
+func _recieve_player_name(chosen_name, from_node):
+	if from_node != self: return
+	print("Player name is "+chosen_name)
+
+
+
 func update_select_box():
 	arrow.position = select_box_positions[selected_option]
 
@@ -57,11 +65,6 @@ func unload_storage_screen():
 	screen_loaded = ScreenLoaded.NOTHING
 	remove_child($GrammariteStorage)
 
-
-func _recieve_player_name(chosen_name, from_node):
-	if from_node != self: return
-	print("Player name is "+chosen_name)
-	
 
 func _unhandled_input(event):
 	match screen_loaded:
