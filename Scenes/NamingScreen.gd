@@ -15,6 +15,11 @@ func stop():
 	pause = false
 
 func load_naming_screen():
+	var menu = Utils.get_scene_manager().get_node("Menu")
+	var saved_screen = menu.screen_loaded
+	menu.screen_loaded = 6
+	
+	
 	naming_state = NamingState.TYPING
 	selected_option = 1
 	$Transition.color = Color(1,1,1,0)
@@ -22,13 +27,12 @@ func load_naming_screen():
 	
 	# Set initial prompt
 	$Prompt.text = "What should your name be?"
-	
 	update_naming_buttons()
-	
-	# Focus on text input
 	$LineEdit.grab_focus()
 	
 	var chosen_name = await get_chosen_name()
+	
+	menu.screen_loaded = saved_screen
 	
 	return chosen_name
 

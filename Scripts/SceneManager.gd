@@ -107,10 +107,12 @@ func finished_fading():
 			$Menu.unload_item_screen()
 		TransitionType.BATTLE:
 			load_battle()
+			$Menu.screen_loaded = 7
 		TransitionType.BATTLE_EXIT:
 			scene.get_children().back().free()
 			var player = Utils.get_player()
 			player.set_physics_process(true)
+			$Menu.screen_loaded = 0
 		TransitionType.STORAGE:
 			$Menu.load_storage_screen()
 		TransitionType.EXIT_STORAGE:
@@ -118,5 +120,4 @@ func finished_fading():
 			var player = Utils.get_player()
 			player.set_physics_process(true)
 		TransitionType.NAMING:
-			$Menu.screen_loaded = 6
 			name_selected.emit(await $NamingScreen.load_naming_screen(), name_request_node)

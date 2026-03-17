@@ -7,7 +7,7 @@ const StorageScreen = preload("res://Scenes/GrammariteStorage.tscn")
 @onready var arrow = $Control/Arrow 
 @onready var menu = $Control
 
-enum ScreenLoaded { NOTHING, DIALOGUE, JUST_MENU, ITEM_SCREEN, PARTY_SCREEN, STORAGE, NAMING }
+enum ScreenLoaded { NOTHING, DIALOGUE, JUST_MENU, ITEM_SCREEN, PARTY_SCREEN, STORAGE, NAMING, BATTLE }
 var screen_loaded = ScreenLoaded.NOTHING
 var selected_option: int = 0
 
