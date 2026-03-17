@@ -145,6 +145,45 @@ func calc_stat(base, level):
 	return 5 + 0.02 * level * (14 + base) 
 
 
+func throw_book(book_name):
+	if current_state != BattleState.PLAYER_TURN or trainer != "random": return
+	current_state = BattleState.ANIMATING
+	
+	battle_ui.set_info_text("You threw a "+book_name+"!")
+	
+	
+	get_parent().get_node("BookAnimation/AnimationPlayer").play("ThrowBook")
+	
+	await get_tree().create_timer(0.6).timeout
+	
+	
+	var base_chance = enemy_grammarite.max_health / (enemy_grammarite.max_health + 3 * enemy_grammarite.health)
+	var caught = randf()
+	
+	if book_name == "Chapter Book":
+		base_chance *= 1.5
+	
+	
+	if caught > base_chance:
+		# enemy_grammarite goes to your storage
+		end_battle(true)
+		return
+	
+	
+	
+	# Enemy's turn
+	await enemy_turn()
+	
+	# Check if player fainted
+	if player_grammarite.health <= 0:
+		end_battle(false)
+		return
+	
+	# Back to player's turn
+	current_state = BattleState.PLAYER_TURN
+	battle_ui.input_state = battle_ui.InputState.ACTION_BUTTONS
+	battle_ui.show_correct_menu()
+
 func end_battle(player_won: bool):
 	current_state = BattleState.BATTLE_END
 	

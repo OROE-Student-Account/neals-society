@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dw17mm63araxi" path="res://Assets/UI/menu_box_1.png" id="7_6yjxy"]
 [ext_resource type="Texture2D" uid="uid://hpyxtuycfcbw" path="res://Assets/UI/Pokemon Party/exit_background_button.png" id="7_xmk5i"]
 [ext_resource type="Texture2D" uid="uid://bofmcuxvqsoyg" path="res://Assets/UI/ui_arrow_left_right.png" id="9_qxnh6"]
+[ext_resource type="Texture2D" uid="uid://bxjfugenktmee" path="res://Assets/Items/Story Book.png" id="10_qxnh6"]
 
 [sub_resource type="Animation" id="Animation_6yjxy"]
 resource_name = "Attack"
@@ -130,6 +131,67 @@ tracks/1/keys = {
 _data = {
 &"Attack": SubResource("Animation_l0uqe"),
 &"RESET": SubResource("Animation_xmk5i")
+}
+
+[sub_resource type="Animation" id="Animation_262jj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Book:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(32, 80)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_tiokb"]
+resource_name = "ThrowBook"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Book:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.3, 0.4, 0.5, 0.56666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(32, 80), Vector2(64, 64), Vector2(104, 48), Vector2(144, 40), Vector2(168, 16), Vector2(184, 8), Vector2(200, 40)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0qgg5"]
+_data = {
+&"RESET": SubResource("Animation_262jj"),
+&"ThrowBook": SubResource("Animation_tiokb")
 }
 
 [node name="BattleScene" type="Node2D" unique_id=1956242669]
@@ -364,3 +426,15 @@ theme_override_fonts/font = ExtResource("4_qxnh6")
 theme_override_font_sizes/font_size = 12
 text = "testing hello world this is neal's society. this text should not"
 autowrap_mode = 3
+
+[node name="BookAnimation" type="Node2D" parent="." unique_id=507228910]
+visible = false
+
+[node name="Book" type="Sprite2D" parent="BookAnimation" unique_id=819557148]
+position = Vector2(32, 80)
+scale = Vector2(2, 2)
+texture = ExtResource("10_qxnh6")
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BookAnimation" unique_id=155795648]
+libraries/ = SubResource("AnimationLibrary_0qgg5")

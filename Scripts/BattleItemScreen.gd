@@ -50,6 +50,14 @@ func _ready() -> void:
 	
 	hide_grammarite_selection()
 
+func exit():
+	var UI = get_parent().get_node("BattleUI")
+	UI.stop()
+	UI.input_state = 0
+	UI.show_correct_menu()
+	get_parent().get_node("Grammarite").setup()
+	queue_free()
+
 func stop():
 	pause = true
 	await get_tree().create_timer(0.1).timeout
@@ -114,7 +122,7 @@ func filter_items_by_type():
 	
 	filtered_items.clear()
 	for item_data in items:
-		var item_details = Utils.get_item(item_data["Name"])
+		var item_details = Utils.get_item_data(item_data["Name"])
 		if item_details["Type"] == selected_type:
 			filtered_items.append(item_data)
 	
@@ -136,7 +144,7 @@ func _on_item_list_item_selected(index: int) -> void:
 	if index >= len(filtered_items):
 		return
 	
-	var item = Utils.get_item(filtered_items[index]["Name"])
+	var item = Utils.get_item_data(filtered_items[index]["Name"])
 	
 	$Info/Description.text = item["Description"]
 	var file_path = "res://Assets/Items/" + filtered_items[index]["Name"] + ".png"
@@ -149,7 +157,12 @@ func _on_item_list_item_selected(index: int) -> void:
 func show_based_on_type(type):
 	match type:
 		"Book":
-			pass
+			var selected_item_index = $ItemList.get_selected_items()[0]
+			var battle_manager = get_parent().get_node("BattleManager")
+			battle_manager.throw_book(filtered_items[selected_item_index]["Name"])
+			if not Utils.remove_from_inventory(filtered_items[selected_item_index]["Name"]):
+				print("Never was there?")
+			exit()
 		"Grammarite":
 			current_state = State.GRAMMARITE_SELECT
 			show_grammarite_selection()
@@ -178,17 +191,8 @@ func load_inventory():
 
 func use_item_on_grammarite():
 	var selected_item_index = $ItemList.get_selected_items()[0]
-	var item = Utils.get_item(filtered_items[selected_item_index]["Name"])
+	var item = Utils.get_item_data(filtered_items[selected_item_index]["Name"])
 	
-	if item["Type"] == "Held":
-		var party = Utils.get_party()
-		var temp = party[selected_grammarite]["Item"]
-		party[selected_grammarite]["Item"] = filtered_items[selected_item_index]["Name"]
-		
-		if temp != "":
-			Utils.add_to_inventory(temp)
-	
-	# TODO: Apply item effect to the grammarite
 	
 	# Decrease item count
 	if not Utils.remove_from_inventory(filtered_items[selected_item_index]["Name"]):
@@ -225,12 +229,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			
 			elif event.is_action_pressed("x"):
 				# Exit
-				var UI = get_parent().get_node("BattleUI")
-				UI.stop()
-				UI.input_state = 0
-				UI.show_correct_menu()
-				get_parent().get_node("Grammarite").setup()
-				queue_free()
+				exit()
 		
 		State.ITEM_LIST:
 			if event.is_action_pressed("ui_up"):
@@ -245,7 +244,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				# Check if current item is Grammarite type
 				var selected_indices = $ItemList.get_selected_items()
 				if selected_indices.size() > 0:
-					var item = Utils.get_item(filtered_items[selected_indices[0]]["Name"])
+					var item = Utils.get_item_data(filtered_items[selected_indices[0]]["Name"])
 					show_based_on_type(item["Type"])
 			
 			elif event.is_action_pressed("x"):

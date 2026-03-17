@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dumf4h3qchxhv"]
 
-[ext_resource type="Script" uid="uid://bldcao02xnc74" path="res://Scenes/NamingScreen.gd" id="1_besi7"]
+[ext_resource type="Script" uid="uid://bldcao02xnc74" path="res://Scripts/NamingScreen.gd" id="1_besi7"]
 [ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="1_qti2f"]
 [ext_resource type="Texture2D" uid="uid://hpyxtuycfcbw" path="res://Assets/UI/Pokemon Party/exit_background_button.png" id="2_besi7"]
 

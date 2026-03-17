@@ -1,12 +1,12 @@
 {
 	"Items": {
 		"Pokeball": {
-			"Collected": true
+			"Collected": false
 		}
 	},
 	"Trainers": {
 		"Fighter": {
-			"Talked": true
+			"Talked": false
 		},
 		"Rival": {
 			"Talked": false
