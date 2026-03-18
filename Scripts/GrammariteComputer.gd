@@ -6,8 +6,6 @@ var used_up = false
 
 @onready var dialogue_root = $DialogueRoot
 
-@onready var menu_scene = preload("res://Scenes/GrammariteStorage.tscn")
-
 
 func open_grammarite_storage():
 	var player = Utils.get_player()

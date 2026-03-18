@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://btmlakx3gcgpj"]
+
+[ext_resource type="Script" uid="uid://bfuu5oe1km88u" path="res://Scripts/GrammaritePickup.gd" id="1_sj82y"]
+[ext_resource type="Texture2D" uid="uid://bxjfugenktmee" path="res://Assets/Items/Story Book.png" id="2_dv63t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1nsua"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_41s7y"]
+
+[node name="GrammaritePickup" type="Node2D" unique_id=2047661078]
+script = ExtResource("1_sj82y")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2095563679]
+texture = ExtResource("2_dv63t")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1758045198]
+position = Vector2(8, 8)
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=477272996]
+shape = SubResource("RectangleShape2D_1nsua")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=2003298275]
+shape = SubResource("CircleShape2D_41s7y")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]

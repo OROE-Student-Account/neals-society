@@ -9,12 +9,12 @@ class_name DialogueTreeNode
 
 
 func fix_text():
-	var name = Utils.get_player_name()
+	var player_name = Utils.get_player_name()
 	var pieces = text.split("<name>")
 	text = ""
 	for i in range(len(pieces)):
 		if i != len(pieces)-1:
-			text += pieces[i] + name
+			text += pieces[i] + player_name
 		else:
 			text += pieces[i]
 

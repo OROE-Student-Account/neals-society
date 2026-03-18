@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://i70qso44vgve" path="res://Scenes/Player.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://fsubo0lgcrfo" path="res://Scenes/Door.tscn" id="3"]
 [ext_resource type="Texture2D" uid="uid://botopew3mmoy0" path="res://Assets/Buildings/pallet town/mat.png" id="4"]
+[ext_resource type="PackedScene" uid="uid://btmlakx3gcgpj" path="res://Scenes/GrammaritePickup.tscn" id="5_ddugm"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(16, 208)
@@ -67,3 +68,7 @@ next_scene_path = "res://Scenes/Town.tscn"
 is_invisible = true
 spawn_location = Vector2(224, 208)
 spawn_direction = Vector2(0, 1)
+
+[node name="GrammaritePickup" parent="." unique_id=2047661078 instance=ExtResource("5_ddugm")]
+position = Vector2(128, 64)
+grammarite_name = "Dog of Wood"

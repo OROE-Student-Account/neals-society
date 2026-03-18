@@ -9,22 +9,22 @@
 	"Name": "Neal Sehgal",
 	"Party": [
 		{
-			"Health": 0.0,
+			"Health": 25.0,
 			"Item": "",
-			"Level": 18.01,
+			"Level": 1.0,
 			"Moves": [
 				"Bite",
 				"Play",
 				"Sit",
-				"Sculpt"
+				"Woodchip"
 			],
-			"Name": "Sculpupture",
+			"Name": "Dog of Wood",
 			"Nickname": "",
 			"PP": [
-				13.0,
+				15.0,
 				20.0,
 				15.0,
-				5.0
+				1.0
 			]
 		},
 		{
@@ -69,20 +69,40 @@
 		{
 			"Health": 0.0,
 			"Item": "",
-			"Level": 1.0,
-			"Moves": [],
-			"Name": "",
+			"Level": 18.01,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Sculpt"
+			],
+			"Name": "Sculpupture",
 			"Nickname": "",
-			"PP": []
+			"PP": [
+				13.0,
+				20.0,
+				15.0,
+				5.0
+			]
 		},
 		{
-			"Health": 0.0,
+			"Health": 11.78,
 			"Item": "",
 			"Level": 1.0,
-			"Moves": [],
-			"Name": "",
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Woodchip"
+			],
+			"Name": "Dog of Wood",
 			"Nickname": "",
-			"PP": []
+			"PP": [
+				15.0,
+				20.0,
+				15.0,
+				1.0
+			]
 		},
 		{
 			"Health": 0.0,
