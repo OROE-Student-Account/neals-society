@@ -1,0 +1,574 @@
+[gd_scene format=3 uid="uid://dvpfferedor81"]
+
+[ext_resource type="Script" uid="uid://bkcn4evftav85" path="res://Scripts/SelectScene.gd" id="1_8kclm"]
+[ext_resource type="Texture2D" uid="uid://bw3bqnx3kggm6" path="res://Assets/UI/Pokemon Party/PartyScreen1.png" id="2_0hrqw"]
+[ext_resource type="Texture2D" uid="uid://cf0txma36318t" path="res://Assets/UI/Pokemon Party/PartyScreen2-1.png.png" id="3_0hrqw"]
+[ext_resource type="Texture2D" uid="uid://ckbbwuf8tfh1" path="res://Assets/UI/Dialogue.png" id="3_xvwdd"]
+[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="4_y4am8"]
+[ext_resource type="Script" uid="uid://dpvpht1pik0j" path="res://Scripts/PartySlot.gd" id="6_xah1t"]
+[ext_resource type="Texture2D" uid="uid://r8qwb6kwhbpx" path="res://Assets/Pokemon/Pokemon4.png" id="7_41n2y"]
+[ext_resource type="Texture2D" uid="uid://3ndqiat65p8r" path="res://Assets/Pokemon/Pokemon59.png" id="8_b2npa"]
+[ext_resource type="Texture2D" uid="uid://d042hjjepovvf" path="res://Assets/Pokemon/Pokemon1.png" id="9_fm1qp"]
+[ext_resource type="Texture2D" uid="uid://bv565fwa2g6si" path="res://Assets/Pokemon/Pokemon34.png" id="10_g78wg"]
+[ext_resource type="Texture2D" uid="uid://djti4nrbbo2kk" path="res://Assets/Pokemon/Pokemon7.png" id="11_3iflc"]
+[ext_resource type="Texture2D" uid="uid://dgkatdnfgvtd1" path="res://Assets/Pokemon/Pokemon38.png" id="12_eoyig"]
+[ext_resource type="Texture2D" uid="uid://ynuirmpk2ja1" path="res://Assets/Pokemon/Pokemon16.png" id="13_gu51p"]
+[ext_resource type="Texture2D" uid="uid://x2r2smipejox" path="res://Assets/Pokemon/Pokemon25.png" id="14_25i6w"]
+[ext_resource type="Texture2D" uid="uid://b81iqrvr8ywd1" path="res://Assets/Pokemon/Pokemon95.png" id="15_id87i"]
+
+[sub_resource type="Animation" id="1"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PokemonPartySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sqhs6"]
+_data = {
+&"Idle": SubResource("1")
+}
+
+[sub_resource type="FontFile" id="FontFile_a60ou"]
+fallbacks = Array[Font]([ExtResource("4_y4am8"), ExtResource("4_y4am8")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/2/0/ascent = 0.0
+cache/0/2/0/descent = 0.0
+cache/0/2/0/underline_position = 0.0
+cache/0/2/0/underline_thickness = 0.0
+cache/0/2/0/scale = 1.0
+cache/0/3/0/ascent = 0.0
+cache/0/3/0/descent = 0.0
+cache/0/3/0/underline_position = 0.0
+cache/0/3/0/underline_thickness = 0.0
+cache/0/3/0/scale = 1.0
+cache/0/4/0/ascent = 0.0
+cache/0/4/0/descent = 0.0
+cache/0/4/0/underline_position = 0.0
+cache/0/4/0/underline_thickness = 0.0
+cache/0/4/0/scale = 1.0
+cache/0/5/0/ascent = 0.0
+cache/0/5/0/descent = 0.0
+cache/0/5/0/underline_position = 0.0
+cache/0/5/0/underline_thickness = 0.0
+cache/0/5/0/scale = 1.0
+cache/0/6/0/ascent = 0.0
+cache/0/6/0/descent = 0.0
+cache/0/6/0/underline_position = 0.0
+cache/0/6/0/underline_thickness = 0.0
+cache/0/6/0/scale = 1.0
+cache/0/7/0/ascent = 0.0
+cache/0/7/0/descent = 0.0
+cache/0/7/0/underline_position = 0.0
+cache/0/7/0/underline_thickness = 0.0
+cache/0/7/0/scale = 1.0
+cache/0/8/0/ascent = 0.0
+cache/0/8/0/descent = 0.0
+cache/0/8/0/underline_position = 0.0
+cache/0/8/0/underline_thickness = 0.0
+cache/0/8/0/scale = 1.0
+cache/0/9/0/ascent = 0.0
+cache/0/9/0/descent = 0.0
+cache/0/9/0/underline_position = 0.0
+cache/0/9/0/underline_thickness = 0.0
+cache/0/9/0/scale = 1.0
+cache/0/10/0/ascent = 0.0
+cache/0/10/0/descent = 0.0
+cache/0/10/0/underline_position = 0.0
+cache/0/10/0/underline_thickness = 0.0
+cache/0/10/0/scale = 1.0
+cache/0/11/0/ascent = 0.0
+cache/0/11/0/descent = 0.0
+cache/0/11/0/underline_position = 0.0
+cache/0/11/0/underline_thickness = 0.0
+cache/0/11/0/scale = 1.0
+cache/0/12/0/ascent = 0.0
+cache/0/12/0/descent = 0.0
+cache/0/12/0/underline_position = 0.0
+cache/0/12/0/underline_thickness = 0.0
+cache/0/12/0/scale = 1.0
+cache/0/13/0/ascent = 0.0
+cache/0/13/0/descent = 0.0
+cache/0/13/0/underline_position = 0.0
+cache/0/13/0/underline_thickness = 0.0
+cache/0/13/0/scale = 1.0
+cache/0/14/0/ascent = 0.0
+cache/0/14/0/descent = 0.0
+cache/0/14/0/underline_position = 0.0
+cache/0/14/0/underline_thickness = 0.0
+cache/0/14/0/scale = 1.0
+cache/0/15/0/ascent = 0.0
+cache/0/15/0/descent = 0.0
+cache/0/15/0/underline_position = 0.0
+cache/0/15/0/underline_thickness = 0.0
+cache/0/15/0/scale = 1.0
+cache/0/17/0/ascent = 0.0
+cache/0/17/0/descent = 0.0
+cache/0/17/0/underline_position = 0.0
+cache/0/17/0/underline_thickness = 0.0
+cache/0/17/0/scale = 1.0
+cache/0/18/0/ascent = 0.0
+cache/0/18/0/descent = 0.0
+cache/0/18/0/underline_position = 0.0
+cache/0/18/0/underline_thickness = 0.0
+cache/0/18/0/scale = 1.0
+cache/0/19/0/ascent = 0.0
+cache/0/19/0/descent = 0.0
+cache/0/19/0/underline_position = 0.0
+cache/0/19/0/underline_thickness = 0.0
+cache/0/19/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+
+[sub_resource type="Animation" id="3"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PokemonPartySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rpuio"]
+_data = {
+&"Idle": SubResource("3")
+}
+
+[sub_resource type="Animation" id="4"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PokemonPartySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lyu8v"]
+_data = {
+&"Idle": SubResource("4")
+}
+
+[sub_resource type="Animation" id="5"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PokemonPartySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q2xi2"]
+_data = {
+&"Idle": SubResource("5")
+}
+
+[sub_resource type="Animation" id="6"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PokemonPartySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_80mug"]
+_data = {
+&"Idle": SubResource("6")
+}
+
+[sub_resource type="Animation" id="7"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PokemonPartySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fraxq"]
+_data = {
+&"Idle": SubResource("7")
+}
+
+[node name="GrammariteSelectScreen" type="Node2D" unique_id=945001003]
+script = ExtResource("1_8kclm")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1939608589]
+offset_right = 240.0
+offset_bottom = 160.0
+texture = ExtResource("2_0hrqw")
+
+[node name="SelectBox" type="TextureRect" parent="." unique_id=432530172]
+offset_left = 137.0
+offset_top = 49.0
+offset_right = 216.0
+offset_bottom = 89.0
+texture = ExtResource("3_0hrqw")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1347134503]
+offset_left = 4.0
+offset_top = 134.0
+offset_right = 168.0
+offset_bottom = 158.0
+texture = ExtResource("3_xvwdd")
+patch_margin_left = 7
+patch_margin_top = 3
+patch_margin_right = 7
+patch_margin_bottom = 4
+
+[node name="InfoText" type="Label" parent="NinePatchRect" unique_id=1354223373]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 6.0
+offset_right = 146.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_y4am8")
+theme_override_font_sizes/font_size = 12
+text = "Choose a Grammarite."
+
+[node name="FirstPokemonSlot" type="Node2D" parent="." unique_id=915965949]
+position = Vector2(2, -25)
+script = ExtResource("6_xah1t")
+
+[node name="PokemonPartySprite" type="Sprite2D" parent="FirstPokemonSlot" unique_id=1075471919]
+position = Vector2(22, 33)
+texture = ExtResource("7_41n2y")
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2(30, 9, 70, 24)
+
+[node name="PokemonName" type="Sprite2D" parent="FirstPokemonSlot" unique_id=1500204104]
+position = Vector2(68, 42)
+texture = ExtResource("7_41n2y")
+region_enabled = true
+region_rect = Rect2(0, -1, 73, 10)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FirstPokemonSlot" unique_id=1785344305]
+libraries/ = SubResource("AnimationLibrary_sqhs6")
+autoplay = &"Idle"
+
+[node name="LevelLabel" type="Label" parent="FirstPokemonSlot" unique_id=1784084968]
+offset_left = 85.0
+offset_top = 47.0
+offset_right = 125.0
+offset_bottom = 61.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_a60ou")
+theme_override_font_sizes/font_size = 12
+text = "4"
+
+[node name="HealthBar" type="ColorRect" parent="FirstPokemonSlot" unique_id=1945107025]
+offset_left = 32.0
+offset_top = 60.0
+offset_right = 93.0
+offset_bottom = 63.0
+color = Color(0, 1, 0, 1)
+
+[node name="SecondPokemonSlot" type="Node2D" parent="." unique_id=292090379]
+position = Vector2(119, -26)
+script = ExtResource("6_xah1t")
+
+[node name="PokemonPartySprite" type="Sprite2D" parent="SecondPokemonSlot" unique_id=1682616775]
+position = Vector2(17, 34)
+texture = ExtResource("8_b2npa")
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2(30, 9, 70, 24)
+
+[node name="PokemonName" type="Sprite2D" parent="SecondPokemonSlot" unique_id=733849588]
+position = Vector2(89, 42)
+texture = ExtResource("9_fm1qp")
+region_enabled = true
+region_rect = Rect2(0, -1, 73, 10)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPokemonSlot" unique_id=1233085383]
+libraries/ = SubResource("AnimationLibrary_rpuio")
+autoplay = &"Idle"
+
+[node name="LevelLabel" type="Label" parent="SecondPokemonSlot" unique_id=1955267305]
+offset_left = 80.0
+offset_top = 48.0
+offset_right = 120.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_a60ou")
+theme_override_font_sizes/font_size = 12
+text = "4"
+
+[node name="HealthBar" type="ColorRect" parent="SecondPokemonSlot" unique_id=556704273]
+offset_left = 27.0
+offset_top = 61.0
+offset_right = 88.0
+offset_bottom = 64.0
+color = Color(0, 1, 0, 1)
+
+[node name="ThirdPokemonSlot" type="Node2D" parent="." unique_id=806116442]
+position = Vector2(119, -2)
+script = ExtResource("6_xah1t")
+
+[node name="PokemonPartySprite" type="Sprite2D" parent="ThirdPokemonSlot" unique_id=1516043618]
+position = Vector2(-95, 54)
+texture = ExtResource("10_g78wg")
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2(30, 9, 70, 24)
+
+[node name="PokemonName" type="Sprite2D" parent="ThirdPokemonSlot" unique_id=148206475]
+position = Vector2(-23, 60)
+texture = ExtResource("11_3iflc")
+region_enabled = true
+region_rect = Rect2(0, -1, 73, 10)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ThirdPokemonSlot" unique_id=350698439]
+libraries/ = SubResource("AnimationLibrary_lyu8v")
+autoplay = &"Idle"
+
+[node name="LevelLabel" type="Label" parent="ThirdPokemonSlot" unique_id=1449098449]
+offset_left = -32.0
+offset_top = 67.0
+offset_right = 8.0
+offset_bottom = 81.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_a60ou")
+theme_override_font_sizes/font_size = 12
+text = "4"
+
+[node name="HealthBar" type="ColorRect" parent="ThirdPokemonSlot" unique_id=1333693439]
+offset_left = -85.0
+offset_top = 80.0
+offset_right = -24.0
+offset_bottom = 83.0
+color = Color(0, 1, 0, 1)
+
+[node name="FourthPokemonSlot" type="Node2D" parent="." unique_id=357229152]
+position = Vector2(119, 22)
+script = ExtResource("6_xah1t")
+
+[node name="PokemonPartySprite" type="Sprite2D" parent="FourthPokemonSlot" unique_id=2126366142]
+position = Vector2(17, 30)
+texture = ExtResource("12_eoyig")
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2(30, 9, 70, 24)
+
+[node name="PokemonName" type="Sprite2D" parent="FourthPokemonSlot" unique_id=1920549129]
+position = Vector2(89, 34)
+texture = ExtResource("13_gu51p")
+region_enabled = true
+region_rect = Rect2(0, -1, 73, 10)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FourthPokemonSlot" unique_id=1271612777]
+libraries/ = SubResource("AnimationLibrary_q2xi2")
+autoplay = &"Idle"
+
+[node name="LevelLabel" type="Label" parent="FourthPokemonSlot" unique_id=782851284]
+offset_left = 80.0
+offset_top = 43.0
+offset_right = 120.0
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_a60ou")
+theme_override_font_sizes/font_size = 12
+text = "4"
+
+[node name="HealthBar" type="ColorRect" parent="FourthPokemonSlot" unique_id=322344612]
+offset_left = 27.0
+offset_top = 56.0
+offset_right = 88.0
+offset_bottom = 59.0
+color = Color(0, 1, 0, 1)
+
+[node name="FifthPokemonSlot" type="Node2D" parent="." unique_id=1291703102]
+position = Vector2(119, 46)
+script = ExtResource("6_xah1t")
+
+[node name="PokemonPartySprite" type="Sprite2D" parent="FifthPokemonSlot" unique_id=1226004391]
+position = Vector2(-95, 49)
+texture = ExtResource("14_25i6w")
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2(30, 9, 70, 24)
+
+[node name="PokemonName" type="Sprite2D" parent="FifthPokemonSlot" unique_id=58296311]
+position = Vector2(-31, 50)
+texture = ExtResource("14_25i6w")
+region_enabled = true
+region_rect = Rect2(0, -1, 73, 10)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FifthPokemonSlot" unique_id=1422283977]
+libraries/ = SubResource("AnimationLibrary_80mug")
+autoplay = &"Idle"
+
+[node name="LevelLabel" type="Label" parent="FifthPokemonSlot" unique_id=2016562507]
+offset_left = -32.0
+offset_top = 62.0
+offset_right = 8.0
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_a60ou")
+theme_override_font_sizes/font_size = 12
+text = "4"
+
+[node name="HealthBar" type="ColorRect" parent="FifthPokemonSlot" unique_id=1528636952]
+offset_left = -85.0
+offset_top = 75.0
+offset_right = -24.0
+offset_bottom = 78.0
+color = Color(0, 1, 0, 1)
+
+[node name="SixthPokemonSlot" type="Node2D" parent="." unique_id=1065223849]
+position = Vector2(119, 70)
+script = ExtResource("6_xah1t")
+
+[node name="PokemonPartySprite" type="Sprite2D" parent="SixthPokemonSlot" unique_id=534371209]
+position = Vector2(17, 25)
+texture = ExtResource("15_id87i")
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2(30, 9, 70, 24)
+
+[node name="PokemonName" type="Sprite2D" parent="SixthPokemonSlot" unique_id=326523611]
+position = Vector2(97, 26)
+texture = ExtResource("15_id87i")
+region_enabled = true
+region_rect = Rect2(0, -1, 73, 10)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SixthPokemonSlot" unique_id=1816555327]
+libraries/ = SubResource("AnimationLibrary_fraxq")
+autoplay = &"Idle"
+
+[node name="LevelLabel" type="Label" parent="SixthPokemonSlot" unique_id=1594832917]
+offset_left = 80.0
+offset_top = 38.0
+offset_right = 120.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_a60ou")
+theme_override_font_sizes/font_size = 12
+text = "4"
+
+[node name="HealthBar" type="ColorRect" parent="SixthPokemonSlot" unique_id=1506423263]
+offset_left = 27.0
+offset_top = 51.0
+offset_right = 88.0
+offset_bottom = 54.0
+color = Color(0, 1, 0, 1)
+
+[node name="Covers" type="Node2D" parent="." unique_id=1543677861]
+
+[node name="ColorRect" type="ColorRect" parent="Covers" unique_id=1660283191]
+visible = false
+offset_left = 26.0
+offset_top = 7.0
+offset_right = 103.0
+offset_bottom = 44.0
+color = Color(0.8509804, 0.627451, 0.4, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Covers" unique_id=1747664904]
+visible = false
+offset_left = 138.0
+offset_top = 7.0
+offset_right = 215.0
+offset_bottom = 44.0
+color = Color(0.8509804, 0.627451, 0.4, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Covers" unique_id=1552008376]
+visible = false
+offset_left = 26.0
+offset_top = 50.0
+offset_right = 103.0
+offset_bottom = 87.0
+color = Color(0.8509804, 0.627451, 0.4, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Covers" unique_id=1164305970]
+visible = false
+offset_left = 138.0
+offset_top = 50.0
+offset_right = 215.0
+offset_bottom = 87.0
+color = Color(0.8509804, 0.627451, 0.4, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Covers" unique_id=613255009]
+visible = false
+offset_left = 26.0
+offset_top = 93.0
+offset_right = 103.0
+offset_bottom = 130.0
+color = Color(0.8509804, 0.627451, 0.4, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="Covers" unique_id=1364125204]
+visible = false
+offset_left = 138.0
+offset_top = 93.0
+offset_right = 215.0
+offset_bottom = 130.0
+color = Color(0.8509804, 0.627451, 0.4, 1)

@@ -96,7 +96,9 @@ func _unhandled_input(event: InputEvent) -> void:
 				party[empty_slot] = new_guy
 				
 				Utils.set_party(party)
-				
+			else:
+				# Add to storage
+				pass
 			close_menu()
 			queue_free()
 

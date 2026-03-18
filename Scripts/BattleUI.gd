@@ -6,7 +6,6 @@ var pause = false
 
 @export var grammarite_node : Node = null
 
-@onready var switch_screen = preload("res://Scenes/BattleSwitchScene.tscn")
 @onready var item_screen = preload("res://Scenes/BattleItemScreen.tscn")
 
 enum InputState { ACTION_BUTTONS, MOVE_LIST, WAITING }
@@ -108,7 +107,18 @@ func _input(event):
 					Buttons.SWITCH:
 						input_state = InputState.WAITING
 						show_correct_menu()
-						get_parent().add_child(switch_screen.instantiate())
+						var index = await Utils.get_scene_manager().transition_to_select_screen()
+						
+						var party = Utils.get_party()
+						var temp = party[0]
+						party[0] = party[index]
+						party[index] = temp
+						Utils.set_party(party)
+						
+						get_parent().get_node("Grammarite").setup()
+						
+						input_state = InputState.ACTION_BUTTONS
+						show_correct_menu()
 					Buttons.ITEM:
 						input_state = InputState.WAITING
 						show_correct_menu()

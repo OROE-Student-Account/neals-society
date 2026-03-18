@@ -45,6 +45,10 @@ func transition_to_naming_screen(from_node: Node):
 	name_request_node = from_node
 
 
+func transition_to_select_screen():
+	return await $GrammariteSelectScreen.load_screen()
+
+
 func transition_to_dialogue(root_node):
 	$DialogueBox.start_dialogue(root_node)
 

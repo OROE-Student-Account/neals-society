@@ -100,19 +100,19 @@ func load_summary(slot_num):
 	var polygon = $SummaryScreen/Stats/BG/Actual.polygon
 	
 	# 40 / Max stat
-	HP *= 0.4
+	HP *= 0.2
 	polygon[0].x = -HP
 	polygon[0].y = -HP
 	
-	DEF *= 4.0
+	DEF *= 0.2
 	polygon[1].x = DEF
 	polygon[1].y = -DEF
 	
-	ATK *= 0.4
+	ATK *= 0.2
 	polygon[2].x = ATK
 	polygon[2].y = ATK
 	
-	SPD *= 4.0
+	SPD *= 0.2
 	polygon[3].x = -SPD
 	polygon[3].y = SPD
 	
@@ -243,7 +243,6 @@ func _input(event):
 				elif selected_option == Options.FIFTH_SLOT or selected_option == Options.SIXTH_SLOT:
 					# From bottom row, go to cancel
 					selected_option = Options.CANCEL
-					update_select_box()
 				else:
 					# Move down two slots (to next row)
 					var next_option = selected_option + 2
@@ -255,7 +254,7 @@ func _input(event):
 							if selected_option > Options.SIXTH_SLOT:
 								selected_option = Options.CANCEL
 								break
-						update_select_box()
+				update_select_box()
 				
 			elif event.is_action_pressed("ui_up"):
 				if selected_option == Options.CANCEL:
@@ -267,7 +266,6 @@ func _input(event):
 						if selected_option == Options.CANCEL:
 							selected_option = Options.FIRST_SLOT
 							break
-					update_select_box()
 				elif selected_option >= Options.FIRST_SLOT and selected_option <= Options.SIXTH_SLOT:
 					# Move up two slots (to previous row)
 					var prev_option = selected_option - 2
@@ -280,8 +278,8 @@ func _input(event):
 								# Wrap around or stay
 								selected_option += 2
 								break
-						update_select_box()
-			
+				update_select_box()
+				
 			elif event.is_action_pressed("ui_left"):
 				if selected_option == Options.CANCEL:
 					# Cancel has no left movement

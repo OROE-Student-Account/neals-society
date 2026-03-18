@@ -294,8 +294,9 @@ theme_override_font_sizes/font_size = 12
 text = "Choose a Grammarite."
 
 [node name="CancelSprite" type="Sprite2D" parent="." unique_id=1901885376]
-position = Vector2(211, 144)
+position = Vector2(184, 136)
 texture = ExtResource("13")
+centered = false
 hframes = 2
 
 [node name="FirstPokemonSlot" type="Node2D" parent="." unique_id=766143109]
