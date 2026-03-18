@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://hpyxtuycfcbw" path="res://Assets/UI/Pokemon Party/exit_background_button.png" id="7_xmk5i"]
 [ext_resource type="Texture2D" uid="uid://bofmcuxvqsoyg" path="res://Assets/UI/ui_arrow_left_right.png" id="9_qxnh6"]
 [ext_resource type="Texture2D" uid="uid://bxjfugenktmee" path="res://Assets/Items/Story Book.png" id="10_qxnh6"]
+[ext_resource type="Texture2D" uid="uid://ckbbwuf8tfh1" path="res://Assets/UI/Dialogue.png" id="11_l0uqe"]
+[ext_resource type="Texture2D" uid="uid://dkx1hhb1gnlwh" path="res://Assets/Pokemon/Pokemon28.png" id="12_xmk5i"]
 
 [sub_resource type="Animation" id="Animation_6yjxy"]
 resource_name = "Attack"
@@ -151,7 +153,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Book:visible")
+tracks/1/path = NodePath(".:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -199,18 +201,6 @@ tracks/2/keys = {
 "update": 0,
 "values": [0.0]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Book:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_tiokb"]
 resource_name = "ThrowBook"
@@ -247,6 +237,139 @@ _data = {
 &"ThrowBook": SubResource("Animation_tiokb")
 }
 
+[sub_resource type="Animation" id="Animation_n5y6x"]
+resource_name = "Evolve"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.79999995, 0.9, 1, 1.1, 1.2, 1.3, 1.4000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.3490658503988659, 0.0, -0.3490658503988659, 0.0, 0.3490658503988659, 0.0, -0.3490658503988659, 0.0, 0.3490658503988659, 0.0, -0.3490658503988659, 0.0, 0.3490658503988659, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8, 0.90000004, 1, 1.1, 1.2, 1.3000001, 1.4000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.08726646259971647, 0.0, -0.08726646259971647, 0.0, 0.08726646259971647, 0.0, -0.08726646259971647, 0.0, 0.08726646259971647, 0.0, -0.08726646259971647, 0.0, 0.08726646259971647, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8, 0.90000004, 1, 1.1, 1.2, 1.3000001, 1.4000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [false, true, false, true, false, true, false, true, false, true, false, true, false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 0.46666667, 0.7, 0.93333334, 1.1666666, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1, 1), Vector2(0.75, 0.75), Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jr0ro"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6xsll"]
+_data = {
+&"Evolve": SubResource("Animation_n5y6x"),
+&"RESET": SubResource("Animation_jr0ro")
+}
+
 [node name="BattleScene" type="Node2D" unique_id=1956242669]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1995767346]
@@ -257,11 +380,12 @@ zoom = Vector2(5, 5)
 offset_right = 240.0
 offset_bottom = 160.0
 
-[node name="BattleManager" type="Node2D" parent="." unique_id=346605181 node_paths=PackedStringArray("player_grammarite", "enemy_grammarite", "battle_ui")]
+[node name="BattleManager" type="Node2D" parent="." unique_id=346605181 node_paths=PackedStringArray("player_grammarite", "enemy_grammarite", "battle_ui", "evolve_screen")]
 script = ExtResource("1_qxnh6")
 player_grammarite = NodePath("../Grammarite")
 enemy_grammarite = NodePath("../EnemyGrammarite")
 battle_ui = NodePath("../BattleUI")
+evolve_screen = NodePath("../EvolveScreen")
 
 [node name="EnemyGrammarite" type="Node2D" parent="." unique_id=1611356939]
 position = Vector2(240, 0)
@@ -492,3 +616,41 @@ centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BookAnimation" unique_id=155795648]
 libraries/ = SubResource("AnimationLibrary_0qgg5")
+
+[node name="EvolveScreen" type="Node2D" parent="." unique_id=799637204]
+
+[node name="ColorRect" type="ColorRect" parent="EvolveScreen" unique_id=289834834]
+offset_right = 240.0
+offset_bottom = 160.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="EvolveScreen" unique_id=1501745249]
+offset_left = 8.0
+offset_top = 120.0
+offset_right = 232.0
+offset_bottom = 152.0
+texture = ExtResource("11_l0uqe")
+patch_margin_left = 7
+patch_margin_top = 3
+patch_margin_right = 7
+patch_margin_bottom = 4
+
+[node name="Label" type="Label" parent="EvolveScreen/NinePatchRect" unique_id=767182970]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 181.0
+offset_bottom = 33.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_qxnh6")
+theme_override_font_sizes/font_size = 12
+text = "WHAT? Your Grammarite is evolving!"
+
+[node name="Sprite2D" type="Sprite2D" parent="EvolveScreen" unique_id=46908497]
+position = Vector2(88, 24)
+texture = ExtResource("12_xmk5i")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 34, 64, 64)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="EvolveScreen" unique_id=1315340129]
+libraries/ = SubResource("AnimationLibrary_6xsll")

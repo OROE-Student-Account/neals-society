@@ -252,15 +252,19 @@ _data = {
 &"Idle": SubResource("7")
 }
 
-[node name="GrammariteSelectScreen" type="Node2D" unique_id=945001003]
+[node name="GrammariteSelectScreen" type="CanvasLayer" unique_id=559247277]
+scale = Vector2(5, 5)
+transform = Transform2D(5, 0, 0, 5, 0, 0)
 script = ExtResource("1_8kclm")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1939608589]
+texture_filter = 1
 offset_right = 240.0
 offset_bottom = 160.0
 texture = ExtResource("2_0hrqw")
 
 [node name="SelectBox" type="TextureRect" parent="." unique_id=432530172]
+texture_filter = 1
 offset_left = 137.0
 offset_top = 49.0
 offset_right = 216.0
@@ -268,6 +272,7 @@ offset_bottom = 89.0
 texture = ExtResource("3_0hrqw")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1347134503]
+texture_filter = 1
 offset_left = 4.0
 offset_top = 134.0
 offset_right = 168.0
@@ -290,6 +295,7 @@ theme_override_font_sizes/font_size = 12
 text = "Choose a Grammarite."
 
 [node name="FirstPokemonSlot" type="Node2D" parent="." unique_id=915965949]
+texture_filter = 1
 position = Vector2(2, -25)
 script = ExtResource("6_xah1t")
 
@@ -329,6 +335,7 @@ offset_bottom = 63.0
 color = Color(0, 1, 0, 1)
 
 [node name="SecondPokemonSlot" type="Node2D" parent="." unique_id=292090379]
+texture_filter = 1
 position = Vector2(119, -26)
 script = ExtResource("6_xah1t")
 
@@ -368,6 +375,7 @@ offset_bottom = 64.0
 color = Color(0, 1, 0, 1)
 
 [node name="ThirdPokemonSlot" type="Node2D" parent="." unique_id=806116442]
+texture_filter = 1
 position = Vector2(119, -2)
 script = ExtResource("6_xah1t")
 
@@ -407,6 +415,7 @@ offset_bottom = 83.0
 color = Color(0, 1, 0, 1)
 
 [node name="FourthPokemonSlot" type="Node2D" parent="." unique_id=357229152]
+texture_filter = 1
 position = Vector2(119, 22)
 script = ExtResource("6_xah1t")
 
@@ -446,6 +455,7 @@ offset_bottom = 59.0
 color = Color(0, 1, 0, 1)
 
 [node name="FifthPokemonSlot" type="Node2D" parent="." unique_id=1291703102]
+texture_filter = 1
 position = Vector2(119, 46)
 script = ExtResource("6_xah1t")
 
@@ -485,6 +495,7 @@ offset_bottom = 78.0
 color = Color(0, 1, 0, 1)
 
 [node name="SixthPokemonSlot" type="Node2D" parent="." unique_id=1065223849]
+texture_filter = 1
 position = Vector2(119, 70)
 script = ExtResource("6_xah1t")
 
@@ -524,6 +535,7 @@ offset_bottom = 54.0
 color = Color(0, 1, 0, 1)
 
 [node name="Covers" type="Node2D" parent="." unique_id=1543677861]
+texture_filter = 1
 
 [node name="ColorRect" type="ColorRect" parent="Covers" unique_id=1660283191]
 visible = false

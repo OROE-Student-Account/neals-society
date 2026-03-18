@@ -62,6 +62,7 @@ transform = Transform2D(5, 0, 0, 5, 0, 0)
 script = ExtResource("1_besi7")
 
 [node name="Control" type="Control" parent="." unique_id=1741219462]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

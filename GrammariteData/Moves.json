@@ -1,10 +1,10 @@
 {
-	"Bite": { "Damage": 50, "Accuracy": 0.75, "Type": "Animal", "PP": 15 },
-	"Papercut": { "Damage": 35, "Accuracy": 1, "Type": "Paper", "PP": 25 }, 
-	"Howl": { "Damage": 45, "Accuracy": 0.8, "Type": "Animal", "PP": 10 }, 
-	"Dragon Dance": {  "Damage": 150, "Accuracy": 0.3, "Type": "Animal", "PP": 5 },
-	"Play": { "Damage": 100, "Accuracy": 0.5, "Type": "Animal", "PP": 20 },
-	"Sit": { "Damage": 70, "Accuracy": 0.55, "Type": "Animal", "PP": 15 },
-	"Sculpt": { "Damage": 59, "Accuracy": 0.6, "Type": "Nature", "PP": 5 },
-	"Woodchip": { "Damage": 999999, "Accuracy": 0.3, "Type": "Nature", "PP": 1 }
+	"Bite": { "Damage": 2, "Accuracy": 0.75, "Type": "Animal", "PP": 15 },
+	"Papercut": { "Damage": 1, "Accuracy": 1, "Type": "Paper", "PP": 25 }, 
+	"Howl": { "Damage": 3, "Accuracy": 0.8, "Type": "Animal", "PP": 10 }, 
+	"Dragon Dance": {  "Damage": 30, "Accuracy": 0.3, "Type": "Animal", "PP": 5 },
+	"Play": { "Damage": 5, "Accuracy": 0.5, "Type": "Animal", "PP": 20 },
+	"Sit": { "Damage": 4.5, "Accuracy": 0.55, "Type": "Animal", "PP": 15 },
+	"Sculpt": { "Damage": 4, "Accuracy": 0.6, "Type": "Nature", "PP": 5 },
+	"Woodchip": { "Damage": 99, "Accuracy": 0.3, "Type": "Nature", "PP": 1 }
 }

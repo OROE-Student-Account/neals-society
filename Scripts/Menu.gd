@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 const PokemonPartyScreen = preload("res://Scenes/PokemonPartyScreen.tscn")
-const PokemonItemScreen = preload("res://Scenes/ItemScreen.tscn")
+const ItemScreen = preload("res://Scenes/ItemScreen.tscn")
 const StorageScreen = preload("res://Scenes/GrammariteStorage.tscn")
 
 @onready var arrow = $Control/Arrow 
@@ -50,7 +50,8 @@ func unload_party_screen():
 func load_item_screen():
 	menu.visible = false
 	screen_loaded = ScreenLoaded.ITEM_SCREEN
-	var item_screen = PokemonItemScreen.instantiate()
+	var item_screen = ItemScreen.instantiate()
+	item_screen.in_battle = false
 	add_child(item_screen)
 func unload_item_screen():
 	menu.visible = true

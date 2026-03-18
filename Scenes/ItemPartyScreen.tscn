@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://bxjfugenktmee" path="res://Assets/Items/Story Book.png" id="3_7tl51"]
 
 [node name="ItemPartyScreen" type="Node2D" unique_id=236429404]
-texture_filter = 1
 
 [node name="Background" type="ColorRect" parent="." unique_id=175241576]
 offset_right = 240.0

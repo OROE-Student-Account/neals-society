@@ -74,8 +74,7 @@ func get_items():
 	return inv
 
 func get_item_data(item_name):
-	var item = load_json_file("res://GrammariteData/Items.json")[item_name]
-	return item
+	return load_json_file("res://GrammariteData/Items.json")[item_name]
 
 
 
@@ -123,8 +122,8 @@ func reset_town():
 	
 	save_json_file("res://Data/Town.json", town)
 
-func max_hp(grammarite_name, level):
-	return 10 + level + 0.02 * level * (14 + load_json_file("res://GrammariteData/Stats.json")[grammarite_name]["Health"])
+func max_hp(grammarite_name, level: int) -> int:
+	return int(10 + level + int(0.02 * level * (14 + load_json_file("res://GrammariteData/Stats.json")[grammarite_name]["Health"])))
 
 
 
@@ -148,14 +147,23 @@ func get_poke_num(grammarite_name):
 	var names = load_json_file("res://GrammariteData/Names.json")
 	return names.find(grammarite_name)
 
+func get_name_from_num(grammarite_num):
+	return load_json_file("res://GrammariteData/Names.json")[grammarite_num]
+
 
 func set_player_name(new_name):
 	var inv = load_json_file("res://Data/Inventory.json")
 	inv["Name"] = new_name
 	save_json_file("res://Data/Inventory.json", inv)
-
 func get_player_name():
 	return load_json_file("res://Data/Inventory.json")["Name"]
+
+
+func can_evolve(grammarite_name, level):
+	var evos = load_json_file("res://GrammariteData/Evolutions.json")
+	var level_needed = evos[get_poke_num(grammarite_name)]
+	if level_needed == -1: return
+	return level >= level_needed
 
 
 func save_json_file(file_path, data):

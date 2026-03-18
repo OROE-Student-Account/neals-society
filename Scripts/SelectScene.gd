@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasLayer
 
 
 var num_of_slots = 6
@@ -44,6 +44,7 @@ func _ready() -> void:
 func load_screen():
 	visible = true
 	pause = false
+	selected_option = Options.FIRST_SLOT
 	load_party()
 	update_select_box()
 	var choice = await choose_grammarite()

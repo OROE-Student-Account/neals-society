@@ -3,7 +3,8 @@ class_name BattleManager
 
 @export var player_grammarite: Node2D 
 @export var enemy_grammarite: Node2D  
-@export var battle_ui: Node2D          
+@export var battle_ui: Node2D     
+@export var evolve_screen: Node2D     
 
 var trainer = "random"
 
@@ -15,6 +16,7 @@ var current_state = BattleState.PLAYER_TURN
 
 func _ready():
 	# Connect to battle UI
+	evolve_screen.visible = false
 	if battle_ui:
 		battle_ui.move_selected.connect(_on_player_move_selected)
 	
@@ -202,23 +204,41 @@ func end_battle(player_won: bool):
 	current_state = BattleState.BATTLE_END
 	
 	if player_won:
+		battle_ui.set_info_text("You won!")
+		await get_tree().create_timer(1.65).timeout
+		var party = Utils.get_party()
+		var xp = 0
+		
 		if trainer != "random":
-			battle_ui.set_info_text("You won!")
-			
-			var xp = Utils.get_trainer(trainer)["XP"]
-			var party = Utils.get_party()
-			party[0]["Level"] += 0.01 * xp
-			Utils.set_party(party)
+			xp = Utils.get_trainer(trainer)["XP"]
 		else:
-			battle_ui.set_info_text("You won!")
-			var xp = enemy_grammarite.level
-			var party = Utils.get_party()
-			party[0]["Level"] += 0.01 * xp
-			Utils.set_party(party)
+			xp = enemy_grammarite.level
+		
+		# TODO: FIX ALL OF THIS
+		if fmod(party[0]["Level"], 1.0) + xp*0.01 > 1.0:
+			battle_ui.set_info_text("Your Grammarite leveled up!")
+			await get_tree().create_timer(1.5).timeout
+			if Utils.can_evolve(player_grammarite.grammarite_name, player_grammarite.level):
+				var old_name = party[0]["Name"]
+				var new_name = Utils.get_name_from_num(1 + Utils.get_poke_num(old_name))
+				party[0]["Name"] = new_name
+				
+				evolve_screen.visible = true
+				evolve_screen.get_node("NinePatchRect/Label").text ="WHAT? "+old_name+" is evolving!"
+				evolve_screen.get_node("Sprite2D").texture = load("res://Assets/Pokemon/Pokemon"+str(Utils.get_poke_num(old_name)+1)+".png")
+				evolve_screen.get_node("AnimationPlayer").play("Evolve")
+				await get_tree().create_timer(1.4).timeout
+				evolve_screen.get_node("Sprite2D").texture = load("res://Assets/Pokemon/Pokemon"+str(Utils.get_poke_num(new_name)+1)+".png")
+				evolve_screen.get_node("NinePatchRect/Label").text = old_name+" evolved into "+new_name+"!"
+				await get_tree().create_timer(2.2).timeout
+		
+		party[0]["Level"] += 0.01 * xp
+		if party[0]["Level"] > 100: party[0]["Level"] = 100
+		Utils.set_party(party)
 	else:
 		battle_ui.set_info_text("You lost!")
+		await get_tree().create_timer(1.8).timeout
 	
 	battle_ended.emit(player_won)
 	
-	await get_tree().create_timer(2.0).timeout
 	Utils.get_scene_manager().transition_exit_battle()
