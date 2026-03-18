@@ -52,6 +52,8 @@ func display_current_node():
 	if current_node == null:
 		end_dialogue()
 		return
+	
+	current_node.fix_text()
 
 	# Show the text first
 	if current_node.text == "":

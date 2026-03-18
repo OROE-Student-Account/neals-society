@@ -30,7 +30,7 @@ func _ready():
 var name_prompt = "What should your name be?"
 func _recieve_player_name(chosen_name, from_node):
 	if from_node != self: return
-	print("Player name is "+chosen_name)
+	Utils.set_player_name(chosen_name)
 
 
 

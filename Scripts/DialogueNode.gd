@@ -8,6 +8,17 @@ class_name DialogueTreeNode
 @export var func_node : Node = null
 
 
+func fix_text():
+	var name = Utils.get_player_name()
+	var pieces = text.split("<name>")
+	text = ""
+	for i in range(len(pieces)):
+		if i != len(pieces)-1:
+			text += pieces[i] + name
+		else:
+			text += pieces[i]
+
+
 func get_children_nodes() -> Array[Node]:
 	var children: Array[Node] = []
 	for child in get_children():

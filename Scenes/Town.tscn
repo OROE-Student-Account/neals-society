@@ -3086,7 +3086,7 @@ option_name = "No."
 
 [node name="Second Dialogue Root" type="Node" parent="Collision Stuff/Rival" unique_id=56998859]
 script = ExtResource("19_5qjph")
-text = "WRONG. I live next door to you, how do you not know my name? By the way, what is your name?"
+text = "WRONG. I live next door to you, how do you not know my name? Are you <name>? What is your name?"
 
 [node name="Node" type="Node" parent="Collision Stuff/Rival/Second Dialogue Root" unique_id=967599914]
 script = ExtResource("19_5qjph")

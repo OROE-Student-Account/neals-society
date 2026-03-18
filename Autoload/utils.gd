@@ -149,6 +149,14 @@ func get_poke_num(grammarite_name):
 	return names.find(grammarite_name)
 
 
+func set_player_name(new_name):
+	var inv = load_json_file("res://Data/Inventory.json")
+	inv["Name"] = new_name
+	save_json_file("res://Data/Inventory.json", inv)
+
+func get_player_name():
+	return load_json_file("res://Data/Inventory.json")["Name"]
+
 
 func save_json_file(file_path, data):
 	var file = FileAccess.open(file_path, FileAccess.WRITE)
