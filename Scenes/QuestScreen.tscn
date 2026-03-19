@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://sse02ea6deen"]
+
+[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="1_gh4d2"]
+[ext_resource type="Script" uid="uid://cm3xq24ov0e7j" path="res://Scripts/QuestScreen.gd" id="1_wsc7u"]
+
+[node name="QuestScreen" type="Node2D" unique_id=1222627018]
+texture_filter = 1
+script = ExtResource("1_wsc7u")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=320466981]
+offset_right = 240.0
+offset_bottom = 160.0
+
+[node name="Sidebar" type="Control" parent="." unique_id=400258677]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Sidebar" unique_id=134601424]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 7.0
+offset_right = 64.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_gh4d2")
+theme_override_font_sizes/font_size = 12
+text = "Quests"
+
+[node name="ItemList" type="ItemList" parent="Sidebar" unique_id=1814926697]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 24.0
+offset_right = 80.0
+offset_bottom = 152.0
+theme_override_fonts/font = ExtResource("1_gh4d2")
+theme_override_font_sizes/font_size = 12
+
+[node name="Info" type="Control" parent="." unique_id=1830113566]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect2" type="ColorRect" parent="Info" unique_id=1603091844]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 40.0
+offset_right = 228.0
+offset_bottom = 136.0
+color = Color(0.52156866, 0.49803922, 0.49803922, 1)
+
+[node name="Title" type="Label" parent="Info" unique_id=1801493367]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 48.0
+offset_right = 218.0
+offset_bottom = 71.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_gh4d2")
+theme_override_font_sizes/font_size = 12
+text = "Example Quest"
+
+[node name="Description" type="Label" parent="Info" unique_id=1266439803]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 64.0
+offset_right = 243.99998
+offset_bottom = 123.99999
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_gh4d2")
+theme_override_font_sizes/font_size = 12
+text = "Capture or kill 67 grammarites to and turn them into shards to complete this quest"
+autowrap_mode = 2
+
+[node name="Reward" type="Label" parent="Info" unique_id=1519755452]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 118.0
+offset_right = 218.0
+offset_bottom = 141.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_gh4d2")
+theme_override_font_sizes/font_size = 12
+text = "Reward: "
+
+[connection signal="item_selected" from="Sidebar/ItemList" to="." method="_on_item_list_item_selected"]

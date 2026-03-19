@@ -166,6 +166,22 @@ func can_evolve(grammarite_name, level):
 	return level >= level_needed
 
 
+func load_quests():
+	var quest_info = load_json_file("res://GrammariteData/Quests.json")
+	var quest_details = load_json_file("res://Data/Quests.json")
+	
+	var quests = []
+	
+	for i in range(len(quest_info)):
+		var quest = quest_details[i]
+		if quest["Progress"] == "Started":
+			var add_quest = quest_info[i]
+			add_quest["Details"] = quest
+			quests.append(add_quest)
+	
+	return quests
+
+
 func save_json_file(file_path, data):
 	var file = FileAccess.open(file_path, FileAccess.WRITE)
 	var json_string = JSON.stringify(data, "\t")  # "\t" adds good formatting with tabs

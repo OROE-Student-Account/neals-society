@@ -72,7 +72,6 @@ scale = Vector2(5, 5)
 transform = Transform2D(5, 0, 0, 5, 0, 0)
 
 [node name="NamingScreen" parent="." unique_id=36144054 instance=ExtResource("5_83gc0")]
-visible = false
 
 [node name="GrammariteSelectScreen" parent="." unique_id=945001003 instance=ExtResource("6_8ysa5")]
 

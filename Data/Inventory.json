@@ -10,10 +10,10 @@
 		"Pokeball",
 		"Pokeball"
 	],
-	"Name": "Neal Sehgal",
+	"Name": "xxz",
 	"Party": [
 		{
-			"Health": 0,
+			"Health": 52.0,
 			"Item": "Pokeball",
 			"Level": 16.95,
 			"Moves": [
@@ -25,10 +25,10 @@
 			"Name": "Dog of Wood",
 			"Nickname": "",
 			"PP": [
-				12.0,
+				15.0,
 				20.0,
 				10.0,
-				0.0
+				1.0
 			]
 		},
 		{

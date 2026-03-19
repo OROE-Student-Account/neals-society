@@ -10,7 +10,7 @@ var next_trainer = ""
 signal name_selected(chosen_name: String, requester_node: Node)
 var name_request_node: Node = null
 
-enum TransitionType { NEW_SCENE, PARTY_SCREEN, ITEM_SCREEN, MENU_ONLY, BATTLE, BATTLE_EXIT, STORAGE, EXIT_STORAGE, NAMING }
+enum TransitionType { NEW_SCENE, PARTY_SCREEN, ITEM_SCREEN, MENU_ONLY, BATTLE, BATTLE_EXIT, STORAGE, EXIT_SCREEN, NAMING, QUESTS }
 var transition_type = TransitionType.NEW_SCENE
 
 @onready var scene = $CurrentScene
@@ -36,7 +36,14 @@ func transition_to_grammarite_storage():
 	transition_type = TransitionType.STORAGE
 func transition_exit_grammarite_storage():
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
-	transition_type = TransitionType.EXIT_STORAGE
+	transition_type = TransitionType.EXIT_SCREEN
+
+func transition_to_quests():
+	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
+	transition_type = TransitionType.QUESTS
+func transition_exit_quests():
+	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
+	transition_type = TransitionType.EXIT_SCREEN
 
 
 func transition_to_naming_screen(from_node: Node):
@@ -119,9 +126,12 @@ func finished_fading():
 			$Menu.screen_loaded = 0
 		TransitionType.STORAGE:
 			$Menu.load_storage_screen()
-		TransitionType.EXIT_STORAGE:
+		TransitionType.EXIT_SCREEN:
 			$Menu.unload_storage_screen()
+			$Menu.unload_quests()
 			var player = Utils.get_player()
 			player.set_physics_process(true)
 		TransitionType.NAMING:
 			name_selected.emit(await $NamingScreen.load_naming_screen(name_request_node.name_prompt), name_request_node)
+		TransitionType.QUESTS:
+			$Menu.load_quests()

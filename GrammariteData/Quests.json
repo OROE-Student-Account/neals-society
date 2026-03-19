@@ -1,0 +1,12 @@
+[
+	{
+		"Name": "Test",
+		"Description": "Lorem Ipsum die valor sevar vitas mi amor",
+		"Reward": { "Type": "Item", "Amt": 1, "Name": "Potion" }
+	},
+	{
+		"Name": "Example Quest",
+		"Description": "Capture or kill 67 grammarites to and turn them into shards to complete this quest", 
+		"Reward": { "Type": "Money", "Amt": 10 }
+	}
+]

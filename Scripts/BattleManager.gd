@@ -37,6 +37,10 @@ func _on_player_move_selected(move_index: int):
 	else:
 		await execute_attack(player_grammarite, enemy_grammarite, { "Name": "Struggle" })
 	
+	if player_grammarite.health <= 0:
+		end_battle(false)
+		return
+	
 	# Check if enemy fainted
 	if enemy_grammarite.health <= 0:
 		end_battle(true)
@@ -228,9 +232,10 @@ func end_battle(player_won: bool):
 				evolve_screen.get_node("Sprite2D").texture = load("res://Assets/Pokemon/Pokemon"+str(Utils.get_poke_num(old_name)+1)+".png")
 				evolve_screen.get_node("AnimationPlayer").play("Evolve")
 				await get_tree().create_timer(1.4).timeout
+				
 				evolve_screen.get_node("Sprite2D").texture = load("res://Assets/Pokemon/Pokemon"+str(Utils.get_poke_num(new_name)+1)+".png")
 				evolve_screen.get_node("NinePatchRect/Label").text = old_name+" evolved into "+new_name+"!"
-				await get_tree().create_timer(2.2).timeout
+				await get_tree().create_timer(3.5).timeout
 		
 		party[0]["Level"] += 0.01 * xp
 		if party[0]["Level"] > 100: party[0]["Level"] = 100
