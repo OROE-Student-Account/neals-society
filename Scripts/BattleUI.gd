@@ -107,12 +107,20 @@ func _input(event):
 					Buttons.SWITCH:
 						input_state = InputState.WAITING
 						show_correct_menu()
-						var index = await Utils.get_scene_manager().transition_to_select_screen()
-						
 						var party = Utils.get_party()
-						var temp = party[0]
-						party[0] = party[index]
-						party[index] = temp
+						
+						var good_grammarite = false
+						while not good_grammarite:
+							
+							var index = await Utils.get_scene_manager().transition_to_select_screen()
+							
+							if party[index]["Health"] != 0:
+								good_grammarite = true
+								
+								var temp = party[0]
+								party[0] = party[index]
+								party[index] = temp
+						
 						Utils.set_party(party)
 						
 						get_parent().get_node("Grammarite").setup()

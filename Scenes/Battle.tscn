@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://b4nmamhpm0fsg" path="res://Assets/UI/Pokemon Party/standby_pokemon_background.png" id="3_6yjxy"]
 [ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="4_qxnh6"]
 [ext_resource type="Script" uid="uid://cshmcr6ld2cga" path="res://Scripts/BattleGrammarite.gd" id="6_6yjxy"]
-[ext_resource type="Texture2D" uid="uid://dw17mm63araxi" path="res://Assets/UI/menu_box_1.png" id="7_6yjxy"]
 [ext_resource type="Texture2D" uid="uid://hpyxtuycfcbw" path="res://Assets/UI/Pokemon Party/exit_background_button.png" id="7_xmk5i"]
 [ext_resource type="Texture2D" uid="uid://bofmcuxvqsoyg" path="res://Assets/UI/ui_arrow_left_right.png" id="9_qxnh6"]
 [ext_resource type="Texture2D" uid="uid://bxjfugenktmee" path="res://Assets/Items/Story Book.png" id="10_qxnh6"]
@@ -380,13 +379,6 @@ zoom = Vector2(5, 5)
 offset_right = 240.0
 offset_bottom = 160.0
 
-[node name="BattleManager" type="Node2D" parent="." unique_id=346605181 node_paths=PackedStringArray("player_grammarite", "enemy_grammarite", "battle_ui", "evolve_screen")]
-script = ExtResource("1_qxnh6")
-player_grammarite = NodePath("../Grammarite")
-enemy_grammarite = NodePath("../EnemyGrammarite")
-battle_ui = NodePath("../BattleUI")
-evolve_screen = NodePath("../EvolveScreen")
-
 [node name="EnemyGrammarite" type="Node2D" parent="." unique_id=1611356939]
 position = Vector2(240, 0)
 script = ExtResource("6_6yjxy")
@@ -512,19 +504,20 @@ script = ExtResource("1_c5ef4")
 grammarite_node = NodePath("../Grammarite")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="BattleUI" unique_id=1834684650]
-offset_left = 112.0
-offset_top = 104.0
-offset_right = 240.0
-offset_bottom = 160.0
-texture = ExtResource("7_6yjxy")
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
+texture_filter = 1
+offset_left = 92.0
+offset_top = 106.0
+offset_right = 236.0
+offset_bottom = 158.0
+texture = ExtResource("11_l0uqe")
+patch_margin_left = 7
+patch_margin_top = 3
+patch_margin_right = 7
+patch_margin_bottom = 4
 
 [node name="Buttons" type="Node2D" parent="BattleUI" unique_id=967738820]
 visible = false
-position = Vector2(240, 160)
+position = Vector2(232, 159)
 
 [node name="switchPkmn" type="Sprite2D" parent="BattleUI/Buttons" unique_id=698753109]
 position = Vector2(-32, -40)
@@ -548,7 +541,7 @@ hframes = 2
 
 [node name="MoveList" type="Node2D" parent="BattleUI" unique_id=577308921]
 visible = false
-position = Vector2(112, 104)
+position = Vector2(100, 104)
 
 [node name="Moves" type="VBoxContainer" parent="BattleUI/MoveList" unique_id=675319034]
 offset_left = 16.0
@@ -595,15 +588,22 @@ texture = ExtResource("9_qxnh6")
 
 [node name="InfoText" type="Label" parent="BattleUI" unique_id=111149462]
 visible = false
-offset_left = 120.0
-offset_top = 112.0
-offset_right = 232.0
-offset_bottom = 152.0
+offset_left = 102.0
+offset_top = 113.0
+offset_right = 226.0
+offset_bottom = 153.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_qxnh6")
 theme_override_font_sizes/font_size = 12
-text = "testing hello world this is neal's society. this text should not"
+text = "Revive your party at a Grammarite Center before fighting again."
 autowrap_mode = 3
+
+[node name="BattleManager" type="Node2D" parent="." unique_id=346605181 node_paths=PackedStringArray("player_grammarite", "enemy_grammarite", "battle_ui", "evolve_screen")]
+script = ExtResource("1_qxnh6")
+player_grammarite = NodePath("../Grammarite")
+enemy_grammarite = NodePath("../EnemyGrammarite")
+battle_ui = NodePath("../BattleUI")
+evolve_screen = NodePath("../EvolveScreen")
 
 [node name="BookAnimation" type="Node2D" parent="." unique_id=507228910]
 visible = false
@@ -618,6 +618,7 @@ centered = false
 libraries/ = SubResource("AnimationLibrary_0qgg5")
 
 [node name="EvolveScreen" type="Node2D" parent="." unique_id=799637204]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="EvolveScreen" unique_id=289834834]
 offset_right = 240.0

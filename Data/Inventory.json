@@ -8,18 +8,22 @@
 		"Pokeball",
 		"Pokeball",
 		"Pokeball",
+		"Pokeball",
+		"Pokeball",
+		"Pokeball",
+		"Pokeball",
 		"Pokeball"
 	],
 	"Name": "xxz",
 	"Party": [
 		{
-			"Health": 52.0,
-			"Item": "Pokeball",
-			"Level": 16.95,
+			"Health": 44.0,
+			"Item": "",
+			"Level": 13.49,
 			"Moves": [
 				"Bite",
 				"Play",
-				"Howl",
+				"Sit",
 				"Woodchip"
 			],
 			"Name": "Dog of Wood",
@@ -27,14 +31,14 @@
 			"PP": [
 				15.0,
 				20.0,
-				10.0,
+				15.0,
 				1.0
 			]
 		},
 		{
-			"Health": 225.0,
+			"Health": 0.0,
 			"Item": "",
-			"Level": 57.05,
+			"Level": 57.4,
 			"Moves": [
 				"Bite",
 				"Play",
@@ -44,7 +48,7 @@
 			"Name": "Orawolfi",
 			"Nickname": "",
 			"PP": [
-				15.0,
+				14.0,
 				20.0,
 				15.0,
 				5.0
@@ -52,26 +56,7 @@
 			"health": 93.0
 		},
 		{
-			"Health": 12.0,
-			"Item": "",
-			"Level": 1.0,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Sit",
-				"Woodchip"
-			],
-			"Name": "Dog of Wood",
-			"Nickname": "",
-			"PP": [
-				15.0,
-				20.0,
-				15.0,
-				1.0
-			]
-		},
-		{
-			"Health": 61.0,
+			"Health": 0.0,
 			"Item": "",
 			"Level": 18.01,
 			"Moves": [
@@ -83,8 +68,8 @@
 			"Name": "Sculpupture",
 			"Nickname": "",
 			"PP": [
-				15.0,
-				20.0,
+				14.0,
+				19.0,
 				15.0,
 				5.0
 			]
@@ -105,6 +90,25 @@
 				15.0,
 				20.0,
 				15.0,
+				1.0
+			]
+		},
+		{
+			"Health": 58.0,
+			"Item": "Pokeball",
+			"Level": 17.71,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Howl",
+				"Woodchip"
+			],
+			"Name": "Sculpupture",
+			"Nickname": "",
+			"PP": [
+				15.0,
+				20.0,
+				10.0,
 				1.0
 			]
 		},

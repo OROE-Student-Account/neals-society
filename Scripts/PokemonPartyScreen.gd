@@ -144,7 +144,7 @@ func load_summary(slot_num):
 	info.get_child(5).text = "DEX #: "+str(Utils.get_poke_num(slot_data["Name"])+1)
 	
 	# hp
-	info.get_child(6).text = "HP: "+str(int(slot_data["Health"]))
+	info.get_child(6).text = "HP: "+str(int(slot_data["Health"]))+" / "+str(int(Utils.max_hp(slot_data["Name"], slot_data["Level"])))
 
 func load_moves(slot_num):
 	self.add_child(load("res://Scenes/MovesPartyScreen.tscn").instantiate())

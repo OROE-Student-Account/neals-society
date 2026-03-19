@@ -20,6 +20,14 @@ func _ready():
 	if battle_ui:
 		battle_ui.move_selected.connect(_on_player_move_selected)
 	
+	if not await on_player_grammarite_die(false):
+		print("ALL DEAD GRAMMARITES")
+		battle_ui.input_state = battle_ui.InputState.WAITING
+		battle_ui.show_correct_menu()
+		battle_ui.set_info_text("Revive your party at a Grammarite Center before fighting again.")
+		await get_tree().create_timer(4.0).timeout
+		end_battle(false)
+	
 	start_battle()
 
 
@@ -38,8 +46,8 @@ func _on_player_move_selected(move_index: int):
 		await execute_attack(player_grammarite, enemy_grammarite, { "Name": "Struggle" })
 	
 	if player_grammarite.health <= 0:
-		end_battle(false)
-		return
+		if not await on_player_grammarite_die(true):
+			return
 	
 	# Check if enemy fainted
 	if enemy_grammarite.health <= 0:
@@ -51,8 +59,8 @@ func _on_player_move_selected(move_index: int):
 	
 	# Check if player fainted
 	if player_grammarite.health <= 0:
-		end_battle(false)
-		return
+		if not await on_player_grammarite_die(true):
+			return
 	
 	# Back to player's turn
 	current_state = BattleState.PLAYER_TURN
@@ -70,6 +78,36 @@ func enemy_turn():
 	var random_move = moves[randi() % moves.size()]
 	
 	await execute_attack(enemy_grammarite, player_grammarite, random_move)
+
+
+func on_player_grammarite_die(in_battle: bool):
+	# return = battle continuing
+	var party = Utils.get_party()
+	
+	var living_index = -1
+	for i in range(len(party)):
+		if party[i]["Health"] != 0: 
+			living_index = i
+			break
+	
+	if living_index == -1:
+		if in_battle:
+			end_battle(false)
+		return false
+	else:
+		var temp = party[0]
+		party[0] = party[living_index]
+		party[living_index] = temp
+		Utils.set_party(party)
+		
+		get_parent().get_node("Grammarite").setup()
+		
+		if in_battle:
+			battle_ui.set_info_text(temp["Name"]+" died, go "+player_grammarite.grammarite_name+"!")
+			await get_tree().create_timer(1.5).timeout
+		return true
+
+
 
 func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 	current_state = BattleState.ANIMATING
@@ -160,9 +198,6 @@ func throw_book(book_name):
 	
 	battle_ui.set_info_text("You threw a "+book_name+"!")
 	
-	
-	
-	
 	get_parent().get_node("BookAnimation/AnimationPlayer").play("ThrowBook")
 	
 	await get_tree().create_timer(0.6).timeout
@@ -172,8 +207,9 @@ func throw_book(book_name):
 	await get_tree().create_timer(0.6).timeout
 	
 	
-	var base_chance = enemy_grammarite.max_health / (enemy_grammarite.max_health + 3 * enemy_grammarite.health)
+	var base_chance = float(enemy_grammarite.max_health) / float(enemy_grammarite.max_health + 3.0 * enemy_grammarite.health)
 	var caught = randf()
+	
 	
 	if book_name == "Chapter Book":
 		base_chance *= 1.5
@@ -183,6 +219,7 @@ func throw_book(book_name):
 		battle_ui.set_info_text("You caught it!")
 		await get_tree().create_timer(0.6).timeout
 		# enemy_grammarite goes to your storage
+		# TODO: Make this actually go to storage
 		end_battle(true)
 		return
 	
@@ -196,8 +233,8 @@ func throw_book(book_name):
 	
 	# Check if player fainted
 	if player_grammarite.health <= 0:
-		end_battle(false)
-		return
+		if not await on_player_grammarite_die(true):
+			return
 	
 	# Back to player's turn
 	current_state = BattleState.PLAYER_TURN
@@ -235,14 +272,14 @@ func end_battle(player_won: bool):
 				
 				evolve_screen.get_node("Sprite2D").texture = load("res://Assets/Pokemon/Pokemon"+str(Utils.get_poke_num(new_name)+1)+".png")
 				evolve_screen.get_node("NinePatchRect/Label").text = old_name+" evolved into "+new_name+"!"
-				await get_tree().create_timer(3.5).timeout
+				await get_tree().create_timer(3.0).timeout
 		
 		party[0]["Level"] += 0.01 * xp
 		if party[0]["Level"] > 100: party[0]["Level"] = 100
 		Utils.set_party(party)
 	else:
 		battle_ui.set_info_text("You lost!")
-		await get_tree().create_timer(1.8).timeout
+		await get_tree().create_timer(2.5).timeout
 	
 	battle_ended.emit(player_won)
 	

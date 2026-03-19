@@ -104,6 +104,9 @@ func show_based_on_type(type):
 			if in_battle:
 				var selected_item_index = $ItemList.get_selected_items()[0]
 				var battle_manager = get_parent().get_node("BattleManager")
+				
+				if battle_manager.trainer != "random": return
+				
 				battle_manager.throw_book(filtered_items[selected_item_index]["Name"])
 				
 				var file_path = "res://Assets/Items/" + filtered_items[selected_item_index]["Name"] + ".png"
