@@ -17,7 +17,65 @@
 	"Name": "xxz",
 	"Party": [
 		{
-			"Health": 44.0,
+			"Health": 58,
+			"Item": "Pokeball",
+			"Level": 17.82,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Howl",
+				"Woodchip"
+			],
+			"Name": "Sculpupture",
+			"Nickname": "",
+			"PP": [
+				15.0,
+				20.0,
+				10.0,
+				1.0
+			]
+		},
+		{
+			"Health": 225,
+			"Item": "",
+			"Level": 57.4,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Sculpt"
+			],
+			"Name": "Orawolfi",
+			"Nickname": "",
+			"PP": [
+				15.0,
+				20.0,
+				15.0,
+				5.0
+			],
+			"health": 93.0
+		},
+		{
+			"Health": 61,
+			"Item": "",
+			"Level": 18.01,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Sculpt"
+			],
+			"Name": "Sculpupture",
+			"Nickname": "",
+			"PP": [
+				15.0,
+				20.0,
+				15.0,
+				5.0
+			]
+		},
+		{
+			"Health": 44,
 			"Item": "",
 			"Level": 13.49,
 			"Moves": [
@@ -36,46 +94,7 @@
 			]
 		},
 		{
-			"Health": 0.0,
-			"Item": "",
-			"Level": 57.4,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Sit",
-				"Sculpt"
-			],
-			"Name": "Orawolfi",
-			"Nickname": "",
-			"PP": [
-				14.0,
-				20.0,
-				15.0,
-				5.0
-			],
-			"health": 93.0
-		},
-		{
-			"Health": 0.0,
-			"Item": "",
-			"Level": 18.01,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Sit",
-				"Sculpt"
-			],
-			"Name": "Sculpupture",
-			"Nickname": "",
-			"PP": [
-				14.0,
-				19.0,
-				15.0,
-				5.0
-			]
-		},
-		{
-			"Health": 12.0,
+			"Health": 12,
 			"Item": "",
 			"Level": 1.0,
 			"Moves": [
@@ -90,25 +109,6 @@
 				15.0,
 				20.0,
 				15.0,
-				1.0
-			]
-		},
-		{
-			"Health": 58.0,
-			"Item": "Pokeball",
-			"Level": 17.71,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Howl",
-				"Woodchip"
-			],
-			"Name": "Sculpupture",
-			"Nickname": "",
-			"PP": [
-				15.0,
-				20.0,
-				10.0,
 				1.0
 			]
 		},

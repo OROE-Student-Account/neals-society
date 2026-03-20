@@ -3011,17 +3011,25 @@ shape = SubResource("RectangleShape2D_typi0")
 sprite_frames = SubResource("SpriteFrames_n33s8")
 script = ExtResource("19_yv7ed")
 
-[node name="GrammariteCenterOutside" parent="Collision Stuff" unique_id=326239706 instance=ExtResource("18_gb3n1")]
+[node name="GrammariteCenterOutside0" parent="Collision Stuff" unique_id=326239706 instance=ExtResource("18_gb3n1")]
 position = Vector2(-128, 128)
 
-[node name="Door" parent="Collision Stuff/GrammariteCenterOutside" unique_id=1425793960 instance=ExtResource("8")]
+[node name="Door" parent="Collision Stuff/GrammariteCenterOutside0" unique_id=1425793960 instance=ExtResource("8")]
+position = Vector2(16, 64)
+next_scene_path = "res://Scenes/GrammariteCenterInside.tscn"
+spawn_location = Vector2(64, 128)
+spawn_direction = Vector2(0, -1)
+
+[node name="GrammariteCenterOutside1" parent="Collision Stuff" unique_id=18230982 instance=ExtResource("18_gb3n1")]
+position = Vector2(128, -720)
+
+[node name="Door" parent="Collision Stuff/GrammariteCenterOutside1" unique_id=1523487823 instance=ExtResource("8")]
 position = Vector2(16, 64)
 next_scene_path = "res://Scenes/GrammariteCenterInside.tscn"
 spawn_location = Vector2(64, 128)
 spawn_direction = Vector2(0, -1)
 
 [node name="Pokeball" parent="Collision Stuff" unique_id=968186873 instance=ExtResource("16_tbyl1")]
-unique_name_in_owner = true
 position = Vector2(32, 96)
 item_name = "Pokeball"
 
@@ -3188,12 +3196,12 @@ func_node = NodePath("..")
 
 [node name="BattleStart" type="Node" parent="Collision Stuff/Fighter" unique_id=1934092355]
 script = ExtResource("22_ix0ol")
-trainer_name = "Rival"
+trainer_name = "Fighter"
 
 [connection signal="body_entered" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_Door_body_entered"]
 [connection signal="body_entered" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_body_entered"]
-[connection signal="body_exited" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_Door_body_exited"]
 [connection signal="body_exited" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_body_exited"]
+[connection signal="body_exited" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_Door_body_exited"]
 [connection signal="body_entered" from="Collision Stuff/Rival/LineOfSight" to="Collision Stuff/Rival" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Collision Stuff/Rival/HitBox" to="Collision Stuff/Rival" method="_on_hit_box_body_entered"]
 [connection signal="body_exited" from="Collision Stuff/Rival/HitBox" to="Collision Stuff/Rival" method="_on_hit_box_body_exited"]

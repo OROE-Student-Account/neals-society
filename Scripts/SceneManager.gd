@@ -10,7 +10,7 @@ var next_trainer = ""
 signal name_selected(chosen_name: String, requester_node: Node)
 var name_request_node: Node = null
 
-enum TransitionType { NEW_SCENE, PARTY_SCREEN, ITEM_SCREEN, MENU_ONLY, BATTLE, BATTLE_EXIT, STORAGE, EXIT_SCREEN, NAMING, QUESTS }
+enum TransitionType { NEW_SCENE, PARTY_SCREEN, ITEM_SCREEN, MENU_ONLY, BATTLE, BATTLE_EXIT, STORAGE, EXIT_SCREEN, NAMING, QUESTS, GRAMMARITE_CENTER }
 var transition_type = TransitionType.NEW_SCENE
 
 @onready var scene = $CurrentScene
@@ -51,10 +51,8 @@ func transition_to_naming_screen(from_node: Node):
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 	name_request_node = from_node
 
-
 func transition_to_select_screen():
 	return await $GrammariteSelectScreen.load_screen()
-
 
 func transition_to_dialogue(root_node):
 	$DialogueBox.start_dialogue(root_node)
@@ -75,7 +73,6 @@ func load_battle():
 	
 	scene.add_child(battle)
 	scene.get_children().back().get_child(0).make_current()
-
 func transition_to_battle(trainer):
 	next_trainer = trainer
 	next_scene = $CurrentScene.get_child(0).scene_file_path
@@ -85,7 +82,6 @@ func transition_to_battle(trainer):
 	player_location = player.position
 	player_direction = player.input_direction
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
-
 func transition_exit_battle():
 	transition_type = TransitionType.BATTLE_EXIT
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
@@ -98,13 +94,30 @@ func transition_to_scene(new_scene: String, spawn_location, spawn_direction):
 	transition_type = TransitionType.NEW_SCENE
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 
+func transition_to_grammarite_cent(spawn_location):
+	next_scene = "res://Scenes/GrammariteCenterInside.tscn"
+	player_location = spawn_location
+	player_direction = Vector2(0,-1)
+	transition_type = TransitionType.GRAMMARITE_CENTER
+	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 
 func finished_fading():
 	$ScreenTransition/AnimationPlayer.play("FadeToNormal")
 	match transition_type:
 		TransitionType.NEW_SCENE:
-			scene.get_child(0).free()
+			while scene.get_child_count() > 0:
+				scene.get_child(0).free()
 			scene.add_child(load(next_scene).instantiate())
+			var player = Utils.get_player()
+			player.set_spawn(player_location, player_direction)
+		TransitionType.GRAMMARITE_CENTER:
+			while scene.get_child_count() > 0:
+				scene.get_child(0).free()
+			var gc = load(next_scene).instantiate()
+			var last_center = Utils.get_last_center()
+			gc.get_node("Door").next_scene_path = "res://Scenes/"+last_center["Scene"]+".tscn"
+			gc.get_node("Door").spawn_location = Vector2(last_center["x"], last_center["y"])
+			scene.add_child(gc)
 			var player = Utils.get_player()
 			player.set_spawn(player_location, player_direction)
 		TransitionType.PARTY_SCREEN:

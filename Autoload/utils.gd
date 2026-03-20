@@ -159,6 +159,17 @@ func get_player_name():
 	return load_json_file("res://Data/Inventory.json")["Name"]
 
 
+func set_last_center(num: int):
+	var stuff = load_json_file("res://Data/OtherStuff.json")
+	stuff["Last Grammarite Center"] = num
+	save_json_file("res://Data/OtherStuff.json", stuff)
+
+func get_last_center():
+	var stuff = load_json_file("res://Data/OtherStuff.json")
+	return stuff["Locations"][stuff["Last Grammarite Center"]]
+
+
+
 func can_evolve(grammarite_name, level):
 	var evos = load_json_file("res://GrammariteData/Evolutions.json")
 	var level_needed = evos[get_poke_num(grammarite_name)]

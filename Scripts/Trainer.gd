@@ -48,7 +48,7 @@ func reset():
 	disabled = true
 	await get_tree().create_timer(0.1).timeout
 	disabled = false
-	
+
 func used_up_dialogue():
 	disabled = true
 	Utils.get_scene_manager().transition_to_dialogue(final_dialogue)

@@ -255,7 +255,6 @@ func end_battle(player_won: bool):
 		else:
 			xp = enemy_grammarite.level
 		
-		# TODO: FIX ALL OF THIS
 		if fmod(party[0]["Level"], 1.0) + xp*0.01 > 1.0:
 			battle_ui.set_info_text("Your Grammarite leveled up!")
 			await get_tree().create_timer(1.5).timeout
@@ -279,6 +278,9 @@ func end_battle(player_won: bool):
 		Utils.set_party(party)
 	else:
 		battle_ui.set_info_text("You lost!")
+		if trainer != "random":
+			var scene = get_node("/root/SceneManager/CurrentScene").get_child(0).name
+			Utils.update_trainer_attacked(trainer, false, scene)
 		await get_tree().create_timer(2.5).timeout
 	
 	battle_ended.emit(player_won)

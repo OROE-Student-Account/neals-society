@@ -1,0 +1,15 @@
+{
+	"Last Grammarite Center": 1,
+	"Locations": [
+		{
+			"Scene": "Town",
+			"x": -112.0,
+			"y": 208.0
+		},
+		{
+			"Scene": "Town",
+			"x": 96.0,
+			"y": 112.0
+		}
+	]
+}
