@@ -193,6 +193,80 @@ func load_quests():
 	return quests
 
 
+var question_list = [
+	"Vocabulary",
+	"Syntax",
+	"Punctuation"
+]
+var alphabet = "abcdefghijklmnopqrstuvwxyz"
+var punctuation = "?-.,\"'!;: "
+func get_question():
+	var type_of_question = question_list.pick_random()
+	var question = load_json_file("res://GrammariteData/Questions.json")[type_of_question].pick_random()
+	var answer = question["Answer"]
+	var returning = { 
+		"Question": question["Question"],
+		"Answer": randi()%4,
+		"Options": [ "", "", "", "" ]
+	}
+	returning["Options"][returning["Answer"]] = answer
+	
+	for i in range(4):
+		if i != returning["Answer"]:
+			var option = ""
+			var letters: Array = alphabet.split()
+			
+			while option in returning["Options"] or option == "":
+				if type_of_question == "Punctuation":
+					var marks: Array = punctuation.split()
+					var mark = marks.pick_random()
+					option = mark
+				else:
+					var type_of_answer = randi()%4 # 4 is num types of answers
+					
+					if type_of_answer == 0: # Random word from the question
+						var words: Array = question["Question"].split(" ")
+						var word = words.pick_random()
+						option = word
+					elif type_of_answer == 1: # Completely Random Word
+						var length = randi()%(len(answer)+3)+2
+						var word = ""
+						for j in range(length):
+							word += letters.pick_random()
+						option = word
+					elif type_of_answer == 2: # Answer with random letter
+						var word = answer
+						word[randi()%len(word)] = letters.pick_random()
+						option = word
+					elif type_of_answer == 3: # Question word with random letter
+						var words: Array = question["Question"].split(" ")
+						var word = words.pick_random()
+						word[randi()%len(word)] = letters.pick_random()
+						option = word
+			
+			if type_of_question != "Punctuation":
+				var temp = ""
+				option = option.to_lower()
+				for j in range(len(option)):
+					if option[j] in letters:
+						if j == 0:
+							temp += option[j].to_upper()
+						else:
+							temp += option[j]
+				option = temp
+			
+			returning["Options"][i] = option
+	
+	return returning
+
+
+#{
+			#"Question": "",
+			#"Answer": "",
+			#"Difficulty": ""
+		#}
+
+
 func save_json_file(file_path, data):
 	var file = FileAccess.open(file_path, FileAccess.WRITE)
 	var json_string = JSON.stringify(data, "\t")  # "\t" adds good formatting with tabs

@@ -1,0 +1,28 @@
+{
+	"Vocabulary": [
+		{
+			"Question": "To make contact with something with force and with a hand or object",
+			"Answer": "Hit",
+			"Difficulty": "Low"
+		},
+		{
+			"Question": "To use the body to move through water",
+			"Answer": "Swim",
+			"Difficulty": "Low"
+		},
+	],
+	"Syntax": [
+		{
+			"Question": "Which word should be changed? \n'His teeth has braces on them.'",
+			"Answer": "Has",
+			"Difficulty": "Low"
+		}
+	],
+	"Punctuation": [
+		{
+			"Question": "Which punctuation fits? \n'Manufacturs_ waiters, and officials work together.'",
+			"Answer": ",",
+			"Difficulty": "Low"
+		}
+	]
+}

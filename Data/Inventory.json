@@ -19,9 +19,9 @@
 	"Name": "xxz",
 	"Party": [
 		{
-			"Health": 229,
+			"Health": 37.0,
 			"Item": "",
-			"Level": 58.57,
+			"Level": 61.13,
 			"Moves": [
 				"Bite",
 				"Play",
@@ -31,15 +31,15 @@
 			"Name": "Orawolfi",
 			"Nickname": "",
 			"PP": [
-				15.0,
+				7.0,
 				20.0,
-				15.0,
+				13.0,
 				5.0
 			],
 			"health": 93.0
 		},
 		{
-			"Health": 12,
+			"Health": 12.0,
 			"Item": "",
 			"Level": 1.0,
 			"Moves": [
@@ -58,7 +58,7 @@
 			]
 		},
 		{
-			"Health": 44,
+			"Health": 44.0,
 			"Item": "",
 			"Level": 13.49,
 			"Moves": [
@@ -77,7 +77,7 @@
 			]
 		},
 		{
-			"Health": 64,
+			"Health": 64.0,
 			"Item": "Pokeball",
 			"Level": 19.36,
 			"Moves": [
@@ -96,7 +96,7 @@
 			]
 		},
 		{
-			"Health": 67,
+			"Health": 67.0,
 			"Item": "",
 			"Level": 20.96,
 			"Moves": [

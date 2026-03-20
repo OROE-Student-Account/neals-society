@@ -8,7 +8,10 @@ var pause = false
 
 @onready var item_screen = preload("res://Scenes/ItemScreen.tscn")
 
-enum InputState { ACTION_BUTTONS, MOVE_LIST, WAITING }
+@onready var question_screen = preload("res://Scenes/QuestionScreen.tscn")
+var questions: Node2D = null
+
+enum InputState { ACTION_BUTTONS, MOVE_LIST, WAITING, QUESTIONING }
 var input_state = InputState.ACTION_BUTTONS
 
 # for the action buttons
@@ -62,6 +65,37 @@ func show_correct_menu():
 func update_arrow_pos():
 	$MoveList/Arrow.position.y = SELECT_ARROW_Y + (selected_button % 4) * DISTANCE_BETWEEN_MOVES
 
+func update_selected_option():
+	if selected_button < 2:
+		questions.get_node("TextureRect").position.y = 105
+	else:
+		questions.get_node("TextureRect").position.y = 137
+	if selected_button%2 == 0:
+		questions.get_node("TextureRect").position.x = 70.5
+	else:
+		questions.get_node("TextureRect").position.x = 158.5
+
+
+func ask_question():
+	questions = question_screen.instantiate()
+	var question = Utils.get_question()
+	questions.get_node("Question").text = question["Question"]
+	for i in range(4):
+		questions.get_node("Options/NinePatchRect"+str(i+1)+"/Label").text = question["Options"][i]
+	
+	Utils.get_scene_manager().add_child(questions)
+	
+	input_state = InputState.QUESTIONING
+	selected_button = 0
+	update_selected_option()
+	
+	while input_state == InputState.QUESTIONING:
+		await get_tree().process_frame
+	
+	questions.queue_free()
+	questions = null
+	
+	return selected_button == question["Answer"]
 
 
 func _ready():
@@ -144,16 +178,39 @@ func _input(event):
 				selected_button = (selected_button + 3) % 4
 				update_arrow_pos()
 			elif event.is_action_pressed("z"):
-				var party = Utils.get_party()
-				if party[0]["PP"][selected_button] > 0: 
-					party[0]["PP"][selected_button] -= 1
-					Utils.set_party(party)
-					input_state = InputState.WAITING
-					# emit signal
-					move_selected.emit(selected_button) 
-					show_correct_menu()
+				var move = selected_button
+				var correct = await ask_question()
+				
+				if correct:
+					var party = Utils.get_party()
+					if party[0]["PP"][move] > 0: 
+						party[0]["PP"][move] -= 1
+						Utils.set_party(party)
+						# emit signal
+						move_selected.emit(move) 
+					else:
+						# emit struggle
+						move_selected.emit(-1) 
 				else:
-					input_state = InputState.WAITING
-					# emit signal
-					move_selected.emit(-1) 
-					show_correct_menu()
+					move_selected.emit(-2) 
+				
+				show_correct_menu()
+		InputState.QUESTIONING:
+			if event.is_action_pressed("ui_down"):
+				if selected_button < 2:
+					selected_button += 2
+					update_selected_option()
+			elif event.is_action_pressed("ui_up"):
+				if selected_button > 1:
+					selected_button -= 2
+					update_selected_option()
+			elif event.is_action_pressed("ui_right"):
+				if selected_button%2 == 0:
+					selected_button += 1
+					update_selected_option()
+			elif event.is_action_pressed("ui_left"):
+				if selected_button%2 != 0:
+					selected_button -= 1
+					update_selected_option()
+			elif event.is_action_pressed("z"):
+				input_state = InputState.WAITING

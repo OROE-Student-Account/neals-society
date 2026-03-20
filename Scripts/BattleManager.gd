@@ -15,13 +15,13 @@ enum BattleState { PLAYER_TURN, ENEMY_TURN, ANIMATING, BATTLE_END }
 var current_state = BattleState.PLAYER_TURN
 
 func _ready():
+	
 	# Connect to battle UI
 	evolve_screen.visible = false
 	if battle_ui:
 		battle_ui.move_selected.connect(_on_player_move_selected)
 	
 	if not await on_player_grammarite_die(false):
-		print("ALL DEAD GRAMMARITES")
 		battle_ui.input_state = battle_ui.InputState.WAITING
 		battle_ui.show_correct_menu()
 		battle_ui.set_info_text("Revive your party at a Grammarite Center before fighting again.")
@@ -39,11 +39,14 @@ func _on_player_move_selected(move_index: int):
 	if current_state != BattleState.PLAYER_TURN:
 		return  # Ignore if not player's turn
 	
-	if move_index != -1:
+	if move_index == -1:
+		await execute_attack(player_grammarite, enemy_grammarite, { "Name": "Struggle" })
+	elif move_index == -2:
+		battle_ui.set_info_text("You got the question wrong.")
+		await get_tree().create_timer(1.5).timeout
+	else:
 		var player_move = player_grammarite.grammarite_info["Moves"][move_index]
 		await execute_attack(player_grammarite, enemy_grammarite, player_move)
-	else:
-		await execute_attack(player_grammarite, enemy_grammarite, { "Name": "Struggle" })
 	
 	if player_grammarite.health <= 0:
 		if not await on_player_grammarite_die(true):

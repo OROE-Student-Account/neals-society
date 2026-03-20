@@ -7,7 +7,7 @@
 [ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="4_qxnh6"]
 [ext_resource type="Script" uid="uid://cshmcr6ld2cga" path="res://Scripts/BattleGrammarite.gd" id="6_6yjxy"]
 [ext_resource type="Texture2D" uid="uid://hpyxtuycfcbw" path="res://Assets/UI/Pokemon Party/exit_background_button.png" id="7_xmk5i"]
-[ext_resource type="Texture2D" uid="uid://bofmcuxvqsoyg" path="res://Assets/UI/ui_arrow_left_right.png" id="9_qxnh6"]
+[ext_resource type="Texture2D" uid="uid://b3f2eqbc4ki67" path="res://Assets/UI/ui_arrow_right.png" id="8_262jj"]
 [ext_resource type="Texture2D" uid="uid://bxjfugenktmee" path="res://Assets/Items/Story Book.png" id="10_qxnh6"]
 [ext_resource type="Texture2D" uid="uid://ckbbwuf8tfh1" path="res://Assets/UI/Dialogue.png" id="11_l0uqe"]
 [ext_resource type="Texture2D" uid="uid://dkx1hhb1gnlwh" path="res://Assets/Pokemon/Pokemon28.png" id="12_xmk5i"]
@@ -540,7 +540,6 @@ texture = ExtResource("7_xmk5i")
 hframes = 2
 
 [node name="MoveList" type="Node2D" parent="BattleUI" unique_id=577308921]
-visible = false
 position = Vector2(100, 104)
 
 [node name="Moves" type="VBoxContainer" parent="BattleUI/MoveList" unique_id=675319034]
@@ -582,9 +581,9 @@ text = "Dig"
 offset_left = 8.0
 offset_top = 7.5
 offset_right = 14.0
-offset_bottom = 17.5
+offset_bottom = 18.5
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("9_qxnh6")
+texture = ExtResource("8_262jj")
 
 [node name="InfoText" type="Label" parent="BattleUI" unique_id=111149462]
 visible = false
