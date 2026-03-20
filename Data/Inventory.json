@@ -12,33 +12,16 @@
 		"Pokeball",
 		"Pokeball",
 		"Pokeball",
+		"Pokeball",
+		"Pokeball",
 		"Pokeball"
 	],
 	"Name": "xxz",
 	"Party": [
 		{
-			"Health": 58,
-			"Item": "Pokeball",
-			"Level": 17.82,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Howl",
-				"Woodchip"
-			],
-			"Name": "Sculpupture",
-			"Nickname": "",
-			"PP": [
-				15.0,
-				20.0,
-				10.0,
-				1.0
-			]
-		},
-		{
-			"Health": 225,
+			"Health": 229,
 			"Item": "",
-			"Level": 57.4,
+			"Level": 58.57,
 			"Moves": [
 				"Bite",
 				"Play",
@@ -56,22 +39,22 @@
 			"health": 93.0
 		},
 		{
-			"Health": 61,
+			"Health": 12,
 			"Item": "",
-			"Level": 18.01,
+			"Level": 1.0,
 			"Moves": [
 				"Bite",
 				"Play",
 				"Sit",
-				"Sculpt"
+				"Woodchip"
 			],
-			"Name": "Sculpupture",
+			"Name": "Dog of Wood",
 			"Nickname": "",
 			"PP": [
 				15.0,
 				20.0,
 				15.0,
-				5.0
+				1.0
 			]
 		},
 		{
@@ -94,22 +77,41 @@
 			]
 		},
 		{
-			"Health": 12,
+			"Health": 64,
+			"Item": "Pokeball",
+			"Level": 19.36,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Howl",
+				"Woodchip"
+			],
+			"Name": "Sculpupture",
+			"Nickname": "",
+			"PP": [
+				15.0,
+				20.0,
+				10.0,
+				1.0
+			]
+		},
+		{
+			"Health": 67,
 			"Item": "",
-			"Level": 1.0,
+			"Level": 20.96,
 			"Moves": [
 				"Bite",
 				"Play",
 				"Sit",
-				"Woodchip"
+				"Sculpt"
 			],
-			"Name": "Dog of Wood",
+			"Name": "Sculpupture",
 			"Nickname": "",
 			"PP": [
 				15.0,
 				20.0,
 				15.0,
-				1.0
+				5.0
 			]
 		},
 		{

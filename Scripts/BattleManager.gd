@@ -276,13 +276,17 @@ func end_battle(player_won: bool):
 		party[0]["Level"] += 0.01 * xp
 		if party[0]["Level"] > 100: party[0]["Level"] = 100
 		Utils.set_party(party)
+		
+		
+		battle_ended.emit(player_won)
+		Utils.get_scene_manager().transition_exit_battle()
 	else:
 		battle_ui.set_info_text("You lost!")
 		if trainer != "random":
 			var scene = get_node("/root/SceneManager/CurrentScene").get_child(0).name
 			Utils.update_trainer_attacked(trainer, false, scene)
 		await get_tree().create_timer(2.5).timeout
-	
-	battle_ended.emit(player_won)
-	
-	Utils.get_scene_manager().transition_exit_battle()
+		
+		battle_ended.emit(player_won)
+		
+		Utils.get_scene_manager().transition_to_grammarite_center()

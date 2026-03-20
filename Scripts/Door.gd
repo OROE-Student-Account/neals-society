@@ -33,7 +33,7 @@ func door_closed():
 		if next_scene_path == "res://Scenes/GrammariteCenterInside.tscn":
 			var last_center = str(get_parent().name)[-1]
 			Utils.set_last_center(int(last_center))
-			Utils.get_scene_manager().transition_to_grammarite_cent(spawn_location)
+			Utils.get_scene_manager().transition_to_grammarite_center()
 		else:
 			Utils.get_scene_manager().transition_to_scene(next_scene_path, spawn_location, spawn_direction)
 

@@ -289,11 +289,9 @@ target_position = Vector2(0, 16)
 script = ExtResource("3_pe55j")
 text = "test"
 
-[node name="FinalDialogue" type="Node" parent="." unique_id=922101857 node_paths=PackedStringArray("func_node")]
+[node name="FinalDialogue" type="Node" parent="." unique_id=922101857]
 script = ExtResource("3_pe55j")
 is_end_node = true
-function = "reset"
-func_node = NodePath("..")
 
 [node name="BattleStart" type="Node" parent="." unique_id=325007082]
 script = ExtResource("4_avwyw")

@@ -3079,14 +3079,12 @@ text = "Then what is my name?"
 
 [node name="Node" type="Node" parent="Collision Stuff/Rival/DialogueRoot/Talk" unique_id=2147137166 node_paths=PackedStringArray("func_node")]
 script = ExtResource("19_5qjph")
-is_end_node = true
 option_name = "George"
 function = "begin_from_self"
 func_node = NodePath("../../../Second Dialogue Root")
 
 [node name="Node2" type="Node" parent="Collision Stuff/Rival/DialogueRoot/Talk" unique_id=1290035315 node_paths=PackedStringArray("func_node")]
 script = ExtResource("19_5qjph")
-is_end_node = true
 option_name = "Nicholas"
 function = "begin_from_self"
 func_node = NodePath("../../../Second Dialogue Root")
@@ -3112,12 +3110,10 @@ is_end_node = true
 option_name = "Neal Sehgal."
 text = "What a handsome person you are."
 
-[node name="FinalDialogue" type="Node" parent="Collision Stuff/Rival" unique_id=1380263649 node_paths=PackedStringArray("func_node")]
+[node name="FinalDialogue" type="Node" parent="Collision Stuff/Rival" unique_id=1380263649]
 script = ExtResource("19_5qjph")
 is_end_node = true
 text = "I can't believe you forgot my name."
-function = "reset"
-func_node = NodePath("..")
 
 [node name="Fighter" type="AnimatedSprite2D" parent="Collision Stuff" unique_id=1722283528]
 position = Vector2(48, 32)
@@ -3164,7 +3160,6 @@ func_node = NodePath("../../BattleStart")
 
 [node name="Node2" type="Node" parent="Collision Stuff/Fighter/DialogueRoot" unique_id=1149167236 node_paths=PackedStringArray("func_node")]
 script = ExtResource("19_5qjph")
-is_end_node = true
 option_name = "no"
 function = "begin_from_self"
 func_node = NodePath("../../AreYouSure")
@@ -3175,31 +3170,27 @@ text = "Are you sure?"
 
 [node name="Node3" type="Node" parent="Collision Stuff/Fighter/AreYouSure" unique_id=1896772610 node_paths=PackedStringArray("func_node")]
 script = ExtResource("19_5qjph")
-is_end_node = true
 option_name = "no"
 function = "begin_from_self"
 func_node = NodePath("../../DialogueRoot")
 
 [node name="Node4" type="Node" parent="Collision Stuff/Fighter/AreYouSure" unique_id=963153471 node_paths=PackedStringArray("func_node")]
 script = ExtResource("19_5qjph")
-is_end_node = true
 option_name = "yes"
 function = "begin_from_self"
 func_node = NodePath("..")
 
-[node name="FinalDialogue" type="Node" parent="Collision Stuff/Fighter" unique_id=775037070 node_paths=PackedStringArray("func_node")]
+[node name="FinalDialogue" type="Node" parent="Collision Stuff/Fighter" unique_id=775037070]
 script = ExtResource("19_5qjph")
 is_end_node = true
 text = "I cannot believe I lost to YOU!"
-function = "reset"
-func_node = NodePath("..")
 
 [node name="BattleStart" type="Node" parent="Collision Stuff/Fighter" unique_id=1934092355]
 script = ExtResource("22_ix0ol")
 trainer_name = "Fighter"
 
-[connection signal="body_entered" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_Door_body_entered"]
 [connection signal="body_entered" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_body_entered"]
+[connection signal="body_entered" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_Door_body_entered"]
 [connection signal="body_exited" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_body_exited"]
 [connection signal="body_exited" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_Door_body_exited"]
 [connection signal="body_entered" from="Collision Stuff/Rival/LineOfSight" to="Collision Stuff/Rival" method="_on_area_2d_body_entered"]

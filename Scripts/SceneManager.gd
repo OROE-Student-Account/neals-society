@@ -81,6 +81,7 @@ func transition_to_battle(trainer):
 	player.set_physics_process(false)
 	player_location = player.position
 	player_direction = player.input_direction
+	$Menu.screen_loaded = 7
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 func transition_exit_battle():
 	transition_type = TransitionType.BATTLE_EXIT
@@ -94,9 +95,9 @@ func transition_to_scene(new_scene: String, spawn_location, spawn_direction):
 	transition_type = TransitionType.NEW_SCENE
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 
-func transition_to_grammarite_cent(spawn_location):
+func transition_to_grammarite_center():
 	next_scene = "res://Scenes/GrammariteCenterInside.tscn"
-	player_location = spawn_location
+	player_location = Vector2(64,128)
 	player_direction = Vector2(0,-1)
 	transition_type = TransitionType.GRAMMARITE_CENTER
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
@@ -131,7 +132,6 @@ func finished_fading():
 			$Menu.unload_item_screen()
 		TransitionType.BATTLE:
 			load_battle()
-			$Menu.screen_loaded = 7
 		TransitionType.BATTLE_EXIT:
 			scene.get_children().back().free()
 			var player = Utils.get_player()

@@ -12,9 +12,11 @@ var disabled := false
 
 
 func _ready():
-	var scene = get_node("/root/SceneManager/CurrentScene").get_child(0).name
+	var scene = Utils.get_scene_manager().get_node("CurrentScene").get_child(0).name
 	if Utils.check_trainer_attacked(name, scene):
 		used_up = true
+	
+	Utils.get_scene_manager().get_node("DialogueBox").connect("dialogue_ended", Callable(self, "reset"))
 
 
 func approach_until_hit():
@@ -63,6 +65,8 @@ func _on_hit_box_body_exited(_body: Node2D) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if disabled: return
+	if Utils.get_scene_manager().get_node("Menu").screen_loaded != 0: return
+	
 	var player = Utils.get_player()
 	if player_in_range and event.is_action_pressed("z") and player.can_interact_with_object:
 		
@@ -85,12 +89,13 @@ func _unhandled_input(event: InputEvent) -> void:
 			anim_player.play("TurnDown")
 		if player_facing == 3:
 			anim_player.play("TurnAround")
-			
+		
 		if used_up: 
 			used_up_dialogue()
 			return
 		
 		used_up = true
+		disabled = true
 		var scene = get_node("/root/SceneManager/CurrentScene").get_child(0).name
 		Utils.update_trainer_attacked(name, true, scene)
 		

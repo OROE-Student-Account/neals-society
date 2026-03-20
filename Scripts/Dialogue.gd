@@ -14,6 +14,7 @@ var current_node: Node = null
 var dialogue_root: Node = null
 var target_node: Node = null  # Node that will receive function calls
 
+signal dialogue_ended()
 
 enum DialogueState { SHOWING_TEXT, SHOWING_OPTIONS }
 var dialogue_state = DialogueState.SHOWING_TEXT
@@ -59,6 +60,8 @@ func display_current_node():
 	if current_node.text == "":
 		var function = current_node.function
 		var tar_node = target_node 
+		if current_node.is_end_node:
+			dialogue_ended.emit()
 		end_dialogue()
 		
 		# Execute any function associated with this node
@@ -98,6 +101,8 @@ func show_options():
 	
 	# Check if this is an end node
 	if current_node.is_end_node or children.size() == 0:
+		if current_node.is_end_node:
+			dialogue_ended.emit()
 		end_dialogue()
 		return
 	
@@ -127,6 +132,7 @@ func _unhandled_input(event):
 					var function = current_node.function
 					var tar_node = target_node 
 					end_dialogue()
+					dialogue_ended.emit()
 					
 					# Execute any function associated with this node
 					if function != "" and tar_node != null:
