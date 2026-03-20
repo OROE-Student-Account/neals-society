@@ -1,7 +1,7 @@
 {
 	"Items": {
 		"Pokeball": {
-			"Collected": false
+			"Collected": true
 		}
 	},
 	"Trainers": {
