@@ -30,12 +30,12 @@ centered = false
 
 [node name="PickupDialogue" type="Node" parent="." unique_id=378581256]
 script = ExtResource("3_kg5e7")
-text = "Would you like to take this pokeball?"
+text = "Would you like to open this chest?"
 
 [node name="Node" type="Node" parent="PickupDialogue" unique_id=1734410170 node_paths=PackedStringArray("func_node")]
 script = ExtResource("3_kg5e7")
 is_end_node = true
-option_name = "Pickup"
+option_name = "Yes"
 function = "pickup"
 func_node = NodePath("../..")
 
