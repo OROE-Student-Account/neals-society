@@ -2,6 +2,7 @@ extends Area2D
 
 var picked_up := false
 var used_up := false
+var opened := false
 
 @onready var dialogue_root = $PickupDialogue
 
@@ -11,9 +12,10 @@ var used_up := false
 func _ready() -> void:
 	var scene = get_node("/root/SceneManager/CurrentScene").get_child(0).name
 	if Utils.check_item_picked_up(name, scene):
-		self.queue_free()
-	else:
-		visible = true
+		opened = true
+		$Sprite2D.frame = 1
+	
+	visible = true
 
 
 func pickup():
@@ -23,7 +25,9 @@ func pickup():
 		Utils.add_to_inventory(item_name)
 	var scene = get_node("/root/SceneManager/CurrentScene").get_child(0).name
 	Utils.update_item_picked_up(name, true, scene)
-	self.queue_free()
+	opened = true
+	$Sprite2D.frame = 1
+	Utils.get_scene_manager().transition_to_dialogue($FinalDialogue)
 
 func reset():
 	await get_tree().create_timer(0.1).timeout
@@ -31,6 +35,7 @@ func reset():
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if opened: return
 	var player = Utils.get_player()
 	if player.can_interact_with_object and event.is_action_pressed("z") and picked_up and not used_up:
 		

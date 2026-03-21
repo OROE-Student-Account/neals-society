@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bdykq75yoljv"]
 
 [ext_resource type="Script" uid="uid://ce4pot6j3i8r8" path="res://Scripts/Item.gd" id="1_ttk8k"]
-[ext_resource type="Texture2D" uid="uid://cgw6y1kj1l634" path="res://Assets/Items/item_chest1.png" id="2_08o4a"]
+[ext_resource type="Texture2D" uid="uid://h2sslcjv4a0w" path="res://Assets/Items/item_chest.png" id="2_08o4a"]
 [ext_resource type="Script" uid="uid://bp28l32amhxsf" path="res://Scripts/DialogueNode.gd" id="3_kg5e7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttk8k"]
@@ -27,6 +27,7 @@ shape = SubResource("RectangleShape2D_08o4a")
 texture_filter = 1
 texture = ExtResource("2_08o4a")
 centered = false
+hframes = 2
 
 [node name="PickupDialogue" type="Node" parent="." unique_id=378581256]
 script = ExtResource("3_kg5e7")
@@ -42,9 +43,16 @@ func_node = NodePath("../..")
 [node name="Node2" type="Node" parent="PickupDialogue" unique_id=904981415 node_paths=PackedStringArray("func_node")]
 script = ExtResource("3_kg5e7")
 is_end_node = true
-option_name = "Leave"
+option_name = "No"
 function = "reset"
 func_node = NodePath("../..")
+
+[node name="FinalDialogue" type="Node" parent="." unique_id=2100610331 node_paths=PackedStringArray("func_node")]
+script = ExtResource("3_kg5e7")
+is_end_node = true
+text = "You got a <parent>!"
+function = "reset"
+func_node = NodePath("..")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
