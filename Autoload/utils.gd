@@ -24,7 +24,6 @@ func reset_scenes():
 	save_json_file("res://Data/Scenes.json", scenes)
 
 
-
 func get_player():
 	return get_node("/root/SceneManager/CurrentScene").get_child(0).find_child("Player")
 func get_scene_manager():

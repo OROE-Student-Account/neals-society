@@ -4,16 +4,36 @@
 [ext_resource type="PackedScene" uid="uid://i70qso44vgve" path="res://Scenes/Player.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://fsubo0lgcrfo" path="res://Scenes/Door.tscn" id="3"]
 [ext_resource type="Texture2D" uid="uid://botopew3mmoy0" path="res://Assets/Buildings/pallet town/mat.png" id="4"]
+[ext_resource type="Script" uid="uid://bp28l32amhxsf" path="res://Scripts/DialogueNode.gd" id="5_1sjgi"]
 [ext_resource type="PackedScene" uid="uid://btmlakx3gcgpj" path="res://Scenes/GrammaritePickup.tscn" id="5_ddugm"]
+[ext_resource type="Script" uid="uid://dicqb4ckvmfcq" path="res://Scripts/Harvester.gd" id="6_s4acm"]
+[ext_resource type="Script" uid="uid://dwbtvwsejegvg" path="res://Scripts/Crafter.gd" id="7_1sjgi"]
+[ext_resource type="Texture2D" uid="uid://dw17mm63araxi" path="res://Assets/UI/menu_box_1.png" id="8_toud0"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(16, 208)
 
 [sub_resource type="RectangleShape2D" id="2"]
-size = Vector2(208, 16)
+size = Vector2(160, 16)
 
 [sub_resource type="RectangleShape2D" id="3"]
 size = Vector2(208, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lb0h0"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kct82"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7u828"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1sjgi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7juk"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_toud0"]
 
 [node name="OaksLab" type="Node2D" unique_id=59903206]
 
@@ -49,12 +69,96 @@ position = Vector2(216, 104)
 shape = SubResource("1")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1549861055]
-position = Vector2(104, 24)
+position = Vector2(176, 24)
 shape = SubResource("2")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=145061883]
 position = Vector2(104, 216)
 shape = SubResource("3")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1132885738]
+position = Vector2(16, 24)
+shape = SubResource("RectangleShape2D_lb0h0")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=645199288]
+position = Vector2(64, 24)
+shape = SubResource("RectangleShape2D_kct82")
+
+[node name="GrammaritePickup" parent="." unique_id=2047661078 instance=ExtResource("5_ddugm")]
+position = Vector2(144, 64)
+grammarite_name = "Dog of Wood"
+
+[node name="Harvester" type="Area2D" parent="." unique_id=1628471406]
+position = Vector2(32, 16)
+collision_layer = 16
+script = ExtResource("6_s4acm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Harvester" unique_id=599385734]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_7u828")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Harvester" unique_id=1865182100]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_1sjgi")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="DialogueRoot" type="Node" parent="Harvester" unique_id=710565042]
+script = ExtResource("5_1sjgi")
+text = "Do you want to open The Harvester?"
+
+[node name="Node" type="Node" parent="Harvester/DialogueRoot" unique_id=618711342 node_paths=PackedStringArray("func_node")]
+script = ExtResource("5_1sjgi")
+is_end_node = true
+option_name = "yes"
+function = "open_harvester"
+func_node = NodePath("../..")
+
+[node name="Node2" type="Node" parent="Harvester/DialogueRoot" unique_id=1695395865 node_paths=PackedStringArray("func_node")]
+script = ExtResource("5_1sjgi")
+is_end_node = true
+option_name = "no"
+function = "reset"
+func_node = NodePath("../..")
+
+[node name="Crafter" type="Area2D" parent="." unique_id=1834264571]
+position = Vector2(80, 16)
+collision_layer = 16
+script = ExtResource("7_1sjgi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crafter" unique_id=535194531]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_v7juk")
+debug_color = Color(0.31728366, 0.62451714, 0, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Crafter" unique_id=1204391924]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_toud0")
+debug_color = Color(0.3996365, 0.6092863, 3.85046e-07, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="Crafter" unique_id=1026297269]
+modulate = Color(0.9372549, 0.9490196, 0.79607844, 0.9372549)
+position = Vector2(8, 8)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("8_toud0")
+
+[node name="DialogueRoot" type="Node" parent="Crafter" unique_id=873354380]
+script = ExtResource("5_1sjgi")
+text = "Do you want to open the Crafter?"
+
+[node name="Node" type="Node" parent="Crafter/DialogueRoot" unique_id=324542063 node_paths=PackedStringArray("func_node")]
+script = ExtResource("5_1sjgi")
+is_end_node = true
+option_name = "yes"
+function = "open_crafter"
+func_node = NodePath("../..")
+
+[node name="Node2" type="Node" parent="Crafter/DialogueRoot" unique_id=1160331609 node_paths=PackedStringArray("func_node")]
+script = ExtResource("5_1sjgi")
+is_end_node = true
+option_name = "no"
+function = "reset"
+func_node = NodePath("../..")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1564540838]
 
@@ -69,6 +173,7 @@ is_invisible = true
 spawn_location = Vector2(224, 208)
 spawn_direction = Vector2(0, 1)
 
-[node name="GrammaritePickup" parent="." unique_id=2047661078 instance=ExtResource("5_ddugm")]
-position = Vector2(128, 64)
-grammarite_name = "Dog of Wood"
+[connection signal="body_entered" from="Harvester" to="Harvester" method="_on_body_entered"]
+[connection signal="body_exited" from="Harvester" to="Harvester" method="_on_body_exited"]
+[connection signal="body_entered" from="Crafter" to="Crafter" method="_on_body_entered"]
+[connection signal="body_exited" from="Crafter" to="Crafter" method="_on_body_exited"]

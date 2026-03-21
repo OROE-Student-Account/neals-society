@@ -10,7 +10,7 @@ var next_trainer = ""
 signal name_selected(chosen_name: String, requester_node: Node)
 var name_request_node: Node = null
 
-enum TransitionType { NEW_SCENE, PARTY_SCREEN, ITEM_SCREEN, MENU_ONLY, BATTLE, BATTLE_EXIT, STORAGE, EXIT_SCREEN, NAMING, QUESTS, GRAMMARITE_CENTER }
+enum TransitionType { NEW_SCENE, PARTY_SCREEN, ITEM_SCREEN, MENU_ONLY, BATTLE, BATTLE_EXIT, STORAGE, EXIT_SCREEN, NAMING, QUESTS, GRAMMARITE_CENTER, HARVESTER, CRAFTER }
 var transition_type = TransitionType.NEW_SCENE
 
 @onready var scene = $CurrentScene
@@ -45,6 +45,19 @@ func transition_exit_quests():
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 	transition_type = TransitionType.EXIT_SCREEN
 
+func transition_to_harvester():
+	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
+	transition_type = TransitionType.HARVESTER
+func transition_exit_harvester():
+	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
+	transition_type = TransitionType.EXIT_SCREEN
+
+func transition_to_crafter():
+	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
+	transition_type = TransitionType.CRAFTER
+func transition_exit_crafter():
+	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
+	transition_type = TransitionType.EXIT_SCREEN
 
 func transition_to_naming_screen(from_node: Node):
 	transition_type = TransitionType.NAMING
@@ -142,9 +155,15 @@ func finished_fading():
 		TransitionType.EXIT_SCREEN:
 			$Menu.unload_storage_screen()
 			$Menu.unload_quests()
+			$Menu.unload_harvester()
+			$Menu.unload_crafter()
 			var player = Utils.get_player()
 			player.set_physics_process(true)
 		TransitionType.NAMING:
 			name_selected.emit(await $NamingScreen.load_naming_screen(name_request_node.name_prompt), name_request_node)
 		TransitionType.QUESTS:
 			$Menu.load_quests()
+		TransitionType.HARVESTER:
+			$Menu.load_harvester()
+		TransitionType.CRAFTER:
+			$Menu.load_crafter()

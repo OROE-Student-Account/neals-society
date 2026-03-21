@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ca5ewevbq5qls"]
+
+[node name="CraftScreen" type="Node2D" unique_id=683332491]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=713304068]
+offset_right = 240.0
+offset_bottom = 160.0
+color = Color(0, 1, 1, 1)

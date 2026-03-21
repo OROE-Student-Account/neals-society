@@ -13,21 +13,13 @@ var selected_item_type: int = 0  # Which type filter is selected
 
 var in_battle = false
 
-
-@onready var item_type_buttons: Array[Sprite2D] = [
-	$ItemTypes/Book,
-	$ItemTypes/Held,
-	$ItemTypes/Grammarite,
-	$ItemTypes/Consumable,
-	$ItemTypes/Passive
-]
-
 @onready var item_type_names: Array[String] = [
 	"Book",
 	"Held",
 	"Grammarite",
 	"Consumable",
-	"Passive"
+	"Passive",
+	"Shard"
 ]
 
 func _ready() -> void:
@@ -38,13 +30,13 @@ func _ready() -> void:
 	set_active_item_type()
 	filter_items_by_type()
 	
+	$BattleBlockers.visible = false
 	if in_battle:
+		$BattleBlockers.visible = true
 		$ItemTypes/Held.visible = false
 		$ItemTypes/Consumable.visible = false
 		$ItemTypes/Passive.visible = false
-		item_type_buttons.remove_at(4)
-		item_type_buttons.remove_at(3)
-		item_type_buttons.remove_at(1)
+		item_type_names.remove_at(5)
 		item_type_names.remove_at(4)
 		item_type_names.remove_at(3)
 		item_type_names.remove_at(1)
@@ -55,13 +47,31 @@ func stop():
 	await get_tree().create_timer(0.1).timeout
 	pause = false
 
+func load_inventory():
+	# Load items
+	var inv = Utils.get_items()
+	
+	items.clear()
+	filtered_items.clear()
+	$ItemList.clear()
+	
+	if len(inv) > 0:
+		items.append({"Name": inv[0], "Count": 0})
+	
+	for i in inv:
+		var found = false
+		for j in items:
+			if j["Name"] == i:
+				j["Count"] += 1
+				found = true
+				break
+		if not found:
+			items.append({"Name": i, "Count": 1})
 
 func set_active_item_type():
-	# Unset all item type buttons
-	for i in range(len(item_type_buttons)):
-		item_type_buttons[i].frame = 1  # 1 = unselected
-	# Set selected
-	item_type_buttons[selected_item_type].frame = 0  # 0 = selected
+	$Type.position.y = 15*selected_item_type
+	if selected_item_type > 2: 
+		$Type.position.y += 1
 
 func filter_items_by_type():
 	# Filter items array by the selected type
@@ -76,7 +86,8 @@ func filter_items_by_type():
 	# Rebuild the ItemList
 	$ItemList.clear()
 	for i in filtered_items:
-		$ItemList.add_item(i["Name"] + " " + str(i["Count"]) + "x")
+		var file_path = "res://Assets/Items/" + i["Name"] + ".png"
+		$ItemList.add_item("", load(file_path))
 	
 	# Select first item if any exist
 	if $ItemList.item_count > 0:
@@ -93,6 +104,8 @@ func _on_item_list_item_selected(index: int) -> void:
 	
 	var item = Utils.get_item_data(filtered_items[index]["Name"])
 	
+	$Info/Count.text = str(filtered_items[index]["Count"])+"x"
+	$Info/Name.text = filtered_items[index]["Name"]
 	$Info/Description.text = item["Description"]
 	var file_path = "res://Assets/Items/" + filtered_items[index]["Name"] + ".png"
 	$Info/ItemSprite.texture = load(file_path)
@@ -123,27 +136,6 @@ func show_based_on_type(type):
 			pass
 		"Passive":
 			pass
-
-func load_inventory():
-	# Load items
-	var inv = Utils.get_items()
-	
-	items.clear()
-	filtered_items.clear()
-	$ItemList.clear()
-	
-	if len(inv) > 0:
-		items.append({"Name": inv[0], "Count": 0})
-	
-	for i in inv:
-		var found = false
-		for j in items:
-			if j["Name"] == i:
-				j["Count"] += 1
-				found = true
-				break
-		if not found:
-			items.append({"Name": i, "Count": 1})
 
 func use_item_on_grammarite():
 	
@@ -207,17 +199,17 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	match current_state:
 		State.ITEM_TYPE_SELECT:
-			if event.is_action_pressed("ui_right"):
-				selected_item_type = (selected_item_type + 1) % len(item_type_buttons)
+			if event.is_action_pressed("ui_down"):
+				selected_item_type = (selected_item_type + 1) % len(item_type_names)
 				set_active_item_type()
 				filter_items_by_type()
 			
-			elif event.is_action_pressed("ui_left"):
-				selected_item_type = (selected_item_type + len(item_type_buttons) - 1) % len(item_type_buttons)
+			elif event.is_action_pressed("ui_up"):
+				selected_item_type = (selected_item_type + len(item_type_names) - 1) % len(item_type_names)
 				set_active_item_type()
 				filter_items_by_type()
 			
-			elif event.is_action_pressed("ui_down") or event.is_action_pressed("z"):
+			elif event.is_action_pressed("ui_right") or event.is_action_pressed("z"):
 				# Go to item list
 				if $ItemList.item_count > 0:
 					current_state = State.ITEM_LIST
@@ -231,7 +223,7 @@ func _unhandled_input(event: InputEvent) -> void:
 					exit(false)
 		
 		State.ITEM_LIST:
-			if event.is_action_pressed("ui_up"):
+			if event.is_action_pressed("ui_left"):
 				# Check if we're at the top of the list
 				var selected_indices = $ItemList.get_selected_items()
 				if selected_indices.size() > 0 and selected_indices[0] == 0:

@@ -8,8 +8,8 @@ class_name DialogueTreeNode
 @export var func_node : Node = null
 
 
-func replace(search, replace):
-	var pieces = text.split(replace)
+func replace(search, replacer):
+	var pieces = text.split(replacer)
 	text = ""
 	for i in range(len(pieces)):
 		if i != len(pieces)-1:
