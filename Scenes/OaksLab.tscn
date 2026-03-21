@@ -144,7 +144,7 @@ texture = ExtResource("8_toud0")
 
 [node name="DialogueRoot" type="Node" parent="Crafter" unique_id=873354380]
 script = ExtResource("5_1sjgi")
-text = "Do you want to open the Crafter?"
+text = "Do you want to open The Crafter?"
 
 [node name="Node" type="Node" parent="Crafter/DialogueRoot" unique_id=324542063 node_paths=PackedStringArray("func_node")]
 script = ExtResource("5_1sjgi")

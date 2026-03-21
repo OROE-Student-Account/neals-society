@@ -1,8 +1,81 @@
 [gd_scene format=3 uid="uid://ca5ewevbq5qls"]
 
+[ext_resource type="Script" uid="uid://ccq35oguyl7al" path="res://Scripts/CraftScreen.gd" id="1_rt7jm"]
+[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="2_xol18"]
+[ext_resource type="Texture2D" uid="uid://hpyxtuycfcbw" path="res://Assets/UI/Pokemon Party/exit_background_button.png" id="3_l31cc"]
+[ext_resource type="Texture2D" uid="uid://n4wfg4ctjccx" path="res://Assets/UI/border.png" id="4_841wo"]
+
 [node name="CraftScreen" type="Node2D" unique_id=683332491]
+texture_filter = 1
+script = ExtResource("1_rt7jm")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=713304068]
 offset_right = 240.0
 offset_bottom = 160.0
 color = Color(0, 1, 1, 1)
+
+[node name="Control" type="Control" parent="." unique_id=858345715]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect2" type="ColorRect" parent="Control" unique_id=2082867423]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 80.0
+offset_right = 104.0
+offset_bottom = 88.0
+color = Color(0.3137255, 0.2509804, 0.22352941, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Control" unique_id=2079615594]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 80.0
+offset_right = 184.0
+offset_bottom = 88.0
+color = Color(0.3137255, 0.2509804, 0.22352941, 1)
+
+[node name="Label" type="Label" parent="Control" unique_id=1319438265]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 48.0
+offset_right = 120.0
+offset_bottom = 64.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_xol18")
+theme_override_font_sizes/font_size = 12
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="Node2D" parent="." unique_id=182573070]
+
+[node name="Switch1" type="Sprite2D" parent="Buttons" unique_id=1515775696]
+position = Vector2(56, 96)
+texture = ExtResource("3_l31cc")
+centered = false
+hframes = 2
+
+[node name="Switch2" type="Sprite2D" parent="Buttons" unique_id=589747145]
+position = Vector2(136, 96)
+texture = ExtResource("3_l31cc")
+centered = false
+hframes = 2
+
+[node name="Exit" type="Sprite2D" parent="Buttons" unique_id=2003629744]
+position = Vector2(176, 128)
+texture = ExtResource("3_l31cc")
+centered = false
+hframes = 2
+
+[node name="ShardSelect" type="Node2D" parent="." unique_id=948543164]
+
+[node name="ColorRect" type="ColorRect" parent="ShardSelect" unique_id=37430434]
+offset_right = 240.0
+offset_bottom = 160.0
+
+[node name="Border" type="Sprite2D" parent="ShardSelect" unique_id=505643533]
+position = Vector2(80, 72)
+texture = ExtResource("4_841wo")

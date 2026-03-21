@@ -10,7 +10,7 @@
 		"Knowledge": "Strong",
 		"Ink": "Strong",
 		"Animal": "None",
-		"Machine/Device/Engineering": "None"
+		"Machine": "None"
 	},
 	"Literature": {
 		"Grammar": "Weak",
@@ -23,7 +23,7 @@
 		"Knowledge": "None",
 		"Ink": "Weak",
 		"Animal": "None",
-		"Machine/Device/Engineering": "None"
+		"Machine": "None"
 	},
 	"Homework": {
 		"Grammar": "Weak",
@@ -36,7 +36,7 @@
 		"Knowledge": "Strong",
 		"Ink": "Strong",
 		"Animal": "Weak",
-		"Machine/Device/Engineering": "None"
+		"Machine": "None"
 	},
 	"Slang": {
 		"Grammar": "Weak",
@@ -49,7 +49,7 @@
 		"Knowledge": "Strong",
 		"Ink": "None",
 		"Animal": "Strong",
-		"Machine/Device/Engineering": "Strong"
+		"Machine": "Strong"
 	},
 	"Paper": {
 		"Grammar": "Strong",
@@ -62,7 +62,7 @@
 		"Knowledge": "None",
 		"Ink": "Weak",
 		"Animal": "None",
-		"Machine/Device/Engineering": "Strong"
+		"Machine": "Strong"
 	},
 	"Nature": {
 		"Grammar": "None",
@@ -75,7 +75,7 @@
 		"Knowledge": "None",
 		"Ink": "None",
 		"Animal": "Weak",
-		"Machine/Device/Engineering": "None"
+		"Machine": "None"
 	},
 	"Supply": {
 		"Grammar": "None",
@@ -88,7 +88,7 @@
 		"Knowledge": "None",
 		"Ink": "Weak",
 		"Animal": "None",
-		"Machine/Device/Engineering": "Weak"
+		"Machine": "Weak"
 	},
 	"Knowledge": {
 		"Grammar": "Strong",
@@ -101,7 +101,7 @@
 		"Knowledge": "None",
 		"Ink": "None",
 		"Animal": "None",
-		"Machine/Device/Engineering": "Strong"
+		"Machine": "Strong"
 	},
 	"Ink": {
 		"Grammar": "Strong",
@@ -114,7 +114,7 @@
 		"Knowledge": "Weak",
 		"Ink": "None",
 		"Animal": "Strong",
-		"Machine/Device/Engineering": "Weak"
+		"Machine": "Weak"
 	},
 	"Animal": {
 		"Grammar": "None",
@@ -127,9 +127,9 @@
 		"Knowledge": "None",
 		"Ink": "Weak",
 		"Animal": "None",
-		"Machine/Device/Engineering": "Strong"
+		"Machine": "Strong"
 	},
-	"Machine/Device/Engineering": {
+	"Machine": {
 		"Grammar": "None",
 		"Literature": "Weak",
 		"Homework": "None",
@@ -140,6 +140,6 @@
 		"Knowledge": "None",
 		"Ink": "Strong",
 		"Animal": "Strong",
-		"Machine/Device/Engineering": "Weak"
+		"Machine": "Weak"
 	}
 }

@@ -268,6 +268,7 @@ centered = false
 hframes = 2
 
 [node name="Animation" type="Node2D" parent="." unique_id=1686315500]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Animation" unique_id=1424153740]
 offset_right = 240.0

@@ -1,7 +1,6 @@
 extends Area2D
 
 var picked_up = false
-var in_menu = false
 var used_up = false
 
 @onready var dialogue_root = $DialogueRoot
@@ -10,14 +9,13 @@ var used_up = false
 func open_harvester():
 	var player = Utils.get_player()
 	player.set_physics_process(false)
-	in_menu = true
 	
 	Utils.get_scene_manager().transition_to_harvester()
 
 
 func _unhandled_input(event: InputEvent) -> void:
 	var player = Utils.get_player()
-	if player.can_interact_with_object and event.is_action_pressed("z") and picked_up and !in_menu and !used_up:
+	if player.can_interact_with_object and event.is_action_pressed("z") and picked_up and !used_up:
 		
 		var player_facing = player.facing_direction
 		var player_pos = player.position
