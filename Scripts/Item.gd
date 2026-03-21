@@ -27,6 +27,7 @@ func pickup():
 	Utils.update_item_picked_up(name, true, scene)
 	opened = true
 	$Sprite2D.frame = 1
+	Utils.get_scene_manager().transition_to_dialogue($FinalDialogue)
 
 func reset():
 	await get_tree().create_timer(0.1).timeout

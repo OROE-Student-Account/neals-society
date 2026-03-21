@@ -3096,7 +3096,7 @@ option_name = "No."
 
 [node name="Second Dialogue Root" type="Node" parent="Collision Stuff/Rival" unique_id=56998859]
 script = ExtResource("19_5qjph")
-text = "WRONG. I live next door to you, how do you not know my name? Are you <name>? What is your name?"
+text = "WRONG. I live next door to you, how do you not know my name? Are you <player>? What is your name?"
 
 [node name="Node" type="Node" parent="Collision Stuff/Rival/Second Dialogue Root" unique_id=967599914]
 script = ExtResource("19_5qjph")
@@ -3189,8 +3189,8 @@ text = "I cannot believe I lost to YOU!"
 script = ExtResource("22_ix0ol")
 trainer_name = "Fighter"
 
-[connection signal="body_entered" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_body_entered"]
 [connection signal="body_entered" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_Door_body_entered"]
+[connection signal="body_entered" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_body_entered"]
 [connection signal="body_exited" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_body_exited"]
 [connection signal="body_exited" from="Collision Stuff/OaksLab/Door" to="Collision Stuff/OaksLab/Door" method="_on_Door_body_exited"]
 [connection signal="body_entered" from="Collision Stuff/Rival/LineOfSight" to="Collision Stuff/Rival" method="_on_area_2d_body_entered"]
