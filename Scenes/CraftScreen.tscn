@@ -23,25 +23,25 @@ offset_bottom = 40.0
 [node name="ColorRect2" type="ColorRect" parent="Control" unique_id=2082867423]
 layout_mode = 0
 offset_left = 56.0
-offset_top = 80.0
+offset_top = 64.0
 offset_right = 104.0
-offset_bottom = 88.0
+offset_bottom = 72.0
 color = Color(0.3137255, 0.2509804, 0.22352941, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="Control" unique_id=2079615594]
 layout_mode = 0
 offset_left = 136.0
-offset_top = 80.0
+offset_top = 64.0
 offset_right = 184.0
-offset_bottom = 88.0
+offset_bottom = 72.0
 color = Color(0.3137255, 0.2509804, 0.22352941, 1)
 
 [node name="Label" type="Label" parent="Control" unique_id=1319438265]
 layout_mode = 0
 offset_left = 104.0
-offset_top = 48.0
+offset_top = 32.0
 offset_right = 120.0
-offset_bottom = 64.0
+offset_bottom = 48.0
 scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_xol18")
@@ -50,16 +50,28 @@ text = "+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Shard1" type="Sprite2D" parent="Control" unique_id=1478441304]
+position = Vector2(80, 48)
+
+[node name="Shard2" type="Sprite2D" parent="Control" unique_id=322574882]
+position = Vector2(160, 48)
+
 [node name="Buttons" type="Node2D" parent="." unique_id=182573070]
 
 [node name="Switch1" type="Sprite2D" parent="Buttons" unique_id=1515775696]
-position = Vector2(56, 96)
+position = Vector2(56, 80)
 texture = ExtResource("3_l31cc")
 centered = false
 hframes = 2
 
 [node name="Switch2" type="Sprite2D" parent="Buttons" unique_id=589747145]
-position = Vector2(136, 96)
+position = Vector2(136, 80)
+texture = ExtResource("3_l31cc")
+centered = false
+hframes = 2
+
+[node name="Craft" type="Sprite2D" parent="Buttons" unique_id=934171713]
+position = Vector2(96, 120)
 texture = ExtResource("3_l31cc")
 centered = false
 hframes = 2
@@ -71,11 +83,24 @@ centered = false
 hframes = 2
 
 [node name="ShardSelect" type="Node2D" parent="." unique_id=948543164]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="ShardSelect" unique_id=37430434]
 offset_right = 240.0
 offset_bottom = 160.0
 
 [node name="Border" type="Sprite2D" parent="ShardSelect" unique_id=505643533]
-position = Vector2(80, 72)
+position = Vector2(64, 40)
 texture = ExtResource("4_841wo")
+
+[node name="Label" type="Label" parent="ShardSelect" unique_id=924987476]
+offset_left = 100.0
+offset_top = 32.0
+offset_right = 146.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_xol18")
+theme_override_font_sizes/font_size = 12
+text = "Count: 30"
+horizontal_alignment = 1
+vertical_alignment = 1

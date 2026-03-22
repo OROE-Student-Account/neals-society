@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dywqob2aeknmi"
-path="res://.godot/imported/Pokemon1.png-df0ddafb9c334a47164f99b6a1bed08b.ctex"
+uid="uid://c0dop7ekxqv5h"
+path="res://.godot/imported/Knowledge Shard.png-755c809376548d974e02f8db2b4690c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pokemon/Pokemon1.png"
-dest_files=["res://.godot/imported/Pokemon1.png-df0ddafb9c334a47164f99b6a1bed08b.ctex"]
+source_file="res://Assets/Items/Knowledge Shard.png"
+dest_files=["res://.godot/imported/Knowledge Shard.png-755c809376548d974e02f8db2b4690c8.ctex"]
 
 [params]
 

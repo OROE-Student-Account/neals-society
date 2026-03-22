@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dywqob2aeknmi"
-path="res://.godot/imported/Pokemon1.png-df0ddafb9c334a47164f99b6a1bed08b.ctex"
+uid="uid://bsghtav4r43v6"
+path="res://.godot/imported/Homework Shard.png-6fdb733b6c468b846f2ed4371c654c3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pokemon/Pokemon1.png"
-dest_files=["res://.godot/imported/Pokemon1.png-df0ddafb9c334a47164f99b6a1bed08b.ctex"]
+source_file="res://Assets/Items/Homework Shard.png"
+dest_files=["res://.godot/imported/Homework Shard.png-6fdb733b6c468b846f2ed4371c654c3e.ctex"]
 
 [params]
 

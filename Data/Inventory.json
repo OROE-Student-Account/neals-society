@@ -25,8 +25,16 @@
 		"Pokeball",
 		"Story Book",
 		"Story Book",
+		"Knowledge Shard",
+		"Animal Shard",
+		"Animal Shard",
+		"Animal Shard",
+		"Animal Shard",
+		"Animal Shard",
 		"Grammar Shard",
-		"Knowledge Shard"
+		"Nature Shard",
+		"Nature Shard",
+		"Nature Shard"
 	],
 	"Name": "neals",
 	"Party": [
@@ -52,78 +60,38 @@
 		{
 			"Health": 0.0,
 			"Item": "",
-			"Level": 13.49,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Sit",
-				"Woodchip"
-			],
-			"Name": "Dog of Wood",
+			"Level": 1.0,
+			"Moves": [],
+			"Name": "",
 			"Nickname": "",
-			"PP": [
-				15.0,
-				20.0,
-				15.0,
-				0.0
-			]
+			"PP": []
 		},
 		{
-			"Health": 12.0,
+			"Health": 0.0,
 			"Item": "",
 			"Level": 1.0,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Sit",
-				"Woodchip"
-			],
-			"Name": "Dog of Wood",
+			"Moves": [],
+			"Name": "",
 			"Nickname": "",
-			"PP": [
-				15.0,
-				20.0,
-				15.0,
-				1.0
-			]
+			"PP": []
 		},
 		{
-			"Health": 12.0,
+			"Health": 0.0,
 			"Item": "",
 			"Level": 1.0,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Sit",
-				"Woodchip"
-			],
-			"Name": "Dog of Wood",
+			"Moves": [],
+			"Name": "",
 			"Nickname": "",
-			"PP": [
-				15.0,
-				20.0,
-				15.0,
-				1.0
-			]
+			"PP": []
 		},
 		{
-			"Health": 12.0,
+			"Health": 0.0,
 			"Item": "",
 			"Level": 1.0,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Sit",
-				"Woodchip"
-			],
-			"Name": "Dog of Wood",
+			"Moves": [],
+			"Name": "",
 			"Nickname": "",
-			"PP": [
-				15.0,
-				20.0,
-				15.0,
-				1.0
-			]
+			"PP": []
 		},
 		{
 			"Health": 0.0,

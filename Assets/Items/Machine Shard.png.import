@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dywqob2aeknmi"
-path="res://.godot/imported/Pokemon1.png-df0ddafb9c334a47164f99b6a1bed08b.ctex"
+uid="uid://dd5317208tjyh"
+path="res://.godot/imported/Machine Shard.png-cae159f7f8cea4819070509340cf5963.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pokemon/Pokemon1.png"
-dest_files=["res://.godot/imported/Pokemon1.png-df0ddafb9c334a47164f99b6a1bed08b.ctex"]
+source_file="res://Assets/Items/Machine Shard.png"
+dest_files=["res://.godot/imported/Machine Shard.png-cae159f7f8cea4819070509340cf5963.ctex"]
 
 [params]
 
