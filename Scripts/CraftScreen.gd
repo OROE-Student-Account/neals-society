@@ -6,6 +6,8 @@ var page = Page.MAIN
 enum Options { SWITCH1, SWITCH2, CRAFT, CANCEL }
 var selected_option = 0
 
+@onready var empty = preload("res://Assets/UI/Empty.png")
+
 @onready var buttons = $Buttons
 @onready var shard_select = $ShardSelect
 
@@ -43,6 +45,7 @@ var border_positions = [
 
 
 func _ready() -> void:
+	$Animation.visible = false
 	update_buttons()
 	update_screen()
 	load_shards()
@@ -64,8 +67,14 @@ func update_buttons():
 			buttons.get_child(selected_option).frame = 1
 			if shard1 != "":
 				$Control/Shard1.texture = load("res://Assets/Items/"+shard1+" Shard.png")
+				$Animation/Shard1.texture = load("res://Assets/Items/"+shard1+" Shard.png")
+			else:
+				$Control/Shard1.texture = empty
 			if shard2 != "":
 				$Control/Shard2.texture = load("res://Assets/Items/"+shard2+" Shard.png")
+				$Animation/Shard2.texture = load("res://Assets/Items/"+shard2+" Shard.png")
+			else:
+				$Control/Shard2.texture = empty
 		Page.SWITCH:
 			shard_select.get_node("Border").position = border_positions[selected_option]
 			shard_select.get_node("Label").text = "Count: "+str(count_shard(types[selected_option]))
@@ -80,13 +89,20 @@ func select_shard():
 	while page == Page.SWITCH:
 		await get_tree().process_frame
 	
+
 	var shard = selected_option
+	if selected_option == -1:
+		shard = -1
+	elif count_shard(types[selected_option]) < 1:
+		shard = -1
+	elif shard1 == types[selected_option] or shard2 == types[selected_option]:
+		shard = -1
 	
 	selected_option = 0
 	update_screen()
 	update_buttons()
 	
-	return types[shard]
+	return shard
 
 func load_shards():
 	for i in range(len(types)):
@@ -117,7 +133,7 @@ func _input(event):
 				
 			elif event.is_action_pressed("ui_down"):
 				if selected_option < Options.CRAFT:
-					selected_option += 2
+					selected_option = Options.CRAFT
 				update_buttons()
 				
 			elif event.is_action_pressed("ui_right"):
@@ -139,14 +155,35 @@ func _input(event):
 				
 			elif event.is_action_pressed("z"):
 				if selected_option == Options.SWITCH1:
-					shard1 = await select_shard()
+					var index = await select_shard()
+					if index != -1:
+						shard1 = types[index]
 					update_buttons()
 				elif selected_option == Options.SWITCH2:
-					shard2 = await select_shard()
+					var index = await select_shard()
+					if index != -1:
+						shard2 = types[index]
 					selected_option = Options.SWITCH2
 					update_buttons()
 				elif selected_option == Options.CRAFT:
-					pass
+					if shard1 != "" and shard2 != "":
+						var thing = Utils.get_recipe(shard1, shard2)
+						if thing != {}:
+							if thing["Type"] == "Item":
+								$Animation/Grammarite.texture = empty
+								Utils.add_to_inventory(thing["Name"])
+							elif thing["Type"] == "Grammarite":
+								$Animation/Item.texture = empty
+								# Add to storage
+							
+							$Animation/AnimationPlayer.play("Craft")
+							await get_tree().create_timer(5.0).timeout
+							
+							Utils.remove_from_inventory(shard1+" Shard")
+							shard1 = ""
+							Utils.remove_from_inventory(shard2+" Shard")
+							shard2 = ""
+							update_buttons()
 		Page.SWITCH:
 			if event.is_action_pressed("ui_up"):
 				if selected_option > 7:
@@ -170,6 +207,8 @@ func _input(event):
 				update_buttons()
 			
 			elif event.is_action_pressed("z"):
-				if count_shard(types[selected_option]) > 0:
-					if shard1 != types[selected_option] and shard2 != types[selected_option]:
-						page = Page.MAIN
+				page = Page.MAIN
+			
+			elif event.is_action_pressed("x"):
+				page = Page.MAIN
+				selected_option = -1
