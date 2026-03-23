@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fblj6wvub8hg"
-path="res://.godot/imported/party_background.png-d6838c533b1c50a7864a09e8f3ed7e2d.ctex"
+uid="uid://cf0txma36318t"
+path="res://.godot/imported/PartyScreenSelect.png-bc6f428a7598ba9b0235a31967d72e56.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Pokemon Party/party_background.png"
-dest_files=["res://.godot/imported/party_background.png-d6838c533b1c50a7864a09e8f3ed7e2d.ctex"]
+source_file="res://Assets/UI/Pokemon Party/PartyScreenSelect.png"
+dest_files=["res://.godot/imported/PartyScreenSelect.png-bc6f428a7598ba9b0235a31967d72e56.ctex"]
 
 [params]
 

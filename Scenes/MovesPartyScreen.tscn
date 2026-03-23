@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://c0o0w0a78qi5r"]
 
-[ext_resource type="Texture2D" uid="uid://dw17mm63araxi" path="res://Assets/UI/menu_box_1.png" id="1_au4ge"]
+[ext_resource type="Texture2D" uid="uid://cdlnnldfmonns" path="res://Assets/UI/Pokemon Party/MovesUI.png" id="1_eniwa"]
 [ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="2_44pqi"]
 
 [node name="MovesScreen" type="Node2D" unique_id=236429404]
 texture_filter = 1
 
-[node name="Background" type="ColorRect" parent="." unique_id=175241576]
-offset_right = 240.0
-offset_bottom = 160.0
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1067127343]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_eniwa")
 
 [node name="Moves" type="Node2D" parent="." unique_id=2047609668]
 
@@ -18,7 +19,6 @@ offset_top = 24.000002
 offset_right = 137.99998
 offset_bottom = 75.0
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("1_au4ge")
 patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
@@ -91,7 +91,6 @@ offset_top = 24.000002
 offset_right = 257.99997
 offset_bottom = 75.0
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("1_au4ge")
 patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
@@ -164,7 +163,6 @@ offset_top = 95.00001
 offset_right = 137.99998
 offset_bottom = 146.00003
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("1_au4ge")
 patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
@@ -237,7 +235,6 @@ offset_top = 95.00001
 offset_right = 257.99997
 offset_bottom = 146.00003
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("1_au4ge")
 patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6

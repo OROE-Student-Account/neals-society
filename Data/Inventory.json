@@ -30,14 +30,70 @@
 		"Knowledge Shard",
 		"Animal Shard",
 		"Animal Shard",
-		"Animal Shard"
+		"Animal Shard",
+		"Slang Shard",
+		"Paper Shard",
+		"Knowledge Shard",
+		"Literature Shard",
+		"Machine Shard",
+		"Animal Shard",
+		"Ink Shard",
+		"Grammar Shard",
+		"Supply Shard",
+		"Homework Shard",
+		"Pokeball",
+		"Pokeball",
+		"Potion",
+		"Potion",
+		"Potion",
+		"Potion",
+		"Potion",
+		"Potion",
+		"Potion",
+		"Potion",
+		"Potion",
+		"Potion",
+		"Potion",
+		"Potion",
+		"Potion",
+		"Potion",
+		"Potion",
+		"Potion",
+		"Potion",
+		"Potion",
+		"Potion",
+		"Potion",
+		"Potion",
+		"Potion",
+		"Potion",
+		"Potion",
+		"Potion"
 	],
-	"Name": "neals",
+	"Name": "x",
 	"Party": [
 		{
-			"Health": 67.0,
+			"Health": 7.0,
 			"Item": "",
-			"Level": 21.31,
+			"Level": 4.85,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Woodchip"
+			],
+			"Name": "Dog of Wood",
+			"Nickname": "",
+			"PP": [
+				12.0,
+				20.0,
+				15.0,
+				0.0
+			]
+		},
+		{
+			"Health": 73.0,
+			"Item": "",
+			"Level": 25.51,
 			"Moves": [
 				"Bite",
 				"Play",
@@ -47,20 +103,11 @@
 			"Name": "Sculpupture",
 			"Nickname": "",
 			"PP": [
-				13.0,
+				8.0,
 				20.0,
 				15.0,
 				5.0
 			]
-		},
-		{
-			"Health": 0.0,
-			"Item": "",
-			"Level": 1.0,
-			"Moves": [],
-			"Name": "",
-			"Nickname": "",
-			"PP": []
 		},
 		{
 			"Health": 0.0,

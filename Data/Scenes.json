@@ -7,7 +7,7 @@
 		},
 		"Trainers": {
 			"Fighter": {
-				"Talked": false
+				"Talked": true
 			},
 			"Rival": {
 				"Talked": false

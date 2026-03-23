@@ -5,13 +5,32 @@ var pause = false
 var items : Array
 var filtered_items : Array  # Items after filtering by type
 
-enum State { ITEM_TYPE_SELECT, ITEM_LIST }
+enum State { ITEM_TYPE_SELECT, ITEM_SELECTION }
 var current_state = State.ITEM_TYPE_SELECT
 
 var selected_item_type: int = 0  # Which type filter is selected
-
+var selected_item_index: int = 0  # Which item is selected in the grid
 
 var in_battle = false
+
+# Grid positions for items (2 columns x 6 rows)
+var item_positions: Array[Vector2] = [
+	Vector2(133, 26),    # 0
+	Vector2(158, 26),    # 1
+	Vector2(184, 26),    # 2
+	Vector2(209, 26),    # 3
+	Vector2(133, 51),    # row 2
+	Vector2(158, 51),    # 5
+	Vector2(184, 51),   # 6
+	Vector2(209, 51),   # 7
+	Vector2(133, 76),   # row 3
+	Vector2(158, 76),   # 9
+	Vector2(184, 76),   # 10
+	Vector2(209, 76),   # 11
+]
+
+var item_sprites: Array[Sprite2D] = []  # Stores the created item sprites
+@onready var select_box = $SelectBox
 
 @onready var item_type_names: Array[String] = [
 	"Book",
@@ -25,6 +44,9 @@ var in_battle = false
 func _ready() -> void:
 	load_inventory()
 	
+	# Create select box
+	select_box.visible = false
+	
 	# Start with item type selection
 	current_state = State.ITEM_TYPE_SELECT
 	set_active_item_type()
@@ -33,14 +55,10 @@ func _ready() -> void:
 	$BattleBlockers.visible = false
 	if in_battle:
 		$BattleBlockers.visible = true
-		$ItemTypes/Held.visible = false
-		$ItemTypes/Consumable.visible = false
-		$ItemTypes/Passive.visible = false
 		item_type_names.remove_at(5)
 		item_type_names.remove_at(4)
 		item_type_names.remove_at(3)
 		item_type_names.remove_at(1)
-
 
 func stop():
 	pause = true
@@ -53,7 +71,6 @@ func load_inventory():
 	
 	items.clear()
 	filtered_items.clear()
-	$ItemList.clear()
 	
 	if len(inv) > 0:
 		items.append({"Name": inv[0], "Count": 0})
@@ -69,9 +86,15 @@ func load_inventory():
 			items.append({"Name": i, "Count": 1})
 
 func set_active_item_type():
-	$Type.position.y = 15*selected_item_type
+	$Type.position.y = 15 * selected_item_type
 	if selected_item_type > 2: 
 		$Type.position.y += 1
+
+func clear_item_sprites():
+	# Remove all existing item sprites
+	for sprite in item_sprites:
+		sprite.queue_free()
+	item_sprites.clear()
 
 func filter_items_by_type():
 	# Filter items array by the selected type
@@ -83,39 +106,51 @@ func filter_items_by_type():
 		if item_details["Type"] == selected_type:
 			filtered_items.append(item_data)
 	
-	# Rebuild the ItemList
-	$ItemList.clear()
-	for i in filtered_items:
-		var file_path = "res://Assets/Items/" + i["Name"] + ".png"
-		$ItemList.add_item("", load(file_path))
+	# Clear old sprites
+	clear_item_sprites()
 	
-	# Select first item if any exist
-	if $ItemList.item_count > 0:
-		$ItemList.select(0)
-		_on_item_list_item_selected(0)
+	# Create sprites for each filtered item (up to 12)
+	for i in range(min(filtered_items.size(), 12)):
+		var item_sprite = Sprite2D.new()
+		var file_path = "res://Assets/Items/" + filtered_items[i]["Name"] + ".png"
+		item_sprite.scale = Vector2(0.5, 0.5)
+		item_sprite.texture = load(file_path)
+		item_sprite.position = item_positions[i]
+		add_child(item_sprite)
+		item_sprites.append(item_sprite)
+	
+	# Reset selection
+	selected_item_index = 0
+	
+	# Update info display
+	if filtered_items.size() > 0:
+		update_item_info()
 	else:
 		# No items of this type
 		$Info/Description.text = "No items of this type."
 		$Info/ItemSprite.texture = null
+		$Info/Count.text = ""
+		$Info/Name.text = ""
 
-func _on_item_list_item_selected(index: int) -> void:
-	if index >= len(filtered_items):
+func update_item_info():
+	if selected_item_index >= len(filtered_items):
 		return
 	
-	var item = Utils.get_item_data(filtered_items[index]["Name"])
+	var item = Utils.get_item_data(filtered_items[selected_item_index]["Name"])
 	
-	$Info/Count.text = str(filtered_items[index]["Count"])+"x"
-	$Info/Name.text = filtered_items[index]["Name"]
+	$Info/Count.text = str(filtered_items[selected_item_index]["Count"]) + "x"
+	$Info/Name.text = filtered_items[selected_item_index]["Name"]
 	$Info/Description.text = item["Description"]
-	var file_path = "res://Assets/Items/" + filtered_items[index]["Name"] + ".png"
+	var file_path = "res://Assets/Items/" + filtered_items[selected_item_index]["Name"] + ".png"
 	$Info/ItemSprite.texture = load(file_path)
-
+	
+	# Update select box position
+	select_box.position = item_positions[selected_item_index]
 
 func show_based_on_type(type):
 	match type:
 		"Book":
 			if in_battle:
-				var selected_item_index = $ItemList.get_selected_items()[0]
 				var battle_manager = get_parent().get_node("BattleManager")
 				
 				if battle_manager.trainer != "random": return
@@ -138,15 +173,11 @@ func show_based_on_type(type):
 			pass
 
 func use_item_on_grammarite():
-	
-	$ItemList.focus_mode = Control.FOCUS_NONE
-	$ItemList.release_focus()
-	
 	pause = true
+	select_box.visible = false
 	
 	var index = await Utils.get_scene_manager().transition_to_select_screen()
 	
-	var selected_item_index = $ItemList.get_selected_items()[0]
 	var item = Utils.get_item_data(filtered_items[selected_item_index]["Name"])
 	var party = Utils.get_party()
 	
@@ -158,13 +189,9 @@ func use_item_on_grammarite():
 			Utils.add_to_inventory(temp)
 	
 	elif item["Type"] == "Grammarite":
-		
 		if filtered_items[selected_item_index]["Name"] == "Potion":
 			var max_hp = Utils.max_hp(party[index]["Name"], party[index]["Level"])
-			party[index]["Health"] = int(min(party[index]["Health"]+(max_hp/2), max_hp))
-			
-	
-	# TODO: Apply item effect to the grammarite
+			party[index]["Health"] = int(min(party[index]["Health"] + (max_hp / 2), max_hp))
 	
 	# Decrease item count
 	if not Utils.remove_from_inventory(filtered_items[selected_item_index]["Name"]):
@@ -173,16 +200,13 @@ func use_item_on_grammarite():
 	Utils.set_party(party)
 	
 	load_inventory()
-	filter_items_by_type()  # Refilter after inventory change
+	filter_items_by_type()
 	
-	# Go back to item list
-	current_state = State.ITEM_LIST
+	# Go back to item selection
+	current_state = State.ITEM_SELECTION
+	select_box.visible = true
 	
 	pause = false
-
-	$ItemList.focus_mode = Control.FOCUS_ALL
-	$ItemList.grab_focus()
-
 
 # battle func
 func exit(thrown):
@@ -210,10 +234,11 @@ func _unhandled_input(event: InputEvent) -> void:
 				filter_items_by_type()
 			
 			elif event.is_action_pressed("ui_right") or event.is_action_pressed("z"):
-				# Go to item list
-				if $ItemList.item_count > 0:
-					current_state = State.ITEM_LIST
-					$ItemList.grab_focus()
+				# Go to item selection
+				if filtered_items.size() > 0:
+					current_state = State.ITEM_SELECTION
+					select_box.visible = true
+					update_item_info()
 			
 			elif event.is_action_pressed("x"):
 				# Exit
@@ -222,23 +247,43 @@ func _unhandled_input(event: InputEvent) -> void:
 				else:
 					exit(false)
 		
-		State.ITEM_LIST:
-			if event.is_action_pressed("ui_left"):
-				# Check if we're at the top of the list
-				var selected_indices = $ItemList.get_selected_items()
-				if selected_indices.size() > 0 and selected_indices[0] == 0:
-					# Go back to type selection
+		State.ITEM_SELECTION:
+			if event.is_action_pressed("ui_down"):
+				# Move down 4 positions (next row)
+				var next_index = selected_item_index + 4
+				if next_index < filtered_items.size():
+					selected_item_index = next_index
+					update_item_info()
+			
+			elif event.is_action_pressed("ui_up"):
+				# Move up 4 positions (previous row)
+				var prev_index = selected_item_index - 4
+				if prev_index >= 0:
+					selected_item_index = prev_index
+					update_item_info()
+			
+			elif event.is_action_pressed("ui_left"):
+				# Move left if not in leftmost column
+				if selected_item_index % 4 != 0:  # Not in column 0
+					selected_item_index -= 1
+					update_item_info()
+				else:
+					# If at leftmost, go back to type selection
 					current_state = State.ITEM_TYPE_SELECT
-					$ItemList.release_focus()
+					select_box.visible = false
+			
+			elif event.is_action_pressed("ui_right"):
+				# Move right if not in rightmost column and item exists
+				if selected_item_index % 4 != 3 and selected_item_index + 1 < filtered_items.size():
+					selected_item_index += 1
+					update_item_info()
 			
 			elif event.is_action_pressed("z"):
-				# Check if current item is Grammarite type
-				var selected_indices = $ItemList.get_selected_items()
-				if selected_indices.size() > 0:
-					var item = Utils.get_item_data(filtered_items[selected_indices[0]]["Name"])
-					show_based_on_type(item["Type"])
+				# Use the selected item
+				var item = Utils.get_item_data(filtered_items[selected_item_index]["Name"])
+				show_based_on_type(item["Type"])
 			
 			elif event.is_action_pressed("x"):
 				# Go back to type selection
 				current_state = State.ITEM_TYPE_SELECT
-				$ItemList.release_focus()
+				select_box.visible = false

@@ -2,18 +2,29 @@
 
 [ext_resource type="Script" uid="uid://bdup4s30hlwe1" path="res://Scripts/ItemScreen.gd" id="1_8isog"]
 [ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="2_8isog"]
-[ext_resource type="Texture2D" uid="uid://dfv3ksc2gd4kp" path="res://Assets/UI/Inventory.png" id="2_eak02"]
-[ext_resource type="Texture2D" uid="uid://bxjfugenktmee" path="res://Assets/Items/Story Book.png" id="4_vrtf4"]
+[ext_resource type="Texture2D" uid="uid://mkh548aqej4b" path="res://Assets/UI/Inventory.png" id="2_c16xa"]
+[ext_resource type="Texture2D" uid="uid://c11wa3bks70et" path="res://Assets/Items/Slang Shard.png" id="3_c16xa"]
+[ext_resource type="Texture2D" uid="uid://ckyw6dtptsikv" path="res://Assets/UI/Border.png" id="3_eak02"]
 [ext_resource type="Texture2D" uid="uid://b3f2eqbc4ki67" path="res://Assets/UI/ui_arrow_right.png" id="6_rvhgt"]
 
 [node name="ItemScreen" type="Node2D" unique_id=939527620]
 texture_filter = 1
 script = ExtResource("1_8isog")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1551417747]
+offset_right = 240.0
+offset_bottom = 160.0
+color = Color(0.9529412, 0.9137255, 0.8235294, 1)
+
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1421696581]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("2_eak02")
+offset_left = -1.0
+offset_right = 239.0
+offset_bottom = 160.0
+texture = ExtResource("2_c16xa")
+
+[node name="SelectBox" type="Sprite2D" parent="." unique_id=1815769265]
+position = Vector2(209, 76)
+texture = ExtResource("3_eak02")
 
 [node name="Info" type="Control" parent="." unique_id=1883386658]
 layout_mode = 3
@@ -23,8 +34,8 @@ offset_bottom = 40.0
 
 [node name="ItemSprite" type="Sprite2D" parent="Info" unique_id=827936162]
 position = Vector2(126.00001, 126)
-scale = Vector2(0.9999998, 1)
-texture = ExtResource("4_vrtf4")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_c16xa")
 centered = false
 
 [node name="Description" type="Label" parent="Info" unique_id=2146245875]
@@ -66,21 +77,6 @@ text = "x3"
 horizontal_alignment = 2
 autowrap_mode = 2
 
-[node name="ItemList" type="ItemList" parent="." unique_id=420684779]
-offset_left = 120.0
-offset_top = 16.0
-offset_right = 224.0
-offset_bottom = 88.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_8isog")
-theme_override_font_sizes/font_size = 12
-allow_rmb_select = true
-max_columns = 4
-same_column_width = true
-fixed_column_width = 32
-icon_mode = 0
-fixed_icon_size = Vector2i(32, 32)
-
 [node name="Type" type="Control" parent="." unique_id=2139877366]
 layout_mode = 3
 anchors_preset = 0
@@ -105,6 +101,7 @@ offset_bottom = 37.0
 texture = ExtResource("6_rvhgt")
 
 [node name="BattleBlockers" type="Control" parent="." unique_id=873969776]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -126,4 +123,8 @@ offset_right = 88.0
 offset_bottom = 56.0
 color = Color(0.9019608, 0.78431374, 0.6117647, 1)
 
-[connection signal="item_selected" from="ItemList" to="." method="_on_item_list_item_selected"]
+[node name="Shard1" type="Sprite2D" parent="." unique_id=1511101861]
+position = Vector2(80, 48)
+
+[node name="Shard2" type="Sprite2D" parent="." unique_id=920982212]
+position = Vector2(160, 48)

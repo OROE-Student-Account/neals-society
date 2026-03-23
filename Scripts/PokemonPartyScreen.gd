@@ -91,10 +91,10 @@ func load_summary(slot_num):
 	var SPD = int(stats["Speed"])
 	var ATK = int(stats["Attack"])
 	
-	labels.get_child(0).get_child(1).text = str(HP)
-	labels.get_child(1).get_child(1).text = str(DEF)
-	labels.get_child(2).get_child(1).text = str(SPD)
-	labels.get_child(3).get_child(1).text = str(ATK)
+	labels.get_child(0).text = str(HP)
+	labels.get_child(1).text = str(DEF)
+	labels.get_child(2).text = str(SPD)
+	labels.get_child(3).text = str(ATK)
 	
 	# do the polygon
 	var polygon = $SummaryScreen/Stats/BG/Actual.polygon
@@ -104,17 +104,17 @@ func load_summary(slot_num):
 	polygon[0].x = -HP
 	polygon[0].y = -HP
 	
-	DEF *= 0.2
-	polygon[1].x = DEF
-	polygon[1].y = -DEF
-	
 	ATK *= 0.2
-	polygon[2].x = ATK
-	polygon[2].y = ATK
+	polygon[1].x = ATK
+	polygon[1].y = -ATK
 	
 	SPD *= 0.2
-	polygon[3].x = -SPD
-	polygon[3].y = SPD
+	polygon[2].x = SPD
+	polygon[2].y = SPD
+	
+	DEF *= 0.2
+	polygon[3].x = -DEF
+	polygon[3].y = DEF
 	
 	$SummaryScreen/Stats/BG/Actual.polygon = polygon
 	
