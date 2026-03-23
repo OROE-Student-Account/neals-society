@@ -92,23 +92,14 @@ func _input(event):
 			while not slots_enabled[selected_option] and selected_option <= Options.SIXTH_SLOT:
 				selected_option += 2
 				if selected_option > Options.SIXTH_SLOT:
-					selected_option -= 3
+					selected_option = (selected_option - 1)%len(Options)
 		update_select_box()
 	
 	elif event.is_action_pressed("ui_up"):
-		if selected_option >= Options.FIRST_SLOT and selected_option <= Options.SIXTH_SLOT:
+		if selected_option > Options.SECOND_SLOT:
 			# Move up two slots (to previous row)
-			var prev_option = selected_option - 2
-			if prev_option >= Options.FIRST_SLOT:
-				selected_option = prev_option
-				# Skip if not enabled
-				while not slots_enabled[selected_option] and selected_option >= Options.FIRST_SLOT:
-					selected_option -= 2
-					if selected_option < Options.FIRST_SLOT:
-						# Wrap around or stay
-						selected_option += 2
-						break
-		update_select_box()
+			selected_option -= 2
+			update_select_box()
 	
 	elif event.is_action_pressed("ui_left"):
 		if selected_option % 2 == 1:  # Right column (odd indices: 1, 3, 5)

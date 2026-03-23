@@ -24,7 +24,6 @@ func reset_scenes():
 	save_json_file("res://Data/Scenes.json", scenes)
 
 
-
 func get_player():
 	return get_node("/root/SceneManager/CurrentScene").get_child(0).find_child("Player")
 func get_scene_manager():
@@ -170,6 +169,18 @@ func load_quests():
 			quests.append(add_quest)
 	
 	return quests
+
+
+func get_recipe(shard1, shard2):
+	var recipes = load_json_file("res://GrammariteData/Recipes.json")
+	var craft = {}
+	if recipes.has(shard1) and recipes[shard1].has(shard2):
+		craft = recipes[shard1][shard2]
+	elif recipes.has(shard2) and recipes[shard2].has(shard1):
+		craft = recipes[shard2][shard1]
+	
+	return craft
+
 
 
 var question_list = [

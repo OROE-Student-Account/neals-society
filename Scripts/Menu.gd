@@ -4,11 +4,13 @@ const PokemonPartyScreen = preload("res://Scenes/PokemonPartyScreen.tscn")
 const ItemScreen = preload("res://Scenes/ItemScreen.tscn")
 const StorageScreen = preload("res://Scenes/GrammariteStorage.tscn")
 const QuestScreen = preload("res://Scenes/QuestScreen.tscn")
+const HarvestScreen = preload("res://Scenes/HarvestScreen.tscn")
+const CraftScreen = preload("res://Scenes/CraftScreen.tscn")
 
 @onready var arrow = $Control/Arrow 
 @onready var menu = $Control
 
-enum ScreenLoaded { NOTHING, DIALOGUE, JUST_MENU, ITEM_SCREEN, PARTY_SCREEN, STORAGE, NAMING, BATTLE, QUESTS }
+enum ScreenLoaded { NOTHING, DIALOGUE, JUST_MENU, ITEM_SCREEN, PARTY_SCREEN, STORAGE, NAMING, BATTLE, QUESTS, SHARDS }
 var screen_loaded = ScreenLoaded.NOTHING
 var selected_option: int = 0
 
@@ -74,6 +76,22 @@ func load_quests():
 func unload_quests():
 	screen_loaded = ScreenLoaded.NOTHING
 	remove_child($QuestScreen)
+
+func load_harvester():
+	screen_loaded = ScreenLoaded.SHARDS
+	var harvest_screen = HarvestScreen.instantiate()
+	add_child(harvest_screen)
+func unload_harvester():
+	screen_loaded = ScreenLoaded.NOTHING
+	remove_child($HarvestScreen)
+
+func load_crafter():
+	screen_loaded = ScreenLoaded.SHARDS
+	var creaft_screen = CraftScreen.instantiate()
+	add_child(creaft_screen)
+func unload_crafter():
+	screen_loaded = ScreenLoaded.NOTHING
+	remove_child($CraftScreen)
 
 
 func _unhandled_input(event):

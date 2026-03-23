@@ -6,11 +6,11 @@ var used_up = false
 @onready var dialogue_root = $DialogueRoot
 
 
-func open_grammarite_storage():
+func open_harvester():
 	var player = Utils.get_player()
 	player.set_physics_process(false)
 	
-	Utils.get_scene_manager().transition_to_grammarite_storage()
+	Utils.get_scene_manager().transition_to_harvester()
 
 
 func _unhandled_input(event: InputEvent) -> void:

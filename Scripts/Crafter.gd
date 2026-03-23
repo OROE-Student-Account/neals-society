@@ -6,17 +6,16 @@ var used_up = false
 @onready var dialogue_root = $DialogueRoot
 
 
-func open_grammarite_storage():
+func open_crafter():
 	var player = Utils.get_player()
 	player.set_physics_process(false)
 	
-	Utils.get_scene_manager().transition_to_grammarite_storage()
+	Utils.get_scene_manager().transition_to_crafter()
 
 
 func _unhandled_input(event: InputEvent) -> void:
 	var player = Utils.get_player()
 	if player.can_interact_with_object and event.is_action_pressed("z") and picked_up and !used_up:
-		
 		var player_facing = player.facing_direction
 		var player_pos = player.position
 		if player_facing != 0 && player_pos.x > position.x && player_pos.y == position.y:

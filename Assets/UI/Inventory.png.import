@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dywqob2aeknmi"
-path="res://.godot/imported/Pokemon1.png-df0ddafb9c334a47164f99b6a1bed08b.ctex"
+uid="uid://dfv3ksc2gd4kp"
+path="res://.godot/imported/Inventory.png-f11b58ffe7a2fbaf2587a66b6987610d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pokemon/Pokemon1.png"
-dest_files=["res://.godot/imported/Pokemon1.png-df0ddafb9c334a47164f99b6a1bed08b.ctex"]
+source_file="res://Assets/UI/Inventory.png"
+dest_files=["res://.godot/imported/Inventory.png-f11b58ffe7a2fbaf2587a66b6987610d.ctex"]
 
 [params]
 

@@ -7,8 +7,57 @@
 		"Description": "Absorb Grammarites for use throughout your adventure.",
 		"Type": "Book"
 	},
+	
+	
 	"Potion": {
 		"Description": "Heals half of the missing health from a hurt Grammarites.",
 		"Type": "Grammarite"
+	},
+	
+	
+	"Grammar Shard": {
+		"Description": "A shard from a Grammar type Grammarite.",
+		"Type": "Shard"
+	},
+	"Literature Shard": {
+		"Description": "A shard from a Literature type Grammarite.",
+		"Type": "Shard"
+	},
+	"Homework Shard": {
+		"Description": "A shard from a Homework type Grammarite.",
+		"Type": "Shard"
+	},
+	"Slang Shard": {
+		"Description": "A shard from a Slang type Grammarite.",
+		"Type": "Shard"
+	},
+	"Paper Shard": {
+		"Description": "A shard from a Paper type Grammarite.",
+		"Type": "Shard"
+	},
+	"Nature Shard": {
+		"Description": "A shard from a Nature type Grammarite.",
+		"Type": "Shard"
+	},
+	"Supply Shard": {
+		"Description": "A shard from a Supply type Grammarite.",
+		"Type": "Shard"
+	},
+	"Knowledge Shard": {
+		"Description": "A shard from a Knowledge type Grammarite.",
+		"Type": "Shard"
+	},
+	"Ink Shard": {
+		"Description": "A shard from a Ink type Grammarite.",
+		"Type": "Shard"
+	},
+	"Animal Shard": {
+		"Description": "A shard from a Animal type Grammarite.",
+		"Type": "Shard"
+	},
+	"Machine Shard": {
+		"Description": "A shard from a Machine type Grammarite.",
+		"Type": "Shard"
 	}
+	
 }

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dywqob2aeknmi"
-path="res://.godot/imported/Pokemon1.png-df0ddafb9c334a47164f99b6a1bed08b.ctex"
+uid="uid://cb4aydjx8t1ah"
+path="res://.godot/imported/Literature Shard.png-899728a6b8ae75b0d52696cb9141b7b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pokemon/Pokemon1.png"
-dest_files=["res://.godot/imported/Pokemon1.png-df0ddafb9c334a47164f99b6a1bed08b.ctex"]
+source_file="res://Assets/Items/Literature Shard.png"
+dest_files=["res://.godot/imported/Literature Shard.png-899728a6b8ae75b0d52696cb9141b7b2.ctex"]
 
 [params]
 

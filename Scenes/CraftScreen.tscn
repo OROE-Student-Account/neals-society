@@ -1,0 +1,402 @@
+[gd_scene format=3 uid="uid://ca5ewevbq5qls"]
+
+[ext_resource type="Script" uid="uid://ccq35oguyl7al" path="res://Scripts/CraftScreen.gd" id="1_rt7jm"]
+[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="2_xol18"]
+[ext_resource type="Texture2D" uid="uid://hpyxtuycfcbw" path="res://Assets/UI/Pokemon Party/exit_background_button.png" id="3_l31cc"]
+[ext_resource type="Texture2D" uid="uid://n4wfg4ctjccx" path="res://Assets/UI/border.png" id="4_841wo"]
+[ext_resource type="Texture2D" uid="uid://g4huif3s073t" path="res://Assets/Items/Ink Shard.png" id="5_7o8y5"]
+[ext_resource type="Texture2D" uid="uid://c0dop7ekxqv5h" path="res://Assets/Items/Knowledge Shard.png" id="6_rlt7w"]
+[ext_resource type="Texture2D" uid="uid://dywqob2aeknmi" path="res://Assets/Pokemon/Pokemon1.png" id="7_5aj04"]
+[ext_resource type="Texture2D" uid="uid://33jd1d7bcg3h" path="res://Assets/Items/Supply Shard.png" id="8_kts7i"]
+
+[sub_resource type="Animation" id="Animation_sonj8"]
+resource_name = "Craft"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shard1:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [80.0, 120.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shard2:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [160.0, 120.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shard1:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 2.7, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 3.141592653589793, 6.632251157578453, 10.471975511965978, 14.660765716752369, 19.198621771937624, 24.08554367752175, 29.321531433504738, 34.90658503988659, 40.840704496667314, 47.1238898038469]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Shard2:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 2.7, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -3.141592653589793, -6.632251157578453, -10.471975511965978, -14.660765716752369, -19.198621771937624, -24.08554367752175, -29.321531433504738, -34.90658503988659, -40.840704496667314, -47.1238898038469]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Shard1:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Shard2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Grammarite:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.9, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Item:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2.9, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Grammarite:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(2.9, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.1, 0.1), Vector2(1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Item:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(2.9, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.1, 0.1), Vector2(1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_nchfe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shard1:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [80.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shard2:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [160.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shard1:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Shard1:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Shard2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Grammarite:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Item:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Grammarite:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Item:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7qkc0"]
+_data = {
+&"Craft": SubResource("Animation_sonj8"),
+&"RESET": SubResource("Animation_nchfe")
+}
+
+[node name="CraftScreen" type="Node2D" unique_id=683332491]
+texture_filter = 1
+script = ExtResource("1_rt7jm")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=713304068]
+offset_right = 240.0
+offset_bottom = 160.0
+color = Color(0, 1, 1, 1)
+
+[node name="Control" type="Control" parent="." unique_id=858345715]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect2" type="ColorRect" parent="Control" unique_id=2082867423]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 64.0
+offset_right = 104.0
+offset_bottom = 72.0
+color = Color(0.3137255, 0.2509804, 0.22352941, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Control" unique_id=2079615594]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 64.0
+offset_right = 184.0
+offset_bottom = 72.0
+color = Color(0.3137255, 0.2509804, 0.22352941, 1)
+
+[node name="Label" type="Label" parent="Control" unique_id=1319438265]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 32.0
+offset_right = 120.0
+offset_bottom = 48.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_xol18")
+theme_override_font_sizes/font_size = 12
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Shard1" type="Sprite2D" parent="Control" unique_id=1478441304]
+position = Vector2(80, 48)
+
+[node name="Shard2" type="Sprite2D" parent="Control" unique_id=322574882]
+position = Vector2(160, 48)
+
+[node name="Buttons" type="Node2D" parent="." unique_id=182573070]
+
+[node name="Switch1" type="Sprite2D" parent="Buttons" unique_id=1515775696]
+position = Vector2(56, 80)
+texture = ExtResource("3_l31cc")
+centered = false
+hframes = 2
+
+[node name="Switch2" type="Sprite2D" parent="Buttons" unique_id=589747145]
+position = Vector2(136, 80)
+texture = ExtResource("3_l31cc")
+centered = false
+hframes = 2
+
+[node name="Craft" type="Sprite2D" parent="Buttons" unique_id=934171713]
+position = Vector2(96, 120)
+texture = ExtResource("3_l31cc")
+centered = false
+hframes = 2
+
+[node name="Exit" type="Sprite2D" parent="Buttons" unique_id=2003629744]
+position = Vector2(176, 128)
+texture = ExtResource("3_l31cc")
+centered = false
+hframes = 2
+
+[node name="ShardSelect" type="Node2D" parent="." unique_id=948543164]
+
+[node name="ColorRect" type="ColorRect" parent="ShardSelect" unique_id=37430434]
+offset_right = 240.0
+offset_bottom = 160.0
+
+[node name="Border" type="Sprite2D" parent="ShardSelect" unique_id=505643533]
+position = Vector2(64, 40)
+texture = ExtResource("4_841wo")
+
+[node name="Label" type="Label" parent="ShardSelect" unique_id=924987476]
+offset_left = 100.0
+offset_top = 32.0
+offset_right = 146.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_xol18")
+theme_override_font_sizes/font_size = 12
+text = "Count: 30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Animation" type="Node2D" parent="." unique_id=1604911833]
+
+[node name="ColorRect" type="ColorRect" parent="Animation" unique_id=1482957964]
+offset_right = 240.0
+offset_bottom = 160.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animation" unique_id=1504087452]
+libraries/ = SubResource("AnimationLibrary_7qkc0")
+
+[node name="Shard1" type="Sprite2D" parent="Animation" unique_id=2102286449]
+position = Vector2(80, 80)
+texture = ExtResource("5_7o8y5")
+
+[node name="Shard2" type="Sprite2D" parent="Animation" unique_id=29147287]
+position = Vector2(160, 80)
+rotation = -47.12389
+texture = ExtResource("6_rlt7w")
+
+[node name="Grammarite" type="Sprite2D" parent="Animation" unique_id=2137719462]
+position = Vector2(120, 80)
+texture = ExtResource("7_5aj04")
+region_enabled = true
+region_rect = Rect2(0, 34, 64, 64)
+
+[node name="Item" type="Sprite2D" parent="Animation" unique_id=7225482]
+position = Vector2(120, 80)
+texture = ExtResource("8_kts7i")

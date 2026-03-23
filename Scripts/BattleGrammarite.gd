@@ -41,9 +41,9 @@ func setup():
 	
 	$Level.text = str(level)
 	if nickname == "":
-		$Name.text = grammarite_name.to_upper()
+		$Name.text = grammarite_name
 	else:
-		$Name.text = nickname.to_upper()
+		$Name.text = nickname
 	
 	var grammadex_num = str(Utils.get_poke_num(grammarite_name)+1)
 	$Grammarite.texture = load("res://Assets/Pokemon/Pokemon"+grammadex_num+".png")
