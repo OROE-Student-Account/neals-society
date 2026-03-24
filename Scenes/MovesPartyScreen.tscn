@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://cdlnnldfmonns" path="res://Assets/UI/Pokemon Party/MovesUI.png" id="1_eniwa"]
 [ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="2_44pqi"]
+[ext_resource type="Texture2D" uid="uid://dywqob2aeknmi" path="res://Assets/Pokemon/Pokemon1.png" id="3_d5ic8"]
+[ext_resource type="Texture2D" uid="uid://bp1yoi5n1cx7x" path="res://Assets/UI/Pokemon Party/Pokemon_SummaryUI_OUTLINE-1.png.png" id="4_7hlnd"]
 
 [node name="MovesScreen" type="Node2D" unique_id=236429404]
 texture_filter = 1
@@ -26,10 +28,9 @@ patch_margin_bottom = 6
 
 [node name="Name" type="Label" parent="Moves/Move1" unique_id=754873394]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 7.0
-offset_right = 68.0
-offset_bottom = 30.0
+offset_left = 159.99998
+offset_right = 225.99998
+offset_bottom = 22.999998
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_44pqi")
 theme_override_font_sizes/font_size = 12
@@ -38,52 +39,52 @@ text = "Dragon Dance"
 [node name="Type" type="Label" parent="Moves/Move1" unique_id=1558293445]
 layout_direction = 2
 layout_mode = 0
-offset_left = 9.0
-offset_top = 20.0
-offset_right = 62.0
-offset_bottom = 29.0
+offset_left = 215.0
+offset_top = 91.0
+offset_right = 268.0
+offset_bottom = 100.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_44pqi")
 theme_override_font_sizes/font_size = 12
 text = "Literature"
+horizontal_alignment = 1
 
 [node name="PP" type="Label" parent="Moves/Move1" unique_id=1239686362]
 layout_mode = 0
-offset_left = 50.0
-offset_top = 19.0
-offset_right = 123.0
-offset_bottom = 30.999994
+offset_left = 213.75
+offset_top = 106.249985
+offset_right = 267.5
+offset_bottom = 115.249985
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_44pqi")
 theme_override_font_sizes/font_size = 12
 text = "PP: 10/10"
-horizontal_alignment = 2
-vertical_alignment = 1
+horizontal_alignment = 1
 
 [node name="DMG" type="Label" parent="Moves/Move1" unique_id=169073294]
 layout_direction = 2
 layout_mode = 0
-offset_left = 9.0
-offset_top = 33.0
-offset_right = 62.0
-offset_bottom = 42.0
+offset_left = 232.5
+offset_right = 270.0
+offset_bottom = 9.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_44pqi")
 theme_override_font_sizes/font_size = 12
-text = "DMG: 100"
+text = "100"
+horizontal_alignment = 1
 
 [node name="ACC" type="Label" parent="Moves/Move1" unique_id=861235607]
 layout_direction = 2
 layout_mode = 0
-offset_left = 44.75001
-offset_top = 33.000004
-offset_right = 123.75
-offset_bottom = 42.000004
+offset_left = 213.74997
+offset_top = 121.250015
+offset_right = 267.5
+offset_bottom = 130.25002
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_44pqi")
 theme_override_font_sizes/font_size = 12
 text = "ACC: 100%"
-horizontal_alignment = 2
+horizontal_alignment = 1
 
 [node name="Move2" type="NinePatchRect" parent="Moves" unique_id=587213104]
 offset_left = 128.0
@@ -98,10 +99,10 @@ patch_margin_bottom = 6
 
 [node name="Name" type="Label" parent="Moves/Move2" unique_id=379255052]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 7.0
-offset_right = 68.0
-offset_bottom = 30.0
+offset_left = 10.000004
+offset_top = 18.749996
+offset_right = 76.0
+offset_bottom = 41.749996
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_44pqi")
 theme_override_font_sizes/font_size = 12
@@ -110,52 +111,53 @@ text = "Dragon Dance"
 [node name="Type" type="Label" parent="Moves/Move2" unique_id=989105260]
 layout_direction = 2
 layout_mode = 0
-offset_left = 9.0
-offset_top = 20.0
-offset_right = 62.0
-offset_bottom = 29.0
+offset_left = 65.25
+offset_top = 91.0
+offset_right = 118.25
+offset_bottom = 100.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_44pqi")
 theme_override_font_sizes/font_size = 12
 text = "Literature"
+horizontal_alignment = 1
 
 [node name="PP" type="Label" parent="Moves/Move2" unique_id=1795636655]
 layout_mode = 0
-offset_left = 50.0
-offset_top = 19.0
-offset_right = 123.0
-offset_bottom = 30.999994
+offset_left = 63.75
+offset_top = 106.49997
+offset_right = 117.5
+offset_bottom = 115.49997
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_44pqi")
 theme_override_font_sizes/font_size = 12
 text = "PP: 10/10"
-horizontal_alignment = 2
-vertical_alignment = 1
+horizontal_alignment = 1
 
 [node name="DMG" type="Label" parent="Moves/Move2" unique_id=1588417956]
 layout_direction = 2
 layout_mode = 0
-offset_left = 9.0
-offset_top = 33.0
-offset_right = 62.0
-offset_bottom = 42.0
+offset_left = 82.5
+offset_top = 18.750002
+offset_right = 120.0
+offset_bottom = 27.750002
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_44pqi")
 theme_override_font_sizes/font_size = 12
-text = "DMG: 100"
+text = "100"
+horizontal_alignment = 1
 
 [node name="ACC" type="Label" parent="Moves/Move2" unique_id=714356878]
 layout_direction = 2
 layout_mode = 0
-offset_left = 44.75001
-offset_top = 33.000004
-offset_right = 123.75
-offset_bottom = 42.000004
+offset_left = 63.500015
+offset_top = 120.5
+offset_right = 117.250015
+offset_bottom = 129.5
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_44pqi")
 theme_override_font_sizes/font_size = 12
 text = "ACC: 100%"
-horizontal_alignment = 2
+horizontal_alignment = 1
 
 [node name="Move3" type="NinePatchRect" parent="Moves" unique_id=1660357408]
 offset_left = 8.0
@@ -170,10 +172,10 @@ patch_margin_bottom = 6
 
 [node name="Name" type="Label" parent="Moves/Move3" unique_id=1637427221]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 7.0
-offset_right = 68.0
-offset_bottom = 30.0
+offset_left = 159.99997
+offset_top = -50.0
+offset_right = 225.99997
+offset_bottom = -27.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_44pqi")
 theme_override_font_sizes/font_size = 12
@@ -182,58 +184,59 @@ text = "Dragon Dance"
 [node name="Type" type="Label" parent="Moves/Move3" unique_id=626251501]
 layout_direction = 2
 layout_mode = 0
-offset_left = 9.0
-offset_top = 20.0
-offset_right = 62.0
-offset_bottom = 29.0
+offset_left = 215.0
+offset_top = 2.0
+offset_right = 268.00003
+offset_bottom = 11.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_44pqi")
 theme_override_font_sizes/font_size = 12
 text = "Literature"
+horizontal_alignment = 1
 
 [node name="PP" type="Label" parent="Moves/Move3" unique_id=1970809396]
 layout_mode = 0
-offset_left = 50.0
-offset_top = 19.0
-offset_right = 123.0
-offset_bottom = 30.999994
+offset_left = 213.74997
+offset_top = 17.499996
+offset_right = 267.5
+offset_bottom = 26.499996
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_44pqi")
 theme_override_font_sizes/font_size = 12
 text = "PP: 10/10"
-horizontal_alignment = 2
-vertical_alignment = 1
+horizontal_alignment = 1
 
 [node name="DMG" type="Label" parent="Moves/Move3" unique_id=1058647251]
 layout_direction = 2
 layout_mode = 0
-offset_left = 9.0
-offset_top = 33.0
-offset_right = 62.0
-offset_bottom = 42.0
+offset_left = 232.5
+offset_top = -50.0
+offset_right = 270.0
+offset_bottom = -41.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_44pqi")
 theme_override_font_sizes/font_size = 12
-text = "DMG: 100"
+text = "100"
+horizontal_alignment = 1
 
 [node name="ACC" type="Label" parent="Moves/Move3" unique_id=1731540398]
 layout_direction = 2
 layout_mode = 0
-offset_left = 44.75001
-offset_top = 33.000004
-offset_right = 123.75
-offset_bottom = 42.000004
+offset_left = 213.5
+offset_top = 31.75
+offset_right = 267.25
+offset_bottom = 40.75
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_44pqi")
 theme_override_font_sizes/font_size = 12
 text = "ACC: 100%"
-horizontal_alignment = 2
+horizontal_alignment = 1
 
 [node name="Move4" type="NinePatchRect" parent="Moves" unique_id=1135850226]
 offset_left = 128.0
-offset_top = 95.00001
+offset_top = 95.0
 offset_right = 257.99997
-offset_bottom = 146.00003
+offset_bottom = 146.00006
 scale = Vector2(0.8, 0.8)
 patch_margin_left = 6
 patch_margin_top = 6
@@ -242,10 +245,10 @@ patch_margin_bottom = 6
 
 [node name="Name" type="Label" parent="Moves/Move4" unique_id=406597673]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 7.0
-offset_right = 68.0
-offset_bottom = 30.0
+offset_left = 10.000004
+offset_top = -30.0
+offset_right = 76.0
+offset_bottom = -7.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_44pqi")
 theme_override_font_sizes/font_size = 12
@@ -254,49 +257,144 @@ text = "Dragon Dance"
 [node name="Type" type="Label" parent="Moves/Move4" unique_id=352794809]
 layout_direction = 2
 layout_mode = 0
-offset_left = 9.0
-offset_top = 20.0
-offset_right = 62.0
-offset_bottom = 29.0
+offset_left = 65.0
+offset_top = 2.0
+offset_right = 118.0
+offset_bottom = 11.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_44pqi")
 theme_override_font_sizes/font_size = 12
 text = "Literature"
+horizontal_alignment = 1
 
 [node name="PP" type="Label" parent="Moves/Move4" unique_id=57883208]
 layout_mode = 0
-offset_left = 50.0
-offset_top = 19.0
-offset_right = 123.0
-offset_bottom = 30.999994
+offset_left = 63.75
+offset_top = 16.999992
+offset_right = 117.499985
+offset_bottom = 25.999992
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_44pqi")
 theme_override_font_sizes/font_size = 12
 text = "PP: 10/10"
-horizontal_alignment = 2
-vertical_alignment = 1
+horizontal_alignment = 1
 
 [node name="DMG" type="Label" parent="Moves/Move4" unique_id=1601812911]
 layout_direction = 2
 layout_mode = 0
-offset_left = 9.0
-offset_top = 33.0
-offset_right = 62.0
-offset_bottom = 42.0
+offset_left = 82.5
+offset_top = -30.0
+offset_right = 120.0
+offset_bottom = -21.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_44pqi")
 theme_override_font_sizes/font_size = 12
-text = "DMG: 100"
+text = "100"
+horizontal_alignment = 1
 
 [node name="ACC" type="Label" parent="Moves/Move4" unique_id=1402567731]
 layout_direction = 2
 layout_mode = 0
-offset_left = 44.75001
-offset_top = 33.000004
-offset_right = 123.75
-offset_bottom = 42.000004
+offset_left = 63.75
+offset_top = 31.75
+offset_right = 117.5
+offset_bottom = 40.75
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_44pqi")
 theme_override_font_sizes/font_size = 12
 text = "ACC: 100%"
+horizontal_alignment = 1
+
+[node name="Grammarite" type="Sprite2D" parent="." unique_id=2106953797]
+position = Vector2(28, 52)
+texture = ExtResource("3_d5ic8")
+centered = false
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 34, 64, 64)
+
+[node name="Info" type="Control" parent="." unique_id=1465519974]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Types" type="Label" parent="Info" unique_id=2033692519]
+layout_direction = 2
+layout_mode = 0
+offset_left = 43.0
+offset_top = 104.0
+offset_right = 91.0
+offset_bottom = 113.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_44pqi")
+theme_override_font_sizes/font_size = 12
+
+[node name="DoubleTypes" type="HBoxContainer" parent="Info/Types" unique_id=365931556]
+visible = false
+layout_mode = 1
+offset_left = -45.0
+offset_right = 47.0
+offset_bottom = 40.0
+
+[node name="TypeOne" type="Label" parent="Info/Types/DoubleTypes" unique_id=1600110231]
+custom_minimum_size = Vector2(60, 0)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_44pqi")
+theme_override_font_sizes/font_size = 12
+text = "TEST"
 horizontal_alignment = 2
+
+[node name="TypeTwo" type="Label" parent="Info/Types/DoubleTypes" unique_id=1494687541]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_44pqi")
+theme_override_font_sizes/font_size = 12
+text = "TEST"
+
+[node name="SingleTypes" type="Label" parent="Info" unique_id=1395102743]
+layout_direction = 2
+layout_mode = 0
+offset_left = 19.0
+offset_top = 119.0
+offset_right = 100.0
+offset_bottom = 128.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_44pqi")
+theme_override_font_sizes/font_size = 12
+text = "TEST"
+horizontal_alignment = 1
+
+[node name="RealName" type="Label" parent="Info" unique_id=454208161]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 39.0
+offset_right = 105.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_44pqi")
+theme_override_font_sizes/font_size = 12
+text = "Dog of Wood"
+horizontal_alignment = 1
+
+[node name="Nickname" type="Label" parent="Info" unique_id=649662957]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 132.0
+offset_right = 105.0
+offset_bottom = 155.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_44pqi")
+theme_override_font_sizes/font_size = 12
+text = "Dog of Wood"
+horizontal_alignment = 1
+
+[node name="SelectBox" type="TextureRect" parent="." unique_id=1309134049]
+offset_left = 129.0
+offset_top = 20.0
+offset_right = 226.0
+offset_bottom = 35.0
+texture = ExtResource("4_7hlnd")
+expand_mode = 1

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c34vsfwfo6tx2" path="res://Assets/UI/Pokemon Party/SummaryUI.png" id="1_3se8e"]
 [ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="1_nfakk"]
+[ext_resource type="Texture2D" uid="uid://dywqob2aeknmi" path="res://Assets/Pokemon/Pokemon1.png" id="2_2hg8w"]
 
 [node name="SummaryScreen" type="Node2D" unique_id=1754632819]
 
@@ -10,6 +11,52 @@ texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_3se8e")
+
+[node name="Grammarite" type="Sprite2D" parent="." unique_id=9489642]
+position = Vector2(28, 52)
+texture = ExtResource("2_2hg8w")
+centered = false
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 34, 64, 64)
+
+[node name="Decoration" type="Control" parent="." unique_id=899819452]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Decoration" unique_id=837567050]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 19.0
+offset_right = 171.0
+offset_bottom = 38.0
+color = Color(0.9882353, 0.96862745, 0.75686276, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Decoration" unique_id=857297902]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 40.0
+offset_right = 171.0
+offset_bottom = 56.0
+color = Color(0.9882353, 0.96862745, 0.75686276, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Decoration" unique_id=1709829485]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 60.0
+offset_right = 171.0
+offset_bottom = 76.0
+color = Color(0.9882353, 0.96862745, 0.75686276, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Decoration" unique_id=1669667348]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 80.0
+offset_right = 226.0
+offset_bottom = 104.0
+color = Color(0.9882353, 0.96862745, 0.75686276, 1)
 
 [node name="Stats" type="Node2D" parent="." unique_id=1049182960]
 position = Vector2(144, 48)
@@ -44,15 +91,13 @@ offset_bottom = 96.0
 color = Color(0.9882353, 0.96862745, 0.74509805, 1)
 
 [node name="Line2D" type="Line2D" parent="Stats/BG" unique_id=501395015]
-position = Vector2(1.227272, 48.5)
-scale = Vector2(0.9848485, 0.5)
-points = PackedVector2Array(15.000015, 31, 47.49231, 94.999985)
-width = 1.0
+points = PackedVector2Array(16, 64, 48, 96)
+width = 1.2
 default_color = Color(0, 1, 1, 1)
 
 [node name="Line2D2" type="Line2D" parent="Stats/BG" unique_id=609585383]
 points = PackedVector2Array(48, 64, 16, 96)
-width = 1.0
+width = 1.2
 default_color = Color(0, 1, 1, 1)
 
 [node name="Actual" type="Polygon2D" parent="Stats/BG" unique_id=1930384969]
@@ -150,13 +195,12 @@ patch_margin_bottom = 6
 layout_direction = 2
 layout_mode = 0
 offset_left = 35.0
-offset_top = 38.0
+offset_top = 72.0
 offset_right = 83.0
-offset_bottom = 47.0
+offset_bottom = 81.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_nfakk")
 theme_override_font_sizes/font_size = 12
-text = "Types:"
 
 [node name="DoubleTypes" type="HBoxContainer" parent="Info/NinePatchRect/Types" unique_id=1624464371]
 visible = false
@@ -186,9 +230,9 @@ text = "TEST"
 layout_direction = 2
 layout_mode = 0
 offset_left = 11.0
-offset_top = 53.0
+offset_top = 87.0
 offset_right = 92.0
-offset_bottom = 62.0
+offset_bottom = 96.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_nfakk")
 theme_override_font_sizes/font_size = 12
@@ -197,10 +241,10 @@ horizontal_alignment = 1
 
 [node name="LVL" type="Label" parent="Info/NinePatchRect" unique_id=58632423]
 layout_mode = 0
-offset_left = 12.0
-offset_top = 23.0
-offset_right = 52.0
-offset_bottom = 46.0
+offset_left = 128.0
+offset_top = -8.0
+offset_right = 168.0
+offset_bottom = 15.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_nfakk")
 theme_override_font_sizes/font_size = 12
@@ -208,10 +252,10 @@ text = "LVL: 1"
 
 [node name="XP" type="Label" parent="Info/NinePatchRect" unique_id=1500388549]
 layout_mode = 0
-offset_left = 56.0
-offset_top = 23.0
-offset_right = 96.0
-offset_bottom = 46.0
+offset_left = 176.0
+offset_top = -8.0
+offset_right = 216.0
+offset_bottom = 15.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_nfakk")
 theme_override_font_sizes/font_size = 12
@@ -231,22 +275,34 @@ horizontal_alignment = 1
 
 [node name="GrammadexNum" type="Label" parent="Info/NinePatchRect" unique_id=1714340404]
 layout_mode = 0
-offset_left = 12.0
-offset_top = 72.0
-offset_right = 52.0
-offset_bottom = 95.0
+offset_left = 128.0
+offset_top = 12.0
+offset_right = 168.0
+offset_bottom = 35.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_nfakk")
 theme_override_font_sizes/font_size = 12
-text = "#50"
+text = "Grammarite #50"
 
 [node name="HP" type="Label" parent="Info/NinePatchRect" unique_id=152971894]
 layout_mode = 0
-offset_left = 12.0
-offset_top = 87.0
-offset_right = 52.0
-offset_bottom = 110.0
+offset_left = 128.0
+offset_top = 32.0
+offset_right = 168.0
+offset_bottom = 55.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_nfakk")
 theme_override_font_sizes/font_size = 12
 text = "HP: 1"
+
+[node name="Nickname" type="Label" parent="Info/NinePatchRect" unique_id=1866298428]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 100.0
+offset_right = 97.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_nfakk")
+theme_override_font_sizes/font_size = 12
+text = "Dog of Wood"
+horizontal_alignment = 1

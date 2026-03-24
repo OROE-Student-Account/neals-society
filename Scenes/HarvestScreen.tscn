@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="3_8wude"]
 [ext_resource type="Texture2D" uid="uid://hpyxtuycfcbw" path="res://Assets/UI/Pokemon Party/exit_background_button.png" id="4_6o1mr"]
 [ext_resource type="Texture2D" uid="uid://c7h1rjnnq5wb" path="res://Assets/Pokemon/Pokemon77.png" id="5_fnunc"]
+[ext_resource type="Texture2D" uid="uid://dl58l7iruinos" path="res://Assets/UI/Cancel.png" id="5_rm8oi"]
 [ext_resource type="Texture2D" uid="uid://bsxu6c3rnhh10" path="res://Assets/crush.png" id="6_mwkxk"]
 
 [sub_resource type="Animation" id="Animation_l8wp2"]
@@ -262,8 +263,8 @@ centered = false
 hframes = 2
 
 [node name="Cancel" type="Sprite2D" parent="Buttons" unique_id=50004425]
-position = Vector2(176, 128)
-texture = ExtResource("4_6o1mr")
+position = Vector2(176, 104)
+texture = ExtResource("5_rm8oi")
 centered = false
 hframes = 2
 

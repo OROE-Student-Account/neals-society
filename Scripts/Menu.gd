@@ -2,6 +2,7 @@ extends CanvasLayer
 
 const PokemonPartyScreen = preload("res://Scenes/PokemonPartyScreen.tscn")
 const ItemScreen = preload("res://Scenes/ItemScreen.tscn")
+const SaveScreen = preload("res://Scenes/SaveScreen.tscn")
 const StorageScreen = preload("res://Scenes/GrammariteStorage.tscn")
 const QuestScreen = preload("res://Scenes/QuestScreen.tscn")
 const HarvestScreen = preload("res://Scenes/HarvestScreen.tscn")
@@ -10,7 +11,7 @@ const CraftScreen = preload("res://Scenes/CraftScreen.tscn")
 @onready var arrow = $Control/Arrow 
 @onready var menu = $Control
 
-enum ScreenLoaded { NOTHING, DIALOGUE, JUST_MENU, ITEM_SCREEN, PARTY_SCREEN, STORAGE, NAMING, BATTLE, QUESTS, SHARDS }
+enum ScreenLoaded { NOTHING, DIALOGUE, JUST_MENU, ITEM_SCREEN, PARTY_SCREEN, STORAGE, NAMING, BATTLE, QUESTS, SHARDS, SAVE_SCREEN }
 var screen_loaded = ScreenLoaded.NOTHING
 var selected_option: int = 0
 
@@ -60,6 +61,17 @@ func unload_item_screen():
 	menu.visible = true
 	screen_loaded = ScreenLoaded.JUST_MENU
 	remove_child($ItemScreen)
+
+func load_save_screen():
+	menu.visible = false
+	screen_loaded = ScreenLoaded.SAVE_SCREEN
+	var save_screen = SaveScreen.instantiate()
+	add_child(save_screen)
+func unload_save_screen():
+	menu.visible = true
+	screen_loaded = ScreenLoaded.JUST_MENU
+	remove_child($SaveScreen)
+
 
 func load_storage_screen():
 	screen_loaded = ScreenLoaded.STORAGE
@@ -146,7 +158,7 @@ func _unhandled_input(event):
 					2:
 						Utils.get_scene_manager().transition_to_item_screen()
 					3:
-						pass
+						Utils.get_scene_manager().transition_to_save_screen()
 					4:
 						Utils.get_scene_manager().transition_to_naming_screen(self)
 					5:

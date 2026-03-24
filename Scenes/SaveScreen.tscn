@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://drcmpwuuhsuml"]
+
+[ext_resource type="Script" uid="uid://ccxebin8t8u5y" path="res://Scripts/SaveScreen.gd" id="1_tu4lr"]
+[ext_resource type="Texture2D" uid="uid://dl58l7iruinos" path="res://Assets/UI/Cancel.png" id="1_wmabo"]
+[ext_resource type="Texture2D" uid="uid://cbtw8iq0poli" path="res://Assets/UI/ui_arrow_up.png" id="2_87ffs"]
+[ext_resource type="Texture2D" uid="uid://bqio4uhjljbal" path="res://Assets/UI/PlainButton.png" id="3_herfk"]
+[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="4_herfk"]
+
+[node name="SaveScreen" type="Node2D" unique_id=367341242]
+texture_filter = 1
+script = ExtResource("1_tu4lr")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2019577930]
+offset_right = 240.0
+offset_bottom = 160.0
+
+[node name="Cancel" type="Sprite2D" parent="." unique_id=413821026]
+position = Vector2(176, 104)
+texture = ExtResource("1_wmabo")
+centered = false
+hframes = 2
+frame = 1
+
+[node name="Mode" type="Sprite2D" parent="." unique_id=1053446753]
+position = Vector2(16, 96)
+texture = ExtResource("3_herfk")
+centered = false
+hframes = 2
+frame = 1
+
+[node name="Text" type="Label" parent="Mode" unique_id=483190198]
+offset_left = 21.0
+offset_top = 28.0
+offset_right = 61.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_herfk")
+theme_override_font_sizes/font_size = 12
+text = "Mode"
+
+[node name="Arrow" type="TextureRect" parent="." unique_id=644180021]
+offset_left = 50.0
+offset_top = 96.0
+offset_right = 61.0
+offset_bottom = 102.0
+texture = ExtResource("2_87ffs")
+
+[node name="Text" type="Label" parent="." unique_id=1386968376]
+offset_top = 16.0
+offset_right = 240.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_herfk")
+theme_override_font_sizes/font_size = 12
+text = "Save Mode"
+horizontal_alignment = 1
+
+[node name="Slots" type="Control" parent="." unique_id=1301356991]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect2" type="ColorRect" parent="Slots" unique_id=1452578892]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 56.0
+offset_right = 72.0
+offset_bottom = 88.0
+color = Color(0, 1, 1, 1)
+
+[node name="Name" type="Label" parent="Slots/ColorRect2" unique_id=393645261]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_herfk")
+theme_override_font_sizes/font_size = 12
+text = "Name"
+
+[node name="ColorRect3" type="ColorRect" parent="Slots" unique_id=2022153163]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 56.0
+offset_right = 136.0
+offset_bottom = 88.0
+color = Color(1, 0, 1, 1)
+
+[node name="Name" type="Label" parent="Slots/ColorRect3" unique_id=1716840280]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_herfk")
+theme_override_font_sizes/font_size = 12
+text = "Empty"
+
+[node name="ColorRect4" type="ColorRect" parent="Slots" unique_id=320476622]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 56.0
+offset_right = 200.0
+offset_bottom = 88.0
+color = Color(1, 1, 0, 1)
+
+[node name="Name" type="Label" parent="Slots/ColorRect4" unique_id=2108913759]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_herfk")
+theme_override_font_sizes/font_size = 12
+text = "Name"

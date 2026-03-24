@@ -6,6 +6,8 @@ var pause = false
 enum Page { MAIN, CHOSEN, SUMMARY, ITEM, SWITCH, MOVES }
 var page: int = Page.MAIN
 
+var selected_move = 0
+
 var selected_sub_page: int = 0
 
 var num_of_slots = 7
@@ -118,15 +120,15 @@ func load_summary(slot_num):
 	
 	$SummaryScreen/Stats/BG/Actual.polygon = polygon
 	
+	$SummaryScreen/Grammarite.texture = load("res://Assets/Pokemon/Pokemon"+str(1+Utils.get_poke_num(slot_data["Name"]))+".png")
+	
 	# types
 	var info = $SummaryScreen/Info/NinePatchRect
 	if len(stats["Types"]) == 1:
-		info.get_child(0).text = "Type:"
 		info.get_child(0).get_child(0).visible = false
 		info.get_child(1).visible = true
 		info.get_child(1).text = str(stats["Types"][0])
 	elif len(stats["Types"]) == 2:
-		info.get_child(0).text = "Types:"
 		info.get_child(0).get_child(0).visible = true
 		info.get_child(1).visible = false
 		info.get_child(0).get_child(0).get_child(0).text = str(stats["Types"][0])
@@ -141,15 +143,60 @@ func load_summary(slot_num):
 	
 	# name and grammadex num
 	info.get_child(4).text = slot_data["Name"]
-	info.get_child(5).text = "DEX #: "+str(Utils.get_poke_num(slot_data["Name"])+1)
+	info.get_child(5).text = "Grammarite # "+str(Utils.get_poke_num(slot_data["Name"])+1)
 	
 	# hp
 	info.get_child(6).text = "HP: "+str(int(slot_data["Health"]))+" / "+str(int(Utils.max_hp(slot_data["Name"], slot_data["Level"])))
+	
+	# nickname
+	info.get_child(7).text = slot_data["Nickname"]
+
+func update_move_box():
+	$MovesScreen/SelectBox.size.y = 15
+	$MovesScreen/SelectBox.position.y = 20 + selected_move*16
+	if selected_move == 1:
+		$MovesScreen/SelectBox.size.y = 14
+	elif selected_move > 1:
+		$MovesScreen/SelectBox.position.y -= 1
+	
+	var move_nodes = $MovesScreen/Moves.get_children()
+	for i in range(len(move_nodes)):
+		var box = move_nodes[i]
+		if i != selected_move:
+			for j in range(5):
+				if j != 0 and j != 3:
+					box.get_child(j).visible = false
+		else:
+			for j in range(5):
+				if j != 0 and j != 3:
+					box.get_child(j).visible = true
 
 func load_moves(slot_num):
+	selected_move = 0
 	self.add_child(load("res://Scenes/MovesPartyScreen.tscn").instantiate())
 	
+	
 	var slot_data = Utils.get_party()[slot_num]
+	var stats = Utils.get_grammarite_details(slot_data["Name"])["Stats"]
+	
+	$MovesScreen/Grammarite.texture = load("res://Assets/Pokemon/Pokemon"+str(1+Utils.get_poke_num(slot_data["Name"]))+".png")
+	# types
+	var info = $MovesScreen/Info
+	if len(stats["Types"]) == 1:
+		info.get_child(0).get_child(0).visible = false
+		info.get_child(1).visible = true
+		info.get_child(1).text = str(stats["Types"][0])
+	elif len(stats["Types"]) == 2:
+		info.get_child(0).get_child(0).visible = true
+		info.get_child(1).visible = false
+		info.get_child(0).get_child(0).get_child(0).text = str(stats["Types"][0])
+		info.get_child(0).get_child(0).get_child(1).text = str(stats["Types"][1])
+	
+	info.get_child(2).text = slot_data["Name"]
+	# nickname
+	info.get_child(3).text = slot_data["Nickname"]
+	
+	
 	var moves = []
 	
 	for i in range(4):
@@ -165,9 +212,11 @@ func load_moves(slot_num):
 		var box = move_nodes[i]
 		box.get_child(0).text = moves[i]["Name"]
 		box.get_child(1).text = moves[i]["Type"]
-		box.get_child(2).text = "PP: " + str(int(PP[i])) + "/" + str(int(moves[i]["PP"]))
-		box.get_child(3).text = "DMG: " + str(int(moves[i]["Damage"]))
-		box.get_child(4).text = "ACC: " + str(int(100 * moves[i]["Accuracy"])) + "%"
+		box.get_child(2).text = str(int(PP[i])) + "/" + str(int(moves[i]["PP"]))
+		box.get_child(3).text = str(int(moves[i]["Damage"]))
+		box.get_child(4).text = str(int(100 * moves[i]["Accuracy"])) + "%"
+	
+	update_move_box()
 
 func load_item(slot_num):
 	self.add_child(load("res://Scenes/ItemPartyScreen.tscn").instantiate())
@@ -349,7 +398,7 @@ func _input(event):
 				page = Page.CHOSEN
 				update_page()
 				stop()
-			if event.is_action_pressed("z"):
+			elif event.is_action_pressed("z"):
 				page = Page.MOVES
 				update_page()
 		Page.MOVES:
@@ -357,15 +406,21 @@ func _input(event):
 				page = Page.CHOSEN
 				update_page()
 				stop()
-			if event.is_action_pressed("z"):
+			elif event.is_action_pressed("z"):
 				page = Page.SUMMARY
 				update_page()
+			elif event.is_action_pressed("ui_up") and selected_move != 0:
+				selected_move -= 1
+				update_move_box()
+			elif event.is_action_pressed("ui_down") and selected_move != 3:
+				selected_move += 1
+				update_move_box()
 		Page.ITEM:
 			if event.is_action_pressed("x"):
 				page = Page.CHOSEN
 				update_page()
 				stop()
-			if event.is_action_pressed("z"):
+			elif event.is_action_pressed("z"):
 				Utils.get_scene_manager().transition_to_item_screen()
 		Page.SWITCH:
 			if event.is_action_pressed("x") or (event.is_action_pressed("z") and selected_sub_page == num_of_slots - 1):

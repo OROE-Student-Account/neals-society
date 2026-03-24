@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://don7dmvaqfm5v"]
+
+[ext_resource type="Script" uid="uid://dwbtvwsejegvg" path="res://Scripts/Crafter.gd" id="1_qp3uq"]
+[ext_resource type="Texture2D" uid="uid://dw17mm63araxi" path="res://Assets/UI/menu_box_1.png" id="2_xwf70"]
+[ext_resource type="Script" uid="uid://bp28l32amhxsf" path="res://Scripts/DialogueNode.gd" id="3_cek25"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7juk"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_toud0"]
+
+[node name="Crafter" type="Area2D" unique_id=917074634]
+collision_layer = 16
+script = ExtResource("1_qp3uq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=910522522]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_v7juk")
+debug_color = Color(0.31728366, 0.62451714, 0, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=330692856]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_toud0")
+debug_color = Color(0.3996365, 0.6092863, 3.85046e-07, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=967057239]
+modulate = Color(0.9372549, 0.9490196, 0.79607844, 0.9372549)
+position = Vector2(8, 8)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_xwf70")
+
+[node name="DialogueRoot" type="Node" parent="." unique_id=1687524562]
+script = ExtResource("3_cek25")
+text = "Do you want to open The Crafter?"
+
+[node name="Node" type="Node" parent="DialogueRoot" unique_id=1603144912 node_paths=PackedStringArray("func_node")]
+script = ExtResource("3_cek25")
+is_end_node = true
+option_name = "yes"
+function = "open_crafter"
+func_node = NodePath("../..")
+
+[node name="Node2" type="Node" parent="DialogueRoot" unique_id=1597421957 node_paths=PackedStringArray("func_node")]
+script = ExtResource("3_cek25")
+is_end_node = true
+option_name = "no"
+function = "reset"
+func_node = NodePath("../..")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

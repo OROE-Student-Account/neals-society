@@ -142,8 +142,15 @@ func set_player_name(new_name):
 	var inv = load_json_file("res://Data/Inventory.json")
 	inv["Name"] = new_name
 	save_json_file("res://Data/Inventory.json", inv)
-func get_player_name():
-	return load_json_file("res://Data/Inventory.json")["Name"]
+func get_player_name(slot: int = 0):
+	if slot == 0:
+		return load_json_file("res://Data/Inventory.json")["Name"]
+	else:
+		var file = load_json_file("res://Saves/"+str(slot)+"/Inventory.json")
+		if file.has("Name"):
+			return file["Name"]
+		else:
+			return ""
 
 
 func set_last_center(num: int):
@@ -151,8 +158,7 @@ func set_last_center(num: int):
 	stuff["Last Grammarite Center"] = num
 	save_json_file("res://Data/OtherStuff.json", stuff)
 func get_last_center():
-	var stuff = load_json_file("res://Data/OtherStuff.json")
-	return stuff["Locations"][stuff["Last Grammarite Center"]]
+	return load_json_file("res://GrammariteData/OtherStuff.json")["GCLocations"][load_json_file("res://Data/OtherStuff.json")["Last Grammarite Center"]]
 
 
 func load_quests():
@@ -283,3 +289,48 @@ func save_to_save_slot(num: int):
 	var slot_path = "res://Saves/"+str(num)+"/"
 	for file_name in data_file_names:
 		save_json_file(slot_path+file_name+".json", load_json_file("res://Data/"+file_name+".json"))
+func load_slot(num: int):
+	var slot_path = "res://Saves/"+str(num)+"/"
+	for file_name in data_file_names:
+		save_json_file("res://Data/"+file_name+".json", load_json_file(slot_path+file_name+".json"))
+func fill_empty_slot(num: int):
+	var slot_path = "res://Saves/"+str(num)+"/"
+	var inv = {
+		"Abilities": [],
+		"Items": [],
+		"Money": 0.0,
+		"Name": "",
+		"Party": []
+	}
+	for i in range(6):
+		inv["Party"].append({
+			"Health": 0.0,
+			"Item": "",
+			"Level": 1.0,
+			"Moves": [ "", "", "", ""],
+			"Name": "",
+			"Nickname": "",
+			"PP": [ 0, 0, 0, 0 ]
+		})
+	
+	save_json_file(slot_path+"Inventory.json", inv)
+	
+	var scenes = load_json_file("res://Data/Scenes.json")
+	for scene_name in scenes:
+		var town = scenes[scene_name]
+		for item_name in town["Items"]:
+			town["Items"][item_name]["Collected"] = false
+		
+		# Iterate over the values in the Trainers dictionary
+		for trainer_name in town["Trainers"]:
+			town["Trainers"][trainer_name]["Talked"] = false
+	save_json_file(slot_path+"Scenes.json", scenes)
+	
+	
+	save_json_file(slot_path+"OtherStuff.json", {"Last Grammarite Center": 0.0})
+	
+	var quests = []
+	var quest_details = load_json_file("res://GrammariteData/Quests.json")
+	for i in range(len(quest_details)):
+		quests.append({"Progess": "None"})
+	save_json_file(slot_path+"Quests.json", quests)

@@ -69,8 +69,8 @@
 		"Potion",
 		"Potion"
 	],
-	"Name": "x",
 	"Money": 0.0,
+	"Name": "x",
 	"Party": [
 		{
 			"Health": 7.0,

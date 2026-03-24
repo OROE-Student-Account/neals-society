@@ -10,7 +10,7 @@ var next_trainer = ""
 signal name_selected(chosen_name: String, requester_node: Node)
 var name_request_node: Node = null
 
-enum TransitionType { NEW_SCENE, PARTY_SCREEN, ITEM_SCREEN, MENU_ONLY, BATTLE, BATTLE_EXIT, STORAGE, EXIT_SCREEN, NAMING, QUESTS, GRAMMARITE_CENTER, HARVESTER, CRAFTER }
+enum TransitionType { NEW_SCENE, PARTY_SCREEN, ITEM_SCREEN, MENU_ONLY, BATTLE, BATTLE_EXIT, STORAGE, EXIT_SCREEN, NAMING, QUESTS, GRAMMARITE_CENTER, HARVESTER, CRAFTER, SAVE_SCREEN }
 var transition_type = TransitionType.NEW_SCENE
 
 @onready var scene = $CurrentScene
@@ -28,6 +28,13 @@ func transition_to_item_screen():
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 	transition_type = TransitionType.ITEM_SCREEN
 func transition_exit_item_screen():
+	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
+	transition_type = TransitionType.MENU_ONLY
+
+func transition_to_save_screen():
+	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
+	transition_type = TransitionType.SAVE_SCREEN
+func transition_exit_save_screen():
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 	transition_type = TransitionType.MENU_ONLY
 
@@ -140,9 +147,12 @@ func finished_fading():
 		TransitionType.ITEM_SCREEN:
 			$Menu.unload_party_screen()
 			$Menu.load_item_screen()
+		TransitionType.SAVE_SCREEN:
+			$Menu.load_save_screen()
 		TransitionType.MENU_ONLY:
 			$Menu.unload_party_screen()
 			$Menu.unload_item_screen()
+			$Menu.unload_save_screen()
 		TransitionType.BATTLE:
 			load_battle()
 		TransitionType.BATTLE_EXIT:

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://72llryj3s3r"]
+
+[ext_resource type="Script" uid="uid://dicqb4ckvmfcq" path="res://Scripts/Harvester.gd" id="1_lep52"]
+[ext_resource type="Script" uid="uid://bp28l32amhxsf" path="res://Scripts/DialogueNode.gd" id="2_6m476"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7u828"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1sjgi"]
+
+[node name="Harvester" type="Area2D" unique_id=503675209]
+collision_layer = 16
+script = ExtResource("1_lep52")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=981570732]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_7u828")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=367656370]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_1sjgi")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="DialogueRoot" type="Node" parent="." unique_id=962268368]
+script = ExtResource("2_6m476")
+text = "Do you want to open The Harvester?"
+
+[node name="Node" type="Node" parent="DialogueRoot" unique_id=782770503 node_paths=PackedStringArray("func_node")]
+script = ExtResource("2_6m476")
+is_end_node = true
+option_name = "yes"
+function = "open_harvester"
+func_node = NodePath("../..")
+
+[node name="Node2" type="Node" parent="DialogueRoot" unique_id=1058196897 node_paths=PackedStringArray("func_node")]
+script = ExtResource("2_6m476")
+is_end_node = true
+option_name = "no"
+function = "reset"
+func_node = NodePath("../..")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
