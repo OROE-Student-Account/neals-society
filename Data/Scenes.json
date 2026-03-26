@@ -1,4 +1,11 @@
 {
+	"OaksLab": {
+		"Items": {
+			"DogOfWood": {
+				"Collected": false
+			}
+		}
+	},
 	"Town": {
 		"Items": {
 			"Pokeball": {

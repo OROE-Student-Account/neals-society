@@ -22,7 +22,7 @@ debug_color = Color(0.8863375, 0.00029860318, 0.8066901, 0.41960785)
 
 [node name="DialogueRoot" type="Node" parent="." unique_id=488375812]
 script = ExtResource("2_ub35v")
-text = "Do you want to open your Grammarite storage?"
+text = "Do you want to open your Grammarite Computer?"
 
 [node name="Yes" type="Node" parent="DialogueRoot" unique_id=1751864514 node_paths=PackedStringArray("func_node")]
 script = ExtResource("2_ub35v")

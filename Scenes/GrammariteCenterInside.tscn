@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b24dvlaonqsyl" path="res://Assets/Buildings/pallet town/player_home_floor_1.png" id="1_078wu"]
 [ext_resource type="Texture2D" uid="uid://botopew3mmoy0" path="res://Assets/Buildings/pallet town/mat.png" id="2_5pw7d"]
 [ext_resource type="PackedScene" uid="uid://dvj3haqadph3a" path="res://Scenes/GrammariteComputer.tscn" id="3_bidd3"]
+[ext_resource type="PackedScene" uid="uid://gk622nn3ys7p" path="res://Scenes/Bookshelf.tscn" id="4_5pw7d"]
 [ext_resource type="PackedScene" uid="uid://i70qso44vgve" path="res://Scenes/Player.tscn" id="4_oxtqq"]
 [ext_resource type="PackedScene" uid="uid://fsubo0lgcrfo" path="res://Scenes/Door.tscn" id="5_d12qb"]
 
@@ -10,10 +11,10 @@
 size = Vector2(16, 176)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d88bl"]
-size = Vector2(80, 16)
+size = Vector2(32, 16)
 
 [sub_resource type="RectangleShape2D" id="2"]
-size = Vector2(192, 16)
+size = Vector2(96, 16)
 
 [sub_resource type="RectangleShape2D" id="3"]
 size = Vector2(32, 16)
@@ -23,6 +24,9 @@ size = Vector2(192, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tifnb"]
 size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bidd3"]
+size = Vector2(32, 16)
 
 [node name="GrammariteCenter" type="Node2D" unique_id=252097820]
 
@@ -58,7 +62,7 @@ position = Vector2(200, 88)
 shape = SubResource("1")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=655978765]
-position = Vector2(40, 24)
+position = Vector2(16, 24)
 shape = SubResource("RectangleShape2D_d88bl")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=407092087]
@@ -77,13 +81,22 @@ shape = SubResource("4")
 position = Vector2(96, 80)
 shape = SubResource("RectangleShape2D_tifnb")
 
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=940916779]
+position = Vector2(64, 24)
+shape = SubResource("RectangleShape2D_bidd3")
+
 [node name="GrammariteComputer" parent="." unique_id=1918101138 instance=ExtResource("3_bidd3")]
 position = Vector2(88, 24)
+
+[node name="Bookshelf" parent="." unique_id=2049850422 instance=ExtResource("4_5pw7d")]
+position = Vector2(40, 24)
+collision_layer = 16
 
 [node name="Node2D" type="Node2D" parent="." unique_id=340670768]
 
 [node name="Player" parent="Node2D" unique_id=802010568 instance=ExtResource("4_oxtqq")]
 position = Vector2(160, 64)
+collision_mask = 30
 
 [node name="Door" parent="." unique_id=305209293 instance=ExtResource("5_d12qb")]
 modulate = Color(0.12549, 0.313726, 0.85098, 1)

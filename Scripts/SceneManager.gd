@@ -10,10 +10,11 @@ var next_trainer = ""
 signal name_selected(chosen_name: String, requester_node: Node)
 var name_request_node: Node = null
 
-enum TransitionType { NEW_SCENE, PARTY_SCREEN, ITEM_SCREEN, MENU_ONLY, BATTLE, BATTLE_EXIT, STORAGE, EXIT_SCREEN, NAMING, QUESTS, GRAMMARITE_CENTER, HARVESTER, CRAFTER, SAVE_SCREEN }
+enum TransitionType { NEW_SCENE, PARTY_SCREEN, ITEM_SCREEN, MENU_ONLY, BATTLE, BATTLE_EXIT, STORAGE, EXIT_SCREEN, NAMING, QUESTS, GRAMMARITE_CENTER, HARVESTER, CRAFTER, SAVE_SCREEN, BOOKSHELF }
 var transition_type = TransitionType.NEW_SCENE
 
 @onready var scene = $CurrentScene
+@onready var menu =  $Menu
 
 
 
@@ -66,6 +67,14 @@ func transition_exit_crafter():
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 	transition_type = TransitionType.EXIT_SCREEN
 
+func transition_to_bookshelf():
+	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
+	transition_type = TransitionType.BOOKSHELF
+func transition_exit_bookshelf():
+	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
+	transition_type = TransitionType.EXIT_SCREEN
+
+
 func transition_to_naming_screen(from_node: Node):
 	transition_type = TransitionType.NAMING
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
@@ -101,7 +110,7 @@ func transition_to_battle(trainer):
 	player.set_physics_process(false)
 	player_location = player.position
 	player_direction = player.input_direction
-	$Menu.screen_loaded = 7
+	menu.screen_loaded = menu.ScreenLoaded.BATTLE
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 func transition_exit_battle():
 	transition_type = TransitionType.BATTLE_EXIT
@@ -142,38 +151,41 @@ func finished_fading():
 			var player = Utils.get_player()
 			player.set_spawn(player_location, player_direction)
 		TransitionType.PARTY_SCREEN:
-			$Menu.unload_item_screen()
-			$Menu.load_party_screen()
+			menu.unload_item_screen()
+			menu.load_party_screen()
 		TransitionType.ITEM_SCREEN:
-			$Menu.unload_party_screen()
-			$Menu.load_item_screen()
+			menu.unload_party_screen()
+			menu.load_item_screen()
 		TransitionType.SAVE_SCREEN:
-			$Menu.load_save_screen()
+			menu.load_save_screen()
 		TransitionType.MENU_ONLY:
-			$Menu.unload_party_screen()
-			$Menu.unload_item_screen()
-			$Menu.unload_save_screen()
+			menu.unload_party_screen()
+			menu.unload_item_screen()
+			menu.unload_save_screen()
 		TransitionType.BATTLE:
 			load_battle()
 		TransitionType.BATTLE_EXIT:
 			scene.get_children().back().free()
 			var player = Utils.get_player()
 			player.set_physics_process(true)
-			$Menu.screen_loaded = 0
+			menu.screen_loaded = menu.ScreenLoaded.NOTHING
 		TransitionType.STORAGE:
-			$Menu.load_storage_screen()
+			menu.load_storage_screen()
 		TransitionType.EXIT_SCREEN:
-			$Menu.unload_storage_screen()
-			$Menu.unload_quests()
-			$Menu.unload_harvester()
-			$Menu.unload_crafter()
+			menu.unload_storage_screen()
+			menu.unload_quests()
+			menu.unload_harvester()
+			menu.unload_crafter()
+			menu.unload_bookshelf()
 			var player = Utils.get_player()
 			player.set_physics_process(true)
 		TransitionType.NAMING:
 			name_selected.emit(await $NamingScreen.load_naming_screen(name_request_node.name_prompt), name_request_node)
 		TransitionType.QUESTS:
-			$Menu.load_quests()
+			menu.load_quests()
 		TransitionType.HARVESTER:
-			$Menu.load_harvester()
+			menu.load_harvester()
 		TransitionType.CRAFTER:
-			$Menu.load_crafter()
+			menu.load_crafter()
+		TransitionType.BOOKSHELF:
+			menu.load_bookshelf()

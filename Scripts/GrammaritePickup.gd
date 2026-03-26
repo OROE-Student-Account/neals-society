@@ -13,6 +13,13 @@ var used_up = false
 
 var selected_button = 0
 
+
+
+func _ready() -> void:
+	var scene = get_node("/root/SceneManager/CurrentScene").get_child(0).name
+	if Utils.check_item_picked_up(name, scene):
+		queue_free()
+
 func open_menu():
 	var player = Utils.get_player()
 	player.set_physics_process(false)
@@ -20,21 +27,18 @@ func open_menu():
 	
 	var menu = menu_scene.instantiate()
 	menu.get_node("Grammarite").texture = grammarite_sprite
-	Utils.get_scene_manager().add_child(menu)
+	Utils.get_scene_manager().get_node("Menu").add_child(menu)
 	
 	selected_button = 0
 	update_buttons()
-
-
 func close_menu():
-	Utils.get_scene_manager().get_children().back().queue_free()
+	Utils.get_scene_manager().get_node("Menu").get_children().back().queue_free()
 	Utils.get_player().set_physics_process(true)
 	in_menu = false
 	reset()
 
-
 func update_buttons():
-	var menu = Utils.get_scene_manager().get_children().back()
+	var menu = Utils.get_scene_manager().get_node("Menu").get_children().back()
 	if selected_button == 0:
 		menu.get_node("Take").frame = 1
 		menu.get_node("Leave").frame = 0
@@ -70,37 +74,40 @@ func _unhandled_input(event: InputEvent) -> void:
 		elif event.is_action_pressed("z"):
 			var party = Utils.get_party()
 			var empty_slot = -1
+			var details = Utils.get_grammarite_details(grammarite_name)
+			var new_guy = {
+				"Health": Utils.max_hp(grammarite_name, 1), "Item": "", "Level": 1,
+				"Moves": [
+					details["Moves"][0]["Name"],
+					details["Moves"][1]["Name"],
+					details["Moves"][2]["Name"],
+					details["Moves"][3]["Name"]
+				],
+				"Name": grammarite_name, "Nickname": "",
+				"PP": [
+					details["Moves"][0]["PP"],
+					details["Moves"][1]["PP"],
+					details["Moves"][2]["PP"],
+					details["Moves"][3]["PP"],
+				]
+			}
 			for i in range(6):
 				if party[i]["Name"] == "":
 					empty_slot = i
 					break
 			if empty_slot != -1:
-				var details = Utils.get_grammarite_details(grammarite_name)
-				var new_guy = {
-						"Health": Utils.max_hp(grammarite_name, 1), "Item": "", "Level": 1,
-						"Moves": [
-							details["Moves"][0]["Name"],
-							details["Moves"][1]["Name"],
-							details["Moves"][2]["Name"],
-							details["Moves"][3]["Name"]
-						],
-						"Name": grammarite_name, "Nickname": "",
-						"PP": [
-							details["Moves"][0]["PP"],
-							details["Moves"][1]["PP"],
-							details["Moves"][2]["PP"],
-							details["Moves"][3]["PP"],
-						]
-					}
 				
 				party[empty_slot] = new_guy
 				
 				Utils.set_party(party)
 			else:
-				# Add to storage
-				pass
+				if not Utils.add_to_inventory(new_guy):
+					return
 			close_menu()
+			var scene = get_node("/root/SceneManager/CurrentScene").get_child(0).name
+			Utils.update_item_picked_up(name, true, scene)
 			queue_free()
+			
 
 func reset():
 	await get_tree().create_timer(0.1).timeout
@@ -111,6 +118,5 @@ func reset():
 func _on_body_exited(_body: Node2D) -> void:
 	picked_up = false
 	used_up = false
-
 func _on_body_entered(_body: Node2D) -> void:
 	picked_up = true

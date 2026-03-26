@@ -7,11 +7,12 @@ const StorageScreen = preload("res://Scenes/GrammariteStorage.tscn")
 const QuestScreen = preload("res://Scenes/QuestScreen.tscn")
 const HarvestScreen = preload("res://Scenes/HarvestScreen.tscn")
 const CraftScreen = preload("res://Scenes/CraftScreen.tscn")
+const BookScreen = preload("res://Scenes/BookScreen.tscn")
 
 @onready var arrow = $Control/Arrow 
 @onready var menu = $Control
 
-enum ScreenLoaded { NOTHING, DIALOGUE, JUST_MENU, ITEM_SCREEN, PARTY_SCREEN, STORAGE, NAMING, BATTLE, QUESTS, SHARDS, SAVE_SCREEN }
+enum ScreenLoaded { NOTHING, DIALOGUE, JUST_MENU, ITEM_SCREEN, PARTY_SCREEN, COMPUTER, NAMING, BATTLE, QUESTS, SHARDS, SAVE_SCREEN, BOOKSHELF }
 var screen_loaded = ScreenLoaded.NOTHING
 var selected_option: int = 0
 
@@ -74,7 +75,7 @@ func unload_save_screen():
 
 
 func load_storage_screen():
-	screen_loaded = ScreenLoaded.STORAGE
+	screen_loaded = ScreenLoaded.COMPUTER
 	var storage_screen = StorageScreen.instantiate()
 	add_child(storage_screen)
 func unload_storage_screen():
@@ -99,11 +100,19 @@ func unload_harvester():
 
 func load_crafter():
 	screen_loaded = ScreenLoaded.SHARDS
-	var creaft_screen = CraftScreen.instantiate()
-	add_child(creaft_screen)
+	var craft_screen = CraftScreen.instantiate()
+	add_child(craft_screen)
 func unload_crafter():
 	screen_loaded = ScreenLoaded.NOTHING
 	remove_child($CraftScreen)
+
+func load_bookshelf():
+	screen_loaded = ScreenLoaded.BOOKSHELF
+	var book_screen = BookScreen.instantiate()
+	add_child(book_screen)
+func unload_bookshelf():
+	screen_loaded = ScreenLoaded.NOTHING
+	remove_child($BookScreen)
 
 
 func _unhandled_input(event):

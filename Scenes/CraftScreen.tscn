@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c0dop7ekxqv5h" path="res://Assets/Items/Knowledge Shard.png" id="6_rlt7w"]
 [ext_resource type="Texture2D" uid="uid://dywqob2aeknmi" path="res://Assets/Pokemon/Pokemon1.png" id="7_5aj04"]
 [ext_resource type="Texture2D" uid="uid://33jd1d7bcg3h" path="res://Assets/Items/Supply Shard.png" id="8_kts7i"]
+[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="10_5aj04"]
 
 [sub_resource type="Animation" id="Animation_sonj8"]
 resource_name = "Craft"
@@ -145,6 +146,94 @@ tracks/10/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Label:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_kts7i"]
+resource_name = "Fail"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shard1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shard2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Grammarite:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Item:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_nchfe"]
 length = 0.001
@@ -268,10 +357,23 @@ tracks/9/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Label:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7qkc0"]
 _data = {
 &"Craft": SubResource("Animation_sonj8"),
+&"Fail": SubResource("Animation_kts7i"),
 &"RESET": SubResource("Animation_nchfe")
 }
 
@@ -390,7 +492,6 @@ texture = ExtResource("5_7o8y5")
 
 [node name="Shard2" type="Sprite2D" parent="Animation" unique_id=29147287]
 position = Vector2(160, 80)
-rotation = -47.12389
 texture = ExtResource("6_rlt7w")
 
 [node name="Grammarite" type="Sprite2D" parent="Animation" unique_id=2137719462]
@@ -402,3 +503,14 @@ region_rect = Rect2(0, 34, 64, 64)
 [node name="Item" type="Sprite2D" parent="Animation" unique_id=7225482]
 position = Vector2(120, 80)
 texture = ExtResource("8_kts7i")
+
+[node name="Label" type="Label" parent="Animation" unique_id=2090876890]
+visible = false
+offset_left = 48.0
+offset_top = 72.0
+offset_right = 193.0
+offset_bottom = 95.0
+theme = ExtResource("10_5aj04")
+text = "No room for the crafted item.
+Clear space, then try again."
+horizontal_alignment = 1

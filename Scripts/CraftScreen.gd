@@ -122,6 +122,66 @@ func count_shard(item):
 	
 	return count
 
+func craft():
+	if shard1 != "" and shard2 != "":
+		
+		var craftable = true # flag for if inventory is full so you can't craft
+		
+		
+		var thing = Utils.get_recipe(shard1, shard2) # what you craft
+		
+		if thing != {}:
+			if thing["Type"] == "Item":
+				$Animation/Grammarite.texture = empty
+				Utils.add_to_inventory(thing["Name"])
+			elif thing["Type"] == "Grammarite":
+				$Animation/Item.texture = empty
+				var found = false # flag for if there is room in inventory
+				
+				# sets up the grammarite
+				var g_name = thing["Name"]
+				var details = Utils.get_grammarite_details(g_name)
+				var grammarite = {
+					"Health": Utils.max_hp(g_name, 1),
+					"Item": "",
+					"Level": 1.0,
+					"Moves": [],
+					"Name": g_name,
+					"Nickname": "",
+					"PP": []
+				}
+				for i in range(4):
+					grammarite["Moves"].append(details["Moves"][i]["Name"])
+					grammarite["PP"].append(details["Moves"][i]["PP"])
+				
+				# checks party for a spot
+				var party = Utils.get_party()
+				for i in range(6):
+					if party[i]["Name"] == "":
+						party[i] = grammarite
+						found = true
+						break
+				
+				if not found:
+					# checks for room on bookshelf
+					if not Utils.add_to_bookshelf(grammarite):
+						craftable =  false
+				
+			if craftable:
+				# craft animation
+				$Animation/AnimationPlayer.play("Craft")
+				await get_tree().create_timer(5.0).timeout
+				
+				Utils.remove_from_inventory(shard1+" Shard")
+				shard1 = ""
+				Utils.remove_from_inventory(shard2+" Shard")
+				shard2 = ""
+				update_buttons()
+			else:
+				$Animation/AnimationPlayer.play("Fail")
+				shard1 = ""
+				shard2 = ""
+				update_buttons()
 
 func _input(event):
 	match page:
@@ -166,24 +226,8 @@ func _input(event):
 					selected_option = Options.SWITCH2
 					update_buttons()
 				elif selected_option == Options.CRAFT:
-					if shard1 != "" and shard2 != "":
-						var thing = Utils.get_recipe(shard1, shard2)
-						if thing != {}:
-							if thing["Type"] == "Item":
-								$Animation/Grammarite.texture = empty
-								Utils.add_to_inventory(thing["Name"])
-							elif thing["Type"] == "Grammarite":
-								$Animation/Item.texture = empty
-								# Add to storage
-							
-							$Animation/AnimationPlayer.play("Craft")
-							await get_tree().create_timer(5.0).timeout
-							
-							Utils.remove_from_inventory(shard1+" Shard")
-							shard1 = ""
-							Utils.remove_from_inventory(shard2+" Shard")
-							shard2 = ""
-							update_buttons()
+					craft()
+					
 		Page.SWITCH:
 			if event.is_action_pressed("ui_up"):
 				if selected_option > 7:

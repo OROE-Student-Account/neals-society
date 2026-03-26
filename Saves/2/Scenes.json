@@ -1,2 +1,24 @@
 {
+	"OaksLab": {
+		"Items": {
+			"DogOfWood": {
+				"Collected": false
+			}
+		}
+	},
+	"Town": {
+		"Items": {
+			"Pokeball": {
+				"Collected": false
+			}
+		},
+		"Trainers": {
+			"Fighter": {
+				"Talked": false
+			},
+			"Rival": {
+				"Talked": false
+			}
+		}
+	}
 }

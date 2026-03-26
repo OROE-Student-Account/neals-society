@@ -14,12 +14,14 @@ func reset_scenes():
 	
 	for scene_name in scenes:
 		var town = scenes[scene_name]
-		for item_name in town["Items"]:
-			town["Items"][item_name]["Collected"] = false
+		if town.has("Items"):
+			for item_name in town["Items"]:
+				town["Items"][item_name]["Collected"] = false
 		
 		# Iterate over the values in the Trainers dictionary
-		for trainer_name in town["Trainers"]:
-			town["Trainers"][trainer_name]["Talked"] = false
+		if town.has("Trainers"):
+			for trainer_name in town["Trainers"]:
+				town["Trainers"][trainer_name]["Talked"] = false
 	
 	save_json_file("res://Data/Scenes.json", scenes)
 
@@ -189,6 +191,21 @@ func get_recipe(shard1, shard2):
 
 
 
+func get_bookshelf():
+	return load_json_file("res://Data/Bookshelf.json")
+func set_bookshelf(input):
+	var books = load_json_file("res://Data/Bookshelf.json")
+	books = input
+	save_json_file("res://Data/Bookshelf.json", books)
+func add_to_bookshelf(grammarite):
+	var books = load_json_file("res://Data/Bookshelf.json")
+	for i in range(12):
+		if books[i] == {}:
+			books[i] = grammarite
+			return true
+	return false
+
+
 var question_list = [
 	"Vocabulary",
 	"Syntax",
@@ -278,8 +295,9 @@ func load_json_file(file_path):
 	return json.data
 
 
-
+# Update to save and load the bookshelf
 var data_file_names = [
+	"Bookshelf",
 	"Inventory",
 	"OtherStuff",
 	"Quests",
@@ -318,12 +336,14 @@ func fill_empty_slot(num: int):
 	var scenes = load_json_file("res://Data/Scenes.json")
 	for scene_name in scenes:
 		var town = scenes[scene_name]
-		for item_name in town["Items"]:
-			town["Items"][item_name]["Collected"] = false
+		if town.has("Items"):
+			for item_name in town["Items"]:
+				town["Items"][item_name]["Collected"] = false
 		
 		# Iterate over the values in the Trainers dictionary
-		for trainer_name in town["Trainers"]:
-			town["Trainers"][trainer_name]["Talked"] = false
+		if town.has("Trainers"):
+			for trainer_name in town["Trainers"]:
+				town["Trainers"][trainer_name]["Talked"] = false
 	save_json_file(slot_path+"Scenes.json", scenes)
 	
 	
@@ -334,3 +354,8 @@ func fill_empty_slot(num: int):
 	for i in range(len(quest_details)):
 		quests.append({"Progess": "None"})
 	save_json_file(slot_path+"Quests.json", quests)
+	
+	var bookshelf = []
+	for i in range(12):
+		bookshelf.append({})
+	save_json_file(slot_path+"Bookshelf.json", bookshelf)

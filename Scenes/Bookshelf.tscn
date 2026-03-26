@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://gk622nn3ys7p"]
+
+[ext_resource type="Script" uid="uid://bfat4pafbklc7" path="res://Scripts/Bookshelf.gd" id="1_f4cjk"]
+[ext_resource type="Script" uid="uid://bp28l32amhxsf" path="res://Scripts/DialogueNode.gd" id="2_ufot5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nf3ix"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cyotu"]
+
+[node name="Bookshelf" type="Area2D" unique_id=2049850422]
+collision_layer = 16
+script = ExtResource("1_f4cjk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1847706279]
+shape = SubResource("RectangleShape2D_nf3ix")
+debug_color = Color(0.5126963, 0.56900865, 0.30857548, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1831931577]
+shape = SubResource("CircleShape2D_cyotu")
+debug_color = Color(0.5482099, 0.5595974, 0.23503008, 0.41960785)
+
+[node name="DialogueRoot" type="Node" parent="." unique_id=1114559772]
+script = ExtResource("2_ufot5")
+text = "Do you want to open "
+
+[node name="Yes" type="Node" parent="DialogueRoot" unique_id=1577331186 node_paths=PackedStringArray("func_node")]
+script = ExtResource("2_ufot5")
+is_end_node = true
+option_name = "Yes"
+function = "open_bookshelf"
+func_node = NodePath("../..")
+
+[node name="No" type="Node" parent="DialogueRoot" unique_id=1093236639 node_paths=PackedStringArray("func_node")]
+script = ExtResource("2_ufot5")
+is_end_node = true
+option_name = "No"
+function = "reset"
+func_node = NodePath("../..")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

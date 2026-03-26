@@ -44,6 +44,7 @@ _data = {
 }
 
 [node name="GrammaritePickupMenu" type="Node2D" unique_id=1929014563]
+texture_filter = 1
 
 [node name="Background" type="ColorRect" parent="." unique_id=1124827445]
 offset_left = 64.0
