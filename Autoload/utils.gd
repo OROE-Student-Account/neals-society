@@ -202,6 +202,8 @@ func add_to_bookshelf(grammarite):
 	for i in range(12):
 		if books[i] == {}:
 			books[i] = grammarite
+			print(books)
+			save_json_file("res://Data/Bookshelf.json", books)
 			return true
 	return false
 

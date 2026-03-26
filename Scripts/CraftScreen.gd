@@ -160,6 +160,7 @@ func craft():
 					if party[i]["Name"] == "":
 						party[i] = grammarite
 						found = true
+						Utils.set_party(party)
 						break
 				
 				if not found:

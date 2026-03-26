@@ -12,17 +12,6 @@
 		"Pokeball",
 		"Pokeball",
 		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
 		"Story Book",
 		"Story Book",
 		"Knowledge Shard",
@@ -74,7 +63,64 @@
 		{
 			"Health": 12.0,
 			"Item": "",
-			"Level": 1.0,
+			"Level": 1.69,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Woodchip"
+			],
+			"Name": "Dog of Wood",
+			"Nickname": "",
+			"PP": [
+				15.0,
+				20.0,
+				15.0,
+				1.0
+			]
+		},
+		{
+			"Health": 0.0,
+			"Item": "",
+			"Level": 1.65,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Woodchip"
+			],
+			"Name": "Dog of Wood",
+			"Nickname": "",
+			"PP": [
+				15.0,
+				20.0,
+				15.0,
+				1.0
+			]
+		},
+		{
+			"Health": 208.0,
+			"Item": "",
+			"Level": 69.0,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Sculpt"
+			],
+			"Name": "Sculpupture",
+			"Nickname": "",
+			"PP": [
+				15.0,
+				20.0,
+				15.0,
+				5.0
+			]
+		},
+		{
+			"Health": 184.0,
+			"Item": "",
+			"Level": 65.0,
 			"Moves": [
 				"Bite",
 				"Play",
@@ -98,91 +144,34 @@
 				"Bite",
 				"Play",
 				"Sit",
-				"Woodchip"
+				"Sculpt"
 			],
-			"Name": "Dog of Wood",
+			"Name": "Sculpupture",
 			"Nickname": "",
 			"PP": [
 				15.0,
 				20.0,
 				15.0,
-				1.0
+				5.0
 			]
 		},
 		{
-			"Health": 7.0,
+			"Health": 87.0,
 			"Item": "",
-			"Level": 4.85,
+			"Level": 27.0,
 			"Moves": [
 				"Bite",
 				"Play",
 				"Sit",
-				"Woodchip"
+				"Sculpt"
 			],
-			"Name": "Dog of Wood",
-			"Nickname": "",
-			"PP": [
-				12.0,
-				20.0,
-				15.0,
-				0.0
-			]
-		},
-		{
-			"Health": 12.0,
-			"Item": "",
-			"Level": 1.0,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Sit",
-				"Woodchip"
-			],
-			"Name": "Dog of Wood",
+			"Name": "Sculpupture",
 			"Nickname": "",
 			"PP": [
 				15.0,
 				20.0,
 				15.0,
-				1.0
-			]
-		},
-		{
-			"Health": 12.0,
-			"Item": "",
-			"Level": 1.0,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Sit",
-				"Woodchip"
-			],
-			"Name": "Dog of Wood",
-			"Nickname": "",
-			"PP": [
-				15.0,
-				20.0,
-				15.0,
-				1.0
-			]
-		},
-		{
-			"Health": 12,
-			"Item": "",
-			"Level": 1,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Sit",
-				"Woodchip"
-			],
-			"Name": "Dog of Wood",
-			"Nickname": "",
-			"PP": [
-				15.0,
-				20.0,
-				15.0,
-				1.0
+				5.0
 			]
 		}
 	]

@@ -220,9 +220,43 @@ func throw_book(book_name):
 	
 	if caught < base_chance:
 		battle_ui.set_info_text("You caught it!")
-		await get_tree().create_timer(0.6).timeout
+		await get_tree().create_timer(1.6).timeout
 		# enemy_grammarite goes to your storage
-		# TODO: Make this actually go to storage
+		
+		var found = false # flag for if there is room in inventory
+		
+		# sets up the grammarite
+		var g_name = enemy_grammarite.grammarite_name
+		var details = Utils.get_grammarite_details(g_name)
+		var grammarite = {
+			"Health": enemy_grammarite.health,
+			"Item": "",
+			"Level": enemy_grammarite.level,
+			"Moves": [],
+			"Name": g_name,
+			"Nickname": "",
+			"PP": []
+		}
+		for i in range(4):
+			grammarite["Moves"].append(details["Moves"][i]["Name"])
+			grammarite["PP"].append(details["Moves"][i]["PP"])
+		
+		# checks party for a spot
+		var party = Utils.get_party()
+		for i in range(6):
+			if party[i]["Name"] == "":
+				party[i] = grammarite
+				found = true
+				Utils.set_party(party)
+				break
+		
+		if not found:
+			# checks for room on bookshelf
+			if not Utils.add_to_bookshelf(grammarite):
+				battle_ui.set_info_text("Uh oh, it ran away because no space.")
+				await get_tree().create_timer(2.0).timeout
+		
+		
 		end_battle(true)
 		return
 	
