@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://bgjd8lvacu6gg" path="res://Scripts/SceneManager.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://bkml6dq0xfdp7" path="res://Scenes/Menu.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://i0am2murs47p" path="res://Scenes/Dialogue.tscn" id="4_026ex"]
-[ext_resource type="PackedScene" uid="uid://dumf4h3qchxhv" path="res://Scenes/NamingScreen.tscn" id="5_83gc0"]
-[ext_resource type="PackedScene" uid="uid://dvpfferedor81" path="res://Scenes/SelectScene.tscn" id="6_8ysa5"]
+[ext_resource type="PackedScene" path="res://Scenes/NamingScreen.tscn" id="5_83gc0"]
+[ext_resource type="PackedScene" path="res://Scenes/SelectScene.tscn" id="6_8ysa5"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "FadeToBlack"
