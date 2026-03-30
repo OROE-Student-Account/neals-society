@@ -127,7 +127,7 @@
 		"Knowledge": "None",
 		"Ink": "Weak",
 		"Animal": "None",
-		"Machine": "Strong"
+		"Machine": "Weak"
 	},
 	"Machine": {
 		"Grammar": "None",
