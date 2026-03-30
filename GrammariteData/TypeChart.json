@@ -71,10 +71,10 @@
 		"Slang": "Weak",
 		"Paper": "Strong",
 		"Nature": "Weak",
-		"Supply": "None",
+		"Supply": "Weak",
 		"Knowledge": "None",
 		"Ink": "None",
-		"Animal": "Weak",
+		"Animal": "None",
 		"Machine": "None"
 	},
 	"Supply": {
