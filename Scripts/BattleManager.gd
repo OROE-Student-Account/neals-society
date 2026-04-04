@@ -292,6 +292,12 @@ func end_battle(player_won: bool):
 		else:
 			xp = enemy_grammarite.level
 		
+		# random increase in xp, weighted closer to 1, up to 1.25
+		xp *= (1 + (randf()/2)**2)
+		
+		# scale xp based on level, keep within range of 10-100 xp
+		xp = min(100, max(10, int( 10 * (xp / int(party[0]["Level"])) )))
+		
 		if fmod(party[0]["Level"], 1.0) + xp*0.01 > 1.0:
 			battle_ui.set_info_text("Your Grammarite leveled up!")
 			await get_tree().create_timer(1.5).timeout

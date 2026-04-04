@@ -84,7 +84,8 @@ func transition_to_select_screen():
 	return await $GrammariteSelectScreen.load_screen()
 
 func transition_to_dialogue(root_node):
-	$DialogueBox.start_dialogue(root_node)
+	if menu.screen_loaded == menu.ScreenLoaded.NOTHING:
+		$DialogueBox.start_dialogue(root_node)
 
 
 func load_battle():

@@ -6,10 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cf0txma36318t" path="res://Assets/UI/Pokemon Party/PartyScreenSelect.png" id="3_b4nyv"]
 [ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="4"]
 [ext_resource type="Texture2D" uid="uid://ckbbwuf8tfh1" path="res://Assets/UI/Dialogue.png" id="4_b4nyv"]
-[ext_resource type="Texture2D" uid="uid://dywqob2aeknmi" path="res://Assets/Pokemon/Pokemon1.png" id="8"]
+[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="7_ajrs2"]
 [ext_resource type="Texture2D" uid="uid://3ndqiat65p8r" path="res://Assets/Pokemon/Pokemon59.png" id="8_jqn4x"]
-[ext_resource type="Texture2D" uid="uid://djti4nrbbo2kk" path="res://Assets/Pokemon/Pokemon7.png" id="9"]
-[ext_resource type="Texture2D" uid="uid://ynuirmpk2ja1" path="res://Assets/Pokemon/Pokemon16.png" id="10"]
 [ext_resource type="Texture2D" uid="uid://bv565fwa2g6si" path="res://Assets/Pokemon/Pokemon34.png" id="10_b4nyv"]
 [ext_resource type="Texture2D" uid="uid://x2r2smipejox" path="res://Assets/Pokemon/Pokemon25.png" id="11"]
 [ext_resource type="Texture2D" uid="uid://b81iqrvr8ywd1" path="res://Assets/Pokemon/Pokemon95.png" id="12"]
@@ -18,6 +16,13 @@
 [ext_resource type="Texture2D" uid="uid://dw17mm63araxi" path="res://Assets/UI/menu_box_1.png" id="15_ajrs2"]
 [ext_resource type="Texture2D" uid="uid://dl58l7iruinos" path="res://Assets/UI/Cancel.png" id="16_b4nyv"]
 [ext_resource type="Texture2D" uid="uid://bofmcuxvqsoyg" path="res://Assets/UI/ui_arrow_left_right.png" id="16_jqn4x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqn4x"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_detail = 7
+anti_aliasing = false
 
 [sub_resource type="Animation" id="1"]
 resource_name = "Idle"
@@ -297,6 +302,15 @@ text = "Choose a Grammarite."
 position = Vector2(2, -25)
 script = ExtResource("3_3dpfl")
 
+[node name="GrammariteName" type="Label" parent="FirstPokemonSlot" unique_id=712901727]
+offset_left = 58.0
+offset_top = 37.0
+offset_right = 94.0
+offset_bottom = 47.0
+theme = ExtResource("7_ajrs2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jqn4x")
+text = "Dog of Wood"
+
 [node name="PokemonPartySprite" type="Sprite2D" parent="FirstPokemonSlot" unique_id=85660275]
 position = Vector2(22, 33)
 texture = ExtResource("3")
@@ -304,12 +318,6 @@ centered = false
 hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
-
-[node name="PokemonName" type="Sprite2D" parent="FirstPokemonSlot" unique_id=1880021042]
-position = Vector2(68, 42)
-texture = ExtResource("3")
-region_enabled = true
-region_rect = Rect2(0, -1, 73, 10)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="FirstPokemonSlot" unique_id=661708953]
 libraries/ = SubResource("AnimationLibrary_4tkum")
@@ -336,6 +344,15 @@ color = Color(0, 1, 0, 1)
 position = Vector2(119, -26)
 script = ExtResource("3_3dpfl")
 
+[node name="GrammariteName" type="Label" parent="SecondPokemonSlot" unique_id=2091412937]
+offset_left = 53.0
+offset_top = 38.0
+offset_right = 89.0
+offset_bottom = 48.0
+theme = ExtResource("7_ajrs2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jqn4x")
+text = "Dog of wood"
+
 [node name="PokemonPartySprite" type="Sprite2D" parent="SecondPokemonSlot" unique_id=932377883]
 position = Vector2(17, 34)
 texture = ExtResource("8_jqn4x")
@@ -343,12 +360,6 @@ centered = false
 hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
-
-[node name="PokemonName" type="Sprite2D" parent="SecondPokemonSlot" unique_id=1404058218]
-position = Vector2(89, 42)
-texture = ExtResource("8")
-region_enabled = true
-region_rect = Rect2(0, -1, 73, 10)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPokemonSlot" unique_id=853748675]
 libraries/ = SubResource("AnimationLibrary_yeqs3")
@@ -375,6 +386,15 @@ color = Color(0, 1, 0, 1)
 position = Vector2(119, -2)
 script = ExtResource("3_3dpfl")
 
+[node name="GrammariteName" type="Label" parent="ThirdPokemonSlot" unique_id=1110099415]
+offset_left = -59.0
+offset_top = 57.0
+offset_right = -23.0
+offset_bottom = 67.0
+theme = ExtResource("7_ajrs2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jqn4x")
+text = "Dog of"
+
 [node name="PokemonPartySprite" type="Sprite2D" parent="ThirdPokemonSlot" unique_id=1381254744]
 position = Vector2(-95, 54)
 texture = ExtResource("10_b4nyv")
@@ -382,12 +402,6 @@ centered = false
 hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
-
-[node name="PokemonName" type="Sprite2D" parent="ThirdPokemonSlot" unique_id=634138031]
-position = Vector2(-23, 60)
-texture = ExtResource("9")
-region_enabled = true
-region_rect = Rect2(0, -1, 73, 10)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ThirdPokemonSlot" unique_id=1314531005]
 libraries/ = SubResource("AnimationLibrary_qb61y")
@@ -414,6 +428,15 @@ color = Color(0, 1, 0, 1)
 position = Vector2(119, 22)
 script = ExtResource("3_3dpfl")
 
+[node name="GrammariteName" type="Label" parent="FourthPokemonSlot" unique_id=591323933]
+offset_left = 53.0
+offset_top = 33.0
+offset_right = 89.0
+offset_bottom = 43.0
+theme = ExtResource("7_ajrs2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jqn4x")
+text = "Dog of "
+
 [node name="PokemonPartySprite" type="Sprite2D" parent="FourthPokemonSlot" unique_id=754777814]
 position = Vector2(17, 30)
 texture = ExtResource("12_vdg4m")
@@ -421,12 +444,6 @@ centered = false
 hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
-
-[node name="PokemonName" type="Sprite2D" parent="FourthPokemonSlot" unique_id=854313703]
-position = Vector2(89, 34)
-texture = ExtResource("10")
-region_enabled = true
-region_rect = Rect2(0, -1, 73, 10)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="FourthPokemonSlot" unique_id=2032902628]
 libraries/ = SubResource("AnimationLibrary_ipa8c")
@@ -453,6 +470,15 @@ color = Color(0, 1, 0, 1)
 position = Vector2(119, 46)
 script = ExtResource("3_3dpfl")
 
+[node name="GrammariteName" type="Label" parent="FifthPokemonSlot" unique_id=1624320440]
+offset_left = -59.0
+offset_top = 52.0
+offset_right = -18.0
+offset_bottom = 62.0
+theme = ExtResource("7_ajrs2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jqn4x")
+text = "Dog of W"
+
 [node name="PokemonPartySprite" type="Sprite2D" parent="FifthPokemonSlot" unique_id=128367754]
 position = Vector2(-95, 49)
 texture = ExtResource("11")
@@ -460,12 +486,6 @@ centered = false
 hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
-
-[node name="PokemonName" type="Sprite2D" parent="FifthPokemonSlot" unique_id=1133011864]
-position = Vector2(-31, 50)
-texture = ExtResource("11")
-region_enabled = true
-region_rect = Rect2(0, -1, 73, 10)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="FifthPokemonSlot" unique_id=1658595765]
 libraries/ = SubResource("AnimationLibrary_1xij3")
@@ -492,6 +512,15 @@ color = Color(0, 1, 0, 1)
 position = Vector2(119, 70)
 script = ExtResource("3_3dpfl")
 
+[node name="GrammariteName" type="Label" parent="SixthPokemonSlot" unique_id=1154542254]
+offset_left = 53.0
+offset_top = 28.0
+offset_right = 94.0
+offset_bottom = 38.0
+theme = ExtResource("7_ajrs2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jqn4x")
+text = "Dog of W"
+
 [node name="PokemonPartySprite" type="Sprite2D" parent="SixthPokemonSlot" unique_id=1445359980]
 position = Vector2(17, 25)
 texture = ExtResource("12")
@@ -499,12 +528,6 @@ centered = false
 hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
-
-[node name="PokemonName" type="Sprite2D" parent="SixthPokemonSlot" unique_id=1224511204]
-position = Vector2(97, 26)
-texture = ExtResource("12")
-region_enabled = true
-region_rect = Rect2(0, -1, 73, 10)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SixthPokemonSlot" unique_id=1518322910]
 libraries/ = SubResource("AnimationLibrary_2rexr")

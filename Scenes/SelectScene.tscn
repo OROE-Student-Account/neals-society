@@ -7,14 +7,19 @@
 [ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="4_y4am8"]
 [ext_resource type="Script" uid="uid://dpvpht1pik0j" path="res://Scripts/PartySlot.gd" id="6_xah1t"]
 [ext_resource type="Texture2D" uid="uid://r8qwb6kwhbpx" path="res://Assets/Pokemon/Pokemon4.png" id="7_41n2y"]
+[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="7_w0bkf"]
 [ext_resource type="Texture2D" uid="uid://3ndqiat65p8r" path="res://Assets/Pokemon/Pokemon59.png" id="8_b2npa"]
-[ext_resource type="Texture2D" uid="uid://dywqob2aeknmi" path="res://Assets/Pokemon/Pokemon1.png" id="9_fm1qp"]
 [ext_resource type="Texture2D" uid="uid://bv565fwa2g6si" path="res://Assets/Pokemon/Pokemon34.png" id="10_g78wg"]
-[ext_resource type="Texture2D" uid="uid://djti4nrbbo2kk" path="res://Assets/Pokemon/Pokemon7.png" id="11_3iflc"]
 [ext_resource type="Texture2D" uid="uid://dgkatdnfgvtd1" path="res://Assets/Pokemon/Pokemon38.png" id="12_eoyig"]
-[ext_resource type="Texture2D" uid="uid://ynuirmpk2ja1" path="res://Assets/Pokemon/Pokemon16.png" id="13_gu51p"]
 [ext_resource type="Texture2D" uid="uid://x2r2smipejox" path="res://Assets/Pokemon/Pokemon25.png" id="14_25i6w"]
 [ext_resource type="Texture2D" uid="uid://b81iqrvr8ywd1" path="res://Assets/Pokemon/Pokemon95.png" id="15_id87i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0yfav"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_detail = 7
+anti_aliasing = false
 
 [sub_resource type="Animation" id="1"]
 resource_name = "Idle"
@@ -32,12 +37,12 @@ tracks/0/keys = {
 "values": [0, 1]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_sqhs6"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8kclm"]
 _data = {
 &"Idle": SubResource("1")
 }
 
-[sub_resource type="FontFile" id="FontFile_a60ou"]
+[sub_resource type="FontFile" id="FontFile_0hrqw"]
 fallbacks = Array[Font]([ExtResource("4_y4am8"), ExtResource("4_y4am8")])
 subpixel_positioning = 0
 msdf_pixel_range = 14
@@ -163,7 +168,7 @@ tracks/0/keys = {
 "values": [0, 1]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_rpuio"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xvwdd"]
 _data = {
 &"Idle": SubResource("3")
 }
@@ -184,7 +189,7 @@ tracks/0/keys = {
 "values": [0, 1]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_lyu8v"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y4am8"]
 _data = {
 &"Idle": SubResource("4")
 }
@@ -205,7 +210,7 @@ tracks/0/keys = {
 "values": [0, 1]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_q2xi2"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lch13"]
 _data = {
 &"Idle": SubResource("5")
 }
@@ -226,7 +231,7 @@ tracks/0/keys = {
 "values": [0, 1]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_80mug"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xah1t"]
 _data = {
 &"Idle": SubResource("6")
 }
@@ -247,7 +252,7 @@ tracks/0/keys = {
 "values": [0, 1]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_fraxq"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_41n2y"]
 _data = {
 &"Idle": SubResource("7")
 }
@@ -294,12 +299,21 @@ theme_override_fonts/font = ExtResource("4_y4am8")
 theme_override_font_sizes/font_size = 12
 text = "Choose a Grammarite."
 
-[node name="FirstPokemonSlot" type="Node2D" parent="." unique_id=915965949]
+[node name="FirstPokemonSlot" type="Node2D" parent="." unique_id=481037612]
 texture_filter = 1
 position = Vector2(2, -25)
 script = ExtResource("6_xah1t")
 
-[node name="PokemonPartySprite" type="Sprite2D" parent="FirstPokemonSlot" unique_id=1075471919]
+[node name="GrammariteName" type="Label" parent="FirstPokemonSlot" unique_id=1871790604]
+offset_left = 58.0
+offset_top = 37.0
+offset_right = 117.0
+offset_bottom = 47.0
+theme = ExtResource("7_w0bkf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0yfav")
+text = "Dog of Wood"
+
+[node name="PokemonPartySprite" type="Sprite2D" parent="FirstPokemonSlot" unique_id=1719790304]
 position = Vector2(22, 33)
 texture = ExtResource("7_41n2y")
 centered = false
@@ -307,39 +321,42 @@ hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
 
-[node name="PokemonName" type="Sprite2D" parent="FirstPokemonSlot" unique_id=1500204104]
-position = Vector2(68, 42)
-texture = ExtResource("7_41n2y")
-region_enabled = true
-region_rect = Rect2(0, -1, 73, 10)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="FirstPokemonSlot" unique_id=1785344305]
-libraries/ = SubResource("AnimationLibrary_sqhs6")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FirstPokemonSlot" unique_id=1987452367]
+libraries/ = SubResource("AnimationLibrary_8kclm")
 autoplay = &"Idle"
 
-[node name="LevelLabel" type="Label" parent="FirstPokemonSlot" unique_id=1784084968]
+[node name="LevelLabel" type="Label" parent="FirstPokemonSlot" unique_id=1782115686]
 offset_left = 85.0
 offset_top = 47.0
 offset_right = 125.0
 offset_bottom = 61.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontFile_a60ou")
+theme_override_fonts/font = SubResource("FontFile_0hrqw")
 theme_override_font_sizes/font_size = 12
 text = "4"
 
-[node name="HealthBar" type="ColorRect" parent="FirstPokemonSlot" unique_id=1945107025]
+[node name="HealthBar" type="ColorRect" parent="FirstPokemonSlot" unique_id=1201311520]
 offset_left = 32.0
 offset_top = 60.0
 offset_right = 93.0
 offset_bottom = 63.0
 color = Color(0, 1, 0, 1)
 
-[node name="SecondPokemonSlot" type="Node2D" parent="." unique_id=292090379]
+[node name="SecondPokemonSlot" type="Node2D" parent="." unique_id=1778158084]
 texture_filter = 1
 position = Vector2(119, -26)
 script = ExtResource("6_xah1t")
 
-[node name="PokemonPartySprite" type="Sprite2D" parent="SecondPokemonSlot" unique_id=1682616775]
+[node name="GrammariteName" type="Label" parent="SecondPokemonSlot" unique_id=126711543]
+offset_left = 53.0
+offset_top = 38.0
+offset_right = 112.0
+offset_bottom = 48.0
+theme = ExtResource("7_w0bkf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0yfav")
+text = "Dog of Wood"
+
+[node name="PokemonPartySprite" type="Sprite2D" parent="SecondPokemonSlot" unique_id=1745385540]
 position = Vector2(17, 34)
 texture = ExtResource("8_b2npa")
 centered = false
@@ -347,39 +364,41 @@ hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
 
-[node name="PokemonName" type="Sprite2D" parent="SecondPokemonSlot" unique_id=733849588]
-position = Vector2(89, 42)
-texture = ExtResource("9_fm1qp")
-region_enabled = true
-region_rect = Rect2(0, -1, 73, 10)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPokemonSlot" unique_id=1233085383]
-libraries/ = SubResource("AnimationLibrary_rpuio")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPokemonSlot" unique_id=731726118]
+libraries/ = SubResource("AnimationLibrary_xvwdd")
 autoplay = &"Idle"
 
-[node name="LevelLabel" type="Label" parent="SecondPokemonSlot" unique_id=1955267305]
+[node name="LevelLabel" type="Label" parent="SecondPokemonSlot" unique_id=2132827369]
 offset_left = 80.0
 offset_top = 48.0
 offset_right = 120.0
 offset_bottom = 62.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontFile_a60ou")
+theme_override_fonts/font = SubResource("FontFile_0hrqw")
 theme_override_font_sizes/font_size = 12
 text = "4"
 
-[node name="HealthBar" type="ColorRect" parent="SecondPokemonSlot" unique_id=556704273]
+[node name="HealthBar" type="ColorRect" parent="SecondPokemonSlot" unique_id=736592199]
 offset_left = 27.0
 offset_top = 61.0
 offset_right = 88.0
 offset_bottom = 64.0
 color = Color(0, 1, 0, 1)
 
-[node name="ThirdPokemonSlot" type="Node2D" parent="." unique_id=806116442]
+[node name="ThirdPokemonSlot" type="Node2D" parent="." unique_id=541914723]
 texture_filter = 1
 position = Vector2(119, -2)
 script = ExtResource("6_xah1t")
 
-[node name="PokemonPartySprite" type="Sprite2D" parent="ThirdPokemonSlot" unique_id=1516043618]
+[node name="GrammariteName" type="Label" parent="ThirdPokemonSlot" unique_id=262201315]
+offset_left = -59.0
+offset_top = 57.0
+offset_bottom = 67.0
+theme = ExtResource("7_w0bkf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0yfav")
+text = "Dog of Wood"
+
+[node name="PokemonPartySprite" type="Sprite2D" parent="ThirdPokemonSlot" unique_id=356606280]
 position = Vector2(-95, 54)
 texture = ExtResource("10_g78wg")
 centered = false
@@ -387,39 +406,42 @@ hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
 
-[node name="PokemonName" type="Sprite2D" parent="ThirdPokemonSlot" unique_id=148206475]
-position = Vector2(-23, 60)
-texture = ExtResource("11_3iflc")
-region_enabled = true
-region_rect = Rect2(0, -1, 73, 10)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ThirdPokemonSlot" unique_id=350698439]
-libraries/ = SubResource("AnimationLibrary_lyu8v")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ThirdPokemonSlot" unique_id=156645191]
+libraries/ = SubResource("AnimationLibrary_y4am8")
 autoplay = &"Idle"
 
-[node name="LevelLabel" type="Label" parent="ThirdPokemonSlot" unique_id=1449098449]
+[node name="LevelLabel" type="Label" parent="ThirdPokemonSlot" unique_id=2029737757]
 offset_left = -32.0
 offset_top = 67.0
 offset_right = 8.0
 offset_bottom = 81.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontFile_a60ou")
+theme_override_fonts/font = SubResource("FontFile_0hrqw")
 theme_override_font_sizes/font_size = 12
 text = "4"
 
-[node name="HealthBar" type="ColorRect" parent="ThirdPokemonSlot" unique_id=1333693439]
+[node name="HealthBar" type="ColorRect" parent="ThirdPokemonSlot" unique_id=1602601797]
 offset_left = -85.0
 offset_top = 80.0
 offset_right = -24.0
 offset_bottom = 83.0
 color = Color(0, 1, 0, 1)
 
-[node name="FourthPokemonSlot" type="Node2D" parent="." unique_id=357229152]
+[node name="FourthPokemonSlot" type="Node2D" parent="." unique_id=1728168426]
 texture_filter = 1
 position = Vector2(119, 22)
 script = ExtResource("6_xah1t")
 
-[node name="PokemonPartySprite" type="Sprite2D" parent="FourthPokemonSlot" unique_id=2126366142]
+[node name="GrammariteName" type="Label" parent="FourthPokemonSlot" unique_id=94870717]
+offset_left = 53.0
+offset_top = 33.0
+offset_right = 112.0
+offset_bottom = 43.0
+theme = ExtResource("7_w0bkf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0yfav")
+text = "Dog of Wood"
+
+[node name="PokemonPartySprite" type="Sprite2D" parent="FourthPokemonSlot" unique_id=1175000970]
 position = Vector2(17, 30)
 texture = ExtResource("12_eoyig")
 centered = false
@@ -427,39 +449,41 @@ hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
 
-[node name="PokemonName" type="Sprite2D" parent="FourthPokemonSlot" unique_id=1920549129]
-position = Vector2(89, 34)
-texture = ExtResource("13_gu51p")
-region_enabled = true
-region_rect = Rect2(0, -1, 73, 10)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="FourthPokemonSlot" unique_id=1271612777]
-libraries/ = SubResource("AnimationLibrary_q2xi2")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FourthPokemonSlot" unique_id=1877470407]
+libraries/ = SubResource("AnimationLibrary_lch13")
 autoplay = &"Idle"
 
-[node name="LevelLabel" type="Label" parent="FourthPokemonSlot" unique_id=782851284]
+[node name="LevelLabel" type="Label" parent="FourthPokemonSlot" unique_id=1091025807]
 offset_left = 80.0
 offset_top = 43.0
 offset_right = 120.0
 offset_bottom = 57.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontFile_a60ou")
+theme_override_fonts/font = SubResource("FontFile_0hrqw")
 theme_override_font_sizes/font_size = 12
 text = "4"
 
-[node name="HealthBar" type="ColorRect" parent="FourthPokemonSlot" unique_id=322344612]
+[node name="HealthBar" type="ColorRect" parent="FourthPokemonSlot" unique_id=1165112021]
 offset_left = 27.0
 offset_top = 56.0
 offset_right = 88.0
 offset_bottom = 59.0
 color = Color(0, 1, 0, 1)
 
-[node name="FifthPokemonSlot" type="Node2D" parent="." unique_id=1291703102]
+[node name="FifthPokemonSlot" type="Node2D" parent="." unique_id=326127911]
 texture_filter = 1
 position = Vector2(119, 46)
 script = ExtResource("6_xah1t")
 
-[node name="PokemonPartySprite" type="Sprite2D" parent="FifthPokemonSlot" unique_id=1226004391]
+[node name="GrammariteName" type="Label" parent="FifthPokemonSlot" unique_id=1886988840]
+offset_left = -59.0
+offset_top = 52.0
+offset_bottom = 62.0
+theme = ExtResource("7_w0bkf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0yfav")
+text = "Dog of Wood"
+
+[node name="PokemonPartySprite" type="Sprite2D" parent="FifthPokemonSlot" unique_id=2110703804]
 position = Vector2(-95, 49)
 texture = ExtResource("14_25i6w")
 centered = false
@@ -467,39 +491,42 @@ hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
 
-[node name="PokemonName" type="Sprite2D" parent="FifthPokemonSlot" unique_id=58296311]
-position = Vector2(-31, 50)
-texture = ExtResource("14_25i6w")
-region_enabled = true
-region_rect = Rect2(0, -1, 73, 10)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="FifthPokemonSlot" unique_id=1422283977]
-libraries/ = SubResource("AnimationLibrary_80mug")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FifthPokemonSlot" unique_id=273870387]
+libraries/ = SubResource("AnimationLibrary_xah1t")
 autoplay = &"Idle"
 
-[node name="LevelLabel" type="Label" parent="FifthPokemonSlot" unique_id=2016562507]
+[node name="LevelLabel" type="Label" parent="FifthPokemonSlot" unique_id=981593463]
 offset_left = -32.0
 offset_top = 62.0
 offset_right = 8.0
 offset_bottom = 76.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontFile_a60ou")
+theme_override_fonts/font = SubResource("FontFile_0hrqw")
 theme_override_font_sizes/font_size = 12
 text = "4"
 
-[node name="HealthBar" type="ColorRect" parent="FifthPokemonSlot" unique_id=1528636952]
+[node name="HealthBar" type="ColorRect" parent="FifthPokemonSlot" unique_id=366103885]
 offset_left = -85.0
 offset_top = 75.0
 offset_right = -24.0
 offset_bottom = 78.0
 color = Color(0, 1, 0, 1)
 
-[node name="SixthPokemonSlot" type="Node2D" parent="." unique_id=1065223849]
+[node name="SixthPokemonSlot" type="Node2D" parent="." unique_id=1839478789]
 texture_filter = 1
 position = Vector2(119, 70)
 script = ExtResource("6_xah1t")
 
-[node name="PokemonPartySprite" type="Sprite2D" parent="SixthPokemonSlot" unique_id=534371209]
+[node name="GrammariteName" type="Label" parent="SixthPokemonSlot" unique_id=155653562]
+offset_left = 53.0
+offset_top = 28.0
+offset_right = 112.0
+offset_bottom = 38.0
+theme = ExtResource("7_w0bkf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0yfav")
+text = "Dog of Wood"
+
+[node name="PokemonPartySprite" type="Sprite2D" parent="SixthPokemonSlot" unique_id=422718508]
 position = Vector2(17, 25)
 texture = ExtResource("15_id87i")
 centered = false
@@ -507,27 +534,21 @@ hframes = 2
 region_enabled = true
 region_rect = Rect2(30, 9, 70, 24)
 
-[node name="PokemonName" type="Sprite2D" parent="SixthPokemonSlot" unique_id=326523611]
-position = Vector2(97, 26)
-texture = ExtResource("15_id87i")
-region_enabled = true
-region_rect = Rect2(0, -1, 73, 10)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SixthPokemonSlot" unique_id=1816555327]
-libraries/ = SubResource("AnimationLibrary_fraxq")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SixthPokemonSlot" unique_id=706316319]
+libraries/ = SubResource("AnimationLibrary_41n2y")
 autoplay = &"Idle"
 
-[node name="LevelLabel" type="Label" parent="SixthPokemonSlot" unique_id=1594832917]
+[node name="LevelLabel" type="Label" parent="SixthPokemonSlot" unique_id=2116607207]
 offset_left = 80.0
 offset_top = 38.0
 offset_right = 120.0
 offset_bottom = 52.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontFile_a60ou")
+theme_override_fonts/font = SubResource("FontFile_0hrqw")
 theme_override_font_sizes/font_size = 12
 text = "4"
 
-[node name="HealthBar" type="ColorRect" parent="SixthPokemonSlot" unique_id=1506423263]
+[node name="HealthBar" type="ColorRect" parent="SixthPokemonSlot" unique_id=1874362482]
 offset_left = 27.0
 offset_top = 51.0
 offset_right = 88.0

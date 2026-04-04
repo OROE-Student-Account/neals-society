@@ -16,7 +16,6 @@ texture = ExtResource("1_3se8e")
 position = Vector2(28, 52)
 texture = ExtResource("2_2hg8w")
 centered = false
-flip_h = true
 region_enabled = true
 region_rect = Rect2(0, 34, 64, 64)
 

@@ -232,7 +232,6 @@ color = Color(0.3137255, 0.2509804, 0.22352941, 1)
 position = Vector2(40, 32)
 texture = ExtResource("2_rm8oi")
 centered = false
-flip_h = true
 region_enabled = true
 region_rect = Rect2(0, 34, 64, 64)
 
@@ -278,7 +277,6 @@ offset_bottom = 160.0
 [node name="Sprite2D" type="Sprite2D" parent="Animation" unique_id=1653644878]
 position = Vector2(120, 80)
 texture = ExtResource("5_fnunc")
-flip_h = true
 region_enabled = true
 region_rect = Rect2(0, 34, 64, 64)
 

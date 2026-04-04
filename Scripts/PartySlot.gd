@@ -19,7 +19,7 @@ func set_health(max_health, current):
 func set_sprites(num):
 	var file_path = "res://Assets/Pokemon/Pokemon"+str(num+1)+".png"
 	$PokemonPartySprite.texture = load(file_path)
-	$PokemonName.texture = load(file_path)
+	$GrammariteName.text = Utils.get_name_from_num(num)
 
 
 
