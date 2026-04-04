@@ -10,12 +10,127 @@
 			"Answer": "Swim",
 			"Difficulty": "Low"
 		},
+		{
+		  "Question": "A young dog",
+		  "Answer": "Puppy",
+		  "Difficulty": "Low"
+		},
+		{
+		  "Question": "Opposite of cold",
+		  "Answer": "Hot",
+		  "Difficulty": "Low"
+		},
+		{
+		  "Question": "To move quickly on foot",
+		  "Answer": "Run",
+		  "Difficulty": "Low"
+		},
+		{
+		  "Question": "A place where books are kept",
+		  "Answer": "Library",
+		  "Difficulty": "Medium"
+		},
+		{
+		  "Question": "To look at something carefully",
+		  "Answer": "Observe",
+		  "Difficulty": "Medium"
+		},
+		{
+		  "Question": "A person who studies the stars and space",
+		  "Answer": "Astronomer",
+		  "Difficulty": "Medium"
+		},
+		{
+		  "Question": "The ability to understand and share the feelings of another",
+		  "Answer": "Empathy",
+		  "Difficulty": "High"
+		},
+		{
+		  "Question": "Lasting for a very short time",
+		  "Answer": "Ephemeral",
+		  "Difficulty": "High"
+		},
+		{
+		  "Question": "A statement that seems contradictory but reveals truth",
+		  "Answer": "Paradox",
+		  "Difficulty": "High"
+		},
+		{
+		  "Question": "Old-fashioned word meaning 'before'",
+		  "Answer": "Ere",
+		  "Difficulty": "Shakespeare"
+		},
+		{
+		  "Question": "Old-fashioned word meaning 'listen'",
+		  "Answer": "Hark",
+		  "Difficulty": "Shakespeare"
+		},
+		{
+		  "Question": "Old-fashioned word meaning 'you'",
+		  "Answer": "Thou",
+		  "Difficulty": "Shakespeare"
+		}
 	],
 	"Syntax": [
 		{
 			"Question": "Which word should be changed? \n'His teeth has braces on them.'",
 			"Answer": "Has",
 			"Difficulty": "Low"
+		},
+		{
+		  "Question": "Which word should be changed? \n'She go to school every day.'",
+		  "Answer": "Go",
+		  "Difficulty": "Low"
+		},
+		{
+		  "Question": "Which word should be changed? \n'They is playing outside.'",
+		  "Answer": "Is",
+		  "Difficulty": "Low"
+		},
+		{
+		  "Question": "Which word should be changed? \n'He don't like broccoli.'",
+		  "Answer": "Don't",
+		  "Difficulty": "Low"
+		},
+		{
+		  "Question": "Which word should be changed? \n'Everyone have finished their homework.'",
+		  "Answer": "Have",
+		  "Difficulty": "Medium"
+		},
+		{
+		  "Question": "Which word should be changed? \n'Neither of the boys are ready.'",
+		  "Answer": "Are",
+		  "Difficulty": "Medium"
+		},
+		{
+		  "Question": "Which word should be changed? \n'I seen that movie already.'",
+		  "Answer": "Seen",
+		  "Difficulty": "Medium"
+		},
+		{
+		  "Question": "Which word should be changed? \n'If I was you, I would apologize.'",
+		  "Answer": "Was",
+		  "Difficulty": "High"
+		},
+		{
+		  "Question": "Which word should be changed? \n'Each of the players have a uniform.'",
+		  "Answer": "Have",
+		  "Difficulty": "High"
+		},
+		{
+		  "Question": "Which word should be changed? \n'Hardly had she reached the station then the train left.'",
+		  "Answer": "Then",
+		  "Difficulty": "High"
+		},
+		{
+		  "Question": "Which word should be changed? \n'Thou art more kinder than he.'",
+		  "Answer": "More",
+		  "Difficulty": "Shakespeare"
+		},
+		{
+		  "Question": "Which word should be changed? \n'He hath gave thee a gift.'",
+		  "Answer": "Gave",
+		  "Difficulty": "Shakespeare"
 		}
 	],
 	"Punctuation": [
@@ -23,6 +138,61 @@
 			"Question": "Which punctuation fits? \n'Manufacturs_ waiters, and officials work together.'",
 			"Answer": ",",
 			"Difficulty": "Low"
+		},
+		{
+		  "Question": "Which punctuation fits? \n'I like apples_ oranges and bananas.'",
+		  "Answer": ",",
+		  "Difficulty": "Low"
+		},
+		{
+		  "Question": "Which punctuation fits? \n'What is your name_'",
+		  "Answer": "?",
+		  "Difficulty": "Low"
+		},
+		{
+		  "Question": "Which punctuation fits? \n'Wow_ that is amazing!'",
+		  "Answer": ",",
+		  "Difficulty": "Low"
+		},
+		{
+		  "Question": "Which punctuation fits? \n'Lets go to the park.'",
+		  "Answer": "'",
+		  "Difficulty": "Medium"
+		},
+		{
+		  "Question": "Which punctuation fits? \n'The dog wagged its tail_ it was happy.'",
+		  "Answer": ";",
+		  "Difficulty": "Medium"
+		},
+		{
+		  "Question": "Which punctuation fits? \n'My brother who lives in Texas is visiting.'",
+		  "Answer": ",",
+		  "Difficulty": "Medium"
+		},
+		{
+		  "Question": "Which punctuation fits? \n'Its a beautiful day outside.'",
+		  "Answer": "'",
+		  "Difficulty": "Medium"
+		},
+		{
+		  "Question": "Which punctuation fits? \n'She said_ I will be there soon.'",
+		  "Answer": ",",
+		  "Difficulty": "High"
+		},
+		{
+		  "Question": "Which punctuation fits? \n'The answer is clear_ however, we must proceed carefully.'",
+		  "Answer": ";",
+		  "Difficulty": "High"
+		},
+		{
+		  "Question": "Which punctuation fits? \n'He cried_ Alas! I am undone.'",
+		  "Answer": ",",
+		  "Difficulty": "Shakespeare"
+		},
+		{
+		  "Question": "Which punctuation fits? \n'O Romeo_ Romeo! wherefore art thou Romeo?'",
+		  "Answer": ",",
+		  "Difficulty": "Shakespeare"
 		}
 	]
 }

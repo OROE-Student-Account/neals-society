@@ -32,8 +32,6 @@
 		"Potion",
 		"Potion",
 		"Potion",
-		"Potion",
-		"Potion",
 		"Animal Shard",
 		"Animal Shard",
 		"Animal Shard",
@@ -50,29 +48,28 @@
 		"Glasses",
 		"Glasses",
 		"Glasses",
-		"Glasses",
 		"Story Book"
 	],
 	"Money": 0.0,
 	"Name": "Neal Sehgal",
 	"Party": [
 		{
-			"Health": 4.0,
+			"Health": 96,
 			"Item": "",
-			"Level": 1.0,
+			"Level": 65.0,
 			"Moves": [
 				"Bite",
 				"Play",
 				"Sit",
-				"Sculpt"
+				"Woodchip"
 			],
-			"Name": "Sculpupture",
+			"Name": "Dog of Wood",
 			"Nickname": "",
 			"PP": [
-				11.0,
+				15.0,
 				20.0,
 				15.0,
-				5.0
+				1.0
 			]
 		},
 		{
@@ -114,28 +111,9 @@
 			]
 		},
 		{
-			"Health": 184.0,
-			"Item": "",
-			"Level": 65.0,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Sit",
-				"Woodchip"
-			],
-			"Name": "Dog of Wood",
-			"Nickname": "",
-			"PP": [
-				15.0,
-				20.0,
-				15.0,
-				1.0
-			]
-		},
-		{
-			"Health": 208.0,
+			"Health": 0.0,
 			"Item": "Glasses",
-			"Level": 69.21,
+			"Level": 1.0,
 			"Moves": [
 				"Bite",
 				"Play",
@@ -145,29 +123,48 @@
 			"Name": "Sculpupture",
 			"Nickname": "",
 			"PP": [
-				13.0,
+				9.0,
+				20.0,
+				15.0,
+				3.0
+			]
+		},
+		{
+			"Health": 0.0,
+			"Item": "Glasses",
+			"Level": 28.89,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Sculpt"
+			],
+			"Name": "Orawolfi",
+			"Nickname": "",
+			"PP": [
+				0.0,
+				20.0,
+				15.0,
+				3.0
+			]
+		},
+		{
+			"Health": 0.0,
+			"Item": "Glasses",
+			"Level": 69.51,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Sculpt"
+			],
+			"Name": "Sculpupture",
+			"Nickname": "",
+			"PP": [
+				10.0,
 				20.0,
 				15.0,
 				5.0
-			]
-		},
-		{
-			"Health": 87.0,
-			"Item": "Glasses",
-			"Level": 27.13,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Sit",
-				"Sculpt"
-			],
-			"Name": "Sculpupture",
-			"Nickname": "",
-			"PP": [
-				15.0,
-				20.0,
-				15.0,
-				4.0
 			]
 		}
 	]

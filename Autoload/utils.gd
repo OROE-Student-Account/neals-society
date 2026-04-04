@@ -213,10 +213,20 @@ var question_list = [
 	"Punctuation"
 ]
 var alphabet = "abcdefghijklmnopqrstuvwxyz"
+var vowels = "aeiou"
+var consonants = "bcdfghjklmnpqrstvwxyz"
 var punctuation = "?-.,\"'!;: "
 func get_question():
+	
+	# Get the question
 	var type_of_question = question_list.pick_random()
-	var question = load_json_file("res://GrammariteData/Questions.json")[type_of_question].pick_random()
+	var questions = load_json_file("res://GrammariteData/Questions.json")[type_of_question]
+	var question = questions.pick_random()
+	#Ensure it is 'difficult' to annoy testers
+	while question["Difficulty"] != "Shakespeare":
+		question = questions.pick_random()
+
+	# setup for returning
 	var answer = question["Answer"]
 	var returning = { 
 		"Question": question["Question"],
@@ -225,49 +235,107 @@ func get_question():
 	}
 	returning["Options"][returning["Answer"]] = answer
 	
+	# get the options
 	for i in range(4):
 		if i != returning["Answer"]:
 			var option = ""
-			var letters: Array = alphabet.split()
+			var letters: Array = vowels.split()
+			letters.append_array(consonants.split())
 			
 			while option in returning["Options"] or option == "":
 				if type_of_question == "Punctuation":
 					var marks: Array = punctuation.split()
 					var mark = marks.pick_random()
 					option = mark
-				else:
-					var type_of_answer = randi()%4 # 4 is num types of answers
+				elif type_of_question == "Syntax":
+					var type_of_answer = randi()%3
 					
-					if type_of_answer == 0: # Random word from the question
-						var words: Array = question["Question"].split(" ")
-						var word = words.pick_random()
+					var words: Array = question["Question"].split(" ")
+					words = words.slice(5)
+					var word = words.pick_random()
+					
+					if type_of_answer < 2: # Random word from the question
 						option = word
-					elif type_of_answer == 1: # Completely Random Word
-						var length = randi()%(len(answer)+3)+2
-						var word = ""
-						for j in range(length):
-							word += letters.pick_random()
-						option = word
-					elif type_of_answer == 2: # Answer with random letter
-						var word = answer
-						word[randi()%len(word)] = letters.pick_random()
-						option = word
-					elif type_of_answer == 3: # Question word with random letter
-						var words: Array = question["Question"].split(" ")
-						var word = words.pick_random()
-						word[randi()%len(word)] = letters.pick_random()
-						option = word
-			
-			if type_of_question != "Punctuation":
-				var temp = ""
-				option = option.to_lower()
-				for j in range(len(option)):
-					if option[j] in letters:
-						if j == 0:
-							temp += option[j].to_upper()
+					elif type_of_answer == 2: # Question word with random letter
+						var index = randi()%len(word)
+						var old_let = word[index]
+						
+						var vows: Array = vowels.split()
+						var cons: Array = consonants.split()
+						
+						var new_let = ""
+						if old_let in vows:
+							new_let = vows.pick_random()
 						else:
-							temp += option[j]
-				option = temp
+							new_let = cons.pick_random()
+						
+						word[index] = new_let
+						option = word
+				elif type_of_question == "Vocabulary":
+					var type_of_answer = randi()%2 # 2 is num types of answers
+					
+					if type_of_answer == 0: # Completely Random Word
+						var length = randi()%int((len(answer)/2+2))+2
+						var word = ""
+						
+						var max_letters = 0
+						var letter = 0
+						var on_vowels = randf() > 0.65
+						
+						var vows: Array = vowels.split()
+						var cons: Array = consonants.split()
+						
+						while word.length() < length:
+							if on_vowels:
+								if max_letters == 0:
+									max_letters = randi()%3
+								letter += 1.4
+								word += vows.pick_random()
+								if letter >= max_letters:
+									max_letters = 0
+									letter = fmod(letter, 1.0)
+									on_vowels = false
+							else:
+								if max_letters == 0:
+									max_letters = randi()%4
+								letter += 1.3
+								word += cons.pick_random()
+								if letter >= max_letters:
+									max_letters = 0
+									letter = fmod(letter, 1.0)
+									on_vowels = true
+						option = word
+					elif type_of_answer == 1: # Answer with random letter
+						var word = answer
+						var index = randi()%len(word)
+						var old_let = word[index]
+						
+						var vows: Array = vowels.split()
+						var cons: Array = consonants.split()
+						
+						var new_let = ""
+						if old_let in vows:
+							new_let = vows.pick_random()
+						else:
+							new_let = cons.pick_random()
+						
+						word[index] = new_let
+						option = word
+				
+				if type_of_question != "Punctuation":
+					var temp = ""
+					option = option.to_lower()
+					#flag to capitalize first letter
+					var cap = false
+					for j in range(len(option)):
+						if option[j] in letters:
+							if not cap:
+								temp += option[j].to_upper()
+								cap = true
+							else:
+								temp += option[j]
+					option = temp
+			
 			
 			returning["Options"][i] = option
 	
