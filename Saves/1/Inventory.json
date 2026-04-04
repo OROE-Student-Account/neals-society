@@ -1,28 +1,6 @@
 {
 	"Abilities": [],
 	"Items": [
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
-		"Pokeball",
 		"Story Book",
 		"Story Book",
 		"Knowledge Shard",
@@ -31,8 +9,6 @@
 		"Knowledge Shard",
 		"Machine Shard",
 		"Ink Shard",
-		"Pokeball",
-		"Pokeball",
 		"Potion",
 		"Potion",
 		"Potion",
@@ -66,15 +42,43 @@
 		"Literature Shard",
 		"Homework Shard",
 		"Supply Shard",
-		"Nature Shard"
+		"Nature Shard",
+		"Glasses",
+		"Glasses",
+		"Glasses",
+		"Glasses",
+		"Glasses",
+		"Glasses",
+		"Glasses",
+		"Glasses",
+		"Story Book"
 	],
 	"Money": 0.0,
-	"Name": "neal sehgal",
+	"Name": "Neal Sehgal",
 	"Party": [
 		{
-			"Health": 12.0,
+			"Health": 4.0,
 			"Item": "",
 			"Level": 1.0,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Sculpt"
+			],
+			"Name": "Sculpupture",
+			"Nickname": "",
+			"PP": [
+				11.0,
+				20.0,
+				15.0,
+				5.0
+			]
+		},
+		{
+			"Health": 0.0,
+			"Item": "",
+			"Level": 1.65,
 			"Moves": [
 				"Bite",
 				"Play",
@@ -91,9 +95,9 @@
 			]
 		},
 		{
-			"Health": 12.0,
+			"Health": 0.0,
 			"Item": "",
-			"Level": 1.0,
+			"Level": 1.69,
 			"Moves": [
 				"Bite",
 				"Play",
@@ -103,35 +107,16 @@
 			"Name": "Dog of Wood",
 			"Nickname": "",
 			"PP": [
-				15.0,
-				20.0,
-				15.0,
-				1.0
-			]
-		},
-		{
-			"Health": 7.0,
-			"Item": "",
-			"Level": 4.85,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Sit",
-				"Woodchip"
-			],
-			"Name": "Dog of Wood",
-			"Nickname": "",
-			"PP": [
-				12.0,
+				14.0,
 				20.0,
 				15.0,
 				0.0
 			]
 		},
 		{
-			"Health": 12.0,
+			"Health": 184.0,
 			"Item": "",
-			"Level": 1.0,
+			"Level": 65.0,
 			"Moves": [
 				"Bite",
 				"Play",
@@ -148,41 +133,41 @@
 			]
 		},
 		{
-			"Health": 12.0,
-			"Item": "",
-			"Level": 1.0,
+			"Health": 208.0,
+			"Item": "Glasses",
+			"Level": 69.21,
 			"Moves": [
 				"Bite",
 				"Play",
 				"Sit",
-				"Woodchip"
+				"Sculpt"
 			],
-			"Name": "Dog of Wood",
+			"Name": "Sculpupture",
 			"Nickname": "",
 			"PP": [
-				15.0,
+				13.0,
 				20.0,
 				15.0,
-				1.0
+				5.0
 			]
 		},
 		{
-			"Health": 12.0,
-			"Item": "",
-			"Level": 1.0,
+			"Health": 87.0,
+			"Item": "Glasses",
+			"Level": 27.13,
 			"Moves": [
 				"Bite",
 				"Play",
 				"Sit",
-				"Woodchip"
+				"Sculpt"
 			],
-			"Name": "Dog of Wood",
+			"Name": "Sculpupture",
 			"Nickname": "",
 			"PP": [
 				15.0,
 				20.0,
 				15.0,
-				1.0
+				4.0
 			]
 		}
 	]

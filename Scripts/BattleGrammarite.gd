@@ -6,8 +6,9 @@ extends Node2D
 
 var grammarite_name = ""
 var nickname = ""
-var level := 1
+var level = 1
 var grammarite_info = null
+var item = ""
 @onready var health_bar = $HealthBar
 @onready var anim_player = $AnimationPlayer
 
@@ -26,6 +27,7 @@ func setup():
 		nickname = first_grammarite["Nickname"]
 		level = int(first_grammarite["Level"])
 		health = first_grammarite["Health"]
+		item = first_grammarite["Item"]
 		
 		for i in range(4):
 			var move_info = Utils.get_move(first_grammarite["Moves"][i])

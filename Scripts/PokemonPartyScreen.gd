@@ -224,7 +224,7 @@ func load_item(slot_num):
 	var slot_data = Utils.get_party()[slot_num]
 	
 	if slot_data["Item"] != "":
-		var item = Utils.get_item(slot_data["Item"])
+		var item = Utils.get_item_data(slot_data["Item"])
 		
 		$ItemPartyScreen/Box/Description.text = item["Description"]
 		var file_path = "res://Assets/Items/" + slot_data["Item"] + ".png"

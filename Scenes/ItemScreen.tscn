@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="2_8isog"]
 [ext_resource type="Texture2D" uid="uid://mkh548aqej4b" path="res://Assets/UI/Inventory.png" id="2_c16xa"]
 [ext_resource type="Texture2D" uid="uid://c11wa3bks70et" path="res://Assets/Items/Slang Shard.png" id="3_c16xa"]
-[ext_resource type="Texture2D" uid="uid://ckyw6dtptsikv" path="res://Assets/UI/Border.png" id="3_eak02"]
+[ext_resource type="Texture2D" uid="uid://ckyw6dtptsikv" path="res://Assets/UI/border.png" id="3_eak02"]
 [ext_resource type="Texture2D" uid="uid://b3f2eqbc4ki67" path="res://Assets/UI/ui_arrow_right.png" id="6_rvhgt"]
 
 [node name="ItemScreen" type="Node2D" unique_id=939527620]
@@ -48,7 +48,7 @@ scale = Vector2(0.8, 0.8)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_8isog")
 theme_override_font_sizes/font_size = 12
-text = "confine"
+text = "Absorbs Grammarites for use in battle."
 autowrap_mode = 2
 
 [node name="Name" type="Label" parent="Info" unique_id=147423478]

@@ -6,8 +6,6 @@ var opened := false
 
 @onready var dialogue_root = $PickupDialogue
 
-@export var item_name := ""
-
 
 func _ready() -> void:
 	var scene = get_node("/root/SceneManager/CurrentScene").get_child(0).name
@@ -21,8 +19,8 @@ func _ready() -> void:
 func pickup():
 	if !picked_up:
 		return
-	if item_name != "":
-		Utils.add_to_inventory(item_name)
+	
+	Utils.add_to_inventory(name)
 	var scene = get_node("/root/SceneManager/CurrentScene").get_child(0).name
 	Utils.update_item_picked_up(name, true, scene)
 	opened = true

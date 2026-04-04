@@ -15,6 +15,12 @@ func set_health(max_health, current):
 	$HealthBar.scale.x = pecent_health
 	$HealthBar.color.g = pecent_health
 	$HealthBar.color.r = 1.0 - pecent_health
+	
+	var percent_health = max(0, (61 * pecent_health - 4) / 57)
+	
+	$HealthBar2.scale.x = percent_health
+	$HealthBar2.color.g = pecent_health
+	$HealthBar2.color.r = 1.0 - pecent_health
 
 func set_sprites(num):
 	var file_path = "res://Assets/Pokemon/Pokemon"+str(num+1)+".png"
