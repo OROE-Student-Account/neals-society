@@ -243,7 +243,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			elif event.is_action_pressed("x"):
 				# Exit
 				if not in_battle:
-					Utils.get_scene_manager().transition_exit_item_screen()
+					Utils.get_scene_manager().transition_exit_menu("Item")
 				else:
 					exit(false)
 		

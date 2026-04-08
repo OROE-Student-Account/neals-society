@@ -40,5 +40,5 @@ func _on_item_list_item_selected(index: int) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("x"):
 		item_list.release_focus()
-		Utils.get_scene_manager().transition_exit_quests()
+		Utils.get_scene_manager().transition_exit_menu("Quest")
 	

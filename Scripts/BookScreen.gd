@@ -168,4 +168,4 @@ func _input(event: InputEvent) -> void:
 	
 	elif event.is_action_pressed("x"):
 		# exit
-		Utils.get_scene_manager().transition_exit_bookshelf()
+		Utils.get_scene_manager().transition_exit_menu("Bookshelf")

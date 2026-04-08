@@ -1,18 +1,23 @@
 extends CanvasLayer
 
-const PokemonPartyScreen = preload("res://Scenes/PokemonPartyScreen.tscn")
-const ItemScreen = preload("res://Scenes/ItemScreen.tscn")
-const SaveScreen = preload("res://Scenes/SaveScreen.tscn")
-const StorageScreen = preload("res://Scenes/GrammariteStorage.tscn")
-const QuestScreen = preload("res://Scenes/QuestScreen.tscn")
-const HarvestScreen = preload("res://Scenes/HarvestScreen.tscn")
-const CraftScreen = preload("res://Scenes/CraftScreen.tscn")
-const BookScreen = preload("res://Scenes/BookScreen.tscn")
+const Screens: Dictionary = {
+	"Party": preload("res://Scenes/PartyScreen.tscn"),
+	"Item": preload("res://Scenes/ItemScreen.tscn"),
+	"Save": preload("res://Scenes/SaveScreen.tscn"),
+	
+	"Computer": preload("res://Scenes/ComputerScreen.tscn"),
+	"Quest": preload("res://Scenes/QuestScreen.tscn"),
+	"Harvester": preload("res://Scenes/HarvesterScreen.tscn"),
+	"Crafter":  preload("res://Scenes/CrafterScreen.tscn"),
+	"Bookshelf": preload("res://Scenes/BookshelfScreen.tscn"),
+}
+
+
 
 @onready var arrow = $Control/Arrow 
 @onready var menu = $Control
 
-enum ScreenLoaded { NOTHING, DIALOGUE, JUST_MENU, ITEM_SCREEN, PARTY_SCREEN, COMPUTER, NAMING, BATTLE, QUESTS, SHARDS, SAVE_SCREEN, BOOKSHELF }
+enum ScreenLoaded { NOTHING, DIALOGUE, JUST_MENU, MENU_SUBSCREEN, SUBSCREEN, NAMING, BATTLE }
 var screen_loaded = ScreenLoaded.NOTHING
 var selected_option: int = 0
 
@@ -38,81 +43,52 @@ func _recieve_player_name(chosen_name, from_node):
 	Utils.set_player_name(chosen_name)
 
 
+func load_submenu(submenu: String): 
+	var screen = Screens[submenu].instantiate()
+	
+	match submenu:
+		# Menu Subscreens
+		"Party", "Item", "Save":
+			menu.visible = false
+			screen_loaded = ScreenLoaded.MENU_SUBSCREEN
+			if submenu == "Item":
+				screen.in_battle = false
+		
+		# Other Menus
+		"Computer", "Quest", "Bookshelf", "Harvester", "Crafter":
+			screen_loaded = ScreenLoaded.SUBSCREEN
+	
+	add_child(screen)
+
+func unload_submenu(submenu: String): 
+	match submenu:
+		# Menu Subscreens
+		"Party", "Item", "Save":
+			menu.visible = true
+			screen_loaded = ScreenLoaded.JUST_MENU
+		
+		# Other Menus
+		"Computer", "Quest", "Bookshelf", "Harvester", "Crafter":
+			screen_loaded = ScreenLoaded.NOTHING
+	
+	remove_child(get_node(submenu+"Screen"))
+
+func unload_submenus(from_menu: bool):
+	var names = []
+	if from_menu:
+		menu.visible = true
+		screen_loaded = ScreenLoaded.JUST_MENU
+		names = ["Party", "Item", "Save"]
+	else:
+		screen_loaded = ScreenLoaded.NOTHING
+		names = ["Computer", "Quest", "Bookshelf", "Harvester", "Crafter"]
+	for i in names:
+		remove_child(get_node(i+"Screen"))
+
 
 func update_select_box():
 	arrow.position = select_box_positions[selected_option]
 
-func load_party_screen():
-	menu.visible = false
-	screen_loaded = ScreenLoaded.PARTY_SCREEN
-	var party_screen = PokemonPartyScreen.instantiate()
-	add_child(party_screen)
-func unload_party_screen():
-	menu.visible = true
-	screen_loaded = ScreenLoaded.JUST_MENU
-	remove_child($PokemonPartyScreen)
-
-func load_item_screen():
-	menu.visible = false
-	screen_loaded = ScreenLoaded.ITEM_SCREEN
-	var item_screen = ItemScreen.instantiate()
-	item_screen.in_battle = false
-	add_child(item_screen)
-func unload_item_screen():
-	menu.visible = true
-	screen_loaded = ScreenLoaded.JUST_MENU
-	remove_child($ItemScreen)
-
-func load_save_screen():
-	menu.visible = false
-	screen_loaded = ScreenLoaded.SAVE_SCREEN
-	var save_screen = SaveScreen.instantiate()
-	add_child(save_screen)
-func unload_save_screen():
-	menu.visible = true
-	screen_loaded = ScreenLoaded.JUST_MENU
-	remove_child($SaveScreen)
-
-
-func load_storage_screen():
-	screen_loaded = ScreenLoaded.COMPUTER
-	var storage_screen = StorageScreen.instantiate()
-	add_child(storage_screen)
-func unload_storage_screen():
-	screen_loaded = ScreenLoaded.NOTHING
-	remove_child($GrammariteStorage)
-
-func load_quests():
-	screen_loaded = ScreenLoaded.QUESTS
-	var quest_screen = QuestScreen.instantiate()
-	add_child(quest_screen)
-func unload_quests():
-	screen_loaded = ScreenLoaded.NOTHING
-	remove_child($QuestScreen)
-
-func load_harvester():
-	screen_loaded = ScreenLoaded.SHARDS
-	var harvest_screen = HarvestScreen.instantiate()
-	add_child(harvest_screen)
-func unload_harvester():
-	screen_loaded = ScreenLoaded.NOTHING
-	remove_child($HarvestScreen)
-
-func load_crafter():
-	screen_loaded = ScreenLoaded.SHARDS
-	var craft_screen = CraftScreen.instantiate()
-	add_child(craft_screen)
-func unload_crafter():
-	screen_loaded = ScreenLoaded.NOTHING
-	remove_child($CraftScreen)
-
-func load_bookshelf():
-	screen_loaded = ScreenLoaded.BOOKSHELF
-	var book_screen = BookScreen.instantiate()
-	add_child(book_screen)
-func unload_bookshelf():
-	screen_loaded = ScreenLoaded.NOTHING
-	remove_child($BookScreen)
 
 
 func _unhandled_input(event):
@@ -161,13 +137,13 @@ func _unhandled_input(event):
 			elif event.is_action_pressed("z"):
 				match selected_option:
 					0:
-						Utils.get_scene_manager().transition_to_party_screen()
+						Utils.get_scene_manager().transition_to_menu("Party")
 					1:
 						pass
 					2:
-						Utils.get_scene_manager().transition_to_item_screen()
+						Utils.get_scene_manager().transition_to_menu("Item")
 					3:
-						Utils.get_scene_manager().transition_to_save_screen()
+						Utils.get_scene_manager().transition_to_menu("Save")
 					4:
 						Utils.get_scene_manager().transition_to_naming_screen(self)
 					5:

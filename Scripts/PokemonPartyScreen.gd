@@ -363,13 +363,13 @@ func _input(event):
 			
 			elif event.is_action_pressed("z"):
 				if selected_option == Options.CANCEL:
-					Utils.get_scene_manager().transition_exit_party_screen()
+					Utils.get_scene_manager().transition_exit_menu("Party")
 				else:
 					page = Page.CHOSEN
 					update_page()
 			
 			elif event.is_action_pressed("x"):
-				Utils.get_scene_manager().transition_exit_party_screen()
+				Utils.get_scene_manager().transition_exit_menu("Party")
 		Page.CHOSEN:
 			if event.is_action_pressed("x") or (event.is_action_pressed("z") and selected_sub_page == 3):
 				page = Page.MAIN
@@ -421,7 +421,7 @@ func _input(event):
 				update_page()
 				stop()
 			elif event.is_action_pressed("z"):
-				Utils.get_scene_manager().transition_to_item_screen()
+				Utils.get_scene_manager().transition_to_menu("Item")
 		Page.SWITCH:
 			if event.is_action_pressed("x") or (event.is_action_pressed("z") and selected_sub_page == num_of_slots - 1):
 				page = Page.CHOSEN

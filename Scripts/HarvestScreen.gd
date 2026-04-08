@@ -92,7 +92,7 @@ func _input(event):
 		update_buttons()
 		
 	elif event.is_action_pressed("x") or (event.is_action_pressed("z") and selected_option == Options.CANCEL):
-		Utils.get_scene_manager().transition_exit_harvester()
+		Utils.get_scene_manager().transition_exit_menu("Harvester")
 		
 	elif event.is_action_pressed("z"):
 		if selected_option == Options.CRUSH:

@@ -16,7 +16,7 @@
 		"Slang": {},
 		"Paper": {},
 		"Nature": {},
-		"Supply": {},
+		"Supply": {"Type": "Item", "Name": "Glasses"},
 		"Knowledge": {},
 		"Ink": {},
 		"Animal": {},

@@ -103,7 +103,7 @@ func update_trainer_attacked(node_name: String, value: bool, scene = "Town"):
 
 
 func max_hp(grammarite_name, level: int) -> int:
-	return int(10 + level + int(0.02 * level * (14 + load_json_file("res://GrammariteData/Stats.json")[grammarite_name]["Health"])))
+	return int(10 + level + int(0.02 * level * (14 + load_json_file("res://GrammariteData/Stats.json")[grammarite_name]["Health"]) - 0.001))
 
 
 var type_chart_dict = {
@@ -215,7 +215,7 @@ var question_list = [
 var alphabet = "abcdefghijklmnopqrstuvwxyz"
 var vowels = "aeiou"
 var consonants = "bcdfghjklmnpqrstvwxyz"
-var punctuation = "?-.,\"'!;: "
+var punctuation = "?!.,;:-\"' "
 func get_question():
 	
 	# Get the question

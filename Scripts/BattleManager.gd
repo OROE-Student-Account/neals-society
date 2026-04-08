@@ -32,7 +32,26 @@ func _ready():
 
 
 func start_battle():
-	current_state = BattleState.PLAYER_TURN
+	var player_spd = calc_stat(player_grammarite.grammarite_info["Stats"]["Defense"], player_grammarite.level)
+	var enemy_spd = calc_stat(enemy_grammarite.grammarite_info["Stats"]["Defense"], enemy_grammarite.level)
+	if player_spd > enemy_spd:
+		current_state = BattleState.PLAYER_TURN
+	else:
+		battle_ui.input_state = battle_ui.InputState.WAITING
+		battle_ui.show_correct_menu()
+		await get_tree().create_timer(0.5).timeout
+		# Enemy's turn
+		await enemy_turn()
+		
+		# Check if player fainted
+		if player_grammarite.health <= 0:
+			if not await on_player_grammarite_die(true):
+				return
+		
+		# to player's turn
+		current_state = BattleState.PLAYER_TURN
+		battle_ui.input_state = battle_ui.InputState.ACTION_BUTTONS
+		battle_ui.show_correct_menu()
 
 
 func _on_player_move_selected(move_index: int):
@@ -125,8 +144,10 @@ func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 		if attacker.item == "Glasses": accuracy += 0.25
 		var hit_roll = randf()
 		var defense_stat = calc_stat(defender.grammarite_info["Stats"]["Defense"], defender.level)
+		var spd = calc_stat(attacker.grammarite_info["Stats"]["Defense"], attacker.level)
 		var max_stat = calc_stat(200, 100)
 		accuracy *= 1 - (defense_stat/(2*max_stat))
+		accuracy *= 
 		
 		if hit_roll > accuracy:
 			battle_ui.set_info_text("The attack missed!")

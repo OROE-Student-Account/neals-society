@@ -10,7 +10,7 @@ func open_grammarite_storage():
 	var player = Utils.get_player()
 	player.set_physics_process(false)
 	
-	Utils.get_scene_manager().transition_to_grammarite_storage()
+	Utils.get_scene_manager().transition_to_menu("Computer")
 
 
 func _unhandled_input(event: InputEvent) -> void:

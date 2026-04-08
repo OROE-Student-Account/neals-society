@@ -1,21 +1,21 @@
 [gd_scene format=3 uid="uid://s48ynud6ed77"]
 
-[ext_resource type="Texture2D" uid="uid://bw3bqnx3kggm6" path="res://Assets/UI/Pokemon Party/PartyScreen.png" id="2_jqn4x"]
-[ext_resource type="Texture2D" uid="uid://r8qwb6kwhbpx" path="res://Assets/Pokemon/Pokemon4.png" id="3"]
-[ext_resource type="Script" uid="uid://dpvpht1pik0j" path="res://Scripts/PartySlot.gd" id="3_3dpfl"]
-[ext_resource type="Texture2D" uid="uid://cf0txma36318t" path="res://Assets/UI/Pokemon Party/PartyScreenSelect.png" id="3_b4nyv"]
-[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="4"]
-[ext_resource type="Texture2D" uid="uid://ckbbwuf8tfh1" path="res://Assets/UI/Dialogue.png" id="4_b4nyv"]
-[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="7_ajrs2"]
-[ext_resource type="Texture2D" uid="uid://3ndqiat65p8r" path="res://Assets/Pokemon/Pokemon59.png" id="8_jqn4x"]
-[ext_resource type="Texture2D" uid="uid://bv565fwa2g6si" path="res://Assets/Pokemon/Pokemon34.png" id="10_b4nyv"]
-[ext_resource type="Texture2D" uid="uid://x2r2smipejox" path="res://Assets/Pokemon/Pokemon25.png" id="11"]
-[ext_resource type="Texture2D" uid="uid://b81iqrvr8ywd1" path="res://Assets/Pokemon/Pokemon95.png" id="12"]
-[ext_resource type="Texture2D" uid="uid://dgkatdnfgvtd1" path="res://Assets/Pokemon/Pokemon38.png" id="12_vdg4m"]
-[ext_resource type="Script" uid="uid://gtkl713auage" path="res://Scripts/PokemonPartyScreen.gd" id="14"]
-[ext_resource type="Texture2D" uid="uid://dw17mm63araxi" path="res://Assets/UI/menu_box_1.png" id="15_ajrs2"]
-[ext_resource type="Texture2D" uid="uid://dl58l7iruinos" path="res://Assets/UI/Cancel.png" id="16_b4nyv"]
-[ext_resource type="Texture2D" uid="uid://bofmcuxvqsoyg" path="res://Assets/UI/ui_arrow_left_right.png" id="16_jqn4x"]
+[ext_resource type="Script" uid="uid://gtkl713auage" path="res://Scripts/PokemonPartyScreen.gd" id="1_0goak"]
+[ext_resource type="Texture2D" uid="uid://bw3bqnx3kggm6" path="res://Assets/UI/Pokemon Party/PartyScreen.png" id="2_fhvdd"]
+[ext_resource type="Texture2D" uid="uid://cf0txma36318t" path="res://Assets/UI/Pokemon Party/PartyScreenSelect.png" id="3_ehsf2"]
+[ext_resource type="Texture2D" uid="uid://ckbbwuf8tfh1" path="res://Assets/UI/Dialogue.png" id="4_rxu80"]
+[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="5_row5s"]
+[ext_resource type="Script" uid="uid://dpvpht1pik0j" path="res://Scripts/PartySlot.gd" id="6_vlq4q"]
+[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="7_lyj1d"]
+[ext_resource type="Texture2D" uid="uid://r8qwb6kwhbpx" path="res://Assets/Pokemon/Pokemon4.png" id="8_fx6dr"]
+[ext_resource type="Texture2D" uid="uid://3ndqiat65p8r" path="res://Assets/Pokemon/Pokemon59.png" id="9_iq6kl"]
+[ext_resource type="Texture2D" uid="uid://bv565fwa2g6si" path="res://Assets/Pokemon/Pokemon34.png" id="10_gw5t6"]
+[ext_resource type="Texture2D" uid="uid://dgkatdnfgvtd1" path="res://Assets/Pokemon/Pokemon38.png" id="11_de40a"]
+[ext_resource type="Texture2D" uid="uid://x2r2smipejox" path="res://Assets/Pokemon/Pokemon25.png" id="12_t75ko"]
+[ext_resource type="Texture2D" uid="uid://b81iqrvr8ywd1" path="res://Assets/Pokemon/Pokemon95.png" id="13_03tyd"]
+[ext_resource type="Texture2D" uid="uid://dl58l7iruinos" path="res://Assets/UI/Cancel.png" id="14_evcc1"]
+[ext_resource type="Texture2D" uid="uid://dw17mm63araxi" path="res://Assets/UI/menu_box_1.png" id="15_bmefq"]
+[ext_resource type="Texture2D" uid="uid://bofmcuxvqsoyg" path="res://Assets/UI/ui_arrow_left_right.png" id="16_12cml"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqn4x"]
 bg_color = Color(1, 1, 1, 1)
@@ -46,7 +46,7 @@ _data = {
 }
 
 [sub_resource type="FontFile" id="2"]
-fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+fallbacks = Array[Font]([ExtResource("5_row5s"), ExtResource("5_row5s")])
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
@@ -260,28 +260,28 @@ _data = {
 &"Idle": SubResource("7")
 }
 
-[node name="PokemonPartyScreen" type="Node2D" unique_id=100946892]
+[node name="PartyScreen" type="Node2D" unique_id=100946892]
 texture_filter = 1
-script = ExtResource("14")
+script = ExtResource("1_0goak")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1930431935]
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("2_jqn4x")
+texture = ExtResource("2_fhvdd")
 
 [node name="SelectBox" type="TextureRect" parent="." unique_id=2102279412]
 offset_left = 137.0
 offset_top = 49.0
 offset_right = 216.0
 offset_bottom = 89.0
-texture = ExtResource("3_b4nyv")
+texture = ExtResource("3_ehsf2")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1705518557]
 offset_left = 4.0
 offset_top = 134.0
 offset_right = 168.0
 offset_bottom = 158.0
-texture = ExtResource("4_b4nyv")
+texture = ExtResource("4_rxu80")
 patch_margin_left = 7
 patch_margin_top = 3
 patch_margin_right = 7
@@ -294,26 +294,26 @@ offset_top = 6.0
 offset_right = 146.0
 offset_bottom = 29.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4")
+theme_override_fonts/font = ExtResource("5_row5s")
 theme_override_font_sizes/font_size = 12
 text = "Choose a Grammarite."
 
 [node name="FirstPokemonSlot" type="Node2D" parent="." unique_id=766143109]
 position = Vector2(2, -25)
-script = ExtResource("3_3dpfl")
+script = ExtResource("6_vlq4q")
 
 [node name="GrammariteName" type="Label" parent="FirstPokemonSlot" unique_id=712901727]
 offset_left = 58.0
 offset_top = 37.0
 offset_right = 94.0
 offset_bottom = 47.0
-theme = ExtResource("7_ajrs2")
+theme = ExtResource("7_lyj1d")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jqn4x")
 text = "Dog of Wood"
 
 [node name="PokemonPartySprite" type="Sprite2D" parent="FirstPokemonSlot" unique_id=85660275]
 position = Vector2(22, 33)
-texture = ExtResource("3")
+texture = ExtResource("8_fx6dr")
 centered = false
 hframes = 2
 region_enabled = true
@@ -351,20 +351,20 @@ color = Color(0, 1, 0, 1)
 
 [node name="SecondPokemonSlot" type="Node2D" parent="." unique_id=2092387560]
 position = Vector2(119, -26)
-script = ExtResource("3_3dpfl")
+script = ExtResource("6_vlq4q")
 
 [node name="GrammariteName" type="Label" parent="SecondPokemonSlot" unique_id=2091412937]
 offset_left = 53.0
 offset_top = 38.0
 offset_right = 89.0
 offset_bottom = 48.0
-theme = ExtResource("7_ajrs2")
+theme = ExtResource("7_lyj1d")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jqn4x")
 text = "Dog of wood"
 
 [node name="PokemonPartySprite" type="Sprite2D" parent="SecondPokemonSlot" unique_id=932377883]
 position = Vector2(17, 34)
-texture = ExtResource("8_jqn4x")
+texture = ExtResource("9_iq6kl")
 centered = false
 hframes = 2
 region_enabled = true
@@ -400,20 +400,20 @@ color = Color(0, 1, 0, 1)
 
 [node name="ThirdPokemonSlot" type="Node2D" parent="." unique_id=529554492]
 position = Vector2(119, -2)
-script = ExtResource("3_3dpfl")
+script = ExtResource("6_vlq4q")
 
 [node name="GrammariteName" type="Label" parent="ThirdPokemonSlot" unique_id=1110099415]
 offset_left = -59.0
 offset_top = 57.0
 offset_right = -23.0
 offset_bottom = 67.0
-theme = ExtResource("7_ajrs2")
+theme = ExtResource("7_lyj1d")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jqn4x")
 text = "Dog of"
 
 [node name="PokemonPartySprite" type="Sprite2D" parent="ThirdPokemonSlot" unique_id=1381254744]
 position = Vector2(-95, 54)
-texture = ExtResource("10_b4nyv")
+texture = ExtResource("10_gw5t6")
 centered = false
 hframes = 2
 region_enabled = true
@@ -449,20 +449,20 @@ color = Color(0, 1, 0, 1)
 
 [node name="FourthPokemonSlot" type="Node2D" parent="." unique_id=800206905]
 position = Vector2(119, 22)
-script = ExtResource("3_3dpfl")
+script = ExtResource("6_vlq4q")
 
 [node name="GrammariteName" type="Label" parent="FourthPokemonSlot" unique_id=591323933]
 offset_left = 53.0
 offset_top = 33.0
 offset_right = 89.0
 offset_bottom = 43.0
-theme = ExtResource("7_ajrs2")
+theme = ExtResource("7_lyj1d")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jqn4x")
 text = "Dog of "
 
 [node name="PokemonPartySprite" type="Sprite2D" parent="FourthPokemonSlot" unique_id=754777814]
 position = Vector2(17, 30)
-texture = ExtResource("12_vdg4m")
+texture = ExtResource("11_de40a")
 centered = false
 hframes = 2
 region_enabled = true
@@ -498,20 +498,20 @@ color = Color(0, 1, 0, 1)
 
 [node name="FifthPokemonSlot" type="Node2D" parent="." unique_id=2133650784]
 position = Vector2(119, 46)
-script = ExtResource("3_3dpfl")
+script = ExtResource("6_vlq4q")
 
 [node name="GrammariteName" type="Label" parent="FifthPokemonSlot" unique_id=1624320440]
 offset_left = -59.0
 offset_top = 52.0
 offset_right = -18.0
 offset_bottom = 62.0
-theme = ExtResource("7_ajrs2")
+theme = ExtResource("7_lyj1d")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jqn4x")
 text = "Dog of W"
 
 [node name="PokemonPartySprite" type="Sprite2D" parent="FifthPokemonSlot" unique_id=128367754]
 position = Vector2(-95, 49)
-texture = ExtResource("11")
+texture = ExtResource("12_t75ko")
 centered = false
 hframes = 2
 region_enabled = true
@@ -547,20 +547,20 @@ color = Color(0, 1, 0, 1)
 
 [node name="SixthPokemonSlot" type="Node2D" parent="." unique_id=802830800]
 position = Vector2(119, 70)
-script = ExtResource("3_3dpfl")
+script = ExtResource("6_vlq4q")
 
 [node name="GrammariteName" type="Label" parent="SixthPokemonSlot" unique_id=1154542254]
 offset_left = 53.0
 offset_top = 28.0
 offset_right = 94.0
 offset_bottom = 38.0
-theme = ExtResource("7_ajrs2")
+theme = ExtResource("7_lyj1d")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jqn4x")
 text = "Dog of W"
 
 [node name="PokemonPartySprite" type="Sprite2D" parent="SixthPokemonSlot" unique_id=1445359980]
 position = Vector2(17, 25)
-texture = ExtResource("12")
+texture = ExtResource("13_03tyd")
 centered = false
 hframes = 2
 region_enabled = true
@@ -646,7 +646,7 @@ color = Color(0.8509804, 0.627451, 0.4, 1)
 
 [node name="CancelSprite" type="Sprite2D" parent="." unique_id=1901885376]
 position = Vector2(176, 108)
-texture = ExtResource("16_b4nyv")
+texture = ExtResource("14_evcc1")
 centered = false
 hframes = 2
 
@@ -656,7 +656,7 @@ offset_left = 176.0
 offset_top = 93.0
 offset_right = 238.0
 offset_bottom = 154.0
-texture = ExtResource("15_ajrs2")
+texture = ExtResource("15_bmefq")
 patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
@@ -672,28 +672,28 @@ offset_bottom = 67.0
 [node name="Summary" type="Label" parent="PageOptions/VBoxContainer" unique_id=1051197184]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("4")
+theme_override_fonts/font = ExtResource("5_row5s")
 theme_override_font_sizes/font_size = 12
 text = "Summary"
 
 [node name="Switch" type="Label" parent="PageOptions/VBoxContainer" unique_id=819748401]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("4")
+theme_override_fonts/font = ExtResource("5_row5s")
 theme_override_font_sizes/font_size = 12
 text = "Switch"
 
 [node name="Item" type="Label" parent="PageOptions/VBoxContainer" unique_id=195601569]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("4")
+theme_override_fonts/font = ExtResource("5_row5s")
 theme_override_font_sizes/font_size = 12
 text = "Item"
 
 [node name="Cancel" type="Label" parent="PageOptions/VBoxContainer" unique_id=1558371454]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("4")
+theme_override_fonts/font = ExtResource("5_row5s")
 theme_override_font_sizes/font_size = 12
 text = "Cancel"
 
@@ -703,7 +703,7 @@ offset_left = 7.0
 offset_top = 6.0
 offset_right = 13.0
 offset_bottom = 16.0
-texture = ExtResource("16_jqn4x")
+texture = ExtResource("16_12cml")
 
 [node name="SwitchLocation" type="NinePatchRect" parent="." unique_id=724356943]
 visible = false
@@ -711,7 +711,7 @@ offset_left = 176.0
 offset_top = 54.0
 offset_right = 238.0
 offset_bottom = 154.0
-texture = ExtResource("15_ajrs2")
+texture = ExtResource("15_bmefq")
 patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
@@ -727,49 +727,49 @@ offset_bottom = 67.0
 [node name="1" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=2011019407]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("4")
+theme_override_fonts/font = ExtResource("5_row5s")
 theme_override_font_sizes/font_size = 12
 text = "Slot 1"
 
 [node name="2" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=1346129559]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("4")
+theme_override_fonts/font = ExtResource("5_row5s")
 theme_override_font_sizes/font_size = 12
 text = "Slot 2"
 
 [node name="3" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=1933598985]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("4")
+theme_override_fonts/font = ExtResource("5_row5s")
 theme_override_font_sizes/font_size = 12
 text = "Slot 3"
 
 [node name="4" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=1979807380]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("4")
+theme_override_fonts/font = ExtResource("5_row5s")
 theme_override_font_sizes/font_size = 12
 text = "Slot 4"
 
 [node name="5" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=1544587729]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("4")
+theme_override_fonts/font = ExtResource("5_row5s")
 theme_override_font_sizes/font_size = 12
 text = "Slot 5"
 
 [node name="6" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=1079065639]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("4")
+theme_override_fonts/font = ExtResource("5_row5s")
 theme_override_font_sizes/font_size = 12
 text = "Slot 6"
 
 [node name="Cancel" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=769751161]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("4")
+theme_override_fonts/font = ExtResource("5_row5s")
 theme_override_font_sizes/font_size = 12
 text = "Cancel"
 
@@ -779,4 +779,4 @@ offset_left = 7.0
 offset_top = 6.0
 offset_right = 13.0
 offset_bottom = 16.0
-texture = ExtResource("16_jqn4x")
+texture = ExtResource("16_12cml")

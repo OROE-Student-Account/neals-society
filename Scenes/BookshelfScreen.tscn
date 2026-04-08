@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cfjf5vsr65j01"]
 
-[ext_resource type="Script" uid="uid://kw1ayw2gknvb" path="res://Scripts/BookScreen.gd" id="1_mnw7w"]
-[ext_resource type="Texture2D" uid="uid://c0pp0a288h8cv" path="res://Assets/1000_F_65707740_9dy3kO5vd8NsuoN1vAmVuTHr82DvCUvB.jpg" id="2_8e4xr"]
+[ext_resource type="Script" uid="uid://kw1ayw2gknvb" path="res://Scripts/BookScreen.gd" id="1_ruf6q"]
+[ext_resource type="Texture2D" uid="uid://c0pp0a288h8cv" path="res://Assets/1000_F_65707740_9dy3kO5vd8NsuoN1vAmVuTHr82DvCUvB.jpg" id="2_oy0eb"]
 
-[node name="BookScreen" type="Node2D" unique_id=1960944196]
+[node name="BookshelfScreen" type="Node2D" unique_id=1960944196]
 texture_filter = 1
-script = ExtResource("1_mnw7w")
+script = ExtResource("1_ruf6q")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1606546628]
 offset_right = 240.0
@@ -24,7 +24,7 @@ texture_filter = 2
 layout_mode = 0
 offset_right = 240.0
 offset_bottom = 160.0
-texture = ExtResource("2_8e4xr")
+texture = ExtResource("2_oy0eb")
 expand_mode = 1
 stretch_mode = 6
 flip_h = true

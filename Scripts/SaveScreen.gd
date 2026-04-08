@@ -44,7 +44,7 @@ func select_button():
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("x") or (selected_option == Options.CANCEL and event.is_action_pressed("z")):
-		Utils.get_scene_manager().transition_exit_save_screen()
+		Utils.get_scene_manager().transition_exit_menu("Save")
 	
 	elif event.is_action_pressed("ui_down"):
 		if selected_option == Options.SLOT3:

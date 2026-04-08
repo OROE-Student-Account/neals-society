@@ -51,12 +51,31 @@
 		"Story Book"
 	],
 	"Money": 0.0,
-	"Name": "Neal Sehgal",
+	"Name": "Sehgal",
 	"Party": [
 		{
-			"Health": 96,
+			"Health": 3.0,
+			"Item": "Glasses",
+			"Level": 1.0,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Sculpt"
+			],
+			"Name": "Sculpupture",
+			"Nickname": "",
+			"PP": [
+				15.0,
+				20.0,
+				15.0,
+				5.0
+			]
+		},
+		{
+			"Health": 23.0,
 			"Item": "",
-			"Level": 65.0,
+			"Level": 5.45,
 			"Moves": [
 				"Bite",
 				"Play",
@@ -73,28 +92,28 @@
 			]
 		},
 		{
-			"Health": 0.0,
-			"Item": "",
-			"Level": 1.65,
+			"Health": 208.0,
+			"Item": "Glasses",
+			"Level": 69.51,
 			"Moves": [
 				"Bite",
 				"Play",
 				"Sit",
-				"Woodchip"
+				"Sculpt"
 			],
-			"Name": "Dog of Wood",
+			"Name": "Sculpupture",
 			"Nickname": "",
 			"PP": [
 				15.0,
 				20.0,
 				15.0,
-				1.0
+				5.0
 			]
 		},
 		{
-			"Health": 0.0,
+			"Health": 184.0,
 			"Item": "",
-			"Level": 1.69,
+			"Level": 65.2,
 			"Moves": [
 				"Bite",
 				"Play",
@@ -107,30 +126,11 @@
 				14.0,
 				20.0,
 				15.0,
-				0.0
+				1.0
 			]
 		},
 		{
-			"Health": 0.0,
-			"Item": "Glasses",
-			"Level": 1.0,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Sit",
-				"Sculpt"
-			],
-			"Name": "Sculpupture",
-			"Nickname": "",
-			"PP": [
-				9.0,
-				20.0,
-				15.0,
-				3.0
-			]
-		},
-		{
-			"Health": 0.0,
+			"Health": 10.0,
 			"Item": "Glasses",
 			"Level": 28.89,
 			"Moves": [
@@ -142,30 +142,20 @@
 			"Name": "Orawolfi",
 			"Nickname": "",
 			"PP": [
-				0.0,
-				20.0,
 				15.0,
-				3.0
-			]
-		},
-		{
-			"Health": 0.0,
-			"Item": "Glasses",
-			"Level": 69.51,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Sit",
-				"Sculpt"
-			],
-			"Name": "Sculpupture",
-			"Nickname": "",
-			"PP": [
-				10.0,
 				20.0,
 				15.0,
 				5.0
 			]
+		},
+		{
+			"Health": 0.0,
+			"Item": "",
+			"Level": 1.0,
+			"Moves": [],
+			"Name": "",
+			"Nickname": "",
+			"PP": []
 		}
 	]
 }

@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://hqk5wot8bb6u"]
 
-[ext_resource type="Script" uid="uid://c55vrcn07e7lg" path="res://Scripts/HarvestScreen.gd" id="1_jt483"]
-[ext_resource type="Texture2D" uid="uid://d23f5o7omjc0n" path="res://Assets/Pokemon/Pokemon22.png" id="2_rm8oi"]
-[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="3_8wude"]
-[ext_resource type="Texture2D" uid="uid://hpyxtuycfcbw" path="res://Assets/UI/Pokemon Party/exit_background_button.png" id="4_6o1mr"]
-[ext_resource type="Texture2D" uid="uid://c7h1rjnnq5wb" path="res://Assets/Pokemon/Pokemon77.png" id="5_fnunc"]
-[ext_resource type="Texture2D" uid="uid://dl58l7iruinos" path="res://Assets/UI/Cancel.png" id="5_rm8oi"]
-[ext_resource type="Texture2D" uid="uid://bsxu6c3rnhh10" path="res://Assets/crush.png" id="6_mwkxk"]
+[ext_resource type="Script" uid="uid://c55vrcn07e7lg" path="res://Scripts/HarvestScreen.gd" id="1_1wnif"]
+[ext_resource type="Texture2D" uid="uid://d23f5o7omjc0n" path="res://Assets/Pokemon/Pokemon22.png" id="2_1jb5n"]
+[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="3_yi611"]
+[ext_resource type="Texture2D" uid="uid://hpyxtuycfcbw" path="res://Assets/UI/Pokemon Party/exit_background_button.png" id="4_hg8ms"]
+[ext_resource type="Texture2D" uid="uid://dl58l7iruinos" path="res://Assets/UI/Cancel.png" id="5_0tae4"]
+[ext_resource type="Texture2D" uid="uid://c7h1rjnnq5wb" path="res://Assets/Pokemon/Pokemon77.png" id="6_rgyt3"]
+[ext_resource type="Texture2D" uid="uid://bsxu6c3rnhh10" path="res://Assets/crush.png" id="7_hg4io"]
 
 [sub_resource type="Animation" id="Animation_l8wp2"]
 resource_name = "Crush"
@@ -206,9 +206,9 @@ _data = {
 &"RESET": SubResource("Animation_omd1g")
 }
 
-[node name="HarvestScreen" type="Node2D" unique_id=156129570]
+[node name="HarvesterScreen" type="Node2D" unique_id=156129570]
 texture_filter = 1
-script = ExtResource("1_jt483")
+script = ExtResource("1_1wnif")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1478618131]
 offset_right = 240.0
@@ -230,7 +230,7 @@ color = Color(0.3137255, 0.2509804, 0.22352941, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Display" unique_id=1607535583]
 position = Vector2(40, 32)
-texture = ExtResource("2_rm8oi")
+texture = ExtResource("2_1jb5n")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 34, 64, 64)
@@ -242,7 +242,7 @@ offset_top = 120.0
 offset_right = 120.0
 offset_bottom = 143.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_8wude")
+theme_override_fonts/font = ExtResource("3_yi611")
 theme_override_font_sizes/font_size = 12
 text = "NAME HERE"
 horizontal_alignment = 1
@@ -251,19 +251,19 @@ horizontal_alignment = 1
 
 [node name="Crush" type="Sprite2D" parent="Buttons" unique_id=722073339]
 position = Vector2(160, 32)
-texture = ExtResource("4_6o1mr")
+texture = ExtResource("4_hg8ms")
 centered = false
 hframes = 2
 
 [node name="Switch" type="Sprite2D" parent="Buttons" unique_id=1598870692]
 position = Vector2(160, 80)
-texture = ExtResource("4_6o1mr")
+texture = ExtResource("4_hg8ms")
 centered = false
 hframes = 2
 
 [node name="Cancel" type="Sprite2D" parent="Buttons" unique_id=50004425]
 position = Vector2(176, 104)
-texture = ExtResource("5_rm8oi")
+texture = ExtResource("5_0tae4")
 centered = false
 hframes = 2
 
@@ -276,7 +276,7 @@ offset_bottom = 160.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Animation" unique_id=1653644878]
 position = Vector2(120, 80)
-texture = ExtResource("5_fnunc")
+texture = ExtResource("6_rgyt3")
 region_enabled = true
 region_rect = Rect2(0, 34, 64, 64)
 
@@ -289,7 +289,7 @@ offset_top = 160.0
 offset_right = 152.0
 offset_bottom = 208.0
 scale = Vector2(1, -1)
-texture = ExtResource("6_mwkxk")
+texture = ExtResource("7_hg4io")
 patch_margin_left = 2
 patch_margin_right = 2
 patch_margin_bottom = 4
@@ -298,7 +298,7 @@ patch_margin_bottom = 4
 offset_left = 88.0
 offset_right = 152.0
 offset_bottom = 48.0
-texture = ExtResource("6_mwkxk")
+texture = ExtResource("7_hg4io")
 patch_margin_left = 2
 patch_margin_right = 2
 patch_margin_bottom = 4
@@ -308,7 +308,7 @@ offset_top = 72.0
 offset_right = 240.0
 offset_bottom = 103.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_8wude")
+theme_override_fonts/font = ExtResource("3_yi611")
 theme_override_font_sizes/font_size = 12
 text = "You got a ___ Shard!"
 horizontal_alignment = 1

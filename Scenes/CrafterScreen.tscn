@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://ca5ewevbq5qls"]
 
-[ext_resource type="Script" uid="uid://ccq35oguyl7al" path="res://Scripts/CraftScreen.gd" id="1_rt7jm"]
-[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="2_xol18"]
-[ext_resource type="Texture2D" uid="uid://hpyxtuycfcbw" path="res://Assets/UI/Pokemon Party/exit_background_button.png" id="3_l31cc"]
-[ext_resource type="Texture2D" uid="uid://ckyw6dtptsikv" path="res://Assets/UI/border.png" id="4_841wo"]
-[ext_resource type="Texture2D" uid="uid://dl58l7iruinos" path="res://Assets/UI/Cancel.png" id="4_rlt7w"]
-[ext_resource type="Texture2D" uid="uid://g4huif3s073t" path="res://Assets/Items/Ink Shard.png" id="5_7o8y5"]
-[ext_resource type="Texture2D" uid="uid://c0dop7ekxqv5h" path="res://Assets/Items/Knowledge Shard.png" id="6_rlt7w"]
-[ext_resource type="Texture2D" uid="uid://dywqob2aeknmi" path="res://Assets/Pokemon/Pokemon1.png" id="7_5aj04"]
-[ext_resource type="Texture2D" uid="uid://33jd1d7bcg3h" path="res://Assets/Items/Supply Shard.png" id="8_kts7i"]
-[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="10_5aj04"]
+[ext_resource type="Script" uid="uid://ccq35oguyl7al" path="res://Scripts/CrafterScreen.gd" id="1_gkl0u"]
+[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="2_a5sdi"]
+[ext_resource type="Texture2D" uid="uid://hpyxtuycfcbw" path="res://Assets/UI/Pokemon Party/exit_background_button.png" id="3_8j2m4"]
+[ext_resource type="Texture2D" uid="uid://dl58l7iruinos" path="res://Assets/UI/Cancel.png" id="4_vowll"]
+[ext_resource type="Texture2D" uid="uid://ckyw6dtptsikv" path="res://Assets/UI/border.png" id="5_0u8am"]
+[ext_resource type="Texture2D" uid="uid://g4huif3s073t" path="res://Assets/Items/Ink Shard.png" id="6_baujm"]
+[ext_resource type="Texture2D" uid="uid://c0dop7ekxqv5h" path="res://Assets/Items/Knowledge Shard.png" id="7_nhitg"]
+[ext_resource type="Texture2D" uid="uid://bcn8vymlcyc6r" path="res://Assets/Pokemon/Pokemon1.png" id="8_jsren"]
+[ext_resource type="Texture2D" uid="uid://33jd1d7bcg3h" path="res://Assets/Items/Supply Shard.png" id="9_tont1"]
+[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="10_dkr5k"]
 
 [sub_resource type="Animation" id="Animation_sonj8"]
 resource_name = "Craft"
@@ -377,9 +377,9 @@ _data = {
 &"RESET": SubResource("Animation_nchfe")
 }
 
-[node name="CraftScreen" type="Node2D" unique_id=683332491]
+[node name="CrafterScreen" type="Node2D" unique_id=683332491]
 texture_filter = 1
-script = ExtResource("1_rt7jm")
+script = ExtResource("1_gkl0u")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=713304068]
 offset_right = 240.0
@@ -416,7 +416,7 @@ offset_right = 120.0
 offset_bottom = 48.0
 scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_xol18")
+theme_override_fonts/font = ExtResource("2_a5sdi")
 theme_override_font_sizes/font_size = 12
 text = "+"
 horizontal_alignment = 1
@@ -432,25 +432,25 @@ position = Vector2(160, 48)
 
 [node name="Switch1" type="Sprite2D" parent="Buttons" unique_id=1515775696]
 position = Vector2(56, 80)
-texture = ExtResource("3_l31cc")
+texture = ExtResource("3_8j2m4")
 centered = false
 hframes = 2
 
 [node name="Switch2" type="Sprite2D" parent="Buttons" unique_id=589747145]
 position = Vector2(136, 80)
-texture = ExtResource("3_l31cc")
+texture = ExtResource("3_8j2m4")
 centered = false
 hframes = 2
 
 [node name="Craft" type="Sprite2D" parent="Buttons" unique_id=934171713]
 position = Vector2(96, 120)
-texture = ExtResource("3_l31cc")
+texture = ExtResource("3_8j2m4")
 centered = false
 hframes = 2
 
 [node name="Exit" type="Sprite2D" parent="Buttons" unique_id=2003629744]
 position = Vector2(168, 104)
-texture = ExtResource("4_rlt7w")
+texture = ExtResource("4_vowll")
 centered = false
 hframes = 2
 
@@ -463,7 +463,7 @@ offset_bottom = 160.0
 
 [node name="Border" type="Sprite2D" parent="ShardSelect" unique_id=505643533]
 position = Vector2(64, 40)
-texture = ExtResource("4_841wo")
+texture = ExtResource("5_0u8am")
 
 [node name="Label" type="Label" parent="ShardSelect" unique_id=924987476]
 offset_left = 100.0
@@ -471,7 +471,7 @@ offset_top = 32.0
 offset_right = 146.0
 offset_bottom = 41.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_xol18")
+theme_override_fonts/font = ExtResource("2_a5sdi")
 theme_override_font_sizes/font_size = 12
 text = "Count: 30"
 horizontal_alignment = 1
@@ -488,21 +488,21 @@ libraries/ = SubResource("AnimationLibrary_7qkc0")
 
 [node name="Shard1" type="Sprite2D" parent="Animation" unique_id=2102286449]
 position = Vector2(80, 80)
-texture = ExtResource("5_7o8y5")
+texture = ExtResource("6_baujm")
 
 [node name="Shard2" type="Sprite2D" parent="Animation" unique_id=29147287]
 position = Vector2(160, 80)
-texture = ExtResource("6_rlt7w")
+texture = ExtResource("7_nhitg")
 
 [node name="Grammarite" type="Sprite2D" parent="Animation" unique_id=2137719462]
 position = Vector2(120, 80)
-texture = ExtResource("7_5aj04")
+texture = ExtResource("8_jsren")
 region_enabled = true
 region_rect = Rect2(0, 34, 64, 64)
 
 [node name="Item" type="Sprite2D" parent="Animation" unique_id=7225482]
 position = Vector2(120, 80)
-texture = ExtResource("8_kts7i")
+texture = ExtResource("9_tont1")
 
 [node name="Label" type="Label" parent="Animation" unique_id=2090876890]
 visible = false
@@ -510,7 +510,7 @@ offset_left = 48.0
 offset_top = 72.0
 offset_right = 193.0
 offset_bottom = 95.0
-theme = ExtResource("10_5aj04")
+theme = ExtResource("10_dkr5k")
 text = "No room for the crafted item.
 Clear space, then try again."
 horizontal_alignment = 1

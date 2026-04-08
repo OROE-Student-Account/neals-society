@@ -10,7 +10,7 @@ func open_quests():
 	var player = Utils.get_player()
 	player.set_physics_process(false)
 	
-	Utils.get_scene_manager().transition_to_quests()
+	Utils.get_scene_manager().transition_to_menu("Quest")
 
 
 func _unhandled_input(event: InputEvent) -> void:

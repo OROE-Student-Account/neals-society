@@ -133,9 +133,11 @@ func craft():
 		if thing != {}:
 			if thing["Type"] == "Item":
 				$Animation/Grammarite.texture = empty
+				$Animation/Item.texture = load("res://Assets/Items/"+thing["Name"]+".png")
 				Utils.add_to_inventory(thing["Name"])
 			elif thing["Type"] == "Grammarite":
 				$Animation/Item.texture = empty
+				$Animation/Grammarite.texture = load("res://Assets/Pokemon/Pokemon"+str(1+Utils.get_poke_num(thing["Name"]))+".png")
 				var found = false # flag for if there is room in inventory
 				
 				# sets up the grammarite
@@ -212,7 +214,7 @@ func _input(event):
 				update_buttons()
 				
 			elif event.is_action_pressed("x") or (event.is_action_pressed("z") and selected_option == Options.CANCEL):
-				Utils.get_scene_manager().transition_exit_crafter()
+				Utils.get_scene_manager().transition_exit_menu("Crafter")
 				
 			elif event.is_action_pressed("z"):
 				if selected_option == Options.SWITCH1:

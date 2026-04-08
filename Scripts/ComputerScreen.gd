@@ -19,7 +19,6 @@ func fix_party():
 	
 	Utils.set_party(party)
 
-	
 
 func _unhandled_input(event: InputEvent) -> void:
 	match state:
@@ -29,4 +28,4 @@ func _unhandled_input(event: InputEvent) -> void:
 				
 			elif event.is_action_pressed("x"):
 				# Exit
-				Utils.get_scene_manager().transition_exit_grammarite_storage()
+				Utils.get_scene_manager().transition_exit_menu("Computer")

@@ -10,7 +10,7 @@ func open_bookshelf():
 	var player = Utils.get_player()
 	player.set_physics_process(false)
 	
-	Utils.get_scene_manager().transition_to_bookshelf()
+	Utils.get_scene_manager().transition_to_menu("Bookshelf")
 
 
 func _unhandled_input(event: InputEvent) -> void:

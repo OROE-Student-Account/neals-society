@@ -20,7 +20,7 @@ func load_naming_screen(initial_prompt):
 	pause = false
 	var menu = Utils.get_scene_manager().get_node("Menu")
 	var saved_screen = menu.screen_loaded
-	menu.screen_loaded = 6
+	menu.screen_loaded = menu.ScreenLoaded.NAMING
 	
 	prompt = initial_prompt
 	
