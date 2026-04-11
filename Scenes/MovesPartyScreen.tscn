@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cdlnnldfmonns" path="res://Assets/UI/Pokemon Party/MovesUI.png" id="1_eniwa"]
 [ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="2_44pqi"]
-[ext_resource type="Texture2D" uid="uid://dywqob2aeknmi" path="res://Assets/Pokemon/Pokemon1.png" id="3_d5ic8"]
+[ext_resource type="Texture2D" uid="uid://bcn8vymlcyc6r" path="res://Assets/Pokemon/Pokemon1.png" id="3_d5ic8"]
 [ext_resource type="Texture2D" uid="uid://bp1yoi5n1cx7x" path="res://Assets/UI/Pokemon Party/Pokemon_SummaryUI_OUTLINE-1.png.png" id="4_7hlnd"]
 
 [node name="MovesScreen" type="Node2D" unique_id=236429404]

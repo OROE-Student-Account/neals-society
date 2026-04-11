@@ -72,9 +72,8 @@ shape = SubResource("RectangleShape2D_lb0h0")
 position = Vector2(64, 24)
 shape = SubResource("RectangleShape2D_kct82")
 
-[node name="DogOfWood" parent="." unique_id=2047661078 instance=ExtResource("5_ddugm")]
+[node name="Dog Of Wood" parent="." unique_id=2047661078 instance=ExtResource("5_ddugm")]
 position = Vector2(144, 64)
-grammarite_name = "Dog of Wood"
 
 [node name="Harvester" parent="." unique_id=503675209 instance=ExtResource("4_v842k")]
 position = Vector2(32, 16)

@@ -1,5 +1,36 @@
 [
 	{
+
+	},
+	{
+
+	},
+	{
+
+	},
+	{
+
+	},
+	{
+		"Health": 12.0,
+		"Item": "",
+		"Level": 1.0,
+		"Moves": [
+			"Bite",
+			"Play",
+			"Sit",
+			"Woodchip"
+		],
+		"Name": "Dog of Wood",
+		"Nickname": "",
+		"PP": [
+			15.0,
+			20.0,
+			15.0,
+			1.0
+		]
+	},
+	{
 		"Health": 12.0,
 		"Item": "",
 		"Level": 1.0,
@@ -78,7 +109,7 @@
 	{
 		"Health": 0.0,
 		"Item": "",
-		"Level": 1.27,
+		"Level": 1.65,
 		"Moves": [
 			"Bite",
 			"Play",
@@ -95,15 +126,9 @@
 		]
 	},
 	{
-
-	},
-	{
-
-	},
-	{
-		"Health": 7.0,
+		"Health": 0.0,
 		"Item": "",
-		"Level": 5.45,
+		"Level": 1.69,
 		"Moves": [
 			"Bite",
 			"Play",
@@ -113,25 +138,16 @@
 		"Name": "Dog of Wood",
 		"Nickname": "",
 		"PP": [
-			12.0,
+			14.0,
 			20.0,
 			15.0,
 			0.0
 		]
 	},
 	{
-
-	},
-	{
-
-	},
-	{
-
-	},
-	{
-		"Health": 12.0,
+		"Health": 0.0,
 		"Item": "",
-		"Level": 1.0,
+		"Level": 1.27,
 		"Moves": [
 			"Bite",
 			"Play",

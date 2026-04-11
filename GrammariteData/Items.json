@@ -10,6 +10,10 @@
 		"Description": "Improves vision, making attacks more likely to hit.",
 		"Type": "Held"
 	},
+	"Question Mark": {
+		"Description": "Increases confusion? Or does it?",
+		"Type": "Held"
+	},
 	
 	
 	

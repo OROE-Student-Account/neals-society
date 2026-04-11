@@ -1,10 +1,41 @@
 [gd_scene format=3 uid="uid://ciw55w24bjn2h"]
 
 [ext_resource type="Script" uid="uid://c0n0ilwytxyyv" path="res://Scripts/ComputerScreen.gd" id="1_weu2g"]
+[ext_resource type="Texture2D" uid="uid://bqio4uhjljbal" path="res://Assets/UI/PlainButton.png" id="2_0637o"]
+[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="3_thxbl"]
+[ext_resource type="Texture2D" uid="uid://b3f2eqbc4ki67" path="res://Assets/UI/ui_arrow_right.png" id="4_thxbl"]
 
 [node name="ComputerScreen" type="Node2D" unique_id=66661717]
+texture_filter = 1
 script = ExtResource("1_weu2g")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1283574639]
 offset_right = 240.0
 offset_bottom = 160.0
+
+[node name="Grammarites" type="Node2D" parent="." unique_id=1967884313]
+
+[node name="Sprite2D" type="Sprite2D" parent="Grammarites" unique_id=1588030829]
+position = Vector2(120, 80)
+texture = ExtResource("2_0637o")
+hframes = 2
+frame = 1
+
+[node name="Label" type="Label" parent="Grammarites/Sprite2D" unique_id=38417162]
+offset_left = -31.0
+offset_top = -4.0
+offset_right = 33.0
+offset_bottom = 19.0
+theme = ExtResource("3_thxbl")
+text = "Heal"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2038819632]
+position = Vector2(168, 120)
+texture = ExtResource("4_thxbl")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1361152501]
+visible = false
+position = Vector2(72, 120)
+texture = ExtResource("4_thxbl")
+flip_h = true

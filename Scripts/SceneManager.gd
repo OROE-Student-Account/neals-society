@@ -17,6 +17,14 @@ var transition_type = "New Scene"
 @onready var menu =  $Menu
 
 
+
+
+func grammadex():
+	$Grammadex/AnimationPlayer.play("Grammadex")
+	print("Animation")
+
+
+
 func transition_to_menu(submenu: String):
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 	transition_type = submenu

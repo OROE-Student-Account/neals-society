@@ -62,8 +62,9 @@ func update_moves():
 		children[i].text = grammarite_info["Moves"][i]["Name"]
 
 
+
+
 # damage should be negative, healing should be positive
-# keep this seperate for later (health bar, other stuff)
 func update_health(change):
 	health = clamp(health + int(change), 0, max_health)  # Clamp between 0 and max
 	

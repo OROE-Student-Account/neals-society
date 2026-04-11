@@ -54,7 +54,26 @@
 	"Name": "Sehgal",
 	"Party": [
 		{
-			"Health": 3.0,
+			"Health": 10,
+			"Item": "Glasses",
+			"Level": 33.02,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Sculpt"
+			],
+			"Name": "Orawolfi",
+			"Nickname": "",
+			"PP": [
+				15.0,
+				20.0,
+				15.0,
+				5.0
+			]
+		},
+		{
+			"Health": 12,
 			"Item": "Glasses",
 			"Level": 1.0,
 			"Moves": [
@@ -73,9 +92,9 @@
 			]
 		},
 		{
-			"Health": 23.0,
+			"Health": 26,
 			"Item": "",
-			"Level": 5.45,
+			"Level": 6.16,
 			"Moves": [
 				"Bite",
 				"Play",
@@ -92,16 +111,16 @@
 			]
 		},
 		{
-			"Health": 208.0,
+			"Health": 197,
 			"Item": "Glasses",
-			"Level": 69.51,
+			"Level": 70.01,
 			"Moves": [
 				"Bite",
 				"Play",
 				"Sit",
 				"Sculpt"
 			],
-			"Name": "Sculpupture",
+			"Name": "Dog of Wood",
 			"Nickname": "",
 			"PP": [
 				15.0,
@@ -111,9 +130,9 @@
 			]
 		},
 		{
-			"Health": 184.0,
+			"Health": 184,
 			"Item": "",
-			"Level": 65.2,
+			"Level": 65.6,
 			"Moves": [
 				"Bite",
 				"Play",
@@ -123,29 +142,10 @@
 			"Name": "Dog of Wood",
 			"Nickname": "",
 			"PP": [
-				14.0,
+				15.0,
 				20.0,
 				15.0,
 				1.0
-			]
-		},
-		{
-			"Health": 10.0,
-			"Item": "Glasses",
-			"Level": 28.89,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Sit",
-				"Sculpt"
-			],
-			"Name": "Orawolfi",
-			"Nickname": "",
-			"PP": [
-				15.0,
-				20.0,
-				15.0,
-				5.0
 			]
 		},
 		{

@@ -2,9 +2,10 @@ extends AnimatedSprite2D
 
 
 @onready var root_node = $DialogueRoot
+@onready var final_dialogue = $FinalDialogue
+
 @onready var ray = $RayCast2D
 @onready var anim_player = $AnimationPlayer
-@onready var final_dialogue = $FinalDialogue
 
 var player_in_range := false
 var used_up := false
@@ -20,13 +21,10 @@ func _ready():
 
 
 func approach_until_hit():
-	var step = Vector2.ZERO
-	step.y = 16
-	
-	ray.target_position = step
+	ray.target_position = Vector2(0, 16)
 	ray.force_raycast_update()
 	
-	if not ray.is_colliding():
+	if !ray.is_colliding():
 		position.y += 8
 	else:
 		anim_player.stop()
@@ -43,7 +41,16 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 	player.set_physics_process(false)
 	player.anim_tree.active = false
 	player.anim_player.play("TurnUp")
-	$AnimationPlayer.play("Approach")
+	
+	$RayCast2D2.target_position = Vector2(0, 16)
+	$RayCast2D2.force_raycast_update()
+	if !$RayCast2D2.is_colliding():
+		$AnimationPlayer.play("Approach")
+	else:
+		used_up = true
+		var scene = get_node("/root/SceneManager/CurrentScene").get_child(0).name
+		Utils.update_trainer_attacked(name, true, scene)
+		Utils.get_scene_manager().transition_to_dialogue(root_node)
 
 
 func reset():

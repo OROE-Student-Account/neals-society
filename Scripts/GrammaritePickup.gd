@@ -2,8 +2,7 @@ extends Node2D
 
 
 
-@export var grammarite_name: String = ""
-@onready var grammarite_sprite = load("res://Assets/Pokemon/Pokemon"+str(Utils.get_poke_num(grammarite_name)+1)+".png")
+@onready var grammarite_sprite = load("res://Assets/Pokemon/Pokemon"+str(Utils.get_poke_num(name)+1)+".png")
 
 var picked_up = false
 var in_menu = false
@@ -74,16 +73,16 @@ func _unhandled_input(event: InputEvent) -> void:
 		elif event.is_action_pressed("z"):
 			var party = Utils.get_party()
 			var empty_slot = -1
-			var details = Utils.get_grammarite_details(grammarite_name)
+			var details = Utils.get_grammarite_details(name)
 			var new_guy = {
-				"Health": Utils.max_hp(grammarite_name, 1), "Item": "", "Level": 1,
+				"Health": Utils.max_hp(name, 1), "Item": "", "Level": 1,
 				"Moves": [
 					details["Moves"][0]["Name"],
 					details["Moves"][1]["Name"],
 					details["Moves"][2]["Name"],
 					details["Moves"][3]["Name"]
 				],
-				"Name": grammarite_name, "Nickname": "",
+				"Name": name, "Nickname": "",
 				"PP": [
 					details["Moves"][0]["PP"],
 					details["Moves"][1]["PP"],
@@ -106,6 +105,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			close_menu()
 			var scene = get_node("/root/SceneManager/CurrentScene").get_child(0).name
 			Utils.update_item_picked_up(name, true, scene)
+			Utils.catch(name)
 			queue_free()
 			
 

@@ -191,6 +191,22 @@ func get_recipe(shard1, shard2):
 
 
 
+func caught_yet(grammarite):
+	var dex = load_json_file("res://Data/Grammadex.json")
+	return dex[get_poke_num(grammarite)]
+func catch(grammarite):
+	var dex = load_json_file("res://Data/Grammadex.json")
+	if !dex[get_poke_num(grammarite)]:
+		print("Test")
+		get_scene_manager().grammadex()
+	dex[get_poke_num(grammarite)] = true
+	save_json_file("res://Data/Grammadex.json", dex)
+
+func get_num_grammarites():
+	return len(load_json_file("res://GrammariteData/Names.json"))
+
+
+
 func get_bookshelf():
 	return load_json_file("res://Data/Bookshelf.json")
 func set_bookshelf(input):
@@ -370,7 +386,8 @@ var data_file_names = [
 	"Inventory",
 	"OtherStuff",
 	"Quests",
-	"Scenes"
+	"Scenes",
+	"Grammadex"
 ]
 func save_to_save_slot(num: int):
 	var slot_path = "res://Saves/"+str(num)+"/"
@@ -428,3 +445,8 @@ func fill_empty_slot(num: int):
 	for i in range(12):
 		bookshelf.append({})
 	save_json_file(slot_path+"Bookshelf.json", bookshelf)
+	
+	var dex = []
+	for i in range(len(load_json_file("res://GrammariteData/Names.json"))):
+		dex.append(false)
+	save_json_file(slot_path+"Grammadex.json", dex)

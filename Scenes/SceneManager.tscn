@@ -57,6 +57,66 @@ _data = {
 &"FadeToNormal": SubResource("2")
 }
 
+[sub_resource type="Animation" id="Animation_8ysa5"]
+resource_name = "Grammadex"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1208, 56), Vector2(912, 72), Vector2(912, 16), Vector2(912, 80)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8333333, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 0, 0, 1), Color(1, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2cmid"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1208, 56)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q4unc"]
+_data = {
+&"Grammadex": SubResource("Animation_8ysa5"),
+&"RESET": SubResource("Animation_2cmid")
+}
+
 [node name="SceneManager" type="Node2D" unique_id=1577685840]
 texture_filter = 1
 script = ExtResource("2")
@@ -86,3 +146,15 @@ color = Color(0, 0, 0, 0)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ScreenTransition" unique_id=434253100]
 libraries/ = SubResource("AnimationLibrary_ik8mu")
 autoplay = &"FadeToNormal"
+
+[node name="Grammadex" type="CanvasLayer" parent="." unique_id=1419290616]
+
+[node name="ColorRect" type="ColorRect" parent="Grammadex" unique_id=1402030732]
+offset_left = 1208.0
+offset_top = 56.0
+offset_right = 1448.0044
+offset_bottom = 280.0015
+color = Color(1, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Grammadex" unique_id=656037789]
+libraries/ = SubResource("AnimationLibrary_q4unc")

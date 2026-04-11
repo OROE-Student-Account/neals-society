@@ -32,8 +32,6 @@
 		"Potion",
 		"Potion",
 		"Potion",
-		"Potion",
-		"Potion",
 		"Animal Shard",
 		"Animal Shard",
 		"Animal Shard",
@@ -50,15 +48,33 @@
 		"Glasses",
 		"Glasses",
 		"Glasses",
-		"Glasses",
 		"Story Book"
 	],
 	"Money": 0.0,
-	"Name": "Neal Sehgal",
+	"Name": "Sehgal",
 	"Party": [
 		{
-			"Health": 4.0,
-			"Item": "",
+			"Health": 10.0,
+			"Item": "Glasses",
+			"Level": 33.02,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Sculpt"
+			],
+			"Name": "Orawolfi",
+			"Nickname": "",
+			"PP": [
+				15.0,
+				20.0,
+				15.0,
+				5.0
+			]
+		},
+		{
+			"Health": 12.0,
+			"Item": "Glasses",
 			"Level": 1.0,
 			"Moves": [
 				"Bite",
@@ -69,16 +85,16 @@
 			"Name": "Sculpupture",
 			"Nickname": "",
 			"PP": [
-				11.0,
+				15.0,
 				20.0,
 				15.0,
 				5.0
 			]
 		},
 		{
-			"Health": 0.0,
+			"Health": 26.0,
 			"Item": "",
-			"Level": 1.65,
+			"Level": 6.16,
 			"Moves": [
 				"Bite",
 				"Play",
@@ -95,28 +111,28 @@
 			]
 		},
 		{
-			"Health": 0.0,
-			"Item": "",
-			"Level": 1.69,
+			"Health": 197.0,
+			"Item": "Glasses",
+			"Level": 70.01,
 			"Moves": [
 				"Bite",
 				"Play",
 				"Sit",
-				"Woodchip"
+				"Sculpt"
 			],
 			"Name": "Dog of Wood",
 			"Nickname": "",
 			"PP": [
-				14.0,
+				15.0,
 				20.0,
 				15.0,
-				0.0
+				5.0
 			]
 		},
 		{
 			"Health": 184.0,
 			"Item": "",
-			"Level": 65.0,
+			"Level": 65.6,
 			"Moves": [
 				"Bite",
 				"Play",
@@ -133,42 +149,13 @@
 			]
 		},
 		{
-			"Health": 208.0,
-			"Item": "Glasses",
-			"Level": 69.21,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Sit",
-				"Sculpt"
-			],
-			"Name": "Sculpupture",
+			"Health": 0.0,
+			"Item": "",
+			"Level": 1.0,
+			"Moves": [],
+			"Name": "",
 			"Nickname": "",
-			"PP": [
-				13.0,
-				20.0,
-				15.0,
-				5.0
-			]
-		},
-		{
-			"Health": 87.0,
-			"Item": "Glasses",
-			"Level": 27.13,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Sit",
-				"Sculpt"
-			],
-			"Name": "Sculpupture",
-			"Nickname": "",
-			"PP": [
-				15.0,
-				20.0,
-				15.0,
-				4.0
-			]
+			"PP": []
 		}
 	]
 }

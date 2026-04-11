@@ -3067,6 +3067,10 @@ libraries/ = SubResource("AnimationLibrary_35qta")
 position = Vector2(8, 16)
 target_position = Vector2(0, 16)
 
+[node name="RayCast2D2" type="RayCast2D" parent="Collision Stuff/Rival" unique_id=1941319326]
+position = Vector2(8, 0)
+target_position = Vector2(0, 16)
+
 [node name="DialogueRoot" type="Node" parent="Collision Stuff/Rival" unique_id=642039714]
 script = ExtResource("19_5qjph")
 text = "Are you ready for school? Wait, do you not know who I am?"
@@ -3144,6 +3148,10 @@ libraries/ = SubResource("AnimationLibrary_35qta")
 
 [node name="RayCast2D" type="RayCast2D" parent="Collision Stuff/Fighter" unique_id=292022228]
 position = Vector2(8, 16)
+target_position = Vector2(0, 16)
+
+[node name="RayCast2D2" type="RayCast2D" parent="Collision Stuff/Fighter" unique_id=929499899]
+position = Vector2(8, 0)
 target_position = Vector2(0, 16)
 
 [node name="DialogueRoot" type="Node" parent="Collision Stuff/Fighter" unique_id=1360333292]

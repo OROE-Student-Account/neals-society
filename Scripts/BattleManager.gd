@@ -62,7 +62,7 @@ func _on_player_move_selected(move_index: int):
 		await execute_attack(player_grammarite, enemy_grammarite, { "Name": "Struggle" })
 	elif move_index == -2:
 		battle_ui.set_info_text("You got the question wrong.")
-		await get_tree().create_timer(1.5).timeout
+		await get_tree().create_timer(1.0).timeout
 	else:
 		var player_move = player_grammarite.grammarite_info["Moves"][move_index]
 		await execute_attack(player_grammarite, enemy_grammarite, player_move)
@@ -144,10 +144,10 @@ func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 		if attacker.item == "Glasses": accuracy += 0.25
 		var hit_roll = randf()
 		var defense_stat = calc_stat(defender.grammarite_info["Stats"]["Defense"], defender.level)
-		var spd = calc_stat(attacker.grammarite_info["Stats"]["Defense"], attacker.level)
+		var spd = calc_stat(attacker.grammarite_info["Stats"]["Speed"], attacker.level)
 		var max_stat = calc_stat(200, 100)
 		accuracy *= 1 - (defense_stat/(2*max_stat))
-		accuracy *= 
+		accuracy *= 1 + (spd/(4*max_stat))
 		
 		if hit_roll > accuracy:
 			battle_ui.set_info_text("The attack missed!")
@@ -242,6 +242,9 @@ func throw_book(book_name):
 	
 	if caught < base_chance:
 		battle_ui.set_info_text("You caught it!")
+		enemy_grammarite.visible = false
+		if !Utils.caught_yet(enemy_grammarite.grammarite_name):
+			Utils.catch(enemy_grammarite.grammarite_name)
 		await get_tree().create_timer(1.6).timeout
 		# enemy_grammarite goes to your storage
 		
@@ -304,6 +307,7 @@ func end_battle(player_won: bool):
 	current_state = BattleState.BATTLE_END
 	
 	if player_won:
+		enemy_grammarite.visible = false
 		battle_ui.set_info_text("You won!")
 		await get_tree().create_timer(1.65).timeout
 		var party = Utils.get_party()
@@ -336,6 +340,7 @@ func end_battle(player_won: bool):
 				
 				evolve_screen.get_node("Sprite2D").texture = load("res://Assets/Pokemon/Pokemon"+str(Utils.get_poke_num(new_name)+1)+".png")
 				evolve_screen.get_node("NinePatchRect/Label").text = old_name+" evolved into "+new_name+"!"
+				Utils.catch(new_name)
 				await get_tree().create_timer(3.0).timeout
 		
 		party[0]["Level"] += 0.01 * xp
@@ -346,6 +351,7 @@ func end_battle(player_won: bool):
 		battle_ended.emit(player_won)
 		Utils.get_scene_manager().transition_exit_battle()
 	else:
+		player_grammarite.visible = false
 		battle_ui.set_info_text("You lost!")
 		if trainer != "random":
 			var scene = get_node("/root/SceneManager/CurrentScene").get_child(0).name
