@@ -197,10 +197,9 @@ func caught_yet(grammarite):
 func catch(grammarite):
 	var dex = load_json_file("res://Data/Grammadex.json")
 	if !dex[get_poke_num(grammarite)]:
-		print("Test")
 		get_scene_manager().grammadex()
-	dex[get_poke_num(grammarite)] = true
-	save_json_file("res://Data/Grammadex.json", dex)
+		dex[get_poke_num(grammarite)] = true
+		save_json_file("res://Data/Grammadex.json", dex)
 
 func get_num_grammarites():
 	return len(load_json_file("res://GrammariteData/Names.json"))
