@@ -64,7 +64,11 @@ func update_buttons():
 		Page.MAIN:
 			for butt in buttons.get_children():
 				butt.frame = 0
+				for i in butt.get_children():
+					i.visible = false
 			buttons.get_child(selected_option).frame = 1
+			for i in buttons.get_child(selected_option).get_children():
+				i.visible = true
 			if shard1 != "":
 				$Control/Shard1.texture = load("res://Assets/Items/"+shard1+" Shard.png")
 				$Animation/Shard1.texture = load("res://Assets/Items/"+shard1+" Shard.png")

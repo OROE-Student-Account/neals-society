@@ -33,7 +33,7 @@ func _ready():
 	select_arrow.position.y = 9 + (selected_option % 2) * 16
 
 # starts a dialogue tree
-func start_dialogue(root):
+func start_dialogue(root: Node):
 	dialogue_root = root
 	current_node = root
 	target_node = root.func_node
@@ -45,6 +45,8 @@ func start_dialogue(root):
 	player.anim_tree.active = false
 	
 	Utils.get_scene_manager().get_node("Menu").screen_loaded = 1
+	
+	$Control/PanelContainer/Name.text = root.get_parent().name
 	
 	# Display the current node
 	display_current_node()

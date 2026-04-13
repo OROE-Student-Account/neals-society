@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://c55vrcn07e7lg" path="res://Scripts/HarvestScreen.gd" id="1_1wnif"]
 [ext_resource type="Texture2D" uid="uid://d23f5o7omjc0n" path="res://Assets/Pokemon/Pokemon22.png" id="2_1jb5n"]
 [ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="3_yi611"]
-[ext_resource type="Texture2D" uid="uid://hpyxtuycfcbw" path="res://Assets/UI/Pokemon Party/exit_background_button.png" id="4_hg8ms"]
+[ext_resource type="Texture2D" uid="uid://bqio4uhjljbal" path="res://Assets/UI/PlainButton.png" id="4_1wnif"]
 [ext_resource type="Texture2D" uid="uid://dl58l7iruinos" path="res://Assets/UI/Cancel.png" id="5_0tae4"]
+[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="5_1jb5n"]
 [ext_resource type="Texture2D" uid="uid://c7h1rjnnq5wb" path="res://Assets/Pokemon/Pokemon77.png" id="6_rgyt3"]
 [ext_resource type="Texture2D" uid="uid://bsxu6c3rnhh10" path="res://Assets/crush.png" id="7_hg4io"]
 
@@ -250,16 +251,36 @@ horizontal_alignment = 1
 [node name="Buttons" type="Node2D" parent="." unique_id=1902981139]
 
 [node name="Crush" type="Sprite2D" parent="Buttons" unique_id=722073339]
-position = Vector2(160, 32)
-texture = ExtResource("4_hg8ms")
+position = Vector2(144, 0)
+texture = ExtResource("4_1wnif")
 centered = false
 hframes = 2
+frame = 1
+
+[node name="Label" type="Label" parent="Buttons/Crush" unique_id=2022438571]
+offset_left = 21.0
+offset_top = 30.0
+offset_right = 69.0
+offset_bottom = 53.0
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("5_1jb5n")
+text = "Exchange"
 
 [node name="Switch" type="Sprite2D" parent="Buttons" unique_id=1598870692]
-position = Vector2(160, 80)
-texture = ExtResource("4_hg8ms")
+position = Vector2(144, 56)
+texture = ExtResource("4_1wnif")
 centered = false
 hframes = 2
+frame = 1
+
+[node name="Label" type="Label" parent="Buttons/Switch" unique_id=642203569]
+offset_left = 21.0
+offset_top = 29.0
+offset_right = 69.0
+offset_bottom = 52.0
+scale = Vector2(0.75, 0.75)
+theme = ExtResource("5_1jb5n")
+text = "Switch"
 
 [node name="Cancel" type="Sprite2D" parent="Buttons" unique_id=50004425]
 position = Vector2(176, 104)

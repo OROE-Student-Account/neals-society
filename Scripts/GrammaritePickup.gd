@@ -1,17 +1,14 @@
 extends Node2D
 
+var picked_up = false
+var used_up = false
+
 
 
 @onready var grammarite_sprite = load("res://Assets/Pokemon/Pokemon"+str(Utils.get_poke_num(name)+1)+".png")
-
-var picked_up = false
-var in_menu = false
-var used_up = false
-
 @onready var menu_scene = preload("res://Scenes/GrammaritePickupMenu.tscn")
-
+var in_menu = false
 var selected_button = 0
-
 
 
 func _ready() -> void:
@@ -107,13 +104,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			Utils.update_item_picked_up(name, true, scene)
 			Utils.catch(name)
 			queue_free()
-			
 
 func reset():
 	await get_tree().create_timer(0.1).timeout
 	used_up = false
-
-
 
 func _on_body_exited(_body: Node2D) -> void:
 	picked_up = false

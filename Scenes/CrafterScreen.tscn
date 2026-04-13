@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://ccq35oguyl7al" path="res://Scripts/CrafterScreen.gd" id="1_gkl0u"]
 [ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="2_a5sdi"]
-[ext_resource type="Texture2D" uid="uid://hpyxtuycfcbw" path="res://Assets/UI/Pokemon Party/exit_background_button.png" id="3_8j2m4"]
+[ext_resource type="Texture2D" uid="uid://bqio4uhjljbal" path="res://Assets/UI/PlainButton.png" id="3_gkl0u"]
 [ext_resource type="Texture2D" uid="uid://dl58l7iruinos" path="res://Assets/UI/Cancel.png" id="4_vowll"]
 [ext_resource type="Texture2D" uid="uid://ckyw6dtptsikv" path="res://Assets/UI/border.png" id="5_0u8am"]
 [ext_resource type="Texture2D" uid="uid://g4huif3s073t" path="res://Assets/Items/Ink Shard.png" id="6_baujm"]
 [ext_resource type="Texture2D" uid="uid://c0dop7ekxqv5h" path="res://Assets/Items/Knowledge Shard.png" id="7_nhitg"]
-[ext_resource type="Texture2D" uid="uid://bcn8vymlcyc6r" path="res://Assets/Pokemon/Pokemon1.png" id="8_jsren"]
+[ext_resource type="Texture2D" uid="uid://bebjnvh5onnif" path="res://Assets/Pokemon/Pokemon1.png" id="8_jsren"]
 [ext_resource type="Texture2D" uid="uid://33jd1d7bcg3h" path="res://Assets/Items/Supply Shard.png" id="9_tont1"]
 [ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="10_dkr5k"]
 
@@ -431,22 +431,50 @@ position = Vector2(160, 48)
 [node name="Buttons" type="Node2D" parent="." unique_id=182573070]
 
 [node name="Switch1" type="Sprite2D" parent="Buttons" unique_id=1515775696]
-position = Vector2(56, 80)
-texture = ExtResource("3_8j2m4")
+position = Vector2(48, 64)
+texture = ExtResource("3_gkl0u")
 centered = false
 hframes = 2
+frame = 1
+
+[node name="Label" type="Label" parent="Buttons/Switch1" unique_id=1277759595]
+offset_left = 21.0
+offset_top = 28.0
+offset_right = 61.0
+offset_bottom = 51.0
+scale = Vector2(0.75, 0.75)
+theme = ExtResource("10_dkr5k")
+text = "Select"
 
 [node name="Switch2" type="Sprite2D" parent="Buttons" unique_id=589747145]
-position = Vector2(136, 80)
-texture = ExtResource("3_8j2m4")
+position = Vector2(128, 64)
+texture = ExtResource("3_gkl0u")
 centered = false
 hframes = 2
 
+[node name="Label2" type="Label" parent="Buttons/Switch2" unique_id=442692887]
+offset_left = 21.0
+offset_top = 28.0
+offset_right = 61.0
+offset_bottom = 51.0
+scale = Vector2(0.75, 0.75)
+theme = ExtResource("10_dkr5k")
+text = "Select"
+
 [node name="Craft" type="Sprite2D" parent="Buttons" unique_id=934171713]
-position = Vector2(96, 120)
-texture = ExtResource("3_8j2m4")
+position = Vector2(88, 104)
+texture = ExtResource("3_gkl0u")
 centered = false
 hframes = 2
+
+[node name="Label3" type="Label" parent="Buttons/Craft" unique_id=568680303]
+offset_left = 21.0
+offset_top = 28.0
+offset_right = 61.0
+offset_bottom = 51.0
+scale = Vector2(0.75, 0.75)
+theme = ExtResource("10_dkr5k")
+text = "Craft"
 
 [node name="Exit" type="Sprite2D" parent="Buttons" unique_id=2003629744]
 position = Vector2(168, 104)

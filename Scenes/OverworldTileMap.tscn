@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dw8keyn0vvlxe"]
+[gd_scene format=3 uid="uid://dw8keyn0vvlxe"]
 
 [ext_resource type="Texture2D" uid="uid://c82fjenaaxuwf" path="res://Assets/Tilesets/grass2_tileset.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://b1naadaw8hidy" path="res://Assets/Tilesets/grass1_tileset.png" id="2"]
-[ext_resource type="Texture2D" path="res://Assets/Water/WaterTexture.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://bvqoocn8ivy6n" path="res://Assets/Tilesets/Water/WaterTexture.tres" id="3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fmg7l"]
 texture = ExtResource("2")

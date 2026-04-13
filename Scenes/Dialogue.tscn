@@ -1,9 +1,19 @@
 [gd_scene format=3 uid="uid://i0am2murs47p"]
 
 [ext_resource type="Script" uid="uid://dvw8x5lu45aba" path="res://Scripts/Dialogue.gd" id="1_if77y"]
-[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="2_0nste"]
 [ext_resource type="Texture2D" uid="uid://ckbbwuf8tfh1" path="res://Assets/UI/Dialogue.png" id="2_vqc68"]
+[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="3_vqc68"]
 [ext_resource type="Texture2D" uid="uid://b3f2eqbc4ki67" path="res://Assets/UI/ui_arrow_right.png" id="4_vqc68"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vqc68"]
+texture = ExtResource("2_vqc68")
+texture_margin_left = 7.0
+texture_margin_top = 3.0
+texture_margin_right = 7.0
+texture_margin_bottom = 4.0
+expand_margin_left = 2.0
+expand_margin_right = 1.0
+expand_margin_bottom = 2.0
 
 [node name="DialogueBox" type="CanvasLayer" unique_id=1172649497]
 script = ExtResource("1_if77y")
@@ -37,25 +47,17 @@ offset_right = 224.0
 offset_bottom = 49.0
 theme_override_constants/separation = 7
 
-[node name="Option1" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer" unique_id=1011470783]
-clip_contents = false
+[node name="Option1" type="Label" parent="Control/NinePatchRect/VBoxContainer" unique_id=1748282818]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("2_0nste")
-theme_override_font_sizes/normal_font_size = 12
+theme = ExtResource("3_vqc68")
 text = "Option 1"
-fit_content = true
 
-[node name="Option2" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer" unique_id=1802055845]
-clip_contents = false
+[node name="Option2" type="Label" parent="Control/NinePatchRect/VBoxContainer" unique_id=1687948875]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("2_0nste")
-theme_override_font_sizes/normal_font_size = 12
+theme = ExtResource("3_vqc68")
 text = "Option 2"
-fit_content = true
 
 [node name="Arrow" type="TextureRect" parent="Control/NinePatchRect" unique_id=581928813]
 layout_mode = 0
@@ -65,17 +67,28 @@ offset_right = 15.0
 offset_bottom = 20.0
 texture = ExtResource("4_vqc68")
 
-[node name="Text" type="RichTextLabel" parent="Control/NinePatchRect" unique_id=1409618473]
+[node name="Text" type="Label" parent="Control/NinePatchRect" unique_id=649097086]
 visible = false
-clip_contents = false
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 0
 offset_left = 10.0
 offset_top = 9.0
-offset_right = 224.0
-offset_bottom = 36.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("2_0nste")
-theme_override_font_sizes/normal_font_size = 12
+offset_right = 221.0
+offset_bottom = 42.0
+theme = ExtResource("3_vqc68")
 text = "Lots of text here for testing. The quick brown fox jumped over the lazy dog. Hello world. Hello world. Hello world. Hello world. "
-fit_content = true
+autowrap_mode = 2
+max_lines_visible = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=1805609269]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 92.0
+offset_right = 26.0
+offset_bottom = 108.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_vqc68")
+
+[node name="Name" type="Label" parent="Control/PanelContainer" unique_id=102901552]
+layout_mode = 2
+theme = ExtResource("3_vqc68")
+text = "i"

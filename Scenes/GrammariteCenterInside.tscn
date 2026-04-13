@@ -2,8 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b24dvlaonqsyl" path="res://Assets/Buildings/pallet town/player_home_floor_1.png" id="1_078wu"]
 [ext_resource type="Texture2D" uid="uid://botopew3mmoy0" path="res://Assets/Buildings/pallet town/mat.png" id="2_5pw7d"]
-[ext_resource type="PackedScene" uid="uid://dvj3haqadph3a" path="res://Scenes/GrammariteComputer.tscn" id="3_bidd3"]
-[ext_resource type="PackedScene" uid="uid://gk622nn3ys7p" path="res://Scenes/Bookshelf.tscn" id="4_5pw7d"]
+[ext_resource type="PackedScene" uid="uid://prw5jytjpf0n" path="res://Scenes/Machine.tscn" id="4_bidd3"]
 [ext_resource type="PackedScene" uid="uid://i70qso44vgve" path="res://Scenes/Player.tscn" id="4_oxtqq"]
 [ext_resource type="PackedScene" uid="uid://fsubo0lgcrfo" path="res://Scenes/Door.tscn" id="5_d12qb"]
 
@@ -85,12 +84,11 @@ shape = SubResource("RectangleShape2D_tifnb")
 position = Vector2(64, 24)
 shape = SubResource("RectangleShape2D_bidd3")
 
-[node name="GrammariteComputer" parent="." unique_id=1918101138 instance=ExtResource("3_bidd3")]
-position = Vector2(88, 24)
+[node name="Bookshelf" parent="." unique_id=917074634 instance=ExtResource("4_bidd3")]
+position = Vector2(32, 16)
 
-[node name="Bookshelf" parent="." unique_id=2049850422 instance=ExtResource("4_5pw7d")]
-position = Vector2(40, 24)
-collision_layer = 16
+[node name="Computer" parent="." unique_id=885703489 instance=ExtResource("4_bidd3")]
+position = Vector2(80, 16)
 
 [node name="Node2D" type="Node2D" parent="." unique_id=340670768]
 

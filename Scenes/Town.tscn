@@ -3,25 +3,24 @@
 [ext_resource type="PackedScene" uid="uid://i70qso44vgve" path="res://Scenes/Player.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://8mwilyqoq1me" path="res://Assets/Tilesets/GrasNoPath.png" id="1_e8mj4"]
 [ext_resource type="Texture2D" uid="uid://b1naadaw8hidy" path="res://Assets/Tilesets/grass1_tileset.png" id="1_r47vw"]
-[ext_resource type="Texture2D" uid="uid://bvqoocn8ivy6n" path="res://Assets/Water/WaterTexture.tres" id="2_ykxim"]
+[ext_resource type="Texture2D" uid="uid://bvqoocn8ivy6n" path="res://Assets/Tilesets/Water/WaterTexture.tres" id="2_ykxim"]
 [ext_resource type="Texture2D" uid="uid://c82fjenaaxuwf" path="res://Assets/Tilesets/grass2_tileset.png" id="3_i4tu1"]
 [ext_resource type="Texture2D" uid="uid://0mdt7n5qygaa" path="res://Assets/Tilesets/ledge.png" id="4_r47vw"]
 [ext_resource type="Texture2D" uid="uid://xr8x53oopdd0" path="res://Assets/Tilesets/fence1_tileset.png" id="5_fllgw"]
 [ext_resource type="PackedScene" uid="uid://biarm5343j6g5" path="res://Scenes/TallGrass.tscn" id="6"]
 [ext_resource type="Texture2D" uid="uid://ff3i1gl2wpma" path="res://Assets/Buildings/oaks_lab.png" id="7"]
 [ext_resource type="PackedScene" uid="uid://fsubo0lgcrfo" path="res://Scenes/Door.tscn" id="8"]
-[ext_resource type="Texture2D" uid="uid://c1qubhpup2qsy" path="res://Assets/Trees/tree1.png" id="8_jnmbb"]
+[ext_resource type="Texture2D" uid="uid://c1qubhpup2qsy" path="res://Assets/Tilesets/tree1.png" id="8_jnmbb"]
 [ext_resource type="PackedScene" path="res://Scenes/House.tscn" id="9"]
 [ext_resource type="Texture2D" uid="uid://22jrr0rxhcd3" path="res://Assets/Buildings/Door Animations/oaks_lab.png" id="10"]
 [ext_resource type="Script" uid="uid://duoegh7gbj541" path="res://Scripts/Door.gd" id="13_ykxim"]
 [ext_resource type="PackedScene" uid="uid://bdykq75yoljv" path="res://Scenes/Item.tscn" id="16_tbyl1"]
 [ext_resource type="Texture2D" uid="uid://c0j35px6j8da2" path="res://Assets/Player/Male_Spritesheet.png" id="16_yv7ed"]
+[ext_resource type="PackedScene" uid="uid://prw5jytjpf0n" path="res://Scenes/Machine.tscn" id="17_gb3n1"]
 [ext_resource type="Script" uid="uid://yexcpjuauyul" path="res://Scripts/Trainer.gd" id="17_typi0"]
 [ext_resource type="Texture2D" uid="uid://dphmrelo4jug1" path="res://Assets/Buildings/house_spritesheet.png" id="18_4jyq1"]
 [ext_resource type="PackedScene" uid="uid://djvyngg1je206" path="res://Scenes/GrammariteCenterOutside.tscn" id="18_gb3n1"]
 [ext_resource type="Script" uid="uid://bp28l32amhxsf" path="res://Scripts/DialogueNode.gd" id="19_5qjph"]
-[ext_resource type="Script" uid="uid://d4hprd03iheli" path="res://Scripts/AnimatedHouse.gd" id="19_yv7ed"]
-[ext_resource type="PackedScene" uid="uid://bm54d1y48j5hj" path="res://Scenes/QuestBoard.tscn" id="20_j4fij"]
 [ext_resource type="Texture2D" uid="uid://c30k7loev38oa" path="res://Assets/Flowers/flower.tres" id="22_6xtxr"]
 [ext_resource type="Script" uid="uid://hvnvpuwe5g0b" path="res://Scripts/BattleStarter.gd" id="22_ix0ol"]
 
@@ -1311,7 +1310,10 @@ shape = SubResource("RectangleShape2D_typi0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sorted Stuff/Starter Town/Animated House" unique_id=1649021043]
 sprite_frames = SubResource("SpriteFrames_n33s8")
-script = ExtResource("19_yv7ed")
+autoplay = "default"
+
+[node name="Quest Board" parent="Sorted Stuff/Starter Town" unique_id=917074634 instance=ExtResource("17_gb3n1")]
+position = Vector2(128, 176)
 
 [node name="GrammariteCenterOutside0" parent="Sorted Stuff/Starter Town" unique_id=326239706 instance=ExtResource("18_gb3n1")]
 position = Vector2(-128, 128)
@@ -1333,9 +1335,6 @@ spawn_direction = Vector2(0, -1)
 
 [node name="Story Book" parent="Sorted Stuff/Starter Town" unique_id=968186873 instance=ExtResource("16_tbyl1")]
 position = Vector2(32, 96)
-
-[node name="Quest Board" parent="Sorted Stuff/Starter Town" unique_id=56937381 instance=ExtResource("20_j4fij")]
-position = Vector2(128, 176)
 
 [node name="Rival" type="AnimatedSprite2D" parent="Sorted Stuff/Starter Town" unique_id=1381438602]
 position = Vector2(160, 16)
