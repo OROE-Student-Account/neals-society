@@ -961,6 +961,257 @@ _data = {
 &"TurnRight": SubResource("Animation_avwyw")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5kfv"]
+atlas = ExtResource("16_yv7ed")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbevu"]
+atlas = ExtResource("16_yv7ed")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60ruy"]
+atlas = ExtResource("16_yv7ed")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn7iv"]
+atlas = ExtResource("16_yv7ed")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35qta"]
+atlas = ExtResource("16_yv7ed")
+region = Rect2(16, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5dhr"]
+atlas = ExtResource("16_yv7ed")
+region = Rect2(32, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lw8bw"]
+atlas = ExtResource("16_yv7ed")
+region = Rect2(0, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6m0i"]
+atlas = ExtResource("16_yv7ed")
+region = Rect2(16, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o26pd"]
+atlas = ExtResource("16_yv7ed")
+region = Rect2(32, 64, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cptes"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5kfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbevu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60ruy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gn7iv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35qta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5dhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lw8bw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6m0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o26pd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f724i"]
+size = Vector2(12, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f42gn"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f538u"]
+
+[sub_resource type="Animation" id="Animation_032fn"]
+resource_name = "Approach"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 0, 1, 2]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"approach_until_hit"
+}, {
+"args": [],
+"method": &"approach_until_hit"
+}, {
+"args": [],
+"method": &"approach_until_hit"
+}, {
+"args": [],
+"method": &"approach_until_hit"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_xe8qq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_oi0nl"]
+resource_name = "TurnAround"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_jelhg"]
+resource_name = "TurnDown"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_jpqs2"]
+resource_name = "TurnLeft"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_7moxm"]
+resource_name = "TurnRight"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jxftk"]
+_data = {
+&"Approach": SubResource("Animation_032fn"),
+&"RESET": SubResource("Animation_xe8qq"),
+&"TurnAround": SubResource("Animation_oi0nl"),
+&"TurnDown": SubResource("Animation_jelhg"),
+&"TurnLeft": SubResource("Animation_jpqs2"),
+&"TurnRight": SubResource("Animation_7moxm")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g04hr"]
+
 [node name="Town" type="Node2D" unique_id=1494243782]
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=407294875]
@@ -1497,6 +1748,107 @@ text = "I cannot believe I lost to YOU!"
 script = ExtResource("22_ix0ol")
 trainer_name = "Fighter"
 
+[node name="Trainer" type="AnimatedSprite2D" parent="." unique_id=478525555]
+position = Vector2(96, -352)
+sprite_frames = SubResource("SpriteFrames_cptes")
+frame = 1
+centered = false
+offset = Vector2(0, -3)
+script = ExtResource("17_typi0")
+
+[node name="LineOfSight" type="Area2D" parent="Trainer" unique_id=376733458]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trainer/LineOfSight" unique_id=121625092]
+position = Vector2(8, 71)
+shape = SubResource("RectangleShape2D_f724i")
+
+[node name="HitBox" type="Area2D" parent="Trainer" unique_id=193215451]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trainer/HitBox" unique_id=895053930]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_f42gn")
+
+[node name="DetectPlayer" type="CollisionShape2D" parent="Trainer/HitBox" unique_id=1183011490]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_f538u")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Trainer" unique_id=79895919]
+libraries/ = SubResource("AnimationLibrary_jxftk")
+
+[node name="RayCast2D" type="RayCast2D" parent="Trainer" unique_id=891317596]
+position = Vector2(8, 0)
+target_position = Vector2(0, 32)
+
+[node name="RayCast2D2" type="RayCast2D" parent="Trainer" unique_id=1352974116]
+position = Vector2(8, 0)
+target_position = Vector2(0, 16)
+
+[node name="DialogueRoot" type="Node" parent="Trainer" unique_id=1358344660]
+script = ExtResource("19_5qjph")
+text = "HEY. What are you doing in my part of town."
+
+[node name="Node" type="Node" parent="Trainer/DialogueRoot" unique_id=1897656168 node_paths=PackedStringArray("func_node")]
+script = ExtResource("19_5qjph")
+text = "Don;t you know who I am"
+function = "_on_area_2d_body_entered"
+func_node = NodePath("../../../Trainer2")
+
+[node name="FinalDialogue" type="Node" parent="Trainer" unique_id=922101857]
+script = ExtResource("19_5qjph")
+is_end_node = true
+
+[node name="Trainer2" type="AnimatedSprite2D" parent="." unique_id=697768624]
+position = Vector2(160, -376)
+sprite_frames = SubResource("SpriteFrames_cptes")
+frame = 1
+centered = false
+offset = Vector2(0, -3)
+script = ExtResource("17_typi0")
+
+[node name="LineOfSight" type="Area2D" parent="Trainer2" unique_id=1735090799]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trainer2/LineOfSight" unique_id=1374612504]
+position = Vector2(8, 71)
+shape = SubResource("RectangleShape2D_f724i")
+
+[node name="HitBox" type="Area2D" parent="Trainer2" unique_id=731290262]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trainer2/HitBox" unique_id=141013665]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_f42gn")
+
+[node name="DetectPlayer" type="CollisionShape2D" parent="Trainer2/HitBox" unique_id=862359326]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_f538u")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Trainer2" unique_id=1234765577]
+libraries/ = SubResource("AnimationLibrary_jxftk")
+
+[node name="RayCast2D" type="RayCast2D" parent="Trainer2" unique_id=1999888789]
+position = Vector2(8, 0)
+target_position = Vector2(0, 32)
+
+[node name="RayCast2D2" type="RayCast2D" parent="Trainer2" unique_id=303145385]
+position = Vector2(8, 0)
+target_position = Vector2(0, 16)
+
+[node name="DialogueRoot" type="Node" parent="Trainer2" unique_id=751028261]
+script = ExtResource("19_5qjph")
+text = "Hey bro what he said"
+
+[node name="FinalDialogue" type="Node" parent="Trainer2" unique_id=1203446644]
+script = ExtResource("19_5qjph")
+is_end_node = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=394233357]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=961137021]
+position = Vector2(168, -232)
+shape = SubResource("RectangleShape2D_g04hr")
+
 [connection signal="body_entered" from="Sorted Stuff/Starter Town/OaksLab/Door" to="Sorted Stuff/Starter Town/OaksLab/Door" method="_on_Door_body_entered"]
 [connection signal="body_entered" from="Sorted Stuff/Starter Town/OaksLab/Door" to="Sorted Stuff/Starter Town/OaksLab/Door" method="_on_body_entered"]
 [connection signal="body_exited" from="Sorted Stuff/Starter Town/OaksLab/Door" to="Sorted Stuff/Starter Town/OaksLab/Door" method="_on_Door_body_exited"]
@@ -1507,5 +1859,11 @@ trainer_name = "Fighter"
 [connection signal="body_entered" from="Sorted Stuff/Starter Town/Fighter/LineOfSight" to="Sorted Stuff/Starter Town/Fighter" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Sorted Stuff/Starter Town/Fighter/HitBox" to="Sorted Stuff/Starter Town/Fighter" method="_on_hit_box_body_entered"]
 [connection signal="body_exited" from="Sorted Stuff/Starter Town/Fighter/HitBox" to="Sorted Stuff/Starter Town/Fighter" method="_on_hit_box_body_exited"]
+[connection signal="body_entered" from="Trainer/LineOfSight" to="Trainer" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Trainer/HitBox" to="Trainer" method="_on_hit_box_body_entered"]
+[connection signal="body_exited" from="Trainer/HitBox" to="Trainer" method="_on_hit_box_body_exited"]
+[connection signal="body_entered" from="Trainer2/LineOfSight" to="Trainer2" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Trainer2/HitBox" to="Trainer2" method="_on_hit_box_body_entered"]
+[connection signal="body_exited" from="Trainer2/HitBox" to="Trainer2" method="_on_hit_box_body_exited"]
 
 [editable path="Sorted Stuff/Starter Town/OaksLab"]

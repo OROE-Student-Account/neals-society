@@ -18,6 +18,12 @@
 			},
 			"Rival": {
 				"Talked": false
+			},
+			"Trainer": {
+				"Talked": true
+			},
+			"Trainer2": {
+				"Talked": true
 			}
 		}
 	}
