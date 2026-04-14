@@ -9,23 +9,22 @@ size = Vector2(16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_toud0"]
 
-[node name="Machine" type="Area2D" unique_id=917074634]
-collision_layer = 16
+[node name="Machine" type="Sprite2D" unique_id=310586437]
+texture = ExtResource("2_cewcs")
+centered = false
 script = ExtResource("1_cewcs")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=910522522]
+[node name="Area" type="Area2D" parent="." unique_id=815361685]
 position = Vector2(8, 8)
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area" unique_id=910522522]
 shape = SubResource("RectangleShape2D_v7juk")
 debug_color = Color(0.31728366, 0.62451714, 0, 0.41960785)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=330692856]
-position = Vector2(8, 8)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area" unique_id=330692856]
 shape = SubResource("CircleShape2D_toud0")
 debug_color = Color(0.3996365, 0.6092863, 3.85046e-07, 0.41960785)
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=967057239]
-position = Vector2(8, 8)
-texture = ExtResource("2_cewcs")
 
 [node name="DialogueRoot" type="Node" parent="." unique_id=1687524562]
 script = ExtResource("3_w7ikp")
@@ -45,5 +44,5 @@ option_name = "No"
 function = "reset"
 func_node = NodePath("../..")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="body_entered" from="Area" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area" to="." method="_on_body_exited"]

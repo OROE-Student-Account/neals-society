@@ -1,4 +1,4 @@
-extends Area2D
+extends Sprite2D
 
 var picked_up = false
 var used_up = false

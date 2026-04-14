@@ -20,10 +20,10 @@
 				"Talked": false
 			},
 			"Trainer": {
-				"Talked": true
+				"Talked": false
 			},
 			"Trainer2": {
-				"Talked": true
+				"Talked": false
 			}
 		}
 	}
