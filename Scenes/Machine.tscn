@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://prw5jytjpf0n"]
 
 [ext_resource type="Script" uid="uid://dwqemcme7k5de" path="res://Scripts/Machine.gd" id="1_cewcs"]
-[ext_resource type="Texture2D" uid="uid://dw17mm63araxi" path="res://Assets/UI/menu_box_1.png" id="2_y8amu"]
+[ext_resource type="Texture2D" uid="uid://ckbbwuf8tfh1" path="res://Assets/UI/Dialogue.png" id="2_cewcs"]
 [ext_resource type="Script" uid="uid://bp28l32amhxsf" path="res://Scripts/DialogueNode.gd" id="3_w7ikp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7juk"]
@@ -24,10 +24,8 @@ shape = SubResource("CircleShape2D_toud0")
 debug_color = Color(0.3996365, 0.6092863, 3.85046e-07, 0.41960785)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=967057239]
-modulate = Color(0.9372549, 0.9490196, 0.79607844, 0.9372549)
 position = Vector2(8, 8)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("2_y8amu")
+texture = ExtResource("2_cewcs")
 
 [node name="DialogueRoot" type="Node" parent="." unique_id=1687524562]
 script = ExtResource("3_w7ikp")

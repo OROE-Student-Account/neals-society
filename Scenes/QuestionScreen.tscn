@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d1meh8owcgo7f"]
 
 [ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="1_k2g2m"]
-[ext_resource type="Texture2D" uid="uid://dw17mm63araxi" path="res://Assets/UI/menu_box_1.png" id="2_g3qmy"]
+[ext_resource type="Texture2D" uid="uid://ckbbwuf8tfh1" path="res://Assets/UI/Dialogue.png" id="2_g3qmy"]
 [ext_resource type="Texture2D" uid="uid://cbtw8iq0poli" path="res://Assets/UI/ui_arrow_up.png" id="3_5cu3s"]
 
 [node name="Question" type="Node2D" unique_id=2106985433]
@@ -34,17 +34,17 @@ offset_top = 80.0
 offset_right = 112.0
 offset_bottom = 104.0
 texture = ExtResource("2_g3qmy")
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
+patch_margin_left = 7
+patch_margin_top = 3
+patch_margin_right = 7
+patch_margin_bottom = 4
 
 [node name="Label" type="Label" parent="Options/NinePatchRect1" unique_id=999271648]
 layout_mode = 0
 offset_left = 8.0
-offset_top = 8.0
+offset_top = 6.0
 offset_right = 88.0
-offset_bottom = 24.0
+offset_bottom = 22.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_k2g2m")
 theme_override_font_sizes/font_size = 12
@@ -57,17 +57,17 @@ offset_top = 80.0
 offset_right = 200.0
 offset_bottom = 104.0
 texture = ExtResource("2_g3qmy")
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
+patch_margin_left = 7
+patch_margin_top = 3
+patch_margin_right = 7
+patch_margin_bottom = 4
 
 [node name="Label" type="Label" parent="Options/NinePatchRect2" unique_id=426867741]
 layout_mode = 0
 offset_left = 8.0
-offset_top = 8.0
+offset_top = 6.0
 offset_right = 88.0
-offset_bottom = 24.0
+offset_bottom = 22.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_k2g2m")
 theme_override_font_sizes/font_size = 12
@@ -80,17 +80,17 @@ offset_top = 112.0
 offset_right = 112.0
 offset_bottom = 136.0
 texture = ExtResource("2_g3qmy")
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
+patch_margin_left = 7
+patch_margin_top = 3
+patch_margin_right = 7
+patch_margin_bottom = 4
 
 [node name="Label" type="Label" parent="Options/NinePatchRect3" unique_id=2133076254]
 layout_mode = 0
 offset_left = 8.0
-offset_top = 8.0
+offset_top = 6.0
 offset_right = 88.0
-offset_bottom = 24.0
+offset_bottom = 22.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_k2g2m")
 theme_override_font_sizes/font_size = 12
@@ -103,17 +103,17 @@ offset_top = 112.0
 offset_right = 200.0
 offset_bottom = 136.0
 texture = ExtResource("2_g3qmy")
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
+patch_margin_left = 7
+patch_margin_top = 3
+patch_margin_right = 7
+patch_margin_bottom = 4
 
 [node name="Label" type="Label" parent="Options/NinePatchRect4" unique_id=1824915034]
 layout_mode = 0
 offset_left = 8.0
-offset_top = 8.0
+offset_top = 6.0
 offset_right = 88.0
-offset_bottom = 24.0
+offset_bottom = 22.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_k2g2m")
 theme_override_font_sizes/font_size = 12

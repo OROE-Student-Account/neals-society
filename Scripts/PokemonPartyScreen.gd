@@ -235,8 +235,8 @@ func load_item(slot_num):
 
 func update_page():
 	selected_sub_page = 0
-	$PageOptions/Arrow.position.y = 6 + (selected_sub_page % 4) * 13
-	$SwitchLocation/Arrow.position.y = 6 + (selected_sub_page % num_of_slots) * 13
+	$PageOptions/Arrow.position.y = 3 + (selected_sub_page % 4) * 13 
+	$SwitchLocation/Arrow.position.y = 3 + (selected_sub_page % num_of_slots) * 13
 	
 	if has_node("SummaryScreen"):
 		$SummaryScreen.queue_free()
@@ -278,8 +278,8 @@ func update_page():
 					children[i].visible = false
 			num_of_slots = count
 			
-			$SwitchLocation.position.y = 54 + 13 * (7 - count)
-			$SwitchLocation.size.y = 100 - 13 * (7 - count)
+			$SwitchLocation.position.y = 57 + 13 * (7 - count)
+			$SwitchLocation.size.y = 97 - 13 * (7 - count)
 
 func _input(event):
 	if pause: return
@@ -378,11 +378,11 @@ func _input(event):
 				
 			elif event.is_action_pressed("ui_down"):
 				selected_sub_page =  (selected_sub_page + 1) % 4
-				$PageOptions/Arrow.position.y = 6 + (selected_sub_page % 4) * 13
+				$PageOptions/Arrow.position.y = 3 + (selected_sub_page % 4) * 13
 				
 			elif event.is_action_pressed("ui_up"):
 				selected_sub_page =  (selected_sub_page + 3) % 4
-				$PageOptions/Arrow.position.y = 6 + (selected_sub_page % 4) * 13
+				$PageOptions/Arrow.position.y = 3 + (selected_sub_page % 4) * 13
 			elif event.is_action_pressed("z"):
 				if selected_sub_page == 0:
 					page = Page.SUMMARY
@@ -429,10 +429,10 @@ func _input(event):
 				stop()
 			elif event.is_action_pressed("ui_down"):
 				selected_sub_page =  (selected_sub_page + 1) % num_of_slots
-				$SwitchLocation/Arrow.position.y = 6 + (selected_sub_page % num_of_slots) * 13
+				$SwitchLocation/Arrow.position.y = 3 + (selected_sub_page % num_of_slots) * 13
 			elif event.is_action_pressed("ui_up"):
 				selected_sub_page =  (selected_sub_page + num_of_slots - 1) % num_of_slots
-				$SwitchLocation/Arrow.position.y = 6 + (selected_sub_page % num_of_slots) * 13
+				$SwitchLocation/Arrow.position.y = 3 + (selected_sub_page % num_of_slots) * 13
 			elif event.is_action_pressed("z"):
 				var party = Utils.get_party()
 				
