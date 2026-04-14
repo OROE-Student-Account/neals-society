@@ -178,6 +178,12 @@ func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 		# same type attack bonus
 		if move["Type"] == attacker.grammarite_info["Stats"]["Types"][0] or move["Type"] == attacker.grammarite_info["Stats"]["Types"][1]:
 			damage *= 1.5
+		
+		for i in Utils.get_grammarite_details(attacker.grammarite_name)["Moves"]:
+			if i["Name"] == move["Name"]:
+				damage *= 1.5
+				break
+		
 		# crit
 		if randf() > 0.95:
 			damage *= 2.0
