@@ -10,7 +10,7 @@ var next_trainer = ""
 signal name_selected(chosen_name: String, requester_node: Node)
 var name_request_node: Node = null
 
-
+# "New Scene", Naming, Battle, Battle Exit, ... others ...
 var transition_type = "New Scene"
 
 @onready var scene = $CurrentScene

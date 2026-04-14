@@ -146,8 +146,8 @@ func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 		var defense_stat = calc_stat(defender.grammarite_info["Stats"]["Defense"], defender.level)
 		var spd = calc_stat(attacker.grammarite_info["Stats"]["Speed"], attacker.level)
 		var max_stat = calc_stat(200, 100)
-		accuracy *= 1 - (defense_stat/(2*max_stat))
-		accuracy *= 1 + (spd/(4*max_stat))
+		accuracy *= 1 - (defense_stat/(1.4*max_stat))
+		accuracy *= 1 + (spd/(5*max_stat))
 		
 		if hit_roll > accuracy:
 			battle_ui.set_info_text("The attack missed!")
