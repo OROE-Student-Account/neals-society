@@ -142,6 +142,8 @@ func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 		# Check accuracy
 		var accuracy = move.get("Accuracy", 0) # If no accuracy included, auto miss
 		if attacker.item == "Glasses": accuracy += 0.25
+		if attacker == enemy_grammarite:
+			accuracy =  (accuracy -0.15)*0.85
 		var hit_roll = randf()
 		var defense_stat = calc_stat(defender.grammarite_info["Stats"]["Defense"], defender.level)
 		var spd = calc_stat(attacker.grammarite_info["Stats"]["Speed"], attacker.level)

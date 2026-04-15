@@ -3,6 +3,10 @@
 		"Description": "Absorbs Grammarites for use in battle.",
 		"Type": "Book"
 	},
+	"Children's Book": {
+		"Description": "Absorbs young Grammarites for use in battle.",
+		"Type": "Book"
+	},
 	
 	
 	
@@ -12,6 +16,10 @@
 	},
 	"Question Mark": {
 		"Description": "Increases confusion? Or does it?",
+		"Type": "Held"
+	},
+	"Exclamation Mark": {
+		"Description": "INCREASES DAMAGE AND EMPHASIS!",
 		"Type": "Held"
 	},
 	
