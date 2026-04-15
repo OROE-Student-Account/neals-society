@@ -31,6 +31,9 @@ var select_box_positions: Array[Vector2] = [
 	Vector2(146, 97),   # Option 5 (bottom-right)
 ]
 
+signal close_menu
+
+
 func _ready():
 	menu.visible = false
 	update_select_box()
@@ -61,6 +64,7 @@ func load_submenu(submenu: String):
 	add_child(screen)
 
 func unload_submenu(submenu: String): 
+	emit_signal("close_menu")
 	match submenu:
 		# Menu Subscreens
 		"Party", "Item", "Save":
@@ -74,6 +78,7 @@ func unload_submenu(submenu: String):
 	remove_child(get_node(submenu+"Screen"))
 
 func unload_submenus(from_menu: bool):
+	emit_signal("close_menu")
 	var names = []
 	if from_menu:
 		menu.visible = true

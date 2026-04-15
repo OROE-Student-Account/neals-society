@@ -168,9 +168,9 @@ func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 		else:
 			effectiveness =  Utils.get_damage_multiplier(move["Type"], defender.grammarite_info["Stats"]["Types"][0])
 		
-		
-		var damage = (((2*attack_level) / 5 + 2) * base_damage * attack_stat ) / 50 + 2
-		
+		# custom formula
+		var damage =  (base_damage*0.1)*int(attack_stat + attack_level + 5)
+		print("Dmg: "+str(damage))
 		# Makes the type chart matter
 		damage *= effectiveness
 		# Add some randomness (85% to 100% of calculated damage)
@@ -178,7 +178,7 @@ func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 		# same type attack bonus
 		if move["Type"] == attacker.grammarite_info["Stats"]["Types"][0] or move["Type"] == attacker.grammarite_info["Stats"]["Types"][1]:
 			damage *= 1.5
-		
+		# born with move bonus
 		for i in Utils.get_grammarite_details(attacker.grammarite_name)["Moves"]:
 			if i["Name"] == move["Name"]:
 				damage *= 1.5
@@ -249,8 +249,6 @@ func throw_book(book_name):
 	if caught < base_chance:
 		battle_ui.set_info_text("You caught it!")
 		enemy_grammarite.visible = false
-		if !Utils.caught_yet(enemy_grammarite.grammarite_name):
-			Utils.catch(enemy_grammarite.grammarite_name)
 		await get_tree().create_timer(1.6).timeout
 		# enemy_grammarite goes to your storage
 		
@@ -313,6 +311,7 @@ func end_battle(player_won: bool):
 	current_state = BattleState.BATTLE_END
 	
 	if player_won:
+		Utils.catch(enemy_grammarite.grammarite_name)
 		enemy_grammarite.visible = false
 		battle_ui.set_info_text("You won!")
 		await get_tree().create_timer(1.65).timeout

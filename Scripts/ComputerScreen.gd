@@ -69,9 +69,9 @@ func left_anim():
 	grammas.get_child(0).frame = 0
 	grammas.get_child(0).get_child(0).visible = false
 	
-	for i in range(-60, 60):
-		var time = abs((i/60.0)**3)
-		grammas.position.x += (1-time)/0.75
+	for i in range(-20, 20):
+		var time = abs((i/20.0)**3)
+		grammas.position.x += (1-time)/0.25
 		await get_tree().create_timer(time/240).timeout
 	
 	if grammas.position.x > -1:
@@ -87,9 +87,9 @@ func right_anim():
 	grammas.get_child(0).frame = 0
 	grammas.get_child(0).get_child(0).visible = false
 	
-	for i in range(-60, 60):
-		var time = abs((i/60.0)**3)
-		grammas.position.x -= (1-time)/0.75
+	for i in range(-20, 20):
+		var time = abs((i/20.0)**3)
+		grammas.position.x -= (1-time)/0.25
 		await get_tree().create_timer(time/240).timeout
 	if grammas.position.x < -120*num_grammarites+1:
 		$Sprite2D.visible = false

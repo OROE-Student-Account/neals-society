@@ -110,7 +110,7 @@ func finished_fading():
 				var last_center = Utils.get_last_center()
 				child.get_node("Door").next_scene_path = "res://Scenes/"+last_center["Scene"]+".tscn"
 				child.get_node("Door").spawn_location = Vector2(last_center["x"], last_center["y"])
-			
+				menu.screen_loaded = menu.ScreenLoaded.NOTHING
 			scene.add_child(load(next_scene).instantiate())
 			var player = Utils.get_player()
 			player.set_spawn(player_location, player_direction)

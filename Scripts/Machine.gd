@@ -5,6 +5,9 @@ var used_up = false
 
 @onready var dialogue_root = $DialogueRoot
 
+func _ready() -> void:
+	Utils.get_scene_manager().get_node("Menu").connect("close_menu", Callable(self, "reset"))
+
 
 func open_machine():
 	var player = Utils.get_player()
