@@ -31,7 +31,7 @@ var selected_button: int = Buttons.FIGHT
 	Buttons.RUN: $Buttons/run,
 }
 
-var SELECT_ARROW_Y = 7.5
+var SELECT_ARROW_Y = 7
 var DISTANCE_BETWEEN_MOVES = 10.5
 
 @onready var info_text = $InfoText

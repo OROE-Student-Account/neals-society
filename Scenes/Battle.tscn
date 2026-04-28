@@ -6,8 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://b4nmamhpm0fsg" path="res://Assets/UI/Pokemon Party/standby_pokemon_background.png" id="3_6yjxy"]
 [ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="4_qxnh6"]
 [ext_resource type="Script" uid="uid://cshmcr6ld2cga" path="res://Scripts/BattleGrammarite.gd" id="6_6yjxy"]
-[ext_resource type="Texture2D" uid="uid://hpyxtuycfcbw" path="res://Assets/UI/Pokemon Party/exit_background_button.png" id="7_xmk5i"]
+[ext_resource type="Texture2D" uid="uid://bei5ll255oguf" path="res://Assets/UI/BattleButton.png" id="7_262jj"]
 [ext_resource type="Texture2D" uid="uid://b3f2eqbc4ki67" path="res://Assets/UI/ui_arrow_right.png" id="8_262jj"]
+[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="8_l0uqe"]
 [ext_resource type="Texture2D" uid="uid://bxjfugenktmee" path="res://Assets/Items/Story Book.png" id="10_qxnh6"]
 [ext_resource type="Texture2D" uid="uid://ckbbwuf8tfh1" path="res://Assets/UI/Dialogue.png" id="11_l0uqe"]
 [ext_resource type="Texture2D" uid="uid://dkx1hhb1gnlwh" path="res://Assets/Pokemon/Pokemon28.png" id="12_xmk5i"]
@@ -517,10 +518,10 @@ grammarite_node = NodePath("../Grammarite")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="BattleUI" unique_id=1834684650]
 texture_filter = 1
-offset_left = 92.0
-offset_top = 106.0
+offset_left = 96.0
+offset_top = 102.0
 offset_right = 236.0
-offset_bottom = 158.0
+offset_bottom = 160.0
 texture = ExtResource("11_l0uqe")
 patch_margin_left = 7
 patch_margin_top = 3
@@ -529,30 +530,75 @@ patch_margin_bottom = 4
 
 [node name="Buttons" type="Node2D" parent="BattleUI" unique_id=967738820]
 visible = false
-position = Vector2(232, 159)
+position = Vector2(227, 157.5)
+scale = Vector2(0.9, 0.9)
 
 [node name="switchPkmn" type="Sprite2D" parent="BattleUI/Buttons" unique_id=698753109]
-position = Vector2(-32, -40)
-texture = ExtResource("7_xmk5i")
+self_modulate = Color(0.43529412, 0.7490196, 0.5764706, 1)
+position = Vector2(-34, -45)
+texture = ExtResource("7_262jj")
 hframes = 2
+
+[node name="Label" type="Label" parent="BattleUI/Buttons/switchPkmn" unique_id=1454694687]
+offset_left = -29.33332
+offset_top = -13.33333
+offset_right = 29.55555
+offset_bottom = 13.333342
+theme = ExtResource("8_l0uqe")
+text = "Switch"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="run" type="Sprite2D" parent="BattleUI/Buttons" unique_id=1097383952]
-position = Vector2(-32, -16)
-texture = ExtResource("7_xmk5i")
+self_modulate = Color(0.95686275, 0.9254902, 0.6, 1)
+position = Vector2(-34, -16)
+texture = ExtResource("7_262jj")
 hframes = 2
+
+[node name="Label2" type="Label" parent="BattleUI/Buttons/run" unique_id=1729985373]
+offset_left = -29.333328
+offset_top = -13.444458
+offset_right = 29.555542
+offset_bottom = 13.222214
+theme = ExtResource("8_l0uqe")
+text = "Run"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="item" type="Sprite2D" parent="BattleUI/Buttons" unique_id=1814780476]
-position = Vector2(-96, -16)
-texture = ExtResource("7_xmk5i")
+self_modulate = Color(0.44313726, 0.6784314, 0.85882354, 1)
+position = Vector2(-101, -16)
+texture = ExtResource("7_262jj")
 hframes = 2
+
+[node name="Label3" type="Label" parent="BattleUI/Buttons/item" unique_id=728772891]
+offset_left = -29.0
+offset_top = -13.444458
+offset_right = 29.88887
+offset_bottom = 13.222214
+theme = ExtResource("8_l0uqe")
+text = "Bag"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="fight" type="Sprite2D" parent="BattleUI/Buttons" unique_id=1244250863]
-position = Vector2(-96, -40)
-texture = ExtResource("7_xmk5i")
+self_modulate = Color(0.87058824, 0.5686275, 0.5921569, 1)
+position = Vector2(-101, -45)
+texture = ExtResource("7_262jj")
 hframes = 2
 
+[node name="Label4" type="Label" parent="BattleUI/Buttons/fight" unique_id=2144282442]
+offset_left = -27.888878
+offset_top = -13.333336
+offset_right = 30.999992
+offset_bottom = 13.333336
+theme = ExtResource("8_l0uqe")
+text = "Moves"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="MoveList" type="Node2D" parent="BattleUI" unique_id=577308921]
-position = Vector2(100, 104)
+position = Vector2(100, 102)
 
 [node name="Moves" type="VBoxContainer" parent="BattleUI/MoveList" unique_id=675319034]
 offset_left = 16.0
@@ -599,9 +645,9 @@ texture = ExtResource("8_262jj")
 
 [node name="InfoText" type="Label" parent="BattleUI" unique_id=111149462]
 visible = false
-offset_left = 102.0
+offset_left = 105.0
 offset_top = 113.0
-offset_right = 226.0
+offset_right = 227.0
 offset_bottom = 153.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_qxnh6")

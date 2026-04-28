@@ -20,6 +20,8 @@ func _ready():
 	evolve_screen.visible = false
 	if battle_ui:
 		battle_ui.move_selected.connect(_on_player_move_selected)
+		if trainer != "random":
+			battle_ui.get_node("Buttons/run").self_modulate = Color(0.55,0.55,0.4, 0.95)
 	
 	if not await on_player_grammarite_die(false):
 		battle_ui.input_state = battle_ui.InputState.WAITING

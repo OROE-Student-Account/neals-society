@@ -21,7 +21,6 @@ func set_health(max_health, current):
 	$HealthBar2.scale.x = percent_health
 	$HealthBar2.color.g = pecent_health
 	$HealthBar2.color.r = 1.5 - pecent_health
-	print(current)
 	if current <= 0:
 		kill()
 
