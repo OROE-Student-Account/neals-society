@@ -34,8 +34,8 @@ func _ready():
 
 
 func start_battle():
-	var player_spd = calc_stat(player_grammarite.grammarite_info["Stats"]["Defense"], player_grammarite.level)
-	var enemy_spd = calc_stat(enemy_grammarite.grammarite_info["Stats"]["Defense"], enemy_grammarite.level)
+	var player_spd = calc_stat(player_grammarite.grammarite_info["Stats"]["Speed"], player_grammarite.level)
+	var enemy_spd = calc_stat(enemy_grammarite.grammarite_info["Stats"]["Speed"], enemy_grammarite.level)
 	if player_spd > enemy_spd:
 		current_state = BattleState.PLAYER_TURN
 	else:
@@ -144,8 +144,11 @@ func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 		# Check accuracy
 		var accuracy = move.get("Accuracy", 0) # If no accuracy included, auto miss
 		if attacker.item == "Glasses": accuracy += 0.25
+		
+		# biases accurcary for player
 		if attacker == enemy_grammarite:
-			accuracy =  (accuracy -0.15)*0.85
+			accuracy =  (accuracy - 0.05)*0.95
+		
 		var hit_roll = randf()
 		var defense_stat = calc_stat(defender.grammarite_info["Stats"]["Defense"], defender.level)
 		var spd = calc_stat(attacker.grammarite_info["Stats"]["Speed"], attacker.level)
@@ -223,7 +226,7 @@ func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 	await get_tree().create_timer(0.9).timeout
 
 func calc_stat(base, level):
-	return 5 + 0.02 * level * (14 + base) 
+	return 5 + level + 0.01 * level * base
 
 
 func throw_book(book_name):
@@ -248,6 +251,18 @@ func throw_book(book_name):
 	
 	if book_name == "Chapter Book":
 		base_chance *= 1.5
+	elif book_name == "Textbook":
+		base_chance *= 2.0
+	elif book_name == "Children's Book":
+		base_chance += 0.2 - 0.01*enemy_grammarite.level
+		
+		if Utils.can_evolve(enemy_grammarite.grammarite_name, 100) == -1000:
+			base_chance = 0
+		elif !Utils.can_evolve(Utils.get_name_from_num(Utils.get_poke_num(enemy_grammarite.grammarite_name) - 1), 100):
+			base_chance *= 0.75
+		else:
+			base_chance *= 1.25 
+		
 	
 	
 	if caught < base_chance:
@@ -336,7 +351,7 @@ func end_battle(player_won: bool):
 		if fmod(party[0]["Level"], 1.0) + xp*0.01 > 1.0:
 			battle_ui.set_info_text("Your Grammarite leveled up!")
 			await get_tree().create_timer(1.5).timeout
-			if Utils.can_evolve(player_grammarite.grammarite_name, player_grammarite.level):
+			if Utils.can_evolve(player_grammarite.grammarite_name, player_grammarite.level) >= 0:
 				var old_name = party[0]["Name"]
 				var new_name = Utils.get_name_from_num(1 + Utils.get_poke_num(old_name))
 				party[0]["Name"] = new_name

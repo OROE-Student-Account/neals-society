@@ -707,7 +707,6 @@ visible = false
 [node name="Book" type="Sprite2D" parent="BookAnimation" unique_id=819557148]
 position = Vector2(32, 80)
 texture = ExtResource("10_qxnh6")
-centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BookAnimation" unique_id=155795648]
 libraries/ = SubResource("AnimationLibrary_0qgg5")

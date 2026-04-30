@@ -103,7 +103,7 @@ func update_trainer_attacked(node_name: String, value: bool, scene = "Town"):
 
 
 func max_hp(grammarite_name, level: int) -> int:
-	return int(10 + level + int(0.02 * level * (14 + load_json_file("res://GrammariteData/Stats.json")[grammarite_name]["Health"]) - 0.001))
+	return int(10 + 2 * level + int(0.01 * level * load_json_file("res://GrammariteData/Stats.json")[grammarite_name]["Health"] - 0.001))
 
 
 var type_chart_dict = {
@@ -129,8 +129,8 @@ func get_random_grammarite():
 func can_evolve(grammarite_name, level):
 	var evos = load_json_file("res://GrammariteData/Evolutions.json")
 	var level_needed = evos[get_poke_num(grammarite_name)]
-	if level_needed == -1: return
-	return level >= level_needed
+	if level_needed == -1: return -1000
+	return level - level_needed
 
 
 func get_poke_num(grammarite_name):

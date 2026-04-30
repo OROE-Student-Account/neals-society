@@ -14,13 +14,13 @@ func set_health(max_health, current):
 	var pecent_health = float(current) / max_health
 	$HealthBar.scale.x = pecent_health
 	$HealthBar.color.g = pecent_health
-	$HealthBar.color.r = 1.5 - pecent_health
+	$HealthBar.color.r = 1.3 - pecent_health
 	
 	var percent_health = max(0, (61 * pecent_health - 4) / 57)
 	
 	$HealthBar2.scale.x = percent_health
 	$HealthBar2.color.g = pecent_health
-	$HealthBar2.color.r = 1.5 - pecent_health
+	$HealthBar2.color.r = 1.3 - pecent_health
 	if current <= 0:
 		kill()
 
