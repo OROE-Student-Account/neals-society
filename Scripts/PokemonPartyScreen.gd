@@ -9,6 +9,7 @@ var page: int = Page.MAIN
 var selected_move = 0
 
 var selected_sub_page: int = 0
+var num_actions = 5 # This is like, switch, summary, item, release
 
 var num_of_slots = 7
 
@@ -78,6 +79,7 @@ func stop():
 	pause = true
 	await get_tree().create_timer(0.1).timeout
 	pause = false
+
 
 func load_summary(slot_num):
 	self.add_child(load("res://Scenes/SummaryScreen.tscn").instantiate())
@@ -150,7 +152,6 @@ func load_summary(slot_num):
 	
 	# nickname
 	info.get_child(7).text = slot_data["Nickname"]
-
 func update_move_box():
 	$MovesScreen/SelectBox.size.y = 15
 	$MovesScreen/SelectBox.position.y = 20 + selected_move*16
@@ -170,7 +171,6 @@ func update_move_box():
 			for j in range(5):
 				if j != 0 and j != 3:
 					box.get_child(j).visible = true
-
 func load_moves(slot_num):
 	selected_move = 0
 	self.add_child(load("res://Scenes/MovesPartyScreen.tscn").instantiate())
@@ -232,6 +232,41 @@ func load_item(slot_num):
 	else:
 		$ItemPartyScreen/Box/Description.text = "No item equipped"
 		$ItemPartyScreen/TextureRect.texture = null
+
+func release():
+	var party = Utils.get_party()
+	selected_option
+	
+	var count = 0
+	for g in party:
+		if g["Name"] != "":
+			count += 1
+	
+	
+	if count > 1:
+		var grammarite = Utils.get_grammarite_details(party[selected_option]["Name"])
+		var shard_type = grammarite["Stats"]["Types"].pick_random()
+		Utils.add_to_inventory(shard_type+" Shard")
+		
+		for i in range(selected_option, 5): 
+			party[i] = party[i+1]
+		
+		party[5] = {
+			"Health": 0.0,
+			"Item": "",
+			"Level": 1.0,
+			"Moves": [],
+			"Name": "",
+			"Nickname": "",
+			"PP": []
+		}
+		
+		Utils.set_party(party)
+	else:
+		$NinePatchRect/InfoText.text = "Cannot release right now."
+	
+	load_party()
+
 
 func update_page():
 	selected_sub_page = 0
@@ -371,18 +406,18 @@ func _input(event):
 			elif event.is_action_pressed("x"):
 				Utils.get_scene_manager().transition_exit_menu("Party")
 		Page.CHOSEN:
-			if event.is_action_pressed("x") or (event.is_action_pressed("z") and selected_sub_page == 3):
+			if event.is_action_pressed("x") or (event.is_action_pressed("z") and selected_sub_page == num_actions-1):
 				page = Page.MAIN
 				update_page()
 				stop()
 				
 			elif event.is_action_pressed("ui_down"):
-				selected_sub_page =  (selected_sub_page + 1) % 4
-				$PageOptions/Arrow.position.y = 3 + (selected_sub_page % 4) * 13
+				selected_sub_page =  (selected_sub_page + 1) % num_actions
+				$PageOptions/Arrow.position.y = 3 + (selected_sub_page % num_actions) * 13
 				
 			elif event.is_action_pressed("ui_up"):
-				selected_sub_page =  (selected_sub_page + 3) % 4
-				$PageOptions/Arrow.position.y = 3 + (selected_sub_page % 4) * 13
+				selected_sub_page =  (selected_sub_page + 3) % num_actions
+				$PageOptions/Arrow.position.y = 3 + (selected_sub_page % num_actions) * 13
 			elif event.is_action_pressed("z"):
 				if selected_sub_page == 0:
 					page = Page.SUMMARY
@@ -393,6 +428,10 @@ func _input(event):
 				elif selected_sub_page == 2:
 					page = Page.ITEM
 					update_page()
+				elif selected_sub_page == 3:
+					page = Page.MAIN
+					update_page()
+					release()
 		Page.SUMMARY:
 			if event.is_action_pressed("x"):
 				page = Page.CHOSEN

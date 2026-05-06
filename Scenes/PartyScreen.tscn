@@ -652,9 +652,9 @@ hframes = 2
 [node name="PageOptions" type="NinePatchRect" parent="." unique_id=1769560236]
 visible = false
 offset_left = 172.0
-offset_top = 96.0
+offset_top = 88.0
 offset_right = 238.0
-offset_bottom = 154.0
+offset_bottom = 160.0
 texture = ExtResource("4_rxu80")
 patch_margin_left = 7
 patch_margin_top = 3
@@ -688,6 +688,13 @@ theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
 theme_override_fonts/font = ExtResource("5_row5s")
 theme_override_font_sizes/font_size = 12
 text = "Item"
+
+[node name="Release" type="Label" parent="PageOptions/VBoxContainer" unique_id=951516403]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
+theme_override_fonts/font = ExtResource("5_row5s")
+theme_override_font_sizes/font_size = 12
+text = "Release"
 
 [node name="Cancel" type="Label" parent="PageOptions/VBoxContainer" unique_id=1558371454]
 layout_mode = 2

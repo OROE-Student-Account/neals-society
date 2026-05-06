@@ -9,17 +9,15 @@
 [ext_resource type="Texture2D" uid="uid://0mdt7n5qygaa" path="res://Assets/Tilesets/ledge.png" id="4_r47vw"]
 [ext_resource type="Texture2D" uid="uid://xr8x53oopdd0" path="res://Assets/Tilesets/fence1_tileset.png" id="5_fllgw"]
 [ext_resource type="PackedScene" uid="uid://biarm5343j6g5" path="res://Scenes/TallGrass.tscn" id="6"]
-[ext_resource type="Texture2D" uid="uid://ff3i1gl2wpma" path="res://Assets/Buildings/oaks_lab.png" id="7"]
 [ext_resource type="PackedScene" uid="uid://fsubo0lgcrfo" path="res://Scenes/Door.tscn" id="8"]
 [ext_resource type="Texture2D" uid="uid://c1qubhpup2qsy" path="res://Assets/Tilesets/tree1.png" id="8_jnmbb"]
-[ext_resource type="PackedScene" path="res://Scenes/House.tscn" id="9"]
+[ext_resource type="PackedScene" uid="uid://bekr8ncvjl5x5" path="res://Scenes/House.tscn" id="9"]
 [ext_resource type="Texture2D" uid="uid://22jrr0rxhcd3" path="res://Assets/Buildings/Door Animations/oaks_lab.png" id="10"]
 [ext_resource type="Script" uid="uid://duoegh7gbj541" path="res://Scripts/Door.gd" id="13_ykxim"]
 [ext_resource type="PackedScene" uid="uid://bdykq75yoljv" path="res://Scenes/Item.tscn" id="16_tbyl1"]
 [ext_resource type="Texture2D" uid="uid://c0j35px6j8da2" path="res://Assets/Player/Male_Spritesheet.png" id="16_yv7ed"]
 [ext_resource type="PackedScene" uid="uid://prw5jytjpf0n" path="res://Scenes/Machine.tscn" id="17_gb3n1"]
 [ext_resource type="Script" uid="uid://yexcpjuauyul" path="res://Scripts/Trainer.gd" id="17_typi0"]
-[ext_resource type="Texture2D" uid="uid://dphmrelo4jug1" path="res://Assets/Buildings/house_spritesheet.png" id="18_4jyq1"]
 [ext_resource type="PackedScene" uid="uid://djvyngg1je206" path="res://Scenes/GrammariteCenterOutside.tscn" id="18_gb3n1"]
 [ext_resource type="Script" uid="uid://bp28l32amhxsf" path="res://Scripts/DialogueNode.gd" id="19_5qjph"]
 [ext_resource type="Texture2D" uid="uid://c30k7loev38oa" path="res://Assets/Flowers/flower.tres" id="22_6xtxr"]
@@ -594,80 +592,6 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fllgw"]
 size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_typi0"]
-size = Vector2(32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6xtxr"]
-atlas = ExtResource("18_4jyq1")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i6mus"]
-atlas = ExtResource("18_4jyq1")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8m1a5"]
-atlas = ExtResource("18_4jyq1")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rnt2s"]
-atlas = ExtResource("18_4jyq1")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nptuo"]
-atlas = ExtResource("18_4jyq1")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1t2bt"]
-atlas = ExtResource("18_4jyq1")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ma2l7"]
-atlas = ExtResource("18_4jyq1")
-region = Rect2(192, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4f56m"]
-atlas = ExtResource("18_4jyq1")
-region = Rect2(224, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mit30"]
-atlas = ExtResource("18_4jyq1")
-region = Rect2(256, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_n33s8"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6xtxr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i6mus")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8m1a5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rnt2s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nptuo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1t2bt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ma2l7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4f56m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mit30")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5qjph"]
 atlas = ExtResource("16_yv7ed")
@@ -1476,16 +1400,12 @@ spawn_direction = Vector2(0, -1)
 [node name="OaksLab" parent="Sorted Stuff/Starter Town" unique_id=1025455533 instance=ExtResource("9")]
 position = Vector2(176, 128)
 
-[node name="Sprite2D" parent="Sorted Stuff/Starter Town/OaksLab" index="0"]
-texture_filter = 1
-texture = ExtResource("7")
-
-[node name="CollisionShape2D" parent="Sorted Stuff/Starter Town/OaksLab" index="1"]
+[node name="CollisionShape2D" parent="Sorted Stuff/Starter Town/OaksLab" index="1" unique_id=933012405]
 position = Vector2(56, 48)
 shape = SubResource("RectangleShape2D_2hxns")
 
 [node name="Door" type="Area2D" parent="Sorted Stuff/Starter Town/OaksLab" unique_id=1010472654]
-position = Vector2(48, 64)
+position = Vector2(16, 64)
 collision_layer = 8
 script = ExtResource("13_ykxim")
 next_scene_path = "res://Scenes/OaksLab.tscn"
@@ -1506,19 +1426,6 @@ libraries/ = SubResource("AnimationLibrary_iu8q0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sorted Stuff/Starter Town/OaksLab/Door" unique_id=718641566]
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_fllgw")
-
-[node name="Animated House" type="StaticBody2D" parent="Sorted Stuff/Starter Town" unique_id=788289452]
-y_sort_enabled = true
-position = Vector2(144, 48)
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sorted Stuff/Starter Town/Animated House" unique_id=190349554]
-shape = SubResource("RectangleShape2D_typi0")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sorted Stuff/Starter Town/Animated House" unique_id=1649021043]
-sprite_frames = SubResource("SpriteFrames_n33s8")
-autoplay = "default"
 
 [node name="Quest Board" parent="Sorted Stuff/Starter Town" unique_id=917074634 instance=ExtResource("17_gb3n1")]
 position = Vector2(128, 176)

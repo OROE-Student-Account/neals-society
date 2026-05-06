@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://fsubo0lgcrfo"]
 
-[ext_resource type="Texture2D" uid="uid://cmviqgmwl4813" path="res://Assets/Buildings/Door Animations/house1.png" id="1"]
 [ext_resource type="Script" uid="uid://duoegh7gbj541" path="res://Scripts/Door.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://g8psph4pnpx5" path="res://Assets/Buildings/Door Animations/HouseDoor.png" id="2_mw28t"]
 
 [sub_resource type="Animation" id="Animation_i4tu1"]
 resource_name = "CloseDoor"
@@ -93,28 +93,27 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fllgw"]
 size = Vector2(16, 16)
 
-[node name="Door" type="Area2D"]
+[node name="Door" type="Area2D" unique_id=609909115]
 collision_layer = 8
 script = ExtResource("2")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1469022007]
 visible = false
 texture_filter = 1
-texture = ExtResource("1")
+texture = ExtResource("2_mw28t")
 centered = false
+flip_h = true
 vframes = 3
 frame = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_iu8q0")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1190825177]
+libraries/ = SubResource("AnimationLibrary_iu8q0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=930340026]
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_fllgw")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Door_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Door_body_exited"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

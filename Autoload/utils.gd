@@ -103,7 +103,7 @@ func update_trainer_attacked(node_name: String, value: bool, scene = "Town"):
 
 
 func max_hp(grammarite_name, level: int) -> int:
-	return int(10 + 2 * level + int(0.01 * level * load_json_file("res://GrammariteData/Stats.json")[grammarite_name]["Health"] - 0.001))
+	return int(20 + 2 * level + int(0.01 * level * load_json_file("res://GrammariteData/Stats.json")[grammarite_name]["Health"] - 0.001))
 
 
 var type_chart_dict = {
