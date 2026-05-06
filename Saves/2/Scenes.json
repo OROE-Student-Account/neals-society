@@ -1,14 +1,14 @@
 {
 	"OaksLab": {
 		"Items": {
-			"Dog Of Wood": {
+			"Dog of Wood": {
 				"Collected": false
 			}
 		}
 	},
 	"Town": {
 		"Items": {
-			"Story Book": {
+			"Children's Book": {
 				"Collected": false
 			}
 		},
@@ -17,6 +17,12 @@
 				"Talked": false
 			},
 			"Rival": {
+				"Talked": false
+			},
+			"Trainer": {
+				"Talked": false
+			},
+			"Trainer2": {
 				"Talked": false
 			}
 		}

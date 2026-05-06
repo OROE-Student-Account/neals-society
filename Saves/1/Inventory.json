@@ -48,7 +48,9 @@
 		"Glasses",
 		"Glasses",
 		"Glasses",
-		"Story Book"
+		"Story Book",
+		"Animal Shard",
+		"Children's Book"
 	],
 	"Money": 0.0,
 	"Name": "Sehgal",
@@ -56,7 +58,7 @@
 		{
 			"Health": 10.0,
 			"Item": "Glasses",
-			"Level": 33.02,
+			"Level": 33.13,
 			"Moves": [
 				"Bite",
 				"Play",
@@ -66,7 +68,7 @@
 			"Name": "Orawolfi",
 			"Nickname": "",
 			"PP": [
-				15.0,
+				14.0,
 				20.0,
 				15.0,
 				5.0
@@ -92,25 +94,6 @@
 			]
 		},
 		{
-			"Health": 26.0,
-			"Item": "",
-			"Level": 6.16,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Sit",
-				"Woodchip"
-			],
-			"Name": "Dog of Wood",
-			"Nickname": "",
-			"PP": [
-				15.0,
-				20.0,
-				15.0,
-				1.0
-			]
-		},
-		{
 			"Health": 197.0,
 			"Item": "Glasses",
 			"Level": 70.01,
@@ -133,6 +116,25 @@
 			"Health": 184.0,
 			"Item": "",
 			"Level": 65.6,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Woodchip"
+			],
+			"Name": "Dog of Wood",
+			"Nickname": "",
+			"PP": [
+				15.0,
+				20.0,
+				15.0,
+				1.0
+			]
+		},
+		{
+			"Health": 22.0,
+			"Item": "",
+			"Level": 1.0,
 			"Moves": [
 				"Bite",
 				"Play",

@@ -12,8 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://fsubo0lgcrfo" path="res://Scenes/Door.tscn" id="8"]
 [ext_resource type="Texture2D" uid="uid://c1qubhpup2qsy" path="res://Assets/Tilesets/tree1.png" id="8_jnmbb"]
 [ext_resource type="PackedScene" uid="uid://bekr8ncvjl5x5" path="res://Scenes/House.tscn" id="9"]
-[ext_resource type="Texture2D" uid="uid://22jrr0rxhcd3" path="res://Assets/Buildings/Door Animations/oaks_lab.png" id="10"]
 [ext_resource type="Script" uid="uid://duoegh7gbj541" path="res://Scripts/Door.gd" id="13_ykxim"]
+[ext_resource type="Texture2D" uid="uid://g8psph4pnpx5" path="res://Assets/Buildings/Door Animations/HouseDoor.png" id="15_ix0ol"]
 [ext_resource type="PackedScene" uid="uid://bdykq75yoljv" path="res://Scenes/Item.tscn" id="16_tbyl1"]
 [ext_resource type="Texture2D" uid="uid://c0j35px6j8da2" path="res://Assets/Player/Male_Spritesheet.png" id="16_yv7ed"]
 [ext_resource type="PackedScene" uid="uid://prw5jytjpf0n" path="res://Scenes/Machine.tscn" id="17_gb3n1"]
@@ -499,9 +499,6 @@ texture = ExtResource("8_jnmbb")
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_vk81e")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hxns"]
-size = Vector2(112, 64)
 
 [sub_resource type="Animation" id="Animation_i4tu1"]
 resource_name = "CloseDoor"
@@ -1376,6 +1373,7 @@ position = Vector2(272, -176)
 position = Vector2(80, 96)
 
 [node name="Starter Town" type="Node2D" parent="Sorted Stuff" unique_id=2065548548]
+y_sort_enabled = true
 
 [node name="House" parent="Sorted Stuff/Starter Town" unique_id=541117870 instance=ExtResource("9")]
 texture_filter = 1
@@ -1398,11 +1396,7 @@ spawn_location = Vector2(64, 128)
 spawn_direction = Vector2(0, -1)
 
 [node name="OaksLab" parent="Sorted Stuff/Starter Town" unique_id=1025455533 instance=ExtResource("9")]
-position = Vector2(176, 128)
-
-[node name="CollisionShape2D" parent="Sorted Stuff/Starter Town/OaksLab" index="1" unique_id=933012405]
-position = Vector2(56, 48)
-shape = SubResource("RectangleShape2D_2hxns")
+position = Vector2(192, 128)
 
 [node name="Door" type="Area2D" parent="Sorted Stuff/Starter Town/OaksLab" unique_id=1010472654]
 position = Vector2(16, 64)
@@ -1415,8 +1409,9 @@ spawn_direction = Vector2(0, -1)
 [node name="Sprite2D" type="Sprite2D" parent="Sorted Stuff/Starter Town/OaksLab/Door" unique_id=1245187699]
 visible = false
 texture_filter = 1
-texture = ExtResource("10")
+texture = ExtResource("15_ix0ol")
 centered = false
+flip_h = true
 vframes = 3
 frame = 2
 
