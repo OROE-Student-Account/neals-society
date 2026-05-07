@@ -84,6 +84,8 @@ func load_inventory():
 				break
 		if not found:
 			items.append({"Name": i, "Count": 1})
+	
+	$Money/Label.text = "$: "+str(Utils.get_money())
 
 func set_active_item_type():
 	$Type.position.y = 15 * selected_item_type

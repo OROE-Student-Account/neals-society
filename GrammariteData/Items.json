@@ -24,7 +24,10 @@
 	},
 	
 	
-	
+	"Eraser": {
+		"Description": "Erases status effects from a Grammarite.",
+		"Type": "Grammarite"
+	},
 	"Potion": {
 		"Description": "Heals half of the missing health from a hurt Grammarites.",
 		"Type": "Grammarite"

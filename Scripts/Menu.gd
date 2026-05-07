@@ -31,6 +31,7 @@ var select_box_positions: Array[Vector2] = [
 	Vector2(146, 97),   # Option 5 (bottom-right)
 ]
 
+signal open_menu
 signal close_menu
 
 
@@ -105,6 +106,7 @@ func _unhandled_input(event):
 					player.set_physics_process(false)
 					menu.visible = true
 					screen_loaded = ScreenLoaded.JUST_MENU
+					emit_signal("open_menu")
 		
 		ScreenLoaded.JUST_MENU:
 			if event.is_action_pressed("menu") or event.is_action_pressed("x") or (event.is_action_pressed("z") and selected_option == 5):

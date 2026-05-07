@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c11wa3bks70et" path="res://Assets/Items/Slang Shard.png" id="3_c16xa"]
 [ext_resource type="Texture2D" uid="uid://ckyw6dtptsikv" path="res://Assets/UI/border.png" id="3_eak02"]
 [ext_resource type="Texture2D" uid="uid://b3f2eqbc4ki67" path="res://Assets/UI/ui_arrow_right.png" id="6_rvhgt"]
+[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="7_rvhgt"]
 
 [node name="ItemScreen" type="Node2D" unique_id=939527620]
 texture_filter = 1
@@ -123,8 +124,26 @@ offset_right = 88.0
 offset_bottom = 56.0
 color = Color(0.9019608, 0.78431374, 0.6117647, 1)
 
-[node name="Shard1" type="Sprite2D" parent="." unique_id=1511101861]
-position = Vector2(80, 48)
+[node name="Money" type="Control" parent="." unique_id=1239328346]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Shard2" type="Sprite2D" parent="." unique_id=920982212]
-position = Vector2(160, 48)
+[node name="ColorRect2" type="ColorRect" parent="Money" unique_id=2031155353]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 128.0
+offset_right = 82.0
+offset_bottom = 144.0
+color = Color(0.8509804, 0.627451, 0.4, 1)
+
+[node name="Label" type="Label" parent="Money" unique_id=1221989889]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 131.0
+offset_right = 85.0
+offset_bottom = 147.0
+theme = ExtResource("7_rvhgt")
+text = "$: 100,000"
+horizontal_alignment = 1

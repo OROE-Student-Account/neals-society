@@ -1,3 +1,3 @@
 {
-	"Fighter": { "Party": [ "Dog of Wood" ], "Levels": [ 5 ], "XP": 35 }
+	"Fighter": { "Party": [ "Dog of Wood" ], "Levels": [ 5 ], "XP": 35, "Money": 5 }
 }

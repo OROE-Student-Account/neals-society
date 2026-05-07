@@ -235,7 +235,6 @@ func load_item(slot_num):
 
 func release():
 	var party = Utils.get_party()
-	selected_option
 	
 	var count = 0
 	for g in party:
@@ -262,6 +261,10 @@ func release():
 		}
 		
 		Utils.set_party(party)
+		
+		if party[selected_option]["Name"] == "":
+			selected_option -= 1
+			update_select_box()
 	else:
 		$NinePatchRect/InfoText.text = "Cannot release right now."
 	

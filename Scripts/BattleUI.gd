@@ -200,7 +200,9 @@ func _input(event):
 				
 				show_correct_menu()
 		InputState.QUESTIONING:
+			var d = false
 			if event.is_action_pressed(code[prog]):
+				d = true
 				prog += 1
 				if prog >= len(code) && Utils.get_player_name() == "Hero":
 					pause = true
@@ -220,29 +222,23 @@ func _input(event):
 					pause = false
 					prog = 0
 					
-			elif event.is_action_pressed("ui_down"):
-				prog = 0
+			if event.is_action_pressed("ui_down"):
 				if selected_button < 2:
 					selected_button += 2
 					update_selected_option()
 			elif event.is_action_pressed("ui_up"):
-				prog = 0
 				if selected_button > 1:
 					selected_button -= 2
 					update_selected_option()
 			elif event.is_action_pressed("ui_right"):
-				prog = 0
 				if selected_button%2 == 0:
 					selected_button += 1
 					update_selected_option()
 			elif event.is_action_pressed("ui_left"):
-				prog = 0
 				if selected_button%2 != 0:
 					selected_button -= 1
 					update_selected_option()
 			elif event.is_action_pressed("z"):
-				prog = 0
 				input_state = InputState.WAITING
-			elif event.is_action_pressed("x") or event.is_action_pressed("q"):
-				prog = 0
+			if not d: prog = 0
 			

@@ -205,6 +205,13 @@ func get_num_grammarites():
 	return len(load_json_file("res://GrammariteData/Names.json"))
 
 
+func get_money() -> int:
+	return load_json_file("res://Data/Inventory.json")["Money"]
+func set_money(mon: int):
+	var inv = load_json_file("res://Data/Inventory.json")
+	inv["Money"] = mon
+	save_json_file("res://Data/Inventory.json", inv)
+
 
 func get_bookshelf():
 	return load_json_file("res://Data/Bookshelf.json")

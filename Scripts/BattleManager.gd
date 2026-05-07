@@ -335,10 +335,12 @@ func end_battle(player_won: bool):
 		battle_ui.set_info_text("You won!")
 		await get_tree().create_timer(1.65).timeout
 		var party = Utils.get_party()
-		var xp = 0
+		var xp = 1.0
 		
 		if trainer != "random":
-			xp = Utils.get_trainer(trainer)["XP"]
+			var train = Utils.get_trainer(trainer)
+			xp = train["XP"]
+			Utils.set_money(Utils.get_money()+train["Money"])
 		else:
 			xp = enemy_grammarite.level
 		
@@ -346,7 +348,7 @@ func end_battle(player_won: bool):
 		xp *= (1 + (randf()/2)**2)
 		
 		# scale xp based on level, keep within range of 10-100 xp
-		xp = min(100, max(10, int( 10 * (xp / int(party[0]["Level"])) )))
+		xp = min(100, max(10, int( 50 * (xp / int(party[0]["Level"])) )))
 		
 		if fmod(party[0]["Level"], 1.0) + xp*0.01 > 1.0:
 			battle_ui.set_info_text("Your Grammarite leveled up!")
@@ -383,5 +385,7 @@ func end_battle(player_won: bool):
 		await get_tree().create_timer(2.5).timeout
 		
 		battle_ended.emit(player_won)
-		
+		var party = Utils.get_party()
+		Utils.set_money(0)
+		Utils.set_party(party)
 		Utils.get_scene_manager().transition_to_grammarite_center()

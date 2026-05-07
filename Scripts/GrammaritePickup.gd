@@ -12,6 +12,8 @@ var selected_button = 0
 
 
 func _ready() -> void:
+	Utils.get_scene_manager().get_node("Menu").connect("open_menu", Callable(self, "supress_menu"))
+	Utils.get_scene_manager().get_node("Menu").connect("close_menu", Callable(self, "reset"))
 	var scene = get_node("/root/SceneManager/CurrentScene").get_child(0).name
 	if Utils.check_item_picked_up(name, scene):
 		queue_free()
@@ -28,8 +30,15 @@ func open_menu():
 	selected_button = 0
 	update_buttons()
 func close_menu():
-	Utils.get_scene_manager().get_node("Menu").get_children().back().queue_free()
+	Utils.get_scene_manager().get_node("Menu").get_node("GrammaritePickupMenu").queue_free()
 	Utils.get_player().set_physics_process(true)
+	in_menu = false
+	reset()
+
+func supress_menu():
+	var menu = Utils.get_scene_manager().get_node("Menu").get_node("GrammaritePickupMenu")
+	if menu != null: 
+		menu.queue_free()
 	in_menu = false
 	reset()
 
@@ -58,9 +67,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		if player_facing != 3  && player_pos.x == position.x && player_pos.y < position.y:
 			return
 		
-		used_up = true
 		
-		open_menu()
+		var menu = Utils.get_scene_manager().get_node("Menu")
+		
+		if menu.screen_loaded == menu.ScreenLoaded.NOTHING:
+			open_menu()
+			used_up = true
 	elif in_menu:
 		if event.is_action_pressed("ui_left") or event.is_action_pressed("ui_right"):
 			selected_button = 1 - selected_button
@@ -97,8 +109,8 @@ func _unhandled_input(event: InputEvent) -> void:
 				
 				Utils.set_party(party)
 			else:
-				if not Utils.add_to_inventory(new_guy):
-					return
+				if not Utils.add_to_bookshelf(new_guy):
+					print("FAILURE full shelf")
 			close_menu()
 			var scene = get_node("/root/SceneManager/CurrentScene").get_child(0).name
 			Utils.update_item_picked_up(name, true, scene)
