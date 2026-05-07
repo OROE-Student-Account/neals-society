@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+
+
 signal player_moving_signal
 signal player_stop_signal
 
@@ -9,26 +11,28 @@ signal player_entered_door_signal
 const LandingDustEffect = preload("res://Scenes/LandingDustEffect.tscn")
 
 
-var base_walk_speed = 3.75
-var base_jump_speed = 4.0
-var run_speed = 7.5
+const BASE_WALK_SPEED = 3.75
+const BASE_JUMP_SPEED = 4.0
+const RUN_SPEED = 7.5
 
 # 60 fps, so this is 1 pixel per frame
-var walk_speed = 3.75
-var jump_speed = 4.0
+var walk_speed = BASE_WALK_SPEED
+var jump_speed = BASE_JUMP_SPEED
 const TILE_SIZE = 16
 
+# animation
 @onready var anim_tree = $AnimationTree
 @onready var anim_player = $AnimationPlayer
 @onready var anim_state = anim_tree.get("parameters/playback")
 
+# ray casts
 @onready var ray = $BlockingRayCast2D
 @onready var ledge_ray = $LedgeRayCast2D
 @onready var door_ray = $DoorRayCast2D
 @onready var inside_door_ray = $BehindDoorRayCast2D # checks the inside doors so it looks good
 @onready var item_ray = $ItemRayCast2D
 
-
+# other stuff
 @onready var shadow = $Shadow
 @onready var sprite = $PlayerSprite
 @onready var camera = $Camera2D
@@ -45,7 +49,7 @@ var player_state = PlayerState.IDLE
 var facing_direction = FacingDirection.DOWN
 
 var initial_position := Vector2.ZERO
-var input_direction := Vector2(0,0)
+var input_direction := Vector2.ZERO
 var is_moving := false
 var stop_input := false
 var percent_moved_to_next_tile := 0.0
@@ -53,16 +57,9 @@ var percent_moved_to_next_tile := 0.0
 func _ready():
 	add_to_group("Player")
 	
-	sprite.visible = true
-	sprite.modulate = Color.WHITE
-	sprite.scale = Vector2.ONE
-	
-	jump_speed = base_jump_speed
-	walk_speed = base_walk_speed
-
 	if has_node("Camera2D"):
 		camera.make_current()
-
+	
 	anim_tree.active = true
 	initial_position = position
 	shadow.visible = false
@@ -223,8 +220,8 @@ func move(delta):
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("q"):
-		walk_speed = run_speed
-		jump_speed = run_speed
+		walk_speed = RUN_SPEED
+		jump_speed = RUN_SPEED
 	elif event.is_action_released("q"):
-		walk_speed = base_walk_speed
-		jump_speed = base_jump_speed
+		walk_speed = BASE_WALK_SPEED
+		jump_speed = BASE_JUMP_SPEED

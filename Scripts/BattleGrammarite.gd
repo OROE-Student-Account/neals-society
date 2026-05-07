@@ -71,7 +71,12 @@ func update_health(change):
 	var pecent_health = float(health) / max_health
 	health_bar.scale.x = pecent_health
 	health_bar.color.g = pecent_health
-	health_bar.color.r = 1.3 - pecent_health
+	health_bar.color.r = HEALTH_BAR_R - pecent_health
 	
 	if not is_enemy:
 		$Health.text = str(health)
+
+
+
+
+const HEALTH_BAR_R = 1.3 # also in party slot, maybe fix somehow

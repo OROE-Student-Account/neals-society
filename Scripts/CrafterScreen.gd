@@ -15,7 +15,7 @@ var shard1 = ""
 var shard2 = ""
 
 
-var types = [
+const TYPES = [
 	"Grammar",
 	"Literature",
 	"Homework",
@@ -29,7 +29,7 @@ var types = [
 	"Machine"
 ]
 
-var border_positions = [
+const BORDER_POSITIONS = [
 	Vector2(72,60),
 	Vector2(104,60),
 	Vector2(136,60),
@@ -80,8 +80,8 @@ func update_buttons():
 			else:
 				$Control/Shard2.texture = empty
 		Page.SWITCH:
-			shard_select.get_node("Border").position = border_positions[selected_option]
-			shard_select.get_node("Label").text = "Count: "+str(count_shard(types[selected_option]))
+			shard_select.get_node("Border").position = BORDER_POSITIONS[selected_option]
+			shard_select.get_node("Label").text = "Count: "+str(count_shard(TYPES[selected_option]))
 
 
 func select_shard():
@@ -95,11 +95,7 @@ func select_shard():
 	
 
 	var shard = selected_option
-	if selected_option == -1:
-		shard = -1
-	elif count_shard(types[selected_option]) < 1:
-		shard = -1
-	elif shard1 == types[selected_option] or shard2 == types[selected_option]:
+	if selected_option == -1 or count_shard(TYPES[selected_option]) < 1 or shard1 == TYPES[selected_option] or shard2 == TYPES[selected_option]:
 		shard = -1
 	
 	selected_option = 0
@@ -109,11 +105,11 @@ func select_shard():
 	return shard
 
 func load_shards():
-	for i in range(len(types)):
+	for i in range(len(TYPES)):
 		var shard = Sprite2D.new()
-		shard.texture = load("res://Assets/Items/"+types[i]+" Shard.png")
-		shard.position = border_positions[i]+Vector2(1,0)
-		shard.scale = Vector2(0.916, 0.916)
+		shard.texture = load("res://Assets/Items/"+TYPES[i]+" Shard.png")
+		shard.position = BORDER_POSITIONS[i]+Vector2(1,0)
+		shard.scale = Vector2(0.916, 0.916) # probably bad and should fix, but small shrink to look good
 		shard_select.add_child(shard)
 
 func count_shard(item):
@@ -224,12 +220,12 @@ func _input(event):
 				if selected_option == Options.SWITCH1:
 					var index = await select_shard()
 					if index != -1:
-						shard1 = types[index]
+						shard1 = TYPES[index]
 					update_buttons()
 				elif selected_option == Options.SWITCH2:
 					var index = await select_shard()
 					if index != -1:
-						shard2 = types[index]
+						shard2 = TYPES[index]
 					selected_option = Options.SWITCH2
 					update_buttons()
 				elif selected_option == Options.CRAFT:

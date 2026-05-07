@@ -7,10 +7,12 @@ class_name DialogueTreeNode
 @export var function = "" # what to do after this is selected
 @export var func_node : Node = null
 
-
+# Precondition, text does not begin or end with replacer
 func replace(search, replacer):
+	# splits the text for every instance of replacer
 	var pieces = text.split(replacer)
 	text = ""
+	# in every split, puts the search. 
 	for i in range(len(pieces)):
 		if i != len(pieces)-1:
 			text += pieces[i] + search

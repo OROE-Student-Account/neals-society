@@ -17,21 +17,18 @@ func player_exiting_grass():
 		grass_overlay.queue_free()
 
 func player_in_grass():
-	var down_offset_pos = Vector2.ZERO
-	down_offset_pos.y = 1
-	var up_offset_pos = Vector2.ZERO
-	up_offset_pos.y = -1
+	var offset_pos = Vector2(0, 1)
 	
 	
 	grass_overlay = Node2D.new()
-	grass_overlay.position = down_offset_pos
+	grass_overlay.position -= offset_pos
 	
 	var texture_overlay = TextureRect.new()
 	texture_overlay.texture = grass_overlay_texture
-	texture_overlay.position = up_offset_pos
+	texture_overlay.position += offset_pos
 	
 	var grass_step_effect = GrassStepEffect.instantiate()
-	grass_step_effect.position = up_offset_pos
+	grass_step_effect.position += offset_pos
 	
 	grass_overlay.add_child(grass_step_effect)
 	grass_overlay.add_child(texture_overlay)

@@ -9,7 +9,7 @@ var prompt = ""
 
 func _ready():
 	$Control.visible = false
-	$Transition.color = Color(1,1,1,0)
+	$Transition.color.a = 0
 
 func stop():
 	pause = true
@@ -26,7 +26,7 @@ func load_naming_screen(initial_prompt):
 	
 	naming_state = NamingState.TYPING
 	selected_option = 1
-	$Transition.color = Color(1,1,1,0)
+	$Transition.color.a = 0
 	$Control.visible = true
 	
 	# Set initial prompt

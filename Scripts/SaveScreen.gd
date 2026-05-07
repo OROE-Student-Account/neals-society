@@ -4,7 +4,8 @@ extends Node2D
 enum Options { MODE, SLOT1, SLOT2, SLOT3, CANCEL }
 var selected_option = Options.SLOT1
 
-var mode = "Save"
+enum Modes { SAVE, LOAD, CLEAR }
+var mode = Modes.SAVE
 
 func _ready():
 	select_button()
@@ -20,12 +21,13 @@ func load_slots():
 			$Slots.get_child(i).get_node("Name").text = "Empty" 
 
 func set_mode():
-	if mode == "Save":
-		$Text.text = "Saving Mode"
-	elif mode == "Load":
-		$Text.text = "Loading Mode"
-	elif mode == "Clear":
-		$Text.text = "Delete Save"
+	match mode:
+		Modes.SAVE:
+			$Text.text = "Saving Mode"
+		Modes.LOAD:
+			$Text.text = "Loading Mode"
+		Modes.CLEAR:
+			$Text.text = "Delete File"
 
 func select_button():
 	$Cancel.frame = 0
@@ -71,19 +73,21 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("z"):
 		
 		if selected_option == Options.MODE:
-			if mode == "Save":
-				mode = "Load"
-			elif  mode == "Load":
-				mode = "Clear"
-			elif  mode == "Clear":
-				mode = "Save"
+			match mode:
+				Modes.SAVE:
+					mode = Modes.LOAD
+				Modes.LOAD:
+					mode = Modes.CLEAR
+				Modes.CLEAR:
+					mode = Modes.SAVE
 			set_mode()
 		else:
-			if mode == "Save":
-				Utils.save_to_save_slot(selected_option)
-			elif mode == "Load":
-				Utils.load_slot(selected_option)
-				Utils.get_scene_manager().transition_exit_save_screen()
-			elif mode == "Clear":
-				Utils.fill_empty_slot(selected_option)
+			match mode:
+				Modes.SAVE:
+					Utils.save_to_save_slot(selected_option)
+				Modes.LOAD:
+					Utils.load_slot(selected_option)
+					Utils.get_scene_manager().transition_exit_save_screen()
+				Modes.CLEAR:
+					Utils.fill_empty_slot(selected_option)
 			load_slots()

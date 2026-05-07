@@ -4,10 +4,9 @@ signal move_selected(move_index: int)
 
 var pause = false
 
-@export var grammarite_node : Node = null
+@export var grammarite_node : Node = null # player grammarite
 
 @onready var item_screen = preload("res://Scenes/ItemScreen.tscn")
-
 @onready var question_screen = preload("res://Scenes/QuestionScreen.tscn")
 var questions: Node2D = null
 
@@ -31,32 +30,38 @@ var selected_button: int = Buttons.FIGHT
 	Buttons.RUN: $Buttons/run,
 }
 
-var SELECT_ARROW_Y = 7
-var DISTANCE_BETWEEN_MOVES = 10.5
+# for moves
+const SELECT_ARROW_Y = 7
+const DISTANCE_BETWEEN_MOVES = 10.5
+const NUM_MOVES = 4
+
+const QUESTION_ARROW_POS = [
+	Vector2(70.5,105),
+	Vector2(158.5,105),
+	Vector2(70.5,137),
+	Vector2(158.5,137),
+]
 
 @onready var info_text = $InfoText
+
+func _ready():
+	set_active_option()
+	show_correct_menu()
+	update_arrow_pos()
+
 
 func set_info_text(content):
 	info_text.text = content
 	info_text.visible = true
-
 func hide_info_text():
 	info_text.text = ""
 	info_text.visible = false
-
-func unset_active_option():
-	for i in range(len(buttons)):
-		buttons[i].frame = 0
-
-func set_active_option():
-	buttons[selected_button].frame = 1
 
 func show_correct_menu():
 	selected_button = 0
 	if input_state == InputState.ACTION_BUTTONS:
 		$Buttons.visible = true
 		$MoveList.visible = false
-		unset_active_option()
 		set_active_option()
 		hide_info_text()
 	elif input_state == InputState.MOVE_LIST:
@@ -69,18 +74,17 @@ func show_correct_menu():
 		$Buttons.visible = false
 		$MoveList.visible = false
 
+# for moves
 func update_arrow_pos():
-	$MoveList/Arrow.position.y = SELECT_ARROW_Y + (selected_button % 4) * DISTANCE_BETWEEN_MOVES
-
+	$MoveList/Arrow.position.y = SELECT_ARROW_Y + (selected_button % NUM_MOVES) * DISTANCE_BETWEEN_MOVES
+# for questions
 func update_selected_option():
-	if selected_button < 2:
-		questions.get_node("TextureRect").position.y = 105
-	else:
-		questions.get_node("TextureRect").position.y = 137
-	if selected_button%2 == 0:
-		questions.get_node("TextureRect").position.x = 70.5
-	else:
-		questions.get_node("TextureRect").position.x = 158.5
+	questions.get_node("TextureRect").position = QUESTION_ARROW_POS[selected_button]
+# for actions
+func set_active_option():
+	for i in range(len(buttons)):
+		buttons[i].frame = 0
+	buttons[selected_button].frame = 1
 
 
 func ask_question():
@@ -106,11 +110,6 @@ func ask_question():
 	return selected_button == question["Answer"]
 
 
-func _ready():
-	set_active_option()
-	show_correct_menu()
-	update_arrow_pos()
-	
 func stop():
 	pause = true
 	await get_tree().create_timer(0.1).timeout
@@ -123,19 +122,15 @@ func _input(event):
 	match input_state:
 		InputState.ACTION_BUTTONS:
 			if event.is_action_pressed("ui_down"):
-				unset_active_option()
 				if selected_button < 2: selected_button += 2
 				set_active_option()
 			elif event.is_action_pressed("ui_up"):
-				unset_active_option()
 				if selected_button > 1: selected_button -= 2
 				set_active_option()
 			elif event.is_action_pressed("ui_left"):
-				unset_active_option()
 				if selected_button % 2 != 0: selected_button -= 1
 				set_active_option()
 			elif event.is_action_pressed("ui_right"):
-				unset_active_option()
 				if selected_button % 2 == 0: selected_button += 1
 				set_active_option()
 			elif event.is_action_pressed("z"):
@@ -156,7 +151,7 @@ func _input(event):
 							
 							var index = await Utils.get_scene_manager().transition_to_select_screen()
 							
-							if party[index]["Health"] != 0:
+							if party[index]["Health"] > 0:
 								good_grammarite = true
 								
 								var temp = party[0]
@@ -180,10 +175,10 @@ func _input(event):
 				input_state = InputState.ACTION_BUTTONS
 				show_correct_menu()
 			elif event.is_action_pressed("ui_down"):
-				selected_button = (selected_button + 1) % 4
+				selected_button = (selected_button + 1) % NUM_MOVES
 				update_arrow_pos()
 			elif event.is_action_pressed("ui_up"):
-				selected_button = (selected_button + 3) % 4
+				selected_button = (selected_button + NUM_MOVES - 1) % NUM_MOVES
 				update_arrow_pos()
 			elif event.is_action_pressed("z"):
 				var move = selected_button
@@ -200,6 +195,7 @@ func _input(event):
 						# emit struggle
 						move_selected.emit(-1) 
 				else:
+					# emit failure
 					move_selected.emit(-2) 
 				
 				show_correct_menu()

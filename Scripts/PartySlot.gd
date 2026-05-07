@@ -7,20 +7,18 @@ enum States { NONE, SUMMARY }
 var state = States.NONE
 
 
-func set_health(max_health, current):
-	max_health = int(max_health)
-	current = int(current)
-	
-	var pecent_health = float(current) / max_health
+func set_health(max_health: int, current: int):
+
+	var pecent_health = min(1, float(current) / max_health)
 	$HealthBar.scale.x = pecent_health
 	$HealthBar.color.g = pecent_health
-	$HealthBar.color.r = 1.3 - pecent_health
+	$HealthBar.color.r = HEALTH_BAR_R - pecent_health
 	
-	var percent_health = max(0, (61 * pecent_health - 4) / 57)
+	var percent_health = max(0, ((HEALTH_BAR_LEN+HEALTH_BAR_LEN_DIFF) * pecent_health - HEALTH_BAR_LEN_DIFF) / HEALTH_BAR_LEN)
 	
 	$HealthBar2.scale.x = percent_health
 	$HealthBar2.color.g = pecent_health
-	$HealthBar2.color.r = 1.3 - pecent_health
+	$HealthBar2.color.r = HEALTH_BAR_R - pecent_health
 	if current <= 0:
 		kill()
 
@@ -29,13 +27,9 @@ func set_sprites(num):
 	$PokemonPartySprite.texture = load(file_path)
 	$GrammariteName.text = Utils.get_name_from_num(num)
 
-
 func kill():
 	$AnimationPlayer.stop()
-	$PokemonPartySprite.modulate = Color(1,0.3,0.3,0.85)
-
-
-
+	$PokemonPartySprite.modulate = DEAD_COLOR
 
 func show_screen():
 	match state:
@@ -44,10 +38,14 @@ func show_screen():
 		States.SUMMARY:
 			$SummaryScreen.visible = true
 
-
 func _input(event):
-	match state:
-		States.SUMMARY:
-			if event.is_action_pressed("x"):
-				state = States.NONE
-				show_screen()
+	if state == States.SUMMARY and event.is_action_pressed("x"):
+		state = States.NONE
+		show_screen()
+
+
+const HEALTH_BAR_R = 1.3 # also in battle grammarite, maybe fix somehow
+
+const DEAD_COLOR = Color(1,0.3,0.3,0.85)
+const HEALTH_BAR_LEN = 57
+const HEALTH_BAR_LEN_DIFF = 4

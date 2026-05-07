@@ -24,6 +24,10 @@ var screen_loaded = ScreenLoaded.NOTHING
 
 var selected_option: int = 0
 
+
+const ARROW_Y = [9, 25]
+
+
 func _ready():
 	vbox = ninePatch.get_child(0)
 	select_arrow = ninePatch.get_child(1)
@@ -44,7 +48,8 @@ func start_dialogue(root: Node):
 	player.set_physics_process(false)
 	player.anim_tree.active = false
 	
-	Utils.get_scene_manager().get_node("Menu").screen_loaded = 1
+	var menu = Utils.get_scene_manager().get_node("Menu")
+	menu.screen_loaded = menu.ScreenLoaded.DIALOGUE
 	
 	$Control/PanelContainer/Name.text = root.get_parent().name
 	
@@ -58,7 +63,8 @@ func display_current_node():
 	
 	current_node.fix_text()
 
-	# Show the text first
+
+	# if no text, run functions and end
 	if current_node.text == "":
 		var function = current_node.function
 		var tar_node = target_node 
@@ -75,6 +81,7 @@ func display_current_node():
 		
 		return
 	
+	# Show the text first
 	dialogue_state = DialogueState.SHOWING_TEXT
 	screen_loaded = ScreenLoaded.DIALOGUE
 	
@@ -160,8 +167,8 @@ func _unhandled_input(event):
 			
 			if event.is_action_pressed("ui_down") or event.is_action_pressed("ui_up"):
 				if num_options > 1:
-					selected_option = (selected_option % 2 + 1) % 2
-					select_arrow.position.y = 9 + selected_option * 16
+					selected_option = (selected_option + 1) % 2
+					select_arrow.position.y = ARROW_Y[selected_option]
 			
 			elif event.is_action_pressed("z"):
 				# Select the next node and move to that node

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ddqbnpucrvvab"]
 
 [ext_resource type="Texture2D" uid="uid://dwjqomapu13au" path="res://Assets/Grass/grass_step_animation.png" id="1"]
-[ext_resource type="Script" uid="uid://bkjxidcxqmxy6" path="res://Scripts/GrassStepEffect.gd" id="2"]
+[ext_resource type="Script" uid="uid://uc2sww0men7k" path="res://Scripts/Effect.gd" id="2_iqqt3"]
 
 [sub_resource type="AtlasTexture" id="1"]
 atlas = ExtResource("1")
@@ -39,12 +39,13 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="GrassStepEffect" type="AnimatedSprite2D"]
+[node name="GrassStepEffect" type="AnimatedSprite2D" unique_id=810839675]
 texture_filter = 1
 sprite_frames = SubResource("5")
-frame = 3
-frame_progress = 1.0
+autoplay = "default"
+frame = 2
+frame_progress = 0.6934299
 centered = false
-script = ExtResource("2")
+script = ExtResource("2_iqqt3")
 
-[connection signal="animation_finished" from="." to="." method="_on_GrassStepEffect_animation_finished"]
+[connection signal="animation_finished" from="." to="." method="_on_Effect_animation_finished"]
