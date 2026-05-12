@@ -1484,7 +1484,7 @@ target_position = Vector2(0, 16)
 
 [node name="DialogueRoot" type="Node" parent="Sorted Stuff/Starter Town/Rival" unique_id=642039714]
 script = ExtResource("19_5qjph")
-text = "Are you ready for school? Wait, do you not know who I am?"
+text = "the quick brown fox jumped over the lazy dog .,:;'\"1234567890#"
 
 [node name="Talk" type="Node" parent="Sorted Stuff/Starter Town/Rival/DialogueRoot" unique_id=1466338209]
 script = ExtResource("19_5qjph")

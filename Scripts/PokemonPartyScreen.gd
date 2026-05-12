@@ -9,7 +9,9 @@ var page: int = Page.MAIN
 var selected_move = 0
 
 var selected_sub_page: int = 0
-var num_actions = 5 # This is like, switch, summary, item, release
+var num_actions = 5 # This is like, switch, summary, item, release, cancel
+const start_y_arrow = 3
+const dist_options = 13
 
 var num_of_slots = 7
 
@@ -416,11 +418,11 @@ func _input(event):
 				
 			elif event.is_action_pressed("ui_down"):
 				selected_sub_page =  (selected_sub_page + 1) % num_actions
-				$PageOptions/Arrow.position.y = 3 + (selected_sub_page % num_actions) * 13
+				$PageOptions/Arrow.position.y = start_y_arrow + (selected_sub_page % num_actions) * dist_options
 				
 			elif event.is_action_pressed("ui_up"):
 				selected_sub_page =  (selected_sub_page + 3) % num_actions
-				$PageOptions/Arrow.position.y = 3 + (selected_sub_page % num_actions) * 13
+				$PageOptions/Arrow.position.y = start_y_arrow + (selected_sub_page % num_actions) * dist_options
 			elif event.is_action_pressed("z"):
 				if selected_sub_page == 0:
 					page = Page.SUMMARY

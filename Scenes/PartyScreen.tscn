@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bw3bqnx3kggm6" path="res://Assets/UI/Pokemon Party/PartyScreen.png" id="2_fhvdd"]
 [ext_resource type="Texture2D" uid="uid://cf0txma36318t" path="res://Assets/UI/Pokemon Party/PartyScreenSelect.png" id="3_ehsf2"]
 [ext_resource type="Texture2D" uid="uid://ckbbwuf8tfh1" path="res://Assets/UI/Dialogue.png" id="4_rxu80"]
-[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="5_row5s"]
+[ext_resource type="FontFile" uid="uid://ctonyesy6j21u" path="res://Assets/UI/pkmnfl.ttf" id="5_row5s"]
 [ext_resource type="Script" uid="uid://dpvpht1pik0j" path="res://Scripts/PartySlot.gd" id="6_vlq4q"]
 [ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="7_lyj1d"]
 [ext_resource type="Texture2D" uid="uid://r8qwb6kwhbpx" path="res://Assets/Pokemon/Pokemon4.png" id="8_fx6dr"]
@@ -652,9 +652,9 @@ hframes = 2
 [node name="PageOptions" type="NinePatchRect" parent="." unique_id=1769560236]
 visible = false
 offset_left = 172.0
-offset_top = 88.0
+offset_top = 68.0
 offset_right = 238.0
-offset_bottom = 160.0
+offset_bottom = 158.0
 texture = ExtResource("4_rxu80")
 patch_margin_left = 7
 patch_margin_top = 3
