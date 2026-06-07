@@ -46,9 +46,11 @@ func update_buttons():
 	var menu = Utils.get_scene_manager().get_node("Menu").get_children().back()
 	if selected_button == 0:
 		menu.get_node("Take").frame = 1
+		menu.get_node("Take").get_node("Label").visible = true
 		menu.get_node("Leave").frame = 0
 	else:
 		menu.get_node("Take").frame = 0
+		menu.get_node("Take").get_node("Label").visible = false
 		menu.get_node("Leave").frame = 1
 
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ff3i1gl2wpma"
-path="res://.godot/imported/oaks_lab.png-0434e31a0f59776683576163632fc20d.ctex"
+uid="uid://cfw2lw6k1snfb"
+path="res://.godot/imported/Pokemon17.png-51c327764753875161baca9768e25cdd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buildings/oaks_lab.png"
-dest_files=["res://.godot/imported/oaks_lab.png-0434e31a0f59776683576163632fc20d.ctex"]
+source_file="res://Assets/Pokemon/Pokemon17.png"
+dest_files=["res://.godot/imported/Pokemon17.png-51c327764753875161baca9768e25cdd.ctex"]
 
 [params]
 

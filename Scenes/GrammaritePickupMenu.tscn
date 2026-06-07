@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://b6r2grpiopgro"]
 
-[ext_resource type="Texture2D" uid="uid://hpyxtuycfcbw" path="res://Assets/UI/Pokemon Party/exit_background_button.png" id="1_da15m"]
+[ext_resource type="Texture2D" uid="uid://bqio4uhjljbal" path="res://Assets/UI/PlainButton.png" id="1_mutq0"]
+[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="2_fuqj1"]
 [ext_resource type="Texture2D" uid="uid://dl58l7iruinos" path="res://Assets/UI/Cancel.png" id="2_mutq0"]
-[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="2_snwat"]
-[ext_resource type="Texture2D" uid="uid://dywqob2aeknmi" path="res://Assets/Pokemon/Pokemon1.png" id="3_mutq0"]
+[ext_resource type="FontFile" uid="uid://buav1g0xgpfd" path="res://Assets/UI/pkmnfl.ttf" id="2_snwat"]
+[ext_resource type="Texture2D" uid="uid://doloqyf43ogw4" path="res://Assets/Pokemon/Pokemon1.png" id="3_mutq0"]
 
 [sub_resource type="Animation" id="Animation_fuqj1"]
 resource_name = "Idle"
@@ -53,10 +54,20 @@ offset_right = 176.0
 offset_bottom = 120.0
 
 [node name="Take" type="Sprite2D" parent="." unique_id=923100148]
-position = Vector2(64, 96)
-texture = ExtResource("1_da15m")
+position = Vector2(64, 80)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_mutq0")
 centered = false
 hframes = 2
+frame = 1
+
+[node name="Label" type="Label" parent="Take" unique_id=398242888]
+offset_left = 21.333336
+offset_top = 26.666672
+offset_right = 61.333336
+offset_bottom = 49.66667
+theme = ExtResource("2_fuqj1")
+text = "Take"
 
 [node name="Leave" type="Sprite2D" parent="." unique_id=376869480]
 position = Vector2(128, 80)
