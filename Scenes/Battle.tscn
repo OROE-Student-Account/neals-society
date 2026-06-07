@@ -2,16 +2,15 @@
 
 [ext_resource type="Script" uid="uid://68man2oy86ff" path="res://Scripts/BattleUI.gd" id="1_c5ef4"]
 [ext_resource type="Script" uid="uid://oiemmmw7t3ir" path="res://Scripts/BattleManager.gd" id="1_qxnh6"]
-[ext_resource type="Texture2D" uid="uid://ceuhh3g2in3j4" path="res://Assets/Pokemon/Pokemon15.png" id="2_u22qb"]
 [ext_resource type="Texture2D" uid="uid://b4nmamhpm0fsg" path="res://Assets/UI/Pokemon Party/standby_pokemon_background.png" id="3_6yjxy"]
-[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="4_qxnh6"]
+[ext_resource type="Texture2D" uid="uid://doloqyf43ogw4" path="res://Assets/Pokemon/Pokemon1.png" id="4_l0uqe"]
+[ext_resource type="FontFile" uid="uid://buav1g0xgpfd" path="res://Assets/UI/pkmnfl.ttf" id="4_qxnh6"]
 [ext_resource type="Script" uid="uid://cshmcr6ld2cga" path="res://Scripts/BattleGrammarite.gd" id="6_6yjxy"]
 [ext_resource type="Texture2D" uid="uid://bei5ll255oguf" path="res://Assets/UI/BattleButton.png" id="7_262jj"]
 [ext_resource type="Texture2D" uid="uid://b3f2eqbc4ki67" path="res://Assets/UI/ui_arrow_right.png" id="8_262jj"]
 [ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="8_l0uqe"]
 [ext_resource type="Texture2D" uid="uid://bxjfugenktmee" path="res://Assets/Items/Story Book.png" id="10_qxnh6"]
 [ext_resource type="Texture2D" uid="uid://ckbbwuf8tfh1" path="res://Assets/UI/Dialogue.png" id="11_l0uqe"]
-[ext_resource type="Texture2D" uid="uid://dkx1hhb1gnlwh" path="res://Assets/Pokemon/Pokemon28.png" id="12_xmk5i"]
 
 [sub_resource type="Animation" id="Animation_6yjxy"]
 resource_name = "Attack"
@@ -434,7 +433,7 @@ color = Color(0, 1, 0, 1)
 [node name="Grammarite" type="Sprite2D" parent="EnemyGrammarite" unique_id=617380561]
 texture_filter = 1
 position = Vector2(-32, 32)
-texture = ExtResource("2_u22qb")
+texture = ExtResource("4_l0uqe")
 region_enabled = true
 region_rect = Rect2(0, 34, 64, 64)
 
@@ -505,7 +504,7 @@ color = Color(0, 1, 0, 1)
 [node name="Grammarite" type="Sprite2D" parent="Grammarite" unique_id=93670101]
 texture_filter = 1
 position = Vector2(48, -32)
-texture = ExtResource("2_u22qb")
+texture = ExtResource("4_l0uqe")
 region_enabled = true
 region_rect = Rect2(0, 99, 64, 64)
 
@@ -693,7 +692,7 @@ text = "WHAT? Your Grammarite is evolving!"
 
 [node name="Sprite2D" type="Sprite2D" parent="EvolveScreen" unique_id=46908497]
 position = Vector2(88, 24)
-texture = ExtResource("12_xmk5i")
+texture = ExtResource("4_l0uqe")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 34, 64, 64)

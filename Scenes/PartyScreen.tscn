@@ -4,15 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bw3bqnx3kggm6" path="res://Assets/UI/Pokemon Party/PartyScreen.png" id="2_fhvdd"]
 [ext_resource type="Texture2D" uid="uid://cf0txma36318t" path="res://Assets/UI/Pokemon Party/PartyScreenSelect.png" id="3_ehsf2"]
 [ext_resource type="Texture2D" uid="uid://ckbbwuf8tfh1" path="res://Assets/UI/Dialogue.png" id="4_rxu80"]
-[ext_resource type="FontFile" uid="uid://ctonyesy6j21u" path="res://Assets/UI/pkmnfl.ttf" id="5_row5s"]
+[ext_resource type="FontFile" uid="uid://buav1g0xgpfd" path="res://Assets/UI/pkmnfl.ttf" id="5_row5s"]
 [ext_resource type="Script" uid="uid://dpvpht1pik0j" path="res://Scripts/PartySlot.gd" id="6_vlq4q"]
 [ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="7_lyj1d"]
-[ext_resource type="Texture2D" uid="uid://r8qwb6kwhbpx" path="res://Assets/Pokemon/Pokemon4.png" id="8_fx6dr"]
-[ext_resource type="Texture2D" uid="uid://3ndqiat65p8r" path="res://Assets/Pokemon/Pokemon59.png" id="9_iq6kl"]
-[ext_resource type="Texture2D" uid="uid://bv565fwa2g6si" path="res://Assets/Pokemon/Pokemon34.png" id="10_gw5t6"]
-[ext_resource type="Texture2D" uid="uid://dgkatdnfgvtd1" path="res://Assets/Pokemon/Pokemon38.png" id="11_de40a"]
-[ext_resource type="Texture2D" uid="uid://x2r2smipejox" path="res://Assets/Pokemon/Pokemon25.png" id="12_t75ko"]
-[ext_resource type="Texture2D" uid="uid://b81iqrvr8ywd1" path="res://Assets/Pokemon/Pokemon95.png" id="13_03tyd"]
+[ext_resource type="Texture2D" uid="uid://doloqyf43ogw4" path="res://Assets/Pokemon/Pokemon1.png" id="8_jbvk2"]
 [ext_resource type="Texture2D" uid="uid://dl58l7iruinos" path="res://Assets/UI/Cancel.png" id="14_evcc1"]
 [ext_resource type="Texture2D" uid="uid://b3f2eqbc4ki67" path="res://Assets/UI/ui_arrow_right.png" id="15_fhvdd"]
 
@@ -312,7 +307,7 @@ text = "Dog of Wood"
 
 [node name="PokemonPartySprite" type="Sprite2D" parent="FirstPokemonSlot" unique_id=85660275]
 position = Vector2(22, 33)
-texture = ExtResource("8_fx6dr")
+texture = ExtResource("8_jbvk2")
 centered = false
 hframes = 2
 region_enabled = true
@@ -363,7 +358,7 @@ text = "Dog of wood"
 
 [node name="PokemonPartySprite" type="Sprite2D" parent="SecondPokemonSlot" unique_id=932377883]
 position = Vector2(17, 34)
-texture = ExtResource("9_iq6kl")
+texture = ExtResource("8_jbvk2")
 centered = false
 hframes = 2
 region_enabled = true
@@ -412,7 +407,7 @@ text = "Dog of"
 
 [node name="PokemonPartySprite" type="Sprite2D" parent="ThirdPokemonSlot" unique_id=1381254744]
 position = Vector2(-95, 54)
-texture = ExtResource("10_gw5t6")
+texture = ExtResource("8_jbvk2")
 centered = false
 hframes = 2
 region_enabled = true
@@ -461,7 +456,7 @@ text = "Dog of "
 
 [node name="PokemonPartySprite" type="Sprite2D" parent="FourthPokemonSlot" unique_id=754777814]
 position = Vector2(17, 30)
-texture = ExtResource("11_de40a")
+texture = ExtResource("8_jbvk2")
 centered = false
 hframes = 2
 region_enabled = true
@@ -510,7 +505,7 @@ text = "Dog of W"
 
 [node name="PokemonPartySprite" type="Sprite2D" parent="FifthPokemonSlot" unique_id=128367754]
 position = Vector2(-95, 49)
-texture = ExtResource("12_t75ko")
+texture = ExtResource("8_jbvk2")
 centered = false
 hframes = 2
 region_enabled = true
@@ -559,7 +554,7 @@ text = "Dog of W"
 
 [node name="PokemonPartySprite" type="Sprite2D" parent="SixthPokemonSlot" unique_id=1445359980]
 position = Vector2(17, 25)
-texture = ExtResource("13_03tyd")
+texture = ExtResource("8_jbvk2")
 centered = false
 hframes = 2
 region_enabled = true

@@ -502,6 +502,7 @@ collision_mask = 14
 script = ExtResource("2")
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=1451148835]
+self_modulate = Color(1, 1, 1, 0.49803922)
 texture_filter = 1
 texture = ExtResource("3")
 centered = false

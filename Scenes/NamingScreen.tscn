@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dumf4h3qchxhv"]
 
 [ext_resource type="Script" uid="uid://bldcao02xnc74" path="res://Scripts/NamingScreen.gd" id="1_besi7"]
-[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="1_qti2f"]
-[ext_resource type="Texture2D" uid="uid://hpyxtuycfcbw" path="res://Assets/UI/Pokemon Party/exit_background_button.png" id="2_besi7"]
-[ext_resource type="Texture2D" uid="uid://dl58l7iruinos" path="res://Assets/UI/Cancel.png" id="4_th0y4"]
+[ext_resource type="FontFile" uid="uid://bq7n78bmpq82l" path="res://Assets/UI/pkmnfl.ttf" id="1_qti2f"]
+[ext_resource type="Texture2D" uid="uid://bqio4uhjljbal" path="res://Assets/UI/PlainButton.png" id="3_th0y4"]
+[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="4_omc3d"]
 
 [sub_resource type="Animation" id="Animation_besi7"]
 resource_name = "FadeToBlack"
@@ -102,13 +102,33 @@ text = "What should ____ be called?"
 
 [node name="Accept" type="Sprite2D" parent="Control" unique_id=1629501224]
 position = Vector2(80, 120)
-texture = ExtResource("2_besi7")
+texture = ExtResource("3_th0y4")
 hframes = 2
+frame = 1
+
+[node name="Label" type="Label" parent="Control/Accept" unique_id=1741328825]
+offset_left = -11.199999
+offset_top = -3.1999996
+offset_right = 28.800001
+offset_bottom = 19.800001
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("4_omc3d")
+text = "Accept"
 
 [node name="Cancel" type="Sprite2D" parent="Control" unique_id=1883090339]
 position = Vector2(160, 120)
-texture = ExtResource("4_th0y4")
+texture = ExtResource("3_th0y4")
 hframes = 2
+frame = 1
+
+[node name="Label" type="Label" parent="Control/Cancel" unique_id=361105660]
+offset_left = -11.599899
+offset_top = -2.60001
+offset_right = 28.4001
+offset_bottom = 20.39999
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("4_omc3d")
+text = "Change"
 
 [node name="Transition" type="ColorRect" parent="." unique_id=476062860]
 offset_right = 240.0
@@ -117,3 +137,5 @@ color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1469145947]
 libraries/ = SubResource("AnimationLibrary_omc3d")
+
+[connection signal="text_submitted" from="Control/LineEdit" to="." method="text_submitted"]

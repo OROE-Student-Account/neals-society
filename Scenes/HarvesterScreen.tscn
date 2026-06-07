@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://hqk5wot8bb6u"]
 
 [ext_resource type="Script" uid="uid://c55vrcn07e7lg" path="res://Scripts/HarvestScreen.gd" id="1_1wnif"]
-[ext_resource type="Texture2D" uid="uid://d23f5o7omjc0n" path="res://Assets/Pokemon/Pokemon22.png" id="2_1jb5n"]
-[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="3_yi611"]
+[ext_resource type="Texture2D" uid="uid://doloqyf43ogw4" path="res://Assets/Pokemon/Pokemon1.png" id="2_1wnif"]
+[ext_resource type="FontFile" uid="uid://buav1g0xgpfd" path="res://Assets/UI/pkmnfl.ttf" id="3_yi611"]
 [ext_resource type="Texture2D" uid="uid://bqio4uhjljbal" path="res://Assets/UI/PlainButton.png" id="4_1wnif"]
 [ext_resource type="Texture2D" uid="uid://dl58l7iruinos" path="res://Assets/UI/Cancel.png" id="5_0tae4"]
 [ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="5_1jb5n"]
-[ext_resource type="Texture2D" uid="uid://c7h1rjnnq5wb" path="res://Assets/Pokemon/Pokemon77.png" id="6_rgyt3"]
 [ext_resource type="Texture2D" uid="uid://bsxu6c3rnhh10" path="res://Assets/crush.png" id="7_hg4io"]
 
 [sub_resource type="Animation" id="Animation_l8wp2"]
@@ -227,11 +226,11 @@ offset_left = 32.0
 offset_top = 104.0
 offset_right = 112.0
 offset_bottom = 112.0
-color = Color(0.3137255, 0.2509804, 0.22352941, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Display" unique_id=1607535583]
 position = Vector2(40, 32)
-texture = ExtResource("2_1jb5n")
+texture = ExtResource("2_1wnif")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 34, 64, 64)
@@ -297,7 +296,7 @@ offset_bottom = 160.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Animation" unique_id=1653644878]
 position = Vector2(120, 80)
-texture = ExtResource("6_rgyt3")
+texture = ExtResource("2_1wnif")
 region_enabled = true
 region_rect = Rect2(0, 34, 64, 64)
 

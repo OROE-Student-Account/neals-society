@@ -11,6 +11,16 @@ func _ready():
 	$Control.visible = false
 	$Transition.color.a = 0
 
+func text_submitted(str: String):
+	var entered_text = $Control/LineEdit.text
+	if entered_text.strip_edges() != "":  # Only if they entered something
+		naming_state = NamingState.CONFIRMING
+		$Control/Prompt.text = "Are you sure?"
+		$Control/LineEdit.editable = false
+		$Control/LineEdit.release_focus()
+		selected_option = 0
+		update_naming_buttons()
+
 func stop():
 	pause = true
 	await get_tree().create_timer(0.1).timeout
@@ -33,6 +43,7 @@ func load_naming_screen(initial_prompt):
 	$Control/Prompt.text = prompt
 	update_naming_buttons()
 	$Control/LineEdit.grab_focus()
+	$Control/LineEdit.editable = true
 	
 	var chosen_name = await get_chosen_name()
 	
@@ -53,10 +64,14 @@ func update_naming_buttons():
 	stop()
 	if selected_option == 0:
 		$Control/Accept.frame = 1  # Selected
+		$Control/Accept.get_node("Label").visible = true
 		$Control/Cancel.frame = 0  # Unselected
+		$Control/Cancel.get_node("Label").visible = false
 	else:
 		$Control/Accept.frame = 0  # Unselected
+		$Control/Accept.get_node("Label").visible = false
 		$Control/Cancel.frame = 1  # Selected
+		$Control/Cancel.get_node("Label").visible = true
 	if naming_state == NamingState.TYPING:
 		$Control/Accept.visible = false
 		$Control/Cancel.visible = false
@@ -70,18 +85,6 @@ func finished_fading():
 func _unhandled_input(event: InputEvent) -> void:
 	if pause: return
 	match naming_state:
-		NamingState.TYPING:
-			if event.is_action_pressed("enter") or event.is_action_pressed("z") or event.is_action_pressed("x"):
-				# User pressed Enter or Z - move to confirmation
-				var entered_text = $Control/LineEdit.text
-				if entered_text.strip_edges() != "":  # Only if they entered something
-					naming_state = NamingState.CONFIRMING
-					$Control/Prompt.text = "Are you sure?"
-					$Control/LineEdit.editable = false
-					$Control/LineEdit.release_focus()
-					selected_option = 0
-					update_naming_buttons()
-		
 		NamingState.CONFIRMING:
 			if event.is_action_pressed("ui_left") or event.is_action_pressed("ui_right"):
 				# Toggle between Accept and Cancel
