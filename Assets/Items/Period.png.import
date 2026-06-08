@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b64pw0qd570u8"
-path="res://.godot/imported/Inventory.png-f11b58ffe7a2fbaf2587a66b6987610d.ctex"
+uid="uid://ccw1polgh5t12"
+path="res://.godot/imported/Period.png-d1cb5a7b9c25e43d103f6162b6265c38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Inventory.png"
-dest_files=["res://.godot/imported/Inventory.png-f11b58ffe7a2fbaf2587a66b6987610d.ctex"]
+source_file="res://Assets/Items/Period.png"
+dest_files=["res://.godot/imported/Period.png-d1cb5a7b9c25e43d103f6162b6265c38.ctex"]
 
 [params]
 

@@ -11,7 +11,7 @@ var selected_move = 0
 var selected_sub_page: int = 0
 var num_actions = 5 # This is like, switch, summary, item, release, cancel
 const start_y_arrow = 3
-const dist_options = 13
+const dist_options = 17
 
 var num_of_slots = 7
 
@@ -245,10 +245,6 @@ func release():
 	
 	
 	if count > 1:
-		var grammarite = Utils.get_grammarite_details(party[selected_option]["Name"])
-		var shard_type = grammarite["Stats"]["Types"].pick_random()
-		Utils.add_to_inventory(shard_type+" Shard")
-		
 		for i in range(selected_option, 5): 
 			party[i] = party[i+1]
 		
@@ -317,9 +313,18 @@ func update_page():
 				else:
 					children[i].visible = false
 			num_of_slots = count
+			$SwitchLocation.position.y = 153 - (dist_options * count)
+			$SwitchLocation.size.y = 5 + (dist_options * count)
 			
-			$SwitchLocation.position.y = 57 + 13 * (7 - count)
-			$SwitchLocation.size.y = 97 - 13 * (7 - count)
+			if count == 2: # only cancel button and 1 grammarite
+				page = Page.CHOSEN
+				$PageOptions.visible = true
+				$SwitchLocation.visible = false
+				$NinePatchRect/InfoText.text = "Cannot switch right now."
+				
+				await get_tree().create_timer(5.0).timeout
+				
+				$NinePatchRect/InfoText.text = "Do what with this Grammarite?"
 
 func _input(event):
 	if pause: return
@@ -421,7 +426,7 @@ func _input(event):
 				$PageOptions/Arrow.position.y = start_y_arrow + (selected_sub_page % num_actions) * dist_options
 				
 			elif event.is_action_pressed("ui_up"):
-				selected_sub_page =  (selected_sub_page + 3) % num_actions
+				selected_sub_page =  (selected_sub_page + (num_actions-1)) % num_actions
 				$PageOptions/Arrow.position.y = start_y_arrow + (selected_sub_page % num_actions) * dist_options
 			elif event.is_action_pressed("z"):
 				if selected_sub_page == 0:
@@ -473,10 +478,10 @@ func _input(event):
 				stop()
 			elif event.is_action_pressed("ui_down"):
 				selected_sub_page =  (selected_sub_page + 1) % num_of_slots
-				$SwitchLocation/Arrow.position.y = 3 + (selected_sub_page % num_of_slots) * 13
+				$SwitchLocation/Arrow.position.y = start_y_arrow + (selected_sub_page % num_of_slots) * dist_options
 			elif event.is_action_pressed("ui_up"):
 				selected_sub_page =  (selected_sub_page + num_of_slots - 1) % num_of_slots
-				$SwitchLocation/Arrow.position.y = 3 + (selected_sub_page % num_of_slots) * 13
+				$SwitchLocation/Arrow.position.y = start_y_arrow + (selected_sub_page % num_of_slots) * dist_options
 			elif event.is_action_pressed("z"):
 				var party = Utils.get_party()
 				

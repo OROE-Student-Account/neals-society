@@ -237,7 +237,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				fix_party()
 			
 			elif event.is_action_pressed("z"):
-				selected_entry = abs(int(grammas.position.x-1)/120)-1
+				selected_entry = abs(int((grammas.position.x-1)/120))-1
 				if Utils.caught_yet(Utils.get_name_from_num(selected_entry)):
 					state = State.SUMMARY
 					load_summary()

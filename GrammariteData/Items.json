@@ -22,6 +22,18 @@
 		"Description": "INCREASES DAMAGE AND EMPHASIS!",
 		"Type": "Held"
 	},
+	"Colon": {
+		"Description": "Improves your Grammarite's colon health.",
+		"Type": "Held"
+	},
+	"Period": {
+		"Description": "Fully stops attacks in their tracks.",
+		"Type": "Held"
+	},
+	"Comma": {
+		"Description": "Partially stops attacks in their tracks.",
+		"Type": "Held"
+	},
 	
 	
 	"Eraser": {
@@ -29,8 +41,25 @@
 		"Type": "Grammarite"
 	},
 	"Potion": {
-		"Description": "Heals half of the missing health from a hurt Grammarites.",
+		"Description": "Heals half of the missing health from a hurt Grammarite.",
 		"Type": "Grammarite"
+	},
+	
+	"Punctuation Vitamin": {
+		"Description": "Allows you to skip a Punctuation question.",
+		"Type": "Consumable"
+	},
+	"Vocabulary Vitamin": {
+		"Description": "Allows you to skip a Vocabulary question.",
+		"Type": "Consumable"
+	},
+	"Syntax Vitamin": {
+		"Description": "Allows you to skip a Syntax question.",
+		"Type": "Consumable"
+	},
+	"Ultimate Vitamin": {
+		"Description": "Allows you to skip any question.",
+		"Type": "Consumable"
 	},
 	
 	

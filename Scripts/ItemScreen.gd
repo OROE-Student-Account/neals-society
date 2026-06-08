@@ -15,27 +15,27 @@ var in_battle = false
 
 # Grid positions for items (2 columns x 6 rows)
 var item_positions: Array[Vector2] = [
-	Vector2(133, 26),    # 0
-	Vector2(158, 26),    # 1
-	Vector2(184, 26),    # 2
-	Vector2(209, 26),    # 3
-	Vector2(133, 51),    # row 2
-	Vector2(158, 51),    # 5
-	Vector2(184, 51),   # 6
-	Vector2(209, 51),   # 7
-	Vector2(133, 76),   # row 3
-	Vector2(158, 76),   # 9
-	Vector2(184, 76),   # 10
-	Vector2(209, 76),   # 11
+	Vector2(129, 27),    # 0
+	Vector2(154, 27),    # 1
+	Vector2(180, 27),    # 2
+	Vector2(205, 27),    # 3
+	Vector2(129, 52),    # row 2
+	Vector2(154, 52),    # 5
+	Vector2(180, 52),   # 6
+	Vector2(205, 52),   # 7
+	Vector2(129, 77),   # row 3
+	Vector2(154, 77),   # 9
+	Vector2(180, 77),   # 10
+	Vector2(205, 77),   # 11
 ]
 
 var item_sprites: Array[Sprite2D] = []  # Stores the created item sprites
 @onready var select_box = $SelectBox
 
 @onready var item_type_names: Array[String] = [
+	"Grammarite",
 	"Book",
 	"Held",
-	"Grammarite",
 	"Consumable",
 	"Passive",
 	"Shard"
@@ -58,7 +58,7 @@ func _ready() -> void:
 		item_type_names.remove_at(5)
 		item_type_names.remove_at(4)
 		item_type_names.remove_at(3)
-		item_type_names.remove_at(1)
+		item_type_names.remove_at(2)
 
 func stop():
 	pause = true
@@ -89,8 +89,6 @@ func load_inventory():
 
 func set_active_item_type():
 	$Type.position.y = 15 * selected_item_type
-	if selected_item_type > 2: 
-		$Type.position.y += 1
 
 func clear_item_sprites():
 	# Remove all existing item sprites

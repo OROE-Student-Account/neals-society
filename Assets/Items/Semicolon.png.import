@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b64pw0qd570u8"
-path="res://.godot/imported/Inventory.png-f11b58ffe7a2fbaf2587a66b6987610d.ctex"
+uid="uid://j6fc8nawveb4"
+path="res://.godot/imported/Semicolon.png-5bf72da3af2fd70f4bceb4f02181d217.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Inventory.png"
-dest_files=["res://.godot/imported/Inventory.png-f11b58ffe7a2fbaf2587a66b6987610d.ctex"]
+source_file="res://Assets/Items/Semicolon.png"
+dest_files=["res://.godot/imported/Semicolon.png-5bf72da3af2fd70f4bceb4f02181d217.ctex"]
 
 [params]
 

@@ -69,11 +69,10 @@ is_end_node = true
 text = "A wild grammarite appears!"
 function = "begin_battle"
 func_node = NodePath("../BattleStart")
+display = "<none>"
 
 [node name="BattleStart" type="Node" parent="." unique_id=1929354719]
 script = ExtResource("4_lnori")
 trainer_name = "random"
-reward = "None"
-xp_reward = 5
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

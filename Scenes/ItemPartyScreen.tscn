@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ba4bgv7q8bqd5"]
 
 [ext_resource type="Texture2D" uid="uid://ckbbwuf8tfh1" path="res://Assets/UI/Dialogue.png" id="1_e6h8y"]
-[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="2_6v7vv"]
+[ext_resource type="FontFile" uid="uid://buav1g0xgpfd" path="res://Assets/UI/pkmnfl.ttf" id="2_6v7vv"]
 [ext_resource type="Texture2D" uid="uid://c1wvu8wxyg2pk" path="res://Assets/Items/Glasses.png" id="3_6v7vv"]
 
 [node name="ItemPartyScreen" type="Node2D" unique_id=236429404]
@@ -11,11 +11,10 @@ offset_right = 240.0
 offset_bottom = 160.0
 
 [node name="Box" type="NinePatchRect" parent="." unique_id=723739800]
-offset_left = 23.999998
+offset_left = 16.0
 offset_top = 104.0
-offset_right = 263.99997
+offset_right = 216.0
 offset_bottom = 154.0
-scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_e6h8y")
 patch_margin_left = 7
 patch_margin_top = 3
@@ -26,8 +25,8 @@ patch_margin_bottom = 4
 layout_mode = 0
 offset_left = 9.0
 offset_top = 7.0
-offset_right = 229.99997
-offset_bottom = 40.000015
+offset_right = 191.0
+offset_bottom = 52.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_6v7vv")
 theme_override_font_sizes/font_size = 12

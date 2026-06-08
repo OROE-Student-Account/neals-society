@@ -6,6 +6,7 @@ class_name DialogueTreeNode
 @export var text = "" # text to show when this option is selected
 @export var function = "" # what to do after this is selected
 @export var func_node : Node = null
+@export var display : String = ""
 
 # Precondition, text does not begin or end with replacer
 func replace(search, replacer):

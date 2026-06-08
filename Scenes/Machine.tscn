@@ -29,6 +29,7 @@ debug_color = Color(0.3996365, 0.6092863, 3.85046e-07, 0.41960785)
 [node name="DialogueRoot" type="Node" parent="." unique_id=1687524562]
 script = ExtResource("3_w7ikp")
 text = "Do you want to open the <parent>?"
+display = "<none>"
 
 [node name="Yes" type="Node" parent="DialogueRoot" unique_id=1603144912 node_paths=PackedStringArray("func_node")]
 script = ExtResource("3_w7ikp")

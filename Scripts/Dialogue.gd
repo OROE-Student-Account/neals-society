@@ -51,6 +51,7 @@ func start_dialogue(root: Node):
 	var menu = Utils.get_scene_manager().get_node("Menu")
 	menu.screen_loaded = menu.ScreenLoaded.DIALOGUE
 	
+	
 	$Control/PanelContainer/Name.text = root.get_parent().name
 	
 	# Display the current node
@@ -94,6 +95,13 @@ func display_current_node():
 	select_arrow.visible = false
 	
 	box.visible = true
+	
+	if current_node.display == "<none>":
+		$Control/PanelContainer.visible = false
+	elif current_node.display != "":
+		$Control/PanelContainer.visible = true
+		$Control/PanelContainer/Name.text = current_node.display
+	
 	
 
 func show_options():

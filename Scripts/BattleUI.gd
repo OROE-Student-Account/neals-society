@@ -31,8 +31,8 @@ var selected_button: int = Buttons.FIGHT
 }
 
 # for moves
-const SELECT_ARROW_Y = 7
-const DISTANCE_BETWEEN_MOVES = 10.5
+const SELECT_ARROW_Y = 6
+const DISTANCE_BETWEEN_MOVES = 12
 const NUM_MOVES = 4
 
 const QUESTION_ARROW_POS = [

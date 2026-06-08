@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://oiemmmw7t3ir" path="res://Scripts/BattleManager.gd" id="1_qxnh6"]
 [ext_resource type="Texture2D" uid="uid://b4nmamhpm0fsg" path="res://Assets/UI/Pokemon Party/standby_pokemon_background.png" id="3_6yjxy"]
 [ext_resource type="Texture2D" uid="uid://doloqyf43ogw4" path="res://Assets/Pokemon/Pokemon1.png" id="4_l0uqe"]
-[ext_resource type="FontFile" uid="uid://buav1g0xgpfd" path="res://Assets/UI/pkmnfl.ttf" id="4_qxnh6"]
 [ext_resource type="Script" uid="uid://cshmcr6ld2cga" path="res://Scripts/BattleGrammarite.gd" id="6_6yjxy"]
 [ext_resource type="Texture2D" uid="uid://bei5ll255oguf" path="res://Assets/UI/BattleButton.png" id="7_262jj"]
 [ext_resource type="Texture2D" uid="uid://b3f2eqbc4ki67" path="res://Assets/UI/ui_arrow_right.png" id="8_262jj"]
@@ -407,9 +406,7 @@ offset_left = -216.0
 offset_top = 2.0
 offset_right = -174.0
 offset_bottom = 25.0
-theme_override_colors/font_color = Color(0.26666668, 0.26666668, 0.49803922, 1)
-theme_override_fonts/font = ExtResource("4_qxnh6")
-theme_override_font_sizes/font_size = 12
+theme = ExtResource("8_l0uqe")
 text = "ORAWOGI"
 
 [node name="Level" type="Label" parent="EnemyGrammarite" unique_id=1905606221]
@@ -418,9 +415,7 @@ offset_top = 14.000001
 offset_right = -148.0
 offset_bottom = 37.0
 scale = Vector2(0.8, 0.8)
-theme_override_colors/font_color = Color(0.26666668, 0.26666668, 0.49803922, 1)
-theme_override_fonts/font = ExtResource("4_qxnh6")
-theme_override_font_sizes/font_size = 12
+theme = ExtResource("8_l0uqe")
 text = "67"
 
 [node name="HealthBar" type="ColorRect" parent="EnemyGrammarite" unique_id=646738303]
@@ -456,9 +451,7 @@ offset_left = 112.0
 offset_top = -78.0
 offset_right = 152.0
 offset_bottom = -55.0
-theme_override_colors/font_color = Color(0.26666668, 0.26666668, 0.49803922, 1)
-theme_override_fonts/font = ExtResource("4_qxnh6")
-theme_override_font_sizes/font_size = 12
+theme = ExtResource("8_l0uqe")
 text = "ORAWOGI"
 
 [node name="Level" type="Label" parent="Grammarite" unique_id=1437445434]
@@ -468,9 +461,7 @@ offset_top = -66.0
 offset_right = 180.00002
 offset_bottom = -43.0
 scale = Vector2(0.8, 0.8)
-theme_override_colors/font_color = Color(0.26666668, 0.26666668, 0.49803922, 1)
-theme_override_fonts/font = ExtResource("4_qxnh6")
-theme_override_font_sizes/font_size = 12
+theme = ExtResource("8_l0uqe")
 text = "67"
 
 [node name="Health" type="Label" parent="Grammarite" unique_id=1393091545]
@@ -479,8 +470,7 @@ offset_top = -66.00001
 offset_right = 221.00002
 offset_bottom = -43.000008
 scale = Vector2(0.8, 0.8)
-theme_override_fonts/font = ExtResource("4_qxnh6")
-theme_override_font_sizes/font_size = 12
+theme = ExtResource("8_l0uqe")
 text = "410"
 horizontal_alignment = 2
 
@@ -490,8 +480,7 @@ offset_top = -66.00001
 offset_right = 259.0
 offset_bottom = -43.000008
 scale = Vector2(0.8, 0.8)
-theme_override_fonts/font = ExtResource("4_qxnh6")
-theme_override_font_sizes/font_size = 12
+theme = ExtResource("8_l0uqe")
 text = "230"
 
 [node name="HealthBar" type="ColorRect" parent="Grammarite" unique_id=1225750269]
@@ -599,39 +588,45 @@ vertical_alignment = 1
 [node name="MoveList" type="Node2D" parent="BattleUI" unique_id=577308921]
 position = Vector2(100, 102)
 
-[node name="Moves" type="VBoxContainer" parent="BattleUI/MoveList" unique_id=675319034]
-offset_left = 16.0
+[node name="Moves" type="Control" parent="BattleUI/MoveList" unique_id=719555601]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 18.0
 offset_top = 8.0
-offset_right = 128.0
-offset_bottom = 58.0
+offset_right = 130.0
+offset_bottom = 72.0
 scale = Vector2(0.8, 0.8)
 
 [node name="Move1" type="Label" parent="BattleUI/MoveList/Moves" unique_id=1697623063]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_qxnh6")
-theme_override_font_sizes/font_size = 12
+layout_mode = 0
+offset_top = -2.5
+offset_right = 112.0
+offset_bottom = 10.5
+theme = ExtResource("8_l0uqe")
 text = "Fireball"
 
 [node name="Move2" type="Label" parent="BattleUI/MoveList/Moves" unique_id=691485838]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_qxnh6")
-theme_override_font_sizes/font_size = 12
+layout_mode = 0
+offset_top = 12.500002
+offset_right = 112.0
+offset_bottom = 25.500002
+theme = ExtResource("8_l0uqe")
 text = "Earthquake"
 
 [node name="Move3" type="Label" parent="BattleUI/MoveList/Moves" unique_id=1698969560]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_qxnh6")
-theme_override_font_sizes/font_size = 12
+layout_mode = 0
+offset_top = 27.75
+offset_right = 112.0
+offset_bottom = 40.75
+theme = ExtResource("8_l0uqe")
 text = "Dragon Dance"
 
 [node name="Move4" type="Label" parent="BattleUI/MoveList/Moves" unique_id=238561716]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_qxnh6")
-theme_override_font_sizes/font_size = 12
+layout_mode = 0
+offset_top = 43.5
+offset_right = 112.0
+offset_bottom = 56.5
+theme = ExtResource("8_l0uqe")
 text = "Dig"
 
 [node name="Arrow" type="TextureRect" parent="BattleUI/MoveList" unique_id=1491524785]
@@ -644,13 +639,11 @@ texture = ExtResource("8_262jj")
 
 [node name="InfoText" type="Label" parent="BattleUI" unique_id=111149462]
 visible = false
-offset_left = 105.0
-offset_top = 113.0
-offset_right = 227.0
+offset_left = 108.0
+offset_top = 108.0
+offset_right = 224.0
 offset_bottom = 153.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_qxnh6")
-theme_override_font_sizes/font_size = 12
+theme = ExtResource("8_l0uqe")
 text = "Revive your party at a Grammarite Center before fighting again."
 autowrap_mode = 3
 
@@ -685,9 +678,7 @@ offset_left = 10.0
 offset_top = 10.0
 offset_right = 181.0
 offset_bottom = 33.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_qxnh6")
-theme_override_font_sizes/font_size = 12
+theme = ExtResource("8_l0uqe")
 text = "WHAT? Your Grammarite is evolving!"
 
 [node name="Sprite2D" type="Sprite2D" parent="EvolveScreen" unique_id=46908497]

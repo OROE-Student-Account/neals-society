@@ -32,6 +32,7 @@ hframes = 2
 [node name="PickupDialogue" type="Node" parent="." unique_id=378581256]
 script = ExtResource("3_kg5e7")
 text = "Would you like to open this chest?"
+display = "<none>"
 
 [node name="Node" type="Node" parent="PickupDialogue" unique_id=1734410170 node_paths=PackedStringArray("func_node")]
 script = ExtResource("3_kg5e7")
@@ -53,6 +54,7 @@ is_end_node = true
 text = "You got a <parent>!"
 function = "reset"
 func_node = NodePath("..")
+display = "<none>"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

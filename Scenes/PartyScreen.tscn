@@ -665,37 +665,27 @@ offset_bottom = 65.0
 
 [node name="Summary" type="Label" parent="PageOptions/VBoxContainer" unique_id=1051197184]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("5_row5s")
-theme_override_font_sizes/font_size = 12
+theme = ExtResource("7_lyj1d")
 text = "Summary"
 
 [node name="Switch" type="Label" parent="PageOptions/VBoxContainer" unique_id=819748401]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("5_row5s")
-theme_override_font_sizes/font_size = 12
+theme = ExtResource("7_lyj1d")
 text = "Switch"
 
 [node name="Item" type="Label" parent="PageOptions/VBoxContainer" unique_id=195601569]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("5_row5s")
-theme_override_font_sizes/font_size = 12
+theme = ExtResource("7_lyj1d")
 text = "Item"
 
 [node name="Release" type="Label" parent="PageOptions/VBoxContainer" unique_id=951516403]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("5_row5s")
-theme_override_font_sizes/font_size = 12
+theme = ExtResource("7_lyj1d")
 text = "Release"
 
 [node name="Cancel" type="Label" parent="PageOptions/VBoxContainer" unique_id=1558371454]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("5_row5s")
-theme_override_font_sizes/font_size = 12
+theme = ExtResource("7_lyj1d")
 text = "Cancel"
 
 [node name="Arrow" type="TextureRect" parent="PageOptions" unique_id=1040011129]
@@ -709,7 +699,7 @@ texture = ExtResource("15_fhvdd")
 [node name="SwitchLocation" type="NinePatchRect" parent="." unique_id=724356943]
 visible = false
 offset_left = 172.0
-offset_top = 56.0
+offset_top = 32.0
 offset_right = 238.0
 offset_bottom = 153.0
 texture = ExtResource("4_rxu80")
@@ -727,51 +717,37 @@ offset_bottom = 91.0
 
 [node name="1" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=2011019407]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("5_row5s")
-theme_override_font_sizes/font_size = 12
+theme = ExtResource("7_lyj1d")
 text = "Slot 1"
 
 [node name="2" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=1346129559]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("5_row5s")
-theme_override_font_sizes/font_size = 12
+theme = ExtResource("7_lyj1d")
 text = "Slot 2"
 
 [node name="3" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=1933598985]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("5_row5s")
-theme_override_font_sizes/font_size = 12
+theme = ExtResource("7_lyj1d")
 text = "Slot 3"
 
 [node name="4" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=1979807380]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("5_row5s")
-theme_override_font_sizes/font_size = 12
+theme = ExtResource("7_lyj1d")
 text = "Slot 4"
 
 [node name="5" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=1544587729]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("5_row5s")
-theme_override_font_sizes/font_size = 12
+theme = ExtResource("7_lyj1d")
 text = "Slot 5"
 
 [node name="6" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=1079065639]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("5_row5s")
-theme_override_font_sizes/font_size = 12
+theme = ExtResource("7_lyj1d")
 text = "Slot 6"
 
 [node name="Cancel" type="Label" parent="SwitchLocation/VBoxContainer" unique_id=769751161]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.23921569, 0.27058825, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("5_row5s")
-theme_override_font_sizes/font_size = 12
+theme = ExtResource("7_lyj1d")
 text = "Cancel"
 
 [node name="Arrow" type="TextureRect" parent="SwitchLocation" unique_id=585775761]

@@ -348,6 +348,7 @@ func end_battle(player_won: bool):
 		xp *= (1 + (randf()/2)**2)
 		
 		# scale xp based on level, keep within range of 10-100 xp
+		# for same level grammarites, get 50 xp upon victory
 		xp = min(100, max(10, int( 50 * (xp / int(party[0]["Level"])) )))
 		
 		if fmod(party[0]["Level"], 1.0) + xp*0.01 > 1.0:
