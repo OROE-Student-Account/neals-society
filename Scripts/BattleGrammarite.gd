@@ -28,20 +28,21 @@ func setup():
 		level = int(first_grammarite["Level"])
 		health = first_grammarite["Health"]
 		item = first_grammarite["Item"]
+		max_health = Utils.max_hp(grammarite_name, level)
+		if item == "Colon":
+			max_health *= 1.1
+			max_health += 10
 		
 		for i in range(4):
 			var move_info = Utils.get_move(first_grammarite["Moves"][i])
 			move_info["Name"] = first_grammarite["Moves"][i]
 			grammarite_info["Moves"][i] = move_info
-		
 	else:
 		grammarite_info = Utils.get_grammarite_details(grammarite_name) 
+		max_health = Utils.max_hp(grammarite_name, level)
+		health = max_health
 	
-	
-	max_health = Utils.max_hp(grammarite_name, level)
-	if is_enemy: health = max_health
-	
-	$Level.text = str(level)
+	$Level.text = "lvl "+str(level)
 	if nickname == "":
 		$Name.text = grammarite_name
 	else:
@@ -51,9 +52,8 @@ func setup():
 	$Grammarite.texture = load("res://Assets/Pokemon/Pokemon"+grammadex_num+".png")
 	
 	update_health(0)
-	if not is_enemy:
-		$Health.text = str(health)
-		$MaxHealth.text = str(max_health)
+	$Health.text = str(health)
+	$MaxHealth.text = str(max_health)
 
 
 func update_moves():
@@ -73,8 +73,7 @@ func update_health(change):
 	health_bar.color.g = pecent_health
 	health_bar.color.r = HEALTH_BAR_R - pecent_health
 	
-	if not is_enemy:
-		$Health.text = str(health)
+	$Health.text = str(health)
 
 
 

@@ -253,6 +253,7 @@ func get_question():
 	var returning = { 
 		"Question": question["Question"],
 		"Answer": randi()%4,
+		"Type": type_of_question,
 		"Options": [ "", "", "", "" ]
 	}
 	returning["Options"][returning["Answer"]] = answer

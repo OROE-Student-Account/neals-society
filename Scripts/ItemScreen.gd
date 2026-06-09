@@ -35,8 +35,8 @@ var item_sprites: Array[Sprite2D] = []  # Stores the created item sprites
 @onready var item_type_names: Array[String] = [
 	"Grammarite",
 	"Book",
-	"Held",
 	"Consumable",
+	"Held",
 	"Passive",
 	"Shard"
 ]
@@ -58,7 +58,6 @@ func _ready() -> void:
 		item_type_names.remove_at(5)
 		item_type_names.remove_at(4)
 		item_type_names.remove_at(3)
-		item_type_names.remove_at(2)
 
 func stop():
 	pause = true
@@ -176,25 +175,33 @@ func use_item_on_grammarite():
 	pause = true
 	select_box.visible = false
 	
-	var index = await Utils.get_scene_manager().transition_to_select_screen()
 	
-	var item = Utils.get_item_data(filtered_items[selected_item_index]["Name"])
+	var item_name = filtered_items[selected_item_index]["Name"]
+	var item = Utils.get_item_data(item_name)
 	var party = Utils.get_party()
+	
+	var index = 0
+	if item_name != "Semicolon":
+		index = await Utils.get_scene_manager().transition_to_select_screen()
 	
 	if item["Type"] == "Held":
 		var temp = party[index]["Item"]
-		party[index]["Item"] = filtered_items[selected_item_index]["Name"]
+		party[index]["Item"] = item_name
 		
 		if temp != "":
 			Utils.add_to_inventory(temp)
 	
 	elif item["Type"] == "Grammarite":
-		if filtered_items[selected_item_index]["Name"] == "Potion":
+		if item_name == "Semicolon":
+			if in_battle:
+				var battle_manager = get_parent().get_node("BattleManager")
+				battle_manager._on_player_move_selected(-3)
+		elif item_name == "Potion":
 			var max_hp = Utils.max_hp(party[index]["Name"], party[index]["Level"])
 			party[index]["Health"] = int(min(party[index]["Health"] + (max_hp / 2), max_hp))
 	
 	# Decrease item count
-	if not Utils.remove_from_inventory(filtered_items[selected_item_index]["Name"]):
+	if not Utils.remove_from_inventory(item_name):
 		print("Never was there?")
 	
 	Utils.set_party(party)

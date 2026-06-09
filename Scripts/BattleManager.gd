@@ -65,6 +65,11 @@ func _on_player_move_selected(move_index: int):
 	elif move_index == -2:
 		battle_ui.set_info_text("You got the question wrong.")
 		await get_tree().create_timer(1.0).timeout
+	elif move_index == -3:
+		print("SEMICOLON SLASH!!!")
+		var player_move = player_grammarite.grammarite_info["Moves"][3]
+		await execute_attack(player_grammarite, enemy_grammarite, player_move)
+		# SEMICOLON SLASH!!!!
 	else:
 		var player_move = player_grammarite.grammarite_info["Moves"][move_index]
 		await execute_attack(player_grammarite, enemy_grammarite, player_move)
@@ -145,7 +150,7 @@ func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 		var accuracy = move.get("Accuracy", 0) # If no accuracy included, auto miss
 		if attacker.item == "Glasses": accuracy += 0.25
 		
-		# biases accurcary for player
+		# biases accuracy for player
 		if attacker == enemy_grammarite:
 			accuracy =  (accuracy - 0.05)*0.95
 		
@@ -177,7 +182,6 @@ func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 		
 		# custom formula
 		var damage =  (base_damage*0.1)*int(attack_stat + attack_level + 5)
-		print("Dmg: "+str(damage))
 		# Makes the type chart matter
 		damage *= effectiveness
 		# Add some randomness (85% to 100% of calculated damage)
@@ -198,6 +202,11 @@ func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 			
 		# no negative damage
 		damage = max(0, int(damage)) 
+		
+		# items
+		if attacker.item == "Exclamation Mark": damage *= 1.25
+		if defender.item == "Period": damage *= 0.8
+		elif defender.item == "Comma": damage *= 0.9
 		
 		# Apply damage
 		defender.update_health(-damage)

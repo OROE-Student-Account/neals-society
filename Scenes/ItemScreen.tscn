@@ -91,7 +91,6 @@ offset_bottom = 37.0
 texture = ExtResource("6_rvhgt")
 
 [node name="BattleBlockers" type="Control" parent="." unique_id=873969776]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -99,8 +98,8 @@ offset_bottom = 40.0
 
 [node name="ColorRect" type="ColorRect" parent="BattleBlockers" unique_id=2037675398]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 56.0
+offset_left = 31.0
+offset_top = 71.0
 offset_right = 80.0
 offset_bottom = 112.0
 color = Color(0.9019608, 0.78431374, 0.6117647, 1)
@@ -113,7 +112,7 @@ offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="Money" unique_id=1221989889]
 layout_mode = 0
-offset_left = 28.0
+offset_left = 30.0
 offset_top = 132.0
 offset_right = 82.0
 offset_bottom = 148.0
@@ -127,5 +126,6 @@ offset_top = 10.0
 offset_right = 90.0
 offset_bottom = 33.0
 theme = ExtResource("7_rvhgt")
+theme_override_colors/font_color = Color(0.3529412, 0.24313726, 0.16862746, 1)
 text = "Categories"
 horizontal_alignment = 1

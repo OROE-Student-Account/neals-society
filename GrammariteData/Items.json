@@ -44,6 +44,11 @@
 		"Description": "Heals half of the missing health from a hurt Grammarite.",
 		"Type": "Grammarite"
 	},
+	"Semicolon": {
+		"Description": "Allows your Grammarite to use a world altering move.",
+		"Type": "Grammarite"
+	},
+	
 	
 	"Punctuation Vitamin": {
 		"Description": "Allows you to skip a Punctuation question.",

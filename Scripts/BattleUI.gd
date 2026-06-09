@@ -10,7 +10,7 @@ var pause = false
 @onready var question_screen = preload("res://Scenes/QuestionScreen.tscn")
 var questions: Node2D = null
 
-enum InputState { ACTION_BUTTONS, MOVE_LIST, WAITING, QUESTIONING }
+enum InputState { ACTION_BUTTONS, MOVE_LIST, WAITING, QUESTIONING, EATING }
 var input_state = InputState.ACTION_BUTTONS
 
 
@@ -95,14 +95,32 @@ func ask_question():
 	for i in range(4):
 		questions.get_node("Options/NinePatchRect"+str(i+1)+"/Label").text = question["Options"][i]
 	
+	var vite = questions.get_node("Vitamins")
+	vite.visible = true
+	if Utils.remove_from_inventory(question["Type"]+" Vitamin"):
+		Utils.add_to_inventory(question["Type"]+" Vitamin")
+		vite.get_node("Sprite2D").texture = load("res://Assets/Items/"+question["Type"]+" Vitamin.png")
+	elif Utils.remove_from_inventory("Ultimate Vitamin"):
+		Utils.add_to_inventory("Ultimate Vitamin")
+		vite.get_node("Sprite2D").texture = load("res://Assets/Items/Ultimate Vitamin.png")
+	else:
+		vite.visible = false
 	Utils.get_scene_manager().add_child(questions)
 	
 	input_state = InputState.QUESTIONING
 	selected_button = 0
 	update_selected_option()
 	
-	while input_state == InputState.QUESTIONING:
-		await get_tree().process_frame
+	
+	while input_state == InputState.QUESTIONING or input_state == InputState.EATING:
+		if input_state == InputState.EATING:
+			if Utils.remove_from_inventory(question["Type"]+" Vitamin") or Utils.remove_from_inventory("Ultimate Vitamin"):
+				selected_button = question["Answer"]
+				input_state = InputState.WAITING
+			else:
+				input_state = InputState.QUESTIONING
+		else:
+			await get_tree().process_frame
 	
 	questions.queue_free()
 	questions = null
@@ -200,9 +218,7 @@ func _input(event):
 				
 				show_correct_menu()
 		InputState.QUESTIONING:
-			var d = false
 			if event.is_action_pressed(code[prog]):
-				d = true
 				prog += 1
 				if prog >= len(code) && Utils.get_player_name() == "Hero":
 					pause = true
@@ -221,7 +237,9 @@ func _input(event):
 					Utils.get_scene_manager().get_children().back().queue_free()
 					pause = false
 					prog = 0
-					
+			else:
+				prog = 0
+			
 			if event.is_action_pressed("ui_down"):
 				if selected_button < 2:
 					selected_button += 2
@@ -240,5 +258,6 @@ func _input(event):
 					update_selected_option()
 			elif event.is_action_pressed("z"):
 				input_state = InputState.WAITING
-			if not d: prog = 0
+			elif event.is_action_pressed("q"):
+				input_state = InputState.EATING
 			

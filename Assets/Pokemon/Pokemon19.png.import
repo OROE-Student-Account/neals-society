@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b34q3genfhw7x"
-path="res://.godot/imported/Pokemon20.png-10099246398ba12357952ea8c745431c.ctex"
+uid="uid://c1qre4ms856mk"
+path="res://.godot/imported/Pokemon19.png-f2d54c65dbd7eb77f3af1e2569259a34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Pokemon Party/Pokemon20.png"
-dest_files=["res://.godot/imported/Pokemon20.png-10099246398ba12357952ea8c745431c.ctex"]
+source_file="res://Assets/Pokemon/Pokemon19.png"
+dest_files=["res://.godot/imported/Pokemon19.png-f2d54c65dbd7eb77f3af1e2569259a34.ctex"]
 
 [params]
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://68man2oy86ff" path="res://Scripts/BattleUI.gd" id="1_c5ef4"]
 [ext_resource type="Script" uid="uid://oiemmmw7t3ir" path="res://Scripts/BattleManager.gd" id="1_qxnh6"]
-[ext_resource type="Texture2D" uid="uid://b4nmamhpm0fsg" path="res://Assets/UI/Pokemon Party/standby_pokemon_background.png" id="3_6yjxy"]
+[ext_resource type="Texture2D" uid="uid://bh2l30vm3xyv1" path="res://Assets/UI/hp bar.png" id="2_qxnh6"]
 [ext_resource type="Texture2D" uid="uid://doloqyf43ogw4" path="res://Assets/Pokemon/Pokemon1.png" id="4_l0uqe"]
 [ext_resource type="Script" uid="uid://cshmcr6ld2cga" path="res://Scripts/BattleGrammarite.gd" id="6_6yjxy"]
 [ext_resource type="Texture2D" uid="uid://bei5ll255oguf" path="res://Assets/UI/BattleButton.png" id="7_262jj"]
@@ -396,33 +396,52 @@ script = ExtResource("6_6yjxy")
 is_enemy = true
 
 [node name="Sprite" type="Sprite2D" parent="EnemyGrammarite" unique_id=16898034]
-position = Vector2(-165, 12)
-texture = ExtResource("3_6yjxy")
-hframes = 2
+position = Vector2(-152, 16)
+texture = ExtResource("2_qxnh6")
 
 [node name="Name" type="Label" parent="EnemyGrammarite" unique_id=105707334]
 texture_filter = 1
-offset_left = -216.0
-offset_top = 2.0
-offset_right = -174.0
-offset_bottom = 25.0
+offset_left = -224.0
+offset_top = 7.0
+offset_right = -182.0
+offset_bottom = 30.0
+scale = Vector2(0.9, 0.9)
 theme = ExtResource("8_l0uqe")
 text = "ORAWOGI"
 
 [node name="Level" type="Label" parent="EnemyGrammarite" unique_id=1905606221]
-offset_left = -188.0
-offset_top = 14.000001
-offset_right = -148.0
-offset_bottom = 37.0
-scale = Vector2(0.8, 0.8)
+offset_left = -223.99997
+offset_top = 17.0
+offset_right = -183.99997
+offset_bottom = 40.0
+scale = Vector2(0.75, 0.75)
 theme = ExtResource("8_l0uqe")
 text = "67"
 
+[node name="Health" type="Label" parent="EnemyGrammarite" unique_id=1101307356]
+offset_left = -167.99997
+offset_top = 15.000004
+offset_right = -127.99997
+offset_bottom = 38.000008
+scale = Vector2(0.8, 0.8)
+theme = ExtResource("8_l0uqe")
+text = "410"
+horizontal_alignment = 2
+
+[node name="MaxHealth" type="Label" parent="EnemyGrammarite" unique_id=134419244]
+offset_left = -134.0
+offset_top = 16.000004
+offset_right = -94.000015
+offset_bottom = 39.000008
+scale = Vector2(0.8, 0.8)
+theme = ExtResource("8_l0uqe")
+text = "230"
+
 [node name="HealthBar" type="ColorRect" parent="EnemyGrammarite" unique_id=646738303]
-offset_left = -144.0
-offset_top = 9.0
-offset_right = -96.0
-offset_bottom = 12.0
+offset_left = -162.0
+offset_top = 11.0
+offset_right = -120.0
+offset_bottom = 13.0
 color = Color(0, 1, 0, 1)
 
 [node name="Grammarite" type="Sprite2D" parent="EnemyGrammarite" unique_id=617380561]
@@ -441,53 +460,53 @@ script = ExtResource("6_6yjxy")
 move_vbox = NodePath("../BattleUI/MoveList/Moves")
 
 [node name="Sprite" type="Sprite2D" parent="Grammarite" unique_id=1506915906]
-position = Vector2(163, -68)
-texture = ExtResource("3_6yjxy")
-hframes = 2
+position = Vector2(192, -72)
+texture = ExtResource("2_qxnh6")
 
 [node name="Name" type="Label" parent="Grammarite" unique_id=711573346]
 texture_filter = 1
-offset_left = 112.0
-offset_top = -78.0
-offset_right = 152.0
-offset_bottom = -55.0
+offset_left = 120.0
+offset_top = -81.0
+offset_right = 162.0
+offset_bottom = -58.0
+scale = Vector2(0.9, 0.9)
 theme = ExtResource("8_l0uqe")
 text = "ORAWOGI"
 
 [node name="Level" type="Label" parent="Grammarite" unique_id=1437445434]
 texture_filter = 1
-offset_left = 140.00002
-offset_top = -66.0
-offset_right = 180.00002
-offset_bottom = -43.0
-scale = Vector2(0.8, 0.8)
+offset_left = 120.0
+offset_top = -71.0
+offset_right = 160.0
+offset_bottom = -48.0
+scale = Vector2(0.75, 0.75)
 theme = ExtResource("8_l0uqe")
 text = "67"
 
 [node name="Health" type="Label" parent="Grammarite" unique_id=1393091545]
-offset_left = 181.00002
-offset_top = -66.00001
-offset_right = 221.00002
-offset_bottom = -43.000008
+offset_left = 176.00002
+offset_top = -73.00001
+offset_right = 216.00002
+offset_bottom = -50.000008
 scale = Vector2(0.8, 0.8)
 theme = ExtResource("8_l0uqe")
 text = "410"
 horizontal_alignment = 2
 
 [node name="MaxHealth" type="Label" parent="Grammarite" unique_id=958881348]
-offset_left = 219.00002
-offset_top = -66.00001
-offset_right = 259.0
-offset_bottom = -43.000008
+offset_left = 210.0
+offset_top = -72.00001
+offset_right = 249.99998
+offset_bottom = -49.000008
 scale = Vector2(0.8, 0.8)
 theme = ExtResource("8_l0uqe")
 text = "230"
 
 [node name="HealthBar" type="ColorRect" parent="Grammarite" unique_id=1225750269]
-offset_left = 184.0
-offset_top = -71.0
-offset_right = 232.0
-offset_bottom = -68.0
+offset_left = 182.0
+offset_top = -77.0
+offset_right = 224.0
+offset_bottom = -75.0
 color = Color(0, 1, 0, 1)
 
 [node name="Grammarite" type="Sprite2D" parent="Grammarite" unique_id=93670101]

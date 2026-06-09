@@ -75,7 +75,11 @@ func load_party():
 			$Covers.get_child(i).visible = true
 		else:
 			slot.lvl.text = str(int(slot_data["Level"]))
-			slot.set_health(Utils.max_hp(slot_data["Name"], slot_data["Level"]), slot_data["Health"])
+			var max_hp = Utils.max_hp(slot_data["Name"], slot_data["Level"])
+			if slot_data["Item"] == "Colon":
+				max_hp *= 1.1
+				max_hp += 10
+			slot.set_health(max_hp, slot_data["Health"])
 			slot.set_sprites(Utils.get_poke_num(slot_data["Name"]))
 			slots_enabled[i] = true
 			$Covers.get_child(i).visible = false
