@@ -40,15 +40,22 @@
 		"Description": "Erases status effects from a Grammarite.",
 		"Type": "Grammarite"
 	},
-	"Potion": {
-		"Description": "Heals half of the missing health from a hurt Grammarite.",
-		"Type": "Grammarite"
-	},
 	"Semicolon": {
 		"Description": "Allows your Grammarite to use a world altering move.",
 		"Type": "Grammarite"
 	},
-	
+	"Crumpled Draft": {
+		"Description": "Heals a portion of your Grammarite's health.",
+		"Type": "Grammarite"
+	},
+	"First Rough Draft": {
+		"Description": "Heals a large portion of your Grammarite's health.",
+		"Type": "Grammarite"
+	},
+	"Final Draft": {
+		"Description": "Entirely allows your Grammarite to fully heal and recover.",
+		"Type": "Grammarite"
+	},
 	
 	"Punctuation Vitamin": {
 		"Description": "Allows you to skip a Punctuation question.",

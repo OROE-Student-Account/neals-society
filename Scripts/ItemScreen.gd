@@ -190,15 +190,27 @@ func use_item_on_grammarite():
 		
 		if temp != "":
 			Utils.add_to_inventory(temp)
+			if temp == "Colon" and item_name != "Colon":
+				party[index]["Health"] = min(party[index]["Health"], Utils.max_hp(party[index]["Name"], party[index]["Level"]))
 	
 	elif item["Type"] == "Grammarite":
+		var max_health = Utils.max_hp(party[index]["Name"], party[index]["Level"])
+		if party[index]["Item"] == "Colon":
+			max_health *= 1.1
+			max_health += 10
+		
 		if item_name == "Semicolon":
 			if in_battle:
 				var battle_manager = get_parent().get_node("BattleManager")
 				battle_manager._on_player_move_selected(-3)
-		elif item_name == "Potion":
-			var max_hp = Utils.max_hp(party[index]["Name"], party[index]["Level"])
-			party[index]["Health"] = int(min(party[index]["Health"] + (max_hp / 2), max_hp))
+		elif item_name == "Crumpled Draft":
+			# 10% or 20 Hp, whichever is greater
+			party[index]["Health"] = int(min(max(party[index]["Health"] + 20, party[index]["Health"] + 0.1*max_health), max_health))
+		elif item_name == "First Rough Draft":
+			# 25% or 50 Hp, whichever is greater
+			party[index]["Health"] = int(min(max(party[index]["Health"] + 50, party[index]["Health"] + 0.25*max_health), max_health))
+		elif item_name == "Final Draft":
+			party[index]["Health"] = int(max_health)
 	
 	# Decrease item count
 	if not Utils.remove_from_inventory(item_name):
@@ -214,13 +226,16 @@ func use_item_on_grammarite():
 	select_box.visible = true
 	
 	pause = false
+	if in_battle:
+		exit(item_name == "Semicolon")
+		# Semicolon needs a special exit from battle because it initiates an attack
 
 # battle func
 func exit(thrown):
 	var UI = get_parent().get_node("BattleUI")
 	UI.stop()
 	if !thrown:
-		UI.input_state = 0
+		UI.input_state = UI.InputState.ACTION_BUTTONS
 		UI.show_correct_menu()
 	get_parent().get_node("Grammarite").setup()
 	queue_free()
@@ -243,6 +258,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			elif event.is_action_pressed("ui_right") or event.is_action_pressed("z"):
 				# Go to item selection
 				if filtered_items.size() > 0:
+					$Type.visible = false
 					current_state = State.ITEM_SELECTION
 					select_box.visible = true
 					update_item_info()
@@ -277,6 +293,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				else:
 					# If at leftmost, go back to type selection
 					current_state = State.ITEM_TYPE_SELECT
+					$Type.visible = true
 					select_box.visible = false
 			
 			elif event.is_action_pressed("ui_right"):
@@ -293,4 +310,5 @@ func _unhandled_input(event: InputEvent) -> void:
 			elif event.is_action_pressed("x"):
 				# Go back to type selection
 				current_state = State.ITEM_TYPE_SELECT
+				$Type.visible = true
 				select_box.visible = false

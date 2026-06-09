@@ -31,7 +31,7 @@ func setup():
 		max_health = Utils.max_hp(grammarite_name, level)
 		if item == "Colon":
 			max_health *= 1.1
-			max_health += 10
+			max_health = int(10 + max_health)
 		
 		for i in range(4):
 			var move_info = Utils.get_move(first_grammarite["Moves"][i])

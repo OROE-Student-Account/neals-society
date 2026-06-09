@@ -78,7 +78,7 @@ func load_party():
 			var max_hp = Utils.max_hp(slot_data["Name"], slot_data["Level"])
 			if slot_data["Item"] == "Colon":
 				max_hp *= 1.1
-				max_hp += 10
+				max_hp = int(10 + max_hp)
 			slot.set_health(max_hp, slot_data["Health"])
 			slot.set_sprites(Utils.get_poke_num(slot_data["Name"]))
 			slots_enabled[i] = true

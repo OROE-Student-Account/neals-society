@@ -58,6 +58,9 @@ func fix_party():
 				slot["PP"][j] = Utils.get_move(slot["Moves"][j])["PP"]
 			
 			slot["Health"] = Utils.max_hp(slot["Name"], slot["Level"])
+			if slot["Item"] == "Colon":
+				slot["Health"] *= 1.1
+				slot["Health"] = int(10 + slot["Health"])
 	
 	Utils.set_party(party)
 
