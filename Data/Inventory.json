@@ -64,22 +64,22 @@
 	"Name": "Sehgal",
 	"Party": [
 		{
-			"Health": 122,
+			"Health": 20.0,
 			"Item": "Glasses",
-			"Level": 70.52,
+			"Level": 2.0,
 			"Moves": [
 				"Bite",
 				"Play",
 				"Sit",
 				"Sculpt"
 			],
-			"Name": "Dog of Wood",
+			"Name": "Sculpupture",
 			"Nickname": "",
 			"PP": [
-				14.0,
-				19.0,
 				15.0,
-				5.0
+				20.0,
+				14.0,
+				4.0
 			]
 		},
 		{
@@ -102,22 +102,22 @@
 			]
 		},
 		{
-			"Health": 20.0,
+			"Health": 122.0,
 			"Item": "Glasses",
-			"Level": 2.0,
+			"Level": 70.52,
 			"Moves": [
 				"Bite",
 				"Play",
 				"Sit",
 				"Sculpt"
 			],
-			"Name": "Sculpupture",
+			"Name": "Dog of Wood",
 			"Nickname": "",
 			"PP": [
-				15.0,
-				20.0,
 				14.0,
-				4.0
+				19.0,
+				15.0,
+				5.0
 			]
 		},
 		{

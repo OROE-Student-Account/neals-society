@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dnrkkntt5a7yp"
+path="res://.godot/imported/fire.mp3-ab9461d3c7ee10af1ab07f0d0ce87d90.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Semicolon Slash/fire.mp3"
+dest_files=["res://.godot/imported/fire.mp3-ab9461d3c7ee10af1ab07f0d0ce87d90.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

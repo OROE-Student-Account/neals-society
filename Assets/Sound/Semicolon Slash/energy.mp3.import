@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://oqv4e8opcik3"
+path="res://.godot/imported/energy.mp3-d59390dab00d9d8578dd7b949e53c87e.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Semicolon Slash/energy.mp3"
+dest_files=["res://.godot/imported/energy.mp3-d59390dab00d9d8578dd7b949e53c87e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

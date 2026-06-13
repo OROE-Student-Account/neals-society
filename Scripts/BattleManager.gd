@@ -18,6 +18,7 @@ func _ready():
 	
 	# Connect to battle UI
 	evolve_screen.visible = false
+	get_parent().get_node("SemicolonAnimator").visible = false
 	if battle_ui:
 		battle_ui.move_selected.connect(_on_player_move_selected)
 		if trainer != "random":
@@ -67,8 +68,18 @@ func _on_player_move_selected(move_index: int):
 		await get_tree().create_timer(1.0).timeout
 	elif move_index == -3:
 		print("SEMICOLON SLASH!!!")
-		var player_move = player_grammarite.grammarite_info["Moves"][3]
-		await execute_attack(player_grammarite, enemy_grammarite, player_move)
+		var semi = get_parent().get_node("SemicolonAnimator")
+		
+		semi.get_node("You").texture = load("res://Assets/Pokemon/Pokemon"+str(1+Utils.get_poke_num(player_grammarite.grammarite_name))+".png")
+		semi.get_node("Adversary").texture = load("res://Assets/Pokemon/Pokemon"+str(1+Utils.get_poke_num(enemy_grammarite.grammarite_name))+".png")
+		semi.get_node("explosion").source_texture = load("res://Assets/Pokemon/Pokemon"+str(1+Utils.get_poke_num(enemy_grammarite.grammarite_name))+".png")
+		
+		semi.get_node("Conductor").play("play_full")
+		await get_tree().create_timer(50.0).timeout
+		
+		var move_info = Utils.get_move("Semicolon Slash")
+		move_info["Name"] = "Semicolon Slash"
+		await execute_attack(player_grammarite, enemy_grammarite, move_info)
 		# SEMICOLON SLASH!!!!
 	else:
 		var player_move = player_grammarite.grammarite_info["Moves"][move_index]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b3cna7yoea1m8"
+path="res://.godot/imported/growing-energy.mp3-23076e0e977695d42fa9203eb5765410.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Semicolon Slash/growing-energy.mp3"
+dest_files=["res://.godot/imported/growing-energy.mp3-23076e0e977695d42fa9203eb5765410.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

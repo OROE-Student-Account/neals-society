@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://8nx7huv01ypp"
+path="res://.godot/imported/sword2.mp3-7bff5a472dccb527c1bbf1ca0a19ce1e.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Semicolon Slash/sword2.mp3"
+dest_files=["res://.godot/imported/sword2.mp3-7bff5a472dccb527c1bbf1ca0a19ce1e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

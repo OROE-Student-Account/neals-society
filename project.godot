@@ -20,6 +20,10 @@ config/quit_on_go_back=false
 config/features=PackedStringArray("4.6")
 config/icon="uid://bu6npg7f5rog8"
 
+[audio]
+
+buses/default_bus_layout="uid://obbc4puggb3g"
+
 [autoload]
 
 Utils="*res://Autoload/utils.gd"

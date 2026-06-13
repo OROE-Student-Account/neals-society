@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bnsl4bdc45ar1"
+path="res://.godot/imported/riser.mp3-80101accad72d15d09960598cc9244f7.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Semicolon Slash/riser.mp3"
+dest_files=["res://.godot/imported/riser.mp3-80101accad72d15d09960598cc9244f7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

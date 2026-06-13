@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ks48kippfttp"
+path="res://.godot/imported/bg.mp3-63e75df69254dde9d318e80487077311.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Semicolon Slash/bg.mp3"
+dest_files=["res://.godot/imported/bg.mp3-63e75df69254dde9d318e80487077311.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

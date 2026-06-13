@@ -1,0 +1,179 @@
+[gd_resource type="AudioBusLayout" format=3 uid="uid://obbc4puggb3g"]
+
+[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_j3pel"]
+resource_name = "Distortion"
+pre_gain = -4.7
+keep_hf_hz = 544.0
+drive = 0.17
+post_gain = 2.86
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_j3pel"]
+resource_name = "Reverb"
+room_size = 1.0
+damping = 1.0
+spread = 0.86
+hipass = 0.29
+dry = 0.26
+wet = 0.88
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_j3pel"]
+resource_name = "PitchShift"
+pitch_scale = 2.79
+oversampling = 9
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_g28q7"]
+resource_name = "Reverb"
+room_size = 1.0
+damping = 0.78
+spread = 0.27
+hipass = 0.45
+dry = 0.3
+wet = 1.0
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_g28q7"]
+resource_name = "PitchShift"
+pitch_scale = 0.76
+oversampling = 29
+
+[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_g28q7"]
+resource_name = "Distortion"
+pre_gain = 0.44
+keep_hf_hz = 6440.0
+drive = 0.23
+post_gain = 5.05
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_j3pel"]
+resource_name = "Compressor"
+threshold = -7.6
+ratio = 42.2
+gain = 1.0
+attack_us = 265.0
+release_ms = 887.0
+mix = 0.8
+
+[sub_resource type="AudioEffectPhaser" id="AudioEffectPhaser_j3pel"]
+resource_name = "Phaser"
+range_min_hz = 1744.664
+range_max_hz = 2196.417
+rate_hz = 0.724
+feedback = 0.3
+depth = 0.4
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_n8wo2"]
+resource_name = "Reverb"
+
+[sub_resource type="AudioEffectAmplify" id="AudioEffectAmplify_j3pel"]
+resource_name = "Amplify"
+volume_db = 2.8
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_5t1r3"]
+resource_name = "Reverb"
+room_size = 0.61
+damping = 0.24
+hipass = 0.12
+wet = 0.44
+
+[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_n8wo2"]
+resource_name = "Distortion"
+keep_hf_hz = 11856.0
+drive = 0.22
+
+[sub_resource type="AudioEffectPhaser" id="AudioEffectPhaser_g28q7"]
+resource_name = "Phaser"
+range_max_hz = 1189.963
+rate_hz = 0.37
+feedback = 0.3
+depth = 0.7
+
+[sub_resource type="AudioEffectAmplify" id="AudioEffectAmplify_g28q7"]
+resource_name = "Amplify"
+volume_db = 2.8
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_cenje"]
+resource_name = "Reverb"
+room_size = 0.28
+damping = 0.1
+spread = 0.42
+hipass = 0.22
+wet = 0.25
+
+[resource]
+bus/0/bypass_fx = true
+bus/1/name = &"BG"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = 0.0
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectDistortion_j3pel")
+bus/1/effect/0/enabled = true
+bus/1/effect/1/effect = SubResource("AudioEffectReverb_j3pel")
+bus/1/effect/1/enabled = true
+bus/2/name = &"Whoosh"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = 0.0
+bus/2/send = &"Master"
+bus/3/name = &"Fire"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = 0.0
+bus/3/send = &"Master"
+bus/3/effect/0/effect = SubResource("AudioEffectPitchShift_j3pel")
+bus/3/effect/0/enabled = true
+bus/4/name = &"Beam"
+bus/4/solo = false
+bus/4/mute = false
+bus/4/bypass_fx = false
+bus/4/volume_db = 0.0
+bus/4/send = &"Master"
+bus/4/effect/0/effect = SubResource("AudioEffectReverb_g28q7")
+bus/4/effect/0/enabled = true
+bus/4/effect/1/effect = SubResource("AudioEffectPitchShift_g28q7")
+bus/4/effect/1/enabled = true
+bus/4/effect/2/effect = SubResource("AudioEffectDistortion_g28q7")
+bus/4/effect/2/enabled = true
+bus/4/effect/3/effect = SubResource("AudioEffectCompressor_j3pel")
+bus/4/effect/3/enabled = true
+bus/4/effect/4/effect = SubResource("AudioEffectPhaser_j3pel")
+bus/4/effect/4/enabled = true
+bus/5/name = &"Laugh"
+bus/5/solo = false
+bus/5/mute = false
+bus/5/bypass_fx = false
+bus/5/volume_db = 0.0
+bus/5/send = &"Master"
+bus/5/effect/0/effect = SubResource("AudioEffectReverb_n8wo2")
+bus/5/effect/0/enabled = true
+bus/6/name = &"Explosion"
+bus/6/solo = false
+bus/6/mute = false
+bus/6/bypass_fx = false
+bus/6/volume_db = 0.0
+bus/6/send = &"Master"
+bus/6/effect/0/effect = SubResource("AudioEffectAmplify_j3pel")
+bus/6/effect/0/enabled = true
+bus/6/effect/1/effect = SubResource("AudioEffectReverb_5t1r3")
+bus/6/effect/1/enabled = true
+bus/7/name = &"Bone"
+bus/7/solo = false
+bus/7/mute = false
+bus/7/bypass_fx = false
+bus/7/volume_db = 0.0
+bus/7/send = &"Master"
+bus/7/effect/0/effect = SubResource("AudioEffectDistortion_n8wo2")
+bus/7/effect/0/enabled = true
+bus/7/effect/1/effect = SubResource("AudioEffectPhaser_g28q7")
+bus/7/effect/1/enabled = true
+bus/8/name = &"Bone Explosion"
+bus/8/solo = false
+bus/8/mute = false
+bus/8/bypass_fx = false
+bus/8/volume_db = 0.0
+bus/8/send = &"Master"
+bus/8/effect/0/effect = SubResource("AudioEffectAmplify_g28q7")
+bus/8/effect/0/enabled = true
+bus/8/effect/1/effect = SubResource("AudioEffectReverb_cenje")
+bus/8/effect/1/enabled = true

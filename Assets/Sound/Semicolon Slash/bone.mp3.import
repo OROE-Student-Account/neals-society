@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c04iuuc7l3wmr"
+path="res://.godot/imported/bone.mp3-83bffd02b6f245315cf3f431ec74b89e.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Semicolon Slash/bone.mp3"
+dest_files=["res://.godot/imported/bone.mp3-83bffd02b6f245315cf3f431ec74b89e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

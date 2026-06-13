@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://46cc3n8tj64w"
+path="res://.godot/imported/crazy-laugh.mp3-ac4bcae5c67a71dc2929a49219234f9c.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Semicolon Slash/crazy-laugh.mp3"
+dest_files=["res://.godot/imported/crazy-laugh.mp3-ac4bcae5c67a71dc2929a49219234f9c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
