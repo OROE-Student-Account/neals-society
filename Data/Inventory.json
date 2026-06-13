@@ -18,13 +18,13 @@
 		"Homework Shard",
 		"Supply Shard",
 		"Nature Shard",
-		"Glasses",
-		"Glasses",
-		"Glasses",
-		"Glasses",
-		"Glasses",
-		"Glasses",
-		"Glasses",
+		"Reading Glasses",
+		"Reading Glasses",
+		"Reading Glasses",
+		"Reading Glasses",
+		"Reading Glasses",
+		"Reading Glasses",
+		"Reading Glasses",
 		"Story Book",
 		"Story Book",
 		"Story Book",
@@ -38,9 +38,6 @@
 		"Colon",
 		"Eraser",
 		"Semicolon",
-		"Ultimate Vitamin",
-		"Ultimate Vitamin",
-		"Ultimate Vitamin",
 		"Ultimate Vitamin",
 		"Ultimate Vitamin",
 		"Punctuation Vitamin",
@@ -58,15 +55,19 @@
 		"Final Draft",
 		"Final Draft",
 		"Children's Book",
+		"Children's Book",
+		"Ultimate Vitamin",
+		"Ultimate Vitamin",
+		"Ultimate Vitamin",
 		"Children's Book"
 	],
-	"Money": 15.0,
+	"Money": 20.0,
 	"Name": "Sehgal",
 	"Party": [
 		{
-			"Health": 20.0,
-			"Item": "Glasses",
-			"Level": 2.0,
+			"Health": 7.0,
+			"Item": "Reading Glasses",
+			"Level": 3.0,
 			"Moves": [
 				"Bite",
 				"Play",
@@ -76,15 +77,15 @@
 			"Name": "Sculpupture",
 			"Nickname": "",
 			"PP": [
-				15.0,
+				14.0,
 				20.0,
 				14.0,
-				4.0
+				3.0
 			]
 		},
 		{
-			"Health": 20.0,
-			"Item": "Glasses",
+			"Health": 0.0,
+			"Item": "Reading Glasses",
 			"Level": 33.13,
 			"Moves": [
 				"Bite",
@@ -95,7 +96,7 @@
 			"Name": "Orawolfi",
 			"Nickname": "",
 			"PP": [
-				13.0,
+				12.0,
 				20.0,
 				15.0,
 				5.0
@@ -103,7 +104,7 @@
 		},
 		{
 			"Health": 122.0,
-			"Item": "Glasses",
+			"Item": "Reading Glasses",
 			"Level": 70.52,
 			"Moves": [
 				"Bite",

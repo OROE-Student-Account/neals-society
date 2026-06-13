@@ -9,29 +9,6 @@
 		"Knowledge Shard",
 		"Machine Shard",
 		"Ink Shard",
-		"Potion",
-		"Potion",
-		"Potion",
-		"Potion",
-		"Potion",
-		"Potion",
-		"Potion",
-		"Potion",
-		"Potion",
-		"Potion",
-		"Potion",
-		"Potion",
-		"Potion",
-		"Potion",
-		"Potion",
-		"Potion",
-		"Potion",
-		"Potion",
-		"Potion",
-		"Potion",
-		"Potion",
-		"Potion",
-		"Potion",
 		"Animal Shard",
 		"Animal Shard",
 		"Animal Shard",
@@ -41,23 +18,74 @@
 		"Homework Shard",
 		"Supply Shard",
 		"Nature Shard",
-		"Glasses",
-		"Glasses",
-		"Glasses",
-		"Glasses",
-		"Glasses",
-		"Glasses",
-		"Glasses",
+		"Reading Glasses",
+		"Reading Glasses",
+		"Reading Glasses",
+		"Reading Glasses",
+		"Reading Glasses",
+		"Reading Glasses",
+		"Reading Glasses",
+		"Story Book",
+		"Story Book",
+		"Story Book",
+		"Story Book",
 		"Story Book",
 		"Animal Shard",
+		"Exclamation Mark",
+		"Question Mark",
+		"Comma",
+		"Period",
+		"Colon",
+		"Eraser",
+		"Semicolon",
+		"Ultimate Vitamin",
+		"Ultimate Vitamin",
+		"Punctuation Vitamin",
+		"Vocabulary Vitamin",
+		"Crumpled Draft",
+		"Crumpled Draft",
+		"First Rough Draft",
+		"First Rough Draft",
+		"First Rough Draft",
+		"Final Draft",
+		"Final Draft",
+		"Final Draft",
+		"Final Draft",
+		"Final Draft",
+		"Final Draft",
+		"Final Draft",
+		"Children's Book",
+		"Children's Book",
+		"Ultimate Vitamin",
+		"Ultimate Vitamin",
+		"Ultimate Vitamin",
 		"Children's Book"
 	],
-	"Money": 0.0,
+	"Money": 20.0,
 	"Name": "Sehgal",
 	"Party": [
 		{
-			"Health": 10.0,
-			"Item": "Glasses",
+			"Health": 7.0,
+			"Item": "Reading Glasses",
+			"Level": 3.0,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Sculpt"
+			],
+			"Name": "Sculpupture",
+			"Nickname": "",
+			"PP": [
+				14.0,
+				20.0,
+				14.0,
+				3.0
+			]
+		},
+		{
+			"Health": 0.0,
+			"Item": "Reading Glasses",
 			"Level": 33.13,
 			"Moves": [
 				"Bite",
@@ -68,35 +96,16 @@
 			"Name": "Orawolfi",
 			"Nickname": "",
 			"PP": [
-				14.0,
+				12.0,
 				20.0,
 				15.0,
 				5.0
 			]
 		},
 		{
-			"Health": 12.0,
-			"Item": "Glasses",
-			"Level": 1.0,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Sit",
-				"Sculpt"
-			],
-			"Name": "Sculpupture",
-			"Nickname": "",
-			"PP": [
-				15.0,
-				20.0,
-				15.0,
-				5.0
-			]
-		},
-		{
-			"Health": 197.0,
-			"Item": "Glasses",
-			"Level": 70.01,
+			"Health": 122.0,
+			"Item": "Reading Glasses",
+			"Level": 70.52,
 			"Moves": [
 				"Bite",
 				"Play",
@@ -106,8 +115,8 @@
 			"Name": "Dog of Wood",
 			"Nickname": "",
 			"PP": [
-				15.0,
-				20.0,
+				14.0,
+				19.0,
 				15.0,
 				5.0
 			]
@@ -132,23 +141,13 @@
 			]
 		},
 		{
-			"Health": 22.0,
+			"Health": 0.0,
 			"Item": "",
 			"Level": 1.0,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Sit",
-				"Woodchip"
-			],
-			"Name": "Dog of Wood",
+			"Moves": [],
+			"Name": "",
 			"Nickname": "",
-			"PP": [
-				15.0,
-				20.0,
-				15.0,
-				1.0
-			]
+			"PP": []
 		},
 		{
 			"Health": 0.0,

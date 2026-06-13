@@ -130,7 +130,10 @@ func on_player_grammarite_die(in_battle: bool):
 			living_index = i
 			break
 	
+	# living index = location of alive grammarite
+	
 	if living_index == -1:
+		# all dead
 		if in_battle:
 			end_battle(false)
 		return false
@@ -141,6 +144,13 @@ func on_player_grammarite_die(in_battle: bool):
 		Utils.set_party(party)
 		
 		get_parent().get_node("Grammarite").setup()
+		
+		if temp["Item"] == "Red Stamp":
+			battle_ui.set_info_text(temp["Name"]+" used a red stamp!")
+			await get_tree().create_timer(1.0).timeout
+			
+			end_battle(true)
+			return false
 		
 		if in_battle:
 			battle_ui.set_info_text(temp["Name"]+" died, go "+player_grammarite.grammarite_name+"!")
@@ -247,7 +257,6 @@ func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 
 func calc_stat(base, level):
 	return 5 + level + 0.01 * level * base
-
 
 func throw_book(book_name):
 	if current_state != BattleState.PLAYER_TURN or trainer != "random": return

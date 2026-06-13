@@ -9,8 +9,7 @@
 	},
 	
 	
-	
-	"Glasses": {
+	"Reading Glasses": {
 		"Description": "Improves vision, making attacks more likely to hit.",
 		"Type": "Held"
 	},
@@ -31,6 +30,18 @@
 		"Type": "Held"
 	},
 	"Comma": {
+		"Description": "Partially stops attacks in their tracks.",
+		"Type": "Held"
+	},
+	"Red Stamp": {
+		"Description": "Partially stops attacks in their tracks.",
+		"Type": "Held"
+	},
+	"Emoji": {
+		"Description": "Partially stops attacks in their tracks.",
+		"Type": "Held"
+	},
+	"Sticky Note": {
 		"Description": "Partially stops attacks in their tracks.",
 		"Type": "Held"
 	},
@@ -56,6 +67,19 @@
 		"Description": "Entirely allows your Grammarite to fully heal and recover.",
 		"Type": "Grammarite"
 	},
+	"Apple": {
+		"Description": "Feed your Grammarite to make it a bit stronger.",
+		"Type": "Grammarite"
+	},
+	"Orange": {
+		"Description": "Feed your Grammarite to make it stronger.",
+		"Type": "Grammarite"
+	},
+	"Banana": {
+		"Description": "Feed your Grammarite to make it a lot stronger.",
+		"Type": "Grammarite"
+	},
+	
 	
 	"Punctuation Vitamin": {
 		"Description": "Allows you to skip a Punctuation question.",
@@ -73,7 +97,6 @@
 		"Description": "Allows you to skip any question.",
 		"Type": "Consumable"
 	},
-	
 	
 	
 	"Grammar Shard": {

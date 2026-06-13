@@ -211,6 +211,12 @@ func use_item_on_grammarite():
 			party[index]["Health"] = int(min(max(party[index]["Health"] + 50, party[index]["Health"] + 0.25*max_health), max_health))
 		elif item_name == "Final Draft":
 			party[index]["Health"] = int(max_health)
+		elif item_name == "Apple":
+			party[index]["Level"] += 0.5
+		elif item_name == "Orange":
+			party[index]["Level"] += 1
+		elif item_name == "Banana":
+			party[index]["Level"] += 2
 	
 	# Decrease item count
 	if not Utils.remove_from_inventory(item_name):
