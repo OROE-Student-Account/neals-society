@@ -22,10 +22,15 @@ func set_health(max_health: int, current: int):
 	if current <= 0:
 		kill()
 
-func set_sprites(num):
-	var file_path = "res://Assets/Pokemon/Pokemon"+str(num+1)+".png"
-	$PokemonPartySprite.texture = load(file_path)
-	$GrammariteName.text = Utils.get_name_from_num(num)
+func set_sprites(index):
+	var slot_data = Utils.get_party()[index]
+	var num = Utils.get_poke_num(slot_data["Name"])
+	
+	$PokemonPartySprite.texture = load("res://Assets/Pokemon/Pokemon"+str(num+1)+".png")
+	if slot_data["Nickname"] == "":
+		$GrammariteName.text = slot_data["Name"]
+	else:
+		$GrammariteName.text = slot_data["Nickname"]
 
 func kill():
 	$AnimationPlayer.stop()

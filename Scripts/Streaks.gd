@@ -6,7 +6,7 @@ var scaler = 0
 func smooth_transition():
 	scaler = 0
 	const min = 10
-	const max = 30
+	const max = 40
 	const time = 3.5
 	var children = get_children()
 	

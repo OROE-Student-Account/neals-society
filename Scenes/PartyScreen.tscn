@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://s48ynud6ed77"]
 
-[ext_resource type="Script" uid="uid://gtkl713auage" path="res://Scripts/PokemonPartyScreen.gd" id="1_0goak"]
+[ext_resource type="Script" uid="uid://gtkl713auage" path="res://Scripts/PartyScreen.gd" id="1_0goak"]
 [ext_resource type="Texture2D" uid="uid://bw3bqnx3kggm6" path="res://Assets/UI/Pokemon Party/PartyScreen.png" id="2_fhvdd"]
 [ext_resource type="Texture2D" uid="uid://cf0txma36318t" path="res://Assets/UI/Pokemon Party/PartyScreenSelect.png" id="3_ehsf2"]
 [ext_resource type="Texture2D" uid="uid://ckbbwuf8tfh1" path="res://Assets/UI/Dialogue.png" id="4_rxu80"]
@@ -647,7 +647,7 @@ hframes = 2
 [node name="PageOptions" type="NinePatchRect" parent="." unique_id=1769560236]
 visible = false
 offset_left = 172.0
-offset_top = 68.0
+offset_top = 53.0
 offset_right = 238.0
 offset_bottom = 158.0
 texture = ExtResource("4_rxu80")
@@ -660,8 +660,8 @@ patch_margin_bottom = 4
 layout_mode = 0
 offset_left = 16.0
 offset_top = 4.0
-offset_right = 57.0
-offset_bottom = 65.0
+offset_right = 59.0
+offset_bottom = 102.0
 
 [node name="Summary" type="Label" parent="PageOptions/VBoxContainer" unique_id=1051197184]
 layout_mode = 2
@@ -682,6 +682,11 @@ text = "Item"
 layout_mode = 2
 theme = ExtResource("7_lyj1d")
 text = "Release"
+
+[node name="Nickname" type="Label" parent="PageOptions/VBoxContainer" unique_id=1383331319]
+layout_mode = 2
+theme = ExtResource("7_lyj1d")
+text = "Nickname"
 
 [node name="Cancel" type="Label" parent="PageOptions/VBoxContainer" unique_id=1558371454]
 layout_mode = 2

@@ -80,7 +80,7 @@ func load_party():
 				max_hp *= 1.1
 				max_hp = int(10 + max_hp)
 			slot.set_health(max_hp, slot_data["Health"])
-			slot.set_sprites(Utils.get_poke_num(slot_data["Name"]))
+			slot.set_sprites(i)
 			slots_enabled[i] = true
 			$Covers.get_child(i).visible = false
 

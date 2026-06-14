@@ -50,6 +50,8 @@ func load_naming_screen(initial_prompt):
 	menu.screen_loaded = saved_screen
 	pause = true
 	
+	queue_free()
+	
 	return chosen_name
 
 func get_chosen_name() -> String:

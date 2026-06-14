@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://bgjd8lvacu6gg" path="res://Scripts/SceneManager.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://bkml6dq0xfdp7" path="res://Scenes/Menu.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://i0am2murs47p" path="res://Scenes/Dialogue.tscn" id="4_026ex"]
-[ext_resource type="PackedScene" uid="uid://dumf4h3qchxhv" path="res://Scenes/NamingScreen.tscn" id="5_83gc0"]
 [ext_resource type="PackedScene" uid="uid://dvpfferedor81" path="res://Scenes/SelectScene.tscn" id="6_8ysa5"]
 
 [sub_resource type="Animation" id="1"]
@@ -130,8 +129,6 @@ script = ExtResource("2")
 [node name="DialogueBox" parent="." unique_id=1573204064 instance=ExtResource("4_026ex")]
 scale = Vector2(5, 5)
 transform = Transform2D(5, 0, 0, 5, 0, 0)
-
-[node name="NamingScreen" parent="." unique_id=36144054 instance=ExtResource("5_83gc0")]
 
 [node name="GrammariteSelectScreen" parent="." unique_id=945001003 instance=ExtResource("6_8ysa5")]
 

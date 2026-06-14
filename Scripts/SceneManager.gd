@@ -15,6 +15,7 @@ var transition_type = "New Scene"
 
 @onready var scene = $CurrentScene
 @onready var menu =  $Menu
+@onready var naming_screen = preload("res://Scenes/NamingScreen.tscn")
 
 
 
@@ -45,6 +46,8 @@ func transition_to_naming_screen(from_node: Node):
 	transition_type = "Naming"
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 	name_request_node = from_node
+	var namer = naming_screen.instantiate()
+	self.add_child(namer)
 
 func transition_to_select_screen():
 	return await $GrammariteSelectScreen.load_screen()

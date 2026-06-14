@@ -2,7 +2,6 @@
 	"Abilities": [],
 	"Items": [
 		"Story Book",
-		"Story Book",
 		"Knowledge Shard",
 		"Slang Shard",
 		"Paper Shard",
@@ -37,35 +36,68 @@
 		"Period",
 		"Colon",
 		"Eraser",
-		"Semicolon",
+		"Crumpled Draft",
+		"First Rough Draft",
+		"First Rough Draft",
+		"First Rough Draft",
+		"Final Draft",
+		"Final Draft",
+		"Final Draft",
+		"Final Draft",
+		"Final Draft",
+		"Final Draft",
+		"Final Draft",
 		"Ultimate Vitamin",
 		"Ultimate Vitamin",
-		"Punctuation Vitamin",
+		"Ultimate Vitamin",
+		"Ultimate Vitamin",
+		"Ultimate Vitamin",
 		"Vocabulary Vitamin",
-		"Crumpled Draft",
-		"Crumpled Draft",
-		"First Rough Draft",
-		"First Rough Draft",
-		"First Rough Draft",
-		"Final Draft",
-		"Final Draft",
-		"Final Draft",
-		"Final Draft",
-		"Final Draft",
-		"Final Draft",
-		"Final Draft",
-		"Children's Book",
-		"Children's Book",
-		"Ultimate Vitamin",
-		"Ultimate Vitamin",
-		"Ultimate Vitamin",
-		"Children's Book"
+		"Punctuation Vitamin"
 	],
-	"Money": 20.0,
-	"Name": "Sehgal",
+	"Money": 30.0,
+	"Name": "Hero",
 	"Party": [
 		{
-			"Health": 7.0,
+			"Health": 21.0,
+			"Item": "Reading Glasses",
+			"Level": 71.29,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Sculpt"
+			],
+			"Name": "Sculpupture",
+			"Nickname": ">",
+			"PP": [
+				12.0,
+				19.0,
+				15.0,
+				5.0
+			]
+		},
+		{
+			"Health": 53.0,
+			"Item": "",
+			"Level": 35.03,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Sculpt"
+			],
+			"Name": "Orawolfi",
+			"Nickname": "Test",
+			"PP": [
+				15.0,
+				20.0,
+				15.0,
+				5.0
+			]
+		},
+		{
+			"Health": 0.0,
 			"Item": "Reading Glasses",
 			"Level": 3.0,
 			"Moves": [
@@ -75,12 +107,12 @@
 				"Sculpt"
 			],
 			"Name": "Sculpupture",
-			"Nickname": "",
+			"Nickname": "Christopher",
 			"PP": [
-				14.0,
+				13.0,
 				20.0,
-				14.0,
-				3.0
+				13.0,
+				2.0
 			]
 		},
 		{
@@ -94,7 +126,7 @@
 				"Sculpt"
 			],
 			"Name": "Orawolfi",
-			"Nickname": "",
+			"Nickname": "[ ]",
 			"PP": [
 				12.0,
 				20.0,
@@ -103,26 +135,7 @@
 			]
 		},
 		{
-			"Health": 122.0,
-			"Item": "Reading Glasses",
-			"Level": 70.52,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Sit",
-				"Sculpt"
-			],
-			"Name": "Dog of Wood",
-			"Nickname": "",
-			"PP": [
-				14.0,
-				19.0,
-				15.0,
-				5.0
-			]
-		},
-		{
-			"Health": 184.0,
+			"Health": 0.0,
 			"Item": "",
 			"Level": 65.6,
 			"Moves": [
@@ -132,9 +145,9 @@
 				"Woodchip"
 			],
 			"Name": "Dog of Wood",
-			"Nickname": "",
+			"Nickname": "Juan Diaz",
 			"PP": [
-				15.0,
+				13.0,
 				20.0,
 				15.0,
 				1.0
@@ -143,20 +156,21 @@
 		{
 			"Health": 0.0,
 			"Item": "",
-			"Level": 1.0,
-			"Moves": [],
-			"Name": "",
-			"Nickname": "",
-			"PP": []
-		},
-		{
-			"Health": 0.0,
-			"Item": "",
-			"Level": 1.0,
-			"Moves": [],
-			"Name": "",
-			"Nickname": "",
-			"PP": []
+			"Level": 14.0,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Woodchip"
+			],
+			"Name": "Dog of Wood",
+			"Nickname": "WWWWWWWWWWWWWWW",
+			"PP": [
+				15.0,
+				20.0,
+				15.0,
+				1.0
+			]
 		}
 	]
 }

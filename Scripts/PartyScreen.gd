@@ -3,13 +3,13 @@ extends Node2D
 var pause = false
 
 
-enum Page { MAIN, CHOSEN, SUMMARY, ITEM, SWITCH, MOVES }
+enum Page { MAIN, CHOSEN, SUMMARY, ITEM, SWITCH, MOVES, NAMING }
 var page: int = Page.MAIN
 
 var selected_move = 0
 
 var selected_sub_page: int = 0
-var num_actions = 5 # This is like, switch, summary, item, release, cancel
+var num_actions = 6 # This is like, switch, summary, item, release, name, cancel
 const start_y_arrow = 3
 const dist_options = 17
 
@@ -60,6 +60,21 @@ func update_select_box():
 func _ready():
 	update_select_box()
 	load_party()
+	Utils.get_scene_manager().name_selected.connect(_recieve_name)
+
+
+var name_prompt = "What do you want to name this Grammarite?"
+func _recieve_name(chosen_name, from_node):
+	if from_node != self: return
+	
+	var party = Utils.get_party()
+	party[selected_option]["Nickname"] = chosen_name
+	Utils.set_party(party)
+	load_party()
+	
+	page = Page.MAIN
+	update_page()
+
 
 func load_party():
 	var party = Utils.get_party()
@@ -77,7 +92,7 @@ func load_party():
 				max_hp *= 1.1
 				max_hp = int(10 + max_hp)
 			slot.set_health(max_hp, slot_data["Health"])
-			slot.set_sprites(Utils.get_poke_num(slot_data["Name"]))
+			slot.set_sprites(i)
 			slots_enabled[i] = true
 			$Covers.get_child(i).visible = false
 
@@ -446,6 +461,9 @@ func _input(event):
 					page = Page.MAIN
 					update_page()
 					release()
+				elif selected_sub_page == 4:
+					page = Page.NAMING
+					Utils.get_scene_manager().transition_to_naming_screen(self)
 		Page.SUMMARY:
 			if event.is_action_pressed("x"):
 				page = Page.CHOSEN
