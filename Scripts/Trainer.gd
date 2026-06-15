@@ -97,6 +97,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if player_facing == 3:
 			anim_player.play("TurnAround")
 		
+		
 		if used_up: 
 			used_up_dialogue()
 			return

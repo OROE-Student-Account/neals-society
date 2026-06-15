@@ -16,6 +16,9 @@
 			"Fighter": {
 				"Talked": false
 			},
+			"OldmanBench": {
+				"Talked": false
+			},
 			"Rival": {
 				"Talked": false
 			},

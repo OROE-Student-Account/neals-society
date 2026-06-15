@@ -51,9 +51,7 @@
 		"Ultimate Vitamin",
 		"Ultimate Vitamin",
 		"Ultimate Vitamin",
-		"Vocabulary Vitamin",
 		"Ultimate Vitamin",
-		"Punctuation Vitamin",
 		"Children's Book",
 		"Red Stamp",
 		"Emoji",
@@ -61,13 +59,34 @@
 		"Quotations",
 		"Hyphen",
 		"Dash",
-		"Semicolon"
+		"Semicolon",
+		"Vocabulary Vitamin",
+		"Punctuation Vitamin"
 	],
-	"Money": 30.0,
+	"Money": 5.0,
 	"Name": "Hero",
 	"Party": [
 		{
-			"Health": 20.0,
+			"Health": 218.0,
+			"Item": "Reading Glasses",
+			"Level": 71.56,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Sculpt"
+			],
+			"Name": "Sculpupture",
+			"Nickname": ">",
+			"PP": [
+				14.0,
+				20.0,
+				15.0,
+				5.0
+			]
+		},
+		{
+			"Health": 0.0,
 			"Item": "",
 			"Level": 35.25,
 			"Moves": [
@@ -86,26 +105,7 @@
 			]
 		},
 		{
-			"Health": 0.0,
-			"Item": "Reading Glasses",
-			"Level": 71.29,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Sit",
-				"Sculpt"
-			],
-			"Name": "Sculpupture",
-			"Nickname": ">",
-			"PP": [
-				11.0,
-				19.0,
-				15.0,
-				5.0
-			]
-		},
-		{
-			"Health": 0.0,
+			"Health": 28.0,
 			"Item": "Reading Glasses",
 			"Level": 3.0,
 			"Moves": [
@@ -117,14 +117,14 @@
 			"Name": "Sculpupture",
 			"Nickname": "Christopher",
 			"PP": [
-				13.0,
+				15.0,
 				20.0,
-				13.0,
-				2.0
+				15.0,
+				5.0
 			]
 		},
 		{
-			"Health": 0.0,
+			"Health": 20.0,
 			"Item": "Reading Glasses",
 			"Level": 33.13,
 			"Moves": [
@@ -136,14 +136,14 @@
 			"Name": "Orawolfi",
 			"Nickname": "[ ]",
 			"PP": [
-				12.0,
+				15.0,
 				20.0,
 				15.0,
 				5.0
 			]
 		},
 		{
-			"Health": 0.0,
+			"Health": 195.0,
 			"Item": "",
 			"Level": 65.6,
 			"Moves": [
@@ -155,14 +155,14 @@
 			"Name": "Dog of Wood",
 			"Nickname": "Juan Diaz",
 			"PP": [
-				13.0,
+				15.0,
 				20.0,
 				15.0,
 				1.0
 			]
 		},
 		{
-			"Health": 0.0,
+			"Health": 57.0,
 			"Item": "",
 			"Level": 14.0,
 			"Moves": [

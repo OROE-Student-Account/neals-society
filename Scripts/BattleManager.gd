@@ -30,6 +30,7 @@ func _ready():
 		battle_ui.set_info_text("Revive your party at a Grammarite Center before fighting again.")
 		await get_tree().create_timer(4.0).timeout
 		end_battle(false)
+		return
 	
 	start_battle()
 
