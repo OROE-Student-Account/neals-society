@@ -33,8 +33,16 @@
 		"Description": "Partially stops attacks in their tracks.",
 		"Type": "Held"
 	},
+	"Dash": {
+		"Description": "Allows your Grammarite to move and act faster.",
+		"Type": "Held"
+	},
+	"Hyphen": {
+		"Description": "Helps boost your Grammarite's Speed and Attack.",
+		"Type": "Held"
+	},
 	"Red Stamp": {
-		"Description": "Partially stops attacks in their tracks.",
+		"Description": "'This hurts me more than it hurts you'  -Liar.",
 		"Type": "Held"
 	},
 	"Emoji": {
@@ -53,6 +61,10 @@
 	},
 	"Semicolon": {
 		"Description": "Allows your Grammarite to use a world altering move.",
+		"Type": "Grammarite"
+	},
+	"Quotations": {
+		"Description": "Allows your Grammarite to steal the opponent's move.",
 		"Type": "Grammarite"
 	},
 	"Crumpled Draft": {

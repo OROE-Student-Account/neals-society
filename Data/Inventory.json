@@ -51,15 +51,42 @@
 		"Ultimate Vitamin",
 		"Ultimate Vitamin",
 		"Ultimate Vitamin",
-		"Ultimate Vitamin",
 		"Vocabulary Vitamin",
-		"Punctuation Vitamin"
+		"Ultimate Vitamin",
+		"Punctuation Vitamin",
+		"Children's Book",
+		"Red Stamp",
+		"Emoji",
+		"Sticky Note",
+		"Quotations",
+		"Hyphen",
+		"Dash",
+		"Semicolon"
 	],
 	"Money": 30.0,
 	"Name": "Hero",
 	"Party": [
 		{
-			"Health": 21.0,
+			"Health": 20.0,
+			"Item": "",
+			"Level": 35.25,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Sculpt"
+			],
+			"Name": "Orawolfi",
+			"Nickname": "Test",
+			"PP": [
+				14.0,
+				20.0,
+				15.0,
+				5.0
+			]
+		},
+		{
+			"Health": 0.0,
 			"Item": "Reading Glasses",
 			"Level": 71.29,
 			"Moves": [
@@ -71,27 +98,8 @@
 			"Name": "Sculpupture",
 			"Nickname": ">",
 			"PP": [
-				12.0,
+				11.0,
 				19.0,
-				15.0,
-				5.0
-			]
-		},
-		{
-			"Health": 53.0,
-			"Item": "",
-			"Level": 35.03,
-			"Moves": [
-				"Bite",
-				"Play",
-				"Sit",
-				"Sculpt"
-			],
-			"Name": "Orawolfi",
-			"Nickname": "Test",
-			"PP": [
-				15.0,
-				20.0,
 				15.0,
 				5.0
 			]

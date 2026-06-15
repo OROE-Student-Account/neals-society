@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd65f76veic7t"
-path="res://.godot/imported/Question Mark.png-9c95aa71ce6403d6dd924d8e39005cb5.ctex"
+uid="uid://pomudea6fueu"
+path="res://.godot/imported/Pokemon22.png-d96e07598a7d47e65d5c6a9f21b522b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Items/Question Mark.png"
-dest_files=["res://.godot/imported/Question Mark.png-9c95aa71ce6403d6dd924d8e39005cb5.ctex"]
+source_file="res://Assets/Pokemon/Pokemon22.png"
+dest_files=["res://.godot/imported/Pokemon22.png-d96e07598a7d47e65d5c6a9f21b522b0.ctex"]
 
 [params]
 

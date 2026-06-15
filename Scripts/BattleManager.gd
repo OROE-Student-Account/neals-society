@@ -36,6 +36,10 @@ func _ready():
 
 func start_battle():
 	var player_spd = calc_stat(player_grammarite.grammarite_info["Stats"]["Speed"], player_grammarite.level)
+	if player_grammarite.item == "Dash":
+		player_spd *= 1.25
+	elif player_grammarite.item == "Hypen":
+		player_spd *= 1.15
 	var enemy_spd = calc_stat(enemy_grammarite.grammarite_info["Stats"]["Speed"], enemy_grammarite.level)
 	if player_spd > enemy_spd:
 		current_state = BattleState.PLAYER_TURN
@@ -178,6 +182,10 @@ func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 		var hit_roll = randf()
 		var defense_stat = calc_stat(defender.grammarite_info["Stats"]["Defense"], defender.level)
 		var spd = calc_stat(attacker.grammarite_info["Stats"]["Speed"], attacker.level)
+		if player_grammarite.item == "Dash":
+			spd *= 1.25
+		elif player_grammarite.item == "Hypen":
+			spd *= 1.15
 		var max_stat = calc_stat(200, 100)
 		accuracy *= 1 - (defense_stat/(1.4*max_stat))
 		accuracy *= 1 + (spd/(5*max_stat))

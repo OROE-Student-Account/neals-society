@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd65f76veic7t"
-path="res://.godot/imported/Question Mark.png-9c95aa71ce6403d6dd924d8e39005cb5.ctex"
+uid="uid://cds1vesk6lha4"
+path="res://.godot/imported/Dash.png-49aa7967db41da443157ed4f24c9900a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Items/Question Mark.png"
-dest_files=["res://.godot/imported/Question Mark.png-9c95aa71ce6403d6dd924d8e39005cb5.ctex"]
+source_file="res://Assets/Items/Dash.png"
+dest_files=["res://.godot/imported/Dash.png-49aa7967db41da443157ed4f24c9900a.ctex"]
 
 [params]
 
