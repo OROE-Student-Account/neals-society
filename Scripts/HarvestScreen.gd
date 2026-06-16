@@ -28,11 +28,7 @@ func update_display():
 func update_buttons():
 	for butt in buttons.get_children():
 		butt.frame = 0
-		for i in butt.get_children():
-			i.visible = false
 	buttons.get_child(selected_option).frame = 1
-	for i in buttons.get_child(selected_option).get_children():
-		i.visible = true
 
 func crush():
 	pause = true

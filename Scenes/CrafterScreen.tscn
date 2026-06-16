@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://ca5ewevbq5qls"]
 
 [ext_resource type="Script" uid="uid://ccq35oguyl7al" path="res://Scripts/CrafterScreen.gd" id="1_gkl0u"]
-[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="2_a5sdi"]
-[ext_resource type="Texture2D" uid="uid://bqio4uhjljbal" path="res://Assets/UI/PlainButton.png" id="3_gkl0u"]
+[ext_resource type="Texture2D" uid="uid://s7iol8usl6r6" path="res://Assets/UI/crafter.png" id="2_8j2m4"]
+[ext_resource type="FontFile" uid="uid://buav1g0xgpfd" path="res://Assets/UI/pkmnfl.ttf" id="2_a5sdi"]
+[ext_resource type="Texture2D" uid="uid://cabwjpg2wojt3" path="res://Assets/UI/crafter-button1.png" id="4_0u8am"]
+[ext_resource type="Texture2D" uid="uid://bf5qxei6vu1o2" path="res://Assets/Items/Animal Shard.png" id="4_baujm"]
 [ext_resource type="Texture2D" uid="uid://dl58l7iruinos" path="res://Assets/UI/Cancel.png" id="4_vowll"]
 [ext_resource type="Texture2D" uid="uid://ckyw6dtptsikv" path="res://Assets/UI/border.png" id="5_0u8am"]
 [ext_resource type="Texture2D" uid="uid://g4huif3s073t" path="res://Assets/Items/Ink Shard.png" id="6_baujm"]
+[ext_resource type="Texture2D" uid="uid://dt717ioxcsm2s" path="res://Assets/UI/crafter-button2.png" id="6_nhitg"]
 [ext_resource type="Texture2D" uid="uid://c0dop7ekxqv5h" path="res://Assets/Items/Knowledge Shard.png" id="7_nhitg"]
-[ext_resource type="Texture2D" uid="uid://bebjnvh5onnif" path="res://Assets/Pokemon/Pokemon1.png" id="8_jsren"]
+[ext_resource type="Texture2D" uid="uid://doloqyf43ogw4" path="res://Assets/Pokemon/Pokemon1.png" id="8_jsren"]
 [ext_resource type="Texture2D" uid="uid://33jd1d7bcg3h" path="res://Assets/Items/Supply Shard.png" id="9_tont1"]
 [ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="10_dkr5k"]
 
@@ -381,10 +384,10 @@ _data = {
 texture_filter = 1
 script = ExtResource("1_gkl0u")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=713304068]
+[node name="ColorRect" type="TextureRect" parent="." unique_id=60435304]
 offset_right = 240.0
 offset_bottom = 160.0
-color = Color(0, 1, 1, 1)
+texture = ExtResource("2_8j2m4")
 
 [node name="Control" type="Control" parent="." unique_id=858345715]
 layout_mode = 3
@@ -392,28 +395,12 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ColorRect2" type="ColorRect" parent="Control" unique_id=2082867423]
-layout_mode = 0
-offset_left = 56.0
-offset_top = 64.0
-offset_right = 104.0
-offset_bottom = 72.0
-color = Color(0.3137255, 0.2509804, 0.22352941, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Control" unique_id=2079615594]
-layout_mode = 0
-offset_left = 136.0
-offset_top = 64.0
-offset_right = 184.0
-offset_bottom = 72.0
-color = Color(0.3137255, 0.2509804, 0.22352941, 1)
-
 [node name="Label" type="Label" parent="Control" unique_id=1319438265]
 layout_mode = 0
-offset_left = 104.0
-offset_top = 32.0
+offset_left = 88.0
+offset_top = 22.0
 offset_right = 120.0
-offset_bottom = 48.0
+offset_bottom = 42.0
 scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_a5sdi")
@@ -423,58 +410,87 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Shard1" type="Sprite2D" parent="Control" unique_id=1478441304]
-position = Vector2(80, 48)
+position = Vector2(60, 35)
+texture = ExtResource("4_baujm")
 
 [node name="Shard2" type="Sprite2D" parent="Control" unique_id=322574882]
-position = Vector2(160, 48)
+position = Vector2(180, 35)
+texture = ExtResource("4_baujm")
+
+[node name="Label2" type="Label" parent="Control" unique_id=2074205018]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 66.0
+offset_right = 85.0
+offset_bottom = 79.0
+theme = ExtResource("10_dkr5k")
+text = "Animal"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Control" unique_id=269281934]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 66.0
+offset_right = 205.0
+offset_bottom = 89.0
+theme = ExtResource("10_dkr5k")
+text = "Animal"
+horizontal_alignment = 1
 
 [node name="Buttons" type="Node2D" parent="." unique_id=182573070]
 
 [node name="Switch1" type="Sprite2D" parent="Buttons" unique_id=1515775696]
-position = Vector2(48, 64)
-texture = ExtResource("3_gkl0u")
+position = Vector2(36, 83)
+texture = ExtResource("4_0u8am")
 centered = false
 hframes = 2
 frame = 1
 
 [node name="Label" type="Label" parent="Buttons/Switch1" unique_id=1277759595]
-offset_left = 21.0
-offset_top = 28.0
-offset_right = 61.0
-offset_bottom = 51.0
-scale = Vector2(0.75, 0.75)
+offset_left = 5.0
+offset_top = 6.000002
+offset_right = 45.0
+offset_bottom = 30.000002
 theme = ExtResource("10_dkr5k")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Select"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Switch2" type="Sprite2D" parent="Buttons" unique_id=589747145]
-position = Vector2(128, 64)
-texture = ExtResource("3_gkl0u")
+position = Vector2(156, 83)
+texture = ExtResource("4_0u8am")
 centered = false
 hframes = 2
+frame = 1
 
 [node name="Label2" type="Label" parent="Buttons/Switch2" unique_id=442692887]
-offset_left = 21.0
-offset_top = 28.0
-offset_right = 61.0
-offset_bottom = 51.0
-scale = Vector2(0.75, 0.75)
+offset_left = 5.0000076
+offset_top = 6.000002
+offset_right = 45.000008
+offset_bottom = 30.000002
 theme = ExtResource("10_dkr5k")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Select"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Craft" type="Sprite2D" parent="Buttons" unique_id=934171713]
-position = Vector2(88, 104)
-texture = ExtResource("3_gkl0u")
+position = Vector2(87, 99)
+texture = ExtResource("6_nhitg")
 centered = false
 hframes = 2
+frame = 1
 
 [node name="Label3" type="Label" parent="Buttons/Craft" unique_id=568680303]
-offset_left = 21.0
-offset_top = 28.0
-offset_right = 61.0
-offset_bottom = 51.0
-scale = Vector2(0.75, 0.75)
+offset_left = 2.000002
+offset_top = 0.9999962
+offset_right = 66.0
+offset_bottom = 39.999996
 theme = ExtResource("10_dkr5k")
 text = "Craft"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Exit" type="Sprite2D" parent="Buttons" unique_id=2003629744]
 position = Vector2(168, 104)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwjqomapu13au"
-path="res://.godot/imported/grass_step_animation.png-d6508b69f5ccd30ef91a21e10cc81e48.ctex"
+uid="uid://v1or41dsdkap"
+path="res://.godot/imported/harvester-button.png-a7ab5333ea05c6dea55fe6521b66c36e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Grass/grass_step_animation.png"
-dest_files=["res://.godot/imported/grass_step_animation.png-d6508b69f5ccd30ef91a21e10cc81e48.ctex"]
+source_file="res://Assets/UI/harvester-button.png"
+dest_files=["res://.godot/imported/harvester-button.png-a7ab5333ea05c6dea55fe6521b66c36e.ctex"]
 
 [params]
 

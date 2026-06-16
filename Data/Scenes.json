@@ -12,11 +12,19 @@
 				"Collected": false
 			}
 		},
+		"Obstacles": {
+			"ParkBlockade": {
+				"Broken": false
+			}
+		},
 		"Trainers": {
 			"Fighter": {
 				"Talked": false
 			},
 			"OldmanBench": {
+				"Talked": false
+			},
+			"OldmanBlock": {
 				"Talked": false
 			},
 			"Rival": {

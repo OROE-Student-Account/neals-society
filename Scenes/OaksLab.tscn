@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://botopew3mmoy0" path="res://Assets/Buildings/pallet town/mat.png" id="4"]
 [ext_resource type="PackedScene" uid="uid://prw5jytjpf0n" path="res://Scenes/Machine.tscn" id="4_qqsmd"]
 [ext_resource type="PackedScene" uid="uid://btmlakx3gcgpj" path="res://Scenes/GrammaritePickup.tscn" id="5_ddugm"]
+[ext_resource type="Texture2D" uid="uid://cgdnoov5tgxrv" path="res://Assets/Decoration/crafter small.png" id="5_s4acm"]
+[ext_resource type="Texture2D" uid="uid://cyouwmuu35fjc" path="res://Assets/Decoration/harvestor small.png" id="5_v842k"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(16, 208)
@@ -76,9 +78,11 @@ position = Vector2(144, 64)
 
 [node name="Crafter" parent="." unique_id=917074634 instance=ExtResource("4_qqsmd")]
 position = Vector2(80, 16)
+texture = ExtResource("5_s4acm")
 
 [node name="Harvester" parent="." unique_id=1423987086 instance=ExtResource("4_qqsmd")]
 position = Vector2(32, 16)
+texture = ExtResource("5_v842k")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1564540838]
 

@@ -49,6 +49,9 @@ func _ready() -> void:
 	update_buttons()
 	update_screen()
 	load_shards()
+	
+	$Control/Label2.text = "None"
+	$Control/Label3.text = "None"
 
 
 
@@ -64,11 +67,7 @@ func update_buttons():
 		Page.MAIN:
 			for butt in buttons.get_children():
 				butt.frame = 0
-				for i in butt.get_children():
-					i.visible = false
 			buttons.get_child(selected_option).frame = 1
-			for i in buttons.get_child(selected_option).get_children():
-				i.visible = true
 			if shard1 != "":
 				$Control/Shard1.texture = load("res://Assets/Items/"+shard1+" Shard.png")
 				$Animation/Shard1.texture = load("res://Assets/Items/"+shard1+" Shard.png")
@@ -179,11 +178,15 @@ func craft():
 				shard1 = ""
 				Utils.remove_from_inventory(shard2+" Shard")
 				shard2 = ""
+				$Control/Label2.text = "None"
+				$Control/Label3.text = "None"
 				update_buttons()
 			else:
 				$Animation/AnimationPlayer.play("Fail")
 				shard1 = ""
 				shard2 = ""
+				$Control/Label2.text = "None"
+				$Control/Label3.text = "None"
 				update_buttons()
 
 func _input(event):
@@ -221,11 +224,13 @@ func _input(event):
 					var index = await select_shard()
 					if index != -1:
 						shard1 = TYPES[index]
+						$Control/Label2.text = shard1
 					update_buttons()
 				elif selected_option == Options.SWITCH2:
 					var index = await select_shard()
 					if index != -1:
 						shard2 = TYPES[index]
+						$Control/Label3.text = shard2
 					selected_option = Options.SWITCH2
 					update_buttons()
 				elif selected_option == Options.CRAFT:

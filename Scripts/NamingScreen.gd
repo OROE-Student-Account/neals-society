@@ -11,7 +11,7 @@ func _ready():
 	$Control.visible = false
 	$Transition.color.a = 0
 
-func text_submitted(str: String):
+func text_submitted(_strin: String):
 	var entered_text = $Control/LineEdit.text
 	if entered_text.strip_edges() != "":  # Only if they entered something
 		naming_state = NamingState.CONFIRMING

@@ -1,5 +1,6 @@
 extends AnimatedSprite2D
 
+@export var cutscene: bool = false
 
 @onready var root_node = $DialogueRoot
 @onready var final_dialogue = $FinalDialogue
@@ -41,6 +42,9 @@ func _on_area_2d_body_entered(_body: Node2D = null) -> void:
 	player.set_physics_process(false)
 	player.anim_tree.active = false
 	player.anim_player.play("TurnUp")
+	
+	if not cutscene:
+		position.x = player.position.x
 	
 	$RayCast2D2.target_position = Vector2(0, 16)
 	$RayCast2D2.force_raycast_update()

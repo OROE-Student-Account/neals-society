@@ -40,7 +40,13 @@ func _ready():
 func start_dialogue(root: Node):
 	dialogue_root = root
 	current_node = root
-	target_node = root.func_node
+	
+	# Check if the node is alive and well before assigning it
+	if is_instance_valid(root.func_node):
+		target_node = root.func_node
+	else:
+		target_node = null # Safely fall back to null if it was freed
+		
 	selected_option = 0
 	
 	# Disable player
@@ -53,7 +59,7 @@ func start_dialogue(root: Node):
 	
 	
 	$Control/PanelContainer/Name.text = root.get_parent().name
-	
+	$Control/PanelContainer.reset_size()
 	# Display the current node
 	display_current_node()
 
@@ -64,8 +70,7 @@ func display_current_node():
 	
 	current_node.fix_text()
 
-
-	# if no text, run functions and end
+	# If no text, run functions and end
 	if current_node.text == "":
 		var function = current_node.function
 		var tar_node = target_node 
@@ -86,6 +91,9 @@ func display_current_node():
 	dialogue_state = DialogueState.SHOWING_TEXT
 	screen_loaded = ScreenLoaded.DIALOGUE
 	
+	# FIX 1: Make parent visible FIRST so Godot correctly calculates dimensions
+	box.visible = true
+	
 	# Display text from current node
 	text_label.text = current_node.text
 	text_label.visible = true
@@ -94,15 +102,17 @@ func display_current_node():
 	vbox.visible = false
 	select_arrow.visible = false
 	
-	box.visible = true
-	
+	# FIX 2: Explicitly handle visibility resetting for the Name box
 	if current_node.display == "<none>":
 		$Control/PanelContainer.visible = false
-	elif current_node.display != "":
+	else:
 		$Control/PanelContainer.visible = true
-		$Control/PanelContainer/Name.text = current_node.display
-	
-	
+		# If a custom display name is set, use it. 
+		# Otherwise, it naturally keeps the root.get_parent().name set in start_dialogue()
+		if current_node.display != "":
+			$Control/PanelContainer/Name.text = current_node.display
+			$Control/PanelContainer.reset_size()
+
 
 func show_options():
 	if current_node == null:

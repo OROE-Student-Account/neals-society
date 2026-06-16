@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wv5hkisa1k5d"
-path="res://.godot/imported/tile000.png-c00ed57cf82bb7777f2df7237a7da62a.ctex"
+uid="uid://dwjqomapu13au"
+path="res://.godot/imported/grass_step_animation.png-24ba6a883ae1e2406a1bd8322d729e44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Flowers/tile000.png"
-dest_files=["res://.godot/imported/tile000.png-c00ed57cf82bb7777f2df7237a7da62a.ctex"]
+source_file="res://Assets/Decoration/Grass/grass_step_animation.png"
+dest_files=["res://.godot/imported/grass_step_animation.png-24ba6a883ae1e2406a1bd8322d729e44.ctex"]
 
 [params]
 

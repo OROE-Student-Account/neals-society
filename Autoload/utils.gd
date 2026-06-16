@@ -22,6 +22,10 @@ func reset_scenes():
 		if town.has("Trainers"):
 			for trainer_name in town["Trainers"]:
 				town["Trainers"][trainer_name]["Talked"] = false
+		
+		if town.has("Obstacles"):
+			for obstacle in town["Obstacles"]:
+				town["Obstacles"][obstacle]["Broken"] = false
 	
 	save_json_file("res://Data/Scenes.json", scenes)
 
@@ -34,7 +38,7 @@ func get_scene_manager():
 
 
 func get_grammarite_details(grammarite_name):
-	if not name: return
+	if not grammarite_name: print("NO NAME INPUTTED"); return
 	var available_moves = load_json_file("res://GrammariteData/BaseMoves.json")[grammarite_name]
 	var stats = load_json_file("res://GrammariteData/Stats.json")[grammarite_name]
 	var details = { "Stats": stats, "Moves": [] }
@@ -93,7 +97,6 @@ func update_item_picked_up(item: String, value: bool, scene = "Town"):
 	data[scene]["Items"][item]["Collected"] = value
 	save_json_file("res://Data/Scenes.json", data)
 
-
 func check_trainer_attacked(node_name: String, scene = "Town"):
 	return load_json_file("res://Data/Scenes.json")[scene]["Trainers"][node_name]["Talked"]
 func update_trainer_attacked(node_name: String, value: bool, scene = "Town"):
@@ -101,6 +104,12 @@ func update_trainer_attacked(node_name: String, value: bool, scene = "Town"):
 	data[scene]["Trainers"][node_name]["Talked"] = value
 	save_json_file("res://Data/Scenes.json", data)
 
+func check_obstacle(node_name: String, scene = "Town"):
+	return load_json_file("res://Data/Scenes.json")[scene]["Obstacles"][node_name]["Broken"]
+func update_obstacle(node_name: String, value: bool, scene = "Town"):
+	var data = load_json_file("res://Data/Scenes.json")
+	data[scene]["Obstacles"][node_name]["Broken"] = value
+	save_json_file("res://Data/Scenes.json", data)
 
 func max_hp(grammarite_name, level: int) -> int:
 	return int(20 + 2 * level + int(0.01 * level * load_json_file("res://GrammariteData/Stats.json")[grammarite_name]["Health"] - 0.001))
@@ -122,9 +131,63 @@ func get_damage_multiplier(attack_type, defend_type1, defend_type2 = "None"):
 	
 	return mult
 
-func get_random_grammarite():
+func get_random_grammarite(level: int, types: Array) -> String:
 	var grams = load_json_file("res://GrammariteData/Names.json")
-	return grams.pick_random()
+	var evos = load_json_file("res://GrammariteData/Evolutions.json")
+	
+	# Load the stats file once here to prevent disk lag during the loop
+	var stats_data = load_json_file("res://GrammariteData/Stats.json")
+	
+	if grams.is_empty() or types.is_empty():
+		return ""
+	
+	while true:
+		# 1. Pick a target type (maintains your awesome duplicate-weighting system!)
+		var target_type = types.pick_random()
+		
+		# 2. Pick a random candidate
+		var candidate_name = grams.pick_random()
+		var candidate_id = get_poke_num(candidate_name)
+		
+		# 3. EVOLUTION CHECK
+		# Upper Bound: Is it overdue for an evolution?
+		if can_evolve(candidate_name, level) >= 0:
+			continue
+			
+		# Lower Bound: Is it an evolved form spawning at too low a level?
+		if candidate_id > 0:
+			var previous_stage_evo_level = evos[candidate_id - 1]
+			if previous_stage_evo_level != -1 and level < previous_stage_evo_level:
+				continue
+		
+		# 4. TYPE CHECK: Pass the stats data into our checker
+		if candidate_has_or_will_gain_type(candidate_id, target_type, grams, evos, stats_data):
+			return candidate_name
+
+	return ""
+
+
+# Helper function to check current and future types using your Stats layout
+func candidate_has_or_will_gain_type(start_id: int, target_type: String, grams: Array, evos: Array, stats_data: Dictionary) -> bool:
+	var current_id = start_id
+	
+	while current_id < grams.size():
+		var current_name = grams[current_id]
+		
+		# Accessing the types using your exact dictionary structure pattern
+		if stats_data.has(current_name):
+			var current_types = stats_data[current_name]["Types"] # Matches details["Stats"]["Types"]
+			if target_type in current_types:
+				return true
+				
+		# Check if this evolution line can go further
+		var level_needed = evos[current_id]
+		if level_needed == -1:
+			break # End of evolution line reached
+			
+		current_id += 1
+		
+	return false
 
 func can_evolve(grammarite_name, level):
 	var evos = load_json_file("res://GrammariteData/Evolutions.json")
@@ -437,6 +500,10 @@ func fill_empty_slot(num: int):
 		if town.has("Trainers"):
 			for trainer_name in town["Trainers"]:
 				town["Trainers"][trainer_name]["Talked"] = false
+		
+		if town.has("Obstacles"):
+			for obstacle in town["Obstacles"]:
+				town["Obstacles"][obstacle]["Broken"] = false
 	save_json_file(slot_path+"Scenes.json", scenes)
 	
 	

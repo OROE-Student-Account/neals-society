@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://biarm5343j6g5"]
 
-[ext_resource type="Texture2D" uid="uid://dxtpbcw3vk7v7" path="res://Assets/Grass/tall_grass.png" id="1"]
-[ext_resource type="Script" uid="uid://c7qjag23gf5r8" path="res://Scripts/TallGrass.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://dxtpbcw3vk7v7" path="res://Assets/Decoration/Grass/tall_grass.png" id="1"]
 [ext_resource type="Script" uid="uid://bp28l32amhxsf" path="res://Scripts/DialogueNode.gd" id="3_bfhjh"]
 [ext_resource type="Script" uid="uid://hvnvpuwe5g0b" path="res://Scripts/BattleStarter.gd" id="4_lnori"]
 
@@ -47,9 +46,9 @@ _data = {
 
 [node name="TallGrass" type="Node2D" unique_id=1008989153]
 y_sort_enabled = true
-script = ExtResource("2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1737318946]
+y_sort_enabled = true
 texture = ExtResource("1")
 centered = false
 hframes = 2

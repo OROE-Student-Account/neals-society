@@ -59,21 +59,23 @@ func transition_to_dialogue(root_node):
 
 func load_battle():
 	var battle = load("res://Scenes/Battle.tscn").instantiate()
-	battle.get_node("BattleManager").trainer = next_trainer
 	
-	if next_trainer != "random":
+	
+	if "random" not in next_trainer:
+		battle.get_node("BattleManager").trainer = next_trainer
 		var trainer = Utils.get_trainer(next_trainer)
 		battle.get_node("EnemyGrammarite").grammarite_name = trainer["Party"][0]
 		battle.get_node("EnemyGrammarite").level = int(trainer["Levels"][0])
 	else:
-		var grammarite = Utils.get_random_grammarite()
-		battle.get_node("EnemyGrammarite").grammarite_name = grammarite
-		battle.get_node("EnemyGrammarite").level = int(randf()*100+1)
+		battle.get_node("BattleManager").trainer = "random"
+		var name_lvl = next_trainer.substr(6) # removes 'random'
+		battle.get_node("EnemyGrammarite").grammarite_name = name_lvl.left(len(name_lvl)-3)
+		battle.get_node("EnemyGrammarite").level = int(name_lvl.right(3))
 	
 	scene.add_child(battle)
 	scene.get_children().back().get_child(0).make_current()
-func transition_to_battle(trainer):
-	next_trainer = trainer
+func transition_to_battle(trainer, gram_name: String = ""):
+	next_trainer = trainer+gram_name
 	next_scene = $CurrentScene.get_child(0).scene_file_path
 	transition_type = "Battle"
 	var player = Utils.get_player()
