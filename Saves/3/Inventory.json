@@ -1,122 +1,166 @@
 {
 	"Abilities": [],
-	"Items": [],
-	"Money": 0.0,
-	"Name": "",
+	"Items": [
+		"Story Book",
+		"Reading Glasses",
+		"Reading Glasses",
+		"Reading Glasses",
+		"Reading Glasses",
+		"Reading Glasses",
+		"Reading Glasses",
+		"Reading Glasses",
+		"Story Book",
+		"Story Book",
+		"Story Book",
+		"Story Book",
+		"Story Book",
+		"Exclamation Mark",
+		"Question Mark",
+		"Comma",
+		"Period",
+		"Colon",
+		"Eraser",
+		"Crumpled Draft",
+		"First Rough Draft",
+		"First Rough Draft",
+		"First Rough Draft",
+		"Final Draft",
+		"Final Draft",
+		"Final Draft",
+		"Final Draft",
+		"Final Draft",
+		"Final Draft",
+		"Final Draft",
+		"Ultimate Vitamin",
+		"Ultimate Vitamin",
+		"Ultimate Vitamin",
+		"Ultimate Vitamin",
+		"Children's Book",
+		"Red Stamp",
+		"Emoji",
+		"Sticky Note",
+		"Quotations",
+		"Hyphen",
+		"Dash",
+		"Semicolon",
+		"Ultimate Vitamin",
+		"Punctuation Vitamin",
+		"Vocabulary Vitamin",
+		"Supply Shard",
+		"Homework Shard",
+		"Slang Shard",
+		"Paper Shard",
+		"Paper Shard",
+		"Knowledge Shard",
+		"Knowledge Shard",
+		"Ink Shard",
+		"Animal Shard",
+		"Animal Shard",
+		"Animal Shard",
+		"Animal Shard",
+		"Machine Shard",
+		"Literature Shard",
+		"Nature Shard",
+		"Nature Shard",
+		"Grammar Shard",
+		"Grammar Shard"
+	],
+	"Money": 20.0,
+	"Name": "Bird",
 	"Party": [
 		{
 			"Health": 0.0,
 			"Item": "",
-			"Level": 1.0,
+			"Level": 35.25,
 			"Moves": [
-				"",
-				"",
-				"",
-				""
+				"Bite",
+				"Play",
+				"Sit",
+				"Sculpt"
 			],
-			"Name": "",
-			"Nickname": "",
+			"Name": "Orawolfi",
+			"Nickname": "Test",
 			"PP": [
-				0,
-				0,
-				0,
-				0
+				14.0,
+				20.0,
+				15.0,
+				5.0
+			]
+		},
+		{
+			"Health": 0.0,
+			"Item": "Reading Glasses",
+			"Level": 3.0,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Sculpt"
+			],
+			"Name": "Sculpupture",
+			"Nickname": "Christopher",
+			"PP": [
+				15.0,
+				20.0,
+				15.0,
+				5.0
+			]
+		},
+		{
+			"Health": 0.0,
+			"Item": "Reading Glasses",
+			"Level": 33.13,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Sculpt"
+			],
+			"Name": "Orawolfi",
+			"Nickname": "[ ]",
+			"PP": [
+				15.0,
+				20.0,
+				15.0,
+				5.0
+			]
+		},
+		{
+			"Health": 57.0,
+			"Item": "",
+			"Level": 14.0,
+			"Moves": [
+				"Bite",
+				"Play",
+				"Sit",
+				"Woodchip"
+			],
+			"Name": "Dog of Wood",
+			"Nickname": "WWWWWWWWWWWWWWW",
+			"PP": [
+				15.0,
+				20.0,
+				15.0,
+				1.0
 			]
 		},
 		{
 			"Health": 0.0,
 			"Item": "",
 			"Level": 1.0,
-			"Moves": [
-				"",
-				"",
-				"",
-				""
-			],
+			"Moves": [],
 			"Name": "",
 			"Nickname": "",
-			"PP": [
-				0,
-				0,
-				0,
-				0
-			]
+			"PP": []
 		},
 		{
 			"Health": 0.0,
 			"Item": "",
 			"Level": 1.0,
-			"Moves": [
-				"",
-				"",
-				"",
-				""
-			],
+			"Moves": [],
 			"Name": "",
 			"Nickname": "",
-			"PP": [
-				0,
-				0,
-				0,
-				0
-			]
-		},
-		{
-			"Health": 0.0,
-			"Item": "",
-			"Level": 1.0,
-			"Moves": [
-				"",
-				"",
-				"",
-				""
-			],
-			"Name": "",
-			"Nickname": "",
-			"PP": [
-				0,
-				0,
-				0,
-				0
-			]
-		},
-		{
-			"Health": 0.0,
-			"Item": "",
-			"Level": 1.0,
-			"Moves": [
-				"",
-				"",
-				"",
-				""
-			],
-			"Name": "",
-			"Nickname": "",
-			"PP": [
-				0,
-				0,
-				0,
-				0
-			]
-		},
-		{
-			"Health": 0.0,
-			"Item": "",
-			"Level": 1.0,
-			"Moves": [
-				"",
-				"",
-				"",
-				""
-			],
-			"Name": "",
-			"Nickname": "",
-			"PP": [
-				0,
-				0,
-				0,
-				0
-			]
+			"PP": []
 		}
 	]
 }

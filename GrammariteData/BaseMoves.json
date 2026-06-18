@@ -1,5 +1,9 @@
 {
 	"Dog of Wood": [ "Bite", "Play", "Sit", "Woodchip" ],
 	"Sculpupture": [ "Bite", "Play", "Sit", "Sculpt" ],
-	"Orawolfi": [ "Bite", "Papercut", "Howl", "Dragon Dance" ]
+	"Orawolfi": [ "Bite", "Papercut", "Howl", "Dragon Dance" ],
+	"Kittebook": [ "Bite", "Papercut", "Howl", "Dragon Dance" ],
+	"Tabbywriter": [ "Bite", "Papercut", "Howl", "Dragon Dance" ],
+	"Catputer": [ "Bite", "Papercut", "Howl", "Dragon Dance" ],
+	"Moustapler": [ "Bite", "Papercut", "Howl", "Dragon Dance" ],
 }
