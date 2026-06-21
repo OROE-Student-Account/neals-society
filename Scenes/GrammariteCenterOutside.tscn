@@ -73,7 +73,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1fohq"]
 size = Vector2(80, 64)
 
 [node name="GrammariteCenterOutside" type="StaticBody2D" unique_id=326239706]
@@ -89,4 +89,4 @@ flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1410971337]
 position = Vector2(40, 48)
-shape = SubResource("1")
+shape = SubResource("RectangleShape2D_1fohq")

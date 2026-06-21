@@ -69,22 +69,22 @@
 	"Name": "Bird",
 	"Party": [
 		{
-			"Health": 0.0,
+			"Health": 57.0,
 			"Item": "",
-			"Level": 35.25,
+			"Level": 14.0,
 			"Moves": [
 				"Bite",
 				"Play",
 				"Sit",
-				"Sculpt"
+				"Woodchip"
 			],
-			"Name": "Orawolfi",
-			"Nickname": "Test",
+			"Name": "Dog of Wood",
+			"Nickname": "WWWWWWWWWWWWWWW",
 			"PP": [
-				14.0,
+				15.0,
 				20.0,
 				15.0,
-				5.0
+				1.0
 			]
 		},
 		{
@@ -126,22 +126,22 @@
 			]
 		},
 		{
-			"Health": 57.0,
+			"Health": 0.0,
 			"Item": "",
-			"Level": 14.0,
+			"Level": 35.25,
 			"Moves": [
 				"Bite",
 				"Play",
 				"Sit",
-				"Woodchip"
+				"Sculpt"
 			],
-			"Name": "Dog of Wood",
-			"Nickname": "WWWWWWWWWWWWWWW",
+			"Name": "Orawolfi",
+			"Nickname": "Test",
 			"PP": [
-				15.0,
+				14.0,
 				20.0,
 				15.0,
-				1.0
+				5.0
 			]
 		},
 		{
