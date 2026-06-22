@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjtipffhvgk8q"
-path="res://.godot/imported/Cargo Container.png-e7513ebf309499ba29b1ae716a7c1e4e.ctex"
+uid="uid://dl0ahywfk1eyr"
+path="res://.godot/imported/Pokemon32.png-f830e46327db36f1dfecb893a56916d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/Cargo Container.png"
-dest_files=["res://.godot/imported/Cargo Container.png-e7513ebf309499ba29b1ae716a7c1e4e.ctex"]
+source_file="res://Assets/Pokemon/Pokemon32.png"
+dest_files=["res://.godot/imported/Pokemon32.png-f830e46327db36f1dfecb893a56916d6.ctex"]
 
 [params]
 

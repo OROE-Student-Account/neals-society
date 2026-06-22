@@ -1,0 +1,130 @@
+[gd_scene format=4 uid="uid://b5m235gwnut5j"]
+
+[ext_resource type="Texture2D" uid="uid://spk4yaevbnm7" path="res://Assets/Tilesets/Cave.png" id="1_kpbna"]
+[ext_resource type="Texture2D" uid="uid://botopew3mmoy0" path="res://Assets/Buildings/pallet town/mat.png" id="2_ofyxu"]
+[ext_resource type="PackedScene" uid="uid://i70qso44vgve" path="res://Scenes/Player.tscn" id="3_2ngrw"]
+[ext_resource type="PackedScene" uid="uid://fsubo0lgcrfo" path="res://Scenes/Door.tscn" id="4_yw2ac"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ofyxu"]
+texture = ExtResource("1_kpbna")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2ngrw"]
+sources/0 = SubResource("TileSetAtlasSource_ofyxu")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kpbna"]
+texture = ExtResource("1_kpbna")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:0/size_in_atlas = Vector2i(1, 2)
+5:0/0 = 0
+5:0/0/texture_origin = Vector2i(0, -8)
+5:0/0/y_sort_origin = 17
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 24, -8, 24, -8, 8)
+6:0/size_in_atlas = Vector2i(1, 2)
+6:0/0 = 0
+6:0/0/texture_origin = Vector2i(0, -8)
+6:0/0/y_sort_origin = 17
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 24, -8, 24, -8, 8)
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ofyxu"]
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_kpbna")
+
+[node name="Cave" type="Node2D" unique_id=1207506571]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2070795569]
+offset_left = -208.0
+offset_top = -208.0
+offset_right = 392.0
+offset_bottom = 392.0
+color = Color(0, 0, 0, 1)
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=502585761]
+tile_map_data = PackedByteArray("AAAAAAIAAAABAAEAAAAAAAMAAAABAAEAAAAAAAQAAAABAAEAAAAAAAUAAAABAAEAAAAAAAYAAAABAAEAAAAAAAcAAAABAAEAAAAAAAgAAAABAAEAAAABAAIAAAABAAEAAAABAAMAAAABAAEAAAABAAQAAAABAAEAAAABAAUAAAABAAEAAAABAAYAAAABAAEAAAABAAcAAAABAAEAAAABAAgAAAABAAEAAAACAAIAAAABAAEAAAACAAMAAAABAAEAAAACAAQAAAABAAEAAAACAAUAAAABAAEAAAACAAYAAAABAAEAAAACAAcAAAABAAEAAAACAAgAAAABAAEAAAADAAIAAAABAAEAAAADAAMAAAABAAEAAAADAAQAAAABAAEAAAADAAUAAAABAAEAAAADAAYAAAABAAEAAAADAAcAAAABAAEAAAADAAgAAAABAAEAAAAEAAIAAAABAAEAAAAEAAMAAAABAAEAAAAEAAQAAAABAAEAAAAEAAUAAAABAAEAAAAEAAYAAAABAAEAAAAEAAcAAAABAAEAAAAEAAgAAAABAAEAAAAFAAIAAAABAAEAAAAFAAMAAAABAAEAAAAFAAQAAAABAAEAAAAFAAUAAAABAAEAAAAFAAYAAAABAAEAAAAFAAcAAAABAAEAAAAFAAgAAAABAAEAAAAGAAIAAAABAAEAAAAGAAMAAAABAAEAAAAGAAQAAAABAAEAAAAGAAUAAAABAAEAAAAGAAYAAAABAAEAAAAGAAcAAAABAAEAAAAGAAgAAAABAAEAAAAHAAIAAAABAAEAAAAHAAMAAAABAAEAAAAHAAQAAAABAAEAAAAHAAUAAAABAAEAAAAHAAYAAAABAAEAAAAHAAcAAAABAAEAAAAHAAgAAAABAAEAAAAIAAIAAAABAAEAAAAIAAMAAAABAAEAAAAIAAQAAAABAAEAAAAIAAUAAAABAAEAAAAIAAYAAAABAAEAAAAIAAcAAAABAAEAAAAIAAgAAAABAAEAAAAJAAIAAAABAAEAAAAJAAMAAAABAAEAAAAJAAQAAAABAAEAAAAJAAUAAAABAAEAAAAJAAYAAAABAAEAAAAJAAcAAAABAAEAAAAJAAgAAAABAAEAAAAKAAIAAAABAAEAAAAKAAMAAAABAAEAAAAKAAQAAAABAAEAAAAKAAUAAAABAAEAAAAKAAYAAAABAAEAAAAKAAcAAAABAAEAAAAKAAgAAAABAAEAAAALAAIAAAABAAEAAAALAAMAAAABAAEAAAALAAQAAAABAAEAAAALAAUAAAABAAEAAAALAAYAAAABAAEAAAALAAcAAAABAAEAAAALAAgAAAABAAEAAAAAAAEAAAADAAMAAAABAAEAAAAEAAMAAAACAAEAAAADAAMAAAADAAEAAAAEAAMAAAAEAAEAAAADAAMAAAAFAAEAAAAEAAMAAAAGAAEAAAADAAMAAAAHAAEAAAAEAAMAAAAIAAEAAAADAAMAAAAJAAEAAAAEAAMAAAAKAAEAAAADAAMAAAALAAEAAAAEAAMAAAD//wEAAAADAAMAAAAMAAEAAAADAAMAAAA=")
+tile_set = SubResource("TileSet_2ngrw")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=86378363]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD//wIAAAADAAMAAAAAAAEAAAAFAAAAAAAAAAIAAAADAAQAAAABAAIAAAAEAAQAAAACAAIAAAADAAQAAAADAAIAAAAEAAQAAAAEAAIAAAADAAQAAAAFAAIAAAAEAAQAAAAGAAIAAAADAAQAAAAHAAIAAAAEAAQAAAAIAAIAAAADAAQAAAAJAAIAAAAEAAQAAAAKAAIAAAADAAQAAAALAAEAAAAGAAAAAAALAAIAAAAEAAQAAAAMAAIAAAADAAMAAAAMAAMAAAADAAMAAAAMAAQAAAADAAMAAAAMAAUAAAADAAMAAAAMAAYAAAADAAMAAAAMAAcAAAADAAMAAAAMAAgAAAADAAMAAAAEAAkAAAADAAMAAAAFAAkAAAADAAMAAAAGAAkAAAADAAMAAAAHAAkAAAADAAMAAAAIAAkAAAADAAMAAAAJAAkAAAADAAMAAAAKAAkAAAADAAMAAAALAAkAAAADAAMAAAAMAAkAAAADAAMAAAD//wkAAAADAAMAAAAAAAkAAAADAAMAAAABAAkAAAADAAMAAAACAAkAAAADAAMAAAADAAkAAAADAAMAAAD//wMAAAADAAMAAAD//wQAAAADAAMAAAD//wUAAAADAAMAAAD//wYAAAADAAMAAAD//wcAAAADAAMAAAD//wgAAAADAAMAAAA=")
+tile_set = SubResource("TileSet_ofyxu")
+
+[node name="Mat" type="TextureRect" parent="." unique_id=253375383]
+offset_left = 56.0
+offset_top = 128.0
+offset_right = 88.0
+offset_bottom = 144.0
+texture = ExtResource("2_ofyxu")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=340670768]
+
+[node name="Player" parent="Node2D" unique_id=802010568 instance=ExtResource("3_2ngrw")]
+position = Vector2(160, 64)
+
+[node name="Door" parent="." unique_id=305209293 instance=ExtResource("4_yw2ac")]
+modulate = Color(0.12549, 0.313726, 0.85098, 1)
+position = Vector2(64, 128)
+next_scene_path = "res://Scenes/Town.tscn"
+is_invisible = true
+spawn_location = Vector2(-160, 224)
+spawn_direction = Vector2(0, 1)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://datt0x7ae723w"
-path="res://.godot/imported/Small rock.png-aee4fdeb76e8be4e5ab375d66a4b25b3.ctex"
+uid="uid://bfcwcw8x4o5st"
+path="res://.godot/imported/Overflowing TrashCan.png-31f7773c8f15be83228e9b5ea8b8084b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/Small rock.png"
-dest_files=["res://.godot/imported/Small rock.png-aee4fdeb76e8be4e5ab375d66a4b25b3.ctex"]
+source_file="res://Assets/Decoration/Overflowing TrashCan.png"
+dest_files=["res://.godot/imported/Overflowing TrashCan.png-31f7773c8f15be83228e9b5ea8b8084b.ctex"]
 
 [params]
 
