@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b87pbxf5kg682"]
 
-[ext_resource type="Texture2D" uid="uid://dj2vockn43age" path="res://Assets/Buildings/pallet town/oaks_lab_interior.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://dj2vockn43age" path="res://Assets/Decoration/pallet town/oaks_lab_interior.png" id="1"]
 [ext_resource type="PackedScene" uid="uid://i70qso44vgve" path="res://Scenes/Player.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://fsubo0lgcrfo" path="res://Scenes/Door.tscn" id="3"]
-[ext_resource type="Texture2D" uid="uid://botopew3mmoy0" path="res://Assets/Buildings/pallet town/mat.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://botopew3mmoy0" path="res://Assets/Decoration/pallet town/mat.png" id="4"]
 [ext_resource type="PackedScene" uid="uid://prw5jytjpf0n" path="res://Scenes/Machine.tscn" id="4_qqsmd"]
 [ext_resource type="PackedScene" uid="uid://btmlakx3gcgpj" path="res://Scenes/GrammaritePickup.tscn" id="5_ddugm"]
 [ext_resource type="Texture2D" uid="uid://cgdnoov5tgxrv" path="res://Assets/Decoration/crafter small.png" id="5_s4acm"]

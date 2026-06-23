@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bpskqf1t586cd"]
 
-[ext_resource type="Texture2D" uid="uid://b24dvlaonqsyl" path="res://Assets/Buildings/pallet town/player_home_floor_1.png" id="1_078wu"]
-[ext_resource type="Texture2D" uid="uid://botopew3mmoy0" path="res://Assets/Buildings/pallet town/mat.png" id="2_5pw7d"]
+[ext_resource type="Texture2D" uid="uid://dv44barlj2cmv" path="res://Assets/Decoration/Universal/Library.png" id="1_078wu"]
+[ext_resource type="Texture2D" uid="uid://c2sou7i7fulmv" path="res://Assets/Decoration/Universal/LibraryOverlay.png" id="2_bidd3"]
+[ext_resource type="Texture2D" uid="uid://b67xu1q3o5r1p" path="res://Assets/Decoration/Universal/Mats.png" id="3_5pw7d"]
 [ext_resource type="PackedScene" uid="uid://prw5jytjpf0n" path="res://Scenes/Machine.tscn" id="4_bidd3"]
 [ext_resource type="PackedScene" uid="uid://i70qso44vgve" path="res://Scenes/Player.tscn" id="4_oxtqq"]
 [ext_resource type="PackedScene" uid="uid://fsubo0lgcrfo" path="res://Scenes/Door.tscn" id="5_d12qb"]
@@ -10,22 +11,22 @@
 size = Vector2(16, 176)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d88bl"]
-size = Vector2(32, 16)
+size = Vector2(64, 16)
 
 [sub_resource type="RectangleShape2D" id="2"]
-size = Vector2(96, 16)
+size = Vector2(192, 16)
 
 [sub_resource type="RectangleShape2D" id="3"]
-size = Vector2(32, 16)
+size = Vector2(48, 16)
 
 [sub_resource type="RectangleShape2D" id="4"]
 size = Vector2(192, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tifnb"]
-size = Vector2(32, 32)
+size = Vector2(48, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bidd3"]
-size = Vector2(32, 16)
+size = Vector2(48, 16)
 
 [node name="GrammariteCenter" type="Node2D" unique_id=252097820]
 
@@ -37,16 +38,23 @@ offset_bottom = 392.0
 color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=295499838]
+offset_top = 48.0
 offset_right = 192.0
 offset_bottom = 144.0
 texture = ExtResource("1_078wu")
 
-[node name="Mat" type="TextureRect" parent="." unique_id=253375383]
-offset_left = 56.0
-offset_top = 128.0
-offset_right = 88.0
+[node name="overlay" type="TextureRect" parent="." unique_id=1859515994]
+z_index = 1
+offset_top = 48.0
+offset_right = 192.0
 offset_bottom = 144.0
-texture = ExtResource("2_5pw7d")
+texture = ExtResource("2_bidd3")
+
+[node name="Mat" type="Sprite2D" parent="." unique_id=1936099602]
+position = Vector2(104, 136)
+texture = ExtResource("3_5pw7d")
+region_enabled = true
+region_rect = Rect2(0, 0, 20, 16)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1552400742]
 collision_layer = 2
@@ -61,15 +69,27 @@ position = Vector2(200, 88)
 shape = SubResource("1")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=655978765]
-position = Vector2(16, 24)
+position = Vector2(32, 104)
+shape = SubResource("RectangleShape2D_d88bl")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D" unique_id=1370263324]
+position = Vector2(32, 72)
+shape = SubResource("RectangleShape2D_d88bl")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D" unique_id=1144853987]
+position = Vector2(160, 72)
+shape = SubResource("RectangleShape2D_d88bl")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D" unique_id=1193448014]
+position = Vector2(96, 72)
 shape = SubResource("RectangleShape2D_d88bl")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=407092087]
-position = Vector2(144, 24)
+position = Vector2(96, 56)
 shape = SubResource("2")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=238628892]
-position = Vector2(176, 40)
+position = Vector2(168, 136)
 shape = SubResource("3")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=1286562843]
@@ -77,28 +97,30 @@ position = Vector2(96, 152)
 shape = SubResource("4")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=908130315]
-position = Vector2(96, 80)
+position = Vector2(24, 128)
 shape = SubResource("RectangleShape2D_tifnb")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=940916779]
-position = Vector2(64, 24)
+position = Vector2(168, 104)
 shape = SubResource("RectangleShape2D_bidd3")
 
 [node name="Bookshelf" parent="." unique_id=917074634 instance=ExtResource("4_bidd3")]
-position = Vector2(32, 16)
+position = Vector2(128, 96)
+texture = null
 
 [node name="Computer" parent="." unique_id=885703489 instance=ExtResource("4_bidd3")]
-position = Vector2(80, 16)
+position = Vector2(96, 64)
+texture = null
 
 [node name="Node2D" type="Node2D" parent="." unique_id=340670768]
 
 [node name="Player" parent="Node2D" unique_id=802010568 instance=ExtResource("4_oxtqq")]
-position = Vector2(160, 64)
+position = Vector2(96, 128)
 collision_mask = 30
 
 [node name="Door" parent="." unique_id=305209293 instance=ExtResource("5_d12qb")]
 modulate = Color(0.12549, 0.313726, 0.85098, 1)
-position = Vector2(64, 128)
+position = Vector2(96, 128)
 next_scene_path = "res://Scenes/Town.tscn"
 is_invisible = true
 spawn_location = Vector2(-112, 208)

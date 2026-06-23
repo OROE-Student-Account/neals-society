@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g8psph4pnpx5"
-path="res://.godot/imported/HouseDoor.png-5220154fc8384a79bbbdd5f58e4df2a2.ctex"
+uid="uid://dynurpo5p8ob5"
+path="res://.godot/imported/Sink and Dishwasher.png-66f39e397d4ffce81462dfb00a0efff5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buildings/Door Animations/HouseDoor.png"
-dest_files=["res://.godot/imported/HouseDoor.png-5220154fc8384a79bbbdd5f58e4df2a2.ctex"]
+source_file="res://Assets/Decoration/Sink and Dishwasher.png"
+dest_files=["res://.godot/imported/Sink and Dishwasher.png-66f39e397d4ffce81462dfb00a0efff5.ctex"]
 
 [params]
 

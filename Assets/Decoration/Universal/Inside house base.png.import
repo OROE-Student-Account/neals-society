@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqv52nkplsqfs"
-path="res://.godot/imported/Daddy-Static-Statue.png-07e405fd600c550ff062ea1749a46a7a.ctex"
+uid="uid://btbbtsqfx7tbh"
+path="res://.godot/imported/Inside house base.png-55de1896dd18453fdf938880028a9c5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Decoration/Daddy-Static-Statue.png"
-dest_files=["res://.godot/imported/Daddy-Static-Statue.png-07e405fd600c550ff062ea1749a46a7a.ctex"]
+source_file="res://Assets/Decoration/Universal/Inside house base.png"
+dest_files=["res://.godot/imported/Inside house base.png-55de1896dd18453fdf938880028a9c5f.ctex"]
 
 [params]
 

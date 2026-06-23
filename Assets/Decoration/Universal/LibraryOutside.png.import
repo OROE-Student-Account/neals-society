@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://botopew3mmoy0"
-path="res://.godot/imported/mat.png-e09bcff131b8d42165c97f278bac4bfd.ctex"
+uid="uid://323fu84wsj8l"
+path="res://.godot/imported/LibraryOutside.png-41d272f563082991f244145fcb247ed2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buildings/pallet town/mat.png"
-dest_files=["res://.godot/imported/mat.png-e09bcff131b8d42165c97f278bac4bfd.ctex"]
+source_file="res://Assets/Decoration/Universal/LibraryOutside.png"
+dest_files=["res://.godot/imported/LibraryOutside.png-41d272f563082991f244145fcb247ed2.ctex"]
 
 [params]
 

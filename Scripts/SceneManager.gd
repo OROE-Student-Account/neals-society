@@ -97,7 +97,7 @@ func transition_to_scene(new_scene: String, spawn_location, spawn_direction):
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 func transition_to_grammarite_center():
 	next_scene = "res://Scenes/GrammariteCenterInside.tscn"
-	player_location = Vector2(64,128)
+	player_location = Vector2(96,128)
 	player_direction = Vector2(0,-1)
 	transition_type = "Grammarite Center"
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")

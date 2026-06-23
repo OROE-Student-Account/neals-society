@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg66td5pcs13n"
-path="res://.godot/imported/Sign.png-8646037047ca6617c18ac3a95fa7a2a2.ctex"
+uid="uid://b47ci5pia2rf0"
+path="res://.godot/imported/playground.png-69b863437c99728b6fab94b3d0c0d36f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Decoration/Sign.png"
-dest_files=["res://.godot/imported/Sign.png-8646037047ca6617c18ac3a95fa7a2a2.ctex"]
+source_file="res://Assets/Decoration/HomegrownTown/playground.png"
+dest_files=["res://.godot/imported/playground.png-69b863437c99728b6fab94b3d0c0d36f.ctex"]
 
 [params]
 

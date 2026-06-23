@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://fsubo0lgcrfo"]
 
 [ext_resource type="Script" uid="uid://duoegh7gbj541" path="res://Scripts/Door.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://g8psph4pnpx5" path="res://Assets/Buildings/Door Animations/HouseDoor.png" id="2_mw28t"]
+[ext_resource type="Texture2D" uid="uid://g8psph4pnpx5" path="res://Assets/Decoration/HomegrownTown/HouseDoor.png" id="2_mw28t"]
 
 [sub_resource type="Animation" id="Animation_i4tu1"]
 resource_name = "CloseDoor"

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cim2rkd4pde8"]
 
-[ext_resource type="Texture2D" uid="uid://blplx1yihnwi5" path="res://Assets/Buildings/pallet town/rival_home.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://blplx1yihnwi5" path="res://Assets/Decoration/pallet town/rival_home.png" id="1"]
 [ext_resource type="PackedScene" uid="uid://i70qso44vgve" path="res://Scenes/Player.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://fsubo0lgcrfo" path="res://Scenes/Door.tscn" id="3"]
-[ext_resource type="Texture2D" uid="uid://botopew3mmoy0" path="res://Assets/Buildings/pallet town/mat.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://botopew3mmoy0" path="res://Assets/Decoration/pallet town/mat.png" id="4"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(16, 176)

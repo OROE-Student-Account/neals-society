@@ -2,6 +2,7 @@ extends Area2D
 
 @export var next_scene_path = "" # (String, FILE)
 @export var is_invisible: bool = false
+@export var texture : Texture2D = null
 
 @export var spawn_location: Vector2 = Vector2(0, 0)
 @export var spawn_direction: Vector2 = Vector2(0, 0)
@@ -12,8 +13,11 @@ extends Area2D
 var player_entered = false
 
 func _ready():
+	if texture != null:
+		sprite.texture = texture
+	
 	if is_invisible:
-		$Sprite2D.texture = null
+		sprite.texture = null
 	sprite.visible = false
 	var player = Utils.get_player()
 	

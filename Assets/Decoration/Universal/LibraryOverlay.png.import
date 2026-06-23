@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5j1wdhk3ml05"
-path="res://.godot/imported/Power_Plant.png-06a1cd94e16faf3b7aee5da90972ce1d.ctex"
+uid="uid://c2sou7i7fulmv"
+path="res://.godot/imported/LibraryOverlay.png-4049000a7a04c950317ee57a737d5ed7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buildings/Power_Plant.png"
-dest_files=["res://.godot/imported/Power_Plant.png-06a1cd94e16faf3b7aee5da90972ce1d.ctex"]
+source_file="res://Assets/Decoration/Universal/LibraryOverlay.png"
+dest_files=["res://.godot/imported/LibraryOverlay.png-4049000a7a04c950317ee57a737d5ed7.ctex"]
 
 [params]
 
