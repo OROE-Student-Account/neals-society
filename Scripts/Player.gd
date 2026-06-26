@@ -20,6 +20,8 @@ var walk_speed = BASE_WALK_SPEED
 var jump_speed = BASE_JUMP_SPEED
 const TILE_SIZE = 16
 
+
+@export var vignette = false
 # animation
 @onready var anim_tree = $AnimationTree
 @onready var anim_player = $AnimationPlayer
@@ -59,7 +61,7 @@ func _ready():
 	
 	if has_node("Camera2D"):
 		camera.make_current()
-	
+		camera.get_node("Panel").visible = vignette
 	anim_tree.active = true
 	initial_position = position
 	shadow.visible = false

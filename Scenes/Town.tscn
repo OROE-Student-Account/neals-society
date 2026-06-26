@@ -43,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://5j1wdhk3ml05" path="res://Assets/Decoration/TechTown/Power_Plant.png" id="33_q6m0i"]
 [ext_resource type="Texture2D" uid="uid://bmswswtsay6ry" path="res://Assets/Decoration/TechTown/TechTownHouse.png" id="35_lw8bw"]
 [ext_resource type="PackedScene" uid="uid://r4t53bdghiwu" path="res://Scenes/Sign.tscn" id="37_f42gn"]
+[ext_resource type="Texture2D" uid="uid://cbm4woe2e6s3w" path="res://Assets/Decoration/TechTown/PowerPlantDoor.png" id="39_oi0nl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ix0ol"]
 texture = ExtResource("1_e8mj4")
@@ -1866,6 +1867,9 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cptes"]
+size = Vector2(112, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oi0nl"]
 size = Vector2(80, 64)
 
 [sub_resource type="Animation" id="Animation_i4tu1"]
@@ -3239,6 +3243,9 @@ position = Vector2(152, -128)
 collision_layer = 2
 collision_mask = 0
 
+[node name="Door" parent="Sorted Stuff/Tech Town/House" unique_id=2104627299 instance=ExtResource("8")]
+position = Vector2(48, 56)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sorted Stuff/Tech Town/House" unique_id=1661381705]
 position = Vector2(40, 40)
 sprite_frames = SubResource("SpriteFrames_d16so")
@@ -3259,6 +3266,9 @@ position = Vector2(632, -304)
 collision_layer = 2
 collision_mask = 0
 
+[node name="Door" parent="Sorted Stuff/Tech Town/ChiefHouse" unique_id=233080146 instance=ExtResource("8")]
+position = Vector2(16, 64)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sorted Stuff/Tech Town/ChiefHouse" unique_id=1780400563]
 position = Vector2(40, 40)
 sprite_frames = SubResource("SpriteFrames_d16so")
@@ -3275,19 +3285,30 @@ shape = SubResource("1")
 
 [node name="Powerplant" type="StaticBody2D" parent="Sorted Stuff/Tech Town" unique_id=32500172]
 y_sort_enabled = true
-position = Vector2(584, 352)
+position = Vector2(584, 336)
 collision_layer = 2
 collision_mask = 0
 
+[node name="Door" parent="Sorted Stuff/Tech Town/Powerplant" unique_id=1297328778 instance=ExtResource("8")]
+position = Vector2(32, 64)
+next_scene_path = "res://Scenes/PowerPlant.tscn"
+texture = ExtResource("39_oi0nl")
+spawn_location = Vector2(-32, 128)
+spawn_direction = Vector2(0, -1)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sorted Stuff/Tech Town/Powerplant" unique_id=1251220536]
-position = Vector2(40, 40)
+position = Vector2(40, 44)
 sprite_frames = SubResource("SpriteFrames_o26pd")
 autoplay = "default"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sorted Stuff/Tech Town/Powerplant" unique_id=1401027936]
-position = Vector2(40, 48)
+position = Vector2(40, 64)
 shape = SubResource("RectangleShape2D_cptes")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Sorted Stuff/Tech Town/Powerplant" unique_id=660652241]
+position = Vector2(40, 48)
+shape = SubResource("RectangleShape2D_oi0nl")
 
 [node name="Door" parent="Sorted Stuff/Tech Town" unique_id=1521105131 instance=ExtResource("8")]
 position = Vector2(1128, -80)
@@ -3336,7 +3357,7 @@ position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_fllgw")
 
 [node name="Player" parent="Sorted Stuff" unique_id=464513584 instance=ExtResource("1")]
-position = Vector2(992, 160)
+position = Vector2(1904, -992)
 
 [connection signal="body_entered" from="Sorted Stuff/Homegrown Town/Rival/LineOfSight" to="Sorted Stuff/Homegrown Town/Rival" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Sorted Stuff/Homegrown Town/Rival/HitBox" to="Sorted Stuff/Homegrown Town/Rival" method="_on_hit_box_body_entered"]

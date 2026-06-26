@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dp5lxe362d3aa"
-path="res://.godot/imported/torch.png-a79992bddc8e82115610b7cf5614c7b6.ctex"
+uid="uid://db7bxxwxinkdx"
+path="res://.godot/imported/Pokemon33.png-99af2833166ea1c57e9fa1fa404f60d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Decoration/torch.png"
-dest_files=["res://.godot/imported/torch.png-a79992bddc8e82115610b7cf5614c7b6.ctex"]
+source_file="res://Assets/Pokemon/Pokemon33.png"
+dest_files=["res://.godot/imported/Pokemon33.png-99af2833166ea1c57e9fa1fa404f60d2.ctex"]
 
 [params]
 

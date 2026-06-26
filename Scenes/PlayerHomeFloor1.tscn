@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cgniqyvs4ol7c" path="res://Assets/Decoration/Closet.png" id="5_nhf0a"]
 [ext_resource type="Texture2D" uid="uid://dynurpo5p8ob5" path="res://Assets/Decoration/Sink and Dishwasher.png" id="6_n2vc4"]
 [ext_resource type="Texture2D" uid="uid://dlg26pmnn30kb" path="res://Assets/Decoration/house inside window.png" id="7_u4mgf"]
+[ext_resource type="Texture2D" uid="uid://bm0617pdpifuj" path="res://Assets/Decoration/Table.png" id="8_nhf0a"]
+[ext_resource type="Texture2D" uid="uid://bs1oucptljdsb" path="res://Assets/Decoration/Tv.png" id="9_n2vc4"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(16, 176)
@@ -26,7 +28,7 @@ size = Vector2(48, 16)
 size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ux0id"]
-size = Vector2(32, 16)
+size = Vector2(16, 32)
 
 [node name="PlayerHomeFloor1" type="Node2D" unique_id=1207506571]
 
@@ -38,8 +40,10 @@ offset_bottom = 392.0
 color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=295499838]
+offset_left = 2.0
 offset_top = 16.0
-offset_bottom = 16.0
+offset_right = 194.0
+offset_bottom = 144.0
 texture = ExtResource("1_q8uiw")
 
 [node name="Mat" type="Sprite2D" parent="." unique_id=627117942]
@@ -50,48 +54,72 @@ region_enabled = true
 region_rect = Rect2(0, 32, 20, 16)
 
 [node name="be" type="TextureRect" parent="." unique_id=2075392769]
-offset_left = 144.0
-offset_top = 48.0
-offset_right = 176.0
-offset_bottom = 80.0
+offset_left = 178.0
+offset_top = 112.0
+offset_right = 210.0
+offset_bottom = 144.0
+rotation = 1.5707964
 texture = ExtResource("3_dshl4")
 
-[node name="be2" type="TextureRect" parent="." unique_id=1884651410]
-offset_left = 48.0
+[node name="be3" type="TextureRect" parent="." unique_id=458732479]
+offset_left = 178.0
 offset_top = 48.0
-offset_right = 80.0
+offset_right = 210.0
+offset_bottom = 80.0
+rotation = 1.5707964
+texture = ExtResource("3_dshl4")
+
+[node name="trash" type="TextureRect" parent="." unique_id=1884651410]
+offset_left = 50.0
+offset_top = 48.0
+offset_right = 82.0
 offset_bottom = 80.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_kctdq")
 
 [node name="closeyt" type="TextureRect" parent="." unique_id=1664616185]
-offset_left = 96.0
-offset_top = 32.0
-offset_right = 128.0
-offset_bottom = 64.0
+offset_left = 192.0
+offset_top = 80.0
+offset_right = 224.0
+offset_bottom = 112.0
+rotation = 1.5707964
 texture = ExtResource("5_nhf0a")
 
 [node name="sink" type="TextureRect" parent="." unique_id=978395248]
-offset_left = 16.0
+offset_left = 18.0
 offset_top = 48.0
-offset_right = 48.0
+offset_right = 50.0
 offset_bottom = 64.0
 texture = ExtResource("6_n2vc4")
 flip_h = true
 
 [node name="window" type="TextureRect" parent="." unique_id=219963111]
-offset_left = 142.0
+offset_left = 144.0
 offset_top = 20.0
-offset_right = 174.0
+offset_right = 176.0
 offset_bottom = 52.0
 texture = ExtResource("7_u4mgf")
 
 [node name="window2" type="TextureRect" parent="." unique_id=96128668]
-offset_left = 14.0
+offset_left = 16.0
 offset_top = 20.0
-offset_right = 46.0
+offset_right = 48.0
 offset_bottom = 52.0
 texture = ExtResource("7_u4mgf")
+
+[node name="table" type="TextureRect" parent="." unique_id=504728476]
+offset_left = 80.0
+offset_top = 32.0
+offset_right = 112.0
+offset_bottom = 64.0
+texture = ExtResource("8_nhf0a")
+
+[node name="tv" type="TextureRect" parent="." unique_id=1492571359]
+offset_left = 80.0
+offset_top = 16.0
+offset_right = 112.0
+offset_bottom = 48.0
+texture = ExtResource("9_n2vc4")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1552400742]
 collision_layer = 2
@@ -121,8 +149,16 @@ shape = SubResource("RectangleShape2D_fuf8i")
 position = Vector2(160, 64)
 shape = SubResource("RectangleShape2D_pysj3")
 
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=550146138]
+position = Vector2(160, 128)
+shape = SubResource("RectangleShape2D_pysj3")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D" unique_id=1113111104]
+position = Vector2(96, 48)
+shape = SubResource("RectangleShape2D_pysj3")
+
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=1530362370]
-position = Vector2(112, 56)
+position = Vector2(168, 96)
 shape = SubResource("RectangleShape2D_ux0id")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=340670768]

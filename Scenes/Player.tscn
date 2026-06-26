@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://doksqu5xa217" path="res://Scripts/Player.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://0w0ax3ywv5qt" path="res://Assets/Player/player_shadow.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://df6vogkpqktbl" path="res://Assets/Player/player_spritesheet_no_hat.png" id="3_gntrk"]
+[ext_resource type="Texture2D" uid="uid://borwyj5x5tgc1" path="res://Assets/UI/Animation/vignette.png" id="4_dewec"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(16, 16)
@@ -497,6 +498,16 @@ states/Walk/position = Vector2(437.667, 86.3333)
 transitions = ["Idle", "Walk", SubResource("30"), "Walk", "Idle", SubResource("31"), "Idle", "Turn", SubResource("32"), "Turn", "Idle", SubResource("33"), "Turn", "Walk", SubResource("34"), "Walk", "Turn", SubResource("35"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_kne1u")]
 graph_offset = Vector2(-100.8, 11.5876)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ixxa"]
+bg_color = Color(0, 0, 0, 0.27450982)
+border_width_left = 90
+border_width_top = 50
+border_width_right = 90
+border_width_bottom = 50
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_detail = 20
+
 [node name="Player" type="CharacterBody2D" unique_id=736689713]
 collision_mask = 14
 script = ExtResource("2")
@@ -536,6 +547,27 @@ parameters/Walk/blend_position = Vector2(-0.997323, 0)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=577857197]
 position = Vector2(8, 8)
 zoom = Vector2(4, 4)
+
+[node name="Panel" type="Panel" parent="Camera2D" unique_id=209328941]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.00003
+offset_top = -100.00001
+offset_right = 89.99997
+offset_bottom = 59.999992
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.25, 1.25)
+theme_override_styles/panel = SubResource("StyleBoxFlat_5ixxa")
+
+[node name="Vignette" type="Sprite2D" parent="Camera2D/Panel" unique_id=1378847686]
+modulate = Color(1, 1, 1, 0.654902)
+position = Vector2(120.000015, 80)
+texture = ExtResource("4_dewec")
 
 [node name="BlockingRayCast2D" type="RayCast2D" parent="." unique_id=1269999703]
 position = Vector2(8, 8)
