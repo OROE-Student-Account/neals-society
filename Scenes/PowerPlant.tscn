@@ -7,10 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://du821hemh66bf" path="res://Assets/Tilesets/wall edge for top row.png" id="5_g6x45"]
 [ext_resource type="Texture2D" uid="uid://obsjxwyxnikk" path="res://Assets/Tilesets/Top row.png" id="6_0o1ji"]
 [ext_resource type="Texture2D" uid="uid://c4mmeswbjx3db" path="res://Assets/Decoration/TechTown/Generator_powercore.png" id="7_k7d28"]
+[ext_resource type="Script" uid="uid://bfh5c5n300iob" path="res://Scripts/Wall.gd" id="9_qhhr2"]
 [ext_resource type="PackedScene" uid="uid://i70qso44vgve" path="res://Scenes/Player.tscn" id="10_5rbrs"]
 [ext_resource type="Texture2D" uid="uid://e4aj5ya0h468" path="res://Assets/Decoration/TechTown/Tesla coil.png" id="10_gvq5t"]
 [ext_resource type="PackedScene" uid="uid://fsubo0lgcrfo" path="res://Scenes/Door.tscn" id="11_hk3ae"]
 [ext_resource type="Texture2D" uid="uid://c43y7caqqr8r1" path="res://Assets/Decoration/TechTown/electricty-particle.png" id="11_noj63"]
+[ext_resource type="Script" uid="uid://dfxklua8k0el2" path="res://Scripts/Lever.gd" id="13_ck00l"]
+[ext_resource type="Texture2D" uid="uid://u5s5ly3y01gc" path="res://Assets/Decoration/TechTown/lever.png" id="14_hdbim"]
+[ext_resource type="Script" uid="uid://bp28l32amhxsf" path="res://Scripts/DialogueNode.gd" id="15_244id"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g6x45"]
 texture = ExtResource("1_oao8r")
@@ -81,7 +85,17 @@ point_count = 2
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhhr2"]
 size = Vector2(112, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ck00l"]
+size = Vector2(15.999996, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wiaah"]
+radius = 11.313708
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7o1wx"]
+size = Vector2(16, 16)
+
 [node name="PowerPlant" type="Node2D" unique_id=1207506571]
+texture_filter = 1
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2070795569]
 offset_left = -792.0
@@ -106,7 +120,6 @@ y_sort_enabled = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Node2D" unique_id=729952439]
 y_sort_enabled = true
-texture_filter = 1
 position = Vector2(8, 0)
 tile_map_data = PackedByteArray("AAAEAAoAAAAAAAAAAAAGAAoAAAAAAAAAAAACAAoAAAAAAAAAABABAAoAAQAAAAAAABAIAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAAMAAoAAAAAAAAAABANAAoAAQAAAAAAAAANAAkAAwAAAAAAAAANAAgABQAAAAEAAAANAAYABQAAAAEAAAANAAcABQAAAAEAAAANAAUABQAAAAEAAAANAAQABwAAAAAAAAABAAkAAwAAAAAAABABAAgABQAAAAEAABD9/wQAAAAAAAAAAAD7/wQAAAAAAAAAABD//woAAAAAAAAAAAD9/woAAAAAAAAAAAD7/woAAAAAAAAAABD5/woAAAAAAAAAAAD3/woAAAAAAAAAAAD1/woAAAAAAAAAAADz/woAAAAAAAAAAADx/woAAAAAAAAAABDv/woAAAAAAAAAAAAPAAoAAAAAAAAAAAARAAoAAAAAAAAAAAATAAoAAAAAAAAAABAVAAoAAAAAAAAAAAAXAAoAAAAAAAAAAAAZAAoAAAAAAAAAABD7//z/AAAAAAAAAAD9//z/AAAAAAAAAAD///z/AAAAAAAAAAABAPz/AAAAAAAAABADAPz/AAAAAAAAAAAFAPz/AAAAAAAAAAD5//z/AAAAAAAAABD3//z/AAAAAAAAAAD1//z/AAAAAAAAAADz//z/BwAAAAAAAAD0//v/AwAAAAAAABDz//3/BQAAAAEAAADz//7/BQAAAAEAAADz////BQAAAAEAAADz/wAABQAAAAEAAADz/wEABQAAAAEAAADz/wIABQAAAAEAAADy/wQAAAAAAAAAABDw/wQAAAAAAAAAAADu/wQAAAAAAAAAABDt/woAAAAAAAAAABDr/woAAAAAAAAAAADp/woAAAAAAAAAAADs/wIABQAAAAEAAADs/wEABQAAAAEAAADs/wAABQAAAAEAAADs////BQAAAAEAAADs//7/BQAAAAEAAADs//3/BQAAAAEAAADs//z/BwAAAAAAAADs//v/AwAAAAAAAADz/wMAAwAAAAAAAADt/wMAAwAAAAAAABDz/wQAAQAAAAAAAADs/wQAAQAAAAAAAAD5/wQAAQAAAAAAAAD6/wMAAwAAAAAAABDr//z/AAAAAAAAAADp//z/AAAAAAAAABDn//z/AAAAAAAAAADl//z/AQAAAAAAAADl//r/BQAAAAEAAADl//n/BQAAAAEAAADl//j/BQAAAAEAAADl//f/BQAAAAEAAADl//b/BQAAAAEAAADn//T/AAAAAAAAAADp//T/AAAAAAAAAADl//T/BwAAAAAAAADl//X/BQAAAAEAAADm//P/AwAAAAAAABDm//v/AwAAAAAAABAOAAkAAwAAAAAAABAAAAkAAwAAAAAAAAAKAPz/AAAAAAAAAAAMAPz/AAAAAAAAAAAOAPz/AAAAAAAAABAQAPz/AAAAAAAAAAASAPz/AAAAAAAAAADn/woAAAAAAAAAAAAGAAIAAQAAAAAAAAAGAAEABQAAAAEAAAAHAPv/AwAAAAAAABAGAPv/AwAAAAAAAAAGAPz/BwAAAAAAAAAGAP3/BQAAAAEAAAAGAP7/BQAAAAEAAAAGAP//BQAAAAEAAAAGAAAABQAAAAEAAAAIAPz/AAAAAAAAAAAUAPv/AwAAAAAAABATAPv/AwAAAAAAAAATAAEABQAAAAEAAAATAAIAAQAAAAAAAAATAPz/BwAAAAAAAAATAP3/BQAAAAEAAAATAP7/BQAAAAEAAAATAP//BQAAAAEAAAATAAAABQAAAAEAAADl/woAAQAAAAAAAADm/wkAAwAAAAAAABDl/wcABQAAAAEAAADl/wgABQAAAAEAAADl/wYABQAAAAEAAADl/wUABQAAAAEAAADl/wQABwAAAAAAAADl/wMAAwAAAAAAAADk/wQAAAAAAAAAABDi/wQAAAAAAAAAAADg/wQAAAAAAAAAAADk/woAAAAAAAAAAADi/woAAAAAAAAAABDg/woAAAAAAAAAAADe/woAAAAAAAAAAADc/woAAAAAAAAAAADa/woAAAAAAAAAABDl/wkAAwAAAAAAAADZ/wkAAwAAAAAAABDf/wMAAwAAAAAAABDe/wQAAQAAAAAAAADY/woAAQAAAAAAAADY/wgABQAAAAEAAADY/wcABQAAAAEAAADY/wYABQAAAAEAAADY/wUABQAAAAEAAADY/wQABQAAAAEAAADY/wMABQAAAAEAAADY/wIABQAAAAEAAADY/wEABQAAAAEAAADY/wAABQAAAAEAAADY////BQAAAAEAAADY//7/BQAAAAEAAADY//3/BQAAAAEAAADY//v/BQAAAAEAAADe//z/AAAAAAAAABDa//z/AAAAAAAAAADc//z/AAAAAAAAAADf//z/AQAAAAAAAADf//v/AwAAAAAAAADf//r/BQAAAAEAAADf//n/BQAAAAEAAADf//j/BQAAAAEAAADf//f/BQAAAAEAAADf//b/BQAAAAEAAADf//X/BQAAAAEAAADf//T/BwAAAAAAAADZ//v/AwAAAAAAABDY//z/BQAAAAEAAADY//r/BQAAAAEAAADY//n/BQAAAAEAAADY//j/BQAAAAEAAADY//f/BQAAAAEAAADY//b/BQAAAAEAAADY//X/BQAAAAEAAADY//T/BQAAAAEAAADY//P/BQAAAAEAAADY//L/BQAAAAEAAADY//H/BQAAAAEAAADY//D/BQAAAAEAAAAVAPz/AAAAAAAAAAAXAPz/AAAAAAAAAAAZAPz/AAAAAAAAABDY/+//BQAAAAEAAADY/+7/BQAAAAEAAADa/+z/AAAAAAAAABDc/+z/AAAAAAAAABDe/+z/AAAAAAAAAADg/+z/AAAAAAAAAADi/+z/AAAAAAAAABDk/+z/AAAAAAAAAADm/+z/AAAAAAAAAADo/+z/AAAAAAAAAADq/+z/AAAAAAAAABDY/+z/BwAAAAAAAADY/+3/BQAAAAEAAADZ/+v/AwAAAAAAABDs//P/AwAAAAAAAADs//T/AQAAAAAAAADr//T/AAAAAAAAABDs/+z/AAAAAAAAAADu/+z/AAAAAAAAABDw/+z/AAAAAAAAAADy/+z/AAAAAAAAABDz//T/AQAAAAAAAADz/+v/AwAAAAAAAADz//L/BQAAAAEAAADz//H/BQAAAAEAAADz//D/BQAAAAEAAADz/+//BQAAAAEAAADz/+7/BQAAAAEAAADz/+3/BQAAAAEAAADz/+z/BwAAAAAAAAD//wQAAAAAAAAAABABAAYABQAAAAEAABABAAcABQAAAAEAABAAAAMAAwAAAAAAAAAAAAQABwAAAAAAAAAAAAUABQAAAAEAAAAUAAEAAwAAAAAAABAVAAIAAAAAAAAAAAAXAAIAAAAAAAAAAAAZAAIAAAAAAAAAAAAbAAoAAAAAAAAAAAAdAAoAAAAAAAAAABAfAAoAAAAAAAAAABAaAAEAAwAAAAAAAAAaAAIAAQAAAAAAAAAgAAoAAQAAAAAAAAAgAAkAAwAAAAAAAAAgAAgABQAAAAEAAAAgAAcABQAAAAEAAAAgAAYABQAAAAEAAAAgAAUABQAAAAEAAAAgAAQABQAAAAEAAAAgAAMABQAAAAEAAAAgAAIABQAAAAEAAAAgAAEABQAAAAEAAAAgAAAABQAAAAEAAAAgAP//BQAAAAEAAAAgAP7/BQAAAAEAAAAgAP3/BQAAAAEAAAAgAPz/BwAAAAAAAAAgAPv/AwAAAAAAAAAbAPz/AAAAAAAAAAAdAPz/AAAAAAAAAAAfAPz/AAAAAAAAABDz//P/BQAAAAEAAAAGAPr/BQAAAAEAAAAGAPn/BQAAAAEAAAAGAPj/BQAAAAEAAAAGAPf/BQAAAAEAAAAGAPb/BQAAAAEAAAAGAPX/BQAAAAEAAAAGAPT/BQAAAAEAAAAGAPP/BQAAAAEAAAAGAPL/BQAAAAEAAAAGAPH/BQAAAAEAAAAGAPD/BQAAAAEAAAAGAO//BQAAAAEAAAAGAO7/BQAAAAEAAAAGAO3/BQAAAAEAAAD0/+v/AwAAAAAAABD1/+z/AAAAAAAAABD3/+z/AAAAAAAAAAD5/+z/AAAAAAAAAAD7/+z/AAAAAAAAAAD9/+z/AAAAAAAAABD//+z/AAAAAAAAABABAOz/AAAAAAAAAAADAOz/AAAAAAAAABAFAOz/AAAAAAAAAAAGAOv/AwAAAAAAAAAGAOz/BwAAAAAAAAA=")
 tile_set = SubResource("TileSet_ck00l")
@@ -114,6 +127,331 @@ tile_set = SubResource("TileSet_ck00l")
 [node name="GeneratorPowercore" type="Sprite2D" parent="Node2D" unique_id=1013742394]
 position = Vector2(-32, -256)
 texture = ExtResource("7_k7d28")
+
+[node name="TeslaCoil1" type="Sprite2D" parent="Node2D" unique_id=953396518]
+position = Vector2(-104, 136)
+texture = ExtResource("10_gvq5t")
+
+[node name="TeslaCoil1" type="Node2D" parent="Node2D/TeslaCoil1" unique_id=1807131794]
+rotation = 3.1415927
+script = ExtResource("9_qhhr2")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Node2D/TeslaCoil1/TeslaCoil1" unique_id=2025150165]
+position = Vector2(0, 8)
+rotation = 1.5707964
+texture = ExtResource("11_noj63")
+lifetime = 1.5
+preprocess = 10.0
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+angular_velocity_max = 408.96
+linear_accel_min = 200.0
+linear_accel_max = 200.0
+linear_accel_curve = SubResource("Curve_qkwut")
+damping_min = 44.0
+damping_max = 44.0
+angle_min = -282.2
+scale_amount_max = 1.3
+color = Color(1, 1, 0.22352941, 0.5019608)
+
+[node name="Area2D" type="Area2D" parent="Node2D/TeslaCoil1/TeslaCoil1" unique_id=1691413635]
+rotation = 1.5707964
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TeslaCoil1/TeslaCoil1/Area2D" unique_id=1435301024]
+position = Vector2(48, 0)
+shape = SubResource("RectangleShape2D_qhhr2")
+
+[node name="Area2D2" type="Area2D" parent="Node2D/TeslaCoil1" unique_id=1989553944]
+rotation = 1.5707964
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TeslaCoil1/Area2D2" unique_id=590651329]
+shape = SubResource("RectangleShape2D_ck00l")
+
+[node name="TeslaCoil2" type="Sprite2D" parent="Node2D" unique_id=1419979772]
+position = Vector2(-312, 40)
+texture = ExtResource("10_gvq5t")
+
+[node name="TeslaCoil2" type="Node2D" parent="Node2D/TeslaCoil2" unique_id=109238181]
+script = ExtResource("9_qhhr2")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Node2D/TeslaCoil2/TeslaCoil2" unique_id=1116839229]
+position = Vector2(0, 8)
+rotation = 1.5707964
+texture = ExtResource("11_noj63")
+lifetime = 1.5
+preprocess = 10.0
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+angular_velocity_max = 408.96
+linear_accel_min = 200.0
+linear_accel_max = 200.0
+linear_accel_curve = SubResource("Curve_qkwut")
+damping_min = 44.0
+damping_max = 44.0
+angle_min = -282.2
+scale_amount_max = 1.3
+color = Color(1, 1, 0.22352941, 0.5019608)
+
+[node name="Area2D" type="Area2D" parent="Node2D/TeslaCoil2/TeslaCoil2" unique_id=1911406372]
+rotation = 1.5707964
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TeslaCoil2/TeslaCoil2/Area2D" unique_id=695756695]
+position = Vector2(48, 0)
+shape = SubResource("RectangleShape2D_qhhr2")
+
+[node name="Area2D2" type="Area2D" parent="Node2D/TeslaCoil2" unique_id=1220216472]
+rotation = 1.5707964
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TeslaCoil2/Area2D2" unique_id=1996222913]
+shape = SubResource("RectangleShape2D_ck00l")
+
+[node name="TeslaCoil3" type="Sprite2D" parent="Node2D" unique_id=1474576608]
+position = Vector2(-520, -200)
+texture = ExtResource("10_gvq5t")
+
+[node name="TeslaCoil3" type="Node2D" parent="Node2D/TeslaCoil3" unique_id=1004065651]
+script = ExtResource("9_qhhr2")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Node2D/TeslaCoil3/TeslaCoil3" unique_id=419613918]
+position = Vector2(8, 0)
+texture = ExtResource("11_noj63")
+lifetime = 1.5
+preprocess = 10.0
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+angular_velocity_max = 408.96
+linear_accel_min = 200.0
+linear_accel_max = 200.0
+linear_accel_curve = SubResource("Curve_qkwut")
+damping_min = 44.0
+damping_max = 44.0
+angle_min = -282.2
+scale_amount_max = 1.3
+color = Color(1, 1, 0.22352941, 0.5019608)
+
+[node name="Area2D" type="Area2D" parent="Node2D/TeslaCoil3/TeslaCoil3" unique_id=410330147]
+rotation = 1.5707964
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TeslaCoil3/TeslaCoil3/Area2D" unique_id=1734093926]
+position = Vector2(-3.8146973e-06, -47.999996)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_qhhr2")
+
+[node name="Area2D2" type="Area2D" parent="Node2D/TeslaCoil3" unique_id=1028540195]
+rotation = 1.5707964
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TeslaCoil3/Area2D2" unique_id=457825797]
+shape = SubResource("RectangleShape2D_ck00l")
+
+[node name="TeslaCoil4" type="Sprite2D" parent="Node2D" unique_id=1890879973]
+position = Vector2(-184, -184)
+texture = ExtResource("10_gvq5t")
+
+[node name="TeslaCoil4" type="Node2D" parent="Node2D/TeslaCoil4" unique_id=244191919]
+script = ExtResource("9_qhhr2")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Node2D/TeslaCoil4/TeslaCoil4" unique_id=2017672425]
+position = Vector2(0, 8)
+rotation = 1.5707964
+texture = ExtResource("11_noj63")
+lifetime = 1.5
+preprocess = 10.0
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+angular_velocity_max = 408.96
+linear_accel_min = 200.0
+linear_accel_max = 200.0
+linear_accel_curve = SubResource("Curve_qkwut")
+damping_min = 44.0
+damping_max = 44.0
+angle_min = -282.2
+scale_amount_max = 1.3
+color = Color(1, 1, 0.22352941, 0.5019608)
+
+[node name="Area2D" type="Area2D" parent="Node2D/TeslaCoil4/TeslaCoil4" unique_id=584402783]
+rotation = 1.5707964
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TeslaCoil4/TeslaCoil4/Area2D" unique_id=1876547779]
+position = Vector2(48, 0)
+shape = SubResource("RectangleShape2D_qhhr2")
+
+[node name="Area2D2" type="Area2D" parent="Node2D/TeslaCoil4" unique_id=909203998]
+rotation = 1.5707964
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TeslaCoil4/Area2D2" unique_id=1527674249]
+shape = SubResource("RectangleShape2D_ck00l")
+
+[node name="Lever1" type="Area2D" parent="Node2D" unique_id=836850668 node_paths=PackedStringArray("func_node")]
+position = Vector2(-48, 64)
+collision_layer = 16
+script = ExtResource("13_ck00l")
+func_node = NodePath("../TeslaCoil1/TeslaCoil1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Lever1" unique_id=901629339]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_wiaah")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/Lever1" unique_id=928837456]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_7o1wx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Lever1" unique_id=1378148064]
+position = Vector2(0, -1)
+texture = ExtResource("14_hdbim")
+centered = false
+hframes = 2
+
+[node name="DialogueRoot" type="Node" parent="Node2D/Lever1" unique_id=2071765472]
+script = ExtResource("15_244id")
+text = "Pull the lever?"
+display = "<none>"
+
+[node name="yes" type="Node" parent="Node2D/Lever1/DialogueRoot" unique_id=1733058224 node_paths=PackedStringArray("func_node")]
+script = ExtResource("15_244id")
+is_end_node = true
+option_name = "Yes"
+function = "pull"
+func_node = NodePath("../..")
+
+[node name="no" type="Node" parent="Node2D/Lever1/DialogueRoot" unique_id=901951346]
+script = ExtResource("15_244id")
+is_end_node = true
+option_name = "No"
+
+[node name="Lever2" type="Area2D" parent="Node2D" unique_id=603495119 node_paths=PackedStringArray("func_node")]
+position = Vector2(368, -64)
+collision_layer = 16
+script = ExtResource("13_ck00l")
+func_node = NodePath("../TeslaCoil2/TeslaCoil2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Lever2" unique_id=2008835345]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_wiaah")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/Lever2" unique_id=1343255033]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_7o1wx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Lever2" unique_id=1111143329]
+position = Vector2(0, -1)
+texture = ExtResource("14_hdbim")
+centered = false
+hframes = 2
+
+[node name="DialogueRoot" type="Node" parent="Node2D/Lever2" unique_id=1728192121]
+script = ExtResource("15_244id")
+text = "Pull the lever?"
+display = "<none>"
+
+[node name="yes" type="Node" parent="Node2D/Lever2/DialogueRoot" unique_id=313861577 node_paths=PackedStringArray("func_node")]
+script = ExtResource("15_244id")
+is_end_node = true
+option_name = "Yes"
+function = "pull"
+func_node = NodePath("../..")
+
+[node name="no" type="Node" parent="Node2D/Lever2/DialogueRoot" unique_id=15104015]
+script = ExtResource("15_244id")
+is_end_node = true
+option_name = "No"
+
+[node name="Lever3" type="Area2D" parent="Node2D" unique_id=1974151394 node_paths=PackedStringArray("func_node")]
+position = Vector2(-480, 64)
+collision_layer = 16
+script = ExtResource("13_ck00l")
+func_node = NodePath("../TeslaCoil3/TeslaCoil3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Lever3" unique_id=1998006759]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_wiaah")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/Lever3" unique_id=297102421]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_7o1wx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Lever3" unique_id=1551902199]
+position = Vector2(0, -1)
+texture = ExtResource("14_hdbim")
+centered = false
+hframes = 2
+
+[node name="DialogueRoot" type="Node" parent="Node2D/Lever3" unique_id=701467000]
+script = ExtResource("15_244id")
+text = "Pull the lever?"
+display = "<none>"
+
+[node name="yes" type="Node" parent="Node2D/Lever3/DialogueRoot" unique_id=1697631427 node_paths=PackedStringArray("func_node")]
+script = ExtResource("15_244id")
+is_end_node = true
+option_name = "Yes"
+function = "pull"
+func_node = NodePath("../..")
+
+[node name="no" type="Node" parent="Node2D/Lever3/DialogueRoot" unique_id=808390373]
+script = ExtResource("15_244id")
+is_end_node = true
+option_name = "No"
+
+[node name="Lever4" type="Area2D" parent="Node2D" unique_id=1857388896 node_paths=PackedStringArray("func_node")]
+position = Vector2(-368, -192)
+collision_layer = 16
+script = ExtResource("13_ck00l")
+func_node = NodePath("../TeslaCoil4/TeslaCoil4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Lever4" unique_id=147638228]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_wiaah")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/Lever4" unique_id=1118331356]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_7o1wx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Lever4" unique_id=161408054]
+position = Vector2(0, -1)
+texture = ExtResource("14_hdbim")
+centered = false
+hframes = 2
+
+[node name="DialogueRoot" type="Node" parent="Node2D/Lever4" unique_id=782594230]
+script = ExtResource("15_244id")
+text = "Pull the lever?"
+display = "<none>"
+
+[node name="yes" type="Node" parent="Node2D/Lever4/DialogueRoot" unique_id=2017790939 node_paths=PackedStringArray("func_node")]
+script = ExtResource("15_244id")
+is_end_node = true
+option_name = "Yes"
+function = "pull"
+func_node = NodePath("../..")
+
+[node name="no" type="Node" parent="Node2D/Lever4/DialogueRoot" unique_id=850969783]
+script = ExtResource("15_244id")
+is_end_node = true
+option_name = "No"
 
 [node name="Player" parent="Node2D" unique_id=802010568 instance=ExtResource("10_5rbrs")]
 position = Vector2(-32, 128)
@@ -127,133 +465,11 @@ texture = ExtResource("10_gvq5t")
 spawn_location = Vector2(1392, -544)
 spawn_direction = Vector2(0, 1)
 
-[node name="TeslaCoil-Horizontal" type="Sprite2D" parent="." unique_id=1626685756]
-position = Vector2(-224, 528)
-texture = ExtResource("10_gvq5t")
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="TeslaCoil-Horizontal" unique_id=221994720]
-position = Vector2(8, 0)
-texture = ExtResource("11_noj63")
-lifetime = 1.5
-preprocess = 10.0
-spread = 0.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 1.0
-initial_velocity_max = 1.0
-angular_velocity_max = 408.96
-linear_accel_min = 200.0
-linear_accel_max = 200.0
-linear_accel_curve = SubResource("Curve_qkwut")
-damping_min = 44.0
-damping_max = 44.0
-angle_min = -282.2
-scale_amount_max = 1.3
-color = Color(1, 1, 0.22352941, 0.5019608)
-
-[node name="Area2D" type="Area2D" parent="TeslaCoil-Horizontal" unique_id=1192405497]
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TeslaCoil-Horizontal/Area2D" unique_id=1075706929]
-position = Vector2(48, 0)
-shape = SubResource("RectangleShape2D_qhhr2")
-
-[node name="TeslaCoil-Horizontal2" type="Sprite2D" parent="." unique_id=1069972849]
-position = Vector2(-224, 512)
-texture = ExtResource("10_gvq5t")
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="TeslaCoil-Horizontal2" unique_id=1935874335]
-position = Vector2(-8, 0)
-rotation = -3.1415927
-texture = ExtResource("11_noj63")
-lifetime = 1.5
-preprocess = 10.0
-spread = 0.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 1.0
-initial_velocity_max = 1.0
-angular_velocity_max = 408.96
-linear_accel_min = 200.0
-linear_accel_max = 200.0
-linear_accel_curve = SubResource("Curve_qkwut")
-damping_min = 44.0
-damping_max = 44.0
-angle_min = -282.2
-scale_amount_max = 1.3
-color = Color(1, 1, 0.22352941, 0.5019608)
-
-[node name="Area2D" type="Area2D" parent="TeslaCoil-Horizontal2" unique_id=1944089993]
-position = Vector2(-96, 0)
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TeslaCoil-Horizontal2/Area2D" unique_id=1730729288]
-position = Vector2(48, 0)
-shape = SubResource("RectangleShape2D_qhhr2")
-
-[node name="TeslaCoil-Vertical" type="Sprite2D" parent="." unique_id=151348416]
-position = Vector2(-224, 544)
-texture = ExtResource("10_gvq5t")
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="TeslaCoil-Vertical" unique_id=2021926430]
-position = Vector2(0, 8)
-rotation = 1.5707964
-texture = ExtResource("11_noj63")
-lifetime = 1.5
-preprocess = 10.0
-spread = 0.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 1.0
-initial_velocity_max = 1.0
-angular_velocity_max = 408.96
-linear_accel_min = 200.0
-linear_accel_max = 200.0
-linear_accel_curve = SubResource("Curve_qkwut")
-damping_min = 44.0
-damping_max = 44.0
-angle_min = -282.2
-scale_amount_max = 1.3
-color = Color(1, 1, 0.22352941, 0.5019608)
-
-[node name="Area2D" type="Area2D" parent="TeslaCoil-Vertical" unique_id=57183383]
-rotation = 1.5707964
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TeslaCoil-Vertical/Area2D" unique_id=784904964]
-position = Vector2(48, 0)
-shape = SubResource("RectangleShape2D_qhhr2")
-
-[node name="TeslaCoil-Vertical2" type="Sprite2D" parent="." unique_id=1264202982]
-position = Vector2(-224, 496)
-texture = ExtResource("10_gvq5t")
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="TeslaCoil-Vertical2" unique_id=712668036]
-position = Vector2(0, 8)
-rotation = -1.5707964
-texture = ExtResource("11_noj63")
-lifetime = 1.5
-preprocess = 10.0
-spread = 0.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 1.0
-initial_velocity_max = 1.0
-angular_velocity_max = 408.96
-linear_accel_min = 200.0
-linear_accel_max = 200.0
-linear_accel_curve = SubResource("Curve_qkwut")
-damping_min = 44.0
-damping_max = 44.0
-angle_min = -282.2
-scale_amount_max = 1.3
-color = Color(1, 1, 0.22352941, 0.5019608)
-
-[node name="Area2D" type="Area2D" parent="TeslaCoil-Vertical2" unique_id=1140673917]
-position = Vector2(0, -96)
-rotation = 1.5707964
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TeslaCoil-Vertical2/Area2D" unique_id=888084241]
-position = Vector2(48, 0)
-shape = SubResource("RectangleShape2D_qhhr2")
+[connection signal="body_entered" from="Node2D/Lever1" to="Node2D/Lever1" method="_on_body_entered"]
+[connection signal="body_exited" from="Node2D/Lever1" to="Node2D/Lever1" method="_on_body_exited"]
+[connection signal="body_entered" from="Node2D/Lever2" to="Node2D/Lever2" method="_on_body_entered"]
+[connection signal="body_exited" from="Node2D/Lever2" to="Node2D/Lever2" method="_on_body_exited"]
+[connection signal="body_entered" from="Node2D/Lever3" to="Node2D/Lever3" method="_on_body_entered"]
+[connection signal="body_exited" from="Node2D/Lever3" to="Node2D/Lever3" method="_on_body_exited"]
+[connection signal="body_entered" from="Node2D/Lever4" to="Node2D/Lever4" method="_on_body_entered"]
+[connection signal="body_exited" from="Node2D/Lever4" to="Node2D/Lever4" method="_on_body_exited"]

@@ -6,6 +6,36 @@
 			}
 		}
 	},
+	"PowerPlant": {
+		"Obstacles": {
+			"TeslaCoil1": {
+				"Broken": false
+			},
+			"TeslaCoil2": {
+				"Broken": false
+			},
+			"TeslaCoil3": {
+				"Broken": false
+			},
+			"TeslaCoil4": {
+				"Broken": false
+			}
+		},
+		"Trainers": {
+			"Lever1": {
+				"Talked": false
+			},
+			"Lever2": {
+				"Talked": false
+			},
+			"Lever3": {
+				"Talked": false
+			},
+			"Lever4": {
+				"Talked": false
+			}
+		}
+	},
 	"Town": {
 		"Items": {
 			"Children's Book": {
