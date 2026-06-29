@@ -3357,7 +3357,7 @@ position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_fllgw")
 
 [node name="Player" parent="Sorted Stuff" unique_id=464513584 instance=ExtResource("1")]
-position = Vector2(1904, -992)
+position = Vector2(1904, -960)
 
 [connection signal="body_entered" from="Sorted Stuff/Homegrown Town/Rival/LineOfSight" to="Sorted Stuff/Homegrown Town/Rival" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Sorted Stuff/Homegrown Town/Rival/HitBox" to="Sorted Stuff/Homegrown Town/Rival" method="_on_hit_box_body_entered"]
