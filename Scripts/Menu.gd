@@ -76,7 +76,9 @@ func unload_submenu(submenu: String):
 		"Computer", "Quest", "Bookshelf", "Harvester", "Crafter":
 			screen_loaded = ScreenLoaded.NOTHING
 	
-	remove_child(get_node(submenu+"Screen"))
+	var node = get_node_or_null(submenu+"Screen")
+	if node:
+		remove_child(node)
 
 func unload_submenus(from_menu: bool):
 	emit_signal("close_menu")
@@ -89,7 +91,9 @@ func unload_submenus(from_menu: bool):
 		screen_loaded = ScreenLoaded.NOTHING
 		names = ["Computer", "Quest", "Bookshelf", "Harvester", "Crafter"]
 	for i in names:
-		remove_child(get_node(i+"Screen"))
+		var node = get_node_or_null(i+"Screen")
+		if node: 
+			remove_child(node)
 
 
 func update_select_box():

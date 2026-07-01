@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgmru8l3ie1uj"
-path="res://.godot/imported/Big rock.png-b72afd7e6e766db7dd15e1b27b0f01a2.ctex"
+uid="uid://cac7o5ij6b43"
+path="res://.godot/imported/Royal Grotto Castle.png-96e05d3895379eb6a5177d3681f8bd5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Decoration/Big rock.png"
-dest_files=["res://.godot/imported/Big rock.png-b72afd7e6e766db7dd15e1b27b0f01a2.ctex"]
+source_file="res://Assets/Decoration/RoyalGrotto/Royal Grotto Castle.png"
+dest_files=["res://.godot/imported/Royal Grotto Castle.png-96e05d3895379eb6a5177d3681f8bd5a.ctex"]
 
 [params]
 

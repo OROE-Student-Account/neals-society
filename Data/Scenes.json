@@ -40,6 +40,9 @@
 		"Items": {
 			"Children's Book": {
 				"Collected": false
+			},
+			"Exclamation Mark": {
+				"Collected": false
 			}
 		},
 		"Obstacles": {

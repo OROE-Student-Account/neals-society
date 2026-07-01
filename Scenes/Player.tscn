@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://doksqu5xa217" path="res://Scripts/Player.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://0w0ax3ywv5qt" path="res://Assets/Player/player_shadow.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://df6vogkpqktbl" path="res://Assets/Player/player_spritesheet_no_hat.png" id="3_gntrk"]
-[ext_resource type="Texture2D" uid="uid://borwyj5x5tgc1" path="res://Assets/UI/Animation/vignette.png" id="4_dewec"]
+[ext_resource type="Texture2D" uid="uid://diegxlyw20pyf" path="res://Assets/UI/Animation/anti-vignette.png" id="4_5ixxa"]
+[ext_resource type="Texture2D" uid="uid://ef00ptehcg4m" path="res://Assets/UI/Animation/glow.png" id="5_5ixxa"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(16, 16)
@@ -550,6 +551,7 @@ zoom = Vector2(4, 4)
 
 [node name="Panel" type="Panel" parent="Camera2D" unique_id=209328941]
 visible = false
+self_modulate = Color(1, 1, 1, 0.5176471)
 z_index = 2
 anchors_preset = 8
 anchor_left = 0.5
@@ -565,10 +567,20 @@ grow_vertical = 2
 scale = Vector2(1.25, 1.25)
 theme_override_styles/panel = SubResource("StyleBoxFlat_5ixxa")
 
-[node name="Vignette" type="Sprite2D" parent="Camera2D/Panel" unique_id=1378847686]
-modulate = Color(1, 1, 1, 0.654902)
-position = Vector2(120.000015, 80)
-texture = ExtResource("4_dewec")
+[node name="PointLight2D" type="PointLight2D" parent="Camera2D/Panel" unique_id=358712045]
+position = Vector2(120.000015, 79.99999)
+scale = Vector2(0.7999999, 0.7999999)
+color = Color(0, 0, 0, 1)
+blend_mode = 2
+texture = ExtResource("4_5ixxa")
+texture_scale = 1.25
+
+[node name="PointLight2D2" type="PointLight2D" parent="Camera2D/Panel" unique_id=1743248036]
+position = Vector2(120.000015, 79.99999)
+scale = Vector2(0.7999999, 0.7999999)
+blend_mode = 2
+texture = ExtResource("5_5ixxa")
+texture_scale = 0.8
 
 [node name="BlockingRayCast2D" type="RayCast2D" parent="." unique_id=1269999703]
 position = Vector2(8, 8)
