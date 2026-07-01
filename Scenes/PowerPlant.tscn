@@ -140,7 +140,7 @@ script = ExtResource("9_qhhr2")
 position = Vector2(0, 8)
 rotation = 1.5707964
 texture = ExtResource("11_noj63")
-lifetime = 1.5
+lifetime = 1.4000000000000001
 preprocess = 10.0
 spread = 0.0
 gravity = Vector2(0, 0)
@@ -174,7 +174,7 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_ck00l")
 
 [node name="TeslaCoil2" type="Sprite2D" parent="Node2D" unique_id=1419979772]
-position = Vector2(-312, 40)
+position = Vector2(-312, 72)
 texture = ExtResource("10_gvq5t")
 
 [node name="TeslaCoil2" type="Node2D" parent="Node2D/TeslaCoil2" unique_id=109238181]
@@ -218,7 +218,7 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_ck00l")
 
 [node name="TeslaCoil3" type="Sprite2D" parent="Node2D" unique_id=1474576608]
-position = Vector2(-520, -200)
+position = Vector2(-504, -200)
 texture = ExtResource("10_gvq5t")
 
 [node name="TeslaCoil3" type="Node2D" parent="Node2D/TeslaCoil3" unique_id=1004065651]
@@ -227,7 +227,7 @@ script = ExtResource("9_qhhr2")
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Node2D/TeslaCoil3/TeslaCoil3" unique_id=419613918]
 position = Vector2(8, 0)
 texture = ExtResource("11_noj63")
-lifetime = 1.5
+lifetime = 1.4000000000000001
 preprocess = 10.0
 spread = 0.0
 gravity = Vector2(0, 0)
@@ -262,7 +262,7 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_ck00l")
 
 [node name="TeslaCoil4" type="Sprite2D" parent="Node2D" unique_id=1890879973]
-position = Vector2(-184, -184)
+position = Vector2(-184, -168)
 texture = ExtResource("10_gvq5t")
 
 [node name="TeslaCoil4" type="Node2D" parent="Node2D/TeslaCoil4" unique_id=244191919]

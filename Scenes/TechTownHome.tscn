@@ -1,14 +1,16 @@
-[gd_scene format=3 uid="uid://cim2rkd4pde8"]
+[gd_scene format=3 uid="uid://6kicmt0rhjwj"]
 
-[ext_resource type="Texture2D" uid="uid://btbbtsqfx7tbh" path="res://Assets/Decoration/Universal/Inside house base.png" id="1_0c2td"]
-[ext_resource type="PackedScene" uid="uid://i70qso44vgve" path="res://Scenes/Player.tscn" id="2"]
-[ext_resource type="Texture2D" uid="uid://b67xu1q3o5r1p" path="res://Assets/Decoration/Universal/Mats.png" id="2_im4e0"]
-[ext_resource type="PackedScene" uid="uid://fsubo0lgcrfo" path="res://Scenes/Door.tscn" id="3"]
-[ext_resource type="Texture2D" uid="uid://dqoyua8j1n8c1" path="res://Assets/Decoration/Bed.png" id="3_o0s7c"]
-[ext_resource type="Texture2D" uid="uid://d1nwbof8w0ket" path="res://Assets/Decoration/Trash Can.png" id="4_kfyyk"]
-[ext_resource type="Texture2D" uid="uid://cgniqyvs4ol7c" path="res://Assets/Decoration/Closet.png" id="5_rlwif"]
-[ext_resource type="Texture2D" uid="uid://dynurpo5p8ob5" path="res://Assets/Decoration/Sink and Dishwasher.png" id="6_24koo"]
-[ext_resource type="Texture2D" uid="uid://dlg26pmnn30kb" path="res://Assets/Decoration/house inside window.png" id="7_3op1s"]
+[ext_resource type="Texture2D" uid="uid://btbbtsqfx7tbh" path="res://Assets/Decoration/Universal/Inside house base.png" id="1_daaod"]
+[ext_resource type="Texture2D" uid="uid://b67xu1q3o5r1p" path="res://Assets/Decoration/Universal/Mats.png" id="2_y2eqj"]
+[ext_resource type="Texture2D" uid="uid://dqoyua8j1n8c1" path="res://Assets/Decoration/Bed.png" id="3_yaiim"]
+[ext_resource type="Texture2D" uid="uid://d1nwbof8w0ket" path="res://Assets/Decoration/Trash Can.png" id="4_kxs0t"]
+[ext_resource type="Texture2D" uid="uid://cgniqyvs4ol7c" path="res://Assets/Decoration/Closet.png" id="5_dnoog"]
+[ext_resource type="Texture2D" uid="uid://dynurpo5p8ob5" path="res://Assets/Decoration/Sink and Dishwasher.png" id="6_3nvim"]
+[ext_resource type="Texture2D" uid="uid://dlg26pmnn30kb" path="res://Assets/Decoration/house inside window.png" id="7_32jbo"]
+[ext_resource type="PackedScene" uid="uid://i70qso44vgve" path="res://Scenes/Player.tscn" id="8_h8e5q"]
+[ext_resource type="Texture2D" uid="uid://bm0617pdpifuj" path="res://Assets/Decoration/Table.png" id="8_yaiim"]
+[ext_resource type="PackedScene" uid="uid://fsubo0lgcrfo" path="res://Scenes/Door.tscn" id="9_atbww"]
+[ext_resource type="Texture2D" uid="uid://bs1oucptljdsb" path="res://Assets/Decoration/Tv.png" id="9_kxs0t"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(16, 176)
@@ -42,58 +44,68 @@ color = Color(0, 0, 0, 1)
 offset_top = 16.0
 offset_right = 192.0
 offset_bottom = 144.0
-texture = ExtResource("1_0c2td")
+texture = ExtResource("1_daaod")
 
 [node name="Mat2" type="Sprite2D" parent="." unique_id=886365823]
 position = Vector2(62, 128)
-texture = ExtResource("2_im4e0")
+texture = ExtResource("2_y2eqj")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 32, 20, 16)
+region_rect = Rect2(0, 16, 20, 16)
+
+[node name="window" type="TextureRect" parent="." unique_id=848976023]
+offset_left = 143.0
+offset_top = 20.0
+offset_right = 175.0
+offset_bottom = 52.0
+texture = ExtResource("7_32jbo")
 
 [node name="be3" type="TextureRect" parent="." unique_id=39429403]
-offset_left = 96.0
-offset_top = 48.0
-offset_right = 128.0
-offset_bottom = 80.0
-texture = ExtResource("3_o0s7c")
+offset_left = 144.0
+offset_top = 40.0
+offset_right = 176.0
+offset_bottom = 72.0
+texture = ExtResource("3_yaiim")
 
 [node name="trash" type="TextureRect" parent="." unique_id=38752820]
-offset_left = 16.0
-offset_top = 128.0
-offset_right = 48.0
-offset_bottom = 160.0
+offset_left = 69.0
+offset_top = 48.0
+offset_right = 101.0
+offset_bottom = 80.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_kfyyk")
+texture = ExtResource("4_kxs0t")
 
 [node name="closeyt" type="TextureRect" parent="." unique_id=1975255686]
-offset_left = 144.0
-offset_top = 32.0
-offset_right = 176.0
-offset_bottom = 64.0
-texture = ExtResource("5_rlwif")
+offset_left = 176.0
+offset_top = 112.0
+offset_right = 208.0
+offset_bottom = 144.0
+rotation = 1.5707964
+texture = ExtResource("5_dnoog")
 
 [node name="sink" type="TextureRect" parent="." unique_id=1608882153]
 offset_left = 16.0
 offset_top = 48.0
 offset_right = 48.0
 offset_bottom = 64.0
-texture = ExtResource("6_24koo")
+texture = ExtResource("6_3nvim")
 flip_h = true
 
-[node name="window" type="TextureRect" parent="." unique_id=848976023]
-offset_left = 95.0
-offset_top = 20.0
-offset_right = 127.0
-offset_bottom = 52.0
-texture = ExtResource("7_3op1s")
+[node name="sink2" type="TextureRect" parent="." unique_id=523370494]
+offset_left = 88.0
+offset_top = 37.0
+offset_right = 120.0
+offset_bottom = 69.0
+texture = ExtResource("8_yaiim")
+flip_h = true
 
-[node name="window2" type="TextureRect" parent="." unique_id=330810409]
-offset_left = 47.0
-offset_top = 20.0
-offset_right = 79.0
-offset_bottom = 52.0
-texture = ExtResource("7_3op1s")
+[node name="sink3" type="TextureRect" parent="." unique_id=1732697331]
+offset_left = 88.0
+offset_top = 22.0
+offset_right = 120.0
+offset_bottom = 54.0
+texture = ExtResource("9_kxs0t")
+flip_h = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1716030424]
 collision_layer = 2
@@ -112,7 +124,7 @@ position = Vector2(104, 40)
 shape = SubResource("2")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1611173871]
-position = Vector2(112, 64)
+position = Vector2(160, 128)
 shape = SubResource("RectangleShape2D_0m57j")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=1965855416]
@@ -123,23 +135,27 @@ shape = SubResource("4")
 position = Vector2(24, 56)
 shape = SubResource("RectangleShape2D_aoau7")
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=1579923992]
-position = Vector2(8, 136)
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D" unique_id=664019353]
+position = Vector2(104, 56)
 shape = SubResource("RectangleShape2D_aoau7")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=1871135405]
 position = Vector2(160, 56)
 shape = SubResource("RectangleShape2D_lpn83")
 
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=417249187]
+position = Vector2(80, 56)
+shape = SubResource("RectangleShape2D_lpn83")
+
 [node name="Node2D" type="Node2D" parent="." unique_id=986866159]
 
-[node name="Player" parent="Node2D" unique_id=119606436 instance=ExtResource("2")]
+[node name="Player" parent="Node2D" unique_id=119606436 instance=ExtResource("8_h8e5q")]
 position = Vector2(80, 80)
 
-[node name="Door" parent="." unique_id=434385045 instance=ExtResource("3")]
+[node name="Door" parent="." unique_id=434385045 instance=ExtResource("9_atbww")]
 modulate = Color(0.12549, 0.313726, 0.85098, 1)
 position = Vector2(64, 128)
 next_scene_path = "res://Scenes/Town.tscn"
 is_invisible = true
-spawn_location = Vector2(448, 464)
+spawn_location = Vector2(656, -1328)
 spawn_direction = Vector2(0, 1)

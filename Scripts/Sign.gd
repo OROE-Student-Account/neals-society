@@ -2,6 +2,7 @@ extends Area2D
 
 
 @export var text : String = ""
+@export var is_invisible: bool = false
 
 @onready var root_node = $DialogueRoot
 
@@ -10,6 +11,8 @@ var disabled := false
 
 
 func _ready():
+	if is_invisible:
+		$Sprite2D.visible = false
 	root_node.text = text
 	Utils.get_scene_manager().get_node("DialogueBox").connect("dialogue_ended", Callable(self, "reset"))
 
