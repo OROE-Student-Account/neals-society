@@ -113,7 +113,7 @@ func finished_fading():
 			
 			if transition_type == "Grammarite Center":
 				var last_center = Utils.get_last_center()
-				child.get_node("Door").next_scene_path = "res://Scenes/"+last_center["Scene"]+".tscn"
+				child.get_node("Door").next_scene_path = "res://Scenes/"+last_center["Scene"]+".scn"
 				child.get_node("Door").spawn_location = Vector2(last_center["x"], last_center["y"])
 				menu.screen_loaded = menu.ScreenLoaded.NOTHING
 			
@@ -122,8 +122,12 @@ func finished_fading():
 			player.set_spawn(player_location, player_direction)
 		
 		"Battle":
+			for child in scene.get_children():
+				child.visible = false
 			load_battle()
 		"Battle Exit":
+			for child in scene.get_children():
+				child.visible = true
 			scene.get_children().back().free()
 			var player = Utils.get_player()
 			player.set_physics_process(true)

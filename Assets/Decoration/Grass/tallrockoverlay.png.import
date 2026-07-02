@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hr07vejphjr0"
-path="res://.godot/imported/grass_step_animation.png-24ba6a883ae1e2406a1bd8322d729e44.ctex"
+uid="uid://bs04vpduxspov"
+path="res://.godot/imported/tallrockoverlay.png-e87764125faf9b277c819f87e8dc2dac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Decoration/Grass/grass_step_animation.png"
-dest_files=["res://.godot/imported/grass_step_animation.png-24ba6a883ae1e2406a1bd8322d729e44.ctex"]
+source_file="res://Assets/Decoration/Grass/tallrockoverlay.png"
+dest_files=["res://.godot/imported/tallrockoverlay.png-e87764125faf9b277c819f87e8dc2dac.ctex"]
 
 [params]
 

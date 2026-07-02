@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hr07vejphjr0"
-path="res://.godot/imported/grass_step_animation.png-24ba6a883ae1e2406a1bd8322d729e44.ctex"
+uid="uid://bahrbwxgq3amg"
+path="res://.godot/imported/junkgrass anim.png-3c417d7cca29aa05111f7d21b2213988.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Decoration/Grass/grass_step_animation.png"
-dest_files=["res://.godot/imported/grass_step_animation.png-24ba6a883ae1e2406a1bd8322d729e44.ctex"]
+source_file="res://Assets/Decoration/Grass/junkgrass anim.png"
+dest_files=["res://.godot/imported/junkgrass anim.png-3c417d7cca29aa05111f7d21b2213988.ctex"]
 
 [params]
 

@@ -1,11 +1,16 @@
 extends Node2D
 
+
+@export var base: Texture2D = null
+@export var grass_overlay_texture: Texture2D = null
+@export var anim: Texture2D = null
+
+const GrassStepEffect = preload("res://Scenes/GrassStepEffect.tscn")
+
 @export_group("Encounter Data")
 @export var encounter_level: int = 1
 @export var encounter_types: Array[String] = []
 
-const grass_overlay_texture = preload("res://Assets/Decoration/Grass/stepped_tall_grass.png")
-const GrassStepEffect = preload("res://Scenes/GrassStepEffect.tscn")
 
 var grass_overlay: Node2D = null
 
@@ -19,6 +24,7 @@ func _ready() -> void:
 	
 	for grass in get_children():
 		if grass is Node2D:
+			grass.get_node("Node2D/Sprite2D").texture = base
 			# 2. Force each individual grass tile to pass Y-sorting down to its children
 			grass.y_sort_enabled = true
 			
@@ -34,7 +40,7 @@ func player_in_grass(grass_node: Node2D) -> void:
 	var offset_pos = Vector2(0, 1)
 	
 	grass_overlay = Node2D.new()
-	grass_overlay.y_sort_enabled = true
+	grass_overlay.y_sort_enabled = false
 	
 	# 1. ADD the offset to push its Y-sorting position 1 pixel lower (in front of the player)
 	grass_overlay.position += offset_pos
@@ -45,11 +51,20 @@ func player_in_grass(grass_node: Node2D) -> void:
 	texture_overlay.position -= offset_pos
 	
 	var grass_step_effect = GrassStepEffect.instantiate()
+	grass_step_effect.sprite_frames = SpriteFrames.new()
+	grass_step_effect.sprite_frames.set_animation_loop("default", false)
+	for i in range(4):
+		var atlas = AtlasTexture.new()
+		atlas.atlas = anim
+		atlas.region = Rect2(16*i,0,16,16)
+		grass_step_effect.sprite_frames.add_frame("default", atlas)
+	
 	# 3. SUBTRACT here too so the particle animation aligns with the texture
 	grass_step_effect.position -= offset_pos
 	
-	grass_overlay.add_child(grass_step_effect)
 	grass_overlay.add_child(texture_overlay)
+	grass_overlay.add_child(grass_step_effect)
+	grass_overlay.modulate = Color(1.353, 1.353, 1.353)
 	
 	grass_node.add_child(grass_overlay)
 

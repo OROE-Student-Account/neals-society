@@ -140,7 +140,7 @@ script = ExtResource("9_qhhr2")
 position = Vector2(0, 8)
 rotation = 1.5707964
 texture = ExtResource("11_noj63")
-lifetime = 1.4000000000000001
+lifetime = 1.4
 preprocess = 10.0
 spread = 0.0
 gravity = Vector2(0, 0)
@@ -227,7 +227,7 @@ script = ExtResource("9_qhhr2")
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Node2D/TeslaCoil3/TeslaCoil3" unique_id=419613918]
 position = Vector2(8, 0)
 texture = ExtResource("11_noj63")
-lifetime = 1.4000000000000001
+lifetime = 1.4
 preprocess = 10.0
 spread = 0.0
 gravity = Vector2(0, 0)
@@ -459,7 +459,7 @@ position = Vector2(-32, 128)
 [node name="Door" parent="." unique_id=305209293 instance=ExtResource("11_hk3ae")]
 modulate = Color(0.12549, 0.313726, 0.85098, 1)
 position = Vector2(-32, 128)
-next_scene_path = "res://Scenes/Town.tscn"
+next_scene_path = "res://Scenes/Town.scn"
 is_invisible = true
 texture = ExtResource("10_gvq5t")
 spawn_location = Vector2(1392, -544)

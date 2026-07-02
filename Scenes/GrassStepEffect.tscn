@@ -1,22 +1,24 @@
 [gd_scene format=3 uid="uid://ddqbnpucrvvab"]
 
-[ext_resource type="Texture2D" uid="uid://dwjqomapu13au" path="res://Assets/Decoration/Grass/grass_step_animation.png" id="1"]
 [ext_resource type="Script" uid="uid://uc2sww0men7k" path="res://Scripts/Effect.gd" id="2_iqqt3"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_molmi"]
+load_path = "res://.godot/imported/grass_step_animation.png-24ba6a883ae1e2406a1bd8322d729e44.ctex"
+
 [sub_resource type="AtlasTexture" id="1"]
-atlas = ExtResource("1")
+atlas = SubResource("CompressedTexture2D_molmi")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="2"]
-atlas = ExtResource("1")
+atlas = SubResource("CompressedTexture2D_molmi")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="3"]
-atlas = ExtResource("1")
+atlas = SubResource("CompressedTexture2D_molmi")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="4"]
-atlas = ExtResource("1")
+atlas = SubResource("CompressedTexture2D_molmi")
 region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="5"]

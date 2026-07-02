@@ -139,7 +139,7 @@ position = Vector2(80, 80)
 [node name="Door" parent="." unique_id=434385045 instance=ExtResource("3")]
 modulate = Color(0.12549, 0.313726, 0.85098, 1)
 position = Vector2(64, 128)
-next_scene_path = "res://Scenes/Town.tscn"
+next_scene_path = "res://Scenes/Town.scn"
 is_invisible = true
 spawn_location = Vector2(448, 464)
 spawn_direction = Vector2(0, 1)
