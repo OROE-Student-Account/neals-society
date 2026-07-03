@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://b4jcrb80t4lo" path="res://Assets/Trainers/old-man.png" id="18_7lgom"]
 [ext_resource type="Animation" uid="uid://du5tfmpo5pwl6" path="res://run_up.res" id="18_fofl4"]
 [ext_resource type="Texture2D" uid="uid://ds44qfk8xaxh1" path="res://Assets/Trainers/rival sprite.png" id="19_fofl4"]
+[ext_resource type="Texture2D" uid="uid://bpt6pgrroi5n7" path="res://Assets/Trainers/Persobole.png" id="19_m258a"]
 [ext_resource type="Script" uid="uid://bp28l32amhxsf" path="res://Scripts/DialogueNode.gd" id="20_463e5"]
 [ext_resource type="Script" uid="uid://jtbmjplgstoq" path="res://Scripts/Hitbox.gd" id="21_4jiks"]
 [ext_resource type="Texture2D" uid="uid://oyqtaaxaj8bh" path="res://Assets/Trainers/Daddy-Static.png" id="23_yicp6"]
@@ -871,7 +872,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m258a"]
-size = Vector2(16, 32)
+size = Vector2(16, 34.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbjfs"]
 size = Vector2(176, 48)
@@ -978,7 +979,7 @@ frame = 4
 
 [node name="Trainer9" type="Sprite2D" parent="sorted stuff/Cutscene/Students" unique_id=1593774045]
 position = Vector2(224, -42)
-texture = ExtResource("16_fw7d5")
+texture = ExtResource("19_m258a")
 centered = false
 hframes = 3
 vframes = 3
@@ -1010,7 +1011,7 @@ frame = 4
 
 [node name="Trainer13" type="Sprite2D" parent="sorted stuff/Cutscene/Students" unique_id=1661835802]
 position = Vector2(-112, 6)
-texture = ExtResource("16_fw7d5")
+texture = ExtResource("19_m258a")
 centered = false
 hframes = 3
 vframes = 3
@@ -1378,7 +1379,7 @@ display = "Rival: <rival>"
 [node name="uhh" type="Node" parent="sorted stuff/Cutscene/office/Rival/DialogueRoot" unique_id=787968244 node_paths=PackedStringArray("func_node")]
 script = ExtResource("20_463e5")
 is_end_node = true
-option_name = "Uhh..."
+option_name = "Uhh... What are you doing here?"
 function = "begin_from_self"
 func_node = NodePath("../../forgot")
 
@@ -1410,7 +1411,7 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sorted stuff/Cutscene/office/Rival/StaticBody2D" unique_id=1684107028]
-position = Vector2(8, 18.5)
+position = Vector2(8, 17.25)
 shape = SubResource("RectangleShape2D_m258a")
 
 [node name="Player" parent="sorted stuff" unique_id=802010568 instance=ExtResource("3_mywya")]

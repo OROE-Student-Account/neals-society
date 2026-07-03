@@ -45,14 +45,14 @@ func load_submenu(submenu: String):
 	
 	match submenu:
 		# Menu Subscreens
-		"Party", "Item", "Save":
+		"Computer", "Party", "Item", "Save":
 			menu.visible = false
 			screen_loaded = ScreenLoaded.MENU_SUBSCREEN
 			if submenu == "Item":
 				screen.in_battle = false
 		
 		# Other Menus
-		"Computer", "Quest", "Bookshelf", "Harvester", "Crafter":
+		"Quest", "Bookshelf", "Harvester", "Crafter":
 			screen_loaded = ScreenLoaded.SUBSCREEN
 	
 	add_child(screen)
@@ -61,12 +61,12 @@ func unload_submenu(submenu: String):
 	emit_signal("close_menu")
 	match submenu:
 		# Menu Subscreens
-		"Party", "Item", "Save":
+		"Computer", "Party", "Item", "Save":
 			menu.visible = true
 			screen_loaded = ScreenLoaded.JUST_MENU
 		
 		# Other Menus
-		"Computer", "Quest", "Bookshelf", "Harvester", "Crafter":
+		"Quest", "Bookshelf", "Harvester", "Crafter":
 			screen_loaded = ScreenLoaded.NOTHING
 	
 	var node = get_node_or_null(submenu+"Screen")
@@ -79,10 +79,10 @@ func unload_submenus(from_menu: bool):
 	if from_menu:
 		menu.visible = true
 		screen_loaded = ScreenLoaded.JUST_MENU
-		names = ["Party", "Item", "Save"]
+		names = ["Computer", "Party", "Item", "Save"]
 	else:
 		screen_loaded = ScreenLoaded.NOTHING
-		names = ["Computer", "Quest", "Bookshelf", "Harvester", "Crafter"]
+		names = ["Quest", "Bookshelf", "Harvester", "Crafter"]
 	for i in names:
 		var node = get_node_or_null(i+"Screen")
 		if node: 
@@ -150,7 +150,7 @@ func _unhandled_input(event):
 					3:
 						Utils.get_scene_manager().transition_to_menu("Save")
 					4:
-						$Namer.name_this()
+						Utils.get_scene_manager().transition_to_menu("Computer")
 					5:
 						# Close menu (already handled above)
 						pass

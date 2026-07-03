@@ -34,9 +34,9 @@ func transition_exit_menu(submenu: String):
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 	
 	match submenu:
-		"Party", "Item", "Save":
+		"Computer", "Party", "Item", "Save":
 			transition_type = "Menu Only"
-		"Computer", "Quest", "Harvester", "Crafter", "Bookshelf":
+		"Quest", "Harvester", "Crafter", "Bookshelf":
 			transition_type = "Exit Screen"
 
 
@@ -137,7 +137,7 @@ func finished_fading():
 		"Naming":
 			name_selected.emit(await $NamingScreen.load_naming_screen(name_request_node.name_prompt), name_request_node)
 		
-		"Party", "Item", "Save":
+		"Party", "Item", "Save", "Computer":
 			menu.unload_submenu("Item")
 			menu.unload_submenu("Party")
 			menu.load_submenu(transition_type)
@@ -149,5 +149,5 @@ func finished_fading():
 			var player = Utils.get_player()
 			player.set_physics_process(true)
 			player.player_state = player.PlayerState.IDLE
-		"Quest", "Harvester", "Crafter", "Bookshelf", "Computer":
+		"Quest", "Harvester", "Crafter", "Bookshelf":
 			menu.load_submenu(transition_type)

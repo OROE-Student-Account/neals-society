@@ -57,6 +57,13 @@
 			}
 		}
 	},
+	"TechTownHome": {
+		"Items": {
+			"Reading Glasses": {
+				"Collected": false
+			}
+		}
+	},
 	"Town": {
 		"Items": {
 			"Children's Book": {
@@ -73,6 +80,9 @@
 		},
 		"Trainers": {
 			"Fighter": {
+				"Talked": false
+			},
+			"Fighter2": {
 				"Talked": false
 			},
 			"OldmanBench": {

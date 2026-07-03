@@ -15,21 +15,6 @@ offset_bottom = 160.0
 
 [node name="Grammarites" type="Node2D" parent="." unique_id=1967884313]
 
-[node name="Sprite2D" type="Sprite2D" parent="Grammarites" unique_id=1588030829]
-position = Vector2(120, 80)
-texture = ExtResource("2_0637o")
-hframes = 2
-frame = 1
-
-[node name="Label" type="Label" parent="Grammarites/Sprite2D" unique_id=38417162]
-offset_left = -31.0
-offset_top = -4.0
-offset_right = 33.0
-offset_bottom = 19.0
-theme = ExtResource("3_thxbl")
-text = "Heal"
-horizontal_alignment = 1
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2038819632]
 position = Vector2(168, 120)
 texture = ExtResource("4_thxbl")
@@ -39,3 +24,18 @@ visible = false
 position = Vector2(72, 120)
 texture = ExtResource("4_thxbl")
 flip_h = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1588030829]
+position = Vector2(104, -32)
+texture = ExtResource("2_0637o")
+hframes = 2
+frame = 1
+
+[node name="Label" type="Label" parent="Sprite2D3" unique_id=38417162]
+offset_left = -31.0
+offset_top = -4.0
+offset_right = 33.0
+offset_bottom = 19.0
+theme = ExtResource("3_thxbl")
+text = "Heal"
+horizontal_alignment = 1

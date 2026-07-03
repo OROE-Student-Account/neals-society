@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://cjtiykoj2k11s" path="res://Assets/UI/menuUI.png" id="2_syfuq"]
 [ext_resource type="Texture2D" uid="uid://cbtw8iq0poli" path="res://Assets/UI/ui_arrow_up.png" id="3_s2c3o"]
 [ext_resource type="Script" uid="uid://by1tek04w14jl" path="res://Scripts/Menu.gd" id="4"]
-[ext_resource type="Script" uid="uid://beeubduvjblek" path="res://Scripts/Namer.gd" id="5_idohh"]
 
 [node name="Menu" type="CanvasLayer" unique_id=2032028044]
 scale = Vector2(5, 5)
@@ -33,11 +32,3 @@ offset_top = 80.0
 offset_right = 157.0
 offset_bottom = 87.0
 texture = ExtResource("3_s2c3o")
-
-[node name="Namer" type="Control" parent="." unique_id=1134717549]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("5_idohh")
-function = "set_player_name"

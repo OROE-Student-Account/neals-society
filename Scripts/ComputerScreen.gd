@@ -42,7 +42,7 @@ func _ready() -> void:
 		grammarite.region_rect = Rect2(0, 34, 64, 64)
 		
 		grammas.add_child(grammarite)
-		grammas.get_child(i+1).position = Vector2(208 + 120*i, 48)
+		grammas.get_child(i+1-1).position = Vector2(208 - 120 + 120*i, 48)
 
 
 
@@ -72,9 +72,9 @@ func left_anim():
 	grammas.get_child(0).frame = 0
 	grammas.get_child(0).get_child(0).visible = false
 	
-	for i in range(-20, 20):
-		var time = abs((i/20.0)**3)
-		grammas.position.x += (1-time)/0.25
+	for i in range(-10, 10):
+		var time = abs((i/10.0)**3)
+		grammas.position.x += (1-time)/0.125
 		await get_tree().create_timer(time/240).timeout
 	
 	if grammas.position.x > -1:
@@ -90,9 +90,9 @@ func right_anim():
 	grammas.get_child(0).frame = 0
 	grammas.get_child(0).get_child(0).visible = false
 	
-	for i in range(-20, 20):
-		var time = abs((i/20.0)**3)
-		grammas.position.x -= (1-time)/0.25
+	for i in range(-10, 10):
+		var time = abs((i/10.0)**3)
+		grammas.position.x -= (1-time)/0.125
 		await get_tree().create_timer(time/240).timeout
 	if grammas.position.x < -120*num_grammarites+1:
 		$Sprite2D.visible = false
@@ -236,11 +236,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	if animating: return
 	match state:
 		State.MAIN:
-			if event.is_action_pressed("z") and grammas.position.x > -1:
-				fix_party()
-			
-			elif event.is_action_pressed("z"):
-				selected_entry = abs(int((grammas.position.x-1)/120))-1
+			if event.is_action_pressed("z"):
+				selected_entry = abs(int((grammas.position.x-1)/120))-1+1
 				if Utils.caught_yet(Utils.get_name_from_num(selected_entry)):
 					state = State.SUMMARY
 					load_summary()
