@@ -5,8 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://bkd5rlijmfy0f" path="res://Assets/Tilesets/Inside Power Plant Wall 1.png" id="3_ebo1k"]
 [ext_resource type="Texture2D" uid="uid://c1nltratrut3d" path="res://Assets/Tilesets/side wall.png" id="4_oao8r"]
 [ext_resource type="Texture2D" uid="uid://du821hemh66bf" path="res://Assets/Tilesets/wall edge for top row.png" id="5_g6x45"]
+[ext_resource type="Texture2D" uid="uid://bfcwcw8x4o5st" path="res://Assets/Decoration/Overflowing TrashCan.png" id="5_tcjpa"]
 [ext_resource type="Texture2D" uid="uid://obsjxwyxnikk" path="res://Assets/Tilesets/Top row.png" id="6_0o1ji"]
 [ext_resource type="Texture2D" uid="uid://c4mmeswbjx3db" path="res://Assets/Decoration/TechTown/Generator_powercore.png" id="7_k7d28"]
+[ext_resource type="Texture2D" uid="uid://cjtipffhvgk8q" path="res://Assets/Decoration/Cargo Container.png" id="7_qafev"]
 [ext_resource type="Script" uid="uid://bfh5c5n300iob" path="res://Scripts/Wall.gd" id="9_qhhr2"]
 [ext_resource type="PackedScene" uid="uid://i70qso44vgve" path="res://Scenes/Player.tscn" id="10_5rbrs"]
 [ext_resource type="Texture2D" uid="uid://e4aj5ya0h468" path="res://Assets/Decoration/TechTown/Tesla coil.png" id="10_gvq5t"]
@@ -15,6 +17,11 @@
 [ext_resource type="Script" uid="uid://dfxklua8k0el2" path="res://Scripts/Lever.gd" id="13_ck00l"]
 [ext_resource type="Texture2D" uid="uid://u5s5ly3y01gc" path="res://Assets/Decoration/TechTown/lever.png" id="14_hdbim"]
 [ext_resource type="Script" uid="uid://bp28l32amhxsf" path="res://Scripts/DialogueNode.gd" id="15_244id"]
+[ext_resource type="Texture2D" uid="uid://bu03qnevtvpnr" path="res://Assets/Trainers/rammarGTrainer1.png" id="17_vnl58"]
+[ext_resource type="Script" uid="uid://yexcpjuauyul" path="res://Scripts/Trainer.gd" id="18_nnfiw"]
+[ext_resource type="Script" uid="uid://hvnvpuwe5g0b" path="res://Scripts/BattleStarter.gd" id="19_7tshw"]
+[ext_resource type="Texture2D" uid="uid://oyqtaaxaj8bh" path="res://Assets/Trainers/Daddy-Static.png" id="20_jdsbk"]
+[ext_resource type="PackedScene" uid="uid://bdykq75yoljv" path="res://Scenes/Item.tscn" id="21_xxb6j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g6x45"]
 texture = ExtResource("1_oao8r")
@@ -40,9 +47,12 @@ texture = ExtResource("4_oao8r")
 0:0/0/texture_origin = Vector2i(-14, 7)
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 8, 16, 8, 16, -24, 0, -24)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ck00l"]
-texture = ExtResource("1_oao8r")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sl2yl"]
+texture = ExtResource("5_tcjpa")
+0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 8)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_noj63"]
 resource_name = "reg"
@@ -51,6 +61,13 @@ texture = ExtResource("5_g6x45")
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(-14, 0)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gurfl"]
+texture = ExtResource("7_qafev")
+0:0/size_in_atlas = Vector2i(4, 4)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(-8, 8)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -24, 24, -24, 24, 8, -8, 8)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qkwut"]
 resource_name = "reg"
 texture = ExtResource("6_0o1ji")
@@ -58,6 +75,13 @@ texture = ExtResource("6_0o1ji")
 0:1/0 = 0
 0:1/0/texture_origin = Vector2i(-14, 0)
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 16, 16, 16, 16, -16, 0, -16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rsoac"]
+texture = ExtResource("7_k7d28")
+0:0/size_in_atlas = Vector2i(4, 4)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 8)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qhhr2"]
 resource_name = "special top"
@@ -75,7 +99,9 @@ sources/1 = SubResource("TileSetAtlasSource_gvq5t")
 sources/3 = SubResource("TileSetAtlasSource_noj63")
 sources/5 = SubResource("TileSetAtlasSource_qkwut")
 sources/7 = SubResource("TileSetAtlasSource_qhhr2")
-sources/10 = SubResource("TileSetAtlasSource_ck00l")
+sources/2 = SubResource("TileSetAtlasSource_sl2yl")
+sources/4 = SubResource("TileSetAtlasSource_gurfl")
+sources/6 = SubResource("TileSetAtlasSource_rsoac")
 
 [sub_resource type="Curve" id="Curve_qkwut"]
 _limits = [-1.0, 1.0, 0.0, 1.0]
@@ -93,6 +119,329 @@ radius = 11.313708
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7o1wx"]
 size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dos6"]
+atlas = ExtResource("17_vnl58")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rb178"]
+atlas = ExtResource("17_vnl58")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfhfr"]
+atlas = ExtResource("17_vnl58")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31nym"]
+atlas = ExtResource("17_vnl58")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40ydj"]
+atlas = ExtResource("17_vnl58")
+region = Rect2(16, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fahx5"]
+atlas = ExtResource("17_vnl58")
+region = Rect2(32, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghllp"]
+atlas = ExtResource("17_vnl58")
+region = Rect2(0, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m60uk"]
+atlas = ExtResource("17_vnl58")
+region = Rect2(16, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ud07e"]
+atlas = ExtResource("17_vnl58")
+region = Rect2(32, 64, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wwm2l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dos6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rb178")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfhfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31nym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40ydj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fahx5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghllp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m60uk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ud07e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gjjxb"]
+size = Vector2(12, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qes4h"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fd1kr"]
+
+[sub_resource type="Animation" id="Animation_60ruy"]
+resource_name = "Approach"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 0, 1, 2]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"approach_until_hit"
+}, {
+"args": [],
+"method": &"approach_until_hit"
+}, {
+"args": [],
+"method": &"approach_until_hit"
+}, {
+"args": [],
+"method": &"approach_until_hit"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_gn7iv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_lh2gh"]
+resource_name = "TurnAround"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_slan3"]
+resource_name = "TurnDown"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_pe55j"]
+resource_name = "TurnLeft"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_avwyw"]
+resource_name = "TurnRight"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fhy3o"]
+_data = {
+&"Approach": SubResource("Animation_60ruy"),
+&"RESET": SubResource("Animation_gn7iv"),
+&"TurnAround": SubResource("Animation_lh2gh"),
+&"TurnDown": SubResource("Animation_slan3"),
+&"TurnLeft": SubResource("Animation_pe55j"),
+&"TurnRight": SubResource("Animation_avwyw")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0u3m1"]
+atlas = ExtResource("20_jdsbk")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q63t6"]
+atlas = ExtResource("20_jdsbk")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_velj4"]
+atlas = ExtResource("20_jdsbk")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5a1ge"]
+atlas = ExtResource("20_jdsbk")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7ppq"]
+atlas = ExtResource("20_jdsbk")
+region = Rect2(16, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tmqe"]
+atlas = ExtResource("20_jdsbk")
+region = Rect2(32, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jccu3"]
+atlas = ExtResource("20_jdsbk")
+region = Rect2(0, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0tmc"]
+atlas = ExtResource("20_jdsbk")
+region = Rect2(16, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fc0d8"]
+atlas = ExtResource("20_jdsbk")
+region = Rect2(32, 64, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0k60w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0u3m1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q63t6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_velj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5a1ge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7ppq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tmqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jccu3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0tmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fc0d8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kf87e"]
+size = Vector2(12, 128)
 
 [node name="PowerPlant" type="Node2D" unique_id=1207506571]
 texture_filter = 1
@@ -115,28 +464,24 @@ centered = false
 region_enabled = true
 region_rect = Rect2(0, 16, 20, 16)
 
-[node name="Node2D" type="Node2D" parent="." unique_id=340670768]
+[node name="sorted stuff" type="Node2D" parent="." unique_id=340670768]
 y_sort_enabled = true
 
-[node name="TileMapLayer" type="TileMapLayer" parent="Node2D" unique_id=729952439]
+[node name="TileMapLayer" type="TileMapLayer" parent="sorted stuff" unique_id=729952439]
 y_sort_enabled = true
 position = Vector2(8, 0)
-tile_map_data = PackedByteArray("AAAEAAoAAAAAAAAAAAAGAAoAAAAAAAAAAAACAAoAAAAAAAAAABABAAoAAQAAAAAAABAIAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAAMAAoAAAAAAAAAABANAAoAAQAAAAAAAAANAAkAAwAAAAAAAAANAAgABQAAAAEAAAANAAYABQAAAAEAAAANAAcABQAAAAEAAAANAAUABQAAAAEAAAANAAQABwAAAAAAAAABAAkAAwAAAAAAABABAAgABQAAAAEAABD9/wQAAAAAAAAAAAD7/wQAAAAAAAAAABD//woAAAAAAAAAAAD9/woAAAAAAAAAAAD7/woAAAAAAAAAABD5/woAAAAAAAAAAAD3/woAAAAAAAAAAAD1/woAAAAAAAAAAADz/woAAAAAAAAAAADx/woAAAAAAAAAABDv/woAAAAAAAAAAAAPAAoAAAAAAAAAAAARAAoAAAAAAAAAAAATAAoAAAAAAAAAABAVAAoAAAAAAAAAAAAXAAoAAAAAAAAAAAAZAAoAAAAAAAAAABD7//z/AAAAAAAAAAD9//z/AAAAAAAAAAD///z/AAAAAAAAAAABAPz/AAAAAAAAABADAPz/AAAAAAAAAAAFAPz/AAAAAAAAAAD5//z/AAAAAAAAABD3//z/AAAAAAAAAAD1//z/AAAAAAAAAADz//z/BwAAAAAAAAD0//v/AwAAAAAAABDz//3/BQAAAAEAAADz//7/BQAAAAEAAADz////BQAAAAEAAADz/wAABQAAAAEAAADz/wEABQAAAAEAAADz/wIABQAAAAEAAADy/wQAAAAAAAAAABDw/wQAAAAAAAAAAADu/wQAAAAAAAAAABDt/woAAAAAAAAAABDr/woAAAAAAAAAAADp/woAAAAAAAAAAADs/wIABQAAAAEAAADs/wEABQAAAAEAAADs/wAABQAAAAEAAADs////BQAAAAEAAADs//7/BQAAAAEAAADs//3/BQAAAAEAAADs//z/BwAAAAAAAADs//v/AwAAAAAAAADz/wMAAwAAAAAAAADt/wMAAwAAAAAAABDz/wQAAQAAAAAAAADs/wQAAQAAAAAAAAD5/wQAAQAAAAAAAAD6/wMAAwAAAAAAABDr//z/AAAAAAAAAADp//z/AAAAAAAAABDn//z/AAAAAAAAAADl//z/AQAAAAAAAADl//r/BQAAAAEAAADl//n/BQAAAAEAAADl//j/BQAAAAEAAADl//f/BQAAAAEAAADl//b/BQAAAAEAAADn//T/AAAAAAAAAADp//T/AAAAAAAAAADl//T/BwAAAAAAAADl//X/BQAAAAEAAADm//P/AwAAAAAAABDm//v/AwAAAAAAABAOAAkAAwAAAAAAABAAAAkAAwAAAAAAAAAKAPz/AAAAAAAAAAAMAPz/AAAAAAAAAAAOAPz/AAAAAAAAABAQAPz/AAAAAAAAAAASAPz/AAAAAAAAAADn/woAAAAAAAAAAAAGAAIAAQAAAAAAAAAGAAEABQAAAAEAAAAHAPv/AwAAAAAAABAGAPv/AwAAAAAAAAAGAPz/BwAAAAAAAAAGAP3/BQAAAAEAAAAGAP7/BQAAAAEAAAAGAP//BQAAAAEAAAAGAAAABQAAAAEAAAAIAPz/AAAAAAAAAAAUAPv/AwAAAAAAABATAPv/AwAAAAAAAAATAAEABQAAAAEAAAATAAIAAQAAAAAAAAATAPz/BwAAAAAAAAATAP3/BQAAAAEAAAATAP7/BQAAAAEAAAATAP//BQAAAAEAAAATAAAABQAAAAEAAADl/woAAQAAAAAAAADm/wkAAwAAAAAAABDl/wcABQAAAAEAAADl/wgABQAAAAEAAADl/wYABQAAAAEAAADl/wUABQAAAAEAAADl/wQABwAAAAAAAADl/wMAAwAAAAAAAADk/wQAAAAAAAAAABDi/wQAAAAAAAAAAADg/wQAAAAAAAAAAADk/woAAAAAAAAAAADi/woAAAAAAAAAABDg/woAAAAAAAAAAADe/woAAAAAAAAAAADc/woAAAAAAAAAAADa/woAAAAAAAAAABDl/wkAAwAAAAAAAADZ/wkAAwAAAAAAABDf/wMAAwAAAAAAABDe/wQAAQAAAAAAAADY/woAAQAAAAAAAADY/wgABQAAAAEAAADY/wcABQAAAAEAAADY/wYABQAAAAEAAADY/wUABQAAAAEAAADY/wQABQAAAAEAAADY/wMABQAAAAEAAADY/wIABQAAAAEAAADY/wEABQAAAAEAAADY/wAABQAAAAEAAADY////BQAAAAEAAADY//7/BQAAAAEAAADY//3/BQAAAAEAAADY//v/BQAAAAEAAADe//z/AAAAAAAAABDa//z/AAAAAAAAAADc//z/AAAAAAAAAADf//z/AQAAAAAAAADf//v/AwAAAAAAAADf//r/BQAAAAEAAADf//n/BQAAAAEAAADf//j/BQAAAAEAAADf//f/BQAAAAEAAADf//b/BQAAAAEAAADf//X/BQAAAAEAAADf//T/BwAAAAAAAADZ//v/AwAAAAAAABDY//z/BQAAAAEAAADY//r/BQAAAAEAAADY//n/BQAAAAEAAADY//j/BQAAAAEAAADY//f/BQAAAAEAAADY//b/BQAAAAEAAADY//X/BQAAAAEAAADY//T/BQAAAAEAAADY//P/BQAAAAEAAADY//L/BQAAAAEAAADY//H/BQAAAAEAAADY//D/BQAAAAEAAAAVAPz/AAAAAAAAAAAXAPz/AAAAAAAAAAAZAPz/AAAAAAAAABDY/+//BQAAAAEAAADY/+7/BQAAAAEAAADa/+z/AAAAAAAAABDc/+z/AAAAAAAAABDe/+z/AAAAAAAAAADg/+z/AAAAAAAAAADi/+z/AAAAAAAAABDk/+z/AAAAAAAAAADm/+z/AAAAAAAAAADo/+z/AAAAAAAAAADq/+z/AAAAAAAAABDY/+z/BwAAAAAAAADY/+3/BQAAAAEAAADZ/+v/AwAAAAAAABDs//P/AwAAAAAAAADs//T/AQAAAAAAAADr//T/AAAAAAAAABDs/+z/AAAAAAAAAADu/+z/AAAAAAAAABDw/+z/AAAAAAAAAADy/+z/AAAAAAAAABDz//T/AQAAAAAAAADz/+v/AwAAAAAAAADz//L/BQAAAAEAAADz//H/BQAAAAEAAADz//D/BQAAAAEAAADz/+//BQAAAAEAAADz/+7/BQAAAAEAAADz/+3/BQAAAAEAAADz/+z/BwAAAAAAAAD//wQAAAAAAAAAABABAAYABQAAAAEAABABAAcABQAAAAEAABAAAAMAAwAAAAAAAAAAAAQABwAAAAAAAAAAAAUABQAAAAEAAAAUAAEAAwAAAAAAABAVAAIAAAAAAAAAAAAXAAIAAAAAAAAAAAAZAAIAAAAAAAAAAAAbAAoAAAAAAAAAAAAdAAoAAAAAAAAAABAfAAoAAAAAAAAAABAaAAEAAwAAAAAAAAAaAAIAAQAAAAAAAAAgAAoAAQAAAAAAAAAgAAkAAwAAAAAAAAAgAAgABQAAAAEAAAAgAAcABQAAAAEAAAAgAAYABQAAAAEAAAAgAAUABQAAAAEAAAAgAAQABQAAAAEAAAAgAAMABQAAAAEAAAAgAAIABQAAAAEAAAAgAAEABQAAAAEAAAAgAAAABQAAAAEAAAAgAP//BQAAAAEAAAAgAP7/BQAAAAEAAAAgAP3/BQAAAAEAAAAgAPz/BwAAAAAAAAAgAPv/AwAAAAAAAAAbAPz/AAAAAAAAAAAdAPz/AAAAAAAAAAAfAPz/AAAAAAAAABDz//P/BQAAAAEAAAAGAPr/BQAAAAEAAAAGAPn/BQAAAAEAAAAGAPj/BQAAAAEAAAAGAPf/BQAAAAEAAAAGAPb/BQAAAAEAAAAGAPX/BQAAAAEAAAAGAPT/BQAAAAEAAAAGAPP/BQAAAAEAAAAGAPL/BQAAAAEAAAAGAPH/BQAAAAEAAAAGAPD/BQAAAAEAAAAGAO//BQAAAAEAAAAGAO7/BQAAAAEAAAAGAO3/BQAAAAEAAAD0/+v/AwAAAAAAABD1/+z/AAAAAAAAABD3/+z/AAAAAAAAAAD5/+z/AAAAAAAAAAD7/+z/AAAAAAAAAAD9/+z/AAAAAAAAABD//+z/AAAAAAAAABABAOz/AAAAAAAAAAADAOz/AAAAAAAAABAFAOz/AAAAAAAAAAAGAOv/AwAAAAAAAAAGAOz/BwAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAEAAoAAAAAAAAAAAAGAAoAAAAAAAAAAAACAAoAAAAAAAAAABABAAoAAQAAAAAAABAIAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAAMAAoAAAAAAAAAABANAAoAAQAAAAAAAAANAAkAAwAAAAAAAAANAAgABQAAAAEAAAANAAYABQAAAAEAAAANAAcABQAAAAEAAAANAAUABQAAAAEAAAANAAQABwAAAAAAAAABAAkAAwAAAAAAABABAAgABQAAAAEAABD9/wQAAAAAAAAAAAD7/wQAAAAAAAAAABD//woAAAAAAAAAAAD9/woAAAAAAAAAAAD7/woAAAAAAAAAABD5/woAAAAAAAAAAAD3/woAAAAAAAAAAAD1/woAAAAAAAAAAADz/woAAAAAAAAAAADx/woAAAAAAAAAABDv/woAAAAAAAAAAAAPAAoAAAAAAAAAAAARAAoAAAAAAAAAAAATAAoAAAAAAAAAABAVAAoAAAAAAAAAAAAXAAoAAAAAAAAAAAAZAAoAAAAAAAAAABD7//z/AAAAAAAAAAD9//z/AAAAAAAAAAD///z/AAAAAAAAAAABAPz/AAAAAAAAABADAPz/AAAAAAAAAAAFAPz/AAAAAAAAAAD5//z/AAAAAAAAABD3//z/AAAAAAAAAAD1//z/AAAAAAAAAADz//z/BwAAAAAAAAD0//v/AwAAAAAAABDz//3/BQAAAAEAAADz//7/BQAAAAEAAADz////BQAAAAEAAADz/wAABQAAAAEAAADz/wEABQAAAAEAAADz/wIABQAAAAEAAADy/wQAAAAAAAAAABDw/wQAAAAAAAAAAADu/wQAAAAAAAAAABDt/woAAAAAAAAAABDr/woAAAAAAAAAAADp/woAAAAAAAAAAADs/wIABQAAAAEAAADs/wEABQAAAAEAAADs/wAABQAAAAEAAADs////BQAAAAEAAADs//7/BQAAAAEAAADs//3/BQAAAAEAAADs//z/BwAAAAAAAADs//v/AwAAAAAAAADz/wMAAwAAAAAAAADt/wMAAwAAAAAAABDz/wQAAQAAAAAAAADs/wQAAQAAAAAAAAD5/wQAAQAAAAAAAAD6/wMAAwAAAAAAABDr//z/AAAAAAAAAADp//z/AAAAAAAAABDn//z/AAAAAAAAAADl//z/AQAAAAAAAADl//r/BQAAAAEAAADl//n/BQAAAAEAAADl//j/BQAAAAEAAADl//f/BQAAAAEAAADl//b/BQAAAAEAAADn//T/AAAAAAAAAADp//T/AAAAAAAAAADl//T/BwAAAAAAAADl//X/BQAAAAEAAADm//P/AwAAAAAAABDm//v/AwAAAAAAABAOAAkAAwAAAAAAABAAAAkAAwAAAAAAAAAKAPz/AAAAAAAAAAAMAPz/AAAAAAAAAAAOAPz/AAAAAAAAABAQAPz/AAAAAAAAAAASAPz/AAAAAAAAAADn/woAAAAAAAAAAAAGAAIAAQAAAAAAAAAGAAEABQAAAAEAAAAHAPv/AwAAAAAAABAGAPv/AwAAAAAAAAAGAPz/BwAAAAAAAAAGAP3/BQAAAAEAAAAGAP7/BQAAAAEAAAAGAP//BQAAAAEAAAAGAAAABQAAAAEAAAAIAPz/AAAAAAAAAAAUAPv/AwAAAAAAABATAPv/AwAAAAAAAAATAAEABQAAAAEAAAATAAIAAQAAAAAAAAATAPz/BwAAAAAAAAATAP3/BQAAAAEAAAATAP7/BQAAAAEAAAATAP//BQAAAAEAAAATAAAABQAAAAEAAADl/woAAQAAAAAAAADm/wkAAwAAAAAAABDl/wcABQAAAAEAAADl/wgABQAAAAEAAADl/wYABQAAAAEAAADl/wUABQAAAAEAAADl/wQABwAAAAAAAADl/wMAAwAAAAAAAADk/wQAAAAAAAAAABDi/wQAAAAAAAAAAADg/wQAAAAAAAAAAADk/woAAAAAAAAAAADi/woAAAAAAAAAABDg/woAAAAAAAAAAADe/woAAAAAAAAAAADc/woAAAAAAAAAAADa/woAAAAAAAAAABDl/wkAAwAAAAAAAADZ/wkAAwAAAAAAABDf/wMAAwAAAAAAABDe/wQAAQAAAAAAAADY/woAAQAAAAAAAADY/wgABQAAAAEAAADY/wcABQAAAAEAAADY/wYABQAAAAEAAADY/wUABQAAAAEAAADY/wQABQAAAAEAAADY/wMABQAAAAEAAADY/wIABQAAAAEAAADY/wEABQAAAAEAAADY/wAABQAAAAEAAADY////BQAAAAEAAADY//7/BQAAAAEAAADY//3/BQAAAAEAAADY//v/BQAAAAEAAADe//z/AAAAAAAAABDa//z/AAAAAAAAAADc//z/AAAAAAAA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")
 tile_set = SubResource("TileSet_ck00l")
 
-[node name="GeneratorPowercore" type="Sprite2D" parent="Node2D" unique_id=1013742394]
-position = Vector2(-32, -256)
-texture = ExtResource("7_k7d28")
-
-[node name="TeslaCoil1" type="Sprite2D" parent="Node2D" unique_id=953396518]
+[node name="TeslaCoil1" type="Sprite2D" parent="sorted stuff" unique_id=953396518]
 position = Vector2(-104, 136)
 texture = ExtResource("10_gvq5t")
 
-[node name="TeslaCoil1" type="Node2D" parent="Node2D/TeslaCoil1" unique_id=1807131794]
+[node name="TeslaCoil1" type="Node2D" parent="sorted stuff/TeslaCoil1" unique_id=1807131794]
 rotation = 3.1415927
 script = ExtResource("9_qhhr2")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="Node2D/TeslaCoil1/TeslaCoil1" unique_id=2025150165]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="sorted stuff/TeslaCoil1/TeslaCoil1" unique_id=2025150165]
 position = Vector2(0, 8)
 rotation = 1.5707964
 texture = ExtResource("11_noj63")
@@ -156,31 +501,31 @@ angle_min = -282.2
 scale_amount_max = 1.3
 color = Color(1, 1, 0.22352941, 0.5019608)
 
-[node name="Area2D" type="Area2D" parent="Node2D/TeslaCoil1/TeslaCoil1" unique_id=1691413635]
+[node name="Area2D" type="Area2D" parent="sorted stuff/TeslaCoil1/TeslaCoil1" unique_id=1691413635]
 rotation = 1.5707964
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TeslaCoil1/TeslaCoil1/Area2D" unique_id=1435301024]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sorted stuff/TeslaCoil1/TeslaCoil1/Area2D" unique_id=1435301024]
 position = Vector2(48, 0)
 shape = SubResource("RectangleShape2D_qhhr2")
 
-[node name="Area2D2" type="Area2D" parent="Node2D/TeslaCoil1" unique_id=1989553944]
+[node name="Area2D2" type="Area2D" parent="sorted stuff/TeslaCoil1" unique_id=1989553944]
 rotation = 1.5707964
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TeslaCoil1/Area2D2" unique_id=590651329]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sorted stuff/TeslaCoil1/Area2D2" unique_id=590651329]
 shape = SubResource("RectangleShape2D_ck00l")
 
-[node name="TeslaCoil2" type="Sprite2D" parent="Node2D" unique_id=1419979772]
+[node name="TeslaCoil2" type="Sprite2D" parent="sorted stuff" unique_id=1419979772]
 position = Vector2(-312, 72)
 texture = ExtResource("10_gvq5t")
 
-[node name="TeslaCoil2" type="Node2D" parent="Node2D/TeslaCoil2" unique_id=109238181]
+[node name="TeslaCoil2" type="Node2D" parent="sorted stuff/TeslaCoil2" unique_id=109238181]
 script = ExtResource("9_qhhr2")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="Node2D/TeslaCoil2/TeslaCoil2" unique_id=1116839229]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="sorted stuff/TeslaCoil2/TeslaCoil2" unique_id=1116839229]
 position = Vector2(0, 8)
 rotation = 1.5707964
 texture = ExtResource("11_noj63")
@@ -200,31 +545,31 @@ angle_min = -282.2
 scale_amount_max = 1.3
 color = Color(1, 1, 0.22352941, 0.5019608)
 
-[node name="Area2D" type="Area2D" parent="Node2D/TeslaCoil2/TeslaCoil2" unique_id=1911406372]
+[node name="Area2D" type="Area2D" parent="sorted stuff/TeslaCoil2/TeslaCoil2" unique_id=1911406372]
 rotation = 1.5707964
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TeslaCoil2/TeslaCoil2/Area2D" unique_id=695756695]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sorted stuff/TeslaCoil2/TeslaCoil2/Area2D" unique_id=695756695]
 position = Vector2(48, 0)
 shape = SubResource("RectangleShape2D_qhhr2")
 
-[node name="Area2D2" type="Area2D" parent="Node2D/TeslaCoil2" unique_id=1220216472]
+[node name="Area2D2" type="Area2D" parent="sorted stuff/TeslaCoil2" unique_id=1220216472]
 rotation = 1.5707964
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TeslaCoil2/Area2D2" unique_id=1996222913]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sorted stuff/TeslaCoil2/Area2D2" unique_id=1996222913]
 shape = SubResource("RectangleShape2D_ck00l")
 
-[node name="TeslaCoil3" type="Sprite2D" parent="Node2D" unique_id=1474576608]
+[node name="TeslaCoil3" type="Sprite2D" parent="sorted stuff" unique_id=1474576608]
 position = Vector2(-504, -200)
 texture = ExtResource("10_gvq5t")
 
-[node name="TeslaCoil3" type="Node2D" parent="Node2D/TeslaCoil3" unique_id=1004065651]
+[node name="TeslaCoil3" type="Node2D" parent="sorted stuff/TeslaCoil3" unique_id=1004065651]
 script = ExtResource("9_qhhr2")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="Node2D/TeslaCoil3/TeslaCoil3" unique_id=419613918]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="sorted stuff/TeslaCoil3/TeslaCoil3" unique_id=419613918]
 position = Vector2(8, 0)
 texture = ExtResource("11_noj63")
 lifetime = 1.4
@@ -243,32 +588,32 @@ angle_min = -282.2
 scale_amount_max = 1.3
 color = Color(1, 1, 0.22352941, 0.5019608)
 
-[node name="Area2D" type="Area2D" parent="Node2D/TeslaCoil3/TeslaCoil3" unique_id=410330147]
+[node name="Area2D" type="Area2D" parent="sorted stuff/TeslaCoil3/TeslaCoil3" unique_id=410330147]
 rotation = 1.5707964
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TeslaCoil3/TeslaCoil3/Area2D" unique_id=1734093926]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sorted stuff/TeslaCoil3/TeslaCoil3/Area2D" unique_id=1734093926]
 position = Vector2(-3.8146973e-06, -47.999996)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_qhhr2")
 
-[node name="Area2D2" type="Area2D" parent="Node2D/TeslaCoil3" unique_id=1028540195]
+[node name="Area2D2" type="Area2D" parent="sorted stuff/TeslaCoil3" unique_id=1028540195]
 rotation = 1.5707964
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TeslaCoil3/Area2D2" unique_id=457825797]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sorted stuff/TeslaCoil3/Area2D2" unique_id=457825797]
 shape = SubResource("RectangleShape2D_ck00l")
 
-[node name="TeslaCoil4" type="Sprite2D" parent="Node2D" unique_id=1890879973]
+[node name="TeslaCoil4" type="Sprite2D" parent="sorted stuff" unique_id=1890879973]
 position = Vector2(-184, -168)
 texture = ExtResource("10_gvq5t")
 
-[node name="TeslaCoil4" type="Node2D" parent="Node2D/TeslaCoil4" unique_id=244191919]
+[node name="TeslaCoil4" type="Node2D" parent="sorted stuff/TeslaCoil4" unique_id=244191919]
 script = ExtResource("9_qhhr2")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="Node2D/TeslaCoil4/TeslaCoil4" unique_id=2017672425]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="sorted stuff/TeslaCoil4/TeslaCoil4" unique_id=2017672425]
 position = Vector2(0, 8)
 rotation = 1.5707964
 texture = ExtResource("11_noj63")
@@ -288,173 +633,309 @@ angle_min = -282.2
 scale_amount_max = 1.3
 color = Color(1, 1, 0.22352941, 0.5019608)
 
-[node name="Area2D" type="Area2D" parent="Node2D/TeslaCoil4/TeslaCoil4" unique_id=584402783]
+[node name="Area2D" type="Area2D" parent="sorted stuff/TeslaCoil4/TeslaCoil4" unique_id=584402783]
 rotation = 1.5707964
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TeslaCoil4/TeslaCoil4/Area2D" unique_id=1876547779]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sorted stuff/TeslaCoil4/TeslaCoil4/Area2D" unique_id=1876547779]
 position = Vector2(48, 0)
 shape = SubResource("RectangleShape2D_qhhr2")
 
-[node name="Area2D2" type="Area2D" parent="Node2D/TeslaCoil4" unique_id=909203998]
+[node name="Area2D2" type="Area2D" parent="sorted stuff/TeslaCoil4" unique_id=909203998]
 rotation = 1.5707964
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TeslaCoil4/Area2D2" unique_id=1527674249]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sorted stuff/TeslaCoil4/Area2D2" unique_id=1527674249]
 shape = SubResource("RectangleShape2D_ck00l")
 
-[node name="Lever1" type="Area2D" parent="Node2D" unique_id=836850668 node_paths=PackedStringArray("func_node")]
+[node name="Lever1" type="Area2D" parent="sorted stuff" unique_id=836850668 node_paths=PackedStringArray("func_node")]
 position = Vector2(-48, 64)
 collision_layer = 16
 script = ExtResource("13_ck00l")
 func_node = NodePath("../TeslaCoil1/TeslaCoil1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Lever1" unique_id=901629339]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sorted stuff/Lever1" unique_id=901629339]
 position = Vector2(8, 8)
 shape = SubResource("CircleShape2D_wiaah")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/Lever1" unique_id=928837456]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="sorted stuff/Lever1" unique_id=928837456]
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_7o1wx")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Lever1" unique_id=1378148064]
+[node name="Sprite2D" type="Sprite2D" parent="sorted stuff/Lever1" unique_id=1378148064]
 position = Vector2(0, -1)
 texture = ExtResource("14_hdbim")
 centered = false
 hframes = 2
 
-[node name="DialogueRoot" type="Node" parent="Node2D/Lever1" unique_id=2071765472]
+[node name="DialogueRoot" type="Node" parent="sorted stuff/Lever1" unique_id=2071765472]
 script = ExtResource("15_244id")
 text = "Pull the lever?"
 display = "<none>"
 
-[node name="yes" type="Node" parent="Node2D/Lever1/DialogueRoot" unique_id=1733058224 node_paths=PackedStringArray("func_node")]
+[node name="yes" type="Node" parent="sorted stuff/Lever1/DialogueRoot" unique_id=1733058224 node_paths=PackedStringArray("func_node")]
 script = ExtResource("15_244id")
 is_end_node = true
 option_name = "Yes"
 function = "pull"
 func_node = NodePath("../..")
 
-[node name="no" type="Node" parent="Node2D/Lever1/DialogueRoot" unique_id=901951346]
+[node name="no" type="Node" parent="sorted stuff/Lever1/DialogueRoot" unique_id=901951346]
 script = ExtResource("15_244id")
 is_end_node = true
 option_name = "No"
 
-[node name="Lever2" type="Area2D" parent="Node2D" unique_id=603495119 node_paths=PackedStringArray("func_node")]
+[node name="Lever2" type="Area2D" parent="sorted stuff" unique_id=603495119 node_paths=PackedStringArray("func_node")]
 position = Vector2(368, -64)
 collision_layer = 16
 script = ExtResource("13_ck00l")
 func_node = NodePath("../TeslaCoil2/TeslaCoil2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Lever2" unique_id=2008835345]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sorted stuff/Lever2" unique_id=2008835345]
 position = Vector2(8, 8)
 shape = SubResource("CircleShape2D_wiaah")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/Lever2" unique_id=1343255033]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="sorted stuff/Lever2" unique_id=1343255033]
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_7o1wx")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Lever2" unique_id=1111143329]
+[node name="Sprite2D" type="Sprite2D" parent="sorted stuff/Lever2" unique_id=1111143329]
 position = Vector2(0, -1)
 texture = ExtResource("14_hdbim")
 centered = false
 hframes = 2
 
-[node name="DialogueRoot" type="Node" parent="Node2D/Lever2" unique_id=1728192121]
+[node name="DialogueRoot" type="Node" parent="sorted stuff/Lever2" unique_id=1728192121]
 script = ExtResource("15_244id")
 text = "Pull the lever?"
 display = "<none>"
 
-[node name="yes" type="Node" parent="Node2D/Lever2/DialogueRoot" unique_id=313861577 node_paths=PackedStringArray("func_node")]
+[node name="yes" type="Node" parent="sorted stuff/Lever2/DialogueRoot" unique_id=313861577 node_paths=PackedStringArray("func_node")]
 script = ExtResource("15_244id")
 is_end_node = true
 option_name = "Yes"
 function = "pull"
 func_node = NodePath("../..")
 
-[node name="no" type="Node" parent="Node2D/Lever2/DialogueRoot" unique_id=15104015]
+[node name="no" type="Node" parent="sorted stuff/Lever2/DialogueRoot" unique_id=15104015]
 script = ExtResource("15_244id")
 is_end_node = true
 option_name = "No"
 
-[node name="Lever3" type="Area2D" parent="Node2D" unique_id=1974151394 node_paths=PackedStringArray("func_node")]
+[node name="Lever3" type="Area2D" parent="sorted stuff" unique_id=1974151394 node_paths=PackedStringArray("func_node")]
 position = Vector2(-480, 64)
 collision_layer = 16
 script = ExtResource("13_ck00l")
 func_node = NodePath("../TeslaCoil3/TeslaCoil3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Lever3" unique_id=1998006759]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sorted stuff/Lever3" unique_id=1998006759]
 position = Vector2(8, 8)
 shape = SubResource("CircleShape2D_wiaah")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/Lever3" unique_id=297102421]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="sorted stuff/Lever3" unique_id=297102421]
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_7o1wx")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Lever3" unique_id=1551902199]
+[node name="Sprite2D" type="Sprite2D" parent="sorted stuff/Lever3" unique_id=1551902199]
 position = Vector2(0, -1)
 texture = ExtResource("14_hdbim")
 centered = false
 hframes = 2
 
-[node name="DialogueRoot" type="Node" parent="Node2D/Lever3" unique_id=701467000]
+[node name="DialogueRoot" type="Node" parent="sorted stuff/Lever3" unique_id=701467000]
 script = ExtResource("15_244id")
 text = "Pull the lever?"
 display = "<none>"
 
-[node name="yes" type="Node" parent="Node2D/Lever3/DialogueRoot" unique_id=1697631427 node_paths=PackedStringArray("func_node")]
+[node name="yes" type="Node" parent="sorted stuff/Lever3/DialogueRoot" unique_id=1697631427 node_paths=PackedStringArray("func_node")]
 script = ExtResource("15_244id")
 is_end_node = true
 option_name = "Yes"
 function = "pull"
 func_node = NodePath("../..")
 
-[node name="no" type="Node" parent="Node2D/Lever3/DialogueRoot" unique_id=808390373]
+[node name="no" type="Node" parent="sorted stuff/Lever3/DialogueRoot" unique_id=808390373]
 script = ExtResource("15_244id")
 is_end_node = true
 option_name = "No"
 
-[node name="Lever4" type="Area2D" parent="Node2D" unique_id=1857388896 node_paths=PackedStringArray("func_node")]
+[node name="Lever4" type="Area2D" parent="sorted stuff" unique_id=1857388896 node_paths=PackedStringArray("func_node")]
 position = Vector2(-368, -192)
 collision_layer = 16
 script = ExtResource("13_ck00l")
 func_node = NodePath("../TeslaCoil4/TeslaCoil4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Lever4" unique_id=147638228]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sorted stuff/Lever4" unique_id=147638228]
 position = Vector2(8, 8)
 shape = SubResource("CircleShape2D_wiaah")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/Lever4" unique_id=1118331356]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="sorted stuff/Lever4" unique_id=1118331356]
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_7o1wx")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Lever4" unique_id=161408054]
+[node name="Sprite2D" type="Sprite2D" parent="sorted stuff/Lever4" unique_id=161408054]
 position = Vector2(0, -1)
 texture = ExtResource("14_hdbim")
 centered = false
 hframes = 2
 
-[node name="DialogueRoot" type="Node" parent="Node2D/Lever4" unique_id=782594230]
+[node name="DialogueRoot" type="Node" parent="sorted stuff/Lever4" unique_id=782594230]
 script = ExtResource("15_244id")
 text = "Pull the lever?"
 display = "<none>"
 
-[node name="yes" type="Node" parent="Node2D/Lever4/DialogueRoot" unique_id=2017790939 node_paths=PackedStringArray("func_node")]
+[node name="yes" type="Node" parent="sorted stuff/Lever4/DialogueRoot" unique_id=2017790939 node_paths=PackedStringArray("func_node")]
 script = ExtResource("15_244id")
 is_end_node = true
 option_name = "Yes"
 function = "pull"
 func_node = NodePath("../..")
 
-[node name="no" type="Node" parent="Node2D/Lever4/DialogueRoot" unique_id=850969783]
+[node name="no" type="Node" parent="sorted stuff/Lever4/DialogueRoot" unique_id=850969783]
 script = ExtResource("15_244id")
 is_end_node = true
 option_name = "No"
 
-[node name="Player" parent="Node2D" unique_id=802010568 instance=ExtResource("10_5rbrs")]
+[node name="Player" parent="sorted stuff" unique_id=802010568 instance=ExtResource("10_5rbrs")]
 position = Vector2(-32, 128)
+
+[node name="Team rammarG Grunt" type="AnimatedSprite2D" parent="sorted stuff" unique_id=1055691436]
+position = Vector2(-32, -48)
+sprite_frames = SubResource("SpriteFrames_wwm2l")
+frame = 1
+centered = false
+offset = Vector2(0, -3)
+script = ExtResource("18_nnfiw")
+
+[node name="LineOfSight" type="Area2D" parent="sorted stuff/Team rammarG Grunt" unique_id=1826514395]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sorted stuff/Team rammarG Grunt/LineOfSight" unique_id=109578716]
+position = Vector2(8, 71)
+shape = SubResource("RectangleShape2D_gjjxb")
+
+[node name="HitBox" type="Area2D" parent="sorted stuff/Team rammarG Grunt" unique_id=1151600768]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sorted stuff/Team rammarG Grunt/HitBox" unique_id=516151967]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_qes4h")
+
+[node name="DetectPlayer" type="CollisionShape2D" parent="sorted stuff/Team rammarG Grunt/HitBox" unique_id=305513820]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_fd1kr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="sorted stuff/Team rammarG Grunt" unique_id=750115538]
+libraries/ = SubResource("AnimationLibrary_fhy3o")
+
+[node name="RayCast2D" type="RayCast2D" parent="sorted stuff/Team rammarG Grunt" unique_id=295264259]
+position = Vector2(8, 16)
+target_position = Vector2(0, 16)
+
+[node name="RayCast2D2" type="RayCast2D" parent="sorted stuff/Team rammarG Grunt" unique_id=2127824796]
+position = Vector2(8, 0)
+target_position = Vector2(0, 16)
+
+[node name="DialogueRoot" type="Node" parent="sorted stuff/Team rammarG Grunt" unique_id=1430463231]
+script = ExtResource("15_244id")
+text = "Deez grammar-people… always messing with our fun… After we finish this job, we can get some desert."
+
+[node name="Node" type="Node" parent="sorted stuff/Team rammarG Grunt/DialogueRoot" unique_id=853620459]
+script = ExtResource("15_244id")
+option_name = "You want to go to a desert?"
+text = "Huh? You trynna mess with me?"
+
+[node name="Node2" type="Node" parent="sorted stuff/Team rammarG Grunt/DialogueRoot/Node" unique_id=1497912755]
+script = ExtResource("15_244id")
+option_name = "What?"
+text = "Why would I want to go to the dessert…?"
+
+[node name="Node3" type="Node" parent="sorted stuff/Team rammarG Grunt/DialogueRoot/Node/Node2" unique_id=1838130951 node_paths=PackedStringArray("func_node")]
+script = ExtResource("15_244id")
+option_name = "No-..."
+text = "Hey, doesn’t that kid annoy you a lil’? Let’s get him!"
+function = "begin_battle"
+func_node = NodePath("../../../../BattleStart")
+
+[node name="Node4" type="Node" parent="sorted stuff/Team rammarG Grunt/DialogueRoot/Node/Node2" unique_id=2130181189 node_paths=PackedStringArray("func_node")]
+script = ExtResource("15_244id")
+option_name = "That's not what I meant-..."
+text = "Hey, doesn’t that kid annoy you a lil’? Let’s get him!"
+function = "begin_battle"
+func_node = NodePath("../../../../BattleStart")
+
+[node name="FinalDialogue" type="Node" parent="sorted stuff/Team rammarG Grunt" unique_id=593164862]
+script = ExtResource("15_244id")
+is_end_node = true
+text = "This kid busted us up real good… Let’s get outta here!"
+
+[node name="BattleStart" type="Node" parent="sorted stuff/Team rammarG Grunt" unique_id=1316308338]
+script = ExtResource("19_7tshw")
+trainer_name = "rammarGPP1"
+
+[node name="Chief Static" type="AnimatedSprite2D" parent="sorted stuff" unique_id=328390044]
+position = Vector2(-32, -224)
+sprite_frames = SubResource("SpriteFrames_0k60w")
+frame = 1
+centered = false
+offset = Vector2(0, -3)
+script = ExtResource("18_nnfiw")
+
+[node name="LineOfSight" type="Area2D" parent="sorted stuff/Chief Static" unique_id=1256007621]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sorted stuff/Chief Static/LineOfSight" unique_id=1863532980]
+position = Vector2(8, 80)
+shape = SubResource("RectangleShape2D_kf87e")
+
+[node name="HitBox" type="Area2D" parent="sorted stuff/Chief Static" unique_id=1440994575]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sorted stuff/Chief Static/HitBox" unique_id=119590563]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_qes4h")
+
+[node name="DetectPlayer" type="CollisionShape2D" parent="sorted stuff/Chief Static/HitBox" unique_id=1879859854]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_fd1kr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="sorted stuff/Chief Static" unique_id=281549154]
+libraries/ = SubResource("AnimationLibrary_fhy3o")
+
+[node name="RayCast2D" type="RayCast2D" parent="sorted stuff/Chief Static" unique_id=152436072]
+position = Vector2(8, 16)
+target_position = Vector2(0, 16)
+
+[node name="RayCast2D2" type="RayCast2D" parent="sorted stuff/Chief Static" unique_id=1566373117]
+position = Vector2(8, 0)
+target_position = Vector2(0, 16)
+
+[node name="DialogueRoot" type="Node" parent="sorted stuff/Chief Static" unique_id=42516563]
+script = ExtResource("15_244id")
+text = "CANT U READ THE SIGNNNNNN?!?!?! NO KIDS ALLOWEDDDD!!!!! WHAT ARE YOU DOING IN MYYY POWERPLANT!!!!!"
+
+[node name="Node" type="Node" parent="sorted stuff/Chief Static/DialogueRoot" unique_id=517112981 node_paths=PackedStringArray("func_node")]
+script = ExtResource("15_244id")
+is_end_node = true
+option_name = "It looks like it was taken over."
+text = "DONT MAKE ME TURN YOU INTO A CIRCUIT COMPONENT!!!"
+function = "begin_battle"
+func_node = NodePath("../../BattleStart")
+
+[node name="FinalDialogue" type="Node" parent="sorted stuff/Chief Static" unique_id=1152616393]
+script = ExtResource("15_244id")
+is_end_node = true
+text = "I’m sorry for lashing out like that."
+
+[node name="BattleStart" type="Node" parent="sorted stuff/Chief Static" unique_id=1286566033]
+script = ExtResource("19_7tshw")
+trainer_name = "ChiefStaticPP"
+
+[node name="First Rough Draft" parent="sorted stuff" unique_id=270907436 instance=ExtResource("21_xxb6j")]
+position = Vector2(-560, -96)
+
+[node name="Apple" parent="sorted stuff" unique_id=862830784 instance=ExtResource("21_xxb6j")]
+position = Vector2(-256, 32)
 
 [node name="Door" parent="." unique_id=305209293 instance=ExtResource("11_hk3ae")]
 modulate = Color(0.12549, 0.313726, 0.85098, 1)
@@ -465,11 +946,17 @@ texture = ExtResource("10_gvq5t")
 spawn_location = Vector2(1392, -544)
 spawn_direction = Vector2(0, 1)
 
-[connection signal="body_entered" from="Node2D/Lever1" to="Node2D/Lever1" method="_on_body_entered"]
-[connection signal="body_exited" from="Node2D/Lever1" to="Node2D/Lever1" method="_on_body_exited"]
-[connection signal="body_entered" from="Node2D/Lever2" to="Node2D/Lever2" method="_on_body_entered"]
-[connection signal="body_exited" from="Node2D/Lever2" to="Node2D/Lever2" method="_on_body_exited"]
-[connection signal="body_entered" from="Node2D/Lever3" to="Node2D/Lever3" method="_on_body_entered"]
-[connection signal="body_exited" from="Node2D/Lever3" to="Node2D/Lever3" method="_on_body_exited"]
-[connection signal="body_entered" from="Node2D/Lever4" to="Node2D/Lever4" method="_on_body_entered"]
-[connection signal="body_exited" from="Node2D/Lever4" to="Node2D/Lever4" method="_on_body_exited"]
+[connection signal="body_entered" from="sorted stuff/Lever1" to="sorted stuff/Lever1" method="_on_body_entered"]
+[connection signal="body_exited" from="sorted stuff/Lever1" to="sorted stuff/Lever1" method="_on_body_exited"]
+[connection signal="body_entered" from="sorted stuff/Lever2" to="sorted stuff/Lever2" method="_on_body_entered"]
+[connection signal="body_exited" from="sorted stuff/Lever2" to="sorted stuff/Lever2" method="_on_body_exited"]
+[connection signal="body_entered" from="sorted stuff/Lever3" to="sorted stuff/Lever3" method="_on_body_entered"]
+[connection signal="body_exited" from="sorted stuff/Lever3" to="sorted stuff/Lever3" method="_on_body_exited"]
+[connection signal="body_entered" from="sorted stuff/Lever4" to="sorted stuff/Lever4" method="_on_body_entered"]
+[connection signal="body_exited" from="sorted stuff/Lever4" to="sorted stuff/Lever4" method="_on_body_exited"]
+[connection signal="body_entered" from="sorted stuff/Team rammarG Grunt/LineOfSight" to="sorted stuff/Team rammarG Grunt" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="sorted stuff/Team rammarG Grunt/HitBox" to="sorted stuff/Team rammarG Grunt" method="_on_hit_box_body_entered"]
+[connection signal="body_exited" from="sorted stuff/Team rammarG Grunt/HitBox" to="sorted stuff/Team rammarG Grunt" method="_on_hit_box_body_exited"]
+[connection signal="body_entered" from="sorted stuff/Chief Static/LineOfSight" to="sorted stuff/Chief Static" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="sorted stuff/Chief Static/HitBox" to="sorted stuff/Chief Static" method="_on_hit_box_body_entered"]
+[connection signal="body_exited" from="sorted stuff/Chief Static/HitBox" to="sorted stuff/Chief Static" method="_on_hit_box_body_exited"]

@@ -22,6 +22,9 @@
 			}
 		},
 		"Trainers": {
+			"Chief Static": {
+				"Talked": false
+			},
 			"Lever1": {
 				"Talked": false
 			},
@@ -32,6 +35,9 @@
 				"Talked": false
 			},
 			"Lever4": {
+				"Talked": false
+			},
+			"Team rammarG Grunt": {
 				"Talked": false
 			}
 		}

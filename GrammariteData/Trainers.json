@@ -1,4 +1,6 @@
 {
-	"Fighter": { "Party": [ "Dog of Wood" ], "Levels": [ 3 ], "XP": 35, "Money": 5 },
-	"Fighter2": { "Party": [ "Cateraser" ], "Levels": [ 2 ], "XP": 25, "Money": 4 }
+	"Fighter": { "Party": [ "Dog of Wood" ], "Levels": [ 2 ], "XP": 25, "Money": 4 },
+	"Fighter2": { "Party": [ "Cateraser" ], "Levels": [ 2 ], "XP": 25, "Money": 4 },
+	"rammarGPP1": { "Party": [ "Lampert" ], "Levels": [ 4 ], "XP": 30, "Money": 5 },
+	"ChiefStaticPP": { "Party": [ "Lampert", "Ventomer" ], "Levels": [ 5, 5 ], "XP": 50, "Money": 10 }
 }

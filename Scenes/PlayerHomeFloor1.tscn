@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://i70qso44vgve" path="res://Scenes/Player.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://b67xu1q3o5r1p" path="res://Assets/Decoration/Universal/Mats.png" id="2_t62lr"]
 [ext_resource type="PackedScene" uid="uid://fsubo0lgcrfo" path="res://Scenes/Door.tscn" id="3"]
-[ext_resource type="Texture2D" uid="uid://dqoyua8j1n8c1" path="res://Assets/Decoration/Bed.png" id="3_dshl4"]
+[ext_resource type="Texture2D" uid="uid://dqoyua8j1n8c1" path="res://Assets/Decoration/Universal/Bed.png" id="3_dshl4"]
 [ext_resource type="Texture2D" uid="uid://d1nwbof8w0ket" path="res://Assets/Decoration/Trash Can.png" id="4_kctdq"]
 [ext_resource type="Texture2D" uid="uid://cgniqyvs4ol7c" path="res://Assets/Decoration/Closet.png" id="5_nhf0a"]
 [ext_resource type="Texture2D" uid="uid://dynurpo5p8ob5" path="res://Assets/Decoration/Sink and Dishwasher.png" id="6_n2vc4"]
