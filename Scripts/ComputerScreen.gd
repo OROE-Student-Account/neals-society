@@ -255,6 +255,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			elif event.is_action_pressed("x"):
 				# Exit
 				Utils.get_scene_manager().transition_exit_menu("Computer")
+			
+			elif event.is_action_pressed("q"):
+				fix_party()
 		State.SUMMARY:
 			if event.is_action_pressed("x"):
 				state = State.MAIN

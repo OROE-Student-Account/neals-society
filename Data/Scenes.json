@@ -7,6 +7,14 @@
 		}
 	},
 	"PowerPlant": {
+		"Items": {
+			"Apple": {
+				"Collected": false
+			},
+			"First Rough Draft": {
+				"Collected": false
+			}
+		},
 		"Obstacles": {
 			"TeslaCoil1": {
 				"Broken": false

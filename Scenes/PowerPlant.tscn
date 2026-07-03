@@ -799,7 +799,7 @@ is_end_node = true
 option_name = "No"
 
 [node name="Player" parent="sorted stuff" unique_id=802010568 instance=ExtResource("10_5rbrs")]
-position = Vector2(-32, 128)
+position = Vector2(-64, -128)
 
 [node name="Team rammarG Grunt" type="AnimatedSprite2D" parent="sorted stuff" unique_id=1055691436]
 position = Vector2(-32, -48)
@@ -872,7 +872,7 @@ text = "This kid busted us up real good… Let’s get outta here!"
 
 [node name="BattleStart" type="Node" parent="sorted stuff/Team rammarG Grunt" unique_id=1316308338]
 script = ExtResource("19_7tshw")
-trainer_name = "rammarGPP1"
+trainer_name = "Team rammarG Grunt"
 
 [node name="Chief Static" type="AnimatedSprite2D" parent="sorted stuff" unique_id=328390044]
 position = Vector2(-32, -224)
@@ -929,7 +929,7 @@ text = "I’m sorry for lashing out like that."
 
 [node name="BattleStart" type="Node" parent="sorted stuff/Chief Static" unique_id=1286566033]
 script = ExtResource("19_7tshw")
-trainer_name = "ChiefStaticPP"
+trainer_name = "Chief Static"
 
 [node name="First Rough Draft" parent="sorted stuff" unique_id=270907436 instance=ExtResource("21_xxb6j")]
 position = Vector2(-560, -96)

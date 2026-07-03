@@ -42,7 +42,7 @@ func setup():
 		max_health = Utils.max_hp(grammarite_name, level)
 		health = max_health
 	
-	$Level.text = "lvl "+str(level)
+	$Level.text = "lvl "+str(int(level))
 	if nickname == "":
 		$Name.text = grammarite_name
 	else:

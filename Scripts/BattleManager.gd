@@ -3,10 +3,15 @@ class_name BattleManager
 
 @export var player_grammarite: Node2D 
 @export var enemy_grammarite: Node2D  
-@export var battle_ui: Node2D     
-@export var evolve_screen: Node2D     
+@export var battle_ui: Node2D      
+@export var evolve_screen: Node2D      
 
 var trainer = "random"
+
+# --- NEW PARTY TRACKING VARIABLES ---
+var enemy_party: Array = []
+var enemy_levels: Array = []
+var current_enemy_index: int = 0
 
 
 signal battle_ended(player_won: bool)
@@ -94,23 +99,36 @@ func _on_player_move_selected(move_index: int):
 		if not await on_player_grammarite_die(true):
 			return
 	
-	# Check if enemy fainted
+	# Check if enemy fainted from player's attack
 	if enemy_grammarite.health <= 0:
-		end_battle(true)
+		# Await the swap sequence. If false, the battle is entirely over.
+		if not await on_enemy_grammarite_die():
+			return
+		
+		# Reset menu for the player's turn against the new enemy
+		current_state = BattleState.PLAYER_TURN
+		battle_ui.input_state = battle_ui.InputState.ACTION_BUTTONS
+		battle_ui.show_correct_menu()
 		return
 	
 	# Enemy's turn
 	await enemy_turn()
 	
-	# Check if player fainted
+	# Check if player fainted from enemy attack
 	if player_grammarite.health <= 0:
 		if not await on_player_grammarite_die(true):
+			return
+			
+	# Check if enemy fainted from Struggle recoil during their turn
+	if enemy_grammarite.health <= 0:
+		if not await on_enemy_grammarite_die():
 			return
 	
 	# Back to player's turn
 	current_state = BattleState.PLAYER_TURN
 	battle_ui.input_state = battle_ui.InputState.ACTION_BUTTONS
 	battle_ui.show_correct_menu()
+
 
 func enemy_turn():
 	current_state = BattleState.ENEMY_TURN
@@ -123,6 +141,39 @@ func enemy_turn():
 	var random_move = moves[randi() % moves.size()]
 	
 	await execute_attack(enemy_grammarite, player_grammarite, random_move)
+
+
+# --- NEW FUNCTION FOR ENEMY FAINTING / SWAPPING ---
+func on_enemy_grammarite_die() -> bool:
+	enemy_grammarite.visible = false
+	battle_ui.set_info_text("Enemy " + enemy_grammarite.grammarite_name + " fainted!")
+	await get_tree().create_timer(1.5).timeout
+
+	current_enemy_index += 1
+	
+	# Check if there are more grammarites in the array
+	if current_enemy_index < enemy_party.size():
+		var next_name = enemy_party[current_enemy_index]
+		var next_level = enemy_levels[current_enemy_index]
+		
+		battle_ui.set_info_text(trainer+" sent out " + next_name + "!")
+		
+		# Update the node
+		enemy_grammarite.grammarite_name = next_name
+		enemy_grammarite.level = next_level
+		
+		# Trigger your node's internal stat recalculation
+		if enemy_grammarite.has_method("setup"):
+			enemy_grammarite.setup()
+			
+		enemy_grammarite.visible = true
+		
+		await get_tree().create_timer(1.5).timeout
+		return true # Returning true means the battle continues!
+	else:
+		# If the index is out of bounds, the trainer is fully defeated
+		end_battle(true)
+		return false # Returning false stops the combat loop
 
 
 func on_player_grammarite_die(in_battle: bool):
@@ -161,7 +212,6 @@ func on_player_grammarite_die(in_battle: bool):
 			battle_ui.set_info_text(temp["Name"]+" died, go "+player_grammarite.grammarite_name+"!")
 			await get_tree().create_timer(1.5).timeout
 		return true
-
 
 
 func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
@@ -217,8 +267,13 @@ func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 		# Add some randomness (85% to 100% of calculated damage)
 		damage = damage * randf_range(0.85, 1.0)
 		# same type attack bonus
-		if move["Type"] == attacker.grammarite_info["Stats"]["Types"][0] or move["Type"] == attacker.grammarite_info["Stats"]["Types"][1]:
-			damage *= 1.5
+		if len(attacker.grammarite_info["Stats"]["Types"]) == 2:
+			if move["Type"] == attacker.grammarite_info["Stats"]["Types"][0] or move["Type"] == attacker.grammarite_info["Stats"]["Types"][1]:
+				damage *= 1.5
+		else:
+			if move["Type"] == attacker.grammarite_info["Stats"]["Types"][0]:
+				damage *= 1.5
+		
 		# born with move bonus
 		for i in Utils.get_grammarite_details(attacker.grammarite_name)["Moves"]:
 			if i["Name"] == move["Name"]:

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dcrhfjxf127us"]
 
 [ext_resource type="Script" uid="uid://bgjd8lvacu6gg" path="res://Scripts/SceneManager.gd" id="2"]
-[ext_resource type="PackedScene" uid="uid://dj1pd07hetrt5" path="res://Scenes/PlayerHomeFloor1.tscn" id="2_83gc0"]
+[ext_resource type="PackedScene" uid="uid://b8g28mm1ls28y" path="res://Scenes/PowerPlant.tscn" id="2_8ysa5"]
 [ext_resource type="PackedScene" uid="uid://bkml6dq0xfdp7" path="res://Scenes/Menu.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://i0am2murs47p" path="res://Scenes/Dialogue.tscn" id="4_026ex"]
 [ext_resource type="Texture2D" uid="uid://cv0nh1m0od62h" path="res://Assets/Items/Grammar Dex.png" id="6_2cmid"]
@@ -123,7 +123,7 @@ script = ExtResource("2")
 
 [node name="CurrentScene" type="Node2D" parent="." unique_id=1558434157]
 
-[node name="PlayerHomeFloor1" parent="CurrentScene" unique_id=1207506571 instance=ExtResource("2_83gc0")]
+[node name="PowerPlant" parent="CurrentScene" unique_id=1207506571 instance=ExtResource("2_8ysa5")]
 
 [node name="Menu" parent="." unique_id=1728288558 instance=ExtResource("3")]
 
@@ -149,6 +149,7 @@ autoplay = &"FadeToNormal"
 
 [node name="ColorRect" type="TextureRect" parent="Grammadex" unique_id=1224964580]
 modulate = Color(1, 0, 1, 0)
+texture_filter = 1
 offset_left = 1208.0
 offset_top = 56.0
 offset_right = 1448.0061

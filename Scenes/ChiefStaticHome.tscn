@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://b8jmj3up22jdu"]
+
+[ext_resource type="Texture2D" uid="uid://btbbtsqfx7tbh" path="res://Assets/Decoration/Universal/Inside house base.png" id="1_a04wc"]
+[ext_resource type="Texture2D" uid="uid://b67xu1q3o5r1p" path="res://Assets/Decoration/Universal/Mats.png" id="2_og7ha"]
+[ext_resource type="Texture2D" uid="uid://dlg26pmnn30kb" path="res://Assets/Decoration/house inside window.png" id="3_2p1o4"]
+[ext_resource type="Texture2D" uid="uid://dqoyua8j1n8c1" path="res://Assets/Decoration/Universal/Bed.png" id="4_isky8"]
+[ext_resource type="Texture2D" uid="uid://d1nwbof8w0ket" path="res://Assets/Decoration/Trash Can.png" id="5_dk4gp"]
+[ext_resource type="Texture2D" uid="uid://cgniqyvs4ol7c" path="res://Assets/Decoration/Closet.png" id="6_8jic7"]
+[ext_resource type="Texture2D" uid="uid://dynurpo5p8ob5" path="res://Assets/Decoration/Sink and Dishwasher.png" id="7_xvhnn"]
+[ext_resource type="Texture2D" uid="uid://bm0617pdpifuj" path="res://Assets/Decoration/Table.png" id="8_7wqos"]
+[ext_resource type="Texture2D" uid="uid://bs1oucptljdsb" path="res://Assets/Decoration/Tv.png" id="9_25utq"]
+[ext_resource type="PackedScene" uid="uid://i70qso44vgve" path="res://Scenes/Player.tscn" id="10_cw6ij"]
+[ext_resource type="PackedScene" uid="uid://fsubo0lgcrfo" path="res://Scenes/Door.tscn" id="11_0j3yp"]
+[ext_resource type="PackedScene" uid="uid://bdykq75yoljv" path="res://Scenes/Item.tscn" id="12_rx8of"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(16, 176)
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(208, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0m57j"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="4"]
+size = Vector2(208, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aoau7"]
+size = Vector2(48, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpn83"]
+size = Vector2(32, 16)
+
+[node name="ChiefStaticHome" type="Node2D" unique_id=1176928147]
+texture_filter = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=330970763]
+offset_left = -208.0
+offset_top = -207.0
+offset_right = 392.0
+offset_bottom = 393.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1381020262]
+offset_top = 16.0
+offset_right = 192.0
+offset_bottom = 144.0
+texture = ExtResource("1_a04wc")
+
+[node name="Mat2" type="Sprite2D" parent="." unique_id=886365823]
+position = Vector2(62, 128)
+texture = ExtResource("2_og7ha")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 16, 20, 16)
+
+[node name="window" type="TextureRect" parent="." unique_id=848976023]
+offset_left = 143.0
+offset_top = 20.0
+offset_right = 175.0
+offset_bottom = 52.0
+texture = ExtResource("3_2p1o4")
+
+[node name="be3" type="TextureRect" parent="." unique_id=39429403]
+offset_left = 144.0
+offset_top = 40.0
+offset_right = 176.0
+offset_bottom = 72.0
+texture = ExtResource("4_isky8")
+
+[node name="trash" type="TextureRect" parent="." unique_id=38752820]
+offset_left = 69.0
+offset_top = 48.0
+offset_right = 101.0
+offset_bottom = 80.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_dk4gp")
+
+[node name="closeyt" type="TextureRect" parent="." unique_id=1975255686]
+offset_left = 176.0
+offset_top = 112.0
+offset_right = 208.0
+offset_bottom = 144.0
+rotation = 1.5707964
+texture = ExtResource("6_8jic7")
+
+[node name="sink" type="TextureRect" parent="." unique_id=1608882153]
+offset_left = 16.0
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 64.0
+texture = ExtResource("7_xvhnn")
+flip_h = true
+
+[node name="sink2" type="TextureRect" parent="." unique_id=523370494]
+offset_left = 88.0
+offset_top = 37.0
+offset_right = 120.0
+offset_bottom = 69.0
+texture = ExtResource("8_7wqos")
+flip_h = true
+
+[node name="sink3" type="TextureRect" parent="." unique_id=1732697331]
+offset_left = 88.0
+offset_top = 22.0
+offset_right = 120.0
+offset_bottom = 54.0
+texture = ExtResource("9_25utq")
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1716030424]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1922324686]
+position = Vector2(8, 80)
+shape = SubResource("1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1840720757]
+position = Vector2(184, 88)
+shape = SubResource("1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=99369790]
+position = Vector2(104, 40)
+shape = SubResource("2")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1611173871]
+position = Vector2(160, 128)
+shape = SubResource("RectangleShape2D_0m57j")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=1965855416]
+position = Vector2(104, 152)
+shape = SubResource("4")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=938499736]
+position = Vector2(24, 56)
+shape = SubResource("RectangleShape2D_aoau7")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D" unique_id=664019353]
+position = Vector2(104, 56)
+shape = SubResource("RectangleShape2D_aoau7")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=1871135405]
+position = Vector2(160, 56)
+shape = SubResource("RectangleShape2D_lpn83")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=417249187]
+position = Vector2(80, 56)
+shape = SubResource("RectangleShape2D_lpn83")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=986866159]
+
+[node name="Player" parent="Node2D" unique_id=119606436 instance=ExtResource("10_cw6ij")]
+position = Vector2(80, 80)
+
+[node name="Door" parent="." unique_id=434385045 instance=ExtResource("11_0j3yp")]
+modulate = Color(0.12549, 0.313726, 0.85098, 1)
+position = Vector2(64, 128)
+next_scene_path = "res://Scenes/Town.scn"
+is_invisible = true
+spawn_location = Vector2(656, -1328)
+spawn_direction = Vector2(0, 1)
+
+[node name="Reading Glasses" parent="." unique_id=270907436 instance=ExtResource("12_rx8of")]
+position = Vector2(128, 48)

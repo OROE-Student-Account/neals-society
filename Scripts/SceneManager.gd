@@ -59,18 +59,23 @@ func transition_to_dialogue(root_node):
 
 func load_battle():
 	var battle = load("res://Scenes/Battle.tscn").instantiate()
-	
+	var bm = battle.get_node("BattleManager")
+	bm.trainer = next_trainer
 	
 	if "random" not in next_trainer:
-		battle.get_node("BattleManager").trainer = next_trainer
-		var trainer = Utils.get_trainer(next_trainer)
-		battle.get_node("EnemyGrammarite").grammarite_name = trainer["Party"][0]
-		battle.get_node("EnemyGrammarite").level = int(trainer["Levels"][0])
+		var trainer_data = Utils.get_trainer(next_trainer)
+		# Load the full lists into the BattleManager
+		bm.enemy_party = trainer_data["Party"]
+		bm.enemy_levels = trainer_data["Levels"]
 	else:
-		battle.get_node("BattleManager").trainer = "random"
 		var name_lvl = next_trainer.substr(6) # removes 'random'
-		battle.get_node("EnemyGrammarite").grammarite_name = name_lvl.left(len(name_lvl)-3)
-		battle.get_node("EnemyGrammarite").level = int(name_lvl.right(3))
+		# Wrap the single random enemy in an array
+		bm.enemy_party = [name_lvl.left(len(name_lvl)-3)]
+		bm.enemy_levels = [int(name_lvl.right(3))]
+	
+	# Setup the first enemy visually before adding to scene
+	battle.get_node("EnemyGrammarite").grammarite_name = bm.enemy_party[0]
+	battle.get_node("EnemyGrammarite").level = bm.enemy_levels[0]
 	
 	scene.add_child(battle)
 	scene.get_children().back().get_child(0).make_current()
