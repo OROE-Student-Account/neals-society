@@ -69,6 +69,13 @@ func _ready():
 	anim_tree.set("parameters/Idle/blend_position", input_direction)
 	anim_tree.set("parameters/Walk/blend_position", input_direction)
 	anim_tree.set("parameters/Turn/blend_position", input_direction)
+	anim_tree.animation_finished.connect(_on_animation_finished)
+
+func _on_animation_finished(anim_name: StringName):
+	# Only reset if the animation that actually finished was a Turn
+	if "Turn" in anim_name:
+		player_state = PlayerState.IDLE
+		anim_state.travel("Idle")
 
 func set_spawn(location: Vector2, direction: Vector2):
 	entering_door = false
@@ -129,9 +136,6 @@ func need_to_turn() -> bool:
 		facing_direction = new_dir
 		return true
 	return false
-
-func finished_turning():
-	player_state = PlayerState.IDLE
 
 func entered_door():
 	emit_signal("player_entered_door_signal")
@@ -227,3 +231,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_released("q"):
 		walk_speed = BASE_WALK_SPEED
 		jump_speed = BASE_JUMP_SPEED
+
+
+func animate(anim: String):
+	anim_tree.active = false
+	anim_player.play(anim)

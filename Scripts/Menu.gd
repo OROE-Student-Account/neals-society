@@ -38,13 +38,6 @@ signal close_menu
 func _ready():
 	menu.visible = false
 	update_select_box()
-	Utils.get_scene_manager().name_selected.connect(_recieve_player_name)
-
-
-var name_prompt = "What should your name be?"
-func _recieve_player_name(chosen_name, from_node):
-	if from_node != self: return
-	Utils.set_player_name(chosen_name)
 
 
 func load_submenu(submenu: String): 
@@ -118,6 +111,7 @@ func _unhandled_input(event):
 				update_select_box()
 				var player = Utils.get_player()
 				player.set_physics_process(true)
+				player.player_state = player.PlayerState.IDLE
 				menu.visible = false
 				screen_loaded = ScreenLoaded.NOTHING
 			
@@ -156,7 +150,7 @@ func _unhandled_input(event):
 					3:
 						Utils.get_scene_manager().transition_to_menu("Save")
 					4:
-						Utils.get_scene_manager().transition_to_naming_screen(self)
+						$Namer.name_this()
 					5:
 						# Close menu (already handled above)
 						pass

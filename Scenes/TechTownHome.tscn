@@ -30,7 +30,7 @@ size = Vector2(48, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lpn83"]
 size = Vector2(32, 16)
 
-[node name="RivalHomeFloor" type="Node2D" unique_id=1176928147]
+[node name="TechTownHome" type="Node2D" unique_id=1176928147]
 texture_filter = 1
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=330970763]

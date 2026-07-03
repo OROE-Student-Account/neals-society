@@ -53,7 +53,7 @@ func transition_to_select_screen():
 	return await $GrammariteSelectScreen.load_screen()
 
 func transition_to_dialogue(root_node):
-	if menu.screen_loaded == menu.ScreenLoaded.NOTHING:
+	if menu.screen_loaded == menu.ScreenLoaded.NOTHING or menu.screen_loaded == menu.ScreenLoaded.NAMING:
 		$DialogueBox.start_dialogue(root_node)
 
 
@@ -131,6 +131,7 @@ func finished_fading():
 			scene.get_children().back().free()
 			var player = Utils.get_player()
 			player.set_physics_process(true)
+			player.anim_state.travel("Idle")
 			menu.screen_loaded = menu.ScreenLoaded.NOTHING
 		
 		"Naming":
@@ -147,5 +148,6 @@ func finished_fading():
 			menu.unload_submenus(false)
 			var player = Utils.get_player()
 			player.set_physics_process(true)
+			player.player_state = player.PlayerState.IDLE
 		"Quest", "Harvester", "Crafter", "Bookshelf", "Computer":
 			menu.load_submenu(transition_type)

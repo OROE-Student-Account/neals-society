@@ -3,7 +3,7 @@ extends Node2D
 var picked_up = false
 var used_up = false
 
-
+signal picked_up_grammarite
 
 @onready var grammarite_sprite = load("res://Assets/Pokemon/Pokemon"+str(Utils.get_poke_num(name)+1)+".png")
 @onready var menu_scene = preload("res://Scenes/GrammaritePickupMenu.tscn")
@@ -117,6 +117,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			var scene = get_node("/root/SceneManager/CurrentScene").get_child(0).name
 			Utils.update_item_picked_up(name, true, scene)
 			Utils.catch(name)
+			emit_signal("picked_up_grammarite")
 			queue_free()
 
 func reset():

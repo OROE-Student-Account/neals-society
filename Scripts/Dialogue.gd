@@ -74,6 +74,7 @@ func display_current_node():
 	if current_node.text == "":
 		var function = current_node.function
 		var tar_node = target_node 
+		var args = current_node.args
 		if current_node.is_end_node:
 			dialogue_ended.emit()
 		end_dialogue()
@@ -81,7 +82,7 @@ func display_current_node():
 		# Execute any function associated with this node
 		if function != "" and tar_node != null:
 			if tar_node.has_method(function):
-				tar_node.call(function)
+				tar_node.callv(function, args)
 			else:
 				print("DialogueManager: Function not found on target node")
 		
@@ -150,7 +151,9 @@ func show_options():
 
 
 # Handles input
-func _unhandled_input(event):
+func _input(event):
+	if Utils.get_scene_manager().menu.screen_loaded == Utils.get_scene_manager().menu.ScreenLoaded.NAMING:
+		return
 	if screen_loaded == ScreenLoaded.DIALOGUE:
 		if dialogue_state == DialogueState.SHOWING_TEXT:
 			# Waiting for Z to advance to options
@@ -158,13 +161,14 @@ func _unhandled_input(event):
 				if current_node.is_end_node:
 					var function = current_node.function
 					var tar_node = target_node 
+					var args = current_node.args
 					end_dialogue()
 					dialogue_ended.emit()
 					
 					# Execute any function associated with this node
 					if function != "" and tar_node != null:
 						if tar_node.has_method(function):
-							tar_node.call(function)
+							tar_node.callv(function, args)
 						else:
 							print("DialogueManager: Function not found on target node")
 					return
@@ -172,7 +176,7 @@ func _unhandled_input(event):
 				# Execute any function associated with this node
 				elif current_node.function != "" and target_node != null:
 					if target_node.has_method(current_node.function):
-						target_node.call(current_node.function)
+						target_node.callv(current_node.function, current_node.args)
 					else:
 						print("DialogueManager: Function not found on target node")
 				
@@ -210,3 +214,4 @@ func end_dialogue():
 	var player = Utils.get_player()
 	player.set_physics_process(true)
 	player.anim_tree.active = true
+	player.player_state = player.PlayerState.IDLE

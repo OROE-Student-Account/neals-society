@@ -110,6 +110,11 @@
 		"Type": "Consumable"
 	},
 	
+	"Grammar Dex": {
+		"Description": "Allows you to catalog your Grammarites.",
+		"Type": "Passive"
+	},
+	
 	
 	"Grammar Shard": {
 		"Description": "A shard from a Grammar type Grammarite.",

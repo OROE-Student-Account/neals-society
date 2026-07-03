@@ -164,7 +164,7 @@ shape = SubResource("RectangleShape2D_ux0id")
 [node name="Node2D" type="Node2D" parent="." unique_id=340670768]
 
 [node name="Player" parent="Node2D" unique_id=802010568 instance=ExtResource("2")]
-position = Vector2(160, 64)
+position = Vector2(128, 48)
 
 [node name="Door" parent="." unique_id=305209293 instance=ExtResource("3")]
 modulate = Color(0.12549, 0.313726, 0.85098, 1)

@@ -36,6 +36,27 @@
 			}
 		}
 	},
+	"School": {
+		"Items": {
+			"Dog of Wood": {
+				"Collected": false
+			},
+			"Grammar Dex": {
+				"Collected": false
+			},
+			"Kittebook": {
+				"Collected": false
+			},
+			"Moustapler": {
+				"Collected": false
+			}
+		},
+		"Obstacles": {
+			"Cutscene": {
+				"Broken": false
+			}
+		}
+	},
 	"Town": {
 		"Items": {
 			"Children's Book": {
@@ -55,6 +76,9 @@
 				"Talked": false
 			},
 			"OldmanBench": {
+				"Talked": false
+			},
+			"OldmanBench2": {
 				"Talked": false
 			},
 			"OldmanBlock": {

@@ -6,26 +6,24 @@ class_name DialogueTreeNode
 @export var text = "" # text to show when this option is selected
 @export var function = "" # what to do after this is selected
 @export var func_node : Node = null
+@export var args: Array[String] = []
 @export var display : String = ""
-
-# Precondition, text does not begin or end with replacer
-func replace(search, replacer):
-	# splits the text for every instance of replacer
-	var pieces = text.split(replacer)
-	text = ""
-	# in every split, puts the search. 
-	for i in range(len(pieces)):
-		if i != len(pieces)-1:
-			text += pieces[i] + search
-		else:
-			text += pieces[i]
 
 
 func fix_text():
 	var player_name = Utils.get_player_name()
 	var parent_name = get_parent().name
-	replace(player_name, "<player>")
-	replace(parent_name, "<parent>")
+	var rival_name = Utils.get_rival_name()
+	
+	# Update the 'text' variable
+	text = text.replace("<player>", player_name)
+	text = text.replace("<parent>", parent_name)
+	text = text.replace("<rival>", rival_name)
+	
+	# Update the 'display' variable
+	display = display.replace("<player>", player_name)
+	display = display.replace("<parent>", parent_name)
+	display = display.replace("<rival>", rival_name)
 
 
 func get_children_nodes() -> Array[Node]:

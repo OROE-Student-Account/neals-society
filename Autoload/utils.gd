@@ -217,6 +217,13 @@ func get_player_name(slot: int = 0):
 		else:
 			return ""
 
+func set_rival_name(new_name):
+	var stu =  load_json_file("res://Data/OtherStuff.json")
+	stu["Rival Name"] = new_name
+	save_json_file("res://Data/OtherStuff.json", stu)
+func get_rival_name():
+	return load_json_file("res://Data/OtherStuff.json")["Rival Name"]
+	
 
 func set_last_center(num: int):
 	var stuff = load_json_file("res://Data/OtherStuff.json")
