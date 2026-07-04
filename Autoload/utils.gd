@@ -7,7 +7,8 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	reset_scenes()
+	#reset_scenes()
+	pass
 
 func reset_scenes():
 	var scenes = load_json_file("res://Data/Scenes.json")

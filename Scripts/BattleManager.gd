@@ -473,7 +473,7 @@ func end_battle(player_won: bool):
 	else:
 		player_grammarite.visible = false
 		battle_ui.set_info_text("You lost!")
-		if trainer != "random":
+		if "random" not in trainer:
 			var scene = get_node("/root/SceneManager/CurrentScene").get_child(0).name
 			Utils.update_trainer_attacked(trainer, false, scene)
 		await get_tree().create_timer(2.5).timeout

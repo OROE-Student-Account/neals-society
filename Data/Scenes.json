@@ -56,32 +56,32 @@
 				"Collected": false
 			},
 			"Grammar Dex": {
-				"Collected": false
+				"Collected": true
 			},
 			"Kittebook": {
 				"Collected": false
 			},
 			"Moustapler": {
-				"Collected": false
+				"Collected": true
 			}
 		},
 		"Obstacles": {
 			"Cutscene": {
-				"Broken": false
+				"Broken": true
 			}
 		}
 	},
 	"TechTownHome": {
 		"Items": {
 			"Reading Glasses": {
-				"Collected": false
+				"Collected": true
 			}
 		}
 	},
 	"Town": {
 		"Items": {
 			"Children's Book": {
-				"Collected": false
+				"Collected": true
 			},
 			"Exclamation Mark": {
 				"Collected": false
@@ -89,14 +89,14 @@
 		},
 		"Obstacles": {
 			"ParkBlockade": {
-				"Broken": false
+				"Broken": true
 			}
 		},
 		"Trainers": {
-			"Fighter": {
+			"Old Man Ember": {
 				"Talked": false
 			},
-			"Fighter2": {
+			"Old Man Frost": {
 				"Talked": false
 			},
 			"OldmanBench": {
@@ -109,7 +109,7 @@
 				"Talked": false
 			},
 			"Rival": {
-				"Talked": false
+				"Talked": true
 			},
 			"Trainer": {
 				"Talked": false
