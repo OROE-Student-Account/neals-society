@@ -1,30 +1,21 @@
 extends Node2D
 
 var selected_slot: int = 0
-@onready var selecter = $temp/selecter
+@onready var selecter = $selecter
 
-# Grid positions for the selecter (3 rows x 4 columns)
-const slot_positions: Array[Vector2] = [
-	Vector2(12, 5),    # 0
-	Vector2(80, 5),    # 1
-	Vector2(150, 5),   # 2
-	Vector2(220, 5),   # 3
-	Vector2(12, 60),    # 4
-	Vector2(80, 60),    # 5
-	Vector2(150, 60),   # 6
-	Vector2(220, 60),   # 7
-	Vector2(12, 100),   # 8
-	Vector2(80, 100),   # 9
-	Vector2(150, 100),  # 10
-	Vector2(220, 100),  # 11
-]
-
+# Grid configuration (5 rows x 5 columns = 25 slots)
+var slot_positions: Array[Vector2] = []
 var bookshelf = []
-
-
 var active: bool = false
 
 func _ready():
+	# Dynamically generate 5x5 grid positions
+	for row in range(5):
+		for col in range(5):
+			var x = 5 + col * 49
+			var y = 1 + row * 26
+			slot_positions.append(Vector2(x, y))
+			
 	load_bookshelf()
 
 func load_bookshelf():
@@ -33,52 +24,47 @@ func load_bookshelf():
 	
 	clear_slots()
 	
-	var slots = $temp.get_children()
 	var shelf = Utils.get_bookshelf()  
 	
-	for i in range(2,14):
+	# Clean up shelf data: replace any grammarites missing a name with {}
+	for i in range(shelf.size()):
+		if shelf[i] == null or shelf[i] == {} or not shelf[i].has("Name") or shelf[i]["Name"] == "":
+			shelf[i] = {}
+	Utils.set_bookshelf(shelf) # Save cleaned array back to global state
+	
+	# Loop through all 25 grid slots
+	for i in range(25):
+		var slot_pos = slot_positions[i]
 		
-		var g_name = Label.new()
-		g_name.theme = load("res://Assets/UI/Fonts.tres")
-		
-		
-		# Set grammarite sprite and name based on  bookshelf
-		var j = i - 2
-		if j < shelf.size():
-			if shelf[j] == {}:
-				g_name.text = "Empty"
-				bookshelf.append({})
-			else:
-				var grammarite_num = Utils.get_poke_num(shelf[j]["Name"]) + 1
-				# Set texture based on grammarite number
-				
-				var sprite = Sprite2D.new()
-				sprite.region_enabled = true
-				sprite.region_rect = Rect2(0, 34, 64, 64)
-				sprite.centered = false
-				sprite.scale = Vector2(0.5, 0.5)
-				sprite.flip_h = true
-				sprite.texture = load("res://Assets/Pokemon/Pokemon" + str(grammarite_num) + ".png")
-				slots[i].add_child(sprite)
-				
-				g_name.text = shelf[j]["Name"]
-				
-				bookshelf.append(shelf[j])
-		
-		
-		
-		slots[i].add_child(g_name)
+		# Check if valid data exists for this slot
+		if i < shelf.size() and shelf[i] != {}:
+			var grammarite_num = Utils.get_poke_num(shelf[i]["Name"]) + 1
+			
+			var sprite = Sprite2D.new()
+			sprite.region_enabled = true
+			sprite.region_rect = Rect2(0, 34, 64, 64)
+			sprite.centered = false
+			sprite.scale = Vector2(0.5, 0.5)
+			sprite.flip_h = true
+			sprite.texture = load("res://Assets/Pokemon/Pokemon" + str(grammarite_num) + ".png")
+			
+			sprite.position = slot_pos
+			add_child(sprite)
+			
+			bookshelf.append(shelf[i])
+		else:
+			bookshelf.append({})
 	
 	selecter.visible = true
 	update_selecter_position()
 
 func clear_slots():
-	# Remove all existing sprites from slots
-	var slots = $temp.get_children()
-	for slot in slots:
-		for child in slot.get_children():
-			if child is Sprite2D or child is Label:
-				child.queue_free()
+	# Clean up runtime sprites
+	for child in get_children():
+		if child == selecter:
+			continue
+		if child is Sprite2D:
+			child.queue_free()
 	
 	bookshelf.clear()
 
@@ -90,9 +76,27 @@ func confirm_selection():
 	
 	var party = Utils.get_party()
 	
+	# Count how many valid grammarites are currently in the party
+	var valid_party_count = 0
+	for member in party:
+		if member != {} and member.has("Name") and member["Name"] != "":
+			valid_party_count += 1
+	
 	if bookshelf[selected_slot] == {}:
+		# Player is trying to DEPOSIT a party member into an empty slot
+		if valid_party_count <= 1:
+			# Block the action if it's their last remaining grammarite
+			print("Cannot deposit your last Grammarite!") 
+			active = true
+			return
+			
 		var index = await Utils.get_scene_manager().transition_to_select_screen()
 		
+		# Handle selection cancellation or invalid selection
+		if index == -1 or party[index] == {} or party[index]["Name"] == "":
+			active = true
+			return
+			
 		bookshelf[selected_slot] = party[index]
 		
 		for i in range(index, 5):
@@ -107,25 +111,30 @@ func confirm_selection():
 			"PP": []
 		}
 	else:
-		var count = 0
+		# Player is SWAPPING or WITHDRAWING from a filled slot
+		var empty_party_slots = 0
 		for i in range(6):
 			if party[i]["Name"] == "":
-				count += 1
+				empty_party_slots += 1
 		
-		if count == 0:
+		if empty_party_slots == 0:
+			# Party full: Must swap with an existing member
 			var index = await Utils.get_scene_manager().transition_to_select_screen()
-			
-			var temp = party[index]
+			if index == -1:
+				active = true
+				return
+				
+			var temp_item = party[index]
 			party[index] = bookshelf[selected_slot]
-			bookshelf[selected_slot] = temp
+			bookshelf[selected_slot] = temp_item
 		else:
+			# Party has space: Direct withdrawal
 			for i in range(6):
 				if party[i]["Name"] == "":
 					party[i] = bookshelf[selected_slot]
 					bookshelf[selected_slot] = {}
 					break
 		
-	
 	Utils.set_party(party)
 	Utils.set_bookshelf(bookshelf)
 	
@@ -138,28 +147,24 @@ func _input(event: InputEvent) -> void:
 		return
 	
 	if event.is_action_pressed("ui_down"):
-		# Move down 4 positions (next row)
-		var next_slot = selected_slot + 4
-		if next_slot < 12:
+		var next_slot = selected_slot + 5
+		if next_slot < 25:
 			selected_slot = next_slot
 			update_selecter_position()
 	
 	elif event.is_action_pressed("ui_up"):
-		# Move up 4 positions (previous row)
-		var prev_slot = selected_slot - 4
+		var prev_slot = selected_slot - 5
 		if prev_slot >= 0:
 			selected_slot = prev_slot
 			update_selecter_position()
 	
 	elif event.is_action_pressed("ui_left"):
-		# Move left if not in leftmost column
-		if selected_slot % 4 != 0:
+		if selected_slot % 5 != 0:
 			selected_slot -= 1
 			update_selecter_position()
 	
 	elif event.is_action_pressed("ui_right"):
-		# Move right if not in rightmost column and slot exists
-		if selected_slot % 4 != 3 and selected_slot + 1 < 12:
+		if selected_slot % 5 != 4 and selected_slot + 1 < 25:
 			selected_slot += 1
 			update_selecter_position()
 	
@@ -167,5 +172,4 @@ func _input(event: InputEvent) -> void:
 		confirm_selection()
 	
 	elif event.is_action_pressed("x"):
-		# exit
 		Utils.get_scene_manager().transition_exit_menu("Bookshelf")

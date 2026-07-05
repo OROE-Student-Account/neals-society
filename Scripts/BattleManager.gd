@@ -26,7 +26,7 @@ func _ready():
 	get_parent().get_node("SemicolonAnimator").visible = false
 	if battle_ui:
 		battle_ui.move_selected.connect(_on_player_move_selected)
-		if trainer != "random":
+		if "random" not in trainer:
 			battle_ui.get_node("Buttons/run").self_modulate = Color(0.55,0.55,0.4, 0.95)
 	
 	if not await on_player_grammarite_die(false):
@@ -323,7 +323,7 @@ func calc_stat(base, level):
 	return 5 + level + 0.01 * level * base
 
 func throw_book(book_name):
-	if current_state != BattleState.PLAYER_TURN or trainer != "random": return
+	if current_state != BattleState.PLAYER_TURN or "random" not in trainer: return
 	current_state = BattleState.ANIMATING
 	
 	
@@ -430,7 +430,7 @@ func end_battle(player_won: bool):
 		var party = Utils.get_party()
 		var xp = 1.0
 		
-		if trainer != "random":
+		if "random" not in trainer:
 			var train = Utils.get_trainer(trainer)
 			xp = train["XP"]
 			Utils.set_money(Utils.get_money()+train["Money"])

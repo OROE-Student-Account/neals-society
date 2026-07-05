@@ -1,6 +1,6 @@
 extends Node2D
 
-var next_scene: = ""
+var next_scene : = ""
 
 var player_location = Vector2(0, 0)
 var player_direction = Vector2(0, 0)
@@ -22,7 +22,6 @@ var transition_type = "New Scene"
 
 func grammadex():
 	$Grammadex/AnimationPlayer.play("Grammadex")
-	print("Animation")
 
 
 

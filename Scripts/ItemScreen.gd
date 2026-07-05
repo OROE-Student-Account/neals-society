@@ -152,7 +152,7 @@ func show_based_on_type(type):
 			if in_battle:
 				var battle_manager = get_parent().get_node("BattleManager")
 				
-				if battle_manager.trainer != "random": return
+				if "random" not in battle_manager.trainer: return
 				
 				battle_manager.throw_book(filtered_items[selected_item_index]["Name"])
 				
