@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://6vnm7mgvvfi7"]
+
+[ext_resource type="Script" uid="uid://c8fx2nxpjt3kl" path="res://labelfornewarea.gd" id="1_tewia"]
+[ext_resource type="Texture2D" uid="uid://ltsvfvfecatr" path="res://Assets/UI/Pokemon Party/Moving for name.png" id="2_27a3b"]
+[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="3_27a3b"]
+
+[sub_resource type="Animation" id="Animation_27a3b"]
+resource_name = "Moving"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NinePatchRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-100, 0), Vector2(300, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rtg2r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NinePatchRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n4e5g"]
+_data = {
+&"Moving": SubResource("Animation_27a3b"),
+&"RESET": SubResource("Animation_rtg2r")
+}
+
+[node name="Labelfornewarea" type="CanvasLayer" unique_id=1353560151]
+script = ExtResource("1_tewia")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=192323678]
+visible = false
+texture_filter = 1
+offset_right = 112.0
+offset_bottom = 32.0
+texture = ExtResource("2_27a3b")
+region_rect = Rect2(0, 0, 105, 40)
+
+[node name="Label" type="Label" parent="NinePatchRect" unique_id=1267051323]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 41.0
+offset_bottom = 39.0
+theme = ExtResource("3_27a3b")
+text = "sigma"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=928925114]
+libraries/ = SubResource("AnimationLibrary_n4e5g")

@@ -9,7 +9,7 @@
 	"Name": "Neal",
 	"Party": [
 		{
-			"Health": 22,
+			"Health": 3.0,
 			"Item": "",
 			"Level": 1.0,
 			"Moves": [
@@ -21,8 +21,8 @@
 			"Name": "Moustapler",
 			"Nickname": "",
 			"PP": [
-				15.0,
-				25.0,
+				14.0,
+				23.0,
 				10.0,
 				5.0
 			]

@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://dcrhfjxf127us"]
 
 [ext_resource type="Script" uid="uid://bgjd8lvacu6gg" path="res://Scripts/SceneManager.gd" id="2"]
-[ext_resource type="PackedScene" uid="uid://cpsmf06mygk67" path="res://Scenes/Town.scn" id="2_8ysa5"]
+[ext_resource type="PackedScene" uid="uid://xyicgu22fa51" path="res://Scenes/Town.scn" id="2_8ysa5"]
 [ext_resource type="PackedScene" uid="uid://bkml6dq0xfdp7" path="res://Scenes/Menu.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://i0am2murs47p" path="res://Scenes/Dialogue.tscn" id="4_026ex"]
 [ext_resource type="Texture2D" uid="uid://cv0nh1m0od62h" path="res://Assets/Items/Grammar Dex.png" id="6_2cmid"]
 [ext_resource type="PackedScene" uid="uid://dvpfferedor81" path="res://Scenes/SelectScene.tscn" id="6_8ysa5"]
+[ext_resource type="PackedScene" uid="uid://6vnm7mgvvfi7" path="res://title_for_new_scene.tscn" id="7_2cmid"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "FadeToBlack"
@@ -132,6 +133,7 @@ scale = Vector2(5, 5)
 transform = Transform2D(5, 0, 0, 5, 0, 0)
 
 [node name="GrammariteSelectScreen" parent="." unique_id=945001003 instance=ExtResource("6_8ysa5")]
+visible = false
 
 [node name="ScreenTransition" type="CanvasLayer" parent="." unique_id=987668559]
 
@@ -139,6 +141,10 @@ transform = Transform2D(5, 0, 0, 5, 0, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ScreenTransition" unique_id=434253100]
@@ -148,13 +154,15 @@ autoplay = &"FadeToNormal"
 [node name="Grammadex" type="CanvasLayer" parent="." unique_id=1419290616]
 
 [node name="ColorRect" type="TextureRect" parent="Grammadex" unique_id=1224964580]
-modulate = Color(1, 0, 1, 0)
 texture_filter = 1
-offset_left = 1208.0
-offset_top = 56.0
-offset_right = 1448.0061
-offset_bottom = 280.00238
+offset_left = 1200.0
+offset_top = 80.0
+offset_right = 1440.0061
+offset_bottom = 304.00238
 texture = ExtResource("6_2cmid")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Grammadex" unique_id=656037789]
 libraries/ = SubResource("AnimationLibrary_q4unc")
+
+[node name="Labelfornewarea" parent="." unique_id=141039932 instance=ExtResource("7_2cmid")]
+scale = Vector2(5, 5)
