@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://bkd5rlijmfy0f" path="res://Assets/Tilesets/Inside Power Plant Wall 1.png" id="3_ebo1k"]
 [ext_resource type="Texture2D" uid="uid://c1nltratrut3d" path="res://Assets/Tilesets/side wall.png" id="4_oao8r"]
 [ext_resource type="Texture2D" uid="uid://du821hemh66bf" path="res://Assets/Tilesets/wall edge for top row.png" id="5_g6x45"]
-[ext_resource type="Texture2D" uid="uid://bfcwcw8x4o5st" path="res://Assets/Decoration/Overflowing TrashCan.png" id="5_tcjpa"]
+[ext_resource type="Texture2D" uid="uid://bfcwcw8x4o5st" path="res://Assets/Decoration/TechTown/Overflowing TrashCan.png" id="5_tcjpa"]
 [ext_resource type="Texture2D" uid="uid://obsjxwyxnikk" path="res://Assets/Tilesets/Top row.png" id="6_0o1ji"]
 [ext_resource type="Texture2D" uid="uid://c4mmeswbjx3db" path="res://Assets/Decoration/TechTown/Generator_powercore.png" id="7_k7d28"]
-[ext_resource type="Texture2D" uid="uid://cjtipffhvgk8q" path="res://Assets/Decoration/Cargo Container.png" id="7_qafev"]
+[ext_resource type="Texture2D" uid="uid://cjtipffhvgk8q" path="res://Assets/Decoration/TechTown/Cargo Container.png" id="7_qafev"]
 [ext_resource type="Script" uid="uid://bfh5c5n300iob" path="res://Scripts/Wall.gd" id="9_qhhr2"]
 [ext_resource type="PackedScene" uid="uid://i70qso44vgve" path="res://Scenes/Player.tscn" id="10_5rbrs"]
 [ext_resource type="Texture2D" uid="uid://e4aj5ya0h468" path="res://Assets/Decoration/TechTown/Tesla coil.png" id="10_gvq5t"]
@@ -52,7 +52,7 @@ texture = ExtResource("5_tcjpa")
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 8)
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -8, 16, -8, 16, 8, -16, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_noj63"]
 resource_name = "reg"

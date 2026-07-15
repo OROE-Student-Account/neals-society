@@ -1,5 +1,44 @@
 {
 	"Semicolon Slash": { "Damage": 676767, "Accuracy": 10, "Type": "Grammar", "PP": 1 },
+	
+	"Syntax Slit": { "Damage": 4, "Accuracy": 0.7, "Type": "Grammar", "PP": 25 },
+	"Period Punch": { "Damage": 2, "Accuracy": 0.9, "Type": "Grammar", "PP": 15 },
+	"Punctuation Powerhouse": { "Damage": 3, "Accuracy": 0.65, "Type": "Grammar", "PP": 10 },
+	"Language Lunge": { "Damage": 3.5, "Accuracy": 0.85, "Type": "Grammar", "PP": 15 },
+	
+	"Peer Review": { "Damage": 0, "Accuracy": 10, "Type": "Literature", "PP": 10 },
+	"Library Lecture": { "Damage": 4, "Accuracy": 0.8, "Type": "Literature", "PP": 10 },
+	"Book Barrage": { "Damage": 2, "Accuracy": 0.75, "Type": "Literature", "PP": 20 },
+	"Shakespearean Stymie": { "Damage": 3, "Accuracy": 0.9, "Type": "Literature", "PP": 25 },
+	"Manuscript Mayhem": { "Damage": 7, "Accuracy": 0.8, "Type": "Literature", "PP": 10 },
+	"Metaphor Misdirect": { "Damage": 5, "Accuracy": 0.85, "Type": "Literature", "PP": 15 },
+	"Hyperbole Hit": { "Damage": 10, "Accuracy": 0.5, "Type": "Literature", "PP": 5 },
+	"Alleteration Allure": { "Damage": 0, "Accuracy": 1.25, "Type": "Literature", "PP": 10 },
+	
+	"Procrastinate": { "Damage": 0, "Accuracy": 10, "Type": "Homework", "PP": 10 },
+	"LOCK IN": { "Damage": 2, "Accuracy": 0.5, "Type": "Homework", "PP": 5 },
+	"Annotation Annihilation": { "Damage": 4, "Accuracy": 0.85, "Type": "Homework", "PP": 5 },
+	"Homework Help": { "Damage": 0, "Accuracy": 10, "Type": "Homework", "PP": 5 },
+	"Study Guide": { "Damage": 0, "Accuracy": 10, "Type": "Homework", "PP": 10 },
+	"Lab Report": { "Damage": 4, "Accuracy": 1, "Type": "Homework", "PP": 20 },
+	
+	"ABRV": { "Damage": 2, "Accuracy": 0.9, "Type": "Slang", "PP": 5 },
+	"Dank Memes": { "Damage": 10, "Accuracy": 0.4, "Type": "Slang", "PP": 5 },
+	"Jargon Jumble": { "Damage": 2, "Accuracy": 0.9, "Type": "Slang", "PP": 15 },
+	"Emoticon Expression": { "Damage": 4, "Accuracy": 0.65, "Type": "Slang", "PP": 25 },
+	"Insulting Impression": { "Damage": 1, "Accuracy": 1.0, "Type": "Slang", "PP": 15 },
+	"Brainrot Bash": { "Damage": 6, "Accuracy": 0.9, "Type": "Slang", "PP": 10 },
+	
+	"Paper Punch": { "Damage": 2, "Accuracy": 0.9, "Type": "Paper", "PP": 15 },
+	"Papercut": { "Damage": 1, "Accuracy": 1.5, "Type": "Paper", "PP": 30 },
+	"Fold": { "Damage": 6, "Accuracy": 0.65, "Type": "Paper", "PP": 10 },
+	"Oragami Onslaught": { "Damage": 3, "Accuracy": 0.65, "Type": "Paper", "PP": 10 },
+	"Scroll Smash": { "Damage": 4, "Accuracy": 0.8, "Type": "Paper", "PP": 10 },
+	"Mâche Mash": { "Damage": 3, "Accuracy": 0.7, "Type": "Paper", "PP": 25 },
+	"Calligraphy Catastrophe": { "Damage": 4, "Accuracy": 0.8, "Type": "Paper", "PP": 10 },
+	
+	
+	
 	"Bite": { "Damage": 2, "Accuracy": 0.85, "Type": "Animal", "PP": 15 },
 	"Papercut": { "Damage": 1, "Accuracy": 1, "Type": "Paper", "PP": 25 }, 
 	"Howl": { "Damage": 3, "Accuracy": 0.9, "Type": "Animal", "PP": 10 }, 

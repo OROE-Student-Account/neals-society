@@ -9,7 +9,7 @@
 	"Name": "Neal",
 	"Party": [
 		{
-			"Health": 3.0,
+			"Health": 0,
 			"Item": "",
 			"Level": 1.0,
 			"Moves": [

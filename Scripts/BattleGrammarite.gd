@@ -15,6 +15,8 @@ var item = ""
 var health : int = 1
 var max_health : int = 1
 
+signal health_changed(this: Node2D, dmg: int)
+
 func _ready():
 	setup()
 
@@ -66,6 +68,7 @@ func update_moves():
 
 # damage should be negative, healing should be positive
 func update_health(change):
+	health_changed.emit(self, change)
 	health = clamp(health + int(change), 0, max_health)  # Clamp between 0 and max
 	
 	var pecent_health = float(health) / max_health

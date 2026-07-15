@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfcwcw8x4o5st"
-path="res://.godot/imported/Overflowing TrashCan.png-31f7773c8f15be83228e9b5ea8b8084b.ctex"
+uid="uid://di6aw1pcroyhs"
+path="res://.godot/imported/Throne.png-877d8fa1e718248086be0f6c0d8a844c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Decoration/Overflowing TrashCan.png"
-dest_files=["res://.godot/imported/Overflowing TrashCan.png-31f7773c8f15be83228e9b5ea8b8084b.ctex"]
+source_file="res://Assets/Decoration/RoyalGrotto/Throne.png"
+dest_files=["res://.godot/imported/Throne.png-877d8fa1e718248086be0f6c0d8a844c.ctex"]
 
 [params]
 

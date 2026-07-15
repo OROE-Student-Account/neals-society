@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://botopew3mmoy0" path="res://Assets/Decoration/pallet town/mat.png" id="2_itu4x"]
 [ext_resource type="PackedScene" uid="uid://i70qso44vgve" path="res://Scenes/Player.tscn" id="3_mywya"]
 [ext_resource type="Texture2D" uid="uid://kl3xn3gy7u60" path="res://Assets/Decoration/HomegrownTown/Clock.png" id="4_8t3go"]
-[ext_resource type="Texture2D" uid="uid://cdrh1lwiq3jk1" path="res://Assets/Tilesets/Sprite-0008.png" id="4_itu4x"]
+[ext_resource type="Texture2D" uid="uid://cdrh1lwiq3jk1" path="res://Assets/Tilesets/school-walls.png" id="4_itu4x"]
 [ext_resource type="PackedScene" uid="uid://fsubo0lgcrfo" path="res://Scenes/Door.tscn" id="4_rnplj"]
 [ext_resource type="Texture2D" uid="uid://bot5vffxdnid4" path="res://Assets/Decoration/HomegrownTown/Lockers.png" id="4_tbjfs"]
 [ext_resource type="Texture2D" uid="uid://b1u1u1qktxcki" path="res://Assets/Decoration/HomegrownTown/School desk.png" id="5_55bp2"]

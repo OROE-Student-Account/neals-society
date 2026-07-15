@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdrh1lwiq3jk1"
-path="res://.godot/imported/Sprite-0008.png-39a1bb3002e02d10605adc706d4b0805.ctex"
+uid="uid://c33s6a8hsjrdn"
+path="res://.godot/imported/castle_door_inside.png-0e2fdd6d5076cf5d67538f9896085795.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/Sprite-0008.png"
-dest_files=["res://.godot/imported/Sprite-0008.png-39a1bb3002e02d10605adc706d4b0805.ctex"]
+source_file="res://Assets/Decoration/RoyalGrotto/castle_door_inside.png"
+dest_files=["res://.godot/imported/castle_door_inside.png-0e2fdd6d5076cf5d67538f9896085795.ctex"]
 
 [params]
 

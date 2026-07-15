@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjtipffhvgk8q"
-path="res://.godot/imported/Cargo Container.png-1a155b1cf871b01a13997967e6dc21fd.ctex"
+uid="uid://b8hyrxha1bxc1"
+path="res://.godot/imported/Komma King banner.png-19db57050b9a1de45f05d6744c2a0423.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Decoration/Cargo Container.png"
-dest_files=["res://.godot/imported/Cargo Container.png-1a155b1cf871b01a13997967e6dc21fd.ctex"]
+source_file="res://Assets/Decoration/RoyalGrotto/Komma King banner.png"
+dest_files=["res://.godot/imported/Komma King banner.png-19db57050b9a1de45f05d6744c2a0423.ctex"]
 
 [params]
 
