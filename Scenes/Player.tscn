@@ -441,7 +441,7 @@ states/Turn/position = Vector2(337.667, 169)
 states/Walk/node = SubResource("29")
 states/Walk/position = Vector2(437.667, 86.3333)
 transitions = ["Idle", "Walk", SubResource("30"), "Walk", "Idle", SubResource("31"), "Idle", "Turn", SubResource("32"), "Turn", "Idle", SubResource("33"), "Turn", "Walk", SubResource("34"), "Walk", "Turn", SubResource("35"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_kne1u")]
-graph_offset = Vector2(-100.8, 11.5876)
+graph_offset = Vector2(60.92988, -26.137413)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ixxa"]
 bg_color = Color(0, 0, 0, 0.27450982)

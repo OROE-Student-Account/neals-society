@@ -38,7 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://mc0m56nwdyfm" path="res://Assets/Decoration/TechTown/Tech Town Door.png" id="22_xe8qq"]
 [ext_resource type="Script" uid="uid://bfh5c5n300iob" path="res://Scripts/Wall.gd" id="24_1qwwy"]
 [ext_resource type="Texture2D" uid="uid://b47ci5pia2rf0" path="res://Assets/Decoration/HomegrownTown/playground.png" id="25_jnmbb"]
-[ext_resource type="Texture2D" uid="uid://ktnoq2qj5jf" path="res://Assets/Decoration/Bench.png" id="26_vk81e"]
+[ext_resource type="Texture2D" uid="uid://ktnoq2qj5jf" path="res://Assets/Decoration/Universal/Bench.png" id="26_vk81e"]
 [ext_resource type="Texture2D" uid="uid://bqv52nkplsqfs" path="res://Assets/Decoration/TechTown/Daddy-Static-Statue.png" id="29_gn7iv"]
 [ext_resource type="Texture2D" uid="uid://5j1wdhk3ml05" path="res://Assets/Decoration/TechTown/Power_Plant.png" id="33_q6m0i"]
 [ext_resource type="Texture2D" uid="uid://bmswswtsay6ry" path="res://Assets/Decoration/TechTown/TechTownHouse.png" id="35_lw8bw"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b24dvlaonqsyl"
-path="res://.godot/imported/player_home_floor_1.png-f2cebce54246a0407073be5bb11a4e01.ctex"
+uid="uid://r24ukpvj7250"
+path="res://.godot/imported/blue Sign.png-6d335e2000a46104bebf8eb68f4c60ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Decoration/pallet town/player_home_floor_1.png"
-dest_files=["res://.godot/imported/player_home_floor_1.png-f2cebce54246a0407073be5bb11a4e01.ctex"]
+source_file="res://Assets/Decoration/LluviaCity/blue Sign.png"
+dest_files=["res://.godot/imported/blue Sign.png-6d335e2000a46104bebf8eb68f4c60ee.ctex"]
 
 [params]
 

@@ -43,6 +43,8 @@ var entering_door := false
 var jumping_over_ledge := false
 var can_interact_with_object := false
 
+var turning_count = 0
+
 
 enum PlayerState { IDLE, TURNING, WALKING }
 enum FacingDirection { LEFT, RIGHT, UP, DOWN }
@@ -73,9 +75,13 @@ func _ready():
 
 func _on_animation_finished(anim_name: StringName):
 	# Only reset if the animation that actually finished was a Turn
+	
 	if "Turn" in anim_name:
 		player_state = PlayerState.IDLE
 		anim_state.travel("Idle")
+		turning_count = 0
+
+
 
 func set_spawn(location: Vector2, direction: Vector2):
 	entering_door = false
@@ -92,8 +98,16 @@ func set_spawn(location: Vector2, direction: Vector2):
 	anim_tree.set("parameters/Walk/blend_position", input_direction)
 	anim_tree.set("parameters/Turn/blend_position", input_direction)
 
+
 func _physics_process(delta):
-	if stop_input or player_state == PlayerState.TURNING: return
+	if player_state == PlayerState.TURNING:
+		turning_count += 1
+		if turning_count > 3:
+			player_state = PlayerState.IDLE
+			anim_state.travel("Idle")
+			turning_count = 0
+		return
+	if stop_input: return
 	if not is_moving:
 		process_player_input()
 	elif input_direction != Vector2.ZERO:
@@ -131,7 +145,7 @@ func need_to_turn() -> bool:
 	elif input_direction.x > 0: new_dir = FacingDirection.RIGHT
 	elif input_direction.y < 0: new_dir = FacingDirection.UP
 	elif input_direction.y > 0: new_dir = FacingDirection.DOWN
-
+	
 	if new_dir != facing_direction:
 		facing_direction = new_dir
 		return true

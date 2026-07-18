@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ktnoq2qj5jf"
-path="res://.godot/imported/Bench.png-efc0cf8aa5c63f8e3732437704e3411d.ctex"
+uid="uid://dqovaigjv4241"
+path="res://.godot/imported/Skyscraper diff shape.png-eec39895971d8fc348e795033ebd2a65.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Decoration/Bench.png"
-dest_files=["res://.godot/imported/Bench.png-efc0cf8aa5c63f8e3732437704e3411d.ctex"]
+source_file="res://Assets/Decoration/LluviaCity/Skyscraper diff shape.png"
+dest_files=["res://.godot/imported/Skyscraper diff shape.png-eec39895971d8fc348e795033ebd2a65.ctex"]
 
 [params]
 

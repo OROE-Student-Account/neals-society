@@ -32,7 +32,7 @@
 	"Paper Punch": { "Damage": 2, "Accuracy": 0.9, "Type": "Paper", "PP": 15 },
 	"Papercut": { "Damage": 1, "Accuracy": 1.5, "Type": "Paper", "PP": 30 },
 	"Fold": { "Damage": 6, "Accuracy": 0.65, "Type": "Paper", "PP": 10 },
-	"Oragami Onslaught": { "Damage": 3, "Accuracy": 0.65, "Type": "Paper", "PP": 10 },
+	"Origami Onslaught": { "Damage": 3, "Accuracy": 0.65, "Type": "Paper", "PP": 10 },
 	"Scroll Smash": { "Damage": 4, "Accuracy": 0.8, "Type": "Paper", "PP": 10 },
 	"Mâche Mash": { "Damage": 3, "Accuracy": 0.7, "Type": "Paper", "PP": 25 },
 	"Calligraphy Catastrophe": { "Damage": 4, "Accuracy": 0.8, "Type": "Paper", "PP": 10 },

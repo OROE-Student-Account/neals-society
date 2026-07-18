@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blplx1yihnwi5"
-path="res://.godot/imported/rival_home.png-9d8ffa93a2d1e6145fa0b6c8f577f0d1.ctex"
+uid="uid://etoe75ypi5ui"
+path="res://.godot/imported/Red carpet.png-7a70ae5547b51a3efef78111e787d7d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Decoration/pallet town/rival_home.png"
-dest_files=["res://.godot/imported/rival_home.png-9d8ffa93a2d1e6145fa0b6c8f577f0d1.ctex"]
+source_file="res://Assets/Decoration/RoyalGrotto/Red carpet.png"
+dest_files=["res://.godot/imported/Red carpet.png-7a70ae5547b51a3efef78111e787d7d7.ctex"]
 
 [params]
 

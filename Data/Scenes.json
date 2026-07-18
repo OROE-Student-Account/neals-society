@@ -56,40 +56,52 @@
 				"Collected": false
 			},
 			"Grammar Dex": {
-				"Collected": true
+				"Collected": false
 			},
 			"Kittebook": {
 				"Collected": false
 			},
 			"Moustapler": {
-				"Collected": true
+				"Collected": false
 			}
 		},
 		"Obstacles": {
 			"Cutscene": {
-				"Broken": true
+				"Broken": false
 			}
 		}
 	},
 	"TechTownHome": {
 		"Items": {
 			"Reading Glasses": {
-				"Collected": true
+				"Collected": false
 			}
 		}
 	},
 	"Town": {
 		"Items": {
 			"Children's Book": {
-				"Collected": true
+				"Collected": false
 			},
 			"Exclamation Mark": {
 				"Collected": false
 			}
 		},
 		"Obstacles": {
+			"CaveBlockade": {
+				"Broken": false
+			},
+			"ConcreteJungleBlock": {
+				"Broken": false
+			},
 			"ParkBlockade": {
-				"Broken": true
+				"Broken": false
+			},
+			"PodunkvilleBlock": {
+				"Broken": false
+			},
+			"TheHeightsBlock": {
+				"Broken": false
 			}
 		},
 		"Trainers": {
@@ -97,7 +109,7 @@
 				"Talked": false
 			},
 			"Old Man Frost": {
-				"Talked": true
+				"Talked": false
 			},
 			"OldmanBench": {
 				"Talked": false
@@ -109,7 +121,7 @@
 				"Talked": false
 			},
 			"Rival": {
-				"Talked": true
+				"Talked": false
 			},
 			"Trainer": {
 				"Talked": false
