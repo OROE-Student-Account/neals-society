@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1oth3efb408w"
-path="res://.godot/imported/vert-cones.png-d7e61641f55b124cdac62c60fbd9af03.ctex"
+uid="uid://bdorxwdcrvgeh"
+path="res://.godot/imported/wooden railing.png-9576ded18718a72acb1d665014f0e6a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Decoration/vert-cones.png"
-dest_files=["res://.godot/imported/vert-cones.png-d7e61641f55b124cdac62c60fbd9af03.ctex"]
+source_file="res://Assets/Decoration/TheHeights/wooden railing.png"
+dest_files=["res://.godot/imported/wooden railing.png-9576ded18718a72acb1d665014f0e6a1.ctex"]
 
 [params]
 

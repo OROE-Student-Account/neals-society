@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyouwmuu35fjc"
-path="res://.godot/imported/harvestor small.png-772a8437077789c9440d73842655a96b.ctex"
+uid="uid://d1oth3efb408w"
+path="res://.godot/imported/vert-cones.png-7e440c4aa373d0e0304743f95e7f3ac9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Decoration/harvestor small.png"
-dest_files=["res://.godot/imported/harvestor small.png-772a8437077789c9440d73842655a96b.ctex"]
+source_file="res://Assets/Decoration/Universal/vert-cones.png"
+dest_files=["res://.godot/imported/vert-cones.png-7e440c4aa373d0e0304743f95e7f3ac9.ctex"]
 
 [params]
 

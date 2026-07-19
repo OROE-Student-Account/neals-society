@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u0qki6mp80l3"
-path="res://.godot/imported/Cones.png-934621d0ebbf0ce1ecb967f50d9264ef.ctex"
+uid="uid://xlka0uqp2lke"
+path="res://.godot/imported/street lamp.png-7082bbbc56a8df6ce155f9a435f59f46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Decoration/Cones.png"
-dest_files=["res://.godot/imported/Cones.png-934621d0ebbf0ce1ecb967f50d9264ef.ctex"]
+source_file="res://Assets/Decoration/LluviaCity/street lamp.png"
+dest_files=["res://.godot/imported/street lamp.png-7082bbbc56a8df6ce155f9a435f59f46.ctex"]
 
 [params]
 

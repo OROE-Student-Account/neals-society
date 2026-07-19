@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgdnoov5tgxrv"
-path="res://.godot/imported/crafter small.png-bac8062c70e04deef75bfb455294d2d5.ctex"
+uid="uid://do417na8mcrg4"
+path="res://.godot/imported/Clouds tileset.png-9b1ca23f5b63ea094ad900cc5778a586.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Decoration/crafter small.png"
-dest_files=["res://.godot/imported/crafter small.png-bac8062c70e04deef75bfb455294d2d5.ctex"]
+source_file="res://Assets/Tilesets/Clouds tileset.png"
+dest_files=["res://.godot/imported/Clouds tileset.png-9b1ca23f5b63ea094ad900cc5778a586.ctex"]
 
 [params]
 

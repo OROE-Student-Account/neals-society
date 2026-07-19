@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://botopew3mmoy0" path="res://Assets/Decoration/pallet town/mat.png" id="4"]
 [ext_resource type="PackedScene" uid="uid://prw5jytjpf0n" path="res://Scenes/Machine.tscn" id="4_qqsmd"]
 [ext_resource type="PackedScene" uid="uid://btmlakx3gcgpj" path="res://Scenes/GrammaritePickup.tscn" id="5_ddugm"]
-[ext_resource type="Texture2D" uid="uid://cgdnoov5tgxrv" path="res://Assets/Decoration/crafter small.png" id="5_s4acm"]
-[ext_resource type="Texture2D" uid="uid://cyouwmuu35fjc" path="res://Assets/Decoration/harvestor small.png" id="5_v842k"]
+[ext_resource type="Texture2D" uid="uid://cgdnoov5tgxrv" path="res://Assets/Decoration/LluviaCity/crafter small.png" id="5_s4acm"]
+[ext_resource type="Texture2D" uid="uid://cyouwmuu35fjc" path="res://Assets/Decoration/LluviaCity/harvestor small.png" id="5_v842k"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(16, 208)

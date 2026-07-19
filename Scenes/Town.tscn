@@ -33,7 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://b4jcrb80t4lo" path="res://Assets/Trainers/old-man.png" id="19_gb3n1"]
 [ext_resource type="Texture2D" uid="uid://ds44qfk8xaxh1" path="res://Assets/Trainers/rival sprite.png" id="19_j4fij"]
 [ext_resource type="Texture2D" uid="uid://dyb8dfu7yldp1" path="res://Assets/Decoration/HomegrownTown/School door.png" id="20_xe8qq"]
-[ext_resource type="Texture2D" uid="uid://u0qki6mp80l3" path="res://Assets/Decoration/Cones.png" id="22_d5kfv"]
+[ext_resource type="Texture2D" uid="uid://u0qki6mp80l3" path="res://Assets/Decoration/Universal/Cones.png" id="22_d5kfv"]
 [ext_resource type="Script" uid="uid://hvnvpuwe5g0b" path="res://Scripts/BattleStarter.gd" id="22_ix0ol"]
 [ext_resource type="Texture2D" uid="uid://mc0m56nwdyfm" path="res://Assets/Decoration/TechTown/Tech Town Door.png" id="22_xe8qq"]
 [ext_resource type="Script" uid="uid://bfh5c5n300iob" path="res://Scripts/Wall.gd" id="24_1qwwy"]

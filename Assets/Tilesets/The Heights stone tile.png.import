@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bapmwfua33bhd"
-path="res://.godot/imported/Concrete jungle building.png-9a599189f037cc073feeb7b940cb27bb.ctex"
+uid="uid://dh51v1qahdm63"
+path="res://.godot/imported/The Heights stone tile.png-b8c253e0a4524fabc5624169cc2dfa19.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Decoration/Concrete jungle building.png"
-dest_files=["res://.godot/imported/Concrete jungle building.png-9a599189f037cc073feeb7b940cb27bb.ctex"]
+source_file="res://Assets/Tilesets/The Heights stone tile.png"
+dest_files=["res://.godot/imported/The Heights stone tile.png-b8c253e0a4524fabc5624169cc2dfa19.ctex"]
 
 [params]
 
