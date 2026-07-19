@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bs1oucptljdsb" path="res://Assets/Decoration/Tv.png" id="9_25utq"]
 [ext_resource type="PackedScene" uid="uid://i70qso44vgve" path="res://Scenes/Player.tscn" id="10_cw6ij"]
 [ext_resource type="PackedScene" uid="uid://fsubo0lgcrfo" path="res://Scenes/Door.tscn" id="11_0j3yp"]
-[ext_resource type="PackedScene" uid="uid://bdykq75yoljv" path="res://Scenes/Item.tscn" id="12_rx8of"]
+[ext_resource type="PackedScene" uid="uid://btmlakx3gcgpj" path="res://Scenes/GrammaritePickup.tscn" id="12_a04wc"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(16, 176)
@@ -151,7 +151,7 @@ shape = SubResource("RectangleShape2D_lpn83")
 [node name="Node2D" type="Node2D" parent="." unique_id=986866159]
 
 [node name="Player" parent="Node2D" unique_id=119606436 instance=ExtResource("10_cw6ij")]
-position = Vector2(80, 80)
+position = Vector2(64, 128)
 
 [node name="Door" parent="." unique_id=434385045 instance=ExtResource("11_0j3yp")]
 modulate = Color(0.12549, 0.313726, 0.85098, 1)
@@ -161,5 +161,5 @@ is_invisible = true
 spawn_location = Vector2(656, -1328)
 spawn_direction = Vector2(0, 1)
 
-[node name="Reading Glasses" parent="." unique_id=270907436 instance=ExtResource("12_rx8of")]
-position = Vector2(128, 48)
+[node name="Lampert" parent="." unique_id=2047661078 instance=ExtResource("12_a04wc")]
+position = Vector2(128, 64)

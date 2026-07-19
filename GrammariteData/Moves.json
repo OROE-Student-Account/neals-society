@@ -9,6 +9,7 @@
 	"Peer Review": { "Damage": 0, "Accuracy": 10, "Type": "Literature", "PP": 10 },
 	"Library Lecture": { "Damage": 4, "Accuracy": 0.8, "Type": "Literature", "PP": 10 },
 	"Book Barrage": { "Damage": 2, "Accuracy": 0.75, "Type": "Literature", "PP": 20 },
+	"Enlightened Elimination": { "Damage": 99, "Accuracy": 3.0, "Type": "Literature", "PP": 5 },
 	"Shakespearean Stymie": { "Damage": 3, "Accuracy": 0.9, "Type": "Literature", "PP": 25 },
 	"Manuscript Mayhem": { "Damage": 7, "Accuracy": 0.8, "Type": "Literature", "PP": 10 },
 	"Metaphor Misdirect": { "Damage": 5, "Accuracy": 0.85, "Type": "Literature", "PP": 15 },
@@ -36,6 +37,50 @@
 	"Scroll Smash": { "Damage": 4, "Accuracy": 0.8, "Type": "Paper", "PP": 10 },
 	"Mâche Mash": { "Damage": 3, "Accuracy": 0.7, "Type": "Paper", "PP": 25 },
 	"Calligraphy Catastrophe": { "Damage": 4, "Accuracy": 0.8, "Type": "Paper", "PP": 10 },
+	
+	"Wood Chop": { "Damage": 3, "Accuracy": 0.8, "Type": "Nature", "PP": 15 },
+	"Flower Power": { "Damage": 3, "Accuracy": 0.65, "Type": "Nature", "PP": 20 },
+	"Leaf Lash": { "Damage": 2, "Accuracy": 0.8, "Type": "Nature", "PP": 30 },
+	"Pollen Party": { "Damage": 2, "Accuracy": 0.75, "Type": "Nature", "PP": 10 },
+	"Twig Trip": { "Damage": 0, "Accuracy": 10, "Type": "Nature", "PP": 25 },
+	"Grass Guild": { "Damage": 0, "Accuracy": 10, "Type": "Nature", "PP": 20 },
+	"Tree Terror": { "Damage": 9, "Accuracy": 0.6, "Type": "Nature", "PP": 15 },
+	"Photosynthesis": { "Damage": 0, "Accuracy": 10, "Type": "Nature", "PP": 10 },
+	
+	"Pencil Prick": { "Damage": 2, "Accuracy": 0.75, "Type": "Supply", "PP": 20 },
+	"Scissor Slice": { "Damage": 10, "Accuracy": 0.5, "Type": "Supply", "PP": 5 },
+	"Ruler Repurcussion": { "Damage": 2, "Accuracy": 0.85, "Type": "Supply", "PP": 25 },
+	"Brush Beating": { "Damage": 1, "Accuracy": 1.0, "Type": "Supply", "PP": 15 },
+	"Palette Press": { "Damage": 4, "Accuracy": 0.65, "Type": "Supply", "PP": 10 },
+	"Eraser Explosion": { "Damage": 99, "Accuracy": 1.2, "Type": "Supply", "PP": 1 },
+	"Stapling Snap": { "Damage": 1, "Accuracy": 1.0, "Type": "Supply", "PP": 210 },
+	"Painting Punch": { "Damage": 2, "Accuracy": 0.9, "Type": "Supply", "PP": 15 },
+	
+	"Study": { "Damage": 0, "Accuracy": 1.0, "Type": "Knowledge", "PP": 10 },
+	"Intellectual Impass": { "Damage": 4, "Accuracy": 0.8, "Type": "Knowledge", "PP": 10 },
+	"Heavy Research": { "Damage": 3, "Accuracy": 0.5, "Type": "Knowledge", "PP": 15 },
+	
+	"Puddle Up": { "Damage": 3, "Accuracy": 0.85, "Type": "Ink", "PP": 15 },
+	"Skwa Below": { "Damage": 5, "Accuracy": 0.5, "Type": "Ink", "PP": 5 },
+	"Stained Scribble": { "Damage": 1, "Accuracy": 1.0, "Type": "Ink", "PP": 25 },
+	"Ink Blast": { "Damage": 2, "Accuracy": 0.95, "Type": "Ink", "PP": 20 },
+	"Painting Percolation": { "Damage": 3, "Accuracy": 0.8, "Type": "Ink", "PP": 10 },
+	"Venom Victimization": { "Damage": 2, "Accuracy": 0.7, "Type": "Ink", "PP": 15 },
+	"Muddled Mixture": { "Damage": 0, "Accuracy": 10, "Type": "Ink", "PP": 10 },
+	"Reform": { "Damage": 0, "Accuracy": 10, "Type": "Ink", "PP": 5 },
+	"Smudged Shackles": { "Damage": 1, "Accuracy": 1.1, "Type": "Ink", "PP": 15 },
+	"Blotchy Beating": { "Damage": 1, "Accuracy": 1.0, "Type": "Ink", "PP": 25 },
+	
+	"Tail Thwip": { "Damage": 1, "Accuracy": 1.25, "Type": "Animal", "PP": 25 },
+	"Fur Fetterment": { "Damage": 3, "Accuracy": 0.75, "Type": "Animal", "PP": 15 },
+	"Hibernation": { "Damage": 0, "Accuracy": 1.5, "Type": "Animal", "PP": 5 },
+	"Dog Dig": { "Damage": 5, "Accuracy": 0.75, "Type": "Animal", "PP": 10 },
+	"Cat Claw": { "Damage": 2, "Accuracy": 0.9, "Type": "Animal", "PP": 20 },
+	"Feeding Frenzy": { "Damage": 8, "Accuracy": 0.5, "Type": "Animal", "PP": 5 },
+	
+	"Hack": { "Damage": 4, "Accuracy": 0.4, "Type": "Machine", "PP": 15 },
+	"Computer Crash": { "Damage": 2, "Accuracy": 0.85, "Type": "Machine", "PP": 30 },
+	"Zap": { "Damage": 1, "Accuracy": 1.0, "Type": "Machine", "PP": 25 },
 	
 	
 	

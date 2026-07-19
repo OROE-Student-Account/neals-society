@@ -7,6 +7,14 @@
 		}
 	},
 	"PowerPlant": {
+		"Items": {
+			"Apple": {
+				"Collected": false
+			},
+			"First Rough Draft": {
+				"Collected": false
+			}
+		},
 		"Obstacles": {
 			"TeslaCoil1": {
 				"Broken": false
@@ -22,6 +30,9 @@
 			}
 		},
 		"Trainers": {
+			"Chief Static": {
+				"Talked": false
+			},
 			"Lever1": {
 				"Talked": false
 			},
@@ -32,6 +43,9 @@
 				"Talked": false
 			},
 			"Lever4": {
+				"Talked": false
+			},
+			"Team rammarG Grunt": {
 				"Talked": false
 			}
 		}
@@ -57,6 +71,13 @@
 			}
 		}
 	},
+	"TechTownHome": {
+		"Items": {
+			"Reading Glasses": {
+				"Collected": false
+			}
+		}
+	},
 	"Town": {
 		"Items": {
 			"Children's Book": {
@@ -67,15 +88,33 @@
 			}
 		},
 		"Obstacles": {
+			"CaveBlockade": {
+				"Broken": false
+			},
+			"ConcreteJungleBlock": {
+				"Broken": false
+			},
 			"ParkBlockade": {
+				"Broken": false
+			},
+			"PodunkvilleBlock": {
+				"Broken": false
+			},
+			"TheHeightsBlock": {
 				"Broken": false
 			}
 		},
 		"Trainers": {
-			"Fighter": {
+			"Old Man Ember": {
+				"Talked": false
+			},
+			"Old Man Frost": {
 				"Talked": false
 			},
 			"OldmanBench": {
+				"Talked": false
+			},
+			"OldmanBench2": {
 				"Talked": false
 			},
 			"OldmanBlock": {

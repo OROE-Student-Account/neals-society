@@ -21,6 +21,8 @@ enum ScreenLoaded { NOTHING, DIALOGUE, JUST_MENU, MENU_SUBSCREEN, SUBSCREEN, NAM
 var screen_loaded = ScreenLoaded.NOTHING
 var selected_option: int = 0
 
+var pausing = false
+
 # SelectBox positions for 2x3 grid (adjust these to match your layout)
 var select_box_positions: Array[Vector2] = [
 	Vector2(80, 62),   # Option 0 (top-left)
@@ -39,6 +41,10 @@ func _ready():
 	menu.visible = false
 	update_select_box()
 
+func transition():
+	pausing = true
+	await get_tree().create_timer(2.0).timeout
+	pausing = false
 
 func load_submenu(submenu: String): 
 	var screen = Screens[submenu].instantiate()
@@ -98,6 +104,7 @@ func _unhandled_input(event):
 	match screen_loaded:
 		ScreenLoaded.NOTHING:
 			if event.is_action_pressed("menu"):
+				pausing = false
 				var player = Utils.get_player()
 				if not player.is_moving:
 					player.set_physics_process(false)
@@ -107,13 +114,14 @@ func _unhandled_input(event):
 		
 		ScreenLoaded.JUST_MENU:
 			if event.is_action_pressed("menu") or event.is_action_pressed("x") or (event.is_action_pressed("z") and selected_option == 5):
-				selected_option = 0
-				update_select_box()
-				var player = Utils.get_player()
-				player.set_physics_process(true)
-				player.player_state = player.PlayerState.IDLE
-				menu.visible = false
-				screen_loaded = ScreenLoaded.NOTHING
+				if not pausing:
+					selected_option = 0
+					update_select_box()
+					var player = Utils.get_player()
+					player.set_physics_process(true)
+					player.player_state = player.PlayerState.IDLE
+					menu.visible = false
+					screen_loaded = ScreenLoaded.NOTHING
 			
 			elif event.is_action_pressed("ui_down"):
 				# Move down 2 positions (next row)
@@ -140,6 +148,7 @@ func _unhandled_input(event):
 					update_select_box()
 			
 			elif event.is_action_pressed("z"):
+				transition()
 				match selected_option:
 					0:
 						Utils.get_scene_manager().transition_to_menu("Party")

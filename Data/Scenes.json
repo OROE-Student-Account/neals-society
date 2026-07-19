@@ -1,4 +1,11 @@
 {
+	"ChiefStaticHome": {
+		"Items": {
+			"Lampert": {
+				"Collected": false
+			}
+		}
+	},
 	"OaksLab": {
 		"Items": {
 			"Dog of Wood": {
