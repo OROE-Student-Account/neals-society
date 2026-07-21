@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://i0am2murs47p" path="res://Scenes/Dialogue.tscn" id="4_026ex"]
 [ext_resource type="Texture2D" uid="uid://cv0nh1m0od62h" path="res://Assets/Items/Grammar Dex.png" id="6_2cmid"]
 [ext_resource type="PackedScene" uid="uid://dvpfferedor81" path="res://Scenes/SelectScene.tscn" id="6_8ysa5"]
-[ext_resource type="PackedScene" uid="uid://6vnm7mgvvfi7" path="res://title_for_new_scene.tscn" id="7_2cmid"]
+[ext_resource type="PackedScene" uid="uid://6vnm7mgvvfi7" path="res://Scenes/LabelForAreas.tscn" id="7_2cmid"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "FadeToBlack"
