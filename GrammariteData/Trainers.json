@@ -1,6 +1,7 @@
 {
 	"Old Man Frost": { "Party": [ "Dog of Wood" ], "Levels": [ 2 ], "XP": 25, "Money": 4 },
 	"Old Man Ember": { "Party": [ "Cateraser" ], "Levels": [ 2 ], "XP": 25, "Money": 4 },
+	"Team rammarG Beater": { "Party": [ "Poishrub" ], "Levels": [ 3 ], "XP": 60, "Money": 8 },
 	"Team rammarG Grunt": { "Party": [ "Lampert" ], "Levels": [ 4 ], "XP": 30, "Money": 5 },
-	"Chief Static": { "Party": [ "Lampert", "Ventomer" ], "Levels": [ 5, 5 ], "XP": 50, "Money": 10 }
+	"Chief Static": { "Party": [ "Lampert", "Ventomer" ], "Levels": [ 5, 5 ], "XP": 100, "Money": 10 }
 }

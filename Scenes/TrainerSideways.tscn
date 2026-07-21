@@ -1,0 +1,391 @@
+[gd_scene format=3 uid="uid://budnp8nncumb2"]
+
+[ext_resource type="Texture2D" uid="uid://b4jcrb80t4lo" path="res://Assets/Trainers/old-man.png" id="1_dfyf6"]
+[ext_resource type="Script" uid="uid://c1j00vj0b40h8" path="res://Scripts/TrainerSideways.gd" id="2_dfyf6"]
+[ext_resource type="Script" uid="uid://bp28l32amhxsf" path="res://Scripts/DialogueNode.gd" id="3_x4cuw"]
+[ext_resource type="Script" uid="uid://hvnvpuwe5g0b" path="res://Scripts/BattleStarter.gd" id="4_x5emj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slan3"]
+atlas = ExtResource("1_dfyf6")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dr3w"]
+atlas = ExtResource("1_dfyf6")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7d4mq"]
+atlas = ExtResource("1_dfyf6")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fe4gj"]
+atlas = ExtResource("1_dfyf6")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5ewi"]
+atlas = ExtResource("1_dfyf6")
+region = Rect2(16, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pifj1"]
+atlas = ExtResource("1_dfyf6")
+region = Rect2(32, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nd5rm"]
+atlas = ExtResource("1_dfyf6")
+region = Rect2(0, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5avt"]
+atlas = ExtResource("1_dfyf6")
+region = Rect2(16, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvxp1"]
+atlas = ExtResource("1_dfyf6")
+region = Rect2(32, 64, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d5kfv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slan3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dr3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7d4mq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fe4gj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5ewi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pifj1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nd5rm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5avt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvxp1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfyf6"]
+size = Vector2(144, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lh2gh"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pe55j"]
+
+[sub_resource type="Animation" id="Animation_60ruy"]
+resource_name = "Approach"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [7, 6, 7, 8]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"approach_until_hit"
+}, {
+"args": [],
+"method": &"approach_until_hit"
+}, {
+"args": [],
+"method": &"approach_until_hit"
+}, {
+"args": [],
+"method": &"approach_until_hit"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_gn7iv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_lh2gh"]
+resource_name = "TurnAround"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_slan3"]
+resource_name = "TurnDown"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_pe55j"]
+resource_name = "TurnLeft"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_avwyw"]
+resource_name = "TurnRight"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_8dr3w"]
+resource_name = "run_up"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [5, 4, 3, 4, 5, 4, 3, 4, 5, 4]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45000002, 0.5, 0.55, 0.6, 0.65, 0.70000005, 0.75, 0.8, 0.84999996, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_35qta"]
+_data = {
+&"Approach": SubResource("Animation_60ruy"),
+&"RESET": SubResource("Animation_gn7iv"),
+&"TurnAround": SubResource("Animation_lh2gh"),
+&"TurnDown": SubResource("Animation_slan3"),
+&"TurnLeft": SubResource("Animation_pe55j"),
+&"TurnRight": SubResource("Animation_avwyw"),
+&"run_up": SubResource("Animation_8dr3w")
+}
+
+[node name="TrainerSideways" type="AnimatedSprite2D" unique_id=1381438602]
+sprite_frames = SubResource("SpriteFrames_d5kfv")
+frame = 1
+centered = false
+offset = Vector2(0, -3)
+script = ExtResource("2_dfyf6")
+
+[node name="LineOfSight" type="Area2D" parent="." unique_id=1506649704]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LineOfSight" unique_id=1357964769]
+position = Vector2(68.399994, 8)
+scale = Vector2(0.8, 0.8)
+shape = SubResource("RectangleShape2D_dfyf6")
+
+[node name="HitBox" type="Area2D" parent="." unique_id=534457599]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=651429316]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_lh2gh")
+
+[node name="DetectPlayer" type="CollisionShape2D" parent="HitBox" unique_id=620086875]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_pe55j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2126887194]
+libraries/ = SubResource("AnimationLibrary_35qta")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1547218494]
+position = Vector2(8, 8)
+target_position = Vector2(24, 0)
+
+[node name="RayCast2D2" type="RayCast2D" parent="." unique_id=1352974116]
+position = Vector2(8, 8)
+target_position = Vector2(8, 0)
+
+[node name="DialogueRoot" type="Node" parent="." unique_id=1360333292]
+script = ExtResource("3_x4cuw")
+text = "test"
+
+[node name="FinalDialogue" type="Node" parent="." unique_id=922101857]
+script = ExtResource("3_x4cuw")
+is_end_node = true
+
+[node name="BattleStart" type="Node" parent="." unique_id=325007082]
+script = ExtResource("4_x5emj")
+
+[connection signal="body_entered" from="LineOfSight" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
+[connection signal="body_exited" from="HitBox" to="." method="_on_hit_box_body_exited"]
