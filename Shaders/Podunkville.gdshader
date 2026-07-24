@@ -1,17 +1,20 @@
 shader_type canvas_item;
 
+uniform sampler2D screen_texture : hint_screen_texture;
+
 void vertex() {
 	// Called for every vertex the material is visible on.
 }
 
 void fragment() {
-	float percentage = 0.75;
-	float darkness = 0.55;
-	float visibility = 0.45;
-	
-	vec4 color = texture(TEXTURE, UV);
-	color = vec4(percentage,percentage, darkness, visibility);
-	COLOR = color;
+	vec4 color = texture(screen_texture, SCREEN_UV);
+	float brightness = (color.r + color.g + color.b) / 3.0;
+	vec4 greyscale = vec4(brightness, brightness, brightness, color.a);
+	if (UV.y > 0.8) {
+		COLOR = mix(greyscale, color, (5.0*(UV.y-0.8)));
+	} else {
+		COLOR = greyscale;
+	}
 	// Called for every pixel the material is visible on.
 }
 

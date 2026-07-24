@@ -3,13 +3,14 @@
 	"Items": [
 		"Children's Book",
 		"Grammar Dex",
+		"Reading Glasses",
 		"Reading Glasses"
 	],
 	"Money": 0.0,
 	"Name": "Neal",
 	"Party": [
 		{
-			"Health": 0,
+			"Health": 0.0,
 			"Item": "",
 			"Level": 1.0,
 			"Moves": [
@@ -28,22 +29,42 @@
 			]
 		},
 		{
-			"Health": 0.0,
+			"Health": 22.0,
 			"Item": "",
 			"Level": 1.0,
-			"Moves": [],
-			"Name": "",
+			"Moves": [
+				"Bite",
+				"Papercut",
+				"Howl",
+				"Dragon Dance"
+			],
+			"Name": "Lampert",
 			"Nickname": "",
-			"PP": []
+			"PP": [
+				15.0,
+				25.0,
+				10.0,
+				5.0
+			]
 		},
 		{
-			"Health": 0.0,
+			"Health": 22.0,
 			"Item": "",
 			"Level": 1.0,
-			"Moves": [],
-			"Name": "",
+			"Moves": [
+				"Bite",
+				"Papercut",
+				"Howl",
+				"Dragon Dance"
+			],
+			"Name": "Lampert",
 			"Nickname": "",
-			"PP": []
+			"PP": [
+				15.0,
+				25.0,
+				10.0,
+				5.0
+			]
 		},
 		{
 			"Health": 0.0,
