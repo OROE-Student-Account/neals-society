@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://brovjf0d8yomh"]
 
-[ext_resource type="Texture2D" uid="uid://c34vsfwfo6tx2" path="res://Assets/UI/Pokemon Party/SummaryUI.png" id="1_3se8e"]
-[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="1_nfakk"]
-[ext_resource type="Texture2D" uid="uid://dywqob2aeknmi" path="res://Assets/Pokemon/Pokemon1.png" id="2_2hg8w"]
+[ext_resource type="Texture2D" uid="uid://c34vsfwfo6tx2" path="res://Assets/UI/menu/Party/SummaryUI.png" id="1_3se8e"]
+[ext_resource type="FontFile" uid="uid://buav1g0xgpfd" path="res://Assets/UI/Plain/pkmnfl.ttf" id="1_nfakk"]
+[ext_resource type="Texture2D" uid="uid://doloqyf43ogw4" path="res://Assets/Pokemon/Pokemon1.png" id="2_2hg8w"]
 
 [node name="SummaryScreen" type="Node2D" unique_id=1754632819]
 

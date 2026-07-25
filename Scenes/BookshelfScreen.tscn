@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cfjf5vsr65j01"]
 
 [ext_resource type="Script" uid="uid://kw1ayw2gknvb" path="res://Scripts/BookScreen.gd" id="1_ruf6q"]
-[ext_resource type="Texture2D" uid="uid://cck5ttjt1kph5" path="res://Assets/UI/Bookshelf UI.png" id="2_oy0eb"]
-[ext_resource type="Texture2D" uid="uid://nn5hgjl1powc" path="res://Assets/UI/Bookshelf icon outlinr.png" id="3_gdqis"]
+[ext_resource type="Texture2D" uid="uid://cck5ttjt1kph5" path="res://Assets/UI/menu/Bookshelf UI.png" id="2_oy0eb"]
+[ext_resource type="Texture2D" uid="uid://nn5hgjl1powc" path="res://Assets/UI/menu/Bookshelf icon outlinr.png" id="3_gdqis"]
 
 [node name="BookshelfScreen" type="Node2D" unique_id=1960944196]
 texture_filter = 1

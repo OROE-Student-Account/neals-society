@@ -4,7 +4,7 @@ const Screens: Dictionary = {
 	"Party": preload("res://Scenes/PartyScreen.tscn"),
 	"Item": preload("res://Scenes/ItemScreen.tscn"),
 	"Save": preload("res://Scenes/SaveScreen.tscn"),
-	"Shop": preload("res://Scenes/shopscreen.tscn"),
+	"Shop": preload("res://Scenes/ShopScreen.tscn"),
 	
 	"Computer": preload("res://Scenes/ComputerScreen.tscn"),
 	"Quest": preload("res://Scenes/QuestScreen.tscn"),
@@ -12,6 +12,7 @@ const Screens: Dictionary = {
 	"Crafter":  preload("res://Scenes/CrafterScreen.tscn"),
 	"Bookshelf": preload("res://Scenes/BookshelfScreen.tscn"),
 }
+
 
 
 

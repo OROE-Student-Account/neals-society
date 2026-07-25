@@ -30,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://dtcv7u73ucabx" path="res://Assets/UI/User Naming Screen.png" id="27_463e5"]
 [ext_resource type="Script" uid="uid://bojjiiryfldpi" path="res://Scripts/Specialized/UserName.gd" id="28_rd3pp"]
 [ext_resource type="PackedScene" uid="uid://btmlakx3gcgpj" path="res://Scenes/GrammaritePickup.tscn" id="29_cymas"]
-[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="29_ey5h2"]
+[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Plain/Fonts.tres" id="29_ey5h2"]
 [ext_resource type="Script" uid="uid://5h0yvmtyx75m" path="res://Scripts/Specialized/Office.gd" id="29_nblmn"]
 [ext_resource type="Texture2D" uid="uid://d1b7urjolpx3u" path="res://Assets/Decoration/HomegrownTown/z.png" id="30_k6ikh"]
 [ext_resource type="PackedScene" uid="uid://bdykq75yoljv" path="res://Scenes/Item.tscn" id="31_nblmn"]

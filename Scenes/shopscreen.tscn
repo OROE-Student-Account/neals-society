@@ -1,34 +1,23 @@
 [gd_scene format=3 uid="uid://c4t5olmgfu06x"]
 
-[ext_resource type="Script" uid="uid://7n00gsbllnkg" path="res://shopscreen.gd" id="1_xgqv3"]
-[ext_resource type="Texture2D" uid="uid://bys05li6p4t5q" path="res://Assets/UI/Shop UI (1).png" id="2_q76sd"]
+[ext_resource type="Script" uid="uid://7n00gsbllnkg" path="res://Scripts/ShopScreen.gd" id="1_xgqv3"]
+[ext_resource type="Texture2D" uid="uid://ch1nsaq0337l4" path="res://Assets/UI/Shop UI (1).png" id="2_q76sd"]
 [ext_resource type="Texture2D" uid="uid://bviex1qqjhxxj" path="res://Assets/UI/ShopUI outline.png" id="2_u5a67"]
-[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="4_q76sd"]
-[ext_resource type="Texture2D" uid="uid://bxg8xwg3dbcru" path="res://Assets/Items/Children's Book.png" id="5_8wqgc"]
-[ext_resource type="Texture2D" uid="uid://dskyy6ckpte8k" path="res://Assets/Items/Apple.png" id="6_ha35s"]
-[ext_resource type="Texture2D" uid="uid://dksn1jbfccu5y" path="res://Assets/Items/Comma.png" id="7_xk46w"]
-[ext_resource type="Texture2D" uid="uid://cds1vesk6lha4" path="res://Assets/Items/Dash.png" id="8_7fhs4"]
-[ext_resource type="Script" uid="uid://bp28l32amhxsf" path="res://Scripts/DialogueNode.gd" id="9_xk46w"]
+[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Plain/Fonts.tres" id="4_q76sd"]
 
 [node name="ShopScreen" type="Node2D" unique_id=397593006]
+texture_filter = 1
 script = ExtResource("1_xgqv3")
 
 [node name="ShopPanel" type="TextureRect" parent="." unique_id=1706245015]
-texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_q76sd")
 
-[node name="SelectBox" type="TextureRect" parent="." unique_id=227945143]
-texture_filter = 1
-offset_left = 96.0
-offset_top = 71.0
-offset_right = 128.0
-offset_bottom = 103.0
+[node name="SelectBox" type="Sprite2D" parent="." unique_id=508903074]
 texture = ExtResource("2_u5a67")
 
 [node name="Money" type="Control" parent="." unique_id=1503822599]
-texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
 offset_left = -16.0
@@ -37,87 +26,36 @@ offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="Money" unique_id=785638456]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 16.0
-offset_right = 84.0
-offset_bottom = 32.0
+offset_left = 35.0
+offset_top = 27.0
+offset_right = 90.0
+offset_bottom = 43.0
 theme = ExtResource("4_q76sd")
 text = "$: 100,000"
 horizontal_alignment = 1
 
 [node name="Description" type="Control" parent="." unique_id=2147011411]
-texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
-offset_left = 64.0
-offset_right = 96.0
+offset_right = 32.0
 offset_bottom = 32.0
 
 [node name="ItemName" type="Label" parent="Description" unique_id=2036939315]
 layout_mode = 0
-offset_left = -35.0
-offset_top = 124.0
-offset_right = 17.0
-offset_bottom = 140.0
+offset_left = 20.0
+offset_top = 88.0
+offset_right = 73.0
+offset_bottom = 104.0
 theme = ExtResource("4_q76sd")
-text = "Book"
+text = "Childr"
 horizontal_alignment = 1
 
 [node name="ItemDescription" type="Label" parent="Description" unique_id=1350348833]
 layout_mode = 0
-offset_left = -52.0
-offset_top = 137.0
-offset_right = 78.0
-offset_bottom = 153.0
+offset_left = 13.0
+offset_top = 117.0
+offset_right = 225.0
+offset_bottom = 133.0
 theme = ExtResource("4_q76sd")
 text = "Used to catch Grammarites."
-horizontal_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="Description" unique_id=1000068838]
-position = Vector2(48, 37)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_8wqgc")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Description" unique_id=1452386978]
-position = Vector2(73, 36)
-scale = Vector2(0.34375, 0.28125)
-texture = ExtResource("6_ha35s")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Description" unique_id=530302064]
-position = Vector2(99, 36)
-scale = Vector2(0.55908185, 0.53955096)
-texture = ExtResource("7_xk46w")
-
-[node name="Sprite2D4" type="Sprite2D" parent="Description" unique_id=1361639926]
-position = Vector2(124, 36)
-scale = Vector2(0.3125725, 0.29111522)
-texture = ExtResource("8_7fhs4")
-
-[node name="NoMoney" type="Node" parent="." unique_id=997326257 node_paths=PackedStringArray("func_node")]
-script = ExtResource("9_xk46w")
-is_end_node = true
-text = "You don't have enough money."
-function = "cancel_purchase"
-func_node = NodePath("..")
-metadata/_custom_type_script = "uid://bp28l32amhxsf"
-
-[node name="PurchasePrompt" type="Node" parent="." unique_id=358000771 node_paths=PackedStringArray("func_node")]
-script = ExtResource("9_xk46w")
-text = "Do you want to buy this?"
-function = "open_purchase_prompt"
-func_node = NodePath("..")
-metadata/_custom_type_script = "uid://bp28l32amhxsf"
-
-[node name="Yes" type="Node" parent="PurchasePrompt" unique_id=2042024287 node_paths=PackedStringArray("func_node")]
-script = ExtResource("9_xk46w")
-is_end_node = true
-option_name = "Yes"
-function = "purchase_selected_item"
-func_node = NodePath("../..")
-
-[node name="No" type="Node" parent="PurchasePrompt" unique_id=760458088 node_paths=PackedStringArray("func_node")]
-script = ExtResource("9_xk46w")
-is_end_node = true
-option_name = "No"
-function = "cancel_purchase"
-func_node = NodePath("../..")
+autowrap_mode = 2

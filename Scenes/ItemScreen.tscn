@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://irycgkmt14ks"]
 
 [ext_resource type="Script" uid="uid://bdup4s30hlwe1" path="res://Scripts/ItemScreen.gd" id="1_8isog"]
-[ext_resource type="Texture2D" uid="uid://b64pw0qd570u8" path="res://Assets/UI/Inventory.png" id="2_c16xa"]
+[ext_resource type="Texture2D" uid="uid://b64pw0qd570u8" path="res://Assets/UI/menu/Inventory.png" id="2_c16xa"]
 [ext_resource type="Texture2D" uid="uid://c11wa3bks70et" path="res://Assets/Items/Slang Shard.png" id="3_c16xa"]
 [ext_resource type="Texture2D" uid="uid://ckyw6dtptsikv" path="res://Assets/UI/border.png" id="3_eak02"]
-[ext_resource type="Texture2D" uid="uid://b3f2eqbc4ki67" path="res://Assets/UI/ui_arrow_right.png" id="6_rvhgt"]
-[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="7_rvhgt"]
+[ext_resource type="Texture2D" uid="uid://b3f2eqbc4ki67" path="res://Assets/UI/Plain/ui_arrow_right.png" id="6_rvhgt"]
+[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Plain/Fonts.tres" id="7_rvhgt"]
 
 [node name="ItemScreen" type="Node2D" unique_id=939527620]
 texture_filter = 1

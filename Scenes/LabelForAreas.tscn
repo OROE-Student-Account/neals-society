@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://6vnm7mgvvfi7"]
 
 [ext_resource type="Script" uid="uid://c8fx2nxpjt3kl" path="res://Scripts/LabelForNewArea.gd" id="1_tewia"]
-[ext_resource type="Texture2D" uid="uid://ltsvfvfecatr" path="res://Assets/UI/Pokemon Party/Moving for name.png" id="2_27a3b"]
-[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="3_27a3b"]
+[ext_resource type="Texture2D" uid="uid://ltsvfvfecatr" path="res://Assets/UI/menu/Party/Moving for name.png" id="2_27a3b"]
+[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Plain/Fonts.tres" id="3_27a3b"]
 
 [sub_resource type="Animation" id="Animation_27a3b"]
 resource_name = "Moving"

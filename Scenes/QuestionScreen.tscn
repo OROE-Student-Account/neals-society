@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://d1meh8owcgo7f"]
 
-[ext_resource type="FontFile" uid="uid://buav1g0xgpfd" path="res://Assets/UI/pkmnfl.ttf" id="1_k2g2m"]
-[ext_resource type="Texture2D" uid="uid://ckbbwuf8tfh1" path="res://Assets/UI/Dialogue.png" id="2_g3qmy"]
-[ext_resource type="Texture2D" uid="uid://cbtw8iq0poli" path="res://Assets/UI/ui_arrow_up.png" id="3_5cu3s"]
-[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="4_rludv"]
+[ext_resource type="FontFile" uid="uid://buav1g0xgpfd" path="res://Assets/UI/Plain/pkmnfl.ttf" id="1_k2g2m"]
+[ext_resource type="Texture2D" uid="uid://ckbbwuf8tfh1" path="res://Assets/UI/Plain/Dialogue.png" id="2_g3qmy"]
+[ext_resource type="Texture2D" uid="uid://cbtw8iq0poli" path="res://Assets/UI/Plain/ui_arrow_up.png" id="3_5cu3s"]
+[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Plain/Fonts.tres" id="4_rludv"]
 [ext_resource type="Texture2D" uid="uid://61ir1mwvx5m5" path="res://Assets/Items/Ultimate Vitamin.png" id="5_4cuys"]
 
 [node name="Question" type="Node2D" unique_id=2106985433]

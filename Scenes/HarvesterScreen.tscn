@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://hqk5wot8bb6u"]
 
 [ext_resource type="Script" uid="uid://c55vrcn07e7lg" path="res://Scripts/HarvestScreen.gd" id="1_1wnif"]
-[ext_resource type="Texture2D" uid="uid://b5w6stal6hlv" path="res://Assets/UI/harvester.png" id="2_1jb5n"]
+[ext_resource type="Texture2D" uid="uid://b5w6stal6hlv" path="res://Assets/UI/laboratory/harvester.png" id="2_1jb5n"]
 [ext_resource type="Texture2D" uid="uid://doloqyf43ogw4" path="res://Assets/Pokemon/Pokemon1.png" id="2_1wnif"]
-[ext_resource type="FontFile" uid="uid://buav1g0xgpfd" path="res://Assets/UI/pkmnfl.ttf" id="3_yi611"]
-[ext_resource type="Texture2D" uid="uid://dl58l7iruinos" path="res://Assets/UI/Cancel.png" id="5_0tae4"]
-[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="5_1jb5n"]
-[ext_resource type="Texture2D" uid="uid://v1or41dsdkap" path="res://Assets/UI/harvester-button.png" id="5_yi611"]
+[ext_resource type="FontFile" uid="uid://buav1g0xgpfd" path="res://Assets/UI/Plain/pkmnfl.ttf" id="3_yi611"]
+[ext_resource type="Texture2D" uid="uid://dl58l7iruinos" path="res://Assets/UI/Plain/Cancel.png" id="5_0tae4"]
+[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Plain/Fonts.tres" id="5_1jb5n"]
+[ext_resource type="Texture2D" uid="uid://v1or41dsdkap" path="res://Assets/UI/laboratory/harvester-button.png" id="5_yi611"]
 [ext_resource type="Texture2D" uid="uid://bsxu6c3rnhh10" path="res://Assets/crush.png" id="7_hg4io"]
 
 [sub_resource type="Animation" id="Animation_l8wp2"]

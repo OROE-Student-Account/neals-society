@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://dvpfferedor81"]
 
 [ext_resource type="Script" uid="uid://bkcn4evftav85" path="res://Scripts/SelectScene.gd" id="1_8kclm"]
-[ext_resource type="Texture2D" uid="uid://bw3bqnx3kggm6" path="res://Assets/UI/Pokemon Party/PartyScreen.png" id="2_0hrqw"]
-[ext_resource type="Texture2D" uid="uid://cf0txma36318t" path="res://Assets/UI/Pokemon Party/PartyScreenSelect.png" id="3_0hrqw"]
-[ext_resource type="Texture2D" uid="uid://ckbbwuf8tfh1" path="res://Assets/UI/Dialogue.png" id="3_xvwdd"]
-[ext_resource type="FontFile" uid="uid://buav1g0xgpfd" path="res://Assets/UI/pkmnfl.ttf" id="4_y4am8"]
+[ext_resource type="Texture2D" uid="uid://bw3bqnx3kggm6" path="res://Assets/UI/menu/Party/PartyScreen.png" id="2_0hrqw"]
+[ext_resource type="Texture2D" uid="uid://cf0txma36318t" path="res://Assets/UI/menu/Party/PartyScreenSelect.png" id="3_0hrqw"]
+[ext_resource type="Texture2D" uid="uid://ckbbwuf8tfh1" path="res://Assets/UI/Plain/Dialogue.png" id="3_xvwdd"]
+[ext_resource type="FontFile" uid="uid://buav1g0xgpfd" path="res://Assets/UI/Plain/pkmnfl.ttf" id="4_y4am8"]
 [ext_resource type="Script" uid="uid://dpvpht1pik0j" path="res://Scripts/PartySlot.gd" id="6_xah1t"]
-[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="7_w0bkf"]
+[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Plain/Fonts.tres" id="7_w0bkf"]
 [ext_resource type="Texture2D" uid="uid://doloqyf43ogw4" path="res://Assets/Pokemon/Pokemon1.png" id="8_58lku"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w0bkf"]

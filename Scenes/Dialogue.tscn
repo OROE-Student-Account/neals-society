@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://i0am2murs47p"]
 
 [ext_resource type="Script" uid="uid://dvw8x5lu45aba" path="res://Scripts/Dialogue.gd" id="1_if77y"]
-[ext_resource type="Texture2D" uid="uid://ckbbwuf8tfh1" path="res://Assets/UI/Dialogue.png" id="2_vqc68"]
-[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="3_vqc68"]
-[ext_resource type="Texture2D" uid="uid://b3f2eqbc4ki67" path="res://Assets/UI/ui_arrow_right.png" id="4_vqc68"]
+[ext_resource type="Texture2D" uid="uid://ckbbwuf8tfh1" path="res://Assets/UI/Plain/Dialogue.png" id="2_vqc68"]
+[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Plain/Fonts.tres" id="3_vqc68"]
+[ext_resource type="Texture2D" uid="uid://b3f2eqbc4ki67" path="res://Assets/UI/Plain/ui_arrow_right.png" id="4_vqc68"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vqc68"]
 texture = ExtResource("2_vqc68")

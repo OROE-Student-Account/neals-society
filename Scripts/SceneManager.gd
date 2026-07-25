@@ -52,7 +52,7 @@ func transition_to_select_screen():
 	return await $GrammariteSelectScreen.load_screen()
 
 func transition_to_dialogue(root_node):
-	if menu.screen_loaded == menu.ScreenLoaded.NOTHING or menu.screen_loaded == menu.ScreenLoaded.NAMING or menu.screen_loaded == menu.ScreenLoaded.SUBSCREEN:
+	if menu.screen_loaded == menu.ScreenLoaded.NOTHING or menu.screen_loaded == menu.ScreenLoaded.NAMING:
 		$DialogueBox.start_dialogue(root_node)
 
 

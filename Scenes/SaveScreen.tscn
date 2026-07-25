@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://drcmpwuuhsuml"]
 
 [ext_resource type="Script" uid="uid://ccxebin8t8u5y" path="res://Scripts/SaveScreen.gd" id="1_tu4lr"]
-[ext_resource type="Texture2D" uid="uid://dl58l7iruinos" path="res://Assets/UI/Cancel.png" id="1_wmabo"]
-[ext_resource type="Texture2D" uid="uid://cbtw8iq0poli" path="res://Assets/UI/ui_arrow_up.png" id="2_87ffs"]
-[ext_resource type="Texture2D" uid="uid://bqio4uhjljbal" path="res://Assets/UI/PlainButton.png" id="3_herfk"]
-[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="4_herfk"]
+[ext_resource type="Texture2D" uid="uid://dl58l7iruinos" path="res://Assets/UI/Plain/Cancel.png" id="1_wmabo"]
+[ext_resource type="Texture2D" uid="uid://cbtw8iq0poli" path="res://Assets/UI/Plain/ui_arrow_up.png" id="2_87ffs"]
+[ext_resource type="Texture2D" uid="uid://bqio4uhjljbal" path="res://Assets/UI/Plain/PlainButton.png" id="3_herfk"]
+[ext_resource type="FontFile" uid="uid://buav1g0xgpfd" path="res://Assets/UI/Plain/pkmnfl.ttf" id="4_herfk"]
 
 [node name="SaveScreen" type="Node2D" unique_id=367341242]
 texture_filter = 1

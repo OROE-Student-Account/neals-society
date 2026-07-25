@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://ciw55w24bjn2h"]
 
 [ext_resource type="Script" uid="uid://c0n0ilwytxyyv" path="res://Scripts/ComputerScreen.gd" id="1_weu2g"]
-[ext_resource type="Texture2D" uid="uid://bqio4uhjljbal" path="res://Assets/UI/PlainButton.png" id="2_0637o"]
-[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Fonts.tres" id="3_thxbl"]
-[ext_resource type="Texture2D" uid="uid://b3f2eqbc4ki67" path="res://Assets/UI/ui_arrow_right.png" id="4_thxbl"]
+[ext_resource type="Texture2D" uid="uid://bqio4uhjljbal" path="res://Assets/UI/Plain/PlainButton.png" id="2_0637o"]
+[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Plain/Fonts.tres" id="3_thxbl"]
+[ext_resource type="Texture2D" uid="uid://b3f2eqbc4ki67" path="res://Assets/UI/Plain/ui_arrow_right.png" id="4_thxbl"]
 
 [node name="ComputerScreen" type="Node2D" unique_id=66661717]
 texture_filter = 1

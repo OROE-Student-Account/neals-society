@@ -4,9 +4,26 @@
 		"Children's Book",
 		"Grammar Dex",
 		"Reading Glasses",
-		"Reading Glasses"
+		"Reading Glasses",
+		"Apple",
+		"Comma",
+		"Children's Book",
+		"Children's Book",
+		"Children's Book",
+		"Comma",
+		"Apple",
+		"Comma",
+		"Dash",
+		"Apple",
+		"Children's Book",
+		"Dash",
+		"Children's Book",
+		"Children's Book",
+		"Dash",
+		"Comma",
+		"Apple"
 	],
-	"Money": 0.0,
+	"Money": 2000.0,
 	"Name": "Neal",
 	"Party": [
 		{

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ba4bgv7q8bqd5"]
 
-[ext_resource type="Texture2D" uid="uid://ckbbwuf8tfh1" path="res://Assets/UI/Dialogue.png" id="1_e6h8y"]
-[ext_resource type="FontFile" uid="uid://buav1g0xgpfd" path="res://Assets/UI/pkmnfl.ttf" id="2_6v7vv"]
+[ext_resource type="Texture2D" uid="uid://ckbbwuf8tfh1" path="res://Assets/UI/Plain/Dialogue.png" id="1_e6h8y"]
+[ext_resource type="FontFile" uid="uid://buav1g0xgpfd" path="res://Assets/UI/Plain/pkmnfl.ttf" id="2_6v7vv"]
 [ext_resource type="Texture2D" uid="uid://c1wvu8wxyg2pk" path="res://Assets/Items/Reading Glasses.png" id="3_6v7vv"]
 
 [node name="ItemPartyScreen" type="Node2D" unique_id=236429404]

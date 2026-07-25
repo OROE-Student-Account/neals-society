@@ -481,7 +481,7 @@ func fill_empty_slot(num: int):
 	var inv = {
 		"Abilities": [],
 		"Items": [],
-		"Money": 5000.0,
+		"Money": 0.0,
 		"Name": "",
 		"Party": []
 	}

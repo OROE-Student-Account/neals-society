@@ -6,7 +6,7 @@ var page = Page.MAIN
 enum Options { SWITCH1, SWITCH2, CRAFT, CANCEL }
 var selected_option = 0
 
-@onready var empty = preload("res://Assets/UI/Empty.png")
+@onready var empty = preload("res://Assets/UI/Plain/Empty.png")
 
 @onready var buttons = $Buttons
 @onready var shard_select = $ShardSelect
