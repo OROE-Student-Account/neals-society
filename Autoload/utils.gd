@@ -278,6 +278,7 @@ func get_num_grammarites():
 
 func get_money() -> int:
 	return load_json_file("res://Data/Inventory.json")["Money"]
+
 func set_money(mon: int):
 	var inv = load_json_file("res://Data/Inventory.json")
 	inv["Money"] = mon
@@ -480,7 +481,7 @@ func fill_empty_slot(num: int):
 	var inv = {
 		"Abilities": [],
 		"Items": [],
-		"Money": 0.0,
+		"Money": 5000.0,
 		"Name": "",
 		"Party": []
 	}

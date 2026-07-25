@@ -1,45 +1,56 @@
 {
 	"Story Book": {
 		"Description": "Absorbs Grammarites for use in battle.",
-		"Type": "Book"
+		"Type": "Book",
+		"Price": 200
 	},
 	"Children's Book": {
 		"Description": "Absorbs young Grammarites for use in battle.",
-		"Type": "Book"
+		"Type": "Book",
+		"Price": 200
 	},
 	
 	
 	"Reading Glasses": {
 		"Description": "Improves vision, making attacks more likely to hit.",
-		"Type": "Held"
+		"Type": "Held",
+		"Price": 200
+		
 	},
 	"Question Mark": {
 		"Description": "Increases confusion? Or does it?",
-		"Type": "Held"
+		"Type": "Held",
+		"Price": 200
 	},
 	"Exclamation Mark": {
 		"Description": "INCREASES DAMAGE AND EMPHASIS!",
-		"Type": "Held"
+		"Type": "Held",
+		"Price": 200
 	},
 	"Colon": {
 		"Description": "Improves your Grammarite's colon health.",
-		"Type": "Held"
+		"Type": "Held",
+		"Price": 200
 	},
 	"Period": {
 		"Description": "Fully stops attacks in their tracks.",
-		"Type": "Held"
+		"Type": "Held",
+		"Price": 200
 	},
 	"Comma": {
 		"Description": "Partially stops attacks in their tracks.",
-		"Type": "Held"
+		"Type": "Held",
+		"Price": 200
 	},
 	"Dash": {
 		"Description": "Allows your Grammarite to move and act faster.",
-		"Type": "Held"
+		"Type": "Held",
+		"Price": 200
 	},
 	"Hyphen": {
 		"Description": "Helps boost your Grammarite's Speed and Attack.",
-		"Type": "Held"
+		"Type": "Held",
+		"Price": 200
 	},
 	"Red Stamp": {
 		"Description": "'This hurts me more than it hurts you'  -Liar.",
@@ -47,49 +58,60 @@
 	},
 	"Emoji": {
 		"Description": "Partially stops attacks in their tracks.",
-		"Type": "Held"
+		"Type": "Held",
+		"Price": 200
 	},
 	"Sticky Note": {
 		"Description": "Partially stops attacks in their tracks.",
-		"Type": "Held"
+		"Type": "Held",
+		"Price": 200
 	},
 	
 	
 	"Eraser": {
 		"Description": "Erases status effects from a Grammarite.",
-		"Type": "Grammarite"
+		"Type": "Grammarite",
+		"Price": 200
 	},
 	"Semicolon": {
 		"Description": "Allows your Grammarite to use a world altering move.",
-		"Type": "Grammarite"
+		"Type": "Grammarite",
+		"Price": 200
 	},
 	"Quotations": {
 		"Description": "Allows your Grammarite to steal the opponent's move.",
-		"Type": "Grammarite"
+		"Type": "Grammarite",
+		"Price": 200
 	},
 	"Crumpled Draft": {
 		"Description": "Heals a portion of your Grammarite's health.",
-		"Type": "Grammarite"
+		"Type": "Grammarite",
+		"Price": 200
 	},
 	"First Rough Draft": {
 		"Description": "Heals a large portion of your Grammarite's health.",
-		"Type": "Grammarite"
+		"Type": "Grammarite",
+		"Price": 200
 	},
 	"Final Draft": {
 		"Description": "Entirely allows your Grammarite to fully heal and recover.",
-		"Type": "Grammarite"
+		"Type": "Grammarite",
+		"Price": 200
 	},
 	"Apple": {
 		"Description": "Feed your Grammarite to make it a bit stronger.",
-		"Type": "Grammarite"
+		"Type": "Grammarite",
+		"Price": 200
 	},
 	"Orange": {
 		"Description": "Feed your Grammarite to make it stronger.",
-		"Type": "Grammarite"
+		"Type": "Grammarite",
+		"Price": 200
 	},
 	"Banana": {
 		"Description": "Feed your Grammarite to make it a lot stronger.",
-		"Type": "Grammarite"
+		"Type": "Grammarite",
+		"Price": 200
 	},
 	
 	

@@ -4,6 +4,7 @@ const Screens: Dictionary = {
 	"Party": preload("res://Scenes/PartyScreen.tscn"),
 	"Item": preload("res://Scenes/ItemScreen.tscn"),
 	"Save": preload("res://Scenes/SaveScreen.tscn"),
+	"Shop": preload("res://Scenes/shopscreen.tscn"),
 	
 	"Computer": preload("res://Scenes/ComputerScreen.tscn"),
 	"Quest": preload("res://Scenes/QuestScreen.tscn"),
@@ -58,7 +59,7 @@ func load_submenu(submenu: String):
 				screen.in_battle = false
 		
 		# Other Menus
-		"Quest", "Bookshelf", "Harvester", "Crafter":
+		"Quest", "Bookshelf", "Harvester", "Crafter", "Shop":
 			screen_loaded = ScreenLoaded.SUBSCREEN
 	
 	add_child(screen)
@@ -72,7 +73,7 @@ func unload_submenu(submenu: String):
 			screen_loaded = ScreenLoaded.JUST_MENU
 		
 		# Other Menus
-		"Quest", "Bookshelf", "Harvester", "Crafter":
+		"Quest", "Bookshelf", "Harvester", "Crafter", "Shop":
 			screen_loaded = ScreenLoaded.NOTHING
 	
 	var node = get_node_or_null(submenu+"Screen")
@@ -88,7 +89,7 @@ func unload_submenus(from_menu: bool):
 		names = ["Computer", "Party", "Item", "Save"]
 	else:
 		screen_loaded = ScreenLoaded.NOTHING
-		names = ["Quest", "Bookshelf", "Harvester", "Crafter"]
+		names = ["Quest", "Bookshelf", "Harvester", "Crafter", "Shop"]
 	for i in names:
 		var node = get_node_or_null(i+"Screen")
 		if node: 

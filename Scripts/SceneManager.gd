@@ -35,7 +35,7 @@ func transition_exit_menu(submenu: String):
 	match submenu:
 		"Computer", "Party", "Item", "Save":
 			transition_type = "Menu Only"
-		"Quest", "Harvester", "Crafter", "Bookshelf":
+		"Quest", "Harvester", "Crafter", "Bookshelf", "Shop":
 			transition_type = "Exit Screen"
 
 
@@ -52,7 +52,7 @@ func transition_to_select_screen():
 	return await $GrammariteSelectScreen.load_screen()
 
 func transition_to_dialogue(root_node):
-	if menu.screen_loaded == menu.ScreenLoaded.NOTHING or menu.screen_loaded == menu.ScreenLoaded.NAMING:
+	if menu.screen_loaded == menu.ScreenLoaded.NOTHING or menu.screen_loaded == menu.ScreenLoaded.NAMING or menu.screen_loaded == menu.ScreenLoaded.SUBSCREEN:
 		$DialogueBox.start_dialogue(root_node)
 
 
@@ -153,5 +153,5 @@ func finished_fading():
 			var player = Utils.get_player()
 			player.set_physics_process(true)
 			player.player_state = player.PlayerState.IDLE
-		"Quest", "Harvester", "Crafter", "Bookshelf":
+		"Quest", "Harvester", "Crafter", "Bookshelf", "Shop":
 			menu.load_submenu(transition_type)
