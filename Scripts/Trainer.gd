@@ -44,7 +44,7 @@ func _on_area_2d_body_entered(_body: Node2D = null) -> void:
 	player.anim_player.play("TurnUp")
 	
 	if not cutscene:
-		position.x = player.position.x
+		global_position.x = player.global_position.x
 	
 	$RayCast2D2.target_position = Vector2(0, 16)
 	$RayCast2D2.force_raycast_update()

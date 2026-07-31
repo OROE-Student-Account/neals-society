@@ -18,7 +18,10 @@
 			"Apple": {
 				"Collected": false
 			},
-			"First Rough Draft": {
+			"Colon": {
+				"Collected": false
+			},
+			"Crumpled Draft": {
 				"Collected": false
 			}
 		},
@@ -34,13 +37,22 @@
 			},
 			"TeslaCoil4": {
 				"Broken": false
+			},
+			"final_room": {
+				"Broken": false
 			}
 		},
 		"Trainers": {
-			"Chief Static": {
+			"Caisius": {
+				"Talked": false
+			},
+			"Commander Isold": {
 				"Talked": false
 			},
 			"Draven": {
+				"Talked": false
+			},
+			"Kom Ma-King": {
 				"Talked": false
 			},
 			"Lever1": {
@@ -115,6 +127,9 @@
 			}
 		},
 		"Trainers": {
+			"Daddy Static Intro": {
+				"Talked": false
+			},
 			"Old Man Ember": {
 				"Talked": false
 			},
@@ -127,19 +142,10 @@
 			"OldmanBench2": {
 				"Talked": false
 			},
-			"OldmanBlock": {
-				"Talked": false
-			},
 			"Rival": {
 				"Talked": false
 			},
 			"Team rammarG Beater": {
-				"Talked": false
-			},
-			"Trainer": {
-				"Talked": false
-			},
-			"Trainer2": {
 				"Talked": false
 			}
 		}

@@ -4,11 +4,11 @@
 	"Team rammarG Beater": { "Party": [ "Poishrub" ], "Levels": [ 3 ], "XP": 60, "Money": 8 },
 	
 	
-	
 	"Chief Static": { "Party": [ "Lampert", "Ventomer", "Locusion" ], "Levels": [ 8, 9, 10 ], "XP": 100, "Money": 15 },
 	
 	"Team rammarG Grunt": { "Party": [ "Brainrouter", "Poishrub" ], "Levels": [ 2, 4 ], "XP": 50, "Money": 0 },
 	"Draven": { "Party": [ "Impaper" ], "Levels": [ 5 ], "XP": 40, "Money": 4 },
-	"Commander Isold": { "Party": [ "Lampert", "Ventomer", "Brainrouter" ], "Levels": [ 4, 5, 6 ], "XP": 100, "Money": 10 },
+	"Caisius": { "Party": [ "Impaper" ], "Levels": [ 4 ], "XP": 20, "Money": 3 },
+	"Commander Isold": { "Party": [ "Lampert", "Ventomer" ], "Levels": [ 4, 5, 6 ], "XP": 100, "Money": 10 },
 	
 }

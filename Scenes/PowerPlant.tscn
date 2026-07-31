@@ -20,8 +20,12 @@
 [ext_resource type="Texture2D" uid="uid://bu03qnevtvpnr" path="res://Assets/Trainers/rammarGTrainer1.png" id="17_vnl58"]
 [ext_resource type="Script" uid="uid://yexcpjuauyul" path="res://Scripts/Trainer.gd" id="18_nnfiw"]
 [ext_resource type="Script" uid="uid://hvnvpuwe5g0b" path="res://Scripts/BattleStarter.gd" id="19_7tshw"]
+[ext_resource type="Texture2D" uid="uid://dh3uxk6tfukmy" path="res://Assets/Trainers/Kom_Ma-King.png" id="20_7tshw"]
 [ext_resource type="Texture2D" uid="uid://oyqtaaxaj8bh" path="res://Assets/Trainers/Daddy-Static.png" id="20_jdsbk"]
+[ext_resource type="Script" uid="uid://jtbmjplgstoq" path="res://Scripts/Hitbox.gd" id="20_qafev"]
+[ext_resource type="Texture2D" uid="uid://cclcw3nunbx4o" path="res://Assets/Decoration/RoyalGrotto/King's staff.png" id="21_jdsbk"]
 [ext_resource type="PackedScene" uid="uid://bdykq75yoljv" path="res://Scenes/Item.tscn" id="21_xxb6j"]
+[ext_resource type="Script" uid="uid://2dy1vr86vbav" path="res://Scripts/Specialized/Destroyer.gd" id="23_xxb6j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g6x45"]
 texture = ExtResource("1_oao8r")
@@ -441,7 +445,474 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kf87e"]
-size = Vector2(12, 128)
+size = Vector2(12, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sl2yl"]
+atlas = ExtResource("20_7tshw")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gurfl"]
+atlas = ExtResource("20_7tshw")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsoac"]
+atlas = ExtResource("20_7tshw")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwm2l"]
+atlas = ExtResource("20_7tshw")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjjxb"]
+atlas = ExtResource("20_7tshw")
+region = Rect2(16, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qes4h"]
+atlas = ExtResource("20_7tshw")
+region = Rect2(32, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd1kr"]
+atlas = ExtResource("20_7tshw")
+region = Rect2(0, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhy3o"]
+atlas = ExtResource("20_7tshw")
+region = Rect2(16, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0k60w"]
+atlas = ExtResource("20_7tshw")
+region = Rect2(32, 64, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kf87e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sl2yl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gurfl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsoac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwm2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjjxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qes4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fd1kr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhy3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0k60w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_qafev"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Commander Isold:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(32, -56)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Commander Isold:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Commander Isold:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("flash:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Kom Ma-King:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("staff:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("staff:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(128, -96)]
+}
+
+[sub_resource type="Animation" id="Animation_1tmfy"]
+resource_name = "color"
+step = 0.1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Player")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"set_physics_process"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Player")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["TurnUp"],
+"method": &"animate"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("flash:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.35, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 1, 1), Color(0, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Kom Ma-King:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("stop2")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"begin_from_self"
+}]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Commander Isold:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+
+[sub_resource type="Animation" id="Animation_i74jb"]
+resource_name = "flash"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("flash:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 1, 1), Color(0, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Kom Ma-King")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("destroyer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"breaker"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("net")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_tcjpa"]
+resource_name = "goes to pull lever"
+length = 5.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Commander Isold:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(32, -56), Vector2(40, -56), Vector2(48, -56), Vector2(56, -56), Vector2(56, -64), Vector2(56, -72), Vector2(56, -80), Vector2(56, -88), Vector2(56, -96), Vector2(56, -104)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Commander Isold:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.7999998),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 7, 6, 7, 5, 4, 3, 4, 5, 4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Commander Isold:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Player")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"set_physics_process"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("stop")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"begin_from_self"
+}]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Player")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["TurnUp"],
+"method": &"animate"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_efvuj"]
+resource_name = "staff hit"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Commander Isold:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(56, -104), Vector2(8, -104)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("staff:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("staff:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(128, -112), Vector2(128, -112), Vector2(79.99999, -112), Vector2(32, -112)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("stop3")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"begin_from_self"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Player")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.0001, 0.01),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [false],
+"method": &"set_physics_process"
+}, {
+"args": ["TurnUp"],
+"method": &"animate"
+}, {
+"args": [false],
+"method": &"set_physics_process"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qafev"]
+_data = {
+&"RESET": SubResource("Animation_qafev"),
+&"color": SubResource("Animation_1tmfy"),
+&"flash": SubResource("Animation_i74jb"),
+&"goes to pull lever": SubResource("Animation_tcjpa"),
+&"staff hit": SubResource("Animation_efvuj")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vnl58"]
+size = Vector2(14, 34)
 
 [node name="PowerPlant" type="Node2D" unique_id=1207506571]
 texture_filter = 1
@@ -470,7 +941,7 @@ y_sort_enabled = true
 [node name="TileMapLayer" type="TileMapLayer" parent="sorted stuff" unique_id=729952439]
 y_sort_enabled = true
 position = Vector2(8, 0)
-tile_map_data = PackedByteArray("AAAEAAoAAAAAAAAAAAAGAAoAAAAAAAAAAAACAAoAAAAAAAAAABABAAoAAQAAAAAAABAIAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAAMAAoAAAAAAAAAABANAAoAAQAAAAAAAAANAAkAAwAAAAAAAAANAAgABQAAAAEAAAANAAYABQAAAAEAAAANAAcABQAAAAEAAAANAAUABQAAAAEAAAANAAQABwAAAAAAAAABAAkAAwAAAAAAABABAAgABQAAAAEAABD9/wQAAAAAAAAAAAD7/wQAAAAAAAAAABD//woAAAAAAAAAAAD9/woAAAAAAAAAAAD7/woAAAAAAAAAABD5/woAAAAAAAAAAAD3/woAAAAAAAAAAAD1/woAAAAAAAAAAADz/woAAAAAAAAAAADx/woAAAAAAAAAABDv/woAAAAAAAAAAAAPAAoAAAAAAAAAAAARAAoAAAAAAAAAAAATAAoAAAAAAAAAABAVAAoAAAAAAAAAAAAXAAoAAAAAAAAAAAAZAAoAAAAAAAAAABD7//z/AAAAAAAAAAD9//z/AAAAAAAAAAD///z/AAAAAAAAAAABAPz/AAAAAAAAABADAPz/AAAAAAAAAAAFAPz/AAAAAAAAAAD5//z/AAAAAAAAABD3//z/AAAAAAAAAAD1//z/AAAAAAAAAADz//z/BwAAAAAAAAD0//v/AwAAAAAAABDz//3/BQAAAAEAAADz//7/BQAAAAEAAADz////BQAAAAEAAADz/wAABQAAAAEAAADz/wEABQAAAAEAAADz/wIABQAAAAEAAADy/wQAAAAAAAAAABDw/wQAAAAAAAAAAADu/wQAAAAAAAAAABDt/woAAAAAAAAAABDr/woAAAAAAAAAAADp/woAAAAAAAAAAADs/wIABQAAAAEAAADs/wEABQAAAAEAAADs/wAABQAAAAEAAADs////BQAAAAEAAADs//7/BQAAAAEAAADs//3/BQAAAAEAAADs//z/BwAAAAAAAADs//v/AwAAAAAAAADz/wMAAwAAAAAAAADt/wMAAwAAAAAAABDz/wQAAQAAAAAAAADs/wQAAQAAAAAAAAD5/wQAAQAAAAAAAAD6/wMAAwAAAAAAABDr//z/AAAAAAAAAADp//z/AAAAAAAAABDn//z/AAAAAAAAAADl//z/AQAAAAAAAADl//r/BQAAAAEAAADl//n/BQAAAAEAAADl//j/BQAAAAEAAADl//f/BQAAAAEAAADl//b/BQAAAAEAAADn//T/AAAAAAAAAADp//T/AAAAAAAAAADl//T/BwAAAAAAAADl//X/BQAAAAEAAADm//P/AwAAAAAAABDm//v/AwAAAAAAABAOAAkAAwAAAAAAABAAAAkAAwAAAAAAAAAKAPz/AAAAAAAAAAAMAPz/AAAAAAAAAAAOAPz/AAAAAAAAABAQAPz/AAAAAAAAAAASAPz/AAAAAAAAAADn/woAAAAAAAAAAAAGAAIAAQAAAAAAAAAGAAEABQAAAAEAAAAHAPv/AwAAAAAAABAGAPv/AwAAAAAAAAAGAPz/BwAAAAAAAAAGAP3/BQAAAAEAAAAGAP7/BQAAAAEAAAAGAP//BQAAAAEAAAAGAAAABQAAAAEAAAAIAPz/AAAAAAAAAAAUAPv/AwAAAAAAABATAPv/AwAAAAAAAAATAAEABQAAAAEAAAATAAIAAQAAAAAAAAATAPz/BwAAAAAAAAATAP3/BQAAAAEAAAATAP7/BQAAAAEAAAATAP//BQAAAAEAAAATAAAABQAAAAEAAADl/woAAQAAAAAAAADm/wkAAwAAAAAAABDl/wcABQAAAAEAAADl/wgABQAAAAEAAADl/wYABQAAAAEAAADl/wUABQAAAAEAAADl/wQABwAAAAAAAADl/wMAAwAAAAAAAADk/wQAAAAAAAAAABDi/wQAAAAAAAAAAADg/wQAAAAAAAAAAADk/woAAAAAAAAAAADi/woAAAAAAAAAABDg/woAAAAAAAAAAADe/woAAAAAAAAAAADc/woAAAAAAAAAAADa/woAAAAAAAAAABDl/wkAAwAAAAAAAADZ/wkAAwAAAAAAABDf/wMAAwAAAAAAABDe/wQAAQAAAAAAAADY/woAAQAAAAAAAADY/wgABQAAAAEAAADY/wcABQAAAAEAAADY/wYABQAAAAEAAADY/wUABQAAAAEAAADY/wQABQAAAAEAAADY/wMABQAAAAEAAADY/wIABQAAAAEAAADY/wEABQAAAAEAAADY/wAABQAAAAEAAADY////BQAAAAEAAADY//7/BQAAAAEAAADY//3/BQAAAAEAAADY//v/BQAAAAEAAADe//z/AAAAAAAAABDa//z/AAAAAAAAAADc//z/AAAAAAAA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")
+tile_map_data = PackedByteArray("AAAEAAoAAAAAAAAAAAAGAAoAAAAAAAAAAAACAAoAAAAAAAAAABABAAoAAQAAAAAAABAIAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAAMAAoAAAAAAAAAABANAAoAAQAAAAAAAAANAAkAAwAAAAAAAAANAAgABQAAAAEAAAANAAYABQAAAAEAAAANAAcABQAAAAEAAAANAAUABQAAAAEAAAANAAQABwAAAAAAAAABAAkAAwAAAAAAABABAAgABQAAAAEAABD9/wQAAAAAAAAAAAD7/wQAAAAAAAAAABD//woAAAAAAAAAAAD9/woAAAAAAAAAAAD7/woAAAAAAAAAABD5/woAAAAAAAAAAAD3/woAAAAAAAAAAAD1/woAAAAAAAAAAADz/woAAAAAAAAAAADx/woAAAAAAAAAABDv/woAAAAAAAAAAAAPAAoAAAAAAAAAAAARAAoAAAAAAAAAAAATAAoAAAAAAAAAABAVAAoAAAAAAAAAAAAXAAoAAAAAAAAAAAAZAAoAAAAAAAAAABAFAPz/AAAAAAAAAAD5//z/AAAAAAAAABD3//z/AAAAAAAAAAD1//z/AAAAAAAAAADz//z/BwAAAAAAAAD0//v/AwAAAAAAABDz//3/BQAAAAEAAADz//7/BQAAAAEAAADz////BQAAAAEAAADz/wAABQAAAAEAAADz/wEABQAAAAEAAADz/wIABQAAAAEAAADy/wQAAAAAAAAAABDw/wQAAAAAAAAAAADu/wQAAAAAAAAAABDt/woAAAAAAAAAABDr/woAAAAAAAAAAADp/woAAAAAAAAAAADs/wIABQAAAAEAAADs/wEABQAAAAEAAADs/wAABQAAAAEAAADs////BQAAAAEAAADs//7/BQAAAAEAAADs//3/BQAAAAEAAADs//z/BwAAAAAAAADs//v/AwAAAAAAAADz/wMAAwAAAAAAAADt/wMAAwAAAAAAABDz/wQAAQAAAAAAAADs/wQAAQAAAAAAAAD5/wQAAQAAAAAAAAD6/wMAAwAAAAAAABDr//z/AAAAAAAAAADp//z/AAAAAAAAABDn//z/AAAAAAAAAADl//z/AQAAAAAAAADl//r/BQAAAAEAAADl//n/BQAAAAEAAADl//j/BQAAAAEAAADl//f/BQAAAAEAAADl//b/BQAAAAEAAADn//T/AAAAAAAAAADp//T/AAAAAAAAAADl//T/BwAAAAAAAADl//X/BQAAAAEAAADm//P/AwAAAAAAABDm//v/AwAAAAAAABAOAAkAAwAAAAAAABAAAAkAAwAAAAAAAAAKAPz/AAAAAAAAAAAMAPz/AAAAAAAAAAAOAPz/AAAAAAAAABAQAPz/AAAAAAAAAAASAPz/AAAAAAAAAADn/woAAAAAAAAAAAAGAAIAAQAAAAAAAAAGAAEABQAAAAEAAAAHAPv/AwAAAAAAABAGAPv/AwAAAAAAAAAGAPz/BwAAAAAAAAAGAP3/BQAAAAEAAAAGAP7/BQAAAAEAAAAGAP//BQAAAAEAAAAGAAAABQAAAAEAAAAIAPz/AAAAAAAAAAAUAPv/AwAAAAAAABATAPv/AwAAAAAAAAATAAEABQAAAAEAAAATAAIAAQAAAAAAAAATAPz/BwAAAAAAAAATAP3/BQAAAAEAAAATAP7/BQAAAAEAAAATAP//BQAAAAEAAAATAAAABQAAAAEAAADl/woAAQAAAAAAAADm/wkAAwAAAAAAABDl/wcABQAAAAEAAADl/wgABQAAAAEAAADl/wYABQAAAAEAAADl/wUABQAAAAEAAADl/wQABwAAAAAAAADl/wMAAwAAAAAAAADk/wQAAAAAAAAAABDi/wQAAAAAAAAAAADg/wQAAAAAAAAAAADk/woAAAAAAAAAAADi/woAAAAAAAAAABDg/woAAAAAAAAAAADe/woAAAAAAAAAAADc/woAAAAAAAAAAADa/woAAAAAAAAAABDl/wkAAwAAAAAAAADZ/wkAAwAAAAAAABDf/wMAAwAAAAAAABDe/wQAAQAAAAAAAADY/woAAQAAAAAAAADY/wgABQAAAAEAAADY/wcABQAAAAEAAADY/wYABQAAAAEAAADY/wUABQAAAAEAAADY/wQABQAAAAEAAADY/wMABQAAAAEAAADY/wIABQAAAAEAAADY/wEABQAAAAEAAADY/wAABQAAAAEAAADY////BQAAAAEAAADY//7/BQAAAAEAAADY//3/BQAAAAEAAADY//v/BQAAAAEAAADe//z/AAAAAAAAABDa//z/AAAAAAAAAADc//z/AAAAAAAAAADf//z/AQAAAAAAAADf//v/AwAAAAAAAADf//r/BQAAAAEAAADf//n/BQAAAAEAAADf//j/BQAAAAEA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")
 tile_set = SubResource("TileSet_ck00l")
 
 [node name="TeslaCoil1" type="Sprite2D" parent="sorted stuff" unique_id=953396518]
@@ -798,11 +1269,8 @@ script = ExtResource("15_244id")
 is_end_node = true
 option_name = "No"
 
-[node name="Player" parent="sorted stuff" unique_id=802010568 instance=ExtResource("10_5rbrs")]
-position = Vector2(-64, -128)
-
 [node name="Team rammarG Grunt" type="AnimatedSprite2D" parent="sorted stuff" unique_id=1055691436]
-position = Vector2(-32, -48)
+position = Vector2(-16, -80)
 sprite_frames = SubResource("SpriteFrames_wwm2l")
 frame = 1
 centered = false
@@ -914,7 +1382,7 @@ target_position = Vector2(0, 16)
 script = ExtResource("15_244id")
 is_end_node = true
 text = "Powah 4 the Rammarg nashion!"
-function = " begin_battle"
+function = "begin_battle"
 func_node = NodePath("../BattleStart")
 
 [node name="FinalDialogue" type="Node" parent="sorted stuff/Draven" unique_id=1673551919]
@@ -966,75 +1434,224 @@ target_position = Vector2(0, 16)
 script = ExtResource("15_244id")
 is_end_node = true
 text = "Wazz happenin’? Some kid in our way? Lez gettim"
-function = " begin_battle"
+function = "begin_battle"
 func_node = NodePath("../BattleStart")
 
 [node name="FinalDialogue" type="Node" parent="sorted stuff/Caisius" unique_id=1941272659]
 script = ExtResource("15_244id")
 is_end_node = true
-text = "ye dare to defi Our plan's? No wil successw"
+text = "ye dare to defi Our plan's? No wil success: big L"
 
 [node name="BattleStart" type="Node" parent="sorted stuff/Caisius" unique_id=2047040920]
 script = ExtResource("19_7tshw")
 trainer_name = "Caisius"
 
-[node name="Commander Isold" type="AnimatedSprite2D" parent="sorted stuff" unique_id=328390044]
-position = Vector2(-32, -224)
+[node name="final_lever" type="Sprite2D" parent="sorted stuff" unique_id=893657648]
+position = Vector2(32, -312)
+texture = ExtResource("14_hdbim")
+hframes = 2
+
+[node name="final_room" type="Node2D" parent="sorted stuff" unique_id=119352198]
+y_sort_enabled = true
+position = Vector2(-32, -200)
+script = ExtResource("9_qhhr2")
+
+[node name="Commander Isold" type="AnimatedSprite2D" parent="sorted stuff/final_room" unique_id=328390044]
+position = Vector2(32, -56)
 sprite_frames = SubResource("SpriteFrames_0k60w")
 frame = 1
 centered = false
 offset = Vector2(0, -3)
 script = ExtResource("18_nnfiw")
 
-[node name="LineOfSight" type="Area2D" parent="sorted stuff/Commander Isold" unique_id=1256007621]
+[node name="LineOfSight" type="Area2D" parent="sorted stuff/final_room/Commander Isold" unique_id=1256007621]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sorted stuff/Commander Isold/LineOfSight" unique_id=1863532980]
-position = Vector2(8, 80)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sorted stuff/final_room/Commander Isold/LineOfSight" unique_id=1863532980]
+position = Vector2(8, 56)
 shape = SubResource("RectangleShape2D_kf87e")
 
-[node name="HitBox" type="Area2D" parent="sorted stuff/Commander Isold" unique_id=1440994575]
+[node name="HitBox" type="Area2D" parent="sorted stuff/final_room/Commander Isold" unique_id=1440994575]
 collision_layer = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sorted stuff/Commander Isold/HitBox" unique_id=119590563]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sorted stuff/final_room/Commander Isold/HitBox" unique_id=119590563]
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_qes4h")
 
-[node name="DetectPlayer" type="CollisionShape2D" parent="sorted stuff/Commander Isold/HitBox" unique_id=1879859854]
+[node name="DetectPlayer" type="CollisionShape2D" parent="sorted stuff/final_room/Commander Isold/HitBox" unique_id=1879859854]
 position = Vector2(8, 8)
 shape = SubResource("CircleShape2D_fd1kr")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="sorted stuff/Commander Isold" unique_id=281549154]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="sorted stuff/final_room/Commander Isold" unique_id=281549154]
 libraries/ = SubResource("AnimationLibrary_fhy3o")
 
-[node name="RayCast2D" type="RayCast2D" parent="sorted stuff/Commander Isold" unique_id=152436072]
+[node name="RayCast2D" type="RayCast2D" parent="sorted stuff/final_room/Commander Isold" unique_id=152436072]
 position = Vector2(8, 16)
 target_position = Vector2(0, 16)
 
-[node name="RayCast2D2" type="RayCast2D" parent="sorted stuff/Commander Isold" unique_id=1566373117]
+[node name="RayCast2D2" type="RayCast2D" parent="sorted stuff/final_room/Commander Isold" unique_id=1566373117]
 position = Vector2(8, 0)
 target_position = Vector2(0, 16)
 
-[node name="DialogueRoot" type="Node" parent="sorted stuff/Commander Isold" unique_id=42516563 node_paths=PackedStringArray("func_node")]
+[node name="DialogueRoot" type="Node" parent="sorted stuff/final_room/Commander Isold" unique_id=42516563 node_paths=PackedStringArray("func_node")]
 script = ExtResource("15_244id")
 is_end_node = true
 text = "Howe dar you intrud opon our plan! But it is to late for we, hav alredy one."
+function = "begin_from_self"
+func_node = NodePath("../DialogueRoot2")
+
+[node name="DialogueRoot2" type="Node" parent="sorted stuff/final_room/Commander Isold" unique_id=1842689137 node_paths=PackedStringArray("func_node")]
+script = ExtResource("15_244id")
+is_end_node = true
+text = "ye sea: wes plan 2 shut down this Powerplant and there be nothing ye can do."
+function = "begin_from_self"
+func_node = NodePath("../DialogueRoot3")
+
+[node name="DialogueRoot3" type="Node" parent="sorted stuff/final_room/Commander Isold" unique_id=2035101336 node_paths=PackedStringArray("func_node")]
+script = ExtResource("15_244id")
+is_end_node = true
+text = "The hole power of the region place wil not be here; no power, no work, no, life. and NO YOU!!!!!!!"
 function = "begin_battle"
 func_node = NodePath("../BattleStart")
 
-[node name="FinalDialogue" type="Node" parent="sorted stuff/Commander Isold" unique_id=1152616393]
+[node name="FinalDialogue" type="Node" parent="sorted stuff/final_room/Commander Isold" unique_id=1152616393 node_paths=PackedStringArray("func_node")]
 script = ExtResource("15_244id")
 is_end_node = true
 text = "You know, you’re actually pretty strong."
+function = "begin_from_self"
+func_node = NodePath("../FinalDialogue2")
 
-[node name="BattleStart" type="Node" parent="sorted stuff/Commander Isold" unique_id=1286566033]
+[node name="FinalDialogue2" type="Node" parent="sorted stuff/final_room/Commander Isold" unique_id=765536 node_paths=PackedStringArray("func_node")]
+script = ExtResource("15_244id")
+is_end_node = true
+text = "TOO BAD I DONT CARE! Pullin' the lever anyways, haha."
+function = "play"
+func_node = NodePath("../../AnimationPlayer")
+args = Array[String](["goes to pull lever"])
+
+[node name="BattleStart" type="Node" parent="sorted stuff/final_room/Commander Isold" unique_id=1286566033]
 script = ExtResource("19_7tshw")
 trainer_name = "Commander Isold"
 
-[node name="First Rough Draft" parent="sorted stuff" unique_id=270907436 instance=ExtResource("21_xxb6j")]
+[node name="Kom Ma-King" type="AnimatedSprite2D" parent="sorted stuff/final_room" unique_id=1824026744]
+visible = false
+position = Vector2(112, -88)
+sprite_frames = SubResource("SpriteFrames_kf87e")
+frame = 1
+centered = false
+offset = Vector2(0, -3)
+script = ExtResource("18_nnfiw")
+
+[node name="LineOfSight" type="Area2D" parent="sorted stuff/final_room/Kom Ma-King" unique_id=1293493772]
+
+[node name="HitBox" type="Area2D" parent="sorted stuff/final_room/Kom Ma-King" unique_id=1300153874]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sorted stuff/final_room/Kom Ma-King/HitBox" unique_id=720104474]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_qes4h")
+
+[node name="DetectPlayer" type="CollisionShape2D" parent="sorted stuff/final_room/Kom Ma-King/HitBox" unique_id=1920731275]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_fd1kr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="sorted stuff/final_room/Kom Ma-King" unique_id=1436181288]
+libraries/ = SubResource("AnimationLibrary_fhy3o")
+
+[node name="RayCast2D" type="RayCast2D" parent="sorted stuff/final_room/Kom Ma-King" unique_id=77611568]
+position = Vector2(8, 16)
+target_position = Vector2(0, 16)
+
+[node name="RayCast2D2" type="RayCast2D" parent="sorted stuff/final_room/Kom Ma-King" unique_id=1377519267]
+position = Vector2(8, 0)
+target_position = Vector2(0, 16)
+
+[node name="DialogueRoot" type="Node" parent="sorted stuff/final_room/Kom Ma-King" unique_id=273446689]
+script = ExtResource("15_244id")
+is_end_node = true
+text = "I'm glad I could save you, it looked like you needed a lot of help."
+
+[node name="FinalDialogue" type="Node" parent="sorted stuff/final_room/Kom Ma-King" unique_id=774357448]
+script = ExtResource("15_244id")
+is_end_node = true
+text = "Do not worry, you don't have to thank me."
+
+[node name="staff" type="Sprite2D" parent="sorted stuff/final_room" unique_id=960332201]
+visible = false
+position = Vector2(128, -96)
+rotation = -1.5707964
+texture = ExtResource("21_jdsbk")
+offset = Vector2(-16, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="sorted stuff/final_room" unique_id=1265921126]
+libraries/ = SubResource("AnimationLibrary_qafev")
+autoplay = &"RESET"
+
+[node name="stop" type="Node" parent="sorted stuff/final_room" unique_id=230134315 node_paths=PackedStringArray("func_node")]
+script = ExtResource("15_244id")
+is_end_node = true
+text = "STOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOP."
+function = "play"
+func_node = NodePath("../AnimationPlayer")
+args = Array[String](["color"])
+display = "???"
+
+[node name="stop2" type="Node" parent="sorted stuff/final_room" unique_id=1840231579 node_paths=PackedStringArray("func_node")]
+script = ExtResource("15_244id")
+is_end_node = true
+text = "I am the esteemed Kom Ma-King. Stop right there you lowly thug!"
+function = "begin_from_self"
+func_node = NodePath("../uhh")
+display = "Kom Ma-King"
+
+[node name="uhh" type="Node" parent="sorted stuff/final_room" unique_id=314893146 node_paths=PackedStringArray("func_node")]
+script = ExtResource("15_244id")
+is_end_node = true
+text = "Ive never herd of you tho, so i dont REALLY care."
+function = "play"
+func_node = NodePath("../AnimationPlayer")
+args = Array[String](["staff hit"])
+display = "Commander Isold"
+
+[node name="stop3" type="Node" parent="sorted stuff/final_room" unique_id=1539239367 node_paths=PackedStringArray("func_node")]
+script = ExtResource("15_244id")
+is_end_node = true
+text = "Do you care now? Oh wait, it seems he is unconscious. Well, I am glad I could help. Come join my academy in the cave, if you wish to learn. Goodbye child."
+function = "play"
+func_node = NodePath("../AnimationPlayer")
+args = Array[String](["flash"])
+display = "Kom Ma-King"
+
+[node name="net" type="Area2D" parent="sorted stuff/final_room" unique_id=615566486 node_paths=PackedStringArray("target_node")]
+script = ExtResource("20_qafev")
+target_node = NodePath("../Commander Isold/FinalDialogue")
+target_function = "begin_from_self"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sorted stuff/final_room/net" unique_id=1947746560]
+position = Vector2(60, -23)
+shape = SubResource("RectangleShape2D_vnl58")
+
+[node name="flash" type="ColorRect" parent="sorted stuff/final_room" unique_id=1028011372]
+z_index = 1
+offset_left = -120.0
+offset_top = -160.0
+offset_right = 232.0
+offset_bottom = 104.0
+color = Color(1, 1, 1, 0)
+
+[node name="destroyer" type="Node2D" parent="sorted stuff/final_room" unique_id=535984238]
+script = ExtResource("23_xxb6j")
+
+[node name="Colon" parent="sorted stuff" unique_id=270907436 instance=ExtResource("21_xxb6j")]
+position = Vector2(96, -96)
+
+[node name="Crumpled Draft" parent="sorted stuff" unique_id=71690404 instance=ExtResource("21_xxb6j")]
 position = Vector2(-560, -96)
 
 [node name="Apple" parent="sorted stuff" unique_id=862830784 instance=ExtResource("21_xxb6j")]
 position = Vector2(-256, 32)
+
+[node name="Player" parent="sorted stuff" unique_id=802010568 instance=ExtResource("10_5rbrs")]
+position = Vector2(-48, -64)
 
 [node name="Door" parent="." unique_id=305209293 instance=ExtResource("11_hk3ae")]
 modulate = Color(0.12549, 0.313726, 0.85098, 1)
@@ -1062,6 +1679,9 @@ spawn_direction = Vector2(0, 1)
 [connection signal="body_entered" from="sorted stuff/Caisius/LineOfSight" to="sorted stuff/Caisius" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="sorted stuff/Caisius/HitBox" to="sorted stuff/Caisius" method="_on_hit_box_body_entered"]
 [connection signal="body_exited" from="sorted stuff/Caisius/HitBox" to="sorted stuff/Caisius" method="_on_hit_box_body_exited"]
-[connection signal="body_entered" from="sorted stuff/Commander Isold/LineOfSight" to="sorted stuff/Commander Isold" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="sorted stuff/Commander Isold/HitBox" to="sorted stuff/Commander Isold" method="_on_hit_box_body_entered"]
-[connection signal="body_exited" from="sorted stuff/Commander Isold/HitBox" to="sorted stuff/Commander Isold" method="_on_hit_box_body_exited"]
+[connection signal="body_entered" from="sorted stuff/final_room/Commander Isold/LineOfSight" to="sorted stuff/final_room/Commander Isold" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="sorted stuff/final_room/Commander Isold/HitBox" to="sorted stuff/final_room/Commander Isold" method="_on_hit_box_body_entered"]
+[connection signal="body_exited" from="sorted stuff/final_room/Commander Isold/HitBox" to="sorted stuff/final_room/Commander Isold" method="_on_hit_box_body_exited"]
+[connection signal="body_entered" from="sorted stuff/final_room/Kom Ma-King/LineOfSight" to="sorted stuff/final_room/Kom Ma-King" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="sorted stuff/final_room/Kom Ma-King/HitBox" to="sorted stuff/final_room/Kom Ma-King" method="_on_hit_box_body_entered"]
+[connection signal="body_exited" from="sorted stuff/final_room/Kom Ma-King/HitBox" to="sorted stuff/final_room/Kom Ma-King" method="_on_hit_box_body_exited"]

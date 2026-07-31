@@ -72,7 +72,7 @@ func display_current_node():
 
 	# If no text, run functions and end
 	if current_node.text == "":
-		var function = current_node.function
+		var function = current_node.function.strip_edges()
 		var tar_node = target_node 
 		var args = current_node.args
 		if current_node.is_end_node:
@@ -84,7 +84,7 @@ func display_current_node():
 			if tar_node.has_method(function):
 				tar_node.callv(function, args)
 			else:
-				print("DialogueManager: Function not found on target node")
+				print("DialogueManager: Function f("+function+") not found on target node 1")
 		
 		return
 	
@@ -159,7 +159,7 @@ func _input(event):
 			# Waiting for Z to advance to options
 			if event.is_action_pressed("z"):
 				if current_node.is_end_node:
-					var function = current_node.function
+					var function = current_node.function.strip_edges()
 					var tar_node = target_node 
 					var args = current_node.args
 					end_dialogue()
@@ -170,15 +170,15 @@ func _input(event):
 						if tar_node.has_method(function):
 							tar_node.callv(function, args)
 						else:
-							print("DialogueManager: Function not found on target node")
+							print("DialogueManager: Function f("+function+") not found on target node 2")
 					return
 				
 				# Execute any function associated with this node
 				elif current_node.function != "" and target_node != null:
-					if target_node.has_method(current_node.function):
-						target_node.callv(current_node.function, current_node.args)
+					if target_node.has_method(current_node.function.strip_edges()):
+						target_node.callv(current_node.function.strip_edges(), current_node.args)
 					else:
-						print("DialogueManager: Function not found on target node")
+						print("DialogueManager: Function f("+current_node.function+") not found on target node 3")
 				
 				show_options()
 		

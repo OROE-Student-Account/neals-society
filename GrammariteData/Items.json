@@ -132,6 +132,7 @@
 		"Type": "Consumable"
 	},
 	
+	
 	"Grammar Dex": {
 		"Description": "Allows you to catalog your Grammarites.",
 		"Type": "Passive"
