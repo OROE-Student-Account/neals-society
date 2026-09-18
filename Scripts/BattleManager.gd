@@ -602,7 +602,10 @@ func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 		damage = damage * randf_range(0.85, 1.0)
 		
 		# no negative damage
-		damage = max(0, int(damage)) 
+		if base_damage != 0:
+			damage = max(1, int(damage))
+		else:
+			damage = 0
 		
 		# Apply damage
 		defender.update_health(-int(damage))
@@ -610,9 +613,9 @@ func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 		if crit:
 			battle_ui.set_info_text("It crits!")
 		elif effectiveness > 1:
-			battle_ui.set_info_text("It is super effective!")
+			battle_ui.set_info_text("It was super effective!")
 		elif effectiveness < 1:
-			battle_ui.set_info_text("It is not very effective.")
+			battle_ui.set_info_text("It was not very effective.")
 		else:
 			battle_ui.set_info_text("It hits!")
 		
