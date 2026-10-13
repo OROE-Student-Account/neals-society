@@ -33,5 +33,6 @@
 	"Gremon": { "Types": [ "Slang", "Grammar" ], "Health": 85, "Attack": 135, "Defense": 45, "Speed": 70 },
 	"Lexmen": { "Types": [ "Knowledge", "Literature" ], "Health": 100, "Attack": 90, "Defense": 20, "Speed": 10 },
 	"Encyclopelta": { "Types": [ "Knowledge", "Animal" ], "Health": 115, "Attack": 125, "Defense": 30, "Speed": 20 },
-	"Thesaurus": { "Types": [ "Knowledge", "Animal" ], "Health": 140, "Attack": 190, "Defense": 45, "Speed": 25 }
+	"Thesaurus": { "Types": [ "Knowledge", "Animal" ], "Health": 140, "Attack": 190, "Defense": 45, "Speed": 25 },
+	"Brainrouter": { "Types": [ "Slang", "Machine" ], "Health": 95, "Attack": 105, "Defense": 20, "Speed": 50 }
 }
