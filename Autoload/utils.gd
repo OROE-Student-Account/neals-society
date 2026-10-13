@@ -3,7 +3,7 @@ extends Node
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
+var seen_question_ids: Dictionary = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -310,8 +310,8 @@ var alphabet = "abcdefghijklmnopqrstuvwxyz"
 var vowels = "aeiou"
 var consonants = "bcdfghjklmnpqrstvwxyz"
 var punctuation = "?!.,;:-\"' "
-func get_question():
-	
+func get_question(): 
+	var seen_question_ids: Dictionary = {}
 	# Get the question
 	var type_of_question = question_list.pick_random()
 	var questions = load_json_file("res://GrammariteData/Questions.json")[type_of_question]
@@ -443,6 +443,47 @@ func get_question():
 			#"Difficulty": ""
 		#}
 
+
+func get_grade_3_question() -> Dictionary:
+	var bank = load_json_file("res://GrammariteData/Questions_Grade3.json")
+	var categories = ["Vocabulary", "Syntax", "Punctuation"]
+	var eligible = []
+
+	for category in categories:
+		if not bank.has(category):
+			continue
+
+		for q in bank[category]:
+			if int(q.get("Grade", 0)) == 3 and not seen_question_ids.has(q["ID"]):
+				eligible.append({
+					"type": category,
+					"data": q
+				})
+
+	if eligible.is_empty():
+		push_warning("No unused Grade 3 questions remain!")
+		return {}
+
+	var selected = eligible.pick_random()
+	var item = selected["data"]
+	print("Question Category: ", selected["type"])
+	print("Question: ", item["Question"])
+
+	seen_question_ids[item["ID"]] = true
+
+	# Combine the correct answer with three distractors
+	var options: Array = [item["Answer"]]
+	options.append_array(item["Distractors"])
+	options.shuffle()
+
+	var correct_index = options.find(item["Answer"])
+
+	return {
+		"Question": item["Question"],
+		"Answer": correct_index,
+		"Type": selected["type"],
+		"Options": options
+	}
 
 
 func save_json_file(file_path, data):

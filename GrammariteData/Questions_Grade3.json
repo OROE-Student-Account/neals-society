@@ -1,0 +1,3508 @@
+{
+  "Vocabulary": [
+	{
+	  "ID": "G3-VOC-001",
+	  "Grade": 3,
+	  "Topic": "Context clues — feelings",
+	  "Question": "The puppy trembled during the thunderstorm. What does \"trembled\" mean?",
+	  "Answer": "Shook",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Laughed",
+		"Slept",
+        "Jumped"
+	  ],
+	  "Standard": "L.3.4a"
+	},
+	{
+	  "ID": "G3-VOC-002",
+	  "Grade": 3,
+	  "Topic": "Context clues — feelings",
+	  "Question": "Mia was delighted when her cousin visited. What does \"delighted\" mean?",
+	  "Answer": "Very happy",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Very tired",
+		"Very angry",
+        "Very hungry"
+	  ],
+	  "Standard": "L.3.4a"
+	},
+	{
+	  "ID": "G3-VOC-003",
+	  "Grade": 3,
+	  "Topic": "Context clues — feelings",
+	  "Question": "Noah hesitated before jumping into the pool. What does \"hesitated\" mean?",
+	  "Answer": "Paused because he was unsure",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Jumped without thinking",
+		"Shouted with excitement",
+        "Walked away angrily"
+	  ],
+	  "Standard": "L.3.4a"
+	},
+	{
+	  "ID": "G3-VOC-004",
+	  "Grade": 3,
+	  "Topic": "Context clues — feelings",
+	  "Question": "Lena felt gloomy on the rainy afternoon. What does \"gloomy\" mean?",
+	  "Answer": "Sad",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Proud",
+		"Curious",
+        "Playful"
+	  ],
+	  "Standard": "L.3.4a"
+	},
+	{
+	  "ID": "G3-VOC-005",
+	  "Grade": 3,
+	  "Topic": "Context clues — feelings",
+	  "Question": "The class was eager to see the new science exhibit. What does \"eager\" mean?",
+	  "Answer": "Excited and ready",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Confused and lost",
+		"Uninterested",
+        "Sleepy"
+	  ],
+	  "Standard": "L.3.4a"
+	},
+	{
+	  "ID": "G3-VOC-006",
+	  "Grade": 3,
+	  "Topic": "Context clues — actions",
+	  "Question": "The campers gathered firewood before sunset. What does \"gathered\" mean?",
+	  "Answer": "Collected",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Scattered",
+		"Burned",
+        "Painted"
+	  ],
+	  "Standard": "L.3.4a"
+	},
+	{
+	  "ID": "G3-VOC-007",
+	  "Grade": 3,
+	  "Topic": "Context clues — actions",
+	  "Question": "The gardener gently removed the weeds. What does \"removed\" mean?",
+	  "Answer": "Took away",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Watered",
+		"Counted",
+        "Planted"
+	  ],
+	  "Standard": "L.3.4a"
+	},
+	{
+	  "ID": "G3-VOC-008",
+	  "Grade": 3,
+	  "Topic": "Context clues — actions",
+	  "Question": "The fox dashed into the forest when it heard a noise. What does \"dashed\" mean?",
+	  "Answer": "Ran quickly",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Moved slowly",
+		"Hid quietly",
+        "Looked around"
+	  ],
+	  "Standard": "L.3.4a"
+	},
+	{
+	  "ID": "G3-VOC-009",
+	  "Grade": 3,
+	  "Topic": "Context clues — actions",
+	  "Question": "Ella examined the shell closely to see its pattern. What does \"examined\" mean?",
+	  "Answer": "Looked at carefully",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Threw away",
+		"Covered up",
+        "Stepped over"
+	  ],
+	  "Standard": "L.3.4a"
+	},
+	{
+	  "ID": "G3-VOC-010",
+	  "Grade": 3,
+	  "Topic": "Context clues — actions",
+	  "Question": "The hikers rested after climbing the steep trail. What does \"rested\" mean?",
+	  "Answer": "Stopped to regain energy",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Ran even faster",
+		"Started a new race",
+        "Packed their bags"
+	  ],
+	  "Standard": "L.3.4a"
+	},
+	{
+	  "ID": "G3-VOC-011",
+	  "Grade": 3,
+	  "Topic": "Context clues — describing",
+	  "Question": "The fragile vase broke when it fell. What does \"fragile\" mean?",
+	  "Answer": "Easy to break",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Very heavy",
+		"Brightly colored",
+        "Hard to find"
+	  ],
+	  "Standard": "L.3.4a"
+	},
+	{
+	  "ID": "G3-VOC-012",
+	  "Grade": 3,
+	  "Topic": "Context clues — describing",
+	  "Question": "The enormous whale swam beside the boat. What does \"enormous\" mean?",
+	  "Answer": "Very large",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Very young",
+		"Very quiet",
+        "Very fast"
+	  ],
+	  "Standard": "L.3.4a"
+	},
+	{
+	  "ID": "G3-VOC-013",
+	  "Grade": 3,
+	  "Topic": "Context clues — describing",
+	  "Question": "The narrow bridge allowed only one person to cross at a time. What does \"narrow\" mean?",
+	  "Answer": "Not wide",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Very tall",
+		"Very smooth",
+        "Far away"
+	  ],
+	  "Standard": "L.3.4a"
+	},
+	{
+	  "ID": "G3-VOC-014",
+	  "Grade": 3,
+	  "Topic": "Context clues — describing",
+	  "Question": "The water was shallow enough to stand in. What does \"shallow\" mean?",
+	  "Answer": "Not deep",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Very cold",
+		"Not clean",
+        "Very clear"
+	  ],
+	  "Standard": "L.3.4a"
+	},
+	{
+	  "ID": "G3-VOC-015",
+	  "Grade": 3,
+	  "Topic": "Context clues — describing",
+	  "Question": "The ancient coin was hundreds of years old. What does \"ancient\" mean?",
+	  "Answer": "Very old",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Recently made",
+		"Very valuable",
+        "Shiny and new"
+	  ],
+	  "Standard": "L.3.4a"
+	},
+	{
+	  "ID": "G3-VOC-016",
+	  "Grade": 3,
+	  "Topic": "Prefixes — un- and re-",
+	  "Question": "What does \"unhappy\" mean?",
+	  "Answer": "Not happy",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Very happy",
+		"Happy again",
+        "Almost happy"
+	  ],
+	  "Standard": "L.3.4b"
+	},
+	{
+	  "ID": "G3-VOC-017",
+	  "Grade": 3,
+	  "Topic": "Prefixes — un- and re-",
+	  "Question": "What does \"rewrite\" mean?",
+	  "Answer": "Write again",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Stop writing",
+		"Write badly",
+        "Write neatly"
+	  ],
+	  "Standard": "L.3.4b"
+	},
+	{
+	  "ID": "G3-VOC-018",
+	  "Grade": 3,
+	  "Topic": "Prefixes — un- and re-",
+	  "Question": "What does \"unlock\" mean?",
+	  "Answer": "Open something that was locked",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Lock it again",
+		"Make a new lock",
+        "Lose a key"
+	  ],
+	  "Standard": "L.3.4b"
+	},
+	{
+	  "ID": "G3-VOC-019",
+	  "Grade": 3,
+	  "Topic": "Prefixes — un- and re-",
+	  "Question": "What does \"replay\" mean?",
+	  "Answer": "Play again",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Stop playing",
+		"Play quietly",
+        "Play alone"
+	  ],
+	  "Standard": "L.3.4b"
+	},
+	{
+	  "ID": "G3-VOC-020",
+	  "Grade": 3,
+	  "Topic": "Prefixes — un- and re-",
+	  "Question": "What does \"unfair\" mean?",
+	  "Answer": "Not fair",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Fair again",
+		"Extra fair",
+        "Almost fair"
+	  ],
+	  "Standard": "L.3.4b"
+	},
+	{
+	  "ID": "G3-VOC-021",
+	  "Grade": 3,
+	  "Topic": "Prefixes — pre-, dis-, mis-",
+	  "Question": "What does \"preview\" mean?",
+	  "Answer": "See before",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"See again",
+		"See clearly",
+        "See from far away"
+	  ],
+	  "Standard": "L.3.4b"
+	},
+	{
+	  "ID": "G3-VOC-022",
+	  "Grade": 3,
+	  "Topic": "Prefixes — pre-, dis-, mis-",
+	  "Question": "What does \"disagree\" mean?",
+	  "Answer": "Have a different opinion",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Agree strongly",
+		"Forget an opinion",
+        "Ask for an opinion"
+	  ],
+	  "Standard": "L.3.4b"
+	},
+	{
+	  "ID": "G3-VOC-023",
+	  "Grade": 3,
+	  "Topic": "Prefixes — pre-, dis-, mis-",
+	  "Question": "What does \"misplace\" mean?",
+	  "Answer": "Put something in the wrong place",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Put something away safely",
+		"Find something",
+        "Place it carefully"
+	  ],
+	  "Standard": "L.3.4b"
+	},
+	{
+	  "ID": "G3-VOC-024",
+	  "Grade": 3,
+	  "Topic": "Prefixes — pre-, dis-, mis-",
+	  "Question": "What does \"preheat\" mean?",
+	  "Answer": "Heat before using",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Cool before using",
+		"Heat twice",
+        "Turn off the heat"
+	  ],
+	  "Standard": "L.3.4b"
+	},
+	{
+	  "ID": "G3-VOC-025",
+	  "Grade": 3,
+	  "Topic": "Prefixes — pre-, dis-, mis-",
+	  "Question": "What does \"misread\" mean?",
+	  "Answer": "Read incorrectly",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Read aloud",
+		"Read quickly",
+        "Read again"
+	  ],
+	  "Standard": "L.3.4b"
+	},
+	{
+	  "ID": "G3-VOC-026",
+	  "Grade": 3,
+	  "Topic": "Suffixes — -ful and -less",
+	  "Question": "What does \"careless\" mean?",
+	  "Answer": "Not careful",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Very careful",
+		"Careful again",
+        "Helping others"
+	  ],
+	  "Standard": "L.3.4b"
+	},
+	{
+	  "ID": "G3-VOC-027",
+	  "Grade": 3,
+	  "Topic": "Suffixes — -ful and -less",
+	  "Question": "What does \"hopeful\" mean?",
+	  "Answer": "Full of hope",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Without hope",
+		"Feeling afraid",
+        "Feeling tired"
+	  ],
+	  "Standard": "L.3.4b"
+	},
+	{
+	  "ID": "G3-VOC-028",
+	  "Grade": 3,
+	  "Topic": "Suffixes — -ful and -less",
+	  "Question": "What does \"fearless\" mean?",
+	  "Answer": "Without fear",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Full of fear",
+		"Very confused",
+        "Usually quiet"
+	  ],
+	  "Standard": "L.3.4b"
+	},
+	{
+	  "ID": "G3-VOC-029",
+	  "Grade": 3,
+	  "Topic": "Suffixes — -ful and -less",
+	  "Question": "What does \"helpful\" mean?",
+	  "Answer": "Providing help",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Needing help",
+		"Refusing help",
+        "Asking for help"
+	  ],
+	  "Standard": "L.3.4b"
+	},
+	{
+	  "ID": "G3-VOC-030",
+	  "Grade": 3,
+	  "Topic": "Suffixes — -ful and -less",
+	  "Question": "What does \"endless\" mean?",
+	  "Answer": "Without an end",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Near the end",
+		"At the beginning",
+        "Starting again"
+	  ],
+	  "Standard": "L.3.4b"
+	},
+	{
+	  "ID": "G3-VOC-031",
+	  "Grade": 3,
+	  "Topic": "Suffixes — -er, -ness, -able",
+	  "Question": "What is a \"teacher\"?",
+	  "Answer": "A person who teaches",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"A person who paints",
+		"A person who dances",
+        "A person who drives"
+	  ],
+	  "Standard": "L.3.4b"
+	},
+	{
+	  "ID": "G3-VOC-032",
+	  "Grade": 3,
+	  "Topic": "Suffixes — -er, -ness, -able",
+	  "Question": "What does \"kindness\" mean?",
+	  "Answer": "The quality of being kind",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"The act of running",
+		"A feeling of hunger",
+        "The sound of laughter"
+	  ],
+	  "Standard": "L.3.4b"
+	},
+	{
+	  "ID": "G3-VOC-033",
+	  "Grade": 3,
+	  "Topic": "Suffixes — -er, -ness, -able",
+	  "Question": "What does \"readable\" mean?",
+	  "Answer": "Able to be read",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Impossible to understand",
+		"Already written",
+        "Ready to erase"
+	  ],
+	  "Standard": "L.3.4b"
+	},
+	{
+	  "ID": "G3-VOC-034",
+	  "Grade": 3,
+	  "Topic": "Suffixes — -er, -ness, -able",
+	  "Question": "What is a \"builder\"?",
+	  "Answer": "A person who builds",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"A person who cooks",
+		"A person who sings",
+        "A person who swims"
+	  ],
+	  "Standard": "L.3.4b"
+	},
+	{
+	  "ID": "G3-VOC-035",
+	  "Grade": 3,
+	  "Topic": "Suffixes — -er, -ness, -able",
+	  "Question": "What does \"darkness\" mean?",
+	  "Answer": "The state of being dark",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"An extremely bright light",
+		"A quiet sound",
+        "A strong wind"
+	  ],
+	  "Standard": "L.3.4b"
+	},
+	{
+	  "ID": "G3-VOC-036",
+	  "Grade": 3,
+	  "Topic": "Root words and families — help/play",
+	  "Question": "Which word means \"able to help\"?",
+	  "Answer": "Helpful",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Helpless",
+		"Helped",
+        "Helper"
+	  ],
+	  "Standard": "L.3.4c"
+	},
+	{
+	  "ID": "G3-VOC-037",
+	  "Grade": 3,
+	  "Topic": "Root words and families — help/play",
+	  "Question": "Which word means \"a person who plays\"?",
+	  "Answer": "Player",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Playful",
+		"Replay",
+        "Played"
+	  ],
+	  "Standard": "L.3.4c"
+	},
+	{
+	  "ID": "G3-VOC-038",
+	  "Grade": 3,
+	  "Topic": "Root words and families — help/play",
+	  "Question": "Which word means \"without help\"?",
+	  "Answer": "Helpless",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Helpful",
+		"Helping",
+        "Helper"
+	  ],
+	  "Standard": "L.3.4c"
+	},
+	{
+	  "ID": "G3-VOC-039",
+	  "Grade": 3,
+	  "Topic": "Root words and families — help/play",
+	  "Question": "Which word means \"full of play\"?",
+	  "Answer": "Playful",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Replay",
+		"Played",
+        "Player"
+	  ],
+	  "Standard": "L.3.4c"
+	},
+	{
+	  "ID": "G3-VOC-040",
+	  "Grade": 3,
+	  "Topic": "Root words and families — help/play",
+	  "Question": "Which word means \"to play again\"?",
+	  "Answer": "Replay",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Player",
+		"Playful",
+        "Playing"
+	  ],
+	  "Standard": "L.3.4c"
+	},
+	{
+	  "ID": "G3-VOC-041",
+	  "Grade": 3,
+	  "Topic": "Root words and families — act/care",
+	  "Question": "What does \"action\" mean?",
+	  "Answer": "Something someone does",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"A person who watches",
+		"A place to rest",
+        "Something that is hidden"
+	  ],
+	  "Standard": "L.3.4c"
+	},
+	{
+	  "ID": "G3-VOC-042",
+	  "Grade": 3,
+	  "Topic": "Root words and families — act/care",
+	  "Question": "Which word means \"a person who acts\"?",
+	  "Answer": "Actor",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Action",
+		"Active",
+        "React"
+	  ],
+	  "Standard": "L.3.4c"
+	},
+	{
+	  "ID": "G3-VOC-043",
+	  "Grade": 3,
+	  "Topic": "Root words and families — act/care",
+	  "Question": "What does \"carefully\" mean?",
+	  "Answer": "In a careful way",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Without care",
+		"In a careless way",
+        "Before caring"
+	  ],
+	  "Standard": "L.3.4c"
+	},
+	{
+	  "ID": "G3-VOC-044",
+	  "Grade": 3,
+	  "Topic": "Root words and families — act/care",
+	  "Question": "What does \"react\" mean?",
+	  "Answer": "Respond to something",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Act before anything happens",
+		"Forget an action",
+        "Act quietly"
+	  ],
+	  "Standard": "L.3.4c"
+	},
+	{
+	  "ID": "G3-VOC-045",
+	  "Grade": 3,
+	  "Topic": "Root words and families — act/care",
+	  "Question": "What does \"caregiver\" mean?",
+	  "Answer": "Someone who provides care",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Someone who needs a map",
+		"Someone who builds houses",
+        "Someone who paints pictures"
+	  ],
+	  "Standard": "L.3.4c"
+	},
+	{
+	  "ID": "G3-VOC-046",
+	  "Grade": 3,
+	  "Topic": "Literal vs nonliteral — expressions",
+	  "Question": "When someone says \"Hold your horses,\" what do they usually mean?",
+	  "Answer": "Wait a moment",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Grab some animals",
+		"Run faster",
+        "Find a stable"
+	  ],
+	  "Standard": "L.3.5a"
+	},
+	{
+	  "ID": "G3-VOC-047",
+	  "Grade": 3,
+	  "Topic": "Literal vs nonliteral — expressions",
+	  "Question": "What does \"It is raining cats and dogs\" mean?",
+	  "Answer": "It is raining heavily",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Animals are falling from the sky",
+		"It is snowing",
+        "The weather is sunny"
+	  ],
+	  "Standard": "L.3.5a"
+	},
+	{
+	  "ID": "G3-VOC-048",
+	  "Grade": 3,
+	  "Topic": "Literal vs nonliteral — expressions",
+	  "Question": "If a person has \"butterflies in their stomach,\" how do they likely feel?",
+	  "Answer": "Nervous",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Hungry for insects",
+		"Very cold",
+        "Ready to sleep"
+	  ],
+	  "Standard": "L.3.5a"
+	},
+	{
+	  "ID": "G3-VOC-049",
+	  "Grade": 3,
+	  "Topic": "Literal vs nonliteral — expressions",
+	  "Question": "What does \"break the ice\" mean when people first meet?",
+	  "Answer": "Help people feel comfortable",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Crack frozen water",
+		"End a friendship",
+        "Turn off the air conditioner"
+	  ],
+	  "Standard": "L.3.5a"
+	},
+	{
+	  "ID": "G3-VOC-050",
+	  "Grade": 3,
+	  "Topic": "Literal vs nonliteral — expressions",
+	  "Question": "If someone says \"That test was a piece of cake,\" they mean it was...",
+	  "Answer": "Easy",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Delicious",
+		"Long",
+        "Messy"
+	  ],
+	  "Standard": "L.3.5a"
+	},
+	{
+	  "ID": "G3-VOC-051",
+	  "Grade": 3,
+	  "Topic": "Literal vs nonliteral — context",
+	  "Question": "In \"The runner flew down the track,\" what does \"flew\" suggest?",
+	  "Answer": "Ran very fast",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Grew wings",
+		"Jumped into a plane",
+        "Stopped suddenly"
+	  ],
+	  "Standard": "L.3.5a"
+	},
+	{
+	  "ID": "G3-VOC-052",
+	  "Grade": 3,
+	  "Topic": "Literal vs nonliteral — context",
+	  "Question": "In \"My backpack weighs a ton,\" what does the speaker mean?",
+	  "Answer": "It feels very heavy",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"It was weighed on a scale",
+		"It is empty",
+        "It is very small"
+	  ],
+	  "Standard": "L.3.5a"
+	},
+	{
+	  "ID": "G3-VOC-053",
+	  "Grade": 3,
+	  "Topic": "Literal vs nonliteral — context",
+	  "Question": "In \"Dad gave me a hand with homework,\" what does \"a hand\" mean?",
+	  "Answer": "Help",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"A glove",
+		"A drawing",
+        "A high five"
+	  ],
+	  "Standard": "L.3.5a"
+	},
+	{
+	  "ID": "G3-VOC-054",
+	  "Grade": 3,
+	  "Topic": "Literal vs nonliteral — context",
+	  "Question": "In \"The news made her heart sink,\" how did she probably feel?",
+	  "Answer": "Disappointed",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Excited",
+		"Hungry",
+        "Proud"
+	  ],
+	  "Standard": "L.3.5a"
+	},
+	{
+	  "ID": "G3-VOC-055",
+	  "Grade": 3,
+	  "Topic": "Literal vs nonliteral — context",
+	  "Question": "In \"The classroom was a zoo,\" what was the classroom like?",
+	  "Answer": "Noisy and chaotic",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Full of wild animals",
+		"Completely empty",
+        "Very cold"
+	  ],
+	  "Standard": "L.3.5a"
+	},
+	{
+	  "ID": "G3-VOC-056",
+	  "Grade": 3,
+	  "Topic": "Synonyms — feelings",
+	  "Question": "Which word is closest in meaning to \"joyful\"?",
+	  "Answer": "Happy",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Angry",
+		"Worried",
+        "Lonely"
+	  ],
+	  "Standard": "L.3.5c"
+	},
+	{
+	  "ID": "G3-VOC-057",
+	  "Grade": 3,
+	  "Topic": "Synonyms — feelings",
+	  "Question": "Which word is closest in meaning to \"frightened\"?",
+	  "Answer": "Scared",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Calm",
+		"Proud",
+        "Eager"
+	  ],
+	  "Standard": "L.3.5c"
+	},
+	{
+	  "ID": "G3-VOC-058",
+	  "Grade": 3,
+	  "Topic": "Synonyms — feelings",
+	  "Question": "Which word is closest in meaning to \"furious\"?",
+	  "Answer": "Angry",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Cheerful",
+		"Sleepy",
+        "Shy"
+	  ],
+	  "Standard": "L.3.5c"
+	},
+	{
+	  "ID": "G3-VOC-059",
+	  "Grade": 3,
+	  "Topic": "Synonyms — feelings",
+	  "Question": "Which word is closest in meaning to \"calm\"?",
+	  "Answer": "Peaceful",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Anxious",
+		"Excited",
+        "Jealous"
+	  ],
+	  "Standard": "L.3.5c"
+	},
+	{
+	  "ID": "G3-VOC-060",
+	  "Grade": 3,
+	  "Topic": "Synonyms — feelings",
+	  "Question": "Which word is closest in meaning to \"curious\"?",
+	  "Answer": "Interested",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Bored",
+		"Upset",
+        "Certain"
+	  ],
+	  "Standard": "L.3.5c"
+	},
+	{
+	  "ID": "G3-VOC-061",
+	  "Grade": 3,
+	  "Topic": "Antonyms — describing",
+	  "Question": "Which word is the opposite of \"generous\"?",
+	  "Answer": "Selfish",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Giving",
+		"Kind",
+        "Helpful"
+	  ],
+	  "Standard": "L.3.5c"
+	},
+	{
+	  "ID": "G3-VOC-062",
+	  "Grade": 3,
+	  "Topic": "Antonyms — describing",
+	  "Question": "Which word is the opposite of \"ancient\"?",
+	  "Answer": "Modern",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Old",
+		"Historic",
+        "Worn"
+	  ],
+	  "Standard": "L.3.5c"
+	},
+	{
+	  "ID": "G3-VOC-063",
+	  "Grade": 3,
+	  "Topic": "Antonyms — describing",
+	  "Question": "Which word is the opposite of \"scarce\"?",
+	  "Answer": "Plentiful",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Rare",
+		"Limited",
+        "Missing"
+	  ],
+	  "Standard": "L.3.5c"
+	},
+	{
+	  "ID": "G3-VOC-064",
+	  "Grade": 3,
+	  "Topic": "Antonyms — describing",
+	  "Question": "Which word is the opposite of \"brave\"?",
+	  "Answer": "Cowardly",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Bold",
+		"Fearless",
+        "Courageous"
+	  ],
+	  "Standard": "L.3.5c"
+	},
+	{
+	  "ID": "G3-VOC-065",
+	  "Grade": 3,
+	  "Topic": "Antonyms — describing",
+	  "Question": "Which word is the opposite of \"dull\" when describing a light?",
+	  "Answer": "Bright",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Dim",
+		"Faint",
+        "Weak"
+	  ],
+	  "Standard": "L.3.5c"
+	},
+	{
+	  "ID": "G3-VOC-066",
+	  "Grade": 3,
+	  "Topic": "Shades of meaning — movement",
+	  "Question": "Which word describes the fastest movement?",
+	  "Answer": "Sprint",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Walk",
+		"Stroll",
+        "Crawl"
+	  ],
+	  "Standard": "L.3.5c"
+	},
+	{
+	  "ID": "G3-VOC-067",
+	  "Grade": 3,
+	  "Topic": "Shades of meaning — movement",
+	  "Question": "Which word suggests walking slowly and casually?",
+	  "Answer": "Stroll",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Dash",
+		"Race",
+        "Charge"
+	  ],
+	  "Standard": "L.3.5c"
+	},
+	{
+	  "ID": "G3-VOC-068",
+	  "Grade": 3,
+	  "Topic": "Shades of meaning — movement",
+	  "Question": "Which word suggests looking for only a moment?",
+	  "Answer": "Glance",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Stare",
+		"Examine",
+        "Study"
+	  ],
+	  "Standard": "L.3.5c"
+	},
+	{
+	  "ID": "G3-VOC-069",
+	  "Grade": 3,
+	  "Topic": "Shades of meaning — movement",
+	  "Question": "Which word suggests the strongest sound?",
+	  "Answer": "Roar",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Whisper",
+		"Murmur",
+        "Hum"
+	  ],
+	  "Standard": "L.3.5c"
+	},
+	{
+	  "ID": "G3-VOC-070",
+	  "Grade": 3,
+	  "Topic": "Shades of meaning — movement",
+	  "Question": "Which word suggests the lightest touch?",
+	  "Answer": "Tap",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Punch",
+		"Strike",
+        "Pound"
+	  ],
+	  "Standard": "L.3.5c"
+	},
+	{
+	  "ID": "G3-VOC-071",
+	  "Grade": 3,
+	  "Topic": "Shades of meaning — certainty",
+	  "Question": "Which word shows the greatest certainty?",
+	  "Answer": "Know",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Guess",
+		"Wonder",
+        "Suspect"
+	  ],
+	  "Standard": "L.3.5c"
+	},
+	{
+	  "ID": "G3-VOC-072",
+	  "Grade": 3,
+	  "Topic": "Shades of meaning — certainty",
+	  "Question": "Which word means thinking something might be true without being sure?",
+	  "Answer": "Suspect",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Know",
+		"Prove",
+        "Confirm"
+	  ],
+	  "Standard": "L.3.5c"
+	},
+	{
+	  "ID": "G3-VOC-073",
+	  "Grade": 3,
+	  "Topic": "Shades of meaning — certainty",
+	  "Question": "Which word suggests the strongest happiness?",
+	  "Answer": "Thrilled",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Pleased",
+		"Content",
+        "Satisfied"
+	  ],
+	  "Standard": "L.3.5c"
+	},
+	{
+	  "ID": "G3-VOC-074",
+	  "Grade": 3,
+	  "Topic": "Shades of meaning — certainty",
+	  "Question": "Which word suggests the mildest anger?",
+	  "Answer": "Annoyed",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Furious",
+		"Enraged",
+        "Outraged"
+	  ],
+	  "Standard": "L.3.5c"
+	},
+	{
+	  "ID": "G3-VOC-075",
+	  "Grade": 3,
+	  "Topic": "Shades of meaning — certainty",
+	  "Question": "Which word suggests the strongest cold feeling?",
+	  "Answer": "Freezing",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Cool",
+		"Chilly",
+        "Mild"
+	  ],
+	  "Standard": "L.3.5c"
+	},
+	{
+	  "ID": "G3-VOC-076",
+	  "Grade": 3,
+	  "Topic": "Real-life word connections",
+	  "Question": "Which place would most likely be \"crowded\"?",
+	  "Answer": "A packed concert",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"An empty hallway",
+		"A quiet library at night",
+        "A deserted beach"
+	  ],
+	  "Standard": "L.3.5b"
+	},
+	{
+	  "ID": "G3-VOC-077",
+	  "Grade": 3,
+	  "Topic": "Real-life word connections",
+	  "Question": "Which person is being \"patient\"?",
+	  "Answer": "Someone waiting calmly in line",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Someone pushing ahead",
+		"Someone yelling to hurry up",
+        "Someone leaving immediately"
+	  ],
+	  "Standard": "L.3.5b"
+	},
+	{
+	  "ID": "G3-VOC-078",
+	  "Grade": 3,
+	  "Topic": "Real-life word connections",
+	  "Question": "Which action shows someone is \"generous\"?",
+	  "Answer": "Sharing a snack with a friend",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Keeping every snack",
+		"Taking a friend’s snack",
+        "Hiding a snack"
+	  ],
+	  "Standard": "L.3.5b"
+	},
+	{
+	  "ID": "G3-VOC-079",
+	  "Grade": 3,
+	  "Topic": "Real-life word connections",
+	  "Question": "Which situation is \"peaceful\"?",
+	  "Answer": "A quiet walk in a garden",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"A loud argument",
+		"A busy fire drill",
+        "A cheering stadium"
+	  ],
+	  "Standard": "L.3.5b"
+	},
+	{
+	  "ID": "G3-VOC-080",
+	  "Grade": 3,
+	  "Topic": "Real-life word connections",
+	  "Question": "Which object would likely be \"transparent\"?",
+	  "Answer": "A clear glass window",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"A brick wall",
+		"A wooden door",
+        "A thick curtain"
+	  ],
+	  "Standard": "L.3.5b"
+	},
+	{
+	  "ID": "G3-VOC-081",
+	  "Grade": 3,
+	  "Topic": "Academic and time-order words",
+	  "Question": "What does \"before\" tell a reader?",
+	  "Answer": "Something happened earlier",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Something happened later",
+		"Two things are the same",
+        "Something will never happen"
+	  ],
+	  "Standard": "L.3.6"
+	},
+	{
+	  "ID": "G3-VOC-082",
+	  "Grade": 3,
+	  "Topic": "Academic and time-order words",
+	  "Question": "What does \"afterward\" mean?",
+	  "Answer": "At a later time",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"At the same time",
+		"Long before",
+        "Without warning"
+	  ],
+	  "Standard": "L.3.6"
+	},
+	{
+	  "ID": "G3-VOC-083",
+	  "Grade": 3,
+	  "Topic": "Academic and time-order words",
+	  "Question": "In \"Compare the two pictures,\" what does \"compare\" mean?",
+	  "Answer": "Look for similarities and differences",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Color both pictures",
+		"Choose the brighter picture",
+        "Count the pictures"
+	  ],
+	  "Standard": "L.3.6"
+	},
+	{
+	  "ID": "G3-VOC-084",
+	  "Grade": 3,
+	  "Topic": "Academic and time-order words",
+	  "Question": "In \"Explain your answer,\" what does \"explain\" mean?",
+	  "Answer": "Tell how or why",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Copy the question",
+		"Erase your answer",
+        "Answer with a drawing only"
+	  ],
+	  "Standard": "L.3.6"
+	},
+	{
+	  "ID": "G3-VOC-085",
+	  "Grade": 3,
+	  "Topic": "Academic and time-order words",
+	  "Question": "What does \"nearby\" mean?",
+	  "Answer": "Not far away",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Very long ago",
+		"Very expensive",
+        "High above"
+	  ],
+	  "Standard": "L.3.6"
+	}
+  ],
+  "Syntax": [
+	{
+	  "ID": "G3-SYN-001",
+	  "Grade": 3,
+	  "Topic": "Identifying nouns",
+	  "Question": "Which word is the noun in this sentence? \"The rabbit hops.\"",
+	  "Answer": "rabbit",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"The",
+		"hops",
+        "none"
+	  ],
+	  "Standard": "L.3.1a"
+	},
+	{
+	  "ID": "G3-SYN-002",
+	  "Grade": 3,
+	  "Topic": "Identifying nouns",
+	  "Question": "Which word is the noun in this sentence? \"A musician sings.\"",
+	  "Answer": "musician",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"A",
+		"sings",
+        "none"
+	  ],
+	  "Standard": "L.3.1a"
+	},
+	{
+	  "ID": "G3-SYN-003",
+	  "Grade": 3,
+	  "Topic": "Identifying nouns",
+	  "Question": "Which word is the noun in this sentence? \"The ocean sparkles.\"",
+	  "Answer": "ocean",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"The",
+		"sparkles",
+        "none"
+	  ],
+	  "Standard": "L.3.1a"
+	},
+	{
+	  "ID": "G3-SYN-004",
+	  "Grade": 3,
+	  "Topic": "Identifying nouns",
+	  "Question": "Which word is the noun in this sentence? \"Our teacher smiles.\"",
+	  "Answer": "teacher",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Our",
+		"smiles",
+        "none"
+	  ],
+	  "Standard": "L.3.1a"
+	},
+	{
+	  "ID": "G3-SYN-005",
+	  "Grade": 3,
+	  "Topic": "Identifying nouns",
+	  "Question": "Which word is the noun in this sentence? \"A candle flickers.\"",
+	  "Answer": "candle",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"A",
+		"flickers",
+        "none"
+	  ],
+	  "Standard": "L.3.1a"
+	},
+	{
+	  "ID": "G3-SYN-006",
+	  "Grade": 3,
+	  "Topic": "Identifying verbs",
+	  "Question": "Which word is the action verb in this sentence? \"Turtles swim slowly.\"",
+	  "Answer": "swim",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Turtles",
+		"slowly",
+        "none"
+	  ],
+	  "Standard": "L.3.1a"
+	},
+	{
+	  "ID": "G3-SYN-007",
+	  "Grade": 3,
+	  "Topic": "Identifying verbs",
+	  "Question": "Which word is the action verb in this sentence? \"The artist sketches daily.\"",
+	  "Answer": "sketches",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"artist",
+		"daily",
+        "The"
+	  ],
+	  "Standard": "L.3.1a"
+	},
+	{
+	  "ID": "G3-SYN-008",
+	  "Grade": 3,
+	  "Topic": "Identifying verbs",
+	  "Question": "Which word is the action verb in this sentence? \"Birds chirp outside.\"",
+	  "Answer": "chirp",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Birds",
+		"outside",
+        "none"
+	  ],
+	  "Standard": "L.3.1a"
+	},
+	{
+	  "ID": "G3-SYN-009",
+	  "Grade": 3,
+	  "Topic": "Identifying verbs",
+	  "Question": "Which word is the action verb in this sentence? \"My brother laughs loudly.\"",
+	  "Answer": "laughs",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"brother",
+		"loudly",
+        "My"
+	  ],
+	  "Standard": "L.3.1a"
+	},
+	{
+	  "ID": "G3-SYN-010",
+	  "Grade": 3,
+	  "Topic": "Identifying verbs",
+	  "Question": "Which word is the action verb in this sentence? \"The train arrives early.\"",
+	  "Answer": "arrives",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"train",
+		"early",
+        "The"
+	  ],
+	  "Standard": "L.3.1a"
+	},
+	{
+	  "ID": "G3-SYN-011",
+	  "Grade": 3,
+	  "Topic": "Adjectives",
+	  "Question": "Which word describes a noun in this sentence? \"The tiny mouse hid.\"",
+	  "Answer": "tiny",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"mouse",
+		"hid",
+        "The"
+	  ],
+	  "Standard": "L.3.1a"
+	},
+	{
+	  "ID": "G3-SYN-012",
+	  "Grade": 3,
+	  "Topic": "Adjectives",
+	  "Question": "Which word describes a noun in this sentence? \"A bright star shone.\"",
+	  "Answer": "bright",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"star",
+		"shone",
+        "A"
+	  ],
+	  "Standard": "L.3.1a"
+	},
+	{
+	  "ID": "G3-SYN-013",
+	  "Grade": 3,
+	  "Topic": "Adjectives",
+	  "Question": "Which word describes a noun in this sentence? \"She carried a heavy bag.\"",
+	  "Answer": "heavy",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"carried",
+		"bag",
+        "She"
+	  ],
+	  "Standard": "L.3.1a"
+	},
+	{
+	  "ID": "G3-SYN-014",
+	  "Grade": 3,
+	  "Topic": "Adjectives",
+	  "Question": "Which word describes a noun in this sentence? \"The noisy crowd cheered.\"",
+	  "Answer": "noisy",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"crowd",
+		"cheered",
+        "The"
+	  ],
+	  "Standard": "L.3.1a"
+	},
+	{
+	  "ID": "G3-SYN-015",
+	  "Grade": 3,
+	  "Topic": "Adjectives",
+	  "Question": "Which word describes a noun in this sentence? \"We found a smooth stone.\"",
+	  "Answer": "smooth",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"found",
+		"stone",
+        "We"
+	  ],
+	  "Standard": "L.3.1a"
+	},
+	{
+	  "ID": "G3-SYN-016",
+	  "Grade": 3,
+	  "Topic": "Adverbs",
+	  "Question": "Which word tells how an action happens? \"The kitten purred softly.\"",
+	  "Answer": "softly",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"kitten",
+		"purred",
+        "The"
+	  ],
+	  "Standard": "L.3.1a"
+	},
+	{
+	  "ID": "G3-SYN-017",
+	  "Grade": 3,
+	  "Topic": "Adverbs",
+	  "Question": "Which word tells how an action happens? \"Owen spoke clearly.\"",
+	  "Answer": "clearly",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Owen",
+		"spoke",
+        "none"
+	  ],
+	  "Standard": "L.3.1a"
+	},
+	{
+	  "ID": "G3-SYN-018",
+	  "Grade": 3,
+	  "Topic": "Adverbs",
+	  "Question": "Which word tells how an action happens? \"The dancers moved gracefully.\"",
+	  "Answer": "gracefully",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"dancers",
+		"moved",
+        "The"
+	  ],
+	  "Standard": "L.3.1a"
+	},
+	{
+	  "ID": "G3-SYN-019",
+	  "Grade": 3,
+	  "Topic": "Adverbs",
+	  "Question": "Which word tells how an action happens? \"Lia waited patiently.\"",
+	  "Answer": "patiently",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Lia",
+		"waited",
+        "none"
+	  ],
+	  "Standard": "L.3.1a"
+	},
+	{
+	  "ID": "G3-SYN-020",
+	  "Grade": 3,
+	  "Topic": "Adverbs",
+	  "Question": "Which word tells how an action happens? \"The bell rang loudly.\"",
+	  "Answer": "loudly",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"bell",
+		"rang",
+        "The"
+	  ],
+	  "Standard": "L.3.1a"
+	},
+	{
+	  "ID": "G3-SYN-021",
+	  "Grade": 3,
+	  "Topic": "Pronouns",
+	  "Question": "Choose the pronoun that correctly completes the sentence: \"___ am ready for class.\"",
+	  "Answer": "I",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Me",
+		"Mine",
+        "My"
+	  ],
+	  "Standard": "L.3.1a"
+	},
+	{
+	  "ID": "G3-SYN-022",
+	  "Grade": 3,
+	  "Topic": "Pronouns",
+	  "Question": "Choose the pronoun that correctly completes the sentence: \"___ are playing soccer.\"",
+	  "Answer": "They",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Them",
+		"Their",
+        "Theirs"
+	  ],
+	  "Standard": "L.3.1a"
+	},
+	{
+	  "ID": "G3-SYN-023",
+	  "Grade": 3,
+	  "Topic": "Pronouns",
+	  "Question": "Choose the pronoun that correctly completes the sentence: \"Mom gave the book to ___.\"",
+	  "Answer": "him",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"he",
+		"his",
+        "himselfs"
+	  ],
+	  "Standard": "L.3.1a"
+	},
+	{
+	  "ID": "G3-SYN-024",
+	  "Grade": 3,
+	  "Topic": "Pronouns",
+	  "Question": "Choose the pronoun that correctly completes the sentence: \"___ is my best friend.\"",
+	  "Answer": "She",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"Her",
+		"Hers",
+        "Them"
+	  ],
+	  "Standard": "L.3.1a"
+	},
+	{
+	  "ID": "G3-SYN-025",
+	  "Grade": 3,
+	  "Topic": "Pronouns",
+	  "Question": "Choose the pronoun that correctly completes the sentence: \"The jackets belong to ___.\"",
+	  "Answer": "us",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"we",
+		"our",
+        "ours"
+	  ],
+	  "Standard": "L.3.1a"
+	},
+	{
+	  "ID": "G3-SYN-026",
+	  "Grade": 3,
+	  "Topic": "Regular plural nouns",
+	  "Question": "Choose the correct plural noun: \"There are three ___ on the desk. (pencil)\"",
+	  "Answer": "pencils",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"pencil",
+		"penciles",
+        "pencilses"
+	  ],
+	  "Standard": "L.3.1b"
+	},
+	{
+	  "ID": "G3-SYN-027",
+	  "Grade": 3,
+	  "Topic": "Regular plural nouns",
+	  "Question": "Choose the correct plural noun: \"Two ___ are parked outside. (bus)\"",
+	  "Answer": "buses",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"buss",
+		"busies",
+        "bus"
+	  ],
+	  "Standard": "L.3.1b"
+	},
+	{
+	  "ID": "G3-SYN-028",
+	  "Grade": 3,
+	  "Topic": "Regular plural nouns",
+	  "Question": "Choose the correct plural noun: \"The baby has four toy ___. (box)\"",
+	  "Answer": "boxes",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"boxs",
+		"boxies",
+        "box"
+	  ],
+	  "Standard": "L.3.1b"
+	},
+	{
+	  "ID": "G3-SYN-029",
+	  "Grade": 3,
+	  "Topic": "Regular plural nouns",
+	  "Question": "Choose the correct plural noun: \"Many ___ grow in the garden. (flower)\"",
+	  "Answer": "flowers",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"floweres",
+		"floweries",
+        "flower"
+	  ],
+	  "Standard": "L.3.1b"
+	},
+	{
+	  "ID": "G3-SYN-030",
+	  "Grade": 3,
+	  "Topic": "Regular plural nouns",
+	  "Question": "Choose the correct plural noun: \"Several ___ floated across the pond. (duck)\"",
+	  "Answer": "ducks",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"duckes",
+		"duckies",
+        "duck"
+	  ],
+	  "Standard": "L.3.1b"
+	},
+	{
+	  "ID": "G3-SYN-031",
+	  "Grade": 3,
+	  "Topic": "Irregular plural nouns",
+	  "Question": "Choose the correct plural noun: \"The two ___ ran through the field. (mouse)\"",
+	  "Answer": "mice",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"mouses",
+		"mouse",
+        "mices"
+	  ],
+	  "Standard": "L.3.1b"
+	},
+	{
+	  "ID": "G3-SYN-032",
+	  "Grade": 3,
+	  "Topic": "Irregular plural nouns",
+	  "Question": "Choose the correct plural noun: \"Three ___ waited at the bus stop. (child)\"",
+	  "Answer": "children",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"childs",
+		"childes",
+        "childrens"
+	  ],
+	  "Standard": "L.3.1b"
+	},
+	{
+	  "ID": "G3-SYN-033",
+	  "Grade": 3,
+	  "Topic": "Irregular plural nouns",
+	  "Question": "Choose the correct plural noun: \"The farmer fed five ___. (sheep)\"",
+	  "Answer": "sheep",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"sheeps",
+		"sheepes",
+        "sheepen"
+	  ],
+	  "Standard": "L.3.1b"
+	},
+	{
+	  "ID": "G3-SYN-034",
+	  "Grade": 3,
+	  "Topic": "Irregular plural nouns",
+	  "Question": "Choose the correct plural noun: \"Two ___ swam beside the boat. (goose)\"",
+	  "Answer": "geese",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"gooses",
+		"goose",
+        "geeses"
+	  ],
+	  "Standard": "L.3.1b"
+	},
+	{
+	  "ID": "G3-SYN-035",
+	  "Grade": 3,
+	  "Topic": "Irregular plural nouns",
+	  "Question": "Choose the correct plural noun: \"The hikers saw several ___. (deer)\"",
+	  "Answer": "deer",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"deers",
+		"deeres",
+        "deeren"
+	  ],
+	  "Standard": "L.3.1b"
+	},
+	{
+	  "ID": "G3-SYN-036",
+	  "Grade": 3,
+	  "Topic": "Abstract nouns",
+	  "Question": "Choose the abstract noun that best completes the sentence: \"She showed great ___ by admitting her mistake.\"",
+	  "Answer": "honesty",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"height",
+		"weight",
+        "speed"
+	  ],
+	  "Standard": "L.3.1c"
+	},
+	{
+	  "ID": "G3-SYN-037",
+	  "Grade": 3,
+	  "Topic": "Abstract nouns",
+	  "Question": "Choose the abstract noun that best completes the sentence: \"The team celebrated their ___ after winning.\"",
+	  "Answer": "success",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"equipment",
+		"uniform",
+        "whistle"
+	  ],
+	  "Standard": "L.3.1c"
+	},
+	{
+	  "ID": "G3-SYN-038",
+	  "Grade": 3,
+	  "Topic": "Abstract nouns",
+	  "Question": "Choose the abstract noun that best completes the sentence: \"His ___ helped him face his fear.\"",
+	  "Answer": "courage",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"backpack",
+		"helmet",
+        "ticket"
+	  ],
+	  "Standard": "L.3.1c"
+	},
+	{
+	  "ID": "G3-SYN-039",
+	  "Grade": 3,
+	  "Topic": "Abstract nouns",
+	  "Question": "Choose the abstract noun that best completes the sentence: \"Her ___ made the new student feel welcome.\"",
+	  "Answer": "kindness",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"pencil",
+		"desk",
+        "jacket"
+	  ],
+	  "Standard": "L.3.1c"
+	},
+	{
+	  "ID": "G3-SYN-040",
+	  "Grade": 3,
+	  "Topic": "Abstract nouns",
+	  "Question": "Choose the abstract noun that best completes the sentence: \"We felt ___ when our lost dog returned.\"",
+	  "Answer": "relief",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"rainfall",
+		"sunshine",
+        "traffic"
+	  ],
+	  "Standard": "L.3.1c"
+	},
+	{
+	  "ID": "G3-SYN-041",
+	  "Grade": 3,
+	  "Topic": "Irregular past-tense verbs",
+	  "Question": "Choose the correct past-tense verb: \"Yesterday, we ___ to the park.\"",
+	  "Answer": "went",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"goed",
+		"go",
+        "going"
+	  ],
+	  "Standard": "L.3.1d"
+	},
+	{
+	  "ID": "G3-SYN-042",
+	  "Grade": 3,
+	  "Topic": "Irregular past-tense verbs",
+	  "Question": "Choose the correct past-tense verb: \"Last night, Dad ___ dinner.\"",
+	  "Answer": "made",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"maked",
+		"make",
+        "making"
+	  ],
+	  "Standard": "L.3.1d"
+	},
+	{
+	  "ID": "G3-SYN-043",
+	  "Grade": 3,
+	  "Topic": "Irregular past-tense verbs",
+	  "Question": "Choose the correct past-tense verb: \"She ___ a letter yesterday.\"",
+	  "Answer": "wrote",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"writed",
+		"write",
+        "writing"
+	  ],
+	  "Standard": "L.3.1d"
+	},
+	{
+	  "ID": "G3-SYN-044",
+	  "Grade": 3,
+	  "Topic": "Irregular past-tense verbs",
+	  "Question": "Choose the correct past-tense verb: \"The children ___ a butterfly outside.\"",
+	  "Answer": "saw",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"seed",
+		"see",
+        "seeing"
+	  ],
+	  "Standard": "L.3.1d"
+	},
+	{
+	  "ID": "G3-SYN-045",
+	  "Grade": 3,
+	  "Topic": "Irregular past-tense verbs",
+	  "Question": "Choose the correct past-tense verb: \"I ___ my lunch before recess.\"",
+	  "Answer": "ate",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"eated",
+		"eat",
+        "eating"
+	  ],
+	  "Standard": "L.3.1d"
+	},
+	{
+	  "ID": "G3-SYN-046",
+	  "Grade": 3,
+	  "Topic": "Regular past-tense verbs",
+	  "Question": "Choose the correct past-tense verb: \"Yesterday, the dog ___ across the yard.\"",
+	  "Answer": "jumped",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"jump",
+		"jumping",
+        "jumps"
+	  ],
+	  "Standard": "L.3.1d"
+	},
+	{
+	  "ID": "G3-SYN-047",
+	  "Grade": 3,
+	  "Topic": "Regular past-tense verbs",
+	  "Question": "Choose the correct past-tense verb: \"Last Saturday, I ___ my bike.\"",
+	  "Answer": "washed",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"wash",
+		"washing",
+        "washes"
+	  ],
+	  "Standard": "L.3.1d"
+	},
+	{
+	  "ID": "G3-SYN-048",
+	  "Grade": 3,
+	  "Topic": "Regular past-tense verbs",
+	  "Question": "Choose the correct past-tense verb: \"The class ___ the museum last week.\"",
+	  "Answer": "visited",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"visit",
+		"visiting",
+        "visits"
+	  ],
+	  "Standard": "L.3.1d"
+	},
+	{
+	  "ID": "G3-SYN-049",
+	  "Grade": 3,
+	  "Topic": "Regular past-tense verbs",
+	  "Question": "Choose the correct past-tense verb: \"At recess, we ___ a game.\"",
+	  "Answer": "played",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"play",
+		"playing",
+        "plays"
+	  ],
+	  "Standard": "L.3.1d"
+	},
+	{
+	  "ID": "G3-SYN-050",
+	  "Grade": 3,
+	  "Topic": "Regular past-tense verbs",
+	  "Question": "Choose the correct past-tense verb: \"My sister ___ her room yesterday.\"",
+	  "Answer": "cleaned",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"clean",
+		"cleaning",
+        "cleans"
+	  ],
+	  "Standard": "L.3.1d"
+	},
+	{
+	  "ID": "G3-SYN-051",
+	  "Grade": 3,
+	  "Topic": "Simple present tense",
+	  "Question": "Choose the verb that matches the present-time sentence: \"Every morning, Maya ___ breakfast.\"",
+	  "Answer": "eats",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"ate",
+		"will eat",
+        "eating"
+	  ],
+	  "Standard": "L.3.1e"
+	},
+	{
+	  "ID": "G3-SYN-052",
+	  "Grade": 3,
+	  "Topic": "Simple present tense",
+	  "Question": "Choose the verb that matches the present-time sentence: \"Each day, the sun ___ in the east.\"",
+	  "Answer": "rises",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"rose",
+		"will rise",
+        "rising"
+	  ],
+	  "Standard": "L.3.1e"
+	},
+	{
+	  "ID": "G3-SYN-053",
+	  "Grade": 3,
+	  "Topic": "Simple present tense",
+	  "Question": "Choose the verb that matches the present-time sentence: \"On Mondays, our class ___ in the library.\"",
+	  "Answer": "reads",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"readed",
+		"will read",
+        "reading"
+	  ],
+	  "Standard": "L.3.1e"
+	},
+	{
+	  "ID": "G3-SYN-054",
+	  "Grade": 3,
+	  "Topic": "Simple present tense",
+	  "Question": "Choose the verb that matches the present-time sentence: \"Every weekend, Leo ___ his grandparents.\"",
+	  "Answer": "visits",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"visited",
+		"will visit",
+        "visiting"
+	  ],
+	  "Standard": "L.3.1e"
+	},
+	{
+	  "ID": "G3-SYN-055",
+	  "Grade": 3,
+	  "Topic": "Simple present tense",
+	  "Question": "Choose the verb that matches the present-time sentence: \"At night, the owl ___ in the tree.\"",
+	  "Answer": "rests",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"rested",
+		"will rest",
+        "resting"
+	  ],
+	  "Standard": "L.3.1e"
+	},
+	{
+	  "ID": "G3-SYN-056",
+	  "Grade": 3,
+	  "Topic": "Simple future tense",
+	  "Question": "Choose the future-tense phrase: \"Tomorrow, I ___ my cousin.\"",
+	  "Answer": "will visit",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"visited",
+		"visit yesterday",
+        "visiting"
+	  ],
+	  "Standard": "L.3.1e"
+	},
+	{
+	  "ID": "G3-SYN-057",
+	  "Grade": 3,
+	  "Topic": "Simple future tense",
+	  "Question": "Choose the future-tense phrase: \"Next week, we ___ a science project.\"",
+	  "Answer": "will start",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"started",
+		"start yesterday",
+        "starting"
+	  ],
+	  "Standard": "L.3.1e"
+	},
+	{
+	  "ID": "G3-SYN-058",
+	  "Grade": 3,
+	  "Topic": "Simple future tense",
+	  "Question": "Choose the future-tense phrase: \"After lunch tomorrow, she ___ a poem.\"",
+	  "Answer": "will read",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"read yesterday",
+		"reading",
+        "reads yesterday"
+	  ],
+	  "Standard": "L.3.1e"
+	},
+	{
+	  "ID": "G3-SYN-059",
+	  "Grade": 3,
+	  "Topic": "Simple future tense",
+	  "Question": "Choose the future-tense phrase: \"On Friday, they ___ a new game.\"",
+	  "Answer": "will play",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"played",
+		"playing",
+        "plays yesterday"
+	  ],
+	  "Standard": "L.3.1e"
+	},
+	{
+	  "ID": "G3-SYN-060",
+	  "Grade": 3,
+	  "Topic": "Simple future tense",
+	  "Question": "Choose the future-tense phrase: \"Next month, Dad ___ a tree.\"",
+	  "Answer": "will plant",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"planted",
+		"planting",
+        "plants yesterday"
+	  ],
+	  "Standard": "L.3.1e"
+	},
+	{
+	  "ID": "G3-SYN-061",
+	  "Grade": 3,
+	  "Topic": "Subject–verb agreement — singular",
+	  "Question": "Choose the correct verb: \"The cat ___ on the sofa every afternoon.\"",
+	  "Answer": "sleeps",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"sleep",
+		"sleeping",
+        "slept tomorrow"
+	  ],
+	  "Standard": "L.3.1f"
+	},
+	{
+	  "ID": "G3-SYN-062",
+	  "Grade": 3,
+	  "Topic": "Subject–verb agreement — singular",
+	  "Question": "Choose the correct verb: \"My friend ___ a blue backpack.\"",
+	  "Answer": "has",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"have",
+		"having",
+        "haves"
+	  ],
+	  "Standard": "L.3.1f"
+	},
+	{
+	  "ID": "G3-SYN-063",
+	  "Grade": 3,
+	  "Topic": "Subject–verb agreement — singular",
+	  "Question": "Choose the correct verb: \"The bird ___ outside my window.\"",
+	  "Answer": "sings",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"sing",
+		"singing",
+        "sung tomorrow"
+	  ],
+	  "Standard": "L.3.1f"
+	},
+	{
+	  "ID": "G3-SYN-064",
+	  "Grade": 3,
+	  "Topic": "Subject–verb agreement — singular",
+	  "Question": "Choose the correct verb: \"A puppy ___ its tail when excited.\"",
+	  "Answer": "wags",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"wag",
+		"wagging",
+        "waged tomorrow"
+	  ],
+	  "Standard": "L.3.1f"
+	},
+	{
+	  "ID": "G3-SYN-065",
+	  "Grade": 3,
+	  "Topic": "Subject–verb agreement — singular",
+	  "Question": "Choose the correct verb: \"The teacher ___ the lesson clearly.\"",
+	  "Answer": "explains",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"explain",
+		"explaining",
+        "explained tomorrow"
+	  ],
+	  "Standard": "L.3.1f"
+	},
+	{
+	  "ID": "G3-SYN-066",
+	  "Grade": 3,
+	  "Topic": "Subject–verb agreement — plural",
+	  "Question": "Choose the correct verb: \"The kittens ___ in the basket every night.\"",
+	  "Answer": "sleep",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"sleeps",
+		"sleeping",
+        "slept tomorrow"
+	  ],
+	  "Standard": "L.3.1f"
+	},
+	{
+	  "ID": "G3-SYN-067",
+	  "Grade": 3,
+	  "Topic": "Subject–verb agreement — plural",
+	  "Question": "Choose the correct verb: \"My friends ___ to school together.\"",
+	  "Answer": "walk",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"walks",
+		"walking",
+        "walked tomorrow"
+	  ],
+	  "Standard": "L.3.1f"
+	},
+	{
+	  "ID": "G3-SYN-068",
+	  "Grade": 3,
+	  "Topic": "Subject–verb agreement — plural",
+	  "Question": "Choose the correct verb: \"Those birds ___ south each winter.\"",
+	  "Answer": "fly",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"flies",
+		"flying",
+        "flew tomorrow"
+	  ],
+	  "Standard": "L.3.1f"
+	},
+	{
+	  "ID": "G3-SYN-069",
+	  "Grade": 3,
+	  "Topic": "Subject–verb agreement — plural",
+	  "Question": "Choose the correct verb: \"The players ___ after each game.\"",
+	  "Answer": "practice",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"practices",
+		"practicing",
+        "practiced tomorrow"
+	  ],
+	  "Standard": "L.3.1f"
+	},
+	{
+	  "ID": "G3-SYN-070",
+	  "Grade": 3,
+	  "Topic": "Subject–verb agreement — plural",
+	  "Question": "Choose the correct verb: \"These flowers ___ in spring.\"",
+	  "Answer": "bloom",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"blooms",
+		"blooming",
+        "bloomed tomorrow"
+	  ],
+	  "Standard": "L.3.1f"
+	},
+	{
+	  "ID": "G3-SYN-071",
+	  "Grade": 3,
+	  "Topic": "Pronoun–antecedent agreement",
+	  "Question": "Choose the pronoun that matches the underlined subject: \"Ava forgot ___ lunchbox.\"",
+	  "Answer": "her",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"their",
+		"our",
+        "my"
+	  ],
+	  "Standard": "L.3.1f"
+	},
+	{
+	  "ID": "G3-SYN-072",
+	  "Grade": 3,
+	  "Topic": "Pronoun–antecedent agreement",
+	  "Question": "Choose the pronoun that matches the underlined subject: \"The boys brought ___ soccer ball.\"",
+	  "Answer": "their",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"his",
+		"her",
+        "my"
+	  ],
+	  "Standard": "L.3.1f"
+	},
+	{
+	  "ID": "G3-SYN-073",
+	  "Grade": 3,
+	  "Topic": "Pronoun–antecedent agreement",
+	  "Question": "Choose the pronoun that matches the underlined subject: \"I packed ___ notebook.\"",
+	  "Answer": "my",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"his",
+		"her",
+        "their"
+	  ],
+	  "Standard": "L.3.1f"
+	},
+	{
+	  "ID": "G3-SYN-074",
+	  "Grade": 3,
+	  "Topic": "Pronoun–antecedent agreement",
+	  "Question": "Choose the pronoun that matches the underlined subject: \"We cleaned ___ classroom.\"",
+	  "Answer": "our",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"his",
+		"her",
+        "my"
+	  ],
+	  "Standard": "L.3.1f"
+	},
+	{
+	  "ID": "G3-SYN-075",
+	  "Grade": 3,
+	  "Topic": "Pronoun–antecedent agreement",
+	  "Question": "Choose the pronoun that matches the underlined subject: \"The dog wagged ___ tail.\"",
+	  "Answer": "its",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"their",
+		"our",
+        "my"
+	  ],
+	  "Standard": "L.3.1f"
+	},
+	{
+	  "ID": "G3-SYN-076",
+	  "Grade": 3,
+	  "Topic": "Comparative and superlative",
+	  "Question": "Choose the correct describing word: \"Of the two hills, this one is ___.\"",
+	  "Answer": "steeper",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"steepest",
+		"most steepest",
+        "steeply"
+	  ],
+	  "Standard": "L.3.1g"
+	},
+	{
+	  "ID": "G3-SYN-077",
+	  "Grade": 3,
+	  "Topic": "Comparative and superlative",
+	  "Question": "Choose the correct describing word: \"Of all four runners, Ben is the ___.\"",
+	  "Answer": "fastest",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"faster",
+		"more fastest",
+        "fast"
+	  ],
+	  "Standard": "L.3.1g"
+	},
+	{
+	  "ID": "G3-SYN-078",
+	  "Grade": 3,
+	  "Topic": "Comparative and superlative",
+	  "Question": "Choose the correct describing word: \"This bag is ___ than that one.\"",
+	  "Answer": "heavier",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"heaviest",
+		"most heavy",
+        "heavily"
+	  ],
+	  "Standard": "L.3.1g"
+	},
+	{
+	  "ID": "G3-SYN-079",
+	  "Grade": 3,
+	  "Topic": "Comparative and superlative",
+	  "Question": "Choose the correct describing word: \"Of all the rooms, this is the ___.\"",
+	  "Answer": "quietest",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"quieter",
+		"most quietest",
+        "quietly"
+	  ],
+	  "Standard": "L.3.1g"
+	},
+	{
+	  "ID": "G3-SYN-080",
+	  "Grade": 3,
+	  "Topic": "Comparative and superlative",
+	  "Question": "Choose the correct describing word: \"My drawing is ___ than yesterday’s.\"",
+	  "Answer": "neater",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"neatest",
+		"most neatest",
+        "neatly"
+	  ],
+	  "Standard": "L.3.1g"
+	},
+	{
+	  "ID": "G3-SYN-081",
+	  "Grade": 3,
+	  "Topic": "Conjunctions and sentence relationships",
+	  "Question": "Choose the word that best completes the sentence: \"I wore a raincoat ___ it was raining.\"",
+	  "Answer": "because",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"but",
+		"or",
+        "yet"
+	  ],
+	  "Standard": "L.3.1h"
+	},
+	{
+	  "ID": "G3-SYN-082",
+	  "Grade": 3,
+	  "Topic": "Conjunctions and sentence relationships",
+	  "Question": "Choose the word that best completes the sentence: \"Would you like tea ___ juice?\"",
+	  "Answer": "or",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"because",
+		"although",
+        "so"
+	  ],
+	  "Standard": "L.3.1h"
+	},
+	{
+	  "ID": "G3-SYN-083",
+	  "Grade": 3,
+	  "Topic": "Conjunctions and sentence relationships",
+	  "Question": "Choose the word that best completes the sentence: \"We went inside ___ the bell rang.\"",
+	  "Answer": "when",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"or",
+		"but",
+        "yet"
+	  ],
+	  "Standard": "L.3.1h"
+	},
+	{
+	  "ID": "G3-SYN-084",
+	  "Grade": 3,
+	  "Topic": "Conjunctions and sentence relationships",
+	  "Question": "Choose the word that best completes the sentence: \"Leo practiced daily ___ he could improve.\"",
+	  "Answer": "so",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"but",
+		"or",
+        "although"
+	  ],
+	  "Standard": "L.3.1h"
+	},
+	{
+	  "ID": "G3-SYN-085",
+	  "Grade": 3,
+	  "Topic": "Conjunctions and sentence relationships",
+	  "Question": "Choose the word that best completes the sentence: \"___ the cookies were hot, we waited to eat them.\"",
+	  "Answer": "Because",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Or",
+		"But",
+        "And"
+	  ],
+	  "Standard": "L.3.1h"
+	}
+  ],
+  "Punctuation": [
+	{
+	  "ID": "G3-PUN-001",
+	  "Grade": 3,
+	  "Topic": "Statements and periods",
+	  "Question": "Which punctuation mark belongs at the underscore? \"The river flows into the ocean_\"",
+	  "Answer": ".",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"?",
+		"!",
+        ","
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-002",
+	  "Grade": 3,
+	  "Topic": "Statements and periods",
+	  "Question": "Which punctuation mark belongs at the underscore? \"My sister has a red bicycle_\"",
+	  "Answer": ".",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"?",
+		"!",
+        ","
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-003",
+	  "Grade": 3,
+	  "Topic": "Statements and periods",
+	  "Question": "Which punctuation mark belongs at the underscore? \"We planted beans in the garden_\"",
+	  "Answer": ".",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"?",
+		"!",
+        ","
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-004",
+	  "Grade": 3,
+	  "Topic": "Statements and periods",
+	  "Question": "Which punctuation mark belongs at the underscore? \"The library closes at five_\"",
+	  "Answer": ".",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"?",
+		"!",
+        ","
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-005",
+	  "Grade": 3,
+	  "Topic": "Statements and periods",
+	  "Question": "Which punctuation mark belongs at the underscore? \"The puppy slept on the rug_\"",
+	  "Answer": ".",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		"?",
+		"!",
+        ","
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-006",
+	  "Grade": 3,
+	  "Topic": "Questions and question marks",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Where did you put your notebook_\"",
+	  "Answer": "?",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"!",
+        ","
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-007",
+	  "Grade": 3,
+	  "Topic": "Questions and question marks",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Who is standing at the door_\"",
+	  "Answer": "?",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"!",
+        ","
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-008",
+	  "Grade": 3,
+	  "Topic": "Questions and question marks",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Why do leaves change color_\"",
+	  "Answer": "?",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"!",
+        ","
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-009",
+	  "Grade": 3,
+	  "Topic": "Questions and question marks",
+	  "Question": "Which punctuation mark belongs at the underscore? \"When does the movie begin_\"",
+	  "Answer": "?",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"!",
+        ","
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-010",
+	  "Grade": 3,
+	  "Topic": "Questions and question marks",
+	  "Question": "Which punctuation mark belongs at the underscore? \"How many books did you borrow_\"",
+	  "Answer": "?",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"!",
+        ","
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-011",
+	  "Grade": 3,
+	  "Topic": "Exclamations",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Watch out_\"",
+	  "Answer": "!",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ","
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-012",
+	  "Grade": 3,
+	  "Topic": "Exclamations",
+	  "Question": "Which punctuation mark belongs at the underscore? \"What an amazing surprise_\"",
+	  "Answer": "!",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ","
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-013",
+	  "Grade": 3,
+	  "Topic": "Exclamations",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Hooray, we won the game_\"",
+	  "Answer": "!",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ","
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-014",
+	  "Grade": 3,
+	  "Topic": "Exclamations",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Look at that huge rainbow_\"",
+	  "Answer": "!",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ","
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-015",
+	  "Grade": 3,
+	  "Topic": "Exclamations",
+	  "Question": "Which punctuation mark belongs at the underscore? \"That was incredible_\"",
+	  "Answer": "!",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ","
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-016",
+	  "Grade": 3,
+	  "Topic": "Commas in lists",
+	  "Question": "Which punctuation mark belongs at the underscore? \"We packed apples_ crackers, and water._\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-017",
+	  "Grade": 3,
+	  "Topic": "Commas in lists",
+	  "Question": "Which punctuation mark belongs at the underscore? \"The flag has red_ white, and blue stripes._\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-018",
+	  "Grade": 3,
+	  "Topic": "Commas in lists",
+	  "Question": "Which punctuation mark belongs at the underscore? \"She bought paper_ glue, and markers._\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-019",
+	  "Grade": 3,
+	  "Topic": "Commas in lists",
+	  "Question": "Which punctuation mark belongs at the underscore? \"I saw ducks_ geese, and swans._\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-020",
+	  "Grade": 3,
+	  "Topic": "Commas in lists",
+	  "Question": "Which punctuation mark belongs at the underscore? \"We studied frogs_ turtles, and fish._\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-021",
+	  "Grade": 3,
+	  "Topic": "Commas in full addresses",
+	  "Question": "Which punctuation mark belongs at the underscore? \"The letter came from Austin_ Texas._\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2b"
+	},
+	{
+	  "ID": "G3-PUN-022",
+	  "Grade": 3,
+	  "Topic": "Commas in full addresses",
+	  "Question": "Which punctuation mark belongs at the underscore? \"My cousin lives in Reno_ Nevada._\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2b"
+	},
+	{
+	  "ID": "G3-PUN-023",
+	  "Grade": 3,
+	  "Topic": "Commas in full addresses",
+	  "Question": "Which punctuation mark belongs at the underscore? \"We mailed it to Albany_ New York._\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2b"
+	},
+	{
+	  "ID": "G3-PUN-024",
+	  "Grade": 3,
+	  "Topic": "Commas in full addresses",
+	  "Question": "Which punctuation mark belongs at the underscore? \"The package arrived from Salem_ Oregon._\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2b"
+	},
+	{
+	  "ID": "G3-PUN-025",
+	  "Grade": 3,
+	  "Topic": "Commas in full addresses",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Their family moved to Boise_ Idaho._\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2b"
+	},
+	{
+	  "ID": "G3-PUN-026",
+	  "Grade": 3,
+	  "Topic": "Commas in street addresses",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Send the postcard to 18 Oak Street_ Denver, Colorado._\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2b"
+	},
+	{
+	  "ID": "G3-PUN-027",
+	  "Grade": 3,
+	  "Topic": "Commas in street addresses",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Mail the card to 42 Pine Avenue_ Portland, Oregon._\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2b"
+	},
+	{
+	  "ID": "G3-PUN-028",
+	  "Grade": 3,
+	  "Topic": "Commas in street addresses",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Deliver it to 5 River Road_ Tampa, Florida._\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2b"
+	},
+	{
+	  "ID": "G3-PUN-029",
+	  "Grade": 3,
+	  "Topic": "Commas in street addresses",
+	  "Question": "Which punctuation mark belongs at the underscore? \"The letter is addressed to 73 Hill Lane_ Tucson, Arizona._\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2b"
+	},
+	{
+	  "ID": "G3-PUN-030",
+	  "Grade": 3,
+	  "Topic": "Commas in street addresses",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Ship the box to 9 Cedar Court_ Madison, Wisconsin._\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2b"
+	},
+	{
+	  "ID": "G3-PUN-031",
+	  "Grade": 3,
+	  "Topic": "Dialogue tags before speech",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Maya said_ “I found the map.”\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2c"
+	},
+	{
+	  "ID": "G3-PUN-032",
+	  "Grade": 3,
+	  "Topic": "Dialogue tags before speech",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Dad asked_ “Are you ready?”\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2c"
+	},
+	{
+	  "ID": "G3-PUN-033",
+	  "Grade": 3,
+	  "Topic": "Dialogue tags before speech",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Liam shouted_ “The bus is here!”\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2c"
+	},
+	{
+	  "ID": "G3-PUN-034",
+	  "Grade": 3,
+	  "Topic": "Dialogue tags before speech",
+	  "Question": "Which punctuation mark belongs at the underscore? \"The teacher replied_ “That is correct.”\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2c"
+	},
+	{
+	  "ID": "G3-PUN-035",
+	  "Grade": 3,
+	  "Topic": "Dialogue tags before speech",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Ella whispered_ “Please be quiet.”\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2c"
+	},
+	{
+	  "ID": "G3-PUN-036",
+	  "Grade": 3,
+	  "Topic": "Dialogue tags after speech",
+	  "Question": "Which punctuation mark belongs at the underscore? \"“I am ready_” said Noah.\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2c"
+	},
+	{
+	  "ID": "G3-PUN-037",
+	  "Grade": 3,
+	  "Topic": "Dialogue tags after speech",
+	  "Question": "Which punctuation mark belongs at the underscore? \"“We found it_” said Mia.\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2c"
+	},
+	{
+	  "ID": "G3-PUN-038",
+	  "Grade": 3,
+	  "Topic": "Dialogue tags after speech",
+	  "Question": "Which punctuation mark belongs at the underscore? \"“The sun is setting_” said Ava.\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2c"
+	},
+	{
+	  "ID": "G3-PUN-039",
+	  "Grade": 3,
+	  "Topic": "Dialogue tags after speech",
+	  "Question": "Which punctuation mark belongs at the underscore? \"“This is my seat_” said Leo.\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2c"
+	},
+	{
+	  "ID": "G3-PUN-040",
+	  "Grade": 3,
+	  "Topic": "Dialogue tags after speech",
+	  "Question": "Which punctuation mark belongs at the underscore? \"“I finished early_” said Omar.\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2c"
+	},
+	{
+	  "ID": "G3-PUN-041",
+	  "Grade": 3,
+	  "Topic": "Possessive nouns — singular",
+	  "Question": "Which punctuation mark belongs at the underscore? \"The dog_s collar is blue.\"",
+	  "Answer": "'",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		",",
+		"\"",
+        "-"
+	  ],
+	  "Standard": "L.3.2d"
+	},
+	{
+	  "ID": "G3-PUN-042",
+	  "Grade": 3,
+	  "Topic": "Possessive nouns — singular",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Maya_s notebook is on the desk.\"",
+	  "Answer": "'",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		",",
+		"\"",
+        "-"
+	  ],
+	  "Standard": "L.3.2d"
+	},
+	{
+	  "ID": "G3-PUN-043",
+	  "Grade": 3,
+	  "Topic": "Possessive nouns — singular",
+	  "Question": "Which punctuation mark belongs at the underscore? \"The teacher_s chair is near the window.\"",
+	  "Answer": "'",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		",",
+		"\"",
+        "-"
+	  ],
+	  "Standard": "L.3.2d"
+	},
+	{
+	  "ID": "G3-PUN-044",
+	  "Grade": 3,
+	  "Topic": "Possessive nouns — singular",
+	  "Question": "Which punctuation mark belongs at the underscore? \"The rabbit_s ears are long.\"",
+	  "Answer": "'",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		",",
+		"\"",
+        "-"
+	  ],
+	  "Standard": "L.3.2d"
+	},
+	{
+	  "ID": "G3-PUN-045",
+	  "Grade": 3,
+	  "Topic": "Possessive nouns — singular",
+	  "Question": "Which punctuation mark belongs at the underscore? \"My brother_s bike needs air.\"",
+	  "Answer": "'",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		",",
+		"\"",
+        "-"
+	  ],
+	  "Standard": "L.3.2d"
+	},
+	{
+	  "ID": "G3-PUN-046",
+	  "Grade": 3,
+	  "Topic": "Possessive nouns — plural",
+	  "Question": "Which punctuation mark belongs at the underscore? \"The students_ projects filled the room.\"",
+	  "Answer": "'",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		",",
+		"\"",
+        "-"
+	  ],
+	  "Standard": "L.3.2d"
+	},
+	{
+	  "ID": "G3-PUN-047",
+	  "Grade": 3,
+	  "Topic": "Possessive nouns — plural",
+	  "Question": "Which punctuation mark belongs at the underscore? \"The birds_ nests were high in the tree.\"",
+	  "Answer": "'",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		",",
+		"\"",
+        "-"
+	  ],
+	  "Standard": "L.3.2d"
+	},
+	{
+	  "ID": "G3-PUN-048",
+	  "Grade": 3,
+	  "Topic": "Possessive nouns — plural",
+	  "Question": "Which punctuation mark belongs at the underscore? \"The teachers_ lounge is upstairs.\"",
+	  "Answer": "'",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		",",
+		"\"",
+        "-"
+	  ],
+	  "Standard": "L.3.2d"
+	},
+	{
+	  "ID": "G3-PUN-049",
+	  "Grade": 3,
+	  "Topic": "Possessive nouns — plural",
+	  "Question": "Which punctuation mark belongs at the underscore? \"The players_ uniforms are clean.\"",
+	  "Answer": "'",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		",",
+		"\"",
+        "-"
+	  ],
+	  "Standard": "L.3.2d"
+	},
+	{
+	  "ID": "G3-PUN-050",
+	  "Grade": 3,
+	  "Topic": "Possessive nouns — plural",
+	  "Question": "Which punctuation mark belongs at the underscore? \"The dogs_ bowls are by the door.\"",
+	  "Answer": "'",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		",",
+		"\"",
+        "-"
+	  ],
+	  "Standard": "L.3.2d"
+	},
+	{
+	  "ID": "G3-PUN-051",
+	  "Grade": 3,
+	  "Topic": "Contractions — is and not",
+	  "Question": "Which punctuation mark belongs at the underscore? \"It_s raining outside.\"",
+	  "Answer": "'",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		",",
+		"\"",
+        "-"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-052",
+	  "Grade": 3,
+	  "Topic": "Contractions — is and not",
+	  "Question": "Which punctuation mark belongs at the underscore? \"She_s reading a book.\"",
+	  "Answer": "'",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		",",
+		"\"",
+        "-"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-053",
+	  "Grade": 3,
+	  "Topic": "Contractions — is and not",
+	  "Question": "Which punctuation mark belongs at the underscore? \"The soup isn_t ready yet.\"",
+	  "Answer": "'",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		",",
+		"\"",
+        "-"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-054",
+	  "Grade": 3,
+	  "Topic": "Contractions — is and not",
+	  "Question": "Which punctuation mark belongs at the underscore? \"That_s my favorite color.\"",
+	  "Answer": "'",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		",",
+		"\"",
+        "-"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-055",
+	  "Grade": 3,
+	  "Topic": "Contractions — is and not",
+	  "Question": "Which punctuation mark belongs at the underscore? \"He doesn_t like spinach.\"",
+	  "Answer": "'",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		",",
+		"\"",
+        "-"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-056",
+	  "Grade": 3,
+	  "Topic": "Contractions — we and they",
+	  "Question": "Which punctuation mark belongs at the underscore? \"We_re leaving soon.\"",
+	  "Answer": "'",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		",",
+		"\"",
+        "-"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-057",
+	  "Grade": 3,
+	  "Topic": "Contractions — we and they",
+	  "Question": "Which punctuation mark belongs at the underscore? \"They_ll arrive tomorrow.\"",
+	  "Answer": "'",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		",",
+		"\"",
+        "-"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-058",
+	  "Grade": 3,
+	  "Topic": "Contractions — we and they",
+	  "Question": "Which punctuation mark belongs at the underscore? \"I_ve seen that movie.\"",
+	  "Answer": "'",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		",",
+		"\"",
+        "-"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-059",
+	  "Grade": 3,
+	  "Topic": "Contractions — we and they",
+	  "Question": "Which punctuation mark belongs at the underscore? \"You_re invited to the party.\"",
+	  "Answer": "'",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		",",
+		"\"",
+        "-"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-060",
+	  "Grade": 3,
+	  "Topic": "Contractions — we and they",
+	  "Question": "Which punctuation mark belongs at the underscore? \"We_ve finished our work.\"",
+	  "Answer": "'",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		",",
+		"\"",
+        "-"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-061",
+	  "Grade": 3,
+	  "Topic": "Commas in greetings",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Hello_ Maya!\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-062",
+	  "Grade": 3,
+	  "Topic": "Commas in greetings",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Good morning_ class!\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-063",
+	  "Grade": 3,
+	  "Topic": "Commas in greetings",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Thanks_ Dad!\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-064",
+	  "Grade": 3,
+	  "Topic": "Commas in greetings",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Welcome back_ friends!\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-065",
+	  "Grade": 3,
+	  "Topic": "Commas in greetings",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Goodbye_ everyone!\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-066",
+	  "Grade": 3,
+	  "Topic": "Commas with direct address",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Please sit down_ Liam.\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-067",
+	  "Grade": 3,
+	  "Topic": "Commas with direct address",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Could you help me_ Sofia?\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-068",
+	  "Grade": 3,
+	  "Topic": "Commas with direct address",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Come here_ Max.\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-069",
+	  "Grade": 3,
+	  "Topic": "Commas with direct address",
+	  "Question": "Which punctuation mark belongs at the underscore? \"That was excellent_ Nora!\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-070",
+	  "Grade": 3,
+	  "Topic": "Commas with direct address",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Are you listening_ Ben?\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-071",
+	  "Grade": 3,
+	  "Topic": "Commas after introductory words",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Yes_ I brought my lunch.\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-072",
+	  "Grade": 3,
+	  "Topic": "Commas after introductory words",
+	  "Question": "Which punctuation mark belongs at the underscore? \"No_ I have not seen it.\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-073",
+	  "Grade": 3,
+	  "Topic": "Commas after introductory words",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Well_ we can try again.\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-074",
+	  "Grade": 3,
+	  "Topic": "Commas after introductory words",
+	  "Question": "Which punctuation mark belongs at the underscore? \"First_ wash your hands.\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-075",
+	  "Grade": 3,
+	  "Topic": "Commas after introductory words",
+	  "Question": "Which punctuation mark belongs at the underscore? \"Finally_ the rain stopped.\"",
+	  "Answer": ",",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.3.2"
+	},
+	{
+	  "ID": "G3-PUN-076",
+	  "Grade": 3,
+	  "Topic": "Dialogue punctuation — questions",
+	  "Question": "Which punctuation mark belongs at the underscore? \"“Where is my hat_” asked Sam.\"",
+	  "Answer": "?",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"!",
+        ","
+	  ],
+	  "Standard": "L.3.2c"
+	},
+	{
+	  "ID": "G3-PUN-077",
+	  "Grade": 3,
+	  "Topic": "Dialogue punctuation — questions",
+	  "Question": "Which punctuation mark belongs at the underscore? \"“Can I join you_” asked Ella.\"",
+	  "Answer": "?",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"!",
+        ","
+	  ],
+	  "Standard": "L.3.2c"
+	},
+	{
+	  "ID": "G3-PUN-078",
+	  "Grade": 3,
+	  "Topic": "Dialogue punctuation — questions",
+	  "Question": "Which punctuation mark belongs at the underscore? \"“What time is it_” asked Dad.\"",
+	  "Answer": "?",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"!",
+        ","
+	  ],
+	  "Standard": "L.3.2c"
+	},
+	{
+	  "ID": "G3-PUN-079",
+	  "Grade": 3,
+	  "Topic": "Dialogue punctuation — questions",
+	  "Question": "Which punctuation mark belongs at the underscore? \"“Who took the pencil_” asked Mia.\"",
+	  "Answer": "?",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"!",
+        ","
+	  ],
+	  "Standard": "L.3.2c"
+	},
+	{
+	  "ID": "G3-PUN-080",
+	  "Grade": 3,
+	  "Topic": "Dialogue punctuation — questions",
+	  "Question": "Which punctuation mark belongs at the underscore? \"“Will you help me_” asked Leo.\"",
+	  "Answer": "?",
+	  "Difficulty": "Low",
+	  "Distractors": [
+		".",
+		"!",
+        ","
+	  ],
+	  "Standard": "L.3.2c"
+	}
+  ]
+}
