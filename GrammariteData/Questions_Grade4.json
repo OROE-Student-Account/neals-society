@@ -1,0 +1,3508 @@
+{
+  "Vocabulary": [
+	{
+	  "ID": "G4-VOC-001",
+	  "Grade": 4,
+	  "Topic": "Context clues",
+	  "Question": "Catputer carefully examined the tiny gears before fixing the machine. What does \"examined\" mean?",
+	  "Answer": "Looked at closely",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Threw away",
+		"Forgot about",
+        "Painted over"
+	  ],
+	  "Standard": "L.4.4a"
+	},
+	{
+	  "ID": "G4-VOC-002",
+	  "Grade": 4,
+	  "Topic": "Context clues",
+	  "Question": "The winding path through Royal Grotto was narrow, so only one traveler could pass at a time. What does \"narrow\" mean?",
+	  "Answer": "Not very wide",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Very noisy",
+		"Full of light",
+        "Very steep"
+	  ],
+	  "Standard": "L.4.4a"
+	},
+	{
+	  "ID": "G4-VOC-003",
+	  "Grade": 4,
+	  "Topic": "Context clues",
+	  "Question": "After days without rain, the soil near Concrete Jungle was parched. What does \"parched\" mean?",
+	  "Answer": "Extremely dry",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Covered in snow",
+		"Freshly planted",
+        "Very soft"
+	  ],
+	  "Standard": "L.4.4a"
+	},
+	{
+	  "ID": "G4-VOC-004",
+	  "Grade": 4,
+	  "Topic": "Context clues",
+	  "Question": "The teacher gave a brief explanation before class began. What does \"brief\" mean?",
+	  "Answer": "Short",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Confusing",
+		"Loud",
+        "Unkind"
+	  ],
+	  "Standard": "L.4.4a"
+	},
+	{
+	  "ID": "G4-VOC-005",
+	  "Grade": 4,
+	  "Topic": "Context clues",
+	  "Question": "Moustapler was reluctant to cross the shaky bridge and stayed behind. What does \"reluctant\" mean?",
+	  "Answer": "Unwilling",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Eager",
+		"Careless",
+        "Proud"
+	  ],
+	  "Standard": "L.4.4a"
+	},
+	{
+	  "ID": "G4-VOC-006",
+	  "Grade": 4,
+	  "Topic": "Context clues",
+	  "Question": "The mayor praised the volunteers for their generous donations. What does \"generous\" mean?",
+	  "Answer": "Willing to give",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Likely to forget",
+		"Afraid of heights",
+        "Quick to complain"
+	  ],
+	  "Standard": "L.4.4a"
+	},
+	{
+	  "ID": "G4-VOC-007",
+	  "Grade": 4,
+	  "Topic": "Context clues",
+	  "Question": "The directions were precise: take exactly four steps north. What does \"precise\" mean?",
+	  "Answer": "Exact",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Secret",
+		"Friendly",
+        "Unfinished"
+	  ],
+	  "Standard": "L.4.4a"
+	},
+	{
+	  "ID": "G4-VOC-008",
+	  "Grade": 4,
+	  "Topic": "Context clues",
+	  "Question": "The crowd was astonished when the tiny Papling lifted the heavy box. What does \"astonished\" mean?",
+	  "Answer": "Very surprised",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Deeply bored",
+		"Slightly annoyed",
+        "Ready to leave"
+	  ],
+	  "Standard": "L.4.4a"
+	},
+	{
+	  "ID": "G4-VOC-009",
+	  "Grade": 4,
+	  "Topic": "Context clues",
+	  "Question": "The clear pond was shallow enough for us to see its bottom. What does \"shallow\" mean?",
+	  "Answer": "Not deep",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Very cold",
+		"Extremely salty",
+        "Full of fish"
+	  ],
+	  "Standard": "L.4.4a"
+	},
+	{
+	  "ID": "G4-VOC-010",
+	  "Grade": 4,
+	  "Topic": "Context clues",
+	  "Question": "The lantern emitted a soft glow that lit the path. What does \"emitted\" mean?",
+	  "Answer": "Gave off",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Pulled in",
+		"Turned away",
+        "Covered up"
+	  ],
+	  "Standard": "L.4.4a"
+	},
+	{
+	  "ID": "G4-VOC-011",
+	  "Grade": 4,
+	  "Topic": "Context clues",
+	  "Question": "Although the hike was exhausting, the view made the effort worthwhile. What does \"worthwhile\" mean?",
+	  "Answer": "Worth the time and effort",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Impossible to finish",
+		"Easy to forget",
+        "Against the rules"
+	  ],
+	  "Standard": "L.4.4a"
+	},
+	{
+	  "ID": "G4-VOC-012",
+	  "Grade": 4,
+	  "Topic": "Context clues",
+	  "Question": "Everyone remained silent while Professor Hoot delivered the announcement. What does \"remained\" mean?",
+	  "Answer": "Stayed",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Shouted",
+		"Rushed",
+        "Changed"
+	  ],
+	  "Standard": "L.4.4a"
+	},
+	{
+	  "ID": "G4-VOC-013",
+	  "Grade": 4,
+	  "Topic": "Context clues",
+	  "Question": "The old stone wall was sturdy enough to withstand the storm. What does \"sturdy\" mean?",
+	  "Answer": "Strongly built",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Recently painted",
+		"Hard to find",
+        "Strangely shaped"
+	  ],
+	  "Standard": "L.4.4a"
+	},
+	{
+	  "ID": "G4-VOC-014",
+	  "Grade": 4,
+	  "Topic": "Context clues",
+	  "Question": "The instructions were vague, so the students asked for details. What does \"vague\" mean?",
+	  "Answer": "Not clear or specific",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Very accurate",
+		"Easy to follow",
+        "Written twice"
+	  ],
+	  "Standard": "L.4.4a"
+	},
+	{
+	  "ID": "G4-VOC-015",
+	  "Grade": 4,
+	  "Topic": "Context clues",
+	  "Question": "The rescue team searched the entire island but found only one trace of the missing map. What does \"trace\" mean?",
+	  "Answer": "A small sign or clue",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"A complete copy",
+		"A loud warning",
+        "A heavy container"
+	  ],
+	  "Standard": "L.4.4a"
+	},
+	{
+	  "ID": "G4-VOC-016",
+	  "Grade": 4,
+	  "Topic": "Context clues",
+	  "Question": "The artist used vibrant paints that seemed to glow. What does \"vibrant\" mean?",
+	  "Answer": "Bright and vivid",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Old and cracked",
+		"Pale and faded",
+        "Wet and sticky"
+	  ],
+	  "Standard": "L.4.4a"
+	},
+	{
+	  "ID": "G4-VOC-017",
+	  "Grade": 4,
+	  "Topic": "Context clues",
+	  "Question": "Bookworm carefully preserved the old pages in a dry box. What does \"preserved\" mean?",
+	  "Answer": "Kept safe from damage",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Gave away at once",
+		"Mixed with water",
+        "Cut into pieces"
+	  ],
+	  "Standard": "L.4.4a"
+	},
+	{
+	  "ID": "G4-VOC-018",
+	  "Grade": 4,
+	  "Topic": "Context clues",
+	  "Question": "The coach encouraged the team after a difficult loss. What does \"encouraged\" mean?",
+	  "Answer": "Gave hope or support",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Punished unfairly",
+		"Ignored completely",
+        "Asked to leave"
+	  ],
+	  "Standard": "L.4.4a"
+	},
+	{
+	  "ID": "G4-VOC-019",
+	  "Grade": 4,
+	  "Topic": "Context clues",
+	  "Question": "The river current was swift, carrying leaves downstream quickly. What does \"swift\" mean?",
+	  "Answer": "Fast",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Shallow",
+		"Muddy",
+        "Quiet"
+	  ],
+	  "Standard": "L.4.4a"
+	},
+	{
+	  "ID": "G4-VOC-020",
+	  "Grade": 4,
+	  "Topic": "Context clues",
+	  "Question": "We could barely distinguish one distant mountain from another in the fog. What does \"distinguish\" mean?",
+	  "Answer": "Tell apart",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Walk around",
+		"Climb over",
+        "Write about"
+	  ],
+	  "Standard": "L.4.4a"
+	},
+	{
+	  "ID": "G4-VOC-021",
+	  "Grade": 4,
+	  "Topic": "Context clues",
+	  "Question": "The scientist collected evidence before making a conclusion. What does \"evidence\" mean?",
+	  "Answer": "Information that supports an idea",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"A guess without reasons",
+		"An imaginary character",
+        "A promise about tomorrow"
+	  ],
+	  "Standard": "L.4.4a"
+	},
+	{
+	  "ID": "G4-VOC-022",
+	  "Grade": 4,
+	  "Topic": "Context clues",
+	  "Question": "The injured bird was fragile, so we handled it gently. What does \"fragile\" mean?",
+	  "Answer": "Easily damaged",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Very dangerous",
+		"Able to fly fast",
+        "Always hungry"
+	  ],
+	  "Standard": "L.4.4a"
+	},
+	{
+	  "ID": "G4-VOC-023",
+	  "Grade": 4,
+	  "Topic": "Prefixes, suffixes and roots",
+	  "Question": "What does the prefix \"re-\" mean in \"rewrite\"?",
+	  "Answer": "Again",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Before",
+		"Without",
+        "Far away"
+	  ],
+	  "Standard": "L.4.4b"
+	},
+	{
+	  "ID": "G4-VOC-024",
+	  "Grade": 4,
+	  "Topic": "Prefixes, suffixes and roots",
+	  "Question": "What does the prefix \"pre-\" mean in \"preview\"?",
+	  "Answer": "Before",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"After",
+		"Across",
+        "Against"
+	  ],
+	  "Standard": "L.4.4b"
+	},
+	{
+	  "ID": "G4-VOC-025",
+	  "Grade": 4,
+	  "Topic": "Prefixes, suffixes and roots",
+	  "Question": "What does the prefix \"un-\" mean in \"unfair\"?",
+	  "Answer": "Not",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Together",
+		"Always",
+        "More"
+	  ],
+	  "Standard": "L.4.4b"
+	},
+	{
+	  "ID": "G4-VOC-026",
+	  "Grade": 4,
+	  "Topic": "Prefixes, suffixes and roots",
+	  "Question": "What does the prefix \"dis-\" mean in \"disagree\"?",
+	  "Answer": "Not or opposite of",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Full of",
+		"Before",
+        "Between"
+	  ],
+	  "Standard": "L.4.4b"
+	},
+	{
+	  "ID": "G4-VOC-027",
+	  "Grade": 4,
+	  "Topic": "Prefixes, suffixes and roots",
+	  "Question": "What does the suffix \"-less\" mean in \"careless\"?",
+	  "Answer": "Without",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Full of",
+		"Able to",
+        "One who"
+	  ],
+	  "Standard": "L.4.4b"
+	},
+	{
+	  "ID": "G4-VOC-028",
+	  "Grade": 4,
+	  "Topic": "Prefixes, suffixes and roots",
+	  "Question": "What does the suffix \"-ful\" mean in \"hopeful\"?",
+	  "Answer": "Full of",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Without",
+		"Earlier than",
+        "A place for"
+	  ],
+	  "Standard": "L.4.4b"
+	},
+	{
+	  "ID": "G4-VOC-029",
+	  "Grade": 4,
+	  "Topic": "Prefixes, suffixes and roots",
+	  "Question": "What does the suffix \"-er\" mean in \"painter\"?",
+	  "Answer": "A person who does something",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The opposite of",
+		"A small version of",
+        "Done again"
+	  ],
+	  "Standard": "L.4.4b"
+	},
+	{
+	  "ID": "G4-VOC-030",
+	  "Grade": 4,
+	  "Topic": "Prefixes, suffixes and roots",
+	  "Question": "What does the root \"tele\" mean in \"telephone\"?",
+	  "Answer": "Far away",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Water",
+		"Light",
+        "Writing"
+	  ],
+	  "Standard": "L.4.4b"
+	},
+	{
+	  "ID": "G4-VOC-031",
+	  "Grade": 4,
+	  "Topic": "Prefixes, suffixes and roots",
+	  "Question": "What does the root \"photo\" mean in \"photograph\"?",
+	  "Answer": "Light",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Sound",
+		"Heat",
+        "Earth"
+	  ],
+	  "Standard": "L.4.4b"
+	},
+	{
+	  "ID": "G4-VOC-032",
+	  "Grade": 4,
+	  "Topic": "Prefixes, suffixes and roots",
+	  "Question": "What does the root \"graph\" mean in \"autograph\"?",
+	  "Answer": "Write",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Carry",
+		"Hear",
+        "Measure"
+	  ],
+	  "Standard": "L.4.4b"
+	},
+	{
+	  "ID": "G4-VOC-033",
+	  "Grade": 4,
+	  "Topic": "Prefixes, suffixes and roots",
+	  "Question": "What does the root \"bio\" mean in \"biology\"?",
+	  "Answer": "Life",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Time",
+		"Earth",
+        "Sound"
+	  ],
+	  "Standard": "L.4.4b"
+	},
+	{
+	  "ID": "G4-VOC-034",
+	  "Grade": 4,
+	  "Topic": "Prefixes, suffixes and roots",
+	  "Question": "What does the root \"geo\" mean in \"geography\"?",
+	  "Answer": "Earth",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Light",
+		"Life",
+        "Star"
+	  ],
+	  "Standard": "L.4.4b"
+	},
+	{
+	  "ID": "G4-VOC-035",
+	  "Grade": 4,
+	  "Topic": "Prefixes, suffixes and roots",
+	  "Question": "What does the prefix \"sub-\" mean in \"submarine\"?",
+	  "Answer": "Under",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Above",
+		"Across",
+        "Twice"
+	  ],
+	  "Standard": "L.4.4b"
+	},
+	{
+	  "ID": "G4-VOC-036",
+	  "Grade": 4,
+	  "Topic": "Prefixes, suffixes and roots",
+	  "Question": "What does the prefix \"inter-\" mean in \"international\"?",
+	  "Answer": "Between or among",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Before",
+		"Against",
+        "Without"
+	  ],
+	  "Standard": "L.4.4b"
+	},
+	{
+	  "ID": "G4-VOC-037",
+	  "Grade": 4,
+	  "Topic": "Prefixes, suffixes and roots",
+	  "Question": "What does the prefix \"mis-\" suggest in \"misread\"?",
+	  "Answer": "Incorrectly",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Quickly",
+		"Repeatedly",
+        "Quietly"
+	  ],
+	  "Standard": "L.4.4b"
+	},
+	{
+	  "ID": "G4-VOC-038",
+	  "Grade": 4,
+	  "Topic": "Prefixes, suffixes and roots",
+	  "Question": "What does \"portable\" most likely mean if \"port\" means \"carry\"?",
+	  "Answer": "Able to be carried",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Unable to move",
+		"Made of paper",
+        "Easy to break"
+	  ],
+	  "Standard": "L.4.4b"
+	},
+	{
+	  "ID": "G4-VOC-039",
+	  "Grade": 4,
+	  "Topic": "Prefixes, suffixes and roots",
+	  "Question": "If \"spect\" means \"look,\" what does \"inspect\" most nearly mean?",
+	  "Answer": "Look closely at",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Listen carefully to",
+		"Write quickly about",
+        "Carry away"
+	  ],
+	  "Standard": "L.4.4b"
+	},
+	{
+	  "ID": "G4-VOC-040",
+	  "Grade": 4,
+	  "Topic": "Prefixes, suffixes and roots",
+	  "Question": "If \"aqua\" means \"water,\" which word is most connected to water?",
+	  "Answer": "Aquarium",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Astronomy",
+		"Autograph",
+        "Biography"
+	  ],
+	  "Standard": "L.4.4b"
+	},
+	{
+	  "ID": "G4-VOC-041",
+	  "Grade": 4,
+	  "Topic": "Prefixes, suffixes and roots",
+	  "Question": "If \"aud\" means \"hear,\" which word is most connected to sound?",
+	  "Answer": "Audience",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Portable",
+		"Geography",
+        "Microscope"
+	  ],
+	  "Standard": "L.4.4b"
+	},
+	{
+	  "ID": "G4-VOC-042",
+	  "Grade": 4,
+	  "Topic": "Prefixes, suffixes and roots",
+	  "Question": "If \"micro\" means \"small,\" what does \"microscope\" help you see?",
+	  "Answer": "Very small things",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Faraway planets",
+		"Hidden sounds",
+        "Future events"
+	  ],
+	  "Standard": "L.4.4b"
+	},
+	{
+	  "ID": "G4-VOC-043",
+	  "Grade": 4,
+	  "Topic": "Prefixes, suffixes and roots",
+	  "Question": "Which word means \"able to be read\"?",
+	  "Answer": "Readable",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Reader",
+		"Reading",
+        "Reread"
+	  ],
+	  "Standard": "L.4.4b"
+	},
+	{
+	  "ID": "G4-VOC-044",
+	  "Grade": 4,
+	  "Topic": "Similes and metaphors",
+	  "Question": "\"The moon was a silver coin in the sky.\" What kind of comparison is this?",
+	  "Answer": "Metaphor",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Simile",
+		"Question",
+        "Command"
+	  ],
+	  "Standard": "L.4.5a"
+	},
+	{
+	  "ID": "G4-VOC-045",
+	  "Grade": 4,
+	  "Topic": "Similes and metaphors",
+	  "Question": "\"The river sparkled like diamonds.\" What kind of comparison is this?",
+	  "Answer": "Simile",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Metaphor",
+		"Fact",
+        "Direction"
+	  ],
+	  "Standard": "L.4.5a"
+	},
+	{
+	  "ID": "G4-VOC-046",
+	  "Grade": 4,
+	  "Topic": "Similes and metaphors",
+	  "Question": "\"Gryffonage was as quiet as a mouse.\" What does this simile mean?",
+	  "Answer": "Very quiet",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Very small",
+		"Very hungry",
+        "Very fast"
+	  ],
+	  "Standard": "L.4.5a"
+	},
+	{
+	  "ID": "G4-VOC-047",
+	  "Grade": 4,
+	  "Topic": "Similes and metaphors",
+	  "Question": "\"The classroom was a beehive of activity.\" What does the metaphor suggest?",
+	  "Answer": "Everyone was busy",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"There were bees inside",
+		"The room was empty",
+        "The room was outdoors"
+	  ],
+	  "Standard": "L.4.5a"
+	},
+	{
+	  "ID": "G4-VOC-048",
+	  "Grade": 4,
+	  "Topic": "Similes and metaphors",
+	  "Question": "\"The climb felt like carrying a mountain.\" What does the comparison emphasize?",
+	  "Answer": "The climb felt very difficult",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The trail had no hills",
+		"The climber carried a rock",
+        "The mountain moved"
+	  ],
+	  "Standard": "L.4.5a"
+	},
+	{
+	  "ID": "G4-VOC-049",
+	  "Grade": 4,
+	  "Topic": "Similes and metaphors",
+	  "Question": "\"The clouds were soft blankets over the hills.\" What is being compared to blankets?",
+	  "Answer": "Clouds",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Hills",
+		"Travelers",
+        "Trees"
+	  ],
+	  "Standard": "L.4.5a"
+	},
+	{
+	  "ID": "G4-VOC-050",
+	  "Grade": 4,
+	  "Topic": "Similes and metaphors",
+	  "Question": "\"Her smile was as bright as sunshine.\" What does this comparison suggest?",
+	  "Answer": "Her smile was cheerful",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"She was looking at the sun",
+		"Her teeth were glowing",
+        "She was outdoors"
+	  ],
+	  "Standard": "L.4.5a"
+	},
+	{
+	  "ID": "G4-VOC-051",
+	  "Grade": 4,
+	  "Topic": "Similes and metaphors",
+	  "Question": "\"The test was a mountain to climb.\" What does the metaphor suggest?",
+	  "Answer": "The test was a big challenge",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The test was outside",
+		"A mountain was on the paper",
+        "The test had many pictures"
+	  ],
+	  "Standard": "L.4.5a"
+	},
+	{
+	  "ID": "G4-VOC-052",
+	  "Grade": 4,
+	  "Topic": "Similes and metaphors",
+	  "Question": "\"The kitten moved as silently as a shadow.\" Which quality is compared?",
+	  "Answer": "Quiet movement",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Dark fur",
+		"Long ears",
+        "Fast growth"
+	  ],
+	  "Standard": "L.4.5a"
+	},
+	{
+	  "ID": "G4-VOC-053",
+	  "Grade": 4,
+	  "Topic": "Similes and metaphors",
+	  "Question": "\"The book was a doorway to a new world.\" What does the metaphor suggest?",
+	  "Answer": "Reading opens new experiences",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The book was made of wood",
+		"The library had no doors",
+        "The world was very small"
+	  ],
+	  "Standard": "L.4.5a"
+	},
+	{
+	  "ID": "G4-VOC-054",
+	  "Grade": 4,
+	  "Topic": "Similes and metaphors",
+	  "Question": "\"His voice was like thunder.\" What does this simile suggest?",
+	  "Answer": "It was very loud",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"He was outdoors",
+		"He was scared of storms",
+        "He sang softly"
+	  ],
+	  "Standard": "L.4.5a"
+	},
+	{
+	  "ID": "G4-VOC-055",
+	  "Grade": 4,
+	  "Topic": "Similes and metaphors",
+	  "Question": "\"The stars looked like tiny lanterns.\" What is being compared to lanterns?",
+	  "Answer": "Stars",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Clouds",
+		"Streets",
+        "Waves"
+	  ],
+	  "Standard": "L.4.5a"
+	},
+	{
+	  "ID": "G4-VOC-056",
+	  "Grade": 4,
+	  "Topic": "Similes and metaphors",
+	  "Question": "\"The wind was an invisible dancer.\" What kind of comparison is used?",
+	  "Answer": "Metaphor",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Simile",
+		"Definition",
+        "Instruction"
+	  ],
+	  "Standard": "L.4.5a"
+	},
+	{
+	  "ID": "G4-VOC-057",
+	  "Grade": 4,
+	  "Topic": "Similes and metaphors",
+	  "Question": "\"The path twisted like a ribbon.\" What is emphasized?",
+	  "Answer": "The winding shape",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The color of the rocks",
+		"The length of the day",
+        "The width of the river"
+	  ],
+	  "Standard": "L.4.5a"
+	},
+	{
+	  "ID": "G4-VOC-058",
+	  "Grade": 4,
+	  "Topic": "Similes and metaphors",
+	  "Question": "\"Her ideas were seeds that grew into a plan.\" What does \"seeds\" represent?",
+	  "Answer": "Small beginnings",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Actual plants",
+		"Forgotten mistakes",
+        "Finished books"
+	  ],
+	  "Standard": "L.4.5a"
+	},
+	{
+	  "ID": "G4-VOC-059",
+	  "Grade": 4,
+	  "Topic": "Similes and metaphors",
+	  "Question": "\"The old clock ticked as steadily as a heartbeat.\" What is being compared?",
+	  "Answer": "Two repeated rhythms",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Two colors",
+		"Two sizes",
+        "Two locations"
+	  ],
+	  "Standard": "L.4.5a"
+	},
+	{
+	  "ID": "G4-VOC-060",
+	  "Grade": 4,
+	  "Topic": "Idioms and proverbs",
+	  "Question": "What does \"break the ice\" mean when meeting new people?",
+	  "Answer": "Help everyone feel comfortable",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Break frozen water",
+		"Leave immediately",
+        "Forget someone’s name"
+	  ],
+	  "Standard": "L.4.5b"
+	},
+	{
+	  "ID": "G4-VOC-061",
+	  "Grade": 4,
+	  "Topic": "Idioms and proverbs",
+	  "Question": "What does \"piece of cake\" mean in \"The puzzle was a piece of cake\"?",
+	  "Answer": "Very easy",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Delicious",
+		"Very expensive",
+        "Missing a piece"
+	  ],
+	  "Standard": "L.4.5b"
+	},
+	{
+	  "ID": "G4-VOC-062",
+	  "Grade": 4,
+	  "Topic": "Idioms and proverbs",
+	  "Question": "What does \"hit the books\" mean?",
+	  "Answer": "Start studying",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Throw books",
+		"Close the library",
+        "Buy textbooks"
+	  ],
+	  "Standard": "L.4.5b"
+	},
+	{
+	  "ID": "G4-VOC-063",
+	  "Grade": 4,
+	  "Topic": "Idioms and proverbs",
+	  "Question": "What does \"under the weather\" mean?",
+	  "Answer": "Feeling ill",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Standing outside",
+		"Watching clouds",
+        "Traveling by plane"
+	  ],
+	  "Standard": "L.4.5b"
+	},
+	{
+	  "ID": "G4-VOC-064",
+	  "Grade": 4,
+	  "Topic": "Idioms and proverbs",
+	  "Question": "What does \"spill the beans\" mean?",
+	  "Answer": "Reveal a secret",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Drop groceries",
+		"Cook dinner",
+        "Plant seeds"
+	  ],
+	  "Standard": "L.4.5b"
+	},
+	{
+	  "ID": "G4-VOC-065",
+	  "Grade": 4,
+	  "Topic": "Idioms and proverbs",
+	  "Question": "What does \"once in a blue moon\" mean?",
+	  "Answer": "Very rarely",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Every night",
+		"At sunrise",
+        "During a storm"
+	  ],
+	  "Standard": "L.4.5b"
+	},
+	{
+	  "ID": "G4-VOC-066",
+	  "Grade": 4,
+	  "Topic": "Idioms and proverbs",
+	  "Question": "What does \"the early bird catches the worm\" suggest?",
+	  "Answer": "Being prepared early can help",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Birds never sleep",
+		"Worms only come out at night",
+        "Every task is easy"
+	  ],
+	  "Standard": "L.4.5b"
+	},
+	{
+	  "ID": "G4-VOC-067",
+	  "Grade": 4,
+	  "Topic": "Idioms and proverbs",
+	  "Question": "What does \"look before you leap\" advise?",
+	  "Answer": "Think before acting",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Jump as high as possible",
+		"Always take a shortcut",
+        "Avoid learning new things"
+	  ],
+	  "Standard": "L.4.5b"
+	},
+	{
+	  "ID": "G4-VOC-068",
+	  "Grade": 4,
+	  "Topic": "Idioms and proverbs",
+	  "Question": "What does \"practice makes perfect\" encourage?",
+	  "Answer": "Keep working to improve",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Stop when you make an error",
+		"Never ask for help",
+        "Only try easy tasks"
+	  ],
+	  "Standard": "L.4.5b"
+	},
+	{
+	  "ID": "G4-VOC-069",
+	  "Grade": 4,
+	  "Topic": "Idioms and proverbs",
+	  "Question": "What does \"actions speak louder than words\" suggest?",
+	  "Answer": "What people do matters more than promises",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Speaking is always wrong",
+		"Quiet people work faster",
+        "Words cannot teach"
+	  ],
+	  "Standard": "L.4.5b"
+	},
+	{
+	  "ID": "G4-VOC-070",
+	  "Grade": 4,
+	  "Topic": "Idioms and proverbs",
+	  "Question": "What does \"better late than never\" mean?",
+	  "Answer": "Doing something late can be better than not doing it",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Arriving late is always best",
+		"There is no need to plan",
+        "Time never matters"
+	  ],
+	  "Standard": "L.4.5b"
+	},
+	{
+	  "ID": "G4-VOC-071",
+	  "Grade": 4,
+	  "Topic": "Idioms and proverbs",
+	  "Question": "What does \"many hands make light work\" suggest?",
+	  "Answer": "Working together makes tasks easier",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Hands can create light",
+		"Only one person should help",
+        "Big jobs need no planning"
+	  ],
+	  "Standard": "L.4.5b"
+	},
+	{
+	  "ID": "G4-VOC-072",
+	  "Grade": 4,
+	  "Topic": "Idioms and proverbs",
+	  "Question": "What does \"do not judge a book by its cover\" mean?",
+	  "Answer": "Appearances do not tell the whole story",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Every book has the same plot",
+		"Covers should never have pictures",
+        "Reading is a waste of time"
+	  ],
+	  "Standard": "L.4.5b"
+	},
+	{
+	  "ID": "G4-VOC-073",
+	  "Grade": 4,
+	  "Topic": "Word relationships and reference skills",
+	  "Question": "Which word is closest in meaning to \"furious\"?",
+	  "Answer": "Enraged",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Content",
+		"Timid",
+        "Sleepy"
+	  ],
+	  "Standard": "L.4.5c"
+	},
+	{
+	  "ID": "G4-VOC-074",
+	  "Grade": 4,
+	  "Topic": "Word relationships and reference skills",
+	  "Question": "Which word is the opposite of \"scarce\"?",
+	  "Answer": "Plentiful",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Rare",
+		"Limited",
+        "Missing"
+	  ],
+	  "Standard": "L.4.5c"
+	},
+	{
+	  "ID": "G4-VOC-075",
+	  "Grade": 4,
+	  "Topic": "Word relationships and reference skills",
+	  "Question": "Which word is closest in meaning to \"cautious\"?",
+	  "Answer": "Careful",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Reckless",
+		"Noisy",
+        "Hungry"
+	  ],
+	  "Standard": "L.4.5c"
+	},
+	{
+	  "ID": "G4-VOC-076",
+	  "Grade": 4,
+	  "Topic": "Word relationships and reference skills",
+	  "Question": "Which word is the opposite of \"ancient\"?",
+	  "Answer": "Modern",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Old",
+		"Historic",
+        "Aged"
+	  ],
+	  "Standard": "L.4.5c"
+	},
+	{
+	  "ID": "G4-VOC-077",
+	  "Grade": 4,
+	  "Topic": "Word relationships and reference skills",
+	  "Question": "Which word means a stronger feeling than \"pleased\"?",
+	  "Answer": "Delighted",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Satisfied",
+		"Okay",
+        "Indifferent"
+	  ],
+	  "Standard": "L.4.5c"
+	},
+	{
+	  "ID": "G4-VOC-078",
+	  "Grade": 4,
+	  "Topic": "Word relationships and reference skills",
+	  "Question": "Which word is most precise for describing someone moving quietly to avoid being seen?",
+	  "Answer": "Crept",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Went",
+		"Traveled",
+        "Moved"
+	  ],
+	  "Standard": "L.4.5c"
+	},
+	{
+	  "ID": "G4-VOC-079",
+	  "Grade": 4,
+	  "Topic": "Word relationships and reference skills",
+	  "Question": "Which word is most precise for describing light rain?",
+	  "Answer": "Drizzle",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Storm",
+		"Downpour",
+        "Flood"
+	  ],
+	  "Standard": "L.4.5c"
+	},
+	{
+	  "ID": "G4-VOC-080",
+	  "Grade": 4,
+	  "Topic": "Word relationships and reference skills",
+	  "Question": "Which word is closest in meaning to \"observe\"?",
+	  "Answer": "Notice carefully",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Ignore",
+		"Misplace",
+        "Invent"
+	  ],
+	  "Standard": "L.4.5c"
+	},
+	{
+	  "ID": "G4-VOC-081",
+	  "Grade": 4,
+	  "Topic": "Word relationships and reference skills",
+	  "Question": "Which word is the opposite of \"expand\"?",
+	  "Answer": "Shrink",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Grow",
+		"Widen",
+        "Increase"
+	  ],
+	  "Standard": "L.4.5c"
+	},
+	{
+	  "ID": "G4-VOC-082",
+	  "Grade": 4,
+	  "Topic": "Word relationships and reference skills",
+	  "Question": "Which reference tool is best for checking how to pronounce an unfamiliar word?",
+	  "Answer": "Dictionary",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Atlas",
+		"Calendar",
+        "Ruler"
+	  ],
+	  "Standard": "L.4.4c"
+	},
+	{
+	  "ID": "G4-VOC-083",
+	  "Grade": 4,
+	  "Topic": "Word relationships and reference skills",
+	  "Question": "Which reference tool is best for finding another word meaning nearly the same as \"happy\"?",
+	  "Answer": "Thesaurus",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Atlas",
+		"Timeline",
+        "Recipe book"
+	  ],
+	  "Standard": "L.4.4c"
+	},
+	{
+	  "ID": "G4-VOC-084",
+	  "Grade": 4,
+	  "Topic": "Word relationships and reference skills",
+	  "Question": "Which word has the strongest meaning?",
+	  "Answer": "Terrified",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Nervous",
+		"Uneasy",
+        "Concerned"
+	  ],
+	  "Standard": "L.4.5c"
+	},
+	{
+	  "ID": "G4-VOC-085",
+	  "Grade": 4,
+	  "Topic": "Word relationships and reference skills",
+	  "Question": "Which word is the best antonym for \"temporary\"?",
+	  "Answer": "Permanent",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Brief",
+		"Short-lived",
+        "Passing"
+	  ],
+	  "Standard": "L.4.5c"
+	}
+  ],
+  "Syntax": [
+	{
+	  "ID": "G4-SYN-001",
+	  "Grade": 4,
+	  "Topic": "Progressive verb tenses: past, present, future",
+	  "Question": "Choose the correct verb phrase. Yesterday at noon, Catputer ___ the broken clock.",
+	  "Answer": "was repairing",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"is repairing",
+		"will be repairing",
+        "were repairing"
+	  ],
+	  "Standard": "L.4.1b"
+	},
+	{
+	  "ID": "G4-SYN-002",
+	  "Grade": 4,
+	  "Topic": "Progressive verb tenses: past, present, future",
+	  "Question": "Choose the correct verb phrase. Right now, the students ___ their stories.",
+	  "Answer": "are writing",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"was writing",
+		"will be writing",
+        "is writing"
+	  ],
+	  "Standard": "L.4.1b"
+	},
+	{
+	  "ID": "G4-SYN-003",
+	  "Grade": 4,
+	  "Topic": "Progressive verb tenses: past, present, future",
+	  "Question": "Choose the correct verb phrase. Tomorrow at this time, we ___ through The Heights.",
+	  "Answer": "will be hiking",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"were hiking",
+		"are hiking",
+        "was hiking"
+	  ],
+	  "Standard": "L.4.1b"
+	},
+	{
+	  "ID": "G4-SYN-004",
+	  "Grade": 4,
+	  "Topic": "Progressive verb tenses: past, present, future",
+	  "Question": "Choose the correct verb phrase. Last night, the lantern ___ brightly.",
+	  "Answer": "was glowing",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"were glowing",
+		"is glowing",
+        "will be glowing"
+	  ],
+	  "Standard": "L.4.1b"
+	},
+	{
+	  "ID": "G4-SYN-005",
+	  "Grade": 4,
+	  "Topic": "Progressive verb tenses: past, present, future",
+	  "Question": "Choose the correct verb phrase. At the moment, the birds ___ above the trees.",
+	  "Answer": "are flying",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"is flying",
+		"was flying",
+        "will be flying"
+	  ],
+	  "Standard": "L.4.1b"
+	},
+	{
+	  "ID": "G4-SYN-006",
+	  "Grade": 4,
+	  "Topic": "Progressive verb tenses: past, present, future",
+	  "Question": "Choose the correct verb phrase. When the bell rang, I ___ a chapter of my book.",
+	  "Answer": "was reading",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"am reading",
+		"will be reading",
+        "were reading"
+	  ],
+	  "Standard": "L.4.1b"
+	},
+	{
+	  "ID": "G4-SYN-007",
+	  "Grade": 4,
+	  "Topic": "Progressive verb tenses: past, present, future",
+	  "Question": "Choose the correct verb phrase. Next Monday morning, our class ___ the museum.",
+	  "Answer": "will be visiting",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"was visiting",
+		"is visiting",
+        "were visiting"
+	  ],
+	  "Standard": "L.4.1b"
+	},
+	{
+	  "ID": "G4-SYN-008",
+	  "Grade": 4,
+	  "Topic": "Progressive verb tenses: past, present, future",
+	  "Question": "Choose the correct verb phrase. Listen! The puppy ___ at the door.",
+	  "Answer": "is barking",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"are barking",
+		"was barking",
+        "will be barking"
+	  ],
+	  "Standard": "L.4.1b"
+	},
+	{
+	  "ID": "G4-SYN-009",
+	  "Grade": 4,
+	  "Topic": "Progressive verb tenses: past, present, future",
+	  "Question": "Choose the correct verb phrase. At sunset yesterday, the travelers ___ the bridge.",
+	  "Answer": "were crossing",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"was crossing",
+		"are crossing",
+        "will be crossing"
+	  ],
+	  "Standard": "L.4.1b"
+	},
+	{
+	  "ID": "G4-SYN-010",
+	  "Grade": 4,
+	  "Topic": "Progressive verb tenses: past, present, future",
+	  "Question": "Choose the correct verb phrase. By this time tomorrow, she ___ in the race.",
+	  "Answer": "will be competing",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"were competing",
+		"was competing",
+        "is competing"
+	  ],
+	  "Standard": "L.4.1b"
+	},
+	{
+	  "ID": "G4-SYN-011",
+	  "Grade": 4,
+	  "Topic": "Progressive verb tenses: past, present, future",
+	  "Question": "Choose the correct verb phrase. During the storm last night, the leaves ___ across the road.",
+	  "Answer": "were blowing",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"was blowing",
+		"are blowing",
+        "will be blowing"
+	  ],
+	  "Standard": "L.4.1b"
+	},
+	{
+	  "ID": "G4-SYN-012",
+	  "Grade": 4,
+	  "Topic": "Progressive verb tenses: past, present, future",
+	  "Question": "Choose the correct verb phrase. Look outside! Professor Hoot ___ toward the school.",
+	  "Answer": "is flying",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"are flying",
+		"were flying",
+        "will be flying"
+	  ],
+	  "Standard": "L.4.1b"
+	},
+	{
+	  "ID": "G4-SYN-013",
+	  "Grade": 4,
+	  "Topic": "Modal auxiliaries",
+	  "Question": "Which modal best expresses a rule? \"Students ___ wear helmets on this course.\"",
+	  "Answer": "must",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"might",
+		"could",
+        "may"
+	  ],
+	  "Standard": "L.4.1c"
+	},
+	{
+	  "ID": "G4-SYN-014",
+	  "Grade": 4,
+	  "Topic": "Modal auxiliaries",
+	  "Question": "Which modal best expresses possibility? \"It ___ rain later this afternoon.\"",
+	  "Answer": "might",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"must",
+		"will",
+        "shall"
+	  ],
+	  "Standard": "L.4.1c"
+	},
+	{
+	  "ID": "G4-SYN-015",
+	  "Grade": 4,
+	  "Topic": "Modal auxiliaries",
+	  "Question": "Which modal best expresses permission? \"You ___ borrow my pencil.\"",
+	  "Answer": "may",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"must",
+		"will",
+        "should"
+	  ],
+	  "Standard": "L.4.1c"
+	},
+	{
+	  "ID": "G4-SYN-016",
+	  "Grade": 4,
+	  "Topic": "Modal auxiliaries",
+	  "Question": "Which modal best expresses ability? \"Catputer ___ solve the puzzle.\"",
+	  "Answer": "can",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"must",
+		"should",
+        "might"
+	  ],
+	  "Standard": "L.4.1c"
+	},
+	{
+	  "ID": "G4-SYN-017",
+	  "Grade": 4,
+	  "Topic": "Modal auxiliaries",
+	  "Question": "Which modal best gives advice? \"You ___ check your spelling before submitting.\"",
+	  "Answer": "should",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"can",
+		"may",
+        "might"
+	  ],
+	  "Standard": "L.4.1c"
+	},
+	{
+	  "ID": "G4-SYN-018",
+	  "Grade": 4,
+	  "Topic": "Modal auxiliaries",
+	  "Question": "Which modal best expresses a strong obligation? \"We ___ stop at the red light.\"",
+	  "Answer": "must",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"might",
+		"could",
+        "may"
+	  ],
+	  "Standard": "L.4.1c"
+	},
+	{
+	  "ID": "G4-SYN-019",
+	  "Grade": 4,
+	  "Topic": "Modal auxiliaries",
+	  "Question": "Which modal best expresses a polite request? \"___ you please open the window?\"",
+	  "Answer": "Could",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Must",
+		"Should",
+        "May"
+	  ],
+	  "Standard": "L.4.1c"
+	},
+	{
+	  "ID": "G4-SYN-020",
+	  "Grade": 4,
+	  "Topic": "Modal auxiliaries",
+	  "Question": "Which modal best shows uncertainty? \"The key ___ be in the drawer, but I am not sure.\"",
+	  "Answer": "might",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"must",
+		"will",
+        "shall"
+	  ],
+	  "Standard": "L.4.1c"
+	},
+	{
+	  "ID": "G4-SYN-021",
+	  "Grade": 4,
+	  "Topic": "Modal auxiliaries",
+	  "Question": "Which modal best shows a rule for the lab? \"Visitors ___ not touch the equipment.\"",
+	  "Answer": "must",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"could",
+		"might",
+        "may"
+	  ],
+	  "Standard": "L.4.1c"
+	},
+	{
+	  "ID": "G4-SYN-022",
+	  "Grade": 4,
+	  "Topic": "Modal auxiliaries",
+	  "Question": "Which modal best shows an ability in the past? \"When I was younger, I ___ climb that tree.\"",
+	  "Answer": "could",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"must",
+		"may",
+        "will"
+	  ],
+	  "Standard": "L.4.1c"
+	},
+	{
+	  "ID": "G4-SYN-023",
+	  "Grade": 4,
+	  "Topic": "Modal auxiliaries",
+	  "Question": "Which modal best expresses a recommendation? \"You ___ bring water on the hike.\"",
+	  "Answer": "should",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"might",
+		"may",
+        "can"
+	  ],
+	  "Standard": "L.4.1c"
+	},
+	{
+	  "ID": "G4-SYN-024",
+	  "Grade": 4,
+	  "Topic": "Modal auxiliaries",
+	  "Question": "Which modal best expresses permission in a question? \"___ I leave my backpack here?\"",
+	  "Answer": "May",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Must",
+		"Will",
+        "Should"
+	  ],
+	  "Standard": "L.4.1c"
+	},
+	{
+	  "ID": "G4-SYN-025",
+	  "Grade": 4,
+	  "Topic": "Relative pronouns and adverbs",
+	  "Question": "Choose the word that completes the sentence: \"The librarian ___ helped us find the map was kind.\"",
+	  "Answer": "who",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"where",
+		"when",
+        "why"
+	  ],
+	  "Standard": "L.4.1a"
+	},
+	{
+	  "ID": "G4-SYN-026",
+	  "Grade": 4,
+	  "Topic": "Relative pronouns and adverbs",
+	  "Question": "Choose the word that completes the sentence: \"The student ___ backpack is blue sits by the door.\"",
+	  "Answer": "whose",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"who",
+		"where",
+        "when"
+	  ],
+	  "Standard": "L.4.1a"
+	},
+	{
+	  "ID": "G4-SYN-027",
+	  "Grade": 4,
+	  "Topic": "Relative pronouns and adverbs",
+	  "Question": "Choose the word that completes the sentence: \"This is the park ___ we found Papling.\"",
+	  "Answer": "where",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"who",
+		"whose",
+        "when"
+	  ],
+	  "Standard": "L.4.1a"
+	},
+	{
+	  "ID": "G4-SYN-028",
+	  "Grade": 4,
+	  "Topic": "Relative pronouns and adverbs",
+	  "Question": "Choose the word that completes the sentence: \"I remember the day ___ we first visited Royal Grotto.\"",
+	  "Answer": "when",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"where",
+		"who",
+        "whose"
+	  ],
+	  "Standard": "L.4.1a"
+	},
+	{
+	  "ID": "G4-SYN-029",
+	  "Grade": 4,
+	  "Topic": "Relative pronouns and adverbs",
+	  "Question": "Choose the word that completes the sentence: \"Can you explain the reason ___ the lights went out?\"",
+	  "Answer": "why",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"who",
+		"where",
+        "whose"
+	  ],
+	  "Standard": "L.4.1a"
+	},
+	{
+	  "ID": "G4-SYN-030",
+	  "Grade": 4,
+	  "Topic": "Relative pronouns and adverbs",
+	  "Question": "Choose the word that completes the sentence: \"The book ___ I borrowed was about inventions.\"",
+	  "Answer": "that",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"who",
+		"where",
+        "when"
+	  ],
+	  "Standard": "L.4.1a"
+	},
+	{
+	  "ID": "G4-SYN-031",
+	  "Grade": 4,
+	  "Topic": "Relative pronouns and adverbs",
+	  "Question": "Choose the word that completes the sentence: \"The scientist ___ discovered the fossil gave a talk.\"",
+	  "Answer": "who",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"where",
+		"when",
+        "why"
+	  ],
+	  "Standard": "L.4.1a"
+	},
+	{
+	  "ID": "G4-SYN-032",
+	  "Grade": 4,
+	  "Topic": "Relative pronouns and adverbs",
+	  "Question": "Choose the word that completes the sentence: \"The girl ___ drawing won the contest smiled proudly.\"",
+	  "Answer": "whose",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"where",
+		"when",
+        "why"
+	  ],
+	  "Standard": "L.4.1a"
+	},
+	{
+	  "ID": "G4-SYN-033",
+	  "Grade": 4,
+	  "Topic": "Relative pronouns and adverbs",
+	  "Question": "Choose the word that completes the sentence: \"The town ___ we stopped for lunch had a busy market.\"",
+	  "Answer": "where",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"when",
+		"why",
+        "whose"
+	  ],
+	  "Standard": "L.4.1a"
+	},
+	{
+	  "ID": "G4-SYN-034",
+	  "Grade": 4,
+	  "Topic": "Relative pronouns and adverbs",
+	  "Question": "Choose the word that completes the sentence: \"Summer is the season ___ many flowers bloom.\"",
+	  "Answer": "when",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"who",
+		"whose",
+        "where"
+	  ],
+	  "Standard": "L.4.1a"
+	},
+	{
+	  "ID": "G4-SYN-035",
+	  "Grade": 4,
+	  "Topic": "Relative pronouns and adverbs",
+	  "Question": "Choose the word that completes the sentence: \"The machine ___ Catputer repaired is working again.\"",
+	  "Answer": "that",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"who",
+		"where",
+        "when"
+	  ],
+	  "Standard": "L.4.1a"
+	},
+	{
+	  "ID": "G4-SYN-036",
+	  "Grade": 4,
+	  "Topic": "Relative pronouns and adverbs",
+	  "Question": "Choose the word that completes the sentence: \"The player ___ found the hidden path shared the map.\"",
+	  "Answer": "who",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"whose",
+		"where",
+        "when"
+	  ],
+	  "Standard": "L.4.1a"
+	},
+	{
+	  "ID": "G4-SYN-037",
+	  "Grade": 4,
+	  "Topic": "Relative pronouns and adverbs",
+	  "Question": "Choose the word that completes the sentence: \"The guide explained the reason ___ the trail was closed.\"",
+	  "Answer": "why",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"where",
+		"who",
+        "whose"
+	  ],
+	  "Standard": "L.4.1a"
+	},
+	{
+	  "ID": "G4-SYN-038",
+	  "Grade": 4,
+	  "Topic": "Prepositional phrases",
+	  "Question": "Where is the book? \"The book is ___ the desk.\"",
+	  "Answer": "under",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"quickly",
+		"happily",
+        "bright"
+	  ],
+	  "Standard": "L.4.1e"
+	},
+	{
+	  "ID": "G4-SYN-039",
+	  "Grade": 4,
+	  "Topic": "Prepositional phrases",
+	  "Question": "Complete the sentence: \"The lantern hangs ___ the doorway.\"",
+	  "Answer": "above",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"softly",
+		"because",
+        "eager"
+	  ],
+	  "Standard": "L.4.1e"
+	},
+	{
+	  "ID": "G4-SYN-040",
+	  "Grade": 4,
+	  "Topic": "Prepositional phrases",
+	  "Question": "Complete the sentence: \"The travelers rested ___ the large tree.\"",
+	  "Answer": "beside",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"suddenly",
+		"friendly",
+        "carefully"
+	  ],
+	  "Standard": "L.4.1e"
+	},
+	{
+	  "ID": "G4-SYN-041",
+	  "Grade": 4,
+	  "Topic": "Prepositional phrases",
+	  "Question": "Complete the sentence: \"The train passed ___ the tunnel.\"",
+	  "Answer": "through",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"yesterday",
+		"smoothly",
+        "whenever"
+	  ],
+	  "Standard": "L.4.1e"
+	},
+	{
+	  "ID": "G4-SYN-042",
+	  "Grade": 4,
+	  "Topic": "Prepositional phrases",
+	  "Question": "Complete the sentence: \"Moustapler placed the ruler ___ the notebook.\"",
+	  "Answer": "inside",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"quietly",
+		"heavy",
+        "unless"
+	  ],
+	  "Standard": "L.4.1e"
+	},
+	{
+	  "ID": "G4-SYN-043",
+	  "Grade": 4,
+	  "Topic": "Prepositional phrases",
+	  "Question": "Which words form a prepositional phrase in \"The kitten slept beneath the chair\"?",
+	  "Answer": "beneath the chair",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The kitten",
+		"slept beneath",
+        "kitten slept"
+	  ],
+	  "Standard": "L.4.1e"
+	},
+	{
+	  "ID": "G4-SYN-044",
+	  "Grade": 4,
+	  "Topic": "Prepositional phrases",
+	  "Question": "Which words form a prepositional phrase in \"We walked across the bridge\"?",
+	  "Answer": "across the bridge",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"We walked",
+		"walked across",
+        "the bridge we"
+	  ],
+	  "Standard": "L.4.1e"
+	},
+	{
+	  "ID": "G4-SYN-045",
+	  "Grade": 4,
+	  "Topic": "Prepositional phrases",
+	  "Question": "Which words form a prepositional phrase in \"The letter fell behind the shelf\"?",
+	  "Answer": "behind the shelf",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The letter",
+		"letter fell",
+        "fell behind"
+	  ],
+	  "Standard": "L.4.1e"
+	},
+	{
+	  "ID": "G4-SYN-046",
+	  "Grade": 4,
+	  "Topic": "Prepositional phrases",
+	  "Question": "Which words form a prepositional phrase in \"Scrawlking ran toward the gate\"?",
+	  "Answer": "toward the gate",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Scrawlking ran",
+		"ran toward",
+        "the gate ran"
+	  ],
+	  "Standard": "L.4.1e"
+	},
+	{
+	  "ID": "G4-SYN-047",
+	  "Grade": 4,
+	  "Topic": "Prepositional phrases",
+	  "Question": "Which words form a prepositional phrase in \"The students waited near the library\"?",
+	  "Answer": "near the library",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The students",
+		"students waited",
+        "waited near"
+	  ],
+	  "Standard": "L.4.1e"
+	},
+	{
+	  "ID": "G4-SYN-048",
+	  "Grade": 4,
+	  "Topic": "Conventional adjective ordering",
+	  "Question": "Choose the natural adjective order: \"a ___ box\"",
+	  "Answer": "small wooden",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"wooden small",
+		"tiny enormous",
+        "wooden blue small"
+	  ],
+	  "Standard": "L.4.1d"
+	},
+	{
+	  "ID": "G4-SYN-049",
+	  "Grade": 4,
+	  "Topic": "Conventional adjective ordering",
+	  "Question": "Choose the natural adjective order: \"a ___ scarf\"",
+	  "Answer": "beautiful red",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"red beautiful",
+		"red wooden",
+        "cotton shiny red"
+	  ],
+	  "Standard": "L.4.1d"
+	},
+	{
+	  "ID": "G4-SYN-050",
+	  "Grade": 4,
+	  "Topic": "Conventional adjective ordering",
+	  "Question": "Choose the natural adjective order: \"an ___ house\"",
+	  "Answer": "old brick",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"brick old",
+		"brick large old",
+        "square old tall"
+	  ],
+	  "Standard": "L.4.1d"
+	},
+	{
+	  "ID": "G4-SYN-051",
+	  "Grade": 4,
+	  "Topic": "Conventional adjective ordering",
+	  "Question": "Choose the natural adjective order: \"a ___ backpack\"",
+	  "Answer": "large blue",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"blue large",
+		"blue tiny large",
+        "round tall blue"
+	  ],
+	  "Standard": "L.4.1d"
+	},
+	{
+	  "ID": "G4-SYN-052",
+	  "Grade": 4,
+	  "Topic": "Conventional adjective ordering",
+	  "Question": "Choose the natural adjective order: \"a ___ table\"",
+	  "Answer": "round wooden",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"wooden round",
+		"wooden tiny round",
+        "heavy blue wooden round"
+	  ],
+	  "Standard": "L.4.1d"
+	},
+	{
+	  "ID": "G4-SYN-053",
+	  "Grade": 4,
+	  "Topic": "Conventional adjective ordering",
+	  "Question": "Choose the natural adjective order: \"a ___ kitten\"",
+	  "Answer": "tiny black",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"black tiny",
+		"black very tiny",
+        "square happy tiny"
+	  ],
+	  "Standard": "L.4.1d"
+	},
+	{
+	  "ID": "G4-SYN-054",
+	  "Grade": 4,
+	  "Topic": "Conventional adjective ordering",
+	  "Question": "Choose the natural adjective order: \"a ___ coin\"",
+	  "Answer": "small silver",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"silver small",
+		"metal shiny small",
+        "silver wooden small"
+	  ],
+	  "Standard": "L.4.1d"
+	},
+	{
+	  "ID": "G4-SYN-055",
+	  "Grade": 4,
+	  "Topic": "Conventional adjective ordering",
+	  "Question": "Choose the natural adjective order: \"a ___ balloon\"",
+	  "Answer": "big yellow",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"yellow big",
+		"wooden yellow big",
+        "yellow heavy big"
+	  ],
+	  "Standard": "L.4.1d"
+	},
+	{
+	  "ID": "G4-SYN-056",
+	  "Grade": 4,
+	  "Topic": "Conventional adjective ordering",
+	  "Question": "Choose the natural adjective order: \"a ___ chair\"",
+	  "Answer": "comfortable leather",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"leather comfortable",
+		"leather red comfortable",
+        "wooden leather tiny"
+	  ],
+	  "Standard": "L.4.1d"
+	},
+	{
+	  "ID": "G4-SYN-057",
+	  "Grade": 4,
+	  "Topic": "Complete sentences, fragments and run-ons",
+	  "Question": "Which is a complete sentence? Choose from the options about: children",
+	  "Answer": "The children raced toward the gate.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Because the children raced.",
+		"Through the open gate.",
+        "Running toward the gate."
+	  ],
+	  "Standard": "L.4.1f"
+	},
+	{
+	  "ID": "G4-SYN-058",
+	  "Grade": 4,
+	  "Topic": "Complete sentences, fragments and run-ons",
+	  "Question": "Which is a complete sentence? Choose from the options about: hid",
+	  "Answer": "Papling hid beneath the table.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Beneath the table.",
+		"While Papling hid.",
+        "Hiding beneath."
+	  ],
+	  "Standard": "L.4.1f"
+	},
+	{
+	  "ID": "G4-SYN-059",
+	  "Grade": 4,
+	  "Topic": "Complete sentences, fragments and run-ons",
+	  "Question": "Which is a complete sentence? Choose from the options about: lantern",
+	  "Answer": "The lantern flickered in the wind.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"In the strong wind.",
+		"When the lantern flickered.",
+        "Flickering through the night."
+	  ],
+	  "Standard": "L.4.1f"
+	},
+	{
+	  "ID": "G4-SYN-060",
+	  "Grade": 4,
+	  "Topic": "Complete sentences, fragments and run-ons",
+	  "Question": "Which is a complete sentence? Choose from the options about: packed",
+	  "Answer": "We packed our supplies before sunrise.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Before sunrise.",
+		"Because we packed.",
+        "Packing our supplies."
+	  ],
+	  "Standard": "L.4.1f"
+	},
+	{
+	  "ID": "G4-SYN-061",
+	  "Grade": 4,
+	  "Topic": "Complete sentences, fragments and run-ons",
+	  "Question": "Which is a complete sentence? Choose from the options about: museum",
+	  "Answer": "The museum displayed an ancient map.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"An ancient map in the museum.",
+		"Displaying an ancient map.",
+        "When the museum displayed."
+	  ],
+	  "Standard": "L.4.1f"
+	},
+	{
+	  "ID": "G4-SYN-062",
+	  "Grade": 4,
+	  "Topic": "Complete sentences, fragments and run-ons",
+	  "Question": "Which is a complete sentence? Choose from the options about: puppy",
+	  "Answer": "The puppy chased a bouncing ball.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Because the puppy chased.",
+		"A bouncing ball.",
+        "Chasing the ball."
+	  ],
+	  "Standard": "L.4.1f"
+	},
+	{
+	  "ID": "G4-SYN-063",
+	  "Grade": 4,
+	  "Topic": "Complete sentences, fragments and run-ons",
+	  "Question": "Which is the best correction of the run-on \"I found the key I opened the door\"?",
+	  "Answer": "I found the key, and I opened the door.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"I found the key, I opened the door.",
+		"I found the key and, I opened the door.",
+        "I found, the key I opened the door."
+	  ],
+	  "Standard": "L.4.1f"
+	},
+	{
+	  "ID": "G4-SYN-064",
+	  "Grade": 4,
+	  "Topic": "Complete sentences, fragments and run-ons",
+	  "Question": "Which is the best correction of \"The rain stopped we went outside\"?",
+	  "Answer": "The rain stopped, so we went outside.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The rain stopped, we went outside.",
+		"The rain, stopped we went outside.",
+        "The rain stopped so, we went outside."
+	  ],
+	  "Standard": "L.4.1f"
+	},
+	{
+	  "ID": "G4-SYN-065",
+	  "Grade": 4,
+	  "Topic": "Complete sentences, fragments and run-ons",
+	  "Question": "Which is the best correction of \"The book was long I enjoyed it\"?",
+	  "Answer": "The book was long, but I enjoyed it.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The book was long, I enjoyed it.",
+		"The book was, long I enjoyed it.",
+        "The book was long but, I enjoyed it."
+	  ],
+	  "Standard": "L.4.1f"
+	},
+	{
+	  "ID": "G4-SYN-066",
+	  "Grade": 4,
+	  "Topic": "Complete sentences, fragments and run-ons",
+	  "Question": "Which is the best correction of \"We could walk we could ride\"?",
+	  "Answer": "We could walk, or we could ride.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"We could walk, we could ride.",
+		"We could, walk we could ride.",
+        "We could walk or, we could ride."
+	  ],
+	  "Standard": "L.4.1f"
+	},
+	{
+	  "ID": "G4-SYN-067",
+	  "Grade": 4,
+	  "Topic": "Complete sentences, fragments and run-ons",
+	  "Question": "Which is the best correction of \"The door was shut I knocked\"?",
+	  "Answer": "The door was shut, so I knocked.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The door was shut, I knocked.",
+		"The door was, shut I knocked.",
+        "The door was shut so, I knocked."
+	  ],
+	  "Standard": "L.4.1f"
+	},
+	{
+	  "ID": "G4-SYN-068",
+	  "Grade": 4,
+	  "Topic": "Complete sentences, fragments and run-ons",
+	  "Question": "Which is the best correction of \"I studied hard I felt ready\"?",
+	  "Answer": "I studied hard, and I felt ready.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"I studied hard, I felt ready.",
+		"I studied, hard I felt ready.",
+        "I studied hard and, I felt ready."
+	  ],
+	  "Standard": "L.4.1f"
+	},
+	{
+	  "ID": "G4-SYN-069",
+	  "Grade": 4,
+	  "Topic": "Complete sentences, fragments and run-ons",
+	  "Question": "Which is the best way to complete the fragment \"After the bell rang\"?",
+	  "Answer": "After the bell rang, we entered the classroom.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"After the bell rang.",
+		"After the bell rang and.",
+        "After the bell rang because."
+	  ],
+	  "Standard": "L.4.1f"
+	},
+	{
+	  "ID": "G4-SYN-070",
+	  "Grade": 4,
+	  "Topic": "Complete sentences, fragments and run-ons",
+	  "Question": "Which is the best way to complete the fragment \"Although the path was steep\"?",
+	  "Answer": "Although the path was steep, we kept walking.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Although the path was steep.",
+		"Although the path was steep and.",
+        "Although the path was steep because."
+	  ],
+	  "Standard": "L.4.1f"
+	},
+	{
+	  "ID": "G4-SYN-071",
+	  "Grade": 4,
+	  "Topic": "Frequently confused words",
+	  "Question": "Choose the correct word: \"We packed ___ notebooks for class.\"",
+	  "Answer": "two",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"to",
+		"too",
+        "tow"
+	  ],
+	  "Standard": "L.4.1g"
+	},
+	{
+	  "ID": "G4-SYN-072",
+	  "Grade": 4,
+	  "Topic": "Frequently confused words",
+	  "Question": "Choose the correct word: \"I want to visit the library, ___.\"",
+	  "Answer": "too",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"two",
+		"to",
+        "tow"
+	  ],
+	  "Standard": "L.4.1g"
+	},
+	{
+	  "ID": "G4-SYN-073",
+	  "Grade": 4,
+	  "Topic": "Frequently confused words",
+	  "Question": "Choose the correct word: \"Please give the map ___ Catputer.\"",
+	  "Answer": "to",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"too",
+		"two",
+        "tow"
+	  ],
+	  "Standard": "L.4.1g"
+	},
+	{
+	  "ID": "G4-SYN-074",
+	  "Grade": 4,
+	  "Topic": "Frequently confused words",
+	  "Question": "Choose the correct word: \"The students left ___ backpacks by the wall.\"",
+	  "Answer": "their",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"there",
+		"they’re",
+        "theirs"
+	  ],
+	  "Standard": "L.4.1g"
+	},
+	{
+	  "ID": "G4-SYN-075",
+	  "Grade": 4,
+	  "Topic": "Frequently confused words",
+	  "Question": "Choose the correct word: \"Look over ___ by the fountain.\"",
+	  "Answer": "there",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"their",
+		"they’re",
+        "theirs"
+	  ],
+	  "Standard": "L.4.1g"
+	},
+	{
+	  "ID": "G4-SYN-076",
+	  "Grade": 4,
+	  "Topic": "Frequently confused words",
+	  "Question": "Choose the correct word: \"___ planning a trip to Lluvia City.\"",
+	  "Answer": "They’re",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Their",
+		"There",
+        "Theirs"
+	  ],
+	  "Standard": "L.4.1g"
+	},
+	{
+	  "ID": "G4-SYN-077",
+	  "Grade": 4,
+	  "Topic": "Frequently confused words",
+	  "Question": "Choose the correct word: \"___ going to read this chapter tonight.\"",
+	  "Answer": "We’re",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Were",
+		"Where",
+        "Wear"
+	  ],
+	  "Standard": "L.4.1g"
+	},
+	{
+	  "ID": "G4-SYN-078",
+	  "Grade": 4,
+	  "Topic": "Frequently confused words",
+	  "Question": "Choose the correct word: \"___ did you leave the encyclopedia?\"",
+	  "Answer": "Where",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Wear",
+		"Were",
+        "We’re"
+	  ],
+	  "Standard": "L.4.1g"
+	},
+	{
+	  "ID": "G4-SYN-079",
+	  "Grade": 4,
+	  "Topic": "Frequently confused words",
+	  "Question": "Choose the correct word: \"You should ___ a helmet while cycling.\"",
+	  "Answer": "wear",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"where",
+		"were",
+        "we’re"
+	  ],
+	  "Standard": "L.4.1g"
+	},
+	{
+	  "ID": "G4-SYN-080",
+	  "Grade": 4,
+	  "Topic": "Frequently confused words",
+	  "Question": "Choose the correct word: \"The puppy wagged ___ tail.\"",
+	  "Answer": "its",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"it’s",
+		"its’",
+        "it"
+	  ],
+	  "Standard": "L.4.1g"
+	},
+	{
+	  "ID": "G4-SYN-081",
+	  "Grade": 4,
+	  "Topic": "Frequently confused words",
+	  "Question": "Choose the correct word: \"___ time to begin the lesson.\"",
+	  "Answer": "It’s",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Its",
+		"Its’",
+        "It"
+	  ],
+	  "Standard": "L.4.1g"
+	},
+	{
+	  "ID": "G4-SYN-082",
+	  "Grade": 4,
+	  "Topic": "Frequently confused words",
+	  "Question": "Choose the correct word: \"I ___ the answer to that question.\"",
+	  "Answer": "know",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"no",
+		"now",
+        "knew"
+	  ],
+	  "Standard": "L.4.1g"
+	},
+	{
+	  "ID": "G4-SYN-083",
+	  "Grade": 4,
+	  "Topic": "Frequently confused words",
+	  "Question": "Choose the correct word: \"The teacher said ___ to running in the hallway.\"",
+	  "Answer": "no",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"know",
+		"now",
+        "knew"
+	  ],
+	  "Standard": "L.4.1g"
+	},
+	{
+	  "ID": "G4-SYN-084",
+	  "Grade": 4,
+	  "Topic": "Frequently confused words",
+	  "Question": "Choose the correct word: \"We can ___ the music from here.\"",
+	  "Answer": "hear",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"here",
+		"hair",
+        "heir"
+	  ],
+	  "Standard": "L.4.1g"
+	},
+	{
+	  "ID": "G4-SYN-085",
+	  "Grade": 4,
+	  "Topic": "Frequently confused words",
+	  "Question": "Choose the correct word: \"Please place the box ___.\"",
+	  "Answer": "here",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"hear",
+		"hair",
+        "heir"
+	  ],
+	  "Standard": "L.4.1g"
+	}
+  ],
+  "Punctuation": [
+	{
+	  "ID": "G4-PUN-001",
+	  "Grade": 4,
+	  "Topic": "Commas in compound sentences",
+	  "Question": "Which sentence correctly joins these ideas? \"The rain was heavy. We stayed inside.\"",
+	  "Answer": "The rain was heavy, so we stayed inside.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The rain was heavy so we stayed inside.",
+		"The rain was heavy, so, we stayed inside.",
+        "The rain was heavy so, we stayed inside."
+	  ],
+	  "Standard": "L.4.2c"
+	},
+	{
+	  "ID": "G4-PUN-002",
+	  "Grade": 4,
+	  "Topic": "Commas in compound sentences",
+	  "Question": "Which sentence correctly joins these ideas? \"I wanted to read. The lights went out.\"",
+	  "Answer": "I wanted to read, but the lights went out.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"I wanted to read but the lights went out.",
+		"I wanted to read, but, the lights went out.",
+        "I wanted to read but, the lights went out."
+	  ],
+	  "Standard": "L.4.2c"
+	},
+	{
+	  "ID": "G4-PUN-003",
+	  "Grade": 4,
+	  "Topic": "Commas in compound sentences",
+	  "Question": "Which sentence correctly joins these ideas? \"The path was steep. We continued climbing.\"",
+	  "Answer": "The path was steep, yet we continued climbing.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The path was steep yet we continued climbing.",
+		"The path was steep, yet, we continued climbing.",
+        "The path was steep yet, we continued climbing."
+	  ],
+	  "Standard": "L.4.2c"
+	},
+	{
+	  "ID": "G4-PUN-004",
+	  "Grade": 4,
+	  "Topic": "Commas in compound sentences",
+	  "Question": "Which sentence correctly joins these ideas? \"We can visit the market. We can walk to the library.\"",
+	  "Answer": "We can visit the market, or we can walk to the library.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"We can visit the market or we can walk to the library.",
+		"We can visit the market, or, we can walk to the library.",
+        "We can visit the market or, we can walk to the library."
+	  ],
+	  "Standard": "L.4.2c"
+	},
+	{
+	  "ID": "G4-PUN-005",
+	  "Grade": 4,
+	  "Topic": "Commas in compound sentences",
+	  "Question": "Which sentence correctly joins these ideas? \"Catputer found a clue. Moustapler drew a map.\"",
+	  "Answer": "Catputer found a clue, and moustapler drew a map.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Catputer found a clue and moustapler drew a map.",
+		"Catputer found a clue, and, moustapler drew a map.",
+        "Catputer found a clue and, moustapler drew a map."
+	  ],
+	  "Standard": "L.4.2c"
+	},
+	{
+	  "ID": "G4-PUN-006",
+	  "Grade": 4,
+	  "Topic": "Commas in compound sentences",
+	  "Question": "Which sentence correctly joins these ideas? \"The sun was setting. The hikers hurried home.\"",
+	  "Answer": "The sun was setting, so the hikers hurried home.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The sun was setting so the hikers hurried home.",
+		"The sun was setting, so, the hikers hurried home.",
+        "The sun was setting so, the hikers hurried home."
+	  ],
+	  "Standard": "L.4.2c"
+	},
+	{
+	  "ID": "G4-PUN-007",
+	  "Grade": 4,
+	  "Topic": "Commas in compound sentences",
+	  "Question": "Which sentence correctly joins these ideas? \"I studied all morning. I still needed more practice.\"",
+	  "Answer": "I studied all morning, but i still needed more practice.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"I studied all morning but i still needed more practice.",
+		"I studied all morning, but, i still needed more practice.",
+        "I studied all morning but, i still needed more practice."
+	  ],
+	  "Standard": "L.4.2c"
+	},
+	{
+	  "ID": "G4-PUN-008",
+	  "Grade": 4,
+	  "Topic": "Commas in compound sentences",
+	  "Question": "Which sentence correctly joins these ideas? \"The door was locked. We used the other entrance.\"",
+	  "Answer": "The door was locked, so we used the other entrance.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The door was locked so we used the other entrance.",
+		"The door was locked, so, we used the other entrance.",
+        "The door was locked so, we used the other entrance."
+	  ],
+	  "Standard": "L.4.2c"
+	},
+	{
+	  "ID": "G4-PUN-009",
+	  "Grade": 4,
+	  "Topic": "Commas in compound sentences",
+	  "Question": "Which sentence correctly joins these ideas? \"Professor Hoot opened the book. The class grew quiet.\"",
+	  "Answer": "Professor Hoot opened the book, and the class grew quiet.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Professor Hoot opened the book and the class grew quiet.",
+		"Professor Hoot opened the book, and, the class grew quiet.",
+        "Professor Hoot opened the book and, the class grew quiet."
+	  ],
+	  "Standard": "L.4.2c"
+	},
+	{
+	  "ID": "G4-PUN-010",
+	  "Grade": 4,
+	  "Topic": "Commas in compound sentences",
+	  "Question": "Which sentence correctly joins these ideas? \"We could stop for lunch. We could keep walking.\"",
+	  "Answer": "We could stop for lunch, or we could keep walking.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"We could stop for lunch or we could keep walking.",
+		"We could stop for lunch, or, we could keep walking.",
+        "We could stop for lunch or, we could keep walking."
+	  ],
+	  "Standard": "L.4.2c"
+	},
+	{
+	  "ID": "G4-PUN-011",
+	  "Grade": 4,
+	  "Topic": "Commas in compound sentences",
+	  "Question": "Which sentence correctly joins these ideas? \"The bridge looked old. It was safe to cross.\"",
+	  "Answer": "The bridge looked old, but it was safe to cross.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The bridge looked old but it was safe to cross.",
+		"The bridge looked old, but, it was safe to cross.",
+        "The bridge looked old but, it was safe to cross."
+	  ],
+	  "Standard": "L.4.2c"
+	},
+	{
+	  "ID": "G4-PUN-012",
+	  "Grade": 4,
+	  "Topic": "Commas in compound sentences",
+	  "Question": "Which sentence correctly joins these ideas? \"A storm approached. The boats returned to shore.\"",
+	  "Answer": "A storm approached, so the boats returned to shore.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"A storm approached so the boats returned to shore.",
+		"A storm approached, so, the boats returned to shore.",
+        "A storm approached so, the boats returned to shore."
+	  ],
+	  "Standard": "L.4.2c"
+	},
+	{
+	  "ID": "G4-PUN-013",
+	  "Grade": 4,
+	  "Topic": "Commas in compound sentences",
+	  "Question": "Which sentence correctly joins these ideas? \"The map was torn. We could still read it.\"",
+	  "Answer": "The map was torn, yet we could still read it.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The map was torn yet we could still read it.",
+		"The map was torn, yet, we could still read it.",
+        "The map was torn yet, we could still read it."
+	  ],
+	  "Standard": "L.4.2c"
+	},
+	{
+	  "ID": "G4-PUN-014",
+	  "Grade": 4,
+	  "Topic": "Commas in compound sentences",
+	  "Question": "Which sentence correctly joins these ideas? \"Kittebook waited outside. Tabbywriter checked the shelves.\"",
+	  "Answer": "Kittebook waited outside, and tabbywriter checked the shelves.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Kittebook waited outside and tabbywriter checked the shelves.",
+		"Kittebook waited outside, and, tabbywriter checked the shelves.",
+        "Kittebook waited outside and, tabbywriter checked the shelves."
+	  ],
+	  "Standard": "L.4.2c"
+	},
+	{
+	  "ID": "G4-PUN-015",
+	  "Grade": 4,
+	  "Topic": "Commas in compound sentences",
+	  "Question": "Which sentence correctly joins these ideas? \"I searched the first drawer. I did not find the key.\"",
+	  "Answer": "I searched the first drawer, but i did not find the key.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"I searched the first drawer but i did not find the key.",
+		"I searched the first drawer, but, i did not find the key.",
+        "I searched the first drawer but, i did not find the key."
+	  ],
+	  "Standard": "L.4.2c"
+	},
+	{
+	  "ID": "G4-PUN-016",
+	  "Grade": 4,
+	  "Topic": "Commas in compound sentences",
+	  "Question": "Which sentence correctly joins these ideas? \"The clock chimed six times. The shop closed.\"",
+	  "Answer": "The clock chimed six times, and the shop closed.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The clock chimed six times and the shop closed.",
+		"The clock chimed six times, and, the shop closed.",
+        "The clock chimed six times and, the shop closed."
+	  ],
+	  "Standard": "L.4.2c"
+	},
+	{
+	  "ID": "G4-PUN-017",
+	  "Grade": 4,
+	  "Topic": "Commas in compound sentences",
+	  "Question": "Which sentence correctly joins these ideas? \"The mountain air was chilly. We packed warm coats.\"",
+	  "Answer": "The mountain air was chilly, so we packed warm coats.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The mountain air was chilly so we packed warm coats.",
+		"The mountain air was chilly, so, we packed warm coats.",
+        "The mountain air was chilly so, we packed warm coats."
+	  ],
+	  "Standard": "L.4.2c"
+	},
+	{
+	  "ID": "G4-PUN-018",
+	  "Grade": 4,
+	  "Topic": "Commas in compound sentences",
+	  "Question": "Which sentence correctly joins these ideas? \"I can use a pencil. I can borrow a pen.\"",
+	  "Answer": "I can use a pencil, or i can borrow a pen.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"I can use a pencil or i can borrow a pen.",
+		"I can use a pencil, or, i can borrow a pen.",
+        "I can use a pencil or, i can borrow a pen."
+	  ],
+	  "Standard": "L.4.2c"
+	},
+	{
+	  "ID": "G4-PUN-019",
+	  "Grade": 4,
+	  "Topic": "Commas in compound sentences",
+	  "Question": "Which sentence correctly joins these ideas? \"The road was quiet. We heard a distant bell.\"",
+	  "Answer": "The road was quiet, yet we heard a distant bell.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The road was quiet yet we heard a distant bell.",
+		"The road was quiet, yet, we heard a distant bell.",
+        "The road was quiet yet, we heard a distant bell."
+	  ],
+	  "Standard": "L.4.2c"
+	},
+	{
+	  "ID": "G4-PUN-020",
+	  "Grade": 4,
+	  "Topic": "Commas in compound sentences",
+	  "Question": "Which sentence correctly joins these ideas? \"The river rose overnight. The bridge remained open.\"",
+	  "Answer": "The river rose overnight, but the bridge remained open.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The river rose overnight but the bridge remained open.",
+		"The river rose overnight, but, the bridge remained open.",
+        "The river rose overnight but, the bridge remained open."
+	  ],
+	  "Standard": "L.4.2c"
+	},
+	{
+	  "ID": "G4-PUN-021",
+	  "Grade": 4,
+	  "Topic": "Commas in compound sentences",
+	  "Question": "Which sentence correctly joins these ideas? \"The students finished the project. They celebrated afterward.\"",
+	  "Answer": "The students finished the project, and they celebrated afterward.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The students finished the project and they celebrated afterward.",
+		"The students finished the project, and, they celebrated afterward.",
+        "The students finished the project and, they celebrated afterward."
+	  ],
+	  "Standard": "L.4.2c"
+	},
+	{
+	  "ID": "G4-PUN-022",
+	  "Grade": 4,
+	  "Topic": "Commas in compound sentences",
+	  "Question": "Which sentence correctly joins these ideas? \"The teacher gave clear directions. Everyone understood the task.\"",
+	  "Answer": "The teacher gave clear directions, so everyone understood the task.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The teacher gave clear directions so everyone understood the task.",
+		"The teacher gave clear directions, so, everyone understood the task.",
+        "The teacher gave clear directions so, everyone understood the task."
+	  ],
+	  "Standard": "L.4.2c"
+	},
+	{
+	  "ID": "G4-PUN-023",
+	  "Grade": 4,
+	  "Topic": "Commas and quotation marks in direct speech",
+	  "Question": "Which version correctly punctuates Maya’s exact words?",
+	  "Answer": "Maya said, “The map is missing.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Maya said “The map is missing.”",
+		"Maya said, The map is missing.",
+        "Maya said “The map is missing.”,"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-024",
+	  "Grade": 4,
+	  "Topic": "Commas and quotation marks in direct speech",
+	  "Question": "Which version correctly punctuates Theo’s exact words?",
+	  "Answer": "Theo said, “We should follow the path.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Theo said “We should follow the path.”",
+		"Theo said, We should follow the path.",
+        "Theo said “We should follow the path.”,"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-025",
+	  "Grade": 4,
+	  "Topic": "Commas and quotation marks in direct speech",
+	  "Question": "Which version correctly punctuates Professor Hoot’s exact words?",
+	  "Answer": "Professor Hoot said, “Please open your notebooks.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Professor Hoot said “Please open your notebooks.”",
+		"Professor Hoot said, Please open your notebooks.",
+        "Professor Hoot said “Please open your notebooks.”,"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-026",
+	  "Grade": 4,
+	  "Topic": "Commas and quotation marks in direct speech",
+	  "Question": "Which version correctly punctuates Lena’s exact words?",
+	  "Answer": "Lena said, “I found a clue.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Lena said “I found a clue.”",
+		"Lena said, I found a clue.",
+        "Lena said “I found a clue.”,"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-027",
+	  "Grade": 4,
+	  "Topic": "Commas and quotation marks in direct speech",
+	  "Question": "Which version correctly punctuates Catputer’s exact words?",
+	  "Answer": "Catputer said, “The machine is ready.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Catputer said “The machine is ready.”",
+		"Catputer said, The machine is ready.",
+        "Catputer said “The machine is ready.”,"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-028",
+	  "Grade": 4,
+	  "Topic": "Commas and quotation marks in direct speech",
+	  "Question": "Which version correctly punctuates Owen’s exact words?",
+	  "Answer": "Owen said, “The sky is getting dark.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Owen said “The sky is getting dark.”",
+		"Owen said, The sky is getting dark.",
+        "Owen said “The sky is getting dark.”,"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-029",
+	  "Grade": 4,
+	  "Topic": "Commas and quotation marks in direct speech",
+	  "Question": "Which version correctly punctuates Nina’s exact words?",
+	  "Answer": "Nina said, “Can we take a break?”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Nina said “Can we take a break?”",
+		"Nina said, Can we take a break?",
+        "Nina said “Can we take a break?”,"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-030",
+	  "Grade": 4,
+	  "Topic": "Commas and quotation marks in direct speech",
+	  "Question": "Which version correctly punctuates Jules’s exact words?",
+	  "Answer": "Jules said, “This is our last stop.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Jules said “This is our last stop.”",
+		"Jules said, This is our last stop.",
+        "Jules said “This is our last stop.”,"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-031",
+	  "Grade": 4,
+	  "Topic": "Commas and quotation marks in direct speech",
+	  "Question": "Which version correctly punctuates Ava’s exact words?",
+	  "Answer": "Ava said, “I hear footsteps.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Ava said “I hear footsteps.”",
+		"Ava said, I hear footsteps.",
+        "Ava said “I hear footsteps.”,"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-032",
+	  "Grade": 4,
+	  "Topic": "Commas and quotation marks in direct speech",
+	  "Question": "Which version correctly punctuates Sam’s exact words?",
+	  "Answer": "Sam said, “Where is the library?”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Sam said “Where is the library?”",
+		"Sam said, Where is the library?",
+        "Sam said “Where is the library?”,"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-033",
+	  "Grade": 4,
+	  "Topic": "Commas and quotation marks in direct speech",
+	  "Question": "Which version correctly punctuates Mila’s exact words?",
+	  "Answer": "Mila said, “My pencil broke.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Mila said “My pencil broke.”",
+		"Mila said, My pencil broke.",
+        "Mila said “My pencil broke.”,"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-034",
+	  "Grade": 4,
+	  "Topic": "Commas and quotation marks in direct speech",
+	  "Question": "Which version correctly punctuates Aria’s exact words?",
+	  "Answer": "Aria said, “Look at the stars!”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Aria said “Look at the stars!”",
+		"Aria said, Look at the stars!",
+        "Aria said “Look at the stars!”,"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-035",
+	  "Grade": 4,
+	  "Topic": "Commas and quotation marks in direct speech",
+	  "Question": "Which version correctly punctuates Ben’s exact words?",
+	  "Answer": "Ben said, “I will carry the lantern.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Ben said “I will carry the lantern.”",
+		"Ben said, I will carry the lantern.",
+        "Ben said “I will carry the lantern.”,"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-036",
+	  "Grade": 4,
+	  "Topic": "Commas and quotation marks in direct speech",
+	  "Question": "Which version correctly punctuates Rosa’s exact words?",
+	  "Answer": "Rosa said, “The bridge is open.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Rosa said “The bridge is open.”",
+		"Rosa said, The bridge is open.",
+        "Rosa said “The bridge is open.”,"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-037",
+	  "Grade": 4,
+	  "Topic": "Commas and quotation marks in direct speech",
+	  "Question": "Which version correctly punctuates Leo’s exact words?",
+	  "Answer": "Leo said, “I finished my homework.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Leo said “I finished my homework.”",
+		"Leo said, I finished my homework.",
+        "Leo said “I finished my homework.”,"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-038",
+	  "Grade": 4,
+	  "Topic": "Commas and quotation marks in direct speech",
+	  "Question": "Which version correctly punctuates Ivy’s exact words?",
+	  "Answer": "Ivy said, “The pages are wet.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Ivy said “The pages are wet.”",
+		"Ivy said, The pages are wet.",
+        "Ivy said “The pages are wet.”,"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-039",
+	  "Grade": 4,
+	  "Topic": "Commas and quotation marks in direct speech",
+	  "Question": "Which version correctly punctuates Noah’s exact words?",
+	  "Answer": "Noah said, “We need another plan.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Noah said “We need another plan.”",
+		"Noah said, We need another plan.",
+        "Noah said “We need another plan.”,"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-040",
+	  "Grade": 4,
+	  "Topic": "Commas and quotation marks in direct speech",
+	  "Question": "Which version correctly punctuates Eli’s exact words?",
+	  "Answer": "Eli said, “Please close the gate.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Eli said “Please close the gate.”",
+		"Eli said, Please close the gate.",
+        "Eli said “Please close the gate.”,"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-041",
+	  "Grade": 4,
+	  "Topic": "Commas and quotation marks in direct speech",
+	  "Question": "Which version correctly punctuates Zara’s exact words?",
+	  "Answer": "Zara said, “The room looks empty.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Zara said “The room looks empty.”",
+		"Zara said, The room looks empty.",
+        "Zara said “The room looks empty.”,"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-042",
+	  "Grade": 4,
+	  "Topic": "Commas and quotation marks in direct speech",
+	  "Question": "Which version correctly punctuates Finn’s exact words?",
+	  "Answer": "Finn said, “I can see the castle.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Finn said “I can see the castle.”",
+		"Finn said, I can see the castle.",
+        "Finn said “I can see the castle.”,"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-043",
+	  "Grade": 4,
+	  "Topic": "Commas and quotation marks in direct speech",
+	  "Question": "Which version correctly punctuates Mira’s exact words?",
+	  "Answer": "Mira said, “The book is on the shelf.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Mira said “The book is on the shelf.”",
+		"Mira said, The book is on the shelf.",
+        "Mira said “The book is on the shelf.”,"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-044",
+	  "Grade": 4,
+	  "Topic": "Commas and quotation marks in direct speech",
+	  "Question": "Which version correctly punctuates Kai’s exact words?",
+	  "Answer": "Kai said, “Do you know the answer?”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Kai said “Do you know the answer?”",
+		"Kai said, Do you know the answer?",
+        "Kai said “Do you know the answer?”,"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-045",
+	  "Grade": 4,
+	  "Topic": "Capitalization conventions",
+	  "Question": "Which sentence uses capitalization correctly? Edit this sentence: we visited royal grotto on friday.",
+	  "Answer": "We visited Royal Grotto on Friday.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"We visited royal grotto on Friday.",
+		"We visited Royal Grotto on friday.",
+        "we visited Royal Grotto on Friday."
+	  ],
+	  "Standard": "L.4.2a"
+	},
+	{
+	  "ID": "G4-PUN-046",
+	  "Grade": 4,
+	  "Topic": "Capitalization conventions",
+	  "Question": "Which sentence uses capitalization correctly? Edit this sentence: my aunt lives in honolulu, hawaii.",
+	  "Answer": "My aunt lives in Honolulu, Hawaii.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"My Aunt lives in honolulu, Hawaii.",
+		"My aunt lives in honolulu, hawaii.",
+        "my aunt lives in Honolulu, Hawaii."
+	  ],
+	  "Standard": "L.4.2a"
+	},
+	{
+	  "ID": "G4-PUN-047",
+	  "Grade": 4,
+	  "Topic": "Capitalization conventions",
+	  "Question": "Which sentence uses capitalization correctly? Edit this sentence: we read a book about the pacific ocean.",
+	  "Answer": "We read a book about the Pacific Ocean.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"We read a book about the pacific ocean.",
+		"We read a Book about the Pacific Ocean.",
+        "we read a book about the Pacific Ocean."
+	  ],
+	  "Standard": "L.4.2a"
+	},
+	{
+	  "ID": "G4-PUN-048",
+	  "Grade": 4,
+	  "Topic": "Capitalization conventions",
+	  "Question": "Which sentence uses capitalization correctly? Edit this sentence: on monday, we traveled to lluvia city.",
+	  "Answer": "On Monday, we traveled to Lluvia City.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"On monday, we traveled to Lluvia City.",
+		"On Monday, we traveled to lluvia city.",
+        "on Monday, we traveled to Lluvia City."
+	  ],
+	  "Standard": "L.4.2a"
+	},
+	{
+	  "ID": "G4-PUN-049",
+	  "Grade": 4,
+	  "Topic": "Capitalization conventions",
+	  "Question": "Which sentence uses capitalization correctly? Edit this sentence: professor hoot teaches english at our school.",
+	  "Answer": "Professor Hoot teaches English at our school.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"professor Hoot teaches English at our school.",
+		"Professor Hoot teaches english at our school.",
+        "Professor hoot teaches English at our school."
+	  ],
+	  "Standard": "L.4.2a"
+	},
+	{
+	  "ID": "G4-PUN-050",
+	  "Grade": 4,
+	  "Topic": "Capitalization conventions",
+	  "Question": "Which sentence uses capitalization correctly? Edit this sentence: my birthday is in september.",
+	  "Answer": "My birthday is in September.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"My birthday is in september.",
+		"my birthday is in September.",
+        "My Birthday is in September."
+	  ],
+	  "Standard": "L.4.2a"
+	},
+	{
+	  "ID": "G4-PUN-051",
+	  "Grade": 4,
+	  "Topic": "Capitalization conventions",
+	  "Question": "Which sentence uses capitalization correctly? Edit this sentence: we crossed the atlantic ocean in a story.",
+	  "Answer": "We crossed the Atlantic Ocean in a story.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"We crossed the atlantic ocean in a story.",
+		"We crossed the Atlantic ocean in a story.",
+        "we crossed the Atlantic Ocean in a story."
+	  ],
+	  "Standard": "L.4.2a"
+	},
+	{
+	  "ID": "G4-PUN-052",
+	  "Grade": 4,
+	  "Topic": "Capitalization conventions",
+	  "Question": "Which sentence uses capitalization correctly? Edit this sentence: i am learning spanish and japanese.",
+	  "Answer": "I am learning Spanish and Japanese.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"I am learning spanish and Japanese.",
+		"I am learning Spanish and japanese.",
+        "i am learning Spanish and Japanese."
+	  ],
+	  "Standard": "L.4.2a"
+	},
+	{
+	  "ID": "G4-PUN-053",
+	  "Grade": 4,
+	  "Topic": "Capitalization conventions",
+	  "Question": "Which sentence uses capitalization correctly? Edit this sentence: the class visited the national museum of natural history.",
+	  "Answer": "The class visited the National Museum of Natural History.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The class visited the national museum of natural history.",
+		"The class visited the National museum of Natural History.",
+        "the class visited the National Museum of Natural History."
+	  ],
+	  "Standard": "L.4.2a"
+	},
+	{
+	  "ID": "G4-PUN-054",
+	  "Grade": 4,
+	  "Topic": "Capitalization conventions",
+	  "Question": "Which sentence uses capitalization correctly? Edit this sentence: our teacher is ms. rivera.",
+	  "Answer": "Our teacher is Ms. Rivera.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"Our teacher is ms. Rivera.",
+		"Our teacher is Ms. rivera.",
+        "our teacher is Ms. Rivera."
+	  ],
+	  "Standard": "L.4.2a"
+	},
+	{
+	  "ID": "G4-PUN-055",
+	  "Grade": 4,
+	  "Topic": "Capitalization conventions",
+	  "Question": "Which sentence uses capitalization correctly? Edit this sentence: i read the secret garden last summer.",
+	  "Answer": "I read The Secret Garden last summer.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"I read the secret garden last summer.",
+		"I read The secret garden last summer.",
+        "i read The Secret Garden last summer."
+	  ],
+	  "Standard": "L.4.2a"
+	},
+	{
+	  "ID": "G4-PUN-056",
+	  "Grade": 4,
+	  "Topic": "Capitalization conventions",
+	  "Question": "Which sentence uses capitalization correctly? Edit this sentence: my cousin traveled to california in june.",
+	  "Answer": "My cousin traveled to California in June.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"My cousin traveled to california in June.",
+		"My cousin traveled to California in june.",
+        "my cousin traveled to California in June."
+	  ],
+	  "Standard": "L.4.2a"
+	},
+	{
+	  "ID": "G4-PUN-057",
+	  "Grade": 4,
+	  "Topic": "Capitalization conventions",
+	  "Question": "Which sentence uses capitalization correctly? Edit this sentence: we celebrate new year’s day in january.",
+	  "Answer": "We celebrate New Year’s Day in January.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"We celebrate new year’s day in January.",
+		"We celebrate New Year’s Day in january.",
+        "we celebrate New Year’s Day in January."
+	  ],
+	  "Standard": "L.4.2a"
+	},
+	{
+	  "ID": "G4-PUN-058",
+	  "Grade": 4,
+	  "Topic": "Capitalization conventions",
+	  "Question": "Which sentence uses capitalization correctly? Edit this sentence: the team explored the heights after lunch.",
+	  "Answer": "The team explored The Heights after lunch.",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The team explored the heights after lunch.",
+		"The team explored The heights after lunch.",
+        "the team explored The Heights after lunch."
+	  ],
+	  "Standard": "L.4.2a"
+	},
+	{
+	  "ID": "G4-PUN-059",
+	  "Grade": 4,
+	  "Topic": "Quotation marks for quoted text",
+	  "Question": "Which sentence correctly places quotation marks around these words? The guide wrote that the cave was dark and silent.",
+	  "Answer": "The guide wrote that the cave was “dark and silent.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The guide wrote that the cave was dark and silent.”",
+		"The guide wrote that the cave was “dark and silent.",
+        "The guide wrote that the cave was, “dark and silent.”"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-060",
+	  "Grade": 4,
+	  "Topic": "Quotation marks for quoted text",
+	  "Question": "Which sentence correctly places quotation marks around these words? The article described the bridge as a remarkable achievement.",
+	  "Answer": "The article described the bridge as “a remarkable achievement.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The article described the bridge as a remarkable achievement.”",
+		"The article described the bridge as “a remarkable achievement.",
+        "The article described the bridge as, “a remarkable achievement.”"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-061",
+	  "Grade": 4,
+	  "Topic": "Quotation marks for quoted text",
+	  "Question": "Which sentence correctly places quotation marks around these words? The poem calls the stars tiny lamps.",
+	  "Answer": "The poem calls the stars “tiny lamps.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The poem calls the stars tiny lamps.”",
+		"The poem calls the stars “tiny lamps.",
+        "The poem calls the stars, “tiny lamps.”"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-062",
+	  "Grade": 4,
+	  "Topic": "Quotation marks for quoted text",
+	  "Question": "Which sentence correctly places quotation marks around these words? The letter described the journey as long but rewarding.",
+	  "Answer": "The letter described the journey as “long but rewarding.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The letter described the journey as long but rewarding.”",
+		"The letter described the journey as “long but rewarding.",
+        "The letter described the journey as, “long but rewarding.”"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-063",
+	  "Grade": 4,
+	  "Topic": "Quotation marks for quoted text",
+	  "Question": "Which sentence correctly places quotation marks around these words? The report called the experiment a surprising success.",
+	  "Answer": "The report called the experiment “a surprising success.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The report called the experiment a surprising success.”",
+		"The report called the experiment “a surprising success.",
+        "The report called the experiment, “a surprising success.”"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-064",
+	  "Grade": 4,
+	  "Topic": "Quotation marks for quoted text",
+	  "Question": "Which sentence correctly places quotation marks around these words? The narrator described the forest as quiet and mysterious.",
+	  "Answer": "The narrator described the forest as “quiet and mysterious.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The narrator described the forest as quiet and mysterious.”",
+		"The narrator described the forest as “quiet and mysterious.",
+        "The narrator described the forest as, “quiet and mysterious.”"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-065",
+	  "Grade": 4,
+	  "Topic": "Quotation marks for quoted text",
+	  "Question": "Which sentence correctly places quotation marks around these words? The book describes the river as swift and cold.",
+	  "Answer": "The book describes the river as “swift and cold.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The book describes the river as swift and cold.”",
+		"The book describes the river as “swift and cold.",
+        "The book describes the river as, “swift and cold.”"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-066",
+	  "Grade": 4,
+	  "Topic": "Quotation marks for quoted text",
+	  "Question": "Which sentence correctly places quotation marks around these words? The sign called the old tower a local landmark.",
+	  "Answer": "The sign called the old tower “a local landmark.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The sign called the old tower a local landmark.”",
+		"The sign called the old tower “a local landmark.",
+        "The sign called the old tower, “a local landmark.”"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-067",
+	  "Grade": 4,
+	  "Topic": "Quotation marks for quoted text",
+	  "Question": "Which sentence correctly places quotation marks around these words? The author calls the invention simple but useful.",
+	  "Answer": "The author calls the invention “simple but useful.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The author calls the invention simple but useful.”",
+		"The author calls the invention “simple but useful.",
+        "The author calls the invention, “simple but useful.”"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-068",
+	  "Grade": 4,
+	  "Topic": "Quotation marks for quoted text",
+	  "Question": "Which sentence correctly places quotation marks around these words? The historian described the town as small but lively.",
+	  "Answer": "The historian described the town as “small but lively.”",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"The historian described the town as small but lively.”",
+		"The historian described the town as “small but lively.",
+        "The historian described the town as, “small but lively.”"
+	  ],
+	  "Standard": "L.4.2b"
+	},
+	{
+	  "ID": "G4-PUN-069",
+	  "Grade": 4,
+	  "Topic": "Punctuation for meaning and effect",
+	  "Question": "Which ending mark best shows strong excitement? \"We finally won the match_\"",
+	  "Answer": "!",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		".",
+		"?",
+        ","
+	  ],
+	  "Standard": "L.4.3b"
+	},
+	{
+	  "ID": "G4-PUN-070",
+	  "Grade": 4,
+	  "Topic": "Punctuation for meaning and effect",
+	  "Question": "Which ending mark best shows a question? \"Where did you find the map_\"",
+	  "Answer": "?",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"!",
+		".",
+        ":"
+	  ],
+	  "Standard": "L.4.3b"
+	},
+	{
+	  "ID": "G4-PUN-071",
+	  "Grade": 4,
+	  "Topic": "Punctuation for meaning and effect",
+	  "Question": "Which ending mark is best for a calm statement? \"The library closes at five_\"",
+	  "Answer": ".",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"!",
+		"?",
+        ","
+	  ],
+	  "Standard": "L.4.3b"
+	},
+	{
+	  "ID": "G4-PUN-072",
+	  "Grade": 4,
+	  "Topic": "Punctuation for meaning and effect",
+	  "Question": "Which ending mark best shows a shouted warning? \"Look out_\"",
+	  "Answer": "!",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		".",
+		"?",
+        ","
+	  ],
+	  "Standard": "L.4.3b"
+	},
+	{
+	  "ID": "G4-PUN-073",
+	  "Grade": 4,
+	  "Topic": "Punctuation for meaning and effect",
+	  "Question": "Which ending mark should follow this polite question? \"May I borrow your pencil_\"",
+	  "Answer": "?",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		".",
+		"!",
+        ":"
+	  ],
+	  "Standard": "L.4.3b"
+	},
+	{
+	  "ID": "G4-PUN-074",
+	  "Grade": 4,
+	  "Topic": "Punctuation for meaning and effect",
+	  "Question": "Which ending mark best fits a surprised reaction? \"What an incredible view_\"",
+	  "Answer": "!",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		".",
+		"?",
+        ","
+	  ],
+	  "Standard": "L.4.3b"
+	},
+	{
+	  "ID": "G4-PUN-075",
+	  "Grade": 4,
+	  "Topic": "Punctuation for meaning and effect",
+	  "Question": "Which ending mark belongs after this direction? \"Place your notebook on the desk_\"",
+	  "Answer": ".",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"?",
+		"!",
+        ":"
+	  ],
+	  "Standard": "L.4.3b"
+	},
+	{
+	  "ID": "G4-PUN-076",
+	  "Grade": 4,
+	  "Topic": "Punctuation for meaning and effect",
+	  "Question": "Which ending mark fits a request for information? \"What time does the train arrive_\"",
+	  "Answer": "?",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		".",
+		"!",
+        ":"
+	  ],
+	  "Standard": "L.4.3b"
+	},
+	{
+	  "ID": "G4-PUN-077",
+	  "Grade": 4,
+	  "Topic": "Punctuation for meaning and effect",
+	  "Question": "Which ending mark fits an ordinary fact? \"Catputer has two machine parts_\"",
+	  "Answer": ".",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"!",
+		"?",
+        ","
+	  ],
+	  "Standard": "L.4.3b"
+	},
+	{
+	  "ID": "G4-PUN-078",
+	  "Grade": 4,
+	  "Topic": "Punctuation for meaning and effect",
+	  "Question": "Which ending mark best shows alarm? \"The bridge is collapsing_\"",
+	  "Answer": "!",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"?",
+		".",
+        ","
+	  ],
+	  "Standard": "L.4.3b"
+	},
+	{
+	  "ID": "G4-PUN-079",
+	  "Grade": 4,
+	  "Topic": "Punctuation for meaning and effect",
+	  "Question": "Which ending mark fits this question? \"Did Bookworm return the encyclopedia_\"",
+	  "Answer": "?",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"!",
+		".",
+        ","
+	  ],
+	  "Standard": "L.4.3b"
+	},
+	{
+	  "ID": "G4-PUN-080",
+	  "Grade": 4,
+	  "Topic": "Punctuation for meaning and effect",
+	  "Question": "Which ending mark fits a neutral observation? \"The moon rose above the hills_\"",
+	  "Answer": ".",
+	  "Difficulty": "Medium",
+	  "Distractors": [
+		"!",
+		"?",
+        ","
+	  ],
+	  "Standard": "L.4.3b"
+	}
+  ]
+}

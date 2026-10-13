@@ -89,7 +89,7 @@ func set_active_option():
 
 func ask_question():
 	questions = question_screen.instantiate()
-	var question = Utils.get_grade_3_question()
+	var question = Utils.get_question_by_grade(5)
 	ans = question["Answer"]
 	questions.get_node("Question").text = question["Question"]
 	for i in range(4):

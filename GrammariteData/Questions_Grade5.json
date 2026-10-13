@@ -1,0 +1,2108 @@
+{
+  "Vocabulary": [
+	{
+	  "ID": "G5-VOC-001",
+	  "Grade": 5,
+	  "Topic": "Context clues: precise meanings",
+	  "Question": "The path was treacherous after the rain, so hikers moved slowly. What does \"treacherous\" mean?",
+	  "Answer": "Dangerous",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Smooth",
+		"Crowded",
+        "Short"
+	  ],
+	  "Standard": "L.5.4a"
+	},
+	{
+	  "ID": "G5-VOC-002",
+	  "Grade": 5,
+	  "Topic": "Context clues: precise meanings",
+	  "Question": "Papling was reluctant to enter the dark cave and stayed near the doorway. What does \"reluctant\" mean?",
+	  "Answer": "Unwilling",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Eager",
+		"Proud",
+        "Forgetful"
+	  ],
+	  "Standard": "L.5.4a"
+	},
+	{
+	  "ID": "G5-VOC-003",
+	  "Grade": 5,
+	  "Topic": "Context clues: precise meanings",
+	  "Question": "The map was obsolete because a new bridge had been built. What does \"obsolete\" mean?",
+	  "Answer": "No longer useful or current",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Extremely detailed",
+		"Written by hand",
+        "Hard to carry"
+	  ],
+	  "Standard": "L.5.4a"
+	},
+	{
+	  "ID": "G5-VOC-004",
+	  "Grade": 5,
+	  "Topic": "Context clues: precise meanings",
+	  "Question": "The instructions were concise; they explained the task in just two sentences. What does \"concise\" mean?",
+	  "Answer": "Brief and clear",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Confusing and long",
+		"Loud and angry",
+        "Unfinished"
+	  ],
+	  "Standard": "L.5.4a"
+	},
+	{
+	  "ID": "G5-VOC-005",
+	  "Grade": 5,
+	  "Topic": "Context clues: precise meanings",
+	  "Question": "After the storm, the once-muddy stream became transparent. What does \"transparent\" mean here?",
+	  "Answer": "Easy to see through",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Very deep",
+		"Full of fish",
+        "Moving quickly"
+	  ],
+	  "Standard": "L.5.4a"
+	},
+	{
+	  "ID": "G5-VOC-006",
+	  "Grade": 5,
+	  "Topic": "Context clues: relationships and contrasts",
+	  "Question": "Unlike his timid companion, Gryffonage approached the strange noise boldly. What does \"timid\" mean?",
+	  "Answer": "Shy or fearful",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Very curious",
+		"Extremely noisy",
+        "Fast-moving"
+	  ],
+	  "Standard": "L.5.4a"
+	},
+	{
+	  "ID": "G5-VOC-007",
+	  "Grade": 5,
+	  "Topic": "Context clues: relationships and contrasts",
+	  "Question": "The first route was arduous, requiring hours of climbing, but the second was easy. What does \"arduous\" mean?",
+	  "Answer": "Very difficult",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Quite short",
+		"Well marked",
+        "Completely empty"
+	  ],
+	  "Standard": "L.5.4a"
+	},
+	{
+	  "ID": "G5-VOC-008",
+	  "Grade": 5,
+	  "Topic": "Context clues: relationships and contrasts",
+	  "Question": "The library was tranquil, unlike the noisy market outside. What does \"tranquil\" mean?",
+	  "Answer": "Peaceful and calm",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Crowded and busy",
+		"Dark and dusty",
+        "Colorful and bright"
+	  ],
+	  "Standard": "L.5.4a"
+	},
+	{
+	  "ID": "G5-VOC-009",
+	  "Grade": 5,
+	  "Topic": "Context clues: relationships and contrasts",
+	  "Question": "The professor's explanation was vague, so the students asked for more specific details. What does \"vague\" mean?",
+	  "Answer": "Not clear or specific",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Very accurate",
+		"Easy to memorize",
+        "Given in writing"
+	  ],
+	  "Standard": "L.5.4a"
+	},
+	{
+	  "ID": "G5-VOC-010",
+	  "Grade": 5,
+	  "Topic": "Context clues: relationships and contrasts",
+	  "Question": "The plant was resilient: even after a harsh winter, it grew new leaves. What does \"resilient\" suggest?",
+	  "Answer": "Able to recover after difficulty",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Unable to grow",
+		"Needing no sunlight",
+        "Likely to break instantly"
+	  ],
+	  "Standard": "L.5.4a"
+	},
+	{
+	  "ID": "G5-VOC-011",
+	  "Grade": 5,
+	  "Topic": "Greek and Latin roots",
+	  "Question": "The root \"spect\" means \"look.\" What does \"inspect\" most nearly mean?",
+	  "Answer": "Examine carefully",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Speak loudly",
+		"Move quickly",
+        "Write neatly"
+	  ],
+	  "Standard": "L.5.4b"
+	},
+	{
+	  "ID": "G5-VOC-012",
+	  "Grade": 5,
+	  "Topic": "Greek and Latin roots",
+	  "Question": "The root \"port\" means \"carry.\" What does \"transport\" mean?",
+	  "Answer": "Carry from one place to another",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Measure the weight of something",
+		"Repair a broken machine",
+        "Draw a map of a place"
+	  ],
+	  "Standard": "L.5.4b"
+	},
+	{
+	  "ID": "G5-VOC-013",
+	  "Grade": 5,
+	  "Topic": "Greek and Latin roots",
+	  "Question": "The root \"aud\" means \"hear.\" Which word refers to a group of listeners?",
+	  "Answer": "Audience",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Aquarium",
+		"Altitude",
+        "Architect"
+	  ],
+	  "Standard": "L.5.4b"
+	},
+	{
+	  "ID": "G5-VOC-014",
+	  "Grade": 5,
+	  "Topic": "Greek and Latin roots",
+	  "Question": "The root \"scrib\" means \"write.\" What is a \"manuscript\"?",
+	  "Answer": "A written document",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"A type of measurement",
+		"A musical instrument",
+        "A glass container"
+	  ],
+	  "Standard": "L.5.4b"
+	},
+	{
+	  "ID": "G5-VOC-015",
+	  "Grade": 5,
+	  "Topic": "Greek and Latin roots",
+	  "Question": "The root \"struct\" means \"build.\" What is a \"construction\" project?",
+	  "Answer": "An effort to build something",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"A study of ocean animals",
+		"A collection of songs",
+        "A test of hearing"
+	  ],
+	  "Standard": "L.5.4b"
+	},
+	{
+	  "ID": "G5-VOC-016",
+	  "Grade": 5,
+	  "Topic": "Prefixes and suffixes",
+	  "Question": "The prefix \"pre-\" means \"before.\" What does \"preview\" mean?",
+	  "Answer": "See in advance",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"See again after a break",
+		"See something secretly",
+        "See only a small piece"
+	  ],
+	  "Standard": "L.5.4b"
+	},
+	{
+	  "ID": "G5-VOC-017",
+	  "Grade": 5,
+	  "Topic": "Prefixes and suffixes",
+	  "Question": "What does the prefix \"mis-\" mean in \"misinterpret\"?",
+	  "Answer": "Incorrectly",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Together",
+		"Before",
+        "Again"
+	  ],
+	  "Standard": "L.5.4b"
+	},
+	{
+	  "ID": "G5-VOC-018",
+	  "Grade": 5,
+	  "Topic": "Prefixes and suffixes",
+	  "Question": "What does the suffix \"-less\" mean in \"fearless\"?",
+	  "Answer": "Without",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Full of",
+		"Able to",
+        "One who"
+	  ],
+	  "Standard": "L.5.4b"
+	},
+	{
+	  "ID": "G5-VOC-019",
+	  "Grade": 5,
+	  "Topic": "Prefixes and suffixes",
+	  "Question": "What does the prefix \"inter-\" mean in \"international\"?",
+	  "Answer": "Between or among",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Against",
+		"Below",
+        "After"
+	  ],
+	  "Standard": "L.5.4b"
+	},
+	{
+	  "ID": "G5-VOC-020",
+	  "Grade": 5,
+	  "Topic": "Prefixes and suffixes",
+	  "Question": "What does the suffix \"-able\" mean in \"washable\"?",
+	  "Answer": "Able to be",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Full of",
+		"Without",
+        "One who studies"
+	  ],
+	  "Standard": "L.5.4b"
+	},
+	{
+	  "ID": "G5-VOC-021",
+	  "Grade": 5,
+	  "Topic": "Similes and metaphors",
+	  "Question": "In \"The classroom was a beehive of activity,\" what does the metaphor suggest?",
+	  "Answer": "The classroom was busy",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"The classroom was outdoors",
+		"There were insects indoors",
+        "The class was silent"
+	  ],
+	  "Standard": "L.5.5a"
+	},
+	{
+	  "ID": "G5-VOC-022",
+	  "Grade": 5,
+	  "Topic": "Similes and metaphors",
+	  "Question": "In \"The moon was a silver coin in the sky,\" what is being compared to a coin?",
+	  "Answer": "The moon",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"The sky",
+		"A star",
+        "The night air"
+	  ],
+	  "Standard": "L.5.5a"
+	},
+	{
+	  "ID": "G5-VOC-023",
+	  "Grade": 5,
+	  "Topic": "Similes and metaphors",
+	  "Question": "\"His thoughts raced like a speeding train.\" What does this simile emphasize?",
+	  "Answer": "His thoughts moved quickly",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"He was riding a train",
+		"He forgot what to say",
+        "He was thinking about travel"
+	  ],
+	  "Standard": "L.5.5a"
+	},
+	{
+	  "ID": "G5-VOC-024",
+	  "Grade": 5,
+	  "Topic": "Similes and metaphors",
+	  "Question": "\"The old bridge groaned like a tired giant.\" What does this simile suggest?",
+	  "Answer": "The bridge made a creaking sound",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"The bridge was brand-new",
+		"A giant lived beneath it",
+        "The bridge was painted green"
+	  ],
+	  "Standard": "L.5.5a"
+	},
+	{
+	  "ID": "G5-VOC-025",
+	  "Grade": 5,
+	  "Topic": "Similes and metaphors",
+	  "Question": "\"The volcano was an angry furnace.\" What does this metaphor suggest?",
+	  "Answer": "The volcano was intensely hot and fierce",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"The volcano was cold and quiet",
+		"Someone built a stove nearby",
+        "The volcano was made of metal"
+	  ],
+	  "Standard": "L.5.5a"
+	},
+	{
+	  "ID": "G5-VOC-026",
+	  "Grade": 5,
+	  "Topic": "Idioms and figurative expressions",
+	  "Question": "When Team Rammarg's plan fell through, what happened?",
+	  "Answer": "The plan failed",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"The plan became larger",
+		"The plan was written down",
+        "The plan was delayed exactly one hour"
+	  ],
+	  "Standard": "L.5.5b"
+	},
+	{
+	  "ID": "G5-VOC-027",
+	  "Grade": 5,
+	  "Topic": "Idioms and figurative expressions",
+	  "Question": "What does \"keep an eye on\" the map mean?",
+	  "Answer": "Watch it carefully",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Hide it in a bag",
+		"Draw an eye on it",
+        "Leave it behind"
+	  ],
+	  "Standard": "L.5.5b"
+	},
+	{
+	  "ID": "G5-VOC-028",
+	  "Grade": 5,
+	  "Topic": "Idioms and figurative expressions",
+	  "Question": "When a teacher says \"break the ice\" at a new meeting, what does the phrase mean?",
+	  "Answer": "Help people feel comfortable",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Make a drink colder",
+		"Stop the meeting early",
+        "Break a window"
+	  ],
+	  "Standard": "L.5.5b"
+	},
+	{
+	  "ID": "G5-VOC-029",
+	  "Grade": 5,
+	  "Topic": "Idioms and figurative expressions",
+	  "Question": "If Brainrouter \"hit the books,\" what did Brainrouter do?",
+	  "Answer": "Started studying",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Dropped a stack of books",
+		"Visited a bookstore",
+        "Packed for a trip"
+	  ],
+	  "Standard": "L.5.5b"
+	},
+	{
+	  "ID": "G5-VOC-030",
+	  "Grade": 5,
+	  "Topic": "Idioms and figurative expressions",
+	  "Question": "What does \"under the weather\" mean?",
+	  "Answer": "Feeling unwell",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Standing outside in rain",
+		"Traveling by airplane",
+        "Wearing warm clothes"
+	  ],
+	  "Standard": "L.5.5b"
+	},
+	{
+	  "ID": "G5-VOC-031",
+	  "Grade": 5,
+	  "Topic": "Adages and proverbs",
+	  "Question": "What does \"Actions speak louder than words\" mean?",
+	  "Answer": "What people do matters more than what they say",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Quiet people should not speak",
+		"Words are always unimportant",
+        "People should avoid making plans"
+	  ],
+	  "Standard": "L.5.5b"
+	},
+	{
+	  "ID": "G5-VOC-032",
+	  "Grade": 5,
+	  "Topic": "Adages and proverbs",
+	  "Question": "What does \"Look before you leap\" advise?",
+	  "Answer": "Consider the consequences before acting",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Always jump as far as possible",
+		"Never try anything new",
+        "Run instead of walking"
+	  ],
+	  "Standard": "L.5.5b"
+	},
+	{
+	  "ID": "G5-VOC-033",
+	  "Grade": 5,
+	  "Topic": "Adages and proverbs",
+	  "Question": "What does \"Practice makes perfect\" emphasize?",
+	  "Answer": "Repeated effort improves a skill",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Talent never matters",
+		"Every first attempt succeeds",
+        "Practice should be avoided"
+	  ],
+	  "Standard": "L.5.5b"
+	},
+	{
+	  "ID": "G5-VOC-034",
+	  "Grade": 5,
+	  "Topic": "Adages and proverbs",
+	  "Question": "What does \"Don't judge a book by its cover\" mean?",
+	  "Answer": "Appearances can be misleading",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Books should have plain covers",
+		"Only long books are worth reading",
+        "Every book tells the same story"
+	  ],
+	  "Standard": "L.5.5b"
+	},
+	{
+	  "ID": "G5-VOC-035",
+	  "Grade": 5,
+	  "Topic": "Adages and proverbs",
+	  "Question": "What does \"Many hands make light work\" suggest?",
+	  "Answer": "Working together makes tasks easier",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Lamps need several people",
+		"Small groups finish more slowly",
+        "Work should be done silently"
+	  ],
+	  "Standard": "L.5.5b"
+	},
+	{
+	  "ID": "G5-VOC-036",
+	  "Grade": 5,
+	  "Topic": "Word relationships and nuance",
+	  "Question": "Which word is closest in meaning to \"meticulous\"?",
+	  "Answer": "Careful",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Careless",
+		"Hasty",
+        "Uncertain"
+	  ],
+	  "Standard": "L.5.5c"
+	},
+	{
+	  "ID": "G5-VOC-037",
+	  "Grade": 5,
+	  "Topic": "Word relationships and nuance",
+	  "Question": "Which word is the strongest way to describe being frightened?",
+	  "Answer": "Terrified",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Uneasy",
+		"Nervous",
+        "Wary"
+	  ],
+	  "Standard": "L.5.5c"
+	},
+	{
+	  "ID": "G5-VOC-038",
+	  "Grade": 5,
+	  "Topic": "Word relationships and nuance",
+	  "Question": "Which pair of words are antonyms?",
+	  "Answer": "Scarce and abundant",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Rapid and swift",
+		"Silent and quiet",
+        "Tiny and small"
+	  ],
+	  "Standard": "L.5.5c"
+	},
+	{
+	  "ID": "G5-VOC-039",
+	  "Grade": 5,
+	  "Topic": "Word relationships and nuance",
+	  "Question": "Which word best describes someone who continues despite setbacks?",
+	  "Answer": "Persistent",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Indifferent",
+		"Forgetful",
+        "Uncertain"
+	  ],
+	  "Standard": "L.5.5c"
+	},
+	{
+	  "ID": "G5-VOC-040",
+	  "Grade": 5,
+	  "Topic": "Word relationships and nuance",
+	  "Question": "Which word is most similar in meaning to \"generous\"?",
+	  "Answer": "Giving",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Selfish",
+		"Suspicious",
+        "Tired"
+	  ],
+	  "Standard": "L.5.5c"
+	},
+	{
+	  "ID": "G5-VOC-041",
+	  "Grade": 5,
+	  "Topic": "Multiple meanings and reference skills",
+	  "Question": "In \"The team will conduct an experiment,\" what does \"conduct\" mean?",
+	  "Answer": "Carry out",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"A material that carries electricity",
+		"A rule for behavior",
+        "A narrow hallway"
+	  ],
+	  "Standard": "L.5.4c"
+	},
+	{
+	  "ID": "G5-VOC-042",
+	  "Grade": 5,
+	  "Topic": "Multiple meanings and reference skills",
+	  "Question": "In \"Catputer will draft a plan,\" what does \"draft\" mean?",
+	  "Answer": "Prepare an early version",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"A current of cool air",
+		"A group of selected athletes",
+        "A large pulling animal"
+	  ],
+	  "Standard": "L.5.4c"
+	},
+	{
+	  "ID": "G5-VOC-043",
+	  "Grade": 5,
+	  "Topic": "Multiple meanings and reference skills",
+	  "Question": "Which reference is most helpful for finding how to pronounce an unfamiliar word?",
+	  "Answer": "Dictionary with pronunciation guides",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Atlas",
+		"Calendar",
+        "Recipe book"
+	  ],
+	  "Standard": "L.5.4c"
+	},
+	{
+	  "ID": "G5-VOC-044",
+	  "Grade": 5,
+	  "Topic": "Multiple meanings and reference skills",
+	  "Question": "Which reference is most useful for finding alternatives to the word \"happy\"?",
+	  "Answer": "Thesaurus",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Globe",
+		"Ruler",
+        "Timeline"
+	  ],
+	  "Standard": "L.5.4c"
+	},
+	{
+	  "ID": "G5-VOC-045",
+	  "Grade": 5,
+	  "Topic": "Multiple meanings and reference skills",
+	  "Question": "In \"The ruler was fair to both teams,\" what does \"fair\" mean?",
+	  "Answer": "Just and impartial",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Light-colored",
+		"A public festival",
+        "Only moderately good"
+	  ],
+	  "Standard": "L.5.4c"
+	},
+	{
+	  "ID": "G5-VOC-046",
+	  "Grade": 5,
+	  "Topic": "Academic linking words",
+	  "Question": "Which word best signals a contrast? \"The trail was steep; ___, the hikers continued.\"",
+	  "Answer": "Nevertheless",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Similarly",
+		"For example",
+        "In addition"
+	  ],
+	  "Standard": "L.5.6"
+	},
+	{
+	  "ID": "G5-VOC-047",
+	  "Grade": 5,
+	  "Topic": "Academic linking words",
+	  "Question": "Which transition best signals another supporting detail? \"We packed water. ___, we brought a map.\"",
+	  "Answer": "In addition",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"However",
+		"Instead",
+        "Although"
+	  ],
+	  "Standard": "L.5.6"
+	},
+	{
+	  "ID": "G5-VOC-048",
+	  "Grade": 5,
+	  "Topic": "Academic linking words",
+	  "Question": "Which word best signals a similarity? \"Papling enjoys puzzles. ___, Catputer likes solving problems.\"",
+	  "Answer": "Similarly",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Nevertheless",
+		"Otherwise",
+        "Despite"
+	  ],
+	  "Standard": "L.5.6"
+	},
+	{
+	  "ID": "G5-VOC-049",
+	  "Grade": 5,
+	  "Topic": "Academic linking words",
+	  "Question": "Which word best introduces an example? \"Some Grammarites use supplies; ___, Moustapler carries a stapler.\"",
+	  "Answer": "For example",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"In contrast",
+		"Nevertheless",
+        "Instead"
+	  ],
+	  "Standard": "L.5.6"
+	},
+	{
+	  "ID": "G5-VOC-050",
+	  "Grade": 5,
+	  "Topic": "Academic linking words",
+	  "Question": "Which word signals an unexpected contrast? \"The forecast predicted sunshine; ___, heavy rain began.\"",
+	  "Answer": "However",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Therefore",
+		"Likewise",
+        "Furthermore"
+	  ],
+	  "Standard": "L.5.6"
+	}
+  ],
+  "Syntax": [
+	{
+	  "ID": "G5-SYN-001",
+	  "Grade": 5,
+	  "Topic": "Present perfect tense",
+	  "Question": "Choose the correct verb phrase: \"Papling ___ three pages so far.\"",
+	  "Answer": "has written",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"have written",
+		"had write",
+        "will writing"
+	  ],
+	  "Standard": "L.5.1b"
+	},
+	{
+	  "ID": "G5-SYN-002",
+	  "Grade": 5,
+	  "Topic": "Present perfect tense",
+	  "Question": "Choose the correct sentence.",
+	  "Answer": "We have finished the puzzle.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"We has finished the puzzle.",
+		"We have finish the puzzle.",
+        "We having finished the puzzle."
+	  ],
+	  "Standard": "L.5.1b"
+	},
+	{
+	  "ID": "G5-SYN-003",
+	  "Grade": 5,
+	  "Topic": "Present perfect tense",
+	  "Question": "Fill in the blank: \"Catputer ___ the machine already.\"",
+	  "Answer": "has repaired",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"have repaired",
+		"has repair",
+        "is repaired yesterday"
+	  ],
+	  "Standard": "L.5.1b"
+	},
+	{
+	  "ID": "G5-SYN-004",
+	  "Grade": 5,
+	  "Topic": "Present perfect tense",
+	  "Question": "Which sentence uses the present perfect tense?",
+	  "Answer": "The team has traveled to Lluvia City.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"The team travels to Lluvia City.",
+		"The team will travel to Lluvia City.",
+        "The team traveled to Lluvia City yesterday."
+	  ],
+	  "Standard": "L.5.1b"
+	},
+	{
+	  "ID": "G5-SYN-005",
+	  "Grade": 5,
+	  "Topic": "Present perfect tense",
+	  "Question": "Choose the correct completion: \"The students ___ their supplies.\"",
+	  "Answer": "have organized",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"has organized",
+		"have organize",
+        "had organizing"
+	  ],
+	  "Standard": "L.5.1b"
+	},
+	{
+	  "ID": "G5-SYN-006",
+	  "Grade": 5,
+	  "Topic": "Past perfect tense",
+	  "Question": "Before the bell rang, Professor Hoot ___ the lesson.",
+	  "Answer": "had prepared",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"has prepare",
+		"will prepared",
+        "have preparing"
+	  ],
+	  "Standard": "L.5.1b"
+	},
+	{
+	  "ID": "G5-SYN-007",
+	  "Grade": 5,
+	  "Topic": "Past perfect tense",
+	  "Question": "Choose the sentence that uses the past perfect correctly.",
+	  "Answer": "By noon, the team had crossed the bridge.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"By noon, the team has cross the bridge.",
+		"By noon, the team had crossing the bridge.",
+        "By noon, the team have crossed the bridge."
+	  ],
+	  "Standard": "L.5.1b"
+	},
+	{
+	  "ID": "G5-SYN-008",
+	  "Grade": 5,
+	  "Topic": "Past perfect tense",
+	  "Question": "When the players arrived, Team Rammarg ___ the gate.",
+	  "Answer": "had locked",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"has lock",
+		"will locking",
+        "have locked tomorrow"
+	  ],
+	  "Standard": "L.5.1b"
+	},
+	{
+	  "ID": "G5-SYN-009",
+	  "Grade": 5,
+	  "Topic": "Past perfect tense",
+	  "Question": "Which verb phrase completes the sentence? \"She realized she ___ her notebook at home.\"",
+	  "Answer": "had left",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"has leave",
+		"will left",
+        "had leaving"
+	  ],
+	  "Standard": "L.5.1b"
+	},
+	{
+	  "ID": "G5-SYN-010",
+	  "Grade": 5,
+	  "Topic": "Past perfect tense",
+	  "Question": "Which sentence correctly shows that one past action happened before another?",
+	  "Answer": "I had packed before the bus arrived.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"I will pack before the bus arrived yesterday.",
+		"I have packing before the bus arrived.",
+        "I had pack before the bus arrived."
+	  ],
+	  "Standard": "L.5.1b"
+	},
+	{
+	  "ID": "G5-SYN-011",
+	  "Grade": 5,
+	  "Topic": "Future perfect tense",
+	  "Question": "By Friday, the builders ___ the new bridge.",
+	  "Answer": "will have finished",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"will has finished",
+		"have finish",
+        "had finishing"
+	  ],
+	  "Standard": "L.5.1b"
+	},
+	{
+	  "ID": "G5-SYN-012",
+	  "Grade": 5,
+	  "Topic": "Future perfect tense",
+	  "Question": "Choose the correct completion: \"By the time we arrive, the class ___ its presentation.\"",
+	  "Answer": "will have completed",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"will completed",
+		"has completing",
+        "had complete"
+	  ],
+	  "Standard": "L.5.1b"
+	},
+	{
+	  "ID": "G5-SYN-013",
+	  "Grade": 5,
+	  "Topic": "Future perfect tense",
+	  "Question": "Which sentence uses the future perfect tense?",
+	  "Answer": "By noon tomorrow, I will have studied for two hours.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"I study for two hours every morning.",
+		"I studied for two hours yesterday.",
+        "I am studying for two hours now."
+	  ],
+	  "Standard": "L.5.1b"
+	},
+	{
+	  "ID": "G5-SYN-014",
+	  "Grade": 5,
+	  "Topic": "Future perfect tense",
+	  "Question": "\"By next month, Catputer ___ the repairs.\"",
+	  "Answer": "will have finished",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"will has finished",
+		"has finishing",
+        "had finish"
+	  ],
+	  "Standard": "L.5.1b"
+	},
+	{
+	  "ID": "G5-SYN-015",
+	  "Grade": 5,
+	  "Topic": "Future perfect tense",
+	  "Question": "Choose the correctly formed future perfect phrase.",
+	  "Answer": "will have written",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"will has wrote",
+		"will having written",
+        "will have wrote"
+	  ],
+	  "Standard": "L.5.1b"
+	},
+	{
+	  "ID": "G5-SYN-016",
+	  "Grade": 5,
+	  "Topic": "Consistent verb tense",
+	  "Question": "Which word should change to keep the past tense consistent? \"The team entered the cave and finds a map.\"",
+	  "Answer": "finds",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"entered",
+		"cave",
+        "map"
+	  ],
+	  "Standard": "L.5.1d"
+	},
+	{
+	  "ID": "G5-SYN-017",
+	  "Grade": 5,
+	  "Topic": "Consistent verb tense",
+	  "Question": "Which sentence maintains a consistent past tense?",
+	  "Answer": "Scrawlking opened the book and read the first page.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Scrawlking opens the book and read the first page.",
+		"Scrawlking opened the book and reads the first page.",
+        "Scrawlking will open the book and read the first page yesterday."
+	  ],
+	  "Standard": "L.5.1d"
+	},
+	{
+	  "ID": "G5-SYN-018",
+	  "Grade": 5,
+	  "Topic": "Consistent verb tense",
+	  "Question": "Choose the verb that fits: \"Yesterday we explored the ruins and ___ an old sign.\"",
+	  "Answer": "found",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"find",
+		"will find",
+        "are finding"
+	  ],
+	  "Standard": "L.5.1d"
+	},
+	{
+	  "ID": "G5-SYN-019",
+	  "Grade": 5,
+	  "Topic": "Consistent verb tense",
+	  "Question": "Which word should change? \"Papling climbed the stairs, opened the door, and looks inside.\"",
+	  "Answer": "looks",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"opened",
+		"climbed",
+        "inside"
+	  ],
+	  "Standard": "L.5.1d"
+	},
+	{
+	  "ID": "G5-SYN-020",
+	  "Grade": 5,
+	  "Topic": "Consistent verb tense",
+	  "Question": "Which sentence uses present-tense verbs consistently?",
+	  "Answer": "The trainer checks the map and follows the trail.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"The trainer checked the map and follows the trail.",
+		"The trainer checks the map and followed the trail.",
+        "The trainer will check the map and follows the trail yesterday."
+	  ],
+	  "Standard": "L.5.1d"
+	},
+	{
+	  "ID": "G5-SYN-021",
+	  "Grade": 5,
+	  "Topic": "Sequence and tense choice",
+	  "Question": "Which completes the sentence? \"After we ___ lunch, we went to the library.\"",
+	  "Answer": "had eaten",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"will eat",
+		"are eating tomorrow",
+        "have eat"
+	  ],
+	  "Standard": "L.5.1c"
+	},
+	{
+	  "ID": "G5-SYN-022",
+	  "Grade": 5,
+	  "Topic": "Sequence and tense choice",
+	  "Question": "Which sentence clearly shows an action still continuing now?",
+	  "Answer": "We have lived here for five years and still do.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"We lived here for five years but moved away.",
+		"We will live here next year.",
+        "We had lived here before we moved."
+	  ],
+	  "Standard": "L.5.1c"
+	},
+	{
+	  "ID": "G5-SYN-023",
+	  "Grade": 5,
+	  "Topic": "Sequence and tense choice",
+	  "Question": "Choose the correct verb: \"Right now, the players ___ toward the Volcano.\"",
+	  "Answer": "are traveling",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"were traveling yesterday",
+		"will have traveled by tomorrow",
+        "had traveled before noon"
+	  ],
+	  "Standard": "L.5.1c"
+	},
+	{
+	  "ID": "G5-SYN-024",
+	  "Grade": 5,
+	  "Topic": "Sequence and tense choice",
+	  "Question": "Which sentence describes a habitual action?",
+	  "Answer": "Every morning, Professor Hoot reads a chapter.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Professor Hoot read a chapter once yesterday.",
+		"Professor Hoot is reading a chapter right now.",
+        "Professor Hoot will read a chapter tomorrow."
+	  ],
+	  "Standard": "L.5.1c"
+	},
+	{
+	  "ID": "G5-SYN-025",
+	  "Grade": 5,
+	  "Topic": "Sequence and tense choice",
+	  "Question": "Choose the clearest completion: \"By the time the show began, the audience ___.\"",
+	  "Answer": "had taken their seats",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"will take their seats",
+		"takes their seats tomorrow",
+        "is taking their seats next week"
+	  ],
+	  "Standard": "L.5.1c"
+	},
+	{
+	  "ID": "G5-SYN-026",
+	  "Grade": 5,
+	  "Topic": "Correlative conjunctions",
+	  "Question": "Choose the correct pair: \"___ Papling ___ Catputer can solve the riddle.\"",
+	  "Answer": "Both ... and",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Either ... and",
+		"Neither ... or",
+        "Not only ... or"
+	  ],
+	  "Standard": "L.5.1e"
+	},
+	{
+	  "ID": "G5-SYN-027",
+	  "Grade": 5,
+	  "Topic": "Correlative conjunctions",
+	  "Question": "Choose the correct completion: \"You can choose either the bridge ___ the tunnel.\"",
+	  "Answer": "or",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"nor",
+		"and",
+        "but also"
+	  ],
+	  "Standard": "L.5.1e"
+	},
+	{
+	  "ID": "G5-SYN-028",
+	  "Grade": 5,
+	  "Topic": "Correlative conjunctions",
+	  "Question": "Which sentence uses correlative conjunctions correctly?",
+	  "Answer": "Neither the captain nor the scout knew the answer.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Neither the captain or the scout knew the answer.",
+		"Either the captain nor the scout knew the answer.",
+        "Both the captain or the scout knew the answer."
+	  ],
+	  "Standard": "L.5.1e"
+	},
+	{
+	  "ID": "G5-SYN-029",
+	  "Grade": 5,
+	  "Topic": "Correlative conjunctions",
+	  "Question": "Choose the correct pair: \"The challenge requires ___ patience ___ creativity.\"",
+	  "Answer": "not only ... but also",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"either ... nor",
+		"neither ... and",
+        "both ... or"
+	  ],
+	  "Standard": "L.5.1e"
+	},
+	{
+	  "ID": "G5-SYN-030",
+	  "Grade": 5,
+	  "Topic": "Correlative conjunctions",
+	  "Question": "Which completion is correct? \"___ the rain stops ___ we will take the indoor route.\"",
+	  "Answer": "Either ... or",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Neither ... or",
+		"Both ... or",
+        "Not only ... nor"
+	  ],
+	  "Standard": "L.5.1e"
+	},
+	{
+	  "ID": "G5-SYN-031",
+	  "Grade": 5,
+	  "Topic": "Conjunctions and logical connections",
+	  "Question": "What is the function of \"although\" in \"Although it rained, we continued\"?",
+	  "Answer": "It introduces a contrast",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"It names a person",
+		"It describes a place",
+        "It changes a noun to plural"
+	  ],
+	  "Standard": "L.5.1a"
+	},
+	{
+	  "ID": "G5-SYN-032",
+	  "Grade": 5,
+	  "Topic": "Conjunctions and logical connections",
+	  "Question": "What relationship does \"because\" show in \"We stayed inside because of the storm\"?",
+	  "Answer": "Reason or cause",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Comparison",
+		"Time sequence only",
+        "Direct address"
+	  ],
+	  "Standard": "L.5.1a"
+	},
+	{
+	  "ID": "G5-SYN-033",
+	  "Grade": 5,
+	  "Topic": "Conjunctions and logical connections",
+	  "Question": "Which conjunction best completes: \"We wanted to explore, ___ the gate was locked.\"",
+	  "Answer": "but",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"because of",
+		"during",
+        "under"
+	  ],
+	  "Standard": "L.5.1a"
+	},
+	{
+	  "ID": "G5-SYN-034",
+	  "Grade": 5,
+	  "Topic": "Conjunctions and logical connections",
+	  "Question": "Which word is a conjunction in \"Papling rested while Catputer worked\"?",
+	  "Answer": "while",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"rested",
+		"Catputer",
+        "worked"
+	  ],
+	  "Standard": "L.5.1a"
+	},
+	{
+	  "ID": "G5-SYN-035",
+	  "Grade": 5,
+	  "Topic": "Conjunctions and logical connections",
+	  "Question": "Choose the conjunction that best signals a result: \"The bridge was closed, ___ we took another path.\"",
+	  "Answer": "so",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"although",
+		"unless",
+        "while"
+	  ],
+	  "Standard": "L.5.1a"
+	},
+	{
+	  "ID": "G5-SYN-036",
+	  "Grade": 5,
+	  "Topic": "Prepositions and phrases",
+	  "Question": "Which phrase tells where the book is? \"The book rests beneath the desk.\"",
+	  "Answer": "beneath the desk",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"The book",
+		"book rests",
+        "rests beneath"
+	  ],
+	  "Standard": "L.5.1a"
+	},
+	{
+	  "ID": "G5-SYN-037",
+	  "Grade": 5,
+	  "Topic": "Prepositions and phrases",
+	  "Question": "Which word is the preposition in \"The players walked across the bridge\"?",
+	  "Answer": "across",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"players",
+		"walked",
+        "bridge"
+	  ],
+	  "Standard": "L.5.1a"
+	},
+	{
+	  "ID": "G5-SYN-038",
+	  "Grade": 5,
+	  "Topic": "Prepositions and phrases",
+	  "Question": "Which sentence uses a preposition to show time?",
+	  "Answer": "We will meet after lunch.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"We will sing loudly.",
+		"We enjoy the festival.",
+        "We solved the puzzle quickly."
+	  ],
+	  "Standard": "L.5.1a"
+	},
+	{
+	  "ID": "G5-SYN-039",
+	  "Grade": 5,
+	  "Topic": "Prepositions and phrases",
+	  "Question": "In \"The map inside the chest is old,\" what does \"inside the chest\" describe?",
+	  "Answer": "Where the map is",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Who drew the map",
+		"Why the map is old",
+        "When the chest was built"
+	  ],
+	  "Standard": "L.5.1a"
+	},
+	{
+	  "ID": "G5-SYN-040",
+	  "Grade": 5,
+	  "Topic": "Prepositions and phrases",
+	  "Question": "Choose the correct preposition: \"The note is hidden ___ the pages of the book.\"",
+	  "Answer": "between",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"because",
+		"quietly",
+        "and"
+	  ],
+	  "Standard": "L.5.1a"
+	},
+	{
+	  "ID": "G5-SYN-041",
+	  "Grade": 5,
+	  "Topic": "Interjections and sentence revision",
+	  "Question": "Which word is an interjection in \"Wow, that was close!\"?",
+	  "Answer": "Wow",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"that",
+		"was",
+        "close"
+	  ],
+	  "Standard": "L.5.1a"
+	},
+	{
+	  "ID": "G5-SYN-042",
+	  "Grade": 5,
+	  "Topic": "Interjections and sentence revision",
+	  "Question": "Which interjection best expresses surprise at a sudden discovery?",
+	  "Answer": "Oh!",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Therefore",
+		"Because",
+        "Under"
+	  ],
+	  "Standard": "L.5.1a"
+	},
+	{
+	  "ID": "G5-SYN-043",
+	  "Grade": 5,
+	  "Topic": "Interjections and sentence revision",
+	  "Question": "Which revision combines the ideas without repeating \"the door\"? \"The door creaked. The door opened.\"",
+	  "Answer": "The door creaked as it opened.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"The door creaked. And the door it opened.",
+		"Opening, the door creaked the door.",
+        "The door opened, the door creaked."
+	  ],
+	  "Standard": "L.5.1a"
+	},
+	{
+	  "ID": "G5-SYN-044",
+	  "Grade": 5,
+	  "Topic": "Interjections and sentence revision",
+	  "Question": "Which revision is the most concise? \"Due to the fact that it was raining, we stayed inside.\"",
+	  "Answer": "Because it was raining, we stayed inside.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Owing to the fact that rain was happening, we stayed inside.",
+		"Since the reason was that it was raining, we stayed inside.",
+        "We stayed inside due to the fact that it was raining outside."
+	  ],
+	  "Standard": "L.5.1a"
+	},
+	{
+	  "ID": "G5-SYN-045",
+	  "Grade": 5,
+	  "Topic": "Interjections and sentence revision",
+	  "Question": "Which sentence avoids an unnecessary repeated phrase?",
+	  "Answer": "The scout found a key and placed it in a box.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"The scout found a key and placed the key in a box with the key.",
+		"The scout found a key, and the scout placed the key in a box.",
+        "The scout found a key and the found key was placed by the scout."
+	  ],
+	  "Standard": "L.5.1a"
+	},
+	{
+	  "ID": "G5-SYN-046",
+	  "Grade": 5,
+	  "Topic": "Team Rammarg editing challenge",
+	  "Question": "Team Rammarg wrote: \"I have saw the secret map.\" Which replacement corrects \"saw\"?",
+	  "Answer": "seen",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"seeing",
+		"see",
+        "saws"
+	  ],
+	  "Standard": "L.5.1d"
+	},
+	{
+	  "ID": "G5-SYN-047",
+	  "Grade": 5,
+	  "Topic": "Team Rammarg editing challenge",
+	  "Question": "Team Rammarg wrote: \"By the time we got there, the train has left.\" Which replacement corrects \"has\"?",
+	  "Answer": "had",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"have",
+		"having",
+        "will"
+	  ],
+	  "Standard": "L.5.1d"
+	},
+	{
+	  "ID": "G5-SYN-048",
+	  "Grade": 5,
+	  "Topic": "Team Rammarg editing challenge",
+	  "Question": "Team Rammarg wrote: \"Neither the book or the map was missing.\" Which replacement corrects \"or\"?",
+	  "Answer": "nor",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"and",
+		"but",
+        "so"
+	  ],
+	  "Standard": "L.5.1d"
+	},
+	{
+	  "ID": "G5-SYN-049",
+	  "Grade": 5,
+	  "Topic": "Team Rammarg editing challenge",
+	  "Question": "Team Rammarg wrote: \"Yesterday they climb the stairs and opened the chest.\" Which replacement corrects \"climb\"?",
+	  "Answer": "climbed",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"climbing",
+		"climbs",
+        "will climb"
+	  ],
+	  "Standard": "L.5.1d"
+	},
+	{
+	  "ID": "G5-SYN-050",
+	  "Grade": 5,
+	  "Topic": "Team Rammarg editing challenge",
+	  "Question": "Team Rammarg wrote: \"We will have finish the task by dawn.\" Which replacement corrects \"finish\"?",
+	  "Answer": "finished",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"finishing",
+		"finishes",
+        "finishable"
+	  ],
+	  "Standard": "L.5.1d"
+	}
+  ],
+  "Punctuation": [
+	{
+	  "ID": "G5-PUN-001",
+	  "Grade": 5,
+	  "Topic": "Introductory phrases: commas",
+	  "Question": "Which punctuation belongs at the underscore? \"After the battle_ the team rested.\"",
+	  "Answer": ",",
+	  "Difficulty": "High",
+	  "Distractors": [
+		";",
+		"?",
+        "!"
+	  ],
+	  "Standard": "L.5.2b"
+	},
+	{
+	  "ID": "G5-PUN-002",
+	  "Grade": 5,
+	  "Topic": "Introductory phrases: commas",
+	  "Question": "Which sentence punctuates the introductory phrase correctly?",
+	  "Answer": "Before sunrise, the scouts gathered.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Before, sunrise the scouts gathered.",
+		"Before sunrise the, scouts gathered.",
+        "Before sunrise; the scouts gathered."
+	  ],
+	  "Standard": "L.5.2b"
+	},
+	{
+	  "ID": "G5-PUN-003",
+	  "Grade": 5,
+	  "Topic": "Introductory phrases: commas",
+	  "Question": "Insert the correct mark: \"During the storm_ the cave remained dry.\"",
+	  "Answer": ",",
+	  "Difficulty": "High",
+	  "Distractors": [
+		":",
+		"?",
+        ";"
+	  ],
+	  "Standard": "L.5.2b"
+	},
+	{
+	  "ID": "G5-PUN-004",
+	  "Grade": 5,
+	  "Topic": "Introductory phrases: commas",
+	  "Question": "Which sentence correctly uses a comma after an introductory phrase?",
+	  "Answer": "On the far side of the river, a tower stood.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"On the far, side of the river a tower stood.",
+		"On the far side of the river a, tower stood.",
+        "On the far side of the river; a tower stood."
+	  ],
+	  "Standard": "L.5.2b"
+	},
+	{
+	  "ID": "G5-PUN-005",
+	  "Grade": 5,
+	  "Topic": "Introductory phrases: commas",
+	  "Question": "Insert the correct punctuation: \"Without a map_ we might get lost.\"",
+	  "Answer": ",",
+	  "Difficulty": "High",
+	  "Distractors": [
+		":",
+		"!",
+        "?"
+	  ],
+	  "Standard": "L.5.2b"
+	},
+	{
+	  "ID": "G5-PUN-006",
+	  "Grade": 5,
+	  "Topic": "Introductory clauses: commas",
+	  "Question": "Which punctuation belongs at the underscore? \"When the bell rang_ everyone sat down.\"",
+	  "Answer": ",",
+	  "Difficulty": "High",
+	  "Distractors": [
+		";",
+		":",
+        "?"
+	  ],
+	  "Standard": "L.5.2b"
+	},
+	{
+	  "ID": "G5-PUN-007",
+	  "Grade": 5,
+	  "Topic": "Introductory clauses: commas",
+	  "Question": "Which sentence correctly punctuates the condition?",
+	  "Answer": "If the bridge is safe, we will cross it.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"If the bridge, is safe we will cross it.",
+		"If the bridge is safe; we will cross it.",
+        "If the bridge is safe we, will cross it."
+	  ],
+	  "Standard": "L.5.2b"
+	},
+	{
+	  "ID": "G5-PUN-008",
+	  "Grade": 5,
+	  "Topic": "Introductory clauses: commas",
+	  "Question": "What mark belongs at the underscore? \"Although the path was narrow_ we continued.\"",
+	  "Answer": ",",
+	  "Difficulty": "High",
+	  "Distractors": [
+		";",
+		":",
+        "!"
+	  ],
+	  "Standard": "L.5.2b"
+	},
+	{
+	  "ID": "G5-PUN-009",
+	  "Grade": 5,
+	  "Topic": "Introductory clauses: commas",
+	  "Question": "Which sentence correctly punctuates an introductory clause?",
+	  "Answer": "Because Papling was tired, the team stopped.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Because Papling, was tired the team stopped.",
+		"Because Papling was tired; the team stopped.",
+        "Because Papling was tired the team, stopped."
+	  ],
+	  "Standard": "L.5.2b"
+	},
+	{
+	  "ID": "G5-PUN-010",
+	  "Grade": 5,
+	  "Topic": "Introductory clauses: commas",
+	  "Question": "What mark belongs at the underscore? \"While Catputer repaired the door_ the others waited.\"",
+	  "Answer": ",",
+	  "Difficulty": "High",
+	  "Distractors": [
+		";",
+		":",
+        "?"
+	  ],
+	  "Standard": "L.5.2b"
+	},
+	{
+	  "ID": "G5-PUN-011",
+	  "Grade": 5,
+	  "Topic": "Direct address: commas",
+	  "Question": "Which punctuation belongs at the underscore? \"Papling_ please bring the map.\"",
+	  "Answer": ",",
+	  "Difficulty": "High",
+	  "Distractors": [
+		";",
+		":",
+        "?"
+	  ],
+	  "Standard": "L.5.2c"
+	},
+	{
+	  "ID": "G5-PUN-012",
+	  "Grade": 5,
+	  "Topic": "Direct address: commas",
+	  "Question": "Which sentence punctuates direct address correctly?",
+	  "Answer": "Can you help me, Catputer?",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Can you, help me Catputer?",
+		"Can you help, me Catputer?",
+        "Can you help me; Catputer?"
+	  ],
+	  "Standard": "L.5.2c"
+	},
+	{
+	  "ID": "G5-PUN-013",
+	  "Grade": 5,
+	  "Topic": "Direct address: commas",
+	  "Question": "What mark belongs at the underscore? \"Thank you_ Professor Hoot, for the lesson.\"",
+	  "Answer": ",",
+	  "Difficulty": "High",
+	  "Distractors": [
+		":",
+		";",
+        "!"
+	  ],
+	  "Standard": "L.5.2c"
+	},
+	{
+	  "ID": "G5-PUN-014",
+	  "Grade": 5,
+	  "Topic": "Direct address: commas",
+	  "Question": "Which sentence correctly punctuates a name used in direct address?",
+	  "Answer": "I think, Gryffonage, that we should wait.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"I think Gryffonage, that we should wait.",
+		"I think, Gryffonage that we should wait.",
+        "I think; Gryffonage; that we should wait."
+	  ],
+	  "Standard": "L.5.2c"
+	},
+	{
+	  "ID": "G5-PUN-015",
+	  "Grade": 5,
+	  "Topic": "Direct address: commas",
+	  "Question": "What mark belongs at the underscore? \"Team Rammarg_ your plan will not succeed!\"",
+	  "Answer": ",",
+	  "Difficulty": "High",
+	  "Distractors": [
+		";",
+		":",
+        "?"
+	  ],
+	  "Standard": "L.5.2c"
+	},
+	{
+	  "ID": "G5-PUN-016",
+	  "Grade": 5,
+	  "Topic": "Yes and no: commas",
+	  "Question": "Which punctuation belongs at the underscore? \"Yes_ I found the key.\"",
+	  "Answer": ",",
+	  "Difficulty": "High",
+	  "Distractors": [
+		":",
+		";",
+        "?"
+	  ],
+	  "Standard": "L.5.2c"
+	},
+	{
+	  "ID": "G5-PUN-017",
+	  "Grade": 5,
+	  "Topic": "Yes and no: commas",
+	  "Question": "Which sentence correctly punctuates an opening response?",
+	  "Answer": "No, we are not leaving yet.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"No; we are not leaving yet.",
+		"No? we are not leaving yet.",
+        "No: we are not leaving yet."
+	  ],
+	  "Standard": "L.5.2c"
+	},
+	{
+	  "ID": "G5-PUN-018",
+	  "Grade": 5,
+	  "Topic": "Yes and no: commas",
+	  "Question": "What mark belongs at the underscore? \"Yes_ the route is open.\"",
+	  "Answer": ",",
+	  "Difficulty": "High",
+	  "Distractors": [
+		";",
+		"?",
+        "!"
+	  ],
+	  "Standard": "L.5.2c"
+	},
+	{
+	  "ID": "G5-PUN-019",
+	  "Grade": 5,
+	  "Topic": "Yes and no: commas",
+	  "Question": "Which sentence has correct punctuation for a short response?",
+	  "Answer": "No, thank you for the offer.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"No; thank you for the offer.",
+		"No? thank you for the offer.",
+        "No: thank you for the offer."
+	  ],
+	  "Standard": "L.5.2c"
+	},
+	{
+	  "ID": "G5-PUN-020",
+	  "Grade": 5,
+	  "Topic": "Yes and no: commas",
+	  "Question": "What mark belongs at the underscore? \"No_ I haven't seen the missing notebook.\"",
+	  "Answer": ",",
+	  "Difficulty": "High",
+	  "Distractors": [
+		";",
+		":",
+        "?"
+	  ],
+	  "Standard": "L.5.2c"
+	},
+	{
+	  "ID": "G5-PUN-021",
+	  "Grade": 5,
+	  "Topic": "Tag questions: commas",
+	  "Question": "Which punctuation belongs at the underscore? \"We have enough supplies_ don't we?\"",
+	  "Answer": ",",
+	  "Difficulty": "High",
+	  "Distractors": [
+		";",
+		":",
+        "!"
+	  ],
+	  "Standard": "L.5.2c"
+	},
+	{
+	  "ID": "G5-PUN-022",
+	  "Grade": 5,
+	  "Topic": "Tag questions: commas",
+	  "Question": "Which sentence correctly punctuates the tag question?",
+	  "Answer": "The gate is locked, isn't it?",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"The gate is locked; isn't it?",
+		"The gate is locked: isn't it?",
+        "The gate is locked isn't, it?"
+	  ],
+	  "Standard": "L.5.2c"
+	},
+	{
+	  "ID": "G5-PUN-023",
+	  "Grade": 5,
+	  "Topic": "Tag questions: commas",
+	  "Question": "Insert the correct mark: \"Papling can read the sign_ can't it?\"",
+	  "Answer": ",",
+	  "Difficulty": "High",
+	  "Distractors": [
+		";",
+		":",
+        "!"
+	  ],
+	  "Standard": "L.5.2c"
+	},
+	{
+	  "ID": "G5-PUN-024",
+	  "Grade": 5,
+	  "Topic": "Tag questions: commas",
+	  "Question": "Which sentence correctly includes a tag question?",
+	  "Answer": "You remembered the map, didn't you?",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"You remembered the map; didn't you?",
+		"You remembered the map: didn't you?",
+        "You remembered the map didn't, you?"
+	  ],
+	  "Standard": "L.5.2c"
+	},
+	{
+	  "ID": "G5-PUN-025",
+	  "Grade": 5,
+	  "Topic": "Tag questions: commas",
+	  "Question": "What mark belongs at the underscore? \"This path leads to Lluvia City_ doesn't it?\"",
+	  "Answer": ",",
+	  "Difficulty": "High",
+	  "Distractors": [
+		";",
+		":",
+        "!"
+	  ],
+	  "Standard": "L.5.2c"
+	},
+	{
+	  "ID": "G5-PUN-026",
+	  "Grade": 5,
+	  "Topic": "Items in a series",
+	  "Question": "Choose the sentence with correct punctuation for a three-item list.",
+	  "Answer": "We packed rope, water, and lanterns.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"We packed rope water, and lanterns.",
+		"We packed rope, water and, lanterns.",
+        "We packed rope; water, and lanterns."
+	  ],
+	  "Standard": "L.5.2a"
+	},
+	{
+	  "ID": "G5-PUN-027",
+	  "Grade": 5,
+	  "Topic": "Items in a series",
+	  "Question": "What mark belongs at the underscore? \"We need paper_ ink, and pencils.\"",
+	  "Answer": ",",
+	  "Difficulty": "High",
+	  "Distractors": [
+		";",
+		":",
+        "?"
+	  ],
+	  "Standard": "L.5.2a"
+	},
+	{
+	  "ID": "G5-PUN-028",
+	  "Grade": 5,
+	  "Topic": "Items in a series",
+	  "Question": "Which list is punctuated correctly?",
+	  "Answer": "Catputer carried a wrench, a map, and a compass.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Catputer carried a wrench a map, and a compass.",
+		"Catputer carried a wrench, a map and, a compass.",
+        "Catputer carried a wrench; a map, and a compass."
+	  ],
+	  "Standard": "L.5.2a"
+	},
+	{
+	  "ID": "G5-PUN-029",
+	  "Grade": 5,
+	  "Topic": "Items in a series",
+	  "Question": "What mark belongs at the underscore? \"The player can explore the cave, cross the bridge_ or return to town.\"",
+	  "Answer": ",",
+	  "Difficulty": "High",
+	  "Distractors": [
+		";",
+		":",
+        "?"
+	  ],
+	  "Standard": "L.5.2a"
+	},
+	{
+	  "ID": "G5-PUN-030",
+	  "Grade": 5,
+	  "Topic": "Items in a series",
+	  "Question": "Choose the correctly punctuated series.",
+	  "Answer": "The clues were hidden in books, boxes, and bottles.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"The clues were hidden in books boxes and bottles.",
+		"The clues were hidden in books, boxes and, bottles.",
+        "The clues were hidden in books; boxes and bottles."
+	  ],
+	  "Standard": "L.5.2a"
+	},
+	{
+	  "ID": "G5-PUN-031",
+	  "Grade": 5,
+	  "Topic": "Titles of books and short works",
+	  "Question": "Which sentence correctly uses quotation marks around a short story title?",
+	  "Answer": "We read the story \"The Hidden Map\" in class.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"We read the story The Hidden Map\" in class.",
+		"We read the story \"The Hidden Map in class.",
+        "We read the story The \"Hidden Map\" in class."
+	  ],
+	  "Standard": "L.5.2d"
+	},
+	{
+	  "ID": "G5-PUN-032",
+	  "Grade": 5,
+	  "Topic": "Titles of books and short works",
+	  "Question": "Which sentence shows a novel title surrounded by asterisks to represent italics in plain text?",
+	  "Answer": "The novel *The Secret Garden* is on the shelf.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"The novel \"The Secret Garden is on the shelf.",
+		"The novel The \"Secret Garden is on the shelf.",
+        "The novel 'The Secret Garden is on the shelf."
+	  ],
+	  "Standard": "L.5.2d"
+	},
+	{
+	  "ID": "G5-PUN-033",
+	  "Grade": 5,
+	  "Topic": "Titles of books and short works",
+	  "Question": "Which sentence correctly marks a poem's title?",
+	  "Answer": "We discussed the poem \"The Road Not Taken\".",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"We discussed the poem The Road Not Taken.\"",
+		"We discussed the poem \"The Road Not Taken.",
+        "We discussed the poem The \"Road Not Taken.\""
+	  ],
+	  "Standard": "L.5.2d"
+	},
+	{
+	  "ID": "G5-PUN-034",
+	  "Grade": 5,
+	  "Topic": "Titles of books and short works",
+	  "Question": "Which presentation correctly marks a magazine title using italics?",
+	  "Answer": "An article appeared in *National Geographic*.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"An article appeared in \"National Geographic*.",
+		"An article appeared in *National Geographic\".",
+        "An article appeared in National *Geographic."
+	  ],
+	  "Standard": "L.5.2d"
+	},
+	{
+	  "ID": "G5-PUN-035",
+	  "Grade": 5,
+	  "Topic": "Titles of books and short works",
+	  "Question": "Which sentence correctly puts quotation marks around a song title?",
+	  "Answer": "They sang \"Twinkle, Twinkle, Little Star\" together.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"They sang Twinkle, Twinkle, Little Star\" together.",
+		"They sang \"Twinkle, Twinkle, Little Star together.",
+        "They sang Twinkle, \"Twinkle, Little Star together."
+	  ],
+	  "Standard": "L.5.2d"
+	},
+	{
+	  "ID": "G5-PUN-036",
+	  "Grade": 5,
+	  "Topic": "Dialogue punctuation review",
+	  "Question": "Choose the correctly punctuated dialogue.",
+	  "Answer": "\"We found it!\" shouted Papling.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"\"We found it\"! shouted Papling.",
+		"\"We found it! shouted Papling.\"",
+        "We found it!\" shouted Papling."
+	  ],
+	  "Standard": "L.5.2"
+	},
+	{
+	  "ID": "G5-PUN-037",
+	  "Grade": 5,
+	  "Topic": "Dialogue punctuation review",
+	  "Question": "Which sentence correctly punctuates the dialogue tag?",
+	  "Answer": "\"Wait,\" said Catputer, \"the bridge is weak.\"",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"\"Wait\" said Catputer \"the bridge is weak.\"",
+		"\"Wait,\" said Catputer \"the bridge is weak.\"",
+        "\"Wait\" said Catputer, \"the bridge is weak\"."
+	  ],
+	  "Standard": "L.5.2"
+	},
+	{
+	  "ID": "G5-PUN-038",
+	  "Grade": 5,
+	  "Topic": "Dialogue punctuation review",
+	  "Question": "Choose the correctly punctuated question in dialogue.",
+	  "Answer": "\"Where is the map?\" asked the scout.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"\"Where is the map\"? asked the scout.",
+		"\"Where is the map? asked the scout.\"",
+        "Where is the map?\" asked the scout."
+	  ],
+	  "Standard": "L.5.2"
+	},
+	{
+	  "ID": "G5-PUN-039",
+	  "Grade": 5,
+	  "Topic": "Dialogue punctuation review",
+	  "Question": "Which sentence correctly punctuates dialogue with an exclamation?",
+	  "Answer": "\"Watch out!\" cried Gryffonage.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"\"Watch out\"! cried Gryffonage.",
+		"\"Watch out! cried Gryffonage.\"",
+        "Watch out!\" cried Gryffonage."
+	  ],
+	  "Standard": "L.5.2"
+	},
+	{
+	  "ID": "G5-PUN-040",
+	  "Grade": 5,
+	  "Topic": "Dialogue punctuation review",
+	  "Question": "Which sentence correctly punctuates Professor Hoot’s reply?",
+	  "Answer": "\"I agree,\" said Professor Hoot.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"\"I agree\" said Professor Hoot.",
+		"\"I agree,\" said Professor Hoot\".",
+        "I agree,\" said Professor Hoot."
+	  ],
+	  "Standard": "L.5.2"
+	},
+	{
+	  "ID": "G5-PUN-041",
+	  "Grade": 5,
+	  "Topic": "Commas and meaning: review",
+	  "Question": "Which sentence clearly addresses a person named Alex?",
+	  "Answer": "Let's eat, Alex!",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Let's eat Alex!",
+		"Let's, eat Alex!",
+        "Let's eat; Alex!"
+	  ],
+	  "Standard": "L.5.2"
+	},
+	{
+	  "ID": "G5-PUN-042",
+	  "Grade": 5,
+	  "Topic": "Commas and meaning: review",
+	  "Question": "Where should the comma go? \"After opening the chest the player found a clue.\"",
+	  "Answer": "After \"chest\"",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"After \"opening\"",
+		"After \"player\"",
+        "After \"found\""
+	  ],
+	  "Standard": "L.5.2"
+	},
+	{
+	  "ID": "G5-PUN-043",
+	  "Grade": 5,
+	  "Topic": "Commas and meaning: review",
+	  "Question": "Which sentence correctly separates an introductory word?",
+	  "Answer": "Fortunately, the team arrived early.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Fortunately the, team arrived early.",
+		"Fortunately; the team arrived early.",
+        "Fortunately the team, arrived early."
+	  ],
+	  "Standard": "L.5.2"
+	},
+	{
+	  "ID": "G5-PUN-044",
+	  "Grade": 5,
+	  "Topic": "Commas and meaning: review",
+	  "Question": "Where does the comma belong? \"When the rain stopped we returned to town.\"",
+	  "Answer": "After \"stopped\"",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"After \"rain\"",
+		"After \"returned\"",
+        "After \"town\""
+	  ],
+	  "Standard": "L.5.2"
+	},
+	{
+	  "ID": "G5-PUN-045",
+	  "Grade": 5,
+	  "Topic": "Commas and meaning: review",
+	  "Question": "Which sentence correctly uses commas for direct address?",
+	  "Answer": "Please, Brainrouter, check the machine.",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Please Brainrouter, check the machine.",
+		"Please, Brainrouter check the machine.",
+        "Please; Brainrouter; check the machine."
+	  ],
+	  "Standard": "L.5.2"
+	},
+	{
+	  "ID": "G5-PUN-046",
+	  "Grade": 5,
+	  "Topic": "Team Rammarg punctuation challenge",
+	  "Question": "Team Rammarg wrote: \"Before the door opened the team hid.\" Where does a comma belong?",
+	  "Answer": "After \"opened\"",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"After \"Before\"",
+		"After \"team\"",
+        "After \"hid\""
+	  ],
+	  "Standard": "L.5.2b"
+	},
+	{
+	  "ID": "G5-PUN-047",
+	  "Grade": 5,
+	  "Topic": "Team Rammarg punctuation challenge",
+	  "Question": "Team Rammarg wrote: \"No we did not steal the book.\" What punctuation belongs after \"No\"?",
+	  "Answer": "Comma",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Semicolon",
+		"Colon",
+        "Question mark"
+	  ],
+	  "Standard": "L.5.2b"
+	},
+	{
+	  "ID": "G5-PUN-048",
+	  "Grade": 5,
+	  "Topic": "Team Rammarg punctuation challenge",
+	  "Question": "Team Rammarg wrote: \"The plan will work won't it?\" What mark belongs before \"won't\"?",
+	  "Answer": "Comma",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Semicolon",
+		"Colon",
+        "Exclamation mark"
+	  ],
+	  "Standard": "L.5.2b"
+	},
+	{
+	  "ID": "G5-PUN-049",
+	  "Grade": 5,
+	  "Topic": "Team Rammarg punctuation challenge",
+	  "Question": "Team Rammarg wrote: \"Listen Scrawlking the answer is nearby!\" Which sentence correctly punctuates direct address?",
+	  "Answer": "Listen, Scrawlking, the answer is nearby!",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"Listen Scrawlking, the answer is nearby!",
+		"Listen, Scrawlking the answer is nearby!",
+        "Listen; Scrawlking; the answer is nearby!"
+	  ],
+	  "Standard": "L.5.2b"
+	},
+	{
+	  "ID": "G5-PUN-050",
+	  "Grade": 5,
+	  "Topic": "Team Rammarg punctuation challenge",
+	  "Question": "Team Rammarg wrote: \"If we hurry we can stop them.\" Where should the comma go?",
+	  "Answer": "After \"hurry\"",
+	  "Difficulty": "High",
+	  "Distractors": [
+		"After \"If\"",
+		"After \"we\"",
+        "After \"stop\""
+	  ],
+	  "Standard": "L.5.2b"
+	}
+  ]
+}

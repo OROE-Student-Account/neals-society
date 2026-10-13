@@ -444,8 +444,15 @@ func get_question():
 		#}
 
 
-func get_grade_3_question() -> Dictionary:
-	var bank = load_json_file("res://GrammariteData/Questions_Grade3.json")
+
+func get_question_by_grade(grade: int) -> Dictionary:
+	var path = "res://GrammariteData/Questions_Grade%d.json" % grade
+	var bank = load_json_file(path)
+
+	if not bank is Dictionary:
+		push_warning("Question bank could not be loaded: " + path)
+		return {}
+
 	var categories = ["Vocabulary", "Syntax", "Punctuation"]
 	var eligible = []
 
@@ -454,36 +461,34 @@ func get_grade_3_question() -> Dictionary:
 			continue
 
 		for q in bank[category]:
-			if int(q.get("Grade", 0)) == 3 and not seen_question_ids.has(q["ID"]):
+			if int(q.get("Grade", 0)) == grade and not seen_question_ids.has(q["ID"]):
 				eligible.append({
 					"type": category,
 					"data": q
 				})
 
 	if eligible.is_empty():
-		push_warning("No unused Grade 3 questions remain!")
+		push_warning("No unused questions for Grade " + str(grade))
 		return {}
 
 	var selected = eligible.pick_random()
 	var item = selected["data"]
-	print("Question Category: ", selected["type"])
-	print("Question: ", item["Question"])
 
 	seen_question_ids[item["ID"]] = true
 
-	# Combine the correct answer with three distractors
 	var options: Array = [item["Answer"]]
 	options.append_array(item["Distractors"])
 	options.shuffle()
 
-	var correct_index = options.find(item["Answer"])
+	print("Grade: ", grade, " | Category: ", selected["type"])
 
 	return {
 		"Question": item["Question"],
-		"Answer": correct_index,
+		"Answer": options.find(item["Answer"]),
 		"Type": selected["type"],
 		"Options": options
 	}
+
 
 
 func save_json_file(file_path, data):
