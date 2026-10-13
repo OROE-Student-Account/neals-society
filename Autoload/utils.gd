@@ -28,7 +28,16 @@ func reset_scenes():
 			for obstacle in town["Obstacles"]:
 				town["Obstacles"][obstacle]["Broken"] = false
 	
+	var quests = load_json_file("res://GrammariteData/Quests.json")
+	# breaks quest objects because they should only appear on quest accept
+	for quest in quests:
+		if quest.has("Load"):
+			scenes[quest["Load"]["Scene"]]["Obstacles"][quest["Load"]["Node"]]["Broken"] = true
+	
 	save_json_file("res://Data/Scenes.json", scenes)
+	
+	var shops = load_json_file("res://GrammariteData/Shop.json")
+	save_json_file("res://Data/Shop.json", shops)
 
 
 func get_player():
@@ -233,6 +242,16 @@ func set_last_center(num: int):
 func get_last_center():
 	return load_json_file("res://GrammariteData/OtherStuff.json")["GCLocations"][load_json_file("res://Data/OtherStuff.json")["Last Grammarite Center"]]
 
+func get_shop():
+	var shops = load_json_file("res://Data/Shop.json")
+	var last_center = load_json_file("res://Data/OtherStuff.json")["Last Grammarite Center"]
+	return shops[last_center]
+func set_shop(new_stock):
+	var shops = load_json_file("res://Data/Shop.json")
+	var last_center = load_json_file("res://Data/OtherStuff.json")["Last Grammarite Center"]
+	shops[last_center] = new_stock
+	save_json_file("res://Data/Shop.json", shops)
+
 
 func load_quests():
 	var quest_info = load_json_file("res://GrammariteData/Quests.json")
@@ -242,13 +261,67 @@ func load_quests():
 	
 	for i in range(len(quest_info)):
 		var quest = quest_details[i]
-		if quest["Progress"] == "Started":
+		if quest["Progress"] != "Unstarted":
+			quest["ID"] = i
 			var add_quest = quest_info[i]
 			add_quest["Details"] = quest
 			quests.append(add_quest)
 	
 	return quests
-
+func set_quest_progress(prog: String, id: int):
+	var quests = load_json_file("res://Data/Quests.json")
+	quests[id]["Progress"] = prog
+	save_json_file("res://Data/Quests.json", quests)
+func update_quest_objective(id: int, objective_index: int, is_complete: bool) -> void:
+	var quests = load_json_file("res://Data/Quests.json")
+	var quest_save = quests[id]
+	
+	# Make sure this quest actually uses the boolean array
+	if quest_save.has("Objectives") and objective_index < quest_save["Objectives"].size():
+		quest_save["Objectives"][objective_index] = is_complete
+		save_json_file("res://Data/Quests.json", quests)
+		
+		# See if this change finishes the quest!
+		_check_quest_completion(id)
+func update_quest_count(id: int, amount: int = 1) -> void:
+	var quests = load_json_file("res://Data/Quests.json")
+	var quest_save = quests[id]
+	
+	# Initialize the count if it doesn't exist yet
+	if not quest_save.has("Count"):
+		quest_save["Count"] = 0
+		
+	quest_save["Count"] += amount
+	save_json_file("res://Data/Quests.json", quests)
+	
+	# See if we hit the required number!
+	_check_quest_completion(id)
+func _check_quest_completion(id: int) -> void:
+	var quests_save = load_json_file("res://Data/Quests.json")
+	var quests_info = load_json_file("res://GrammariteData/Quests.json")
+	
+	var save_data = quests_save[id]
+	var static_data = quests_info[id]
+	
+	var objectives_met = true
+	var count_met = true
+	
+	# 1. Check boolean objectives (if they exist)
+	if save_data.has("Objectives"):
+		for obj_status in save_data["Objectives"]:
+			if obj_status == false:
+				objectives_met = false
+				break # One false objective ruins the batch
+				
+	# 2. Check the count (if a RequiredCount is specified in the static data)
+	if static_data.has("RequiredCount"):
+		var current_count = save_data.get("Count", 0)
+		if current_count < static_data["RequiredCount"]:
+			count_met = false
+			
+	# 3. If both conditions are satisfied, mark it complete!
+	if objectives_met and count_met and save_data["Progress"] != "Rewarding"  and save_data["Progress"] != "Completed":
+		set_quest_progress("Rewarding", id)
 
 func get_recipe(shard1, shard2):
 	var recipes = load_json_file("res://GrammariteData/Recipes.json")
@@ -278,7 +351,6 @@ func get_num_grammarites():
 
 func get_money() -> int:
 	return load_json_file("res://Data/Inventory.json")["Money"]
-
 func set_money(mon: int):
 	var inv = load_json_file("res://Data/Inventory.json")
 	inv["Money"] = mon

@@ -6,6 +6,132 @@
 [ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Plain/Fonts.tres" id="4_rludv"]
 [ext_resource type="Texture2D" uid="uid://61ir1mwvx5m5" path="res://Assets/Items/Ultimate Vitamin.png" id="5_4cuys"]
 
+[sub_resource type="Animation" id="Animation_rludv"]
+resource_name = "Failure"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animation/success:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Animation:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Animation/Failure:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_4cuys"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animation:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Animation/success:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Animation/Failure:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_1psar"]
+resource_name = "Success"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animation:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Animation/success:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Animation/Failure:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ynkuy"]
+_data = {
+&"Failure": SubResource("Animation_rludv"),
+&"RESET": SubResource("Animation_4cuys"),
+&"Success": SubResource("Animation_1psar")
+}
+
 [node name="Question" type="Node2D" unique_id=2106985433]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1911540469]
@@ -148,3 +274,62 @@ vertical_alignment = 1
 position = Vector2(184, 147)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_4cuys")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1857624271]
+libraries/ = SubResource("AnimationLibrary_ynkuy")
+
+[node name="Animation" type="Node2D" parent="." unique_id=2032494644]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Animation" unique_id=1038797528]
+offset_right = 240.0
+offset_bottom = 160.0
+
+[node name="success" type="ColorRect" parent="Animation" unique_id=484864919]
+visible = false
+offset_left = 72.0
+offset_top = 56.0
+offset_right = 168.0
+offset_bottom = 104.0
+color = Color(0, 1, 0, 1)
+
+[node name="Label" type="Label" parent="Animation/success" unique_id=958187707]
+layout_mode = 0
+offset_left = -64.0
+offset_right = 160.0
+offset_bottom = 48.0
+theme = ExtResource("4_rludv")
+text = "You got the
+question correct!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Failure" type="ColorRect" parent="Animation" unique_id=2069772535]
+visible = false
+offset_left = 72.0
+offset_top = 8.0
+offset_right = 168.0
+offset_bottom = 56.0
+color = Color(1, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Animation/Failure" unique_id=676949379]
+layout_mode = 0
+offset_left = -64.0
+offset_right = 160.0
+offset_bottom = 48.0
+theme = ExtResource("4_rludv")
+text = "You got the
+question wrong."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Explanation" type="Label" parent="Animation/Failure" unique_id=707052893]
+layout_mode = 0
+offset_left = -56.0
+offset_top = 56.0
+offset_right = 152.0
+offset_bottom = 144.0
+theme = ExtResource("4_rludv")
+text = "Description."
+horizontal_alignment = 1
+vertical_alignment = 1

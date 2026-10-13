@@ -85,7 +85,7 @@ func start_battle():
 	else:
 		battle_ui.input_state = battle_ui.InputState.WAITING
 		battle_ui.show_correct_menu()
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(1.5).timeout
 		# Enemy's turn
 		await enemy_turn()
 		
@@ -125,8 +125,9 @@ func _on_player_move_selected(move_index: int):
 	if move_index == -1:
 		await execute_attack(player_grammarite, enemy_grammarite, { "Name": "Struggle" })
 	elif move_index == -2:
-		battle_ui.set_info_text("You got the question wrong.")
-		await get_tree().create_timer(1.0).timeout
+		# battle_ui.set_info_text("You got the question wrong.")
+		# handled in question sceen
+		await get_tree().create_timer(0.5).timeout
 	elif move_index == -3:
 		print("SEMICOLON SLASH!!!")
 		var semi = get_parent().get_node("SemicolonAnimator")
@@ -184,8 +185,8 @@ func _on_player_move_selected(move_index: int):
 func enemy_turn():
 	current_state = BattleState.ENEMY_TURN
 	
-	battle_ui.set_info_text("Enemy's turn")
-	await get_tree().create_timer(1.0).timeout
+	battle_ui.set_info_text("It is now the enemy's turn")
+	await get_tree().create_timer(1.5).timeout
 	
 	# --- PROCESS ENEMY STATUS EFFECTS ---
 	await process_turn_status(false)
@@ -274,7 +275,7 @@ func perform_enemy_switch():
 	setup_enemy_pp()
 	
 	enemy_grammarite.visible = true
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(1.7).timeout
 	
 	# Return control to the player (the enemy used their turn to switch)
 	current_state = BattleState.PLAYER_TURN
@@ -305,19 +306,19 @@ func process_turn_status(is_player: bool):
 		else:
 			if effect["name"] == "Sleep":
 				battle_ui.set_info_text(target_node.grammarite_name + " woke up!")
-				await get_tree().create_timer(1.0).timeout
+				await get_tree().create_timer(1.5).timeout
 			elif effect["name"] == "Confusion":
 				battle_ui.set_info_text(target_node.grammarite_name + " is no longer confused!")
-				await get_tree().create_timer(1.0).timeout
+				await get_tree().create_timer(1.5).timeout
 			elif effect["name"] == "Burn":
 				battle_ui.set_info_text(target_node.grammarite_name + " is no longer engulfed in flames!")
-				await get_tree().create_timer(1.0).timeout
+				await get_tree().create_timer(1.5).timeout
 			elif effect["name"] == "Poison":
 				battle_ui.set_info_text(target_node.grammarite_name + " recovered from poison!")
-				await get_tree().create_timer(1.0).timeout
+				await get_tree().create_timer(1.5).timeout
 			elif effect["name"] == "Blind":
 				battle_ui.set_info_text(target_node.grammarite_name + " can see again!")
-				await get_tree().create_timer(1.0).timeout
+				await get_tree().create_timer(1.5).timeout
 	
 	status_tracker[side][index] = remaining_effects
 
@@ -328,10 +329,10 @@ func apply_status_effects(target: Node2D, effect_data: Dictionary):
 		target.update_health(-damage)
 		
 		# We can also use it to pull their specific name for the UI
-		battle_ui.set_info_text(target.grammarite_name + " is still writing from a burn!")
+		battle_ui.set_info_text(target.grammarite_name + " is still writhing from a burn!")
 		
 		# Wait for the player to read it
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(1.5).timeout
 	elif effect_data["name"] == "Blind":
 		var damage = (effect_data["Duration"]*0.1)*int(calc_stat(100, target.level) + target.level + 5)
 		target.update_health(-damage)
@@ -340,13 +341,13 @@ func apply_status_effects(target: Node2D, effect_data: Dictionary):
 		battle_ui.set_info_text(target.grammarite_name + " is blinded!")
 		
 		# Wait for the player to read it
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(1.5).timeout
 	elif effect_data["name"] == "Radiation" && effect_data["Duration"] == 1:
 		target.update_health(0)
 		battle_ui.set_info_text(target.grammarite_name + " died from radiation poisoning!")
 		
 		# Wait for the player to read it
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(1.5).timeout
 	elif effect_data["name"] == "Poison":
 		var side = "player" if target == player_grammarite else "enemy"
 		var index = 0 if side == "player" else current_enemy_index
@@ -357,7 +358,7 @@ func apply_status_effects(target: Node2D, effect_data: Dictionary):
 		battle_ui.set_info_text(target.grammarite_name + " is poisoned!")
 		
 		# Wait for the player to read it
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(1.5).timeout
 	
 	
 	
@@ -378,7 +379,7 @@ func on_enemy_grammarite_die() -> bool:
 	# --- NEW: ENEMY RED STAMP CHECK ---
 	if enemy_grammarite.item == "Red Stamp":
 		battle_ui.set_info_text(enemy_grammarite.grammarite_name + "'s Red Stamp activates!")
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(1.5).timeout
 		
 		# Take down the player
 		player_grammarite.health = 0
@@ -387,8 +388,8 @@ func on_enemy_grammarite_die() -> bool:
 	
 	
 	enemy_grammarite.visible = false
-	battle_ui.set_info_text("Enemy " + enemy_grammarite.grammarite_name + " fainted!")
-	await get_tree().create_timer(1.5).timeout
+	battle_ui.set_info_text("The opposing " + enemy_grammarite.grammarite_name + " fainted!")
+	await get_tree().create_timer(2.0).timeout
 
 	current_enemy_index += 1
 	
@@ -411,7 +412,7 @@ func on_enemy_grammarite_die() -> bool:
 		
 		enemy_grammarite.visible = true
 		
-		await get_tree().create_timer(1.5).timeout
+		await get_tree().create_timer(1.7).timeout
 		return true # Returning true means the battle continues!
 	else:
 		# If the index is out of bounds, the trainer is fully defeated
@@ -457,7 +458,7 @@ func on_player_grammarite_die(in_battle: bool):
 		
 		if temp["Item"] == "Red Stamp":
 			battle_ui.set_info_text(temp["Name"]+" used a red stamp!")
-			await get_tree().create_timer(1.0).timeout
+			await get_tree().create_timer(1.5).timeout
 			
 			# Kill the enemy instead of instantly ending the battle
 			enemy_grammarite.health = 0 
@@ -469,7 +470,7 @@ func on_player_grammarite_die(in_battle: bool):
 		
 		if in_battle:
 			battle_ui.set_info_text(temp["Name"]+" died, go "+player_grammarite.grammarite_name+"!")
-			await get_tree().create_timer(1.5).timeout
+			await get_tree().create_timer(2.0).timeout
 		return true
 
 # --- NEW HELPER FOR STAT MULTIPLIERS ---
@@ -506,13 +507,13 @@ func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 	
 	battle_ui.set_info_text(attacker.grammarite_name+" used "+move["Name"]+"!")
 	
-	await get_tree().create_timer(0.9).timeout
+	await get_tree().create_timer(1.5).timeout
 	
 	if move["Name"] != "Struggle":
 		# --- LAB REPORT AUTO MISS ---
 		if move["Name"] == "Lab Report" and attacker.item == "Red Stamp":
 			battle_ui.set_info_text(attacker.grammarite_name + "'s Red Stamp ruined the Lab Report!")
-			await get_tree().create_timer(1.0).timeout
+			await get_tree().create_timer(1.5).timeout
 			return
 		
 		# Check accuracy
@@ -527,15 +528,17 @@ func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 		# biases accuracy for player
 		if attacker == enemy_grammarite:
 			accuracy =  (accuracy - 0.05)*0.95
+		else:
+			accuracy = 10000000
 		
 		var hit_roll = randf()
 		# --- USE HELPER FUNCTION FOR DEFENSE AND SPEED ---
 		var defense_stat = get_modified_stat(defender, "Defense")
 		var spd = get_modified_stat(attacker, "Speed")
 		
-		if player_grammarite.item == "Dash":
+		if attacker.item == "Dash":
 			spd *= 1.25
-		elif player_grammarite.item == "Hypen":
+		elif attacker.item == "Hypen":
 			spd *= 1.15
 			
 		var max_stat = calc_stat(200, 100)
@@ -544,7 +547,7 @@ func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 		
 		if hit_roll > accuracy:
 			battle_ui.set_info_text("The attack missed!")
-			await get_tree().create_timer(1.0).timeout
+			await get_tree().create_timer(1.5).timeout
 			return
 		
 		attacker.anim_player.play("Attack")
@@ -674,7 +677,7 @@ func execute_attack(attacker: Node2D, defender: Node2D, move: Dictionary):
 	party[0]["Health"] = player_grammarite.health
 	Utils.set_party(party)
 	# Wait for animation and message display
-	await get_tree().create_timer(0.9).timeout
+	await get_tree().create_timer(1.5).timeout
 
 # --- SIGNAL RECEIVER: WAKE UP FROM DAMAGE ---
 func _on_grammarite_health_changed(target_node: Node2D, change_amount: int):
@@ -699,7 +702,7 @@ func _on_grammarite_health_changed(target_node: Node2D, change_amount: int):
 	if woke_up:
 		status_tracker[side][index] = remaining_effects
 		battle_ui.set_info_text(target_node.grammarite_name + " woke up from the damage!")
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(1.5).timeout
 
 # --- VOLATILE STATUS CHECK (SLEEP / CONFUSION) ---
 func pre_attack_status_check(attacker: Node2D) -> bool:
@@ -711,12 +714,12 @@ func pre_attack_status_check(attacker: Node2D) -> bool:
 	for effect in current_effects:
 		if effect["name"] == "Sleep":
 			battle_ui.set_info_text(attacker.grammarite_name + " is fast asleep.")
-			await get_tree().create_timer(1.0).timeout
+			await get_tree().create_timer(1.5).timeout
 			return false # Returning false cancels the attack
 			
 		if effect["name"] == "Confusion":
 			battle_ui.set_info_text(attacker.grammarite_name + " is confused!")
-			await get_tree().create_timer(1.0).timeout
+			await get_tree().create_timer(1.5).timeout
 			
 			# Basic self-damage calculation
 			var attack_stat = get_modified_stat(attacker, "Attack")
@@ -769,7 +772,7 @@ func throw_book(book_name):
 		base_chance += 0.2 - 0.01*enemy_grammarite.level
 		
 		if Utils.can_evolve(enemy_grammarite.grammarite_name, 100) == -1000:
-			base_chance = 0
+			base_chance = 0.1
 		elif !Utils.can_evolve(Utils.get_name_from_num(Utils.get_poke_num(enemy_grammarite.grammarite_name) - 1), 100):
 			base_chance *= 0.75
 		else:
@@ -780,7 +783,7 @@ func throw_book(book_name):
 	if caught < base_chance:
 		battle_ui.set_info_text("You caught it!")
 		enemy_grammarite.visible = false
-		await get_tree().create_timer(1.6).timeout
+		await get_tree().create_timer(2.0).timeout
 		# enemy_grammarite goes to your storage
 		
 		var found = false # flag for if there is room in inventory
@@ -813,15 +816,15 @@ func throw_book(book_name):
 		if not found:
 			# checks for room on bookshelf
 			if not Utils.add_to_bookshelf(grammarite):
-				battle_ui.set_info_text("Uh oh, it ran away because no space.")
+				battle_ui.set_info_text("Uh oh, it ran away because you had no space.")
 				await get_tree().create_timer(2.0).timeout
 		
 		
 		end_battle(true)
 		return
 	
-	battle_ui.set_info_text("It broke free.")
-	await get_tree().create_timer(0.6).timeout
+	battle_ui.set_info_text("It broke free of your book.")
+	await get_tree().create_timer(1.5).timeout
 	
 	
 	
@@ -845,9 +848,9 @@ func end_battle(player_won: bool):
 		Utils.catch(enemy_grammarite.grammarite_name)
 		enemy_grammarite.visible = false
 		battle_ui.set_info_text("You won!")
-		await get_tree().create_timer(1.65).timeout
+		await get_tree().create_timer(1.75).timeout
 		var party = Utils.get_party()
-		var xp = 1.0
+		var xp = 1
 		
 		if "random" not in trainer:
 			var train = Utils.get_trainer(trainer)
@@ -856,14 +859,18 @@ func end_battle(player_won: bool):
 		else:
 			xp = enemy_grammarite.level
 		
-		# random increase in xp, weighted closer to 1, up to 1.25
-		xp *= (1 + (randf()/2)**2)
-		
 		# scale xp based on level, keep within range of 10-100 xp
-		# for same level grammarites, get 50 xp upon victory
-		xp = min(100, max(10, int( 50 * (xp / int(party[0]["Level"])) )))
+		# for same level grammarites, get ~50 xp upon victory
+		xp = max(10, int( 50 * (xp / party[0]["Level"]) ))
 		
-		if fmod(party[0]["Level"], 1.0) + xp*0.01 > 1.0:
+		# random increase in xp, weighted closer to 1, up to 1.25
+		xp = min(100, xp * (1 + (randf()/2)**2))
+		
+		print(party[0]["Level"])
+		print(xp)
+		print(fmod(party[0]["Level"], 1.0))
+		print(fmod(party[0]["Level"], 1.0) + xp*0.01)
+		if fmod(party[0]["Level"], 1.0) + xp*0.01 >= 1.0:
 			battle_ui.set_info_text("Your Grammarite leveled up!")
 			await get_tree().create_timer(1.5).timeout
 			if Utils.can_evolve(player_grammarite.grammarite_name, player_grammarite.level) >= 0:

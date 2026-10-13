@@ -1,7 +1,23 @@
 [gd_scene format=3 uid="uid://sse02ea6deen"]
 
-[ext_resource type="FontFile" uid="uid://coaqc420p7uer" path="res://Assets/UI/pkmnfl.ttf" id="1_gh4d2"]
 [ext_resource type="Script" uid="uid://cm3xq24ov0e7j" path="res://Scripts/QuestScreen.gd" id="1_wsc7u"]
+[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Plain/Fonts.tres" id="2_wsc7u"]
+[ext_resource type="Texture2D" uid="uid://l3rv0t6hbu6f" path="res://Assets/UI/Animation/circle.png" id="3_775l7"]
+[ext_resource type="Texture2D" uid="uid://bqio4uhjljbal" path="res://Assets/UI/Plain/PlainButton.png" id="3_e2y7k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wsc7u"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+bg_color = Color(0.73333335, 0.6, 0.4509804, 1)
+border_width_left = 2
+border_width_bottom = 2
+border_color = Color(0.6328794, 0.43627632, 0.2849239, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.6745098)
 
 [node name="QuestScreen" type="Node2D" unique_id=1222627018]
 texture_filter = 1
@@ -19,23 +35,28 @@ offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="Sidebar" unique_id=134601424]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 7.0
-offset_right = 64.0
-offset_bottom = 30.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_gh4d2")
-theme_override_font_sizes/font_size = 12
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 88.0
+offset_bottom = 31.0
+theme = ExtResource("2_wsc7u")
 text = "Quests"
+horizontal_alignment = 1
 
 [node name="ItemList" type="ItemList" parent="Sidebar" unique_id=1814926697]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 24.0
-offset_right = 80.0
-offset_bottom = 152.0
-theme_override_fonts/font = ExtResource("1_gh4d2")
-theme_override_font_sizes/font_size = 12
+offset_right = 107.99999
+offset_bottom = 183.99998
+scale = Vector2(0.8, 0.8)
+theme = ExtResource("2_wsc7u")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hovered_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hovered_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_wsc7u")
+allow_search = false
 
 [node name="Info" type="Control" parent="." unique_id=1830113566]
 layout_mode = 3
@@ -57,9 +78,7 @@ offset_left = 101.0
 offset_top = 48.0
 offset_right = 218.0
 offset_bottom = 71.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_gh4d2")
-theme_override_font_sizes/font_size = 12
+theme = ExtResource("2_wsc7u")
 text = "Example Quest"
 
 [node name="Description" type="Label" parent="Info" unique_id=1266439803]
@@ -69,9 +88,7 @@ offset_top = 64.0
 offset_right = 243.99998
 offset_bottom = 123.99999
 scale = Vector2(0.8, 0.8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_gh4d2")
-theme_override_font_sizes/font_size = 12
+theme = ExtResource("2_wsc7u")
 text = "Capture or kill 67 grammarites to and turn them into shards to complete this quest"
 autowrap_mode = 2
 
@@ -81,9 +98,34 @@ offset_left = 101.0
 offset_top = 118.0
 offset_right = 218.0
 offset_bottom = 141.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_gh4d2")
-theme_override_font_sizes/font_size = 12
+theme = ExtResource("2_wsc7u")
 text = "Reward: "
+
+[node name="AcceptButton" type="ColorRect" parent="Info" unique_id=360586006]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 160.0
+color = Color(0, 0, 0, 0.2627451)
+
+[node name="Circle" type="Sprite2D" parent="Info/AcceptButton" unique_id=1667024072]
+position = Vector2(120, 80)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_775l7")
+
+[node name="AcceptButton" type="Sprite2D" parent="Info/AcceptButton" unique_id=255157582]
+position = Vector2(120, 80)
+scale = Vector2(2, 2)
+texture = ExtResource("3_e2y7k")
+hframes = 2
+frame = 1
+
+[node name="Label" type="Label" parent="Info/AcceptButton/AcceptButton" unique_id=909754744]
+offset_left = -11.5
+offset_top = -2.5
+offset_right = 28.5
+offset_bottom = 20.5
+scale = Vector2(0.6, 0.6)
+theme = ExtResource("2_wsc7u")
+text = "Accept?"
 
 [connection signal="item_selected" from="Sidebar/ItemList" to="." method="_on_item_list_item_selected"]

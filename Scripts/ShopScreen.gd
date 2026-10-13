@@ -30,16 +30,12 @@ var item_positions: Array[Vector2] = [
 	Vector2(205, 85),
 ]
 
-var shop_items: Array[String] = [
-	"Children's Book",
-	"Apple",
-	"Comma",
-	"Dash"
-]
+var shop_items: Array = []
 
 
 func _ready() -> void:
 	selected_item_index = 0
+	shop_items = Utils.get_shop()
 	
 	$Money/Label.text = "$: " + str(Utils.get_money())
 	update_item_info()
@@ -135,6 +131,7 @@ func purchase_selected_item() -> void:
 	resume_shop_input()
 	update_item_info()
 	load_shop()
+	Utils.set_shop(shop_items)
 	current_menu = Menu.MAIN
 
 

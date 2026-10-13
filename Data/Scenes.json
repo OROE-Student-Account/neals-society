@@ -4,6 +4,11 @@
 			"Lampert": {
 				"Collected": false
 			}
+		},
+		"Trainers": {
+			"Chief Static": {
+				"Talked": false
+			}
 		}
 	},
 	"OaksLab": {
@@ -68,7 +73,7 @@
 				"Talked": false
 			},
 			"Team rammarG Grunt": {
-				"Talked": true
+				"Talked": false
 			}
 		}
 	},
@@ -116,13 +121,40 @@
 			"ConcreteJungleBlock": {
 				"Broken": false
 			},
+			"Electric Boxes": {
+				"Broken": true
+			},
+			"Fighting Tech Town": {
+				"Broken": true
+			},
 			"ParkBlockade": {
 				"Broken": false
 			},
 			"PodunkvilleBlock": {
 				"Broken": false
 			},
+			"Tech Town Intro": {
+				"Broken": false
+			},
 			"TheHeightsBlock": {
+				"Broken": false
+			},
+			"new": {
+				"Broken": false
+			},
+			"new2": {
+				"Broken": false
+			},
+			"new3": {
+				"Broken": false
+			},
+			"old": {
+				"Broken": false
+			},
+			"old2": {
+				"Broken": false
+			},
+			"old3": {
 				"Broken": false
 			}
 		},

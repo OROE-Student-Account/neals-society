@@ -10,14 +10,10 @@ var pause = false
 @onready var question_screen = preload("res://Scenes/QuestionScreen.tscn")
 var questions: Node2D = null
 
-enum InputState { ACTION_BUTTONS, MOVE_LIST, WAITING, QUESTIONING, EATING }
+enum InputState { ACTION_BUTTONS, MOVE_LIST, WAITING, QUESTIONING, EATING, QUESTION_RESULT }
 var input_state = InputState.ACTION_BUTTONS
 
 
-const code = [ 
-	"ui_up", "ui_up", "ui_down", "ui_down", "ui_left", "ui_right", "ui_left", "ui_right", "x", "z" 
-]
-var prog = 0
 var ans = -1
 
 # for the action buttons
@@ -70,7 +66,7 @@ func show_correct_menu():
 		grammarite_node.update_moves()
 		update_arrow_pos()
 		hide_info_text()
-	elif input_state == InputState.WAITING:
+	elif input_state == InputState.WAITING or input_state == InputState.QUESTION_RESULT:
 		$Buttons.visible = false
 		$MoveList.visible = false
 
@@ -112,11 +108,12 @@ func ask_question():
 	update_selected_option()
 	
 	
-	while input_state == InputState.QUESTIONING or input_state == InputState.EATING:
+	while input_state == InputState.QUESTIONING or input_state == InputState.EATING or input_state == InputState.QUESTION_RESULT:
 		if input_state == InputState.EATING:
 			if Utils.remove_from_inventory(question["Type"]+" Vitamin") or Utils.remove_from_inventory("Ultimate Vitamin"):
 				selected_button = question["Answer"]
-				input_state = InputState.WAITING
+				input_state = InputState.QUESTION_RESULT
+				await handle_question_result(true, question)
 			else:
 				input_state = InputState.QUESTIONING
 		else:
@@ -124,16 +121,38 @@ func ask_question():
 	
 	questions.queue_free()
 	questions = null
+	ans = -1
 	
 	return selected_button == question["Answer"]
 
+func handle_question_result(is_correct: bool, question: Dictionary):
+	# Assuming your QuestionScreen has an AnimationPlayer node
+	var anim_player = questions.get_node_or_null("AnimationPlayer")
+	pause = true
+	if is_correct:
+		anim_player.play("Success")
+		await anim_player.animation_finished
+		stop()
+		input_state = InputState.WAITING
+	else:
+		if anim_player and anim_player.has_animation("Failure"):
+			anim_player.play("Failure")
+		# Show explanation
+		# Assuming QuestionScreen has an ExplanationNode with a Label
+		var explanation_node = questions.get_node_or_null("Animation/Failure/Explanation")
+		
+		if explanation_node:
+			# Use explanation if provided in dictionary, otherwise just state correct answer
+			if question.has("Explanation"):
+				explanation_node.text = question["Explanation"]
+			else:
+				explanation_node.text = "The correct answer was:\n" + question["Options"][question["Answer"]]
 
 func stop():
 	pause = true
 	await get_tree().create_timer(0.1).timeout
 	pause = false
-
-
+	
 
 func _input(event):
 	if pause: return
@@ -213,28 +232,6 @@ func _input(event):
 				
 				show_correct_menu()
 		InputState.QUESTIONING:
-			if event.is_action_pressed(code[prog]):
-				prog += 1
-				if prog >= len(code) && Utils.get_player_name() == "Hero":
-					pause = true
-					
-					var test = Control.new()
-					test.set_script(load("res://Assets/Items/test.gd"))
-					test.size = Vector2(240, 160)
-					Utils.get_scene_manager().add_child(test)
-					var won = await test.begin_game()
-					if won:
-						selected_button = ans
-					else:
-						selected_button = ans - 1
-						
-					input_state = InputState.WAITING
-					Utils.get_scene_manager().get_children().back().queue_free()
-					pause = false
-					prog = 0
-			else:
-				prog = 0
-			
 			if event.is_action_pressed("ui_down"):
 				if selected_button < 2:
 					selected_button += 2
@@ -252,7 +249,13 @@ func _input(event):
 					selected_button -= 1
 					update_selected_option()
 			elif event.is_action_pressed("z"):
-				input_state = InputState.WAITING
+				var is_correct = (selected_button == ans)
+				input_state = InputState.QUESTION_RESULT
+				stop()
+				handle_question_result(is_correct, Utils.get_question())
 			elif event.is_action_pressed("q"):
 				input_state = InputState.EATING
-			
+		InputState.QUESTION_RESULT:
+			for l in ["z", "q", "ui_down", "ui_right", "ui_up", "ui_left", "x"]:
+				if event.is_action_pressed(l):
+					input_state = InputState.WAITING

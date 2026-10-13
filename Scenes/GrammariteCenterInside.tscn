@@ -110,6 +110,12 @@ texture = null
 
 [node name="Node2D" type="Node2D" parent="." unique_id=340670768]
 
+[node name="Shop" parent="Node2D" unique_id=310586437 instance=ExtResource("4_bidd3")]
+position = Vector2(64, 80)
+
+[node name="Quest Board" parent="Node2D" unique_id=1024986766 instance=ExtResource("4_bidd3")]
+position = Vector2(96, 64)
+
 [node name="Player" parent="Node2D" unique_id=802010568 instance=ExtResource("4_oxtqq")]
 position = Vector2(96, 128)
 collision_mask = 30
@@ -121,6 +127,3 @@ next_scene_path = "res://Scenes/Town.scn"
 is_invisible = true
 spawn_location = Vector2(-112, 208)
 spawn_direction = Vector2(0, 1)
-
-[node name="Shop" parent="." unique_id=310586437 instance=ExtResource("4_bidd3")]
-position = Vector2(64, 80)

@@ -246,6 +246,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		walk_speed = BASE_WALK_SPEED
 		jump_speed = BASE_JUMP_SPEED
 
+func set_initial_position(pos: Vector2):
+	initial_position = pos
 
 func animate(anim: String):
 	anim_tree.active = false

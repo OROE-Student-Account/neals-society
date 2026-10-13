@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://mqri0iaummw0"]
+
+[ext_resource type="Script" uid="uid://564tlf72vmq3" path="res://Scripts/Specialized/WirePuzzle.gd" id="1_j8865"]
+
+[node name="WirePuzzle" type="CanvasLayer" unique_id=1765373310]
+scale = Vector2(5, 5)
+transform = Transform2D(5, 0, 0, 5, 0, 0)
+
+[node name="WirePuzzle" type="Control" parent="." unique_id=1637818062]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j8865")

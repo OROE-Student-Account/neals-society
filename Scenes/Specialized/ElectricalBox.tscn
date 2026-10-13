@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bwxychi0ucbct"]
+
+[ext_resource type="Script" uid="uid://dnkrr7084ffra" path="res://Scripts/Specialized/ElectricalBox.gd" id="1_343sv"]
+[ext_resource type="Texture2D" uid="uid://b45s834opy4vj" path="res://Assets/Decoration/TechTown/electrical box.png" id="2_sfrae"]
+[ext_resource type="Script" uid="uid://bp28l32amhxsf" path="res://Scripts/DialogueNode.gd" id="3_wnw3j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wiaah"]
+radius = 11.313708
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7o1wx"]
+size = Vector2(16, 16)
+
+[node name="ElectricalBox" type="Area2D" unique_id=836850668]
+collision_layer = 16
+script = ExtResource("1_343sv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=901629339]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_wiaah")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=928837456]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_7o1wx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1378148064]
+texture = ExtResource("2_sfrae")
+centered = false
+
+[node name="FailedToOpen" type="Node" parent="." unique_id=2020126868]
+script = ExtResource("3_wnw3j")
+is_end_node = true
+text = "You don't have a Keycard to open this electrical box."
+display = "<none>"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

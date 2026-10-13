@@ -5,7 +5,7 @@ extends AnimatedSprite2D
 @onready var root_node = $DialogueRoot
 @onready var final_dialogue = $FinalDialogue
 
-@onready var ray = $RayCast2D
+@onready var ray = $RayCast2D if has_node("RayCast2D") else null
 @onready var anim_player = $AnimationPlayer
 
 var player_in_range := false
