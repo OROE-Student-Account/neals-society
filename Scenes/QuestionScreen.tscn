@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://d1meh8owcgo7f"]
 
 [ext_resource type="FontFile" uid="uid://buav1g0xgpfd" path="res://Assets/UI/Plain/pkmnfl.ttf" id="1_k2g2m"]
-[ext_resource type="Texture2D" uid="uid://ckbbwuf8tfh1" path="res://Assets/UI/Plain/Dialogue.png" id="2_g3qmy"]
-[ext_resource type="Texture2D" uid="uid://cbtw8iq0poli" path="res://Assets/UI/Plain/ui_arrow_up.png" id="3_5cu3s"]
+[ext_resource type="Texture2D" uid="uid://h56xj2rqgrxb" path="res://Assets/UI/Battle/Battle Ui1.png" id="1_rludv"]
+[ext_resource type="Texture2D" uid="uid://cfrrqyfvusnl3" path="res://Assets/UI/Battle/Battle Ui2.png" id="3_4cuys"]
 [ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Plain/Fonts.tres" id="4_rludv"]
 [ext_resource type="Texture2D" uid="uid://61ir1mwvx5m5" path="res://Assets/Items/Ultimate Vitamin.png" id="5_4cuys"]
 
@@ -134,20 +134,28 @@ _data = {
 
 [node name="Question" type="Node2D" unique_id=2106985433]
 
+[node name="Background" type="Sprite2D" parent="." unique_id=1263284197]
+texture_filter = 1
+texture = ExtResource("1_rludv")
+centered = false
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1911540469]
+visible = false
 offset_right = 240.0
 offset_bottom = 160.0
 
 [node name="Question" type="Label" parent="." unique_id=373822443]
-offset_top = 24.0
-offset_right = 240.0
-offset_bottom = 72.0
+offset_left = 30.0
+offset_top = 20.0
+offset_right = 210.0
+offset_bottom = 68.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_k2g2m")
 theme_override_font_sizes/font_size = 12
 text = "Must be something here right?"
 horizontal_alignment = 1
-autowrap_mode = 2
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="Options" type="Control" parent="." unique_id=373284841]
 layout_mode = 3
@@ -161,22 +169,26 @@ offset_left = 40.0
 offset_top = 80.0
 offset_right = 112.0
 offset_bottom = 104.0
-texture = ExtResource("2_g3qmy")
 patch_margin_left = 7
 patch_margin_top = 3
 patch_margin_right = 7
 patch_margin_bottom = 4
 
 [node name="Label" type="Label" parent="Options/NinePatchRect1" unique_id=999271648]
+texture_filter = 1
 layout_mode = 0
-offset_left = 8.0
-offset_top = 6.0
-offset_right = 88.0
-offset_bottom = 22.0
+offset_left = -24.0
+offset_top = 7.0
+offset_right = 56.0
+offset_bottom = 20.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_k2g2m")
 theme_override_font_sizes/font_size = 12
 text = "Must"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="Options" unique_id=1335574207]
 layout_mode = 0
@@ -184,22 +196,26 @@ offset_left = 128.0
 offset_top = 80.0
 offset_right = 200.0
 offset_bottom = 104.0
-texture = ExtResource("2_g3qmy")
 patch_margin_left = 7
 patch_margin_top = 3
 patch_margin_right = 7
 patch_margin_bottom = 4
 
 [node name="Label" type="Label" parent="Options/NinePatchRect2" unique_id=426867741]
+texture_filter = 1
 layout_mode = 0
-offset_left = 8.0
-offset_top = 6.0
-offset_right = 88.0
-offset_bottom = 22.0
+offset_left = 5.0
+offset_top = 7.0
+offset_right = 85.0
+offset_bottom = 20.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_k2g2m")
 theme_override_font_sizes/font_size = 12
 text = "Must"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
 
 [node name="NinePatchRect3" type="NinePatchRect" parent="Options" unique_id=391597550]
 layout_mode = 0
@@ -207,22 +223,26 @@ offset_left = 40.0
 offset_top = 112.0
 offset_right = 112.0
 offset_bottom = 136.0
-texture = ExtResource("2_g3qmy")
 patch_margin_left = 7
 patch_margin_top = 3
 patch_margin_right = 7
 patch_margin_bottom = 4
 
 [node name="Label" type="Label" parent="Options/NinePatchRect3" unique_id=2133076254]
+texture_filter = 1
 layout_mode = 0
-offset_left = 8.0
-offset_top = 6.0
-offset_right = 88.0
-offset_bottom = 22.0
+offset_left = -25.0
+offset_top = 10.0
+offset_right = 55.0
+offset_bottom = 23.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_k2g2m")
 theme_override_font_sizes/font_size = 12
 text = "Must"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
 
 [node name="NinePatchRect4" type="NinePatchRect" parent="Options" unique_id=596113269]
 layout_mode = 0
@@ -230,40 +250,48 @@ offset_left = 128.0
 offset_top = 112.0
 offset_right = 200.0
 offset_bottom = 136.0
-texture = ExtResource("2_g3qmy")
 patch_margin_left = 7
 patch_margin_top = 3
 patch_margin_right = 7
 patch_margin_bottom = 4
 
 [node name="Label" type="Label" parent="Options/NinePatchRect4" unique_id=1824915034]
+texture_filter = 1
 layout_mode = 0
-offset_left = 8.0
-offset_top = 6.0
-offset_right = 88.0
-offset_bottom = 22.0
+offset_left = 5.0
+offset_top = 10.0
+offset_right = 85.0
+offset_bottom = 23.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_k2g2m")
 theme_override_font_sizes/font_size = 12
 text = "Must"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1590709291]
-offset_left = 159.0
-offset_top = 105.0
-offset_right = 170.0
-offset_bottom = 111.0
-texture = ExtResource("3_5cu3s")
+texture_filter = 1
+offset_left = 95.0
+offset_top = 35.0
+offset_right = 335.0
+offset_bottom = 195.0
+texture = ExtResource("3_4cuys")
 
 [node name="Vitamins" type="Control" parent="." unique_id=643153207]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -2.0
+offset_top = 6.0
+offset_right = 38.0
+offset_bottom = 46.0
 
 [node name="Label" type="Label" parent="Vitamins" unique_id=308656678]
 layout_mode = 0
+offset_left = -4.0
 offset_top = 136.0
-offset_right = 224.0
+offset_right = 220.0
 offset_bottom = 159.0
 theme = ExtResource("4_rludv")
 text = "Press Q to use a vitamin."
@@ -271,8 +299,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="Vitamins" unique_id=91912936]
-position = Vector2(184, 147)
-scale = Vector2(0.5, 0.5)
+texture_filter = 1
+position = Vector2(182, 148.00002)
+scale = Vector2(0.375, 0.40625)
 texture = ExtResource("5_4cuys")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1857624271]

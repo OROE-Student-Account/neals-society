@@ -32,10 +32,10 @@ const DISTANCE_BETWEEN_MOVES = 12
 const NUM_MOVES = 4
 
 const QUESTION_ARROW_POS = [
-	Vector2(70.5,105),
-	Vector2(158.5,105),
-	Vector2(70.5,137),
-	Vector2(158.5,137),
+	Vector2(-22,0),
+	Vector2(95,0),
+	Vector2(-22,35),
+	Vector2(95,35),
 ]
 
 @onready var info_text = $InfoText
