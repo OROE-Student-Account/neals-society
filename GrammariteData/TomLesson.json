@@ -1,0 +1,16 @@
+[
+  {"Speaker":"Tom", "Text":"Kid, please help me. I don't know when to use which punctuation. Could you correct my sentences?", "Choices":["Definitely", "Later"]},
+  {"Speaker":"Tom", "Text":"Thank you! Okay, what's wrong with this sentence?"},
+  {"Question":"What is your favorite animal.", "Options":["Use a question mark.", "Use a comma.", "Keep the period."], "Answer":0, "Explanation":"This sentence asks a question. It should end with a question mark."},
+  {"Speaker":"<player>", "Text":"The end punctuation is wrong. It should be a question mark."},
+  {"Speaker":"Tom", "Text":"Really? Why?"},
+  {"Question":"Why should it end with a question mark?", "Options":["It is a question.", "Always use question marks.", "I don't know."], "Answer":0, "Explanation":"Question marks end questions. We don't use them for every sentence."},
+  {"Speaker":"<player>", "Text":"It is a question, so it should end with a question mark."},
+  {"Speaker":"Tom", "Text":"So periods end statements, exclamation points show strong feeling, and question marks end questions. Okay, I think I understand."},
+  {"Speaker":"Tom", "Text":"What about this one: Lets eat Derek."},
+  {"Question":"Correct this sentence: Lets eat Derek.", "Options":["Let's eat Derek.", "Lets eat, Derek.", "Let's eat, Derek."], "Answer":2, "Explanation":"Let's means let us. The comma shows you are speaking to Derek, not eating him!"},
+  {"Speaker":"Tom", "Text":"What is the difference between lets and let's?"},
+  {"Speaker":"<player>", "Text":"Here, let's combines let and us. It means: Let us eat, Derek."},
+  {"Speaker":"Tom", "Text":"I get it! The apostrophe shows two words joined into one, like don't for do not, or we've for we have."},
+  {"Speaker":"Tom", "Text":"Thank you for all the help! Let's eat, Derek!"}
+]

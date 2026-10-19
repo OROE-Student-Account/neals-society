@@ -1,0 +1,23 @@
+{
+  "pipe_water": {
+	"Question": "Its bad to drink the pipe water",
+	"Options": ["It's bad to drink the pipe water", "Its bad to drink the pipe water", "Its' bad to drink the pipe water"],
+	"Answer": 0,
+	"Explanation": "It's means it is. The sign means: It is bad to drink the pipe water.",
+	"Corrected": "It's bad to drink the pipe water"
+  },
+  "staying_safe": {
+	"Question": "Were staying safe",
+	"Options": ["Were staying safe", "We're staying safe", "Where staying safe"],
+	"Answer": 1,
+	"Explanation": "We're means we are. The sign means: We are staying safe.",
+	"Corrected": "We're staying safe"
+  },
+  "please_run": {
+	"Question": "Please dont run",
+	"Options": ["Please, dont run", "Please don't, run", "Please, don't run"],
+	"Answer": 2,
+	"Explanation": "Don't joins do and not with an apostrophe. This sign also puts a comma after Please.",
+	"Corrected": "Please, don't run"
+  }
+}

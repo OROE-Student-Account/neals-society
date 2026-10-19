@@ -1,0 +1,54 @@
+extends Node2D
+## Local controller for Derek's argument. Dialogue and animation remain editable in Town.
+
+var active := false
+var completed := false
+
+@onready var trigger: Area2D = $Hitbox
+@onready var animation_player: AnimationPlayer = $CutsceneAnimation
+
+func start_cutscene() -> void:
+	if active or completed:
+		return
+	var player = Utils.get_player()
+	var menu = Utils.get_scene_manager().menu
+	if player == null or menu.screen_loaded != menu.ScreenLoaded.NOTHING:
+		return
+	active = true
+	# Let the player finish their tile before freezing the camera and movement.
+	while player.is_moving:
+		await get_tree().physics_frame
+	trigger.set_deferred("monitoring", false)
+	$"Dialogue Derek/1".begin_from_self()
+
+func begin_confrontation() -> void:
+	_lock_player()
+	animation_player.play("break_up_fight")
+	await animation_player.animation_finished
+	# SceneManager accepts a new dialogue only from NOTHING/NAMING.
+	# Open it immediately so there is no frame where world input is enabled.
+	var menu = Utils.get_scene_manager().menu
+	menu.screen_loaded = menu.ScreenLoaded.NOTHING
+	$ChiefInterruption.begin_from_self()
+
+func finish_cutscene() -> void:
+	# The dialogue manager restores movement before invoking this callback.
+	_lock_player()
+	animation_player.play("settle_down")
+	await animation_player.animation_finished
+	completed = true
+	active = false
+	var player = Utils.get_player()
+	player.player_state = player.PlayerState.IDLE
+	player.anim_tree.active = true
+	player.set_physics_process(true)
+	var menu = Utils.get_scene_manager().menu
+	menu.screen_loaded = menu.ScreenLoaded.NOTHING
+
+func _lock_player() -> void:
+	var player = Utils.get_player()
+	player.set_physics_process(false)
+	player.anim_state.travel("Idle")
+	# Block menus and other interactions while the dialogue box is closed.
+	var menu = Utils.get_scene_manager().menu
+	menu.screen_loaded = menu.ScreenLoaded.DIALOGUE

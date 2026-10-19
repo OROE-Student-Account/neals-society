@@ -1,0 +1,76 @@
+extends SceneTree
+var scene: Node
+var cutscene: Node
+func _initialize():
+ call_deferred("run_test")
+func run_test():
+ scene = load("res://Scenes/SceneManager.tscn").instantiate()
+ var container = scene.get_node("CurrentScene")
+ var town = container.get_child(0)
+ cutscene = town.get_node("Sorted Stuff/Tech Town/Derek Cutscene_Quest")
+ cutscene.get_parent().remove_child(cutscene)
+ container.remove_child(town)
+ town.free()
+ var world = Node2D.new()
+ world.name = "TestWorld"
+ container.add_child(world)
+ var player = load("res://Scenes/Player.tscn").instantiate()
+ world.add_child(player)
+ player.owner = world
+ world.add_child(cutscene)
+ cutscene.position = Vector2(2000,2000)
+ player.position = cutscene.position + Vector2(464, 96)
+ root.add_child(scene)
+ current_scene = scene
+ await process_frame
+ var dialogue = scene.get_node("DialogueBox")
+ var menu = scene.get_node("Menu")
+ cutscene.start_cutscene()
+ assert(cutscene.active)
+ assert(not player.is_physics_processing())
+ var event = InputEventAction.new()
+ event.action = "z"
+ event.pressed = true
+ for i in range(1,8):
+  assert(dialogue.current_node.name == str(i), "Wrong argument dialogue step")
+  dialogue._input(event)
+ assert(menu.screen_loaded == menu.ScreenLoaded.DIALOGUE)
+ assert(not player.is_physics_processing())
+ await create_timer(2.6).timeout
+ assert(cutscene.get_node("AnimatedSprite2D2").position.is_equal_approx(Vector2(544,80)))
+ assert(cutscene.get_node("ChiefStatic").visible)
+ assert(cutscene.get_node("ChiefStatic").position.is_equal_approx(Vector2(568,80)))
+ assert(dialogue.current_node.name == "ChiefInterruption")
+ # Dismiss only the interruption; the offer must wait until Derek and Static move.
+ dialogue._input(event)
+ assert(dialogue.current_node == null)
+ assert(not player.is_physics_processing())
+ await create_timer(0.8).timeout
+ assert(cutscene.get_node("AnimatedSprite2D2").position.is_equal_approx(Vector2(544,104)))
+ assert(cutscene.get_node("ChiefStatic").visible)
+ await create_timer(2.4).timeout
+ assert(dialogue.current_node.name == "ChiefWarning")
+ var destination = cutscene.to_local(player.global_position) + Vector2(32,0)
+ assert(cutscene.get_node("ChiefStatic").position.is_equal_approx(destination))
+ assert(not player.is_physics_processing())
+ var utils = root.get_node("Utils")
+ utils.set_quest_progress("Incoming", 1)
+ dialogue._input(event) # Show the existing Yes choice.
+ assert(dialogue.dialogue_state == dialogue.DialogueState.SHOWING_OPTIONS)
+ dialogue._input(event) # Select Yes.
+ assert(dialogue.current_node.name == "ChiefDismissal")
+ assert(utils.load_json_file("res://Data/Quests.json")[1]["Progress"] == "Started")
+ dialogue._input(event)
+ assert(not player.is_physics_processing())
+ await create_timer(3.0).timeout
+ assert(cutscene.completed)
+ assert(not cutscene.active)
+ assert(player.is_physics_processing())
+ assert(menu.screen_loaded == menu.ScreenLoaded.NOTHING)
+ assert(not cutscene.get_node("ChiefStatic").visible)
+ assert(cutscene.get_node("AnimatedSprite2D2").position.is_equal_approx(Vector2(544,104)))
+ assert(not cutscene.get_node("Hitbox").monitoring)
+ cutscene.start_cutscene()
+ assert(not cutscene.active, "Cutscene replayed")
+ print("QUEST_OFFER_FLOW_PASS: original dialogue, interruption, Derek retreat, dynamic player approach, existing Yes choice, quest start, exit, control restoration, replay guard")
+ quit()

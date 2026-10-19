@@ -1,0 +1,15 @@
+[
+	{
+		"Name": "Electrical Enterprise",
+		"Description": "Find the keycard to open electrical boxes, then fix signs around Tech Town.",
+		"Reward": { "Type": "Item", "Amt": 1, "Name": "Red Stamp" },
+		"Load": { "Node": "Electric Boxes", "Scene": "Town" },
+		
+	},
+	{
+		"Name": "Burgher Brawl",
+		"Description": "Disrupt the deadly duel between deranged denizens. Don't develop a discriminatory diagnosis.", 
+		"Reward": { "Type": "Money", "Amt": 30 },
+		"Load": { "Node": "Fighting Tech Town", "Scene": "Town" }
+	}
+]

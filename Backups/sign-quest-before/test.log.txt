@@ -1,0 +1,13 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+WARNING: Case mismatch opening requested file '/private/tmp/neals-sign-quest/Scenes/ShopScreen.tscn', stored as '/private/tmp/neals-sign-quest/Scenes/shopscreen.tscn' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/unix/file_access_unix.cpp:112)
+   GDScript backtrace (most recent call first):
+       [0] run_test (res://test_signs.gd:36)
+WARNING: Case mismatch opening requested file '/private/tmp/neals-sign-quest/Scenes/ShopScreen.tscn', stored as '/private/tmp/neals-sign-quest/Scenes/shopscreen.tscn' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/unix/file_access_unix.cpp:112)
+   GDScript backtrace (most recent call first):
+       [0] run_test (res://test_signs.gd:36)
+SIGN_QUEST_FLOW_PASS: old-save migration, brawl gate, cancel, facing interaction, 3 wrong retries/corrections, permanent text, distinct count, completion, save/load, UI text fit

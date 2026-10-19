@@ -7,9 +7,14 @@
 		
 	},
 	{
-		"Name": "Burgher Brawl",
-		"Description": "Disrupt the deadly duel between deranged denizens. Don't develop a discriminatory diagnosis.", 
-		"Reward": { "Type": "Money", "Amt": 30 },
+		"Name": "Deal with the brawl",
+		"Description": "Help Tom understand punctuation so he and Derek can stop arguing. Talk to Tom and correct his sentences.", 
+		"Reward": { "Type": "Money", "Amt": 100 },
 		"Load": { "Node": "Fighting Tech Town", "Scene": "Town" }
+	},
+	{
+		"Name": "Fix the signs",
+		"Description": "After helping Tom, correct the three Tech Town signs about pipe water, staying safe, and not running.",
+		"RequiredCount": 3
 	}
 ]

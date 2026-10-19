@@ -23,11 +23,11 @@
 		"Comma",
 		"Apple"
 	],
-	"Money": 0.0,
+	"Money": 300,
 	"Name": "Neal",
 	"Party": [
 		{
-			"Health": 4,
+			"Health": 0.0,
 			"Item": "",
 			"Level": 1.0,
 			"Moves": [

@@ -1,0 +1,15 @@
+[
+	{
+		"Name": "Electrical Enterprise",
+		"Description": "Find the keycard to open electrical boxes, then fix signs around Tech Town.",
+		"Reward": { "Type": "Item", "Amt": 1, "Name": "Red Stamp" },
+		"Load": { "Node": "Electric Boxes", "Scene": "Town" },
+		
+	},
+	{
+		"Name": "Deal with the brawl",
+		"Description": "Help Tom understand punctuation so he and Derek can stop arguing. Talk to Tom and correct his sentences.", 
+		"Reward": { "Type": "Money", "Amt": 100 },
+		"Load": { "Node": "Fighting Tech Town", "Scene": "Town" }
+	}
+]

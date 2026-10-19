@@ -3,6 +3,17 @@
 		"Progress": "Started"
 	},
 	{
-		"Progress": "Started"
+		"LessonStep": 14.0,
+		"Progress": "Completed",
+		"RewardGranted": true
+	},
+	{
+		"CorrectedSigns": [
+			"pipe_water",
+			"staying_safe",
+			"please_run"
+		],
+		"Count": 3,
+		"Progress": "Completed"
 	}
 ]

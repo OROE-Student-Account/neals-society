@@ -11,6 +11,7 @@ radius = 11.313708
 size = Vector2(16, 16)
 
 [node name="Sign" type="Area2D" unique_id=836850668]
+texture_filter = 1
 collision_layer = 16
 script = ExtResource("1_0ku8m")
 

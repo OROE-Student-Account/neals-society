@@ -1,0 +1,99 @@
+extends SceneTree
+var scene: Node
+var dialogue: Node
+var signs: Array = []
+var player: Node
+func _initialize():
+ call_deferred("run_test")
+func event(action: String) -> InputEventAction:
+ var result = InputEventAction.new()
+ result.action = action
+ result.pressed = true
+ return result
+func drive(lesson: Node, answer := -2, fail_once := false):
+ var wrong_done := false
+ var deadline = Time.get_ticks_msec() + 15000
+ while lesson.busy:
+  assert(Time.get_ticks_msec() < deadline, "Timed out")
+  await process_frame
+  if is_instance_valid(lesson.question_ui):
+   lesson.question_ui.get_node("AnimationPlayer").speed_scale = 100
+  if lesson.accepting_answers:
+   for i in range(lesson.option_count):
+    var label = lesson.question_ui.get_node("Options/NinePatchRect" + str(i + 1) + "/Label")
+    var measured = label.get_theme_font("font").get_multiline_string_size(label.text,HORIZONTAL_ALIGNMENT_CENTER,label.size.x,label.get_theme_font_size("font_size"))
+    assert(measured.y <= label.size.y,"Clipped: " + label.text)
+   if answer == -1:
+    lesson._input(event("x"))
+   else:
+    assert(answer >= 0,"Unexpected question")
+    lesson.selected = (answer + 1) % 3 if fail_once and not wrong_done else answer
+    wrong_done = true
+    lesson._input(event("z"))
+  elif dialogue.current_node != null:
+   dialogue._input(event("z"))
+func run_test():
+ scene = load("res://Scenes/SceneManager.tscn").instantiate()
+ var container = scene.get_node("CurrentScene")
+ var town = container.get_child(0)
+ for name in ["Rearrange Sign quest","Staying Safe Sign","Please Dont Run Sign"]:
+  var sign_node = town.get_node("Sorted Stuff/Tech Town/" + name)
+  sign_node.get_parent().remove_child(sign_node)
+  signs.append(sign_node)
+ container.remove_child(town)
+ town.free()
+ var world = Node2D.new()
+ container.add_child(world)
+ player = load("res://Scenes/Player.tscn").instantiate()
+ world.add_child(player)
+ player.owner = world
+ for sign_node in signs:
+  world.add_child(sign_node)
+ root.add_child(scene)
+ current_scene = scene
+ await process_frame
+ dialogue = scene.get_node("DialogueBox")
+ var utils = root.get_node("Utils")
+ utils.save_json_file("res://Data/Quests.json",[{"Progress":"Started"},{"Progress":"Unstarted"}])
+ signs[0].lesson.start_sign()
+ await drive(signs[0].lesson)
+ assert(utils.load_json_file("res://Data/Quests.json").size() == 2)
+ # Quest board safely migrates older slots, preserving existing entries.
+ var listed = utils.load_quests()
+ assert(listed.size() == 2)
+ var quests: Array = utils.load_json_file("res://Data/Quests.json")
+ assert(quests.size() == 3 and quests[1]["Progress"] == "Unstarted")
+ quests[1]["Progress"] = "Completed"
+ utils.save_json_file("res://Data/Quests.json",quests)
+ var money = utils.get_money()
+ signs[0].lesson.start_sign()
+ await drive(signs[0].lesson,-1)
+ assert(signs[0].lesson.read_progress().get("CorrectedSigns",[]).is_empty())
+ for i in range(3):
+  signs[i].disabled = false
+  player.position = signs[i].position - Vector2(16,0)
+  player.facing_direction = player.FacingDirection.RIGHT
+  signs[i]._unhandled_input(event("z"))
+  assert(signs[i].lesson.busy)
+  await drive(signs[i].lesson,i,true)
+  var progress = signs[i].lesson.read_progress()
+  assert(progress["Count"] == i + 1)
+  assert(progress["Progress"] == ("Completed" if i == 2 else "Started"))
+  var definitions = utils.load_json_file("res://GrammariteData/SignCorrections.json")
+  assert(signs[i].text == definitions[signs[i].correction_id]["Corrected"])
+  assert(player.is_physics_processing())
+ # Already corrected signs read their permanent text without reopening questions.
+ signs[0].lesson.start_sign()
+ await drive(signs[0].lesson)
+ signs[0].lesson.record_correction("pipe_water")
+ assert(signs[0].lesson.read_progress()["Count"] == 3)
+ assert(utils.get_money() == money)
+ utils.save_to_save_slot(3)
+ utils.set_quest_progress("Started",2)
+ utils.load_slot(3)
+ assert(signs[0].lesson.read_progress()["Progress"] == "Completed")
+ signs[1].text = "Were staying safe"
+ signs[1].refresh_text()
+ assert(signs[1].text == "We're staying safe")
+ print("SIGN_QUEST_FLOW_PASS: old-save migration, brawl gate, cancel, facing interaction, 3 wrong retries/corrections, permanent text, distinct count, completion, save/load, UI text fit")
+ quit()

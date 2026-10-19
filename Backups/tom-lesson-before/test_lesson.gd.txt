@@ -1,0 +1,119 @@
+extends SceneTree
+var scene: Node
+var cutscene: Node
+var lesson: Node
+var dialogue: Node
+var questions_seen := 0
+var wrong_submitted := false
+func _initialize():
+ call_deferred("run_test")
+func z() -> InputEventAction:
+ var event = InputEventAction.new()
+ event.action = "z"
+ event.pressed = true
+ return event
+func drive(stop_at_question := false):
+ var deadline = Time.get_ticks_msec() + 15000
+ while lesson.busy:
+  assert(Time.get_ticks_msec() < deadline, "Lesson timed out")
+  await process_frame
+  if is_instance_valid(lesson.question_ui):
+   lesson.question_ui.get_node("AnimationPlayer").speed_scale = 100.0
+  if lesson.accepting_answers:
+   for i in range(lesson.option_count):
+    var label = lesson.question_ui.get_node("Options/NinePatchRect" + str(i + 1) + "/Label")
+    var measured = label.get_theme_font("font").get_multiline_string_size(label.text, HORIZONTAL_ALIGNMENT_CENTER, label.size.x, label.get_theme_font_size("font_size"))
+    assert(measured.y <= label.size.y, "Option text clips: " + label.text + " size=" + str(measured))
+   if stop_at_question:
+    var cancel = InputEventAction.new()
+    cancel.action = "x"
+    cancel.pressed = true
+    lesson._input(cancel)
+    await process_frame
+    return
+   if not wrong_submitted:
+    lesson.selected = 1
+    wrong_submitted = true
+   else:
+    var prompt: String = lesson.question_ui.get_node("Question").text
+    lesson.selected = 2 if prompt.begins_with("Correct") else 0
+    questions_seen += 1
+   lesson._input(z())
+  elif dialogue.current_node != null:
+   dialogue._input(z())
+func run_test():
+ scene = load("res://Scenes/SceneManager.tscn").instantiate()
+ var container = scene.get_node("CurrentScene")
+ var town = container.get_child(0)
+ cutscene = town.get_node("Sorted Stuff/Tech Town/Derek Cutscene_Quest")
+ cutscene.get_parent().remove_child(cutscene)
+ container.remove_child(town)
+ town.free()
+ var world = Node2D.new()
+ world.name = "TestWorld"
+ container.add_child(world)
+ var player = load("res://Scenes/Player.tscn").instantiate()
+ world.add_child(player)
+ player.owner = world
+ world.add_child(cutscene)
+ cutscene.position = Vector2(2000,2000)
+ root.add_child(scene)
+ current_scene = scene
+ await process_frame
+ lesson = cutscene.get_node("TomLesson")
+ dialogue = scene.get_node("DialogueBox")
+ var utils = root.get_node("Utils")
+ var quests: Array = utils.load_json_file("res://Data/Quests.json")
+ quests[1] = {"Progress":"Unstarted"}
+ utils.save_json_file("res://Data/Quests.json", quests)
+ player.position = cutscene.position + Vector2(512,64)
+ player.facing_direction = player.FacingDirection.RIGHT
+ lesson._unhandled_input(z())
+ assert(lesson.busy)
+ assert(dialogue.current_node.text.contains("Chief Static"))
+ await drive()
+ quests[1] = {"Progress":"Started"}
+ utils.save_json_file("res://Data/Quests.json", quests)
+ # Declining the lesson must preserve progress and money.
+ var money_before = utils.get_money()
+ lesson.start_lesson()
+ dialogue._input(z())
+ dialogue.selected_option = 1
+ dialogue._input(z())
+ await process_frame
+ await process_frame
+ assert(not lesson.busy)
+ assert(utils.get_money() == money_before)
+ lesson.start_lesson()
+ await drive(true)
+ assert(not lesson.busy)
+ assert(utils.load_json_file("res://Data/Quests.json")[1]["LessonStep"] == 2)
+ assert(player.is_physics_processing())
+ # Resume exactly at the first question, retry a wrong answer, then finish.
+ lesson.start_lesson()
+ assert(lesson.accepting_answers)
+ await drive()
+ assert(wrong_submitted and questions_seen == 3)
+ assert(utils.get_money() == money_before + 100)
+ var saved = utils.load_json_file("res://Data/Quests.json")[1]
+ assert(saved["Progress"] == "Completed" and saved["RewardGranted"])
+ assert(saved["LessonStep"] == 14)
+ assert(cutscene.completed)
+ assert(player.is_physics_processing())
+ assert(scene.menu.screen_loaded == scene.menu.ScreenLoaded.NOTHING)
+ lesson.start_lesson()
+ await drive()
+ assert(utils.get_money() == money_before + 100, "Repeated reward")
+ lesson._complete_quest()
+ assert(utils.get_money() == money_before + 100, "Repeated reward callback")
+ utils.save_to_save_slot(3)
+ utils.set_quest_progress("Unstarted", 1)
+ utils.load_slot(3)
+ assert(utils.load_json_file("res://Data/Quests.json")[1]["Progress"] == "Completed")
+ cutscene._ready()
+ await process_frame
+ assert(not cutscene.get_node("Hitbox").monitoring)
+ var definitions = utils.load_json_file("res://GrammariteData/Quests.json")
+ assert(definitions[1]["Reward"]["Amt"] == 100)
+ print("TOM_LESSON_FLOW_PASS: gated interaction, Later, cancel/resume, wrong retry, 3 correct answers, completion, $100 once, save/load, completed-cutscene guard")
+ quit()

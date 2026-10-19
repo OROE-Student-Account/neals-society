@@ -1,0 +1,13 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+WARNING: Case mismatch opening requested file '/private/tmp/neals-tom-lesson/Scenes/ShopScreen.tscn', stored as '/private/tmp/neals-tom-lesson/Scenes/shopscreen.tscn' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/unix/file_access_unix.cpp:112)
+   GDScript backtrace (most recent call first):
+       [0] run_test (res://test_lesson.gd:45)
+WARNING: Case mismatch opening requested file '/private/tmp/neals-tom-lesson/Scenes/ShopScreen.tscn', stored as '/private/tmp/neals-tom-lesson/Scenes/shopscreen.tscn' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/unix/file_access_unix.cpp:112)
+   GDScript backtrace (most recent call first):
+       [0] run_test (res://test_lesson.gd:45)
+TOM_LESSON_FLOW_PASS: gated interaction, Later, cancel/resume, wrong retry, 3 correct answers, completion, $100 once, save/load, completed-cutscene guard

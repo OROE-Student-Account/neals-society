@@ -256,6 +256,11 @@ func set_shop(new_stock):
 func load_quests():
 	var quest_info = load_json_file("res://GrammariteData/Quests.json")
 	var quest_details = load_json_file("res://Data/Quests.json")
+	# Older save slots predate newly added quests. Keep their existing progress.
+	if quest_details.size() < quest_info.size():
+		while quest_details.size() < quest_info.size():
+			quest_details.append({"Progress": "Incoming"})
+		save_json_file("res://Data/Quests.json", quest_details)
 	
 	var quests = []
 	

@@ -1,0 +1,105 @@
+extends Node2D
+## Local controller for Derek's argument. Dialogue and animation remain editable in Town.
+
+var active := false
+var completed := false
+var chief_exit_position := Vector2.ZERO
+
+@onready var trigger: Area2D = $Hitbox
+@onready var animation_player: AnimationPlayer = $CutsceneAnimation
+
+func start_cutscene() -> void:
+	if active or completed:
+		return
+	var player = Utils.get_player()
+	var menu = Utils.get_scene_manager().menu
+	if player == null or menu.screen_loaded != menu.ScreenLoaded.NOTHING:
+		return
+	active = true
+	# Let the player finish their tile before freezing the camera and movement.
+	while player.is_moving:
+		await get_tree().physics_frame
+	trigger.set_deferred("monitoring", false)
+	$"Dialogue Derek/1".begin_from_self()
+
+func begin_confrontation() -> void:
+	_lock_player()
+	chief_exit_position = $ChiefStatic.position
+	animation_player.play("break_up_fight")
+	await animation_player.animation_finished
+	# SceneManager accepts a new dialogue only from NOTHING/NAMING.
+	# Open it immediately so there is no frame where world input is enabled.
+	var menu = Utils.get_scene_manager().menu
+	menu.screen_loaded = menu.ScreenLoaded.NOTHING
+	$ChiefInterruption.begin_from_self()
+
+func begin_quest_offer() -> void:
+	_lock_player()
+	# Derek backs off while Static stays beside the workers.
+	animation_player.play("workers_step_back")
+	await animation_player.animation_finished
+	var player = Utils.get_player()
+	var player_position: Vector2 = to_local(player.global_position)
+	# Stop beside the player's sprite, rather than on their tile.
+	var side := 1.0 if $ChiefStatic.position.x >= player_position.x else -1.0
+	var destination := player_position + Vector2(32.0 if side > 0 else -16.0, 0)
+	await _walk_chief_to(Vector2(destination.x, $ChiefStatic.position.y))
+	await _walk_chief_to(destination)
+	$ChiefStatic.frame = 7
+	$ChiefStatic.flip_h = side < 0
+	var menu = Utils.get_scene_manager().menu
+	menu.screen_loaded = menu.ScreenLoaded.NOTHING
+	$ChiefWarning.begin_from_self()
+
+func accept_quest() -> void:
+	# Quest 2 uses zero-based index 1. Do not reset already completed progress.
+	var quests = Utils.load_json_file("res://Data/Quests.json")
+	if quests[1].get("Progress", "Unstarted") not in ["Started", "Rewarding", "Completed"]:
+		Utils.set_quest_progress("Started", 1)
+	$ChiefDismissal.begin_from_self()
+
+func finish_cutscene() -> void:
+	# The dialogue manager restores movement before invoking this callback.
+	_lock_player()
+	# Derek is already back in place; Static now leaves from the player's side.
+	await _walk_chief_to(Vector2(chief_exit_position.x, $ChiefStatic.position.y))
+	await _walk_chief_to(chief_exit_position)
+	$ChiefStatic.hide()
+	completed = true
+	active = false
+	var player = Utils.get_player()
+	player.player_state = player.PlayerState.IDLE
+	player.anim_tree.active = true
+	player.set_physics_process(true)
+	var menu = Utils.get_scene_manager().menu
+	menu.screen_loaded = menu.ScreenLoaded.NOTHING
+
+func _walk_chief_to(destination: Vector2) -> void:
+	var chief: AnimatedSprite2D = $ChiefStatic
+	var movement := destination - chief.position
+	if movement.length() < 0.1:
+		return
+	var first_frame := 6
+	chief.flip_h = false
+	if absf(movement.x) > absf(movement.y):
+		chief.flip_h = movement.x > 0
+	elif movement.y < 0:
+		first_frame = 3
+	else:
+		first_frame = 0
+	var tween := create_tween()
+	tween.tween_property(chief, "position", destination, movement.length() / 48.0)
+	var step := 0
+	while tween.is_running():
+		chief.frame = first_frame + [0, 1, 2, 1][step % 4]
+		step += 1
+		await get_tree().create_timer(0.12).timeout
+	chief.frame = first_frame + 1
+
+func _lock_player() -> void:
+	var player = Utils.get_player()
+	player.set_physics_process(false)
+	player.anim_state.travel("Idle")
+	# Block menus and other interactions while the dialogue box is closed.
+	var menu = Utils.get_scene_manager().menu
+	menu.screen_loaded = menu.ScreenLoaded.DIALOGUE

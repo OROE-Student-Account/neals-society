@@ -1,0 +1,58 @@
+extends SceneTree
+var scene: Node
+var cutscene: Node
+func _initialize():
+ call_deferred("run_test")
+func run_test():
+ scene = load("res://Scenes/SceneManager.tscn").instantiate()
+ var container = scene.get_node("CurrentScene")
+ var town = container.get_child(0)
+ cutscene = town.get_node("Sorted Stuff/Tech Town/Derek Cutscene_Quest")
+ cutscene.get_parent().remove_child(cutscene)
+ container.remove_child(town)
+ town.free()
+ var world = Node2D.new()
+ world.name = "TestWorld"
+ container.add_child(world)
+ var player = load("res://Scenes/Player.tscn").instantiate()
+ world.add_child(player)
+ player.owner = world
+ world.add_child(cutscene)
+ cutscene.position = Vector2(2000,2000)
+ root.add_child(scene)
+ current_scene = scene
+ await process_frame
+ var dialogue = scene.get_node("DialogueBox")
+ var menu = scene.get_node("Menu")
+ cutscene.start_cutscene()
+ assert(cutscene.active)
+ assert(not player.is_physics_processing())
+ var event = InputEventAction.new()
+ event.action = "z"
+ event.pressed = true
+ for i in range(1,8):
+  assert(dialogue.current_node.name == str(i), "Wrong argument dialogue step")
+  dialogue._input(event)
+ assert(menu.screen_loaded == menu.ScreenLoaded.DIALOGUE)
+ assert(not player.is_physics_processing())
+ await create_timer(2.6).timeout
+ assert(cutscene.get_node("AnimatedSprite2D2").position.is_equal_approx(Vector2(544,80)))
+ assert(cutscene.get_node("ChiefStatic").visible)
+ assert(cutscene.get_node("ChiefStatic").position.is_equal_approx(Vector2(568,80)))
+ assert(dialogue.current_node.name == "ChiefInterruption")
+ for name in ["ChiefInterruption", "ChiefWarning", "ChiefDismissal"]:
+  assert(dialogue.current_node.name == name)
+  dialogue._input(event)
+ assert(not player.is_physics_processing())
+ await create_timer(2.0).timeout
+ assert(cutscene.completed)
+ assert(not cutscene.active)
+ assert(player.is_physics_processing())
+ assert(menu.screen_loaded == menu.ScreenLoaded.NOTHING)
+ assert(not cutscene.get_node("ChiefStatic").visible)
+ assert(cutscene.get_node("AnimatedSprite2D2").position.is_equal_approx(Vector2(544,104)))
+ assert(not cutscene.get_node("Hitbox").monitoring)
+ cutscene.start_cutscene()
+ assert(not cutscene.active, "Cutscene replayed")
+ print("CUTSCENE_FLOW_PASS: 7 original lines, approach, entrance, 3 Chief lines, retreat, unlock, replay guard")
+ quit()

@@ -75,8 +75,6 @@ func display_current_node():
 		var function = current_node.function.strip_edges()
 		var tar_node = target_node 
 		var args = current_node.args
-		if current_node.is_end_node:
-			dialogue_ended.emit()
 		end_dialogue()
 		
 		# Execute any function associated with this node
@@ -129,8 +127,6 @@ func show_options():
 	
 	# Check if this is an end node
 	if current_node.is_end_node or children.size() == 0:
-		if current_node.is_end_node:
-			dialogue_ended.emit()
 		end_dialogue()
 		return
 	
@@ -155,6 +151,8 @@ func _input(event):
 	if Utils.get_scene_manager().menu.screen_loaded == Utils.get_scene_manager().menu.ScreenLoaded.NAMING:
 		return
 	if screen_loaded == ScreenLoaded.DIALOGUE:
+		# Keep dialogue input from also interacting with world objects.
+		get_viewport().set_input_as_handled()
 		if dialogue_state == DialogueState.SHOWING_TEXT:
 			# Waiting for Z to advance to options
 			if event.is_action_pressed("z"):
@@ -163,7 +161,6 @@ func _input(event):
 					var tar_node = target_node 
 					var args = current_node.args
 					end_dialogue()
-					dialogue_ended.emit()
 					
 					# Execute any function associated with this node
 					if function != "" and tar_node != null:
@@ -215,3 +212,5 @@ func end_dialogue():
 	player.set_physics_process(true)
 	player.anim_tree.active = true
 	player.player_state = player.PlayerState.IDLE
+	# Every exit, including a node without children, releases sign cooldowns.
+	dialogue_ended.emit()
