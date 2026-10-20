@@ -9,7 +9,6 @@ func _ready() -> void:
 	# proximity circle and full-tile rectangle overlap the player's ray origin
 	# when reading from below, trapping movement in every direction. Interaction
 	# already uses distance/facing, so only the visible sign needs a blocker.
-	$CollisionShape2D.disabled = true
 	var blocker := RectangleShape2D.new()
 	blocker.size = Vector2(16, 8)
 	$CollisionShape2D2.shape = blocker

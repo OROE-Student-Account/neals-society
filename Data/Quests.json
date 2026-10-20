@@ -1,6 +1,6 @@
 [
 	{
-		"Progress": "Started"
+		"Progress": "Incoming"
 	},
 	{
 		"LessonStep": 14.0,
@@ -9,11 +9,13 @@
 	},
 	{
 		"CorrectedSigns": [
-			"pipe_water",
+			"please_run",
 			"staying_safe",
-			"please_run"
+			"pipe_water"
 		],
-		"Count": 3,
-		"Progress": "Completed"
+		"Count": 3.0,
+		"PowerPlantBriefed": true,
+		"Progress": "Completed",
+		"StaticMeetingPrompted": true
 	}
 ]

@@ -1,0 +1,74 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dypmmhw8f1let"]
+
+[ext_resource type="Texture2D" uid="uid://oyqtaaxaj8bh" path="res://Assets/Trainers/Daddy-Static.png" id="1_gi1an"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iuov5"]
+atlas = ExtResource("1_gi1an")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymfvu"]
+atlas = ExtResource("1_gi1an")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgp5x"]
+atlas = ExtResource("1_gi1an")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd8mc"]
+atlas = ExtResource("1_gi1an")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cej80"]
+atlas = ExtResource("1_gi1an")
+region = Rect2(16, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l18pq"]
+atlas = ExtResource("1_gi1an")
+region = Rect2(32, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ot0o1"]
+atlas = ExtResource("1_gi1an")
+region = Rect2(0, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhfxl"]
+atlas = ExtResource("1_gi1an")
+region = Rect2(16, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajp74"]
+atlas = ExtResource("1_gi1an")
+region = Rect2(32, 64, 16, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iuov5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymfvu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wgp5x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qd8mc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cej80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l18pq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ot0o1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhfxl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajp74")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]

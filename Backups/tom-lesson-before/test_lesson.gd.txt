@@ -21,23 +21,23 @@ func drive(stop_at_question := false):
    lesson.question_ui.get_node("AnimationPlayer").speed_scale = 100.0
   if lesson.accepting_answers:
    for i in range(lesson.option_count):
-    var label = lesson.question_ui.get_node("Options/NinePatchRect" + str(i + 1) + "/Label")
-    var measured = label.get_theme_font("font").get_multiline_string_size(label.text, HORIZONTAL_ALIGNMENT_CENTER, label.size.x, label.get_theme_font_size("font_size"))
-    assert(measured.y <= label.size.y, "Option text clips: " + label.text + " size=" + str(measured))
+	var label = lesson.question_ui.get_node("Options/NinePatchRect" + str(i + 1) + "/Label")
+	var measured = label.get_theme_font("font").get_multiline_string_size(label.text, HORIZONTAL_ALIGNMENT_CENTER, label.size.x, label.get_theme_font_size("font_size"))
+	assert(measured.y <= label.size.y, "Option text clips: " + label.text + " size=" + str(measured))
    if stop_at_question:
-    var cancel = InputEventAction.new()
-    cancel.action = "x"
-    cancel.pressed = true
-    lesson._input(cancel)
-    await process_frame
-    return
+	var cancel = InputEventAction.new()
+	cancel.action = "x"
+	cancel.pressed = true
+	lesson._input(cancel)
+	await process_frame
+	return
    if not wrong_submitted:
-    lesson.selected = 1
-    wrong_submitted = true
+	lesson.selected = 1
+	wrong_submitted = true
    else:
-    var prompt: String = lesson.question_ui.get_node("Question").text
-    lesson.selected = 2 if prompt.begins_with("Correct") else 0
-    questions_seen += 1
+	var prompt: String = lesson.question_ui.get_node("Question").text
+	lesson.selected = 2 if prompt.begins_with("Correct") else 0
+	questions_seen += 1
    lesson._input(z())
   elif dialogue.current_node != null:
    dialogue._input(z())

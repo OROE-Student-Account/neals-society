@@ -5,10 +5,24 @@ extends Node
 # var b = "text"
 var seen_question_ids: Dictionary = {}
 
+# Testing only: set false to keep working quest progress between editor runs.
+# Saved slots are not changed; loading one restores its saved progress.
+@export var reset_quest_progress_in_editor := false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if OS.has_feature("editor") and reset_quest_progress_in_editor:
+		reset_quest_progress()
 	reset_scenes()
 	# pass
+
+func reset_quest_progress() -> void:
+	var definitions = load_json_file("res://GrammariteData/Quests.json")
+	var quests: Array = []
+	for _quest in definitions:
+		quests.append({"Progress": "Incoming"})
+	# Replacing each entry also clears lesson steps, reward flags, and signs.
+	save_json_file("res://Data/Quests.json", quests)
 
 func reset_scenes():
 	var scenes = load_json_file("res://Data/Scenes.json")

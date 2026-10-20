@@ -23,8 +23,10 @@ func _unhandled_input(event: InputEvent) -> void:
 	var player = Utils.get_player()
 	if manager.menu.screen_loaded != manager.menu.ScreenLoaded.NOTHING or get_parent().active or player.is_moving:
 		return
-	var tom: Node2D = get_parent().get_node("AnimatedSprite2D")
-	var offset: Vector2 = tom.global_position - (player.global_position + Vector2(16, 0))
+	var tom: Node2D = get_parent().get_node("Tom")
+	# Compare the actors' feet, rather than a point 16 pixels to the player's
+	# right, so interaction works equally from all four approach directions.
+	var offset: Vector2 = tom.global_position + Vector2(8, 8) - (player.global_position + Vector2(8, 8))
 	var facing: Vector2 = [Vector2.LEFT, Vector2.RIGHT, Vector2.UP, Vector2.DOWN][player.facing_direction]
 	if offset.length() > 32.0 or offset.dot(facing) < 4.0:
 		return
@@ -121,11 +123,11 @@ func _ask(question: Dictionary) -> bool:
 	overlay.layer = 50
 	add_child(overlay)
 	question_ui = QUESTION_SCREEN.instantiate()
+	question_ui.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	overlay.add_child(question_ui)
 	question_ui.scale = get_viewport().get_visible_rect().size / Vector2(240, 160)
 	question_ui.get_node("Vitamins").hide()
 	question_ui.get_node("Question").text = question["Question"]
-	question_ui.get_node("Question").add_theme_font_size_override("font_size", 11)
 	option_count = question["Options"].size()
 	selected = 0
 	for i in range(4):
@@ -136,16 +138,16 @@ func _ask(question: Dictionary) -> bool:
 		var label: Label = box.get_node("Label")
 		label.position = Vector2.ZERO
 		label.size = box.size
-		label.add_theme_font_size_override("font_size", 10)
 		if i < option_count:
 			label.text = question["Options"][i]
 	var arrow: TextureRect = question_ui.get_node("TextureRect")
 	var outline := AtlasTexture.new()
 	outline.atlas = arrow.texture
-	outline.region = Rect2(24, 78, 120, 36)
+	# Crop to the actual gold border, excluding the atlas's empty padding.
+	outline.region = Rect2(26, 80, 115, 32)
 	arrow.texture = outline
 	arrow.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	arrow.size = Vector2(104, 36)
+	arrow.size = Vector2(115, 32)
 	var hint := Label.new()
 	hint.text = "Arrows: choose   Z: answer   X: leave"
 	hint.position = Vector2(4, 148)
@@ -157,7 +159,15 @@ func _ask(question: Dictionary) -> bool:
 	var explanation: Label = question_ui.get_node("Animation/Failure/Explanation")
 	explanation.text = question["Explanation"]
 	explanation.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	explanation.add_theme_font_size_override("font_size", 11)
+	# Keep the scene's normal font sizes and crisp pixel edges. Duplicate the
+	# font so this screen does not change text elsewhere in the game.
+	var font: FontFile = question_ui.get_node("Question").get_theme_font("font").duplicate()
+	font.antialiasing = TextServer.FONT_ANTIALIASING_NONE
+	font.hinting = TextServer.HINTING_NONE
+	font.subpixel_positioning = TextServer.SUBPIXEL_POSITIONING_DISABLED
+	font.oversampling = 1.0
+	for label in question_ui.find_children("*", "Label", true, false):
+		label.add_theme_font_override("font", font)
 	while true:
 		_update_selection()
 		accepting_answers = true
@@ -195,8 +205,10 @@ func _input(event: InputEvent) -> void:
 		_update_selection()
 
 func _update_selection() -> void:
-	var box: Control = question_ui.get_node("Options/NinePatchRect" + str(selected + 1))
-	question_ui.get_node("TextureRect").position = box.position - Vector2(2, 2)
+	# The visible boxes are baked into Battle Ui1.png. Align to that artwork,
+	# rather than the separate label rectangles used for answer text.
+	var outline_positions := [Vector2(4, 80), Vector2(120, 80), Vector2(4, 114), Vector2(120, 114)]
+	question_ui.get_node("TextureRect").position = outline_positions[selected]
 
 func _lock_player() -> void:
 	get_parent()._lock_player()

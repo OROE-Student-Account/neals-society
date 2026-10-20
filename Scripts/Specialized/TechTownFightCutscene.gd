@@ -9,11 +9,13 @@ var chief_exit_position := Vector2.ZERO
 @onready var animation_player: AnimationPlayer = $CutsceneAnimation
 
 func _ready() -> void:
+	y_sort_enabled = true
+
 	var quests = Utils.load_json_file("res://Data/Quests.json")
 	if quests[1].get("Progress", "Unstarted") == "Completed":
 		completed = true
 		trigger.set_deferred("monitoring", false)
-
+	
 func start_cutscene() -> void:
 	if active or completed:
 		return
