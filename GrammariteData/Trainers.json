@@ -9,6 +9,6 @@
 	"Team rammarG Grunt": { "Party": [ "Brainrouter", "Poishrub" ], "Levels": [ 2, 4 ], "XP": 50, "Money": 0 },
 	"Draven": { "Party": [ "Impaper" ], "Levels": [ 5 ], "XP": 40, "Money": 4 },
 	"Caisius": { "Party": [ "Impaper" ], "Levels": [ 4 ], "XP": 20, "Money": 3 },
-	"Commander Isold": { "Party": [ "Lampert", "Ventomer" ], "Levels": [ 4, 5, 6 ], "XP": 100, "Money": 10 },
+	"Commander Isold": { "Party": [ "Lampert", "Ventomer" ], "Levels": [ 1, 1, ], "XP": 100, "Money": 10 },
 	
 }

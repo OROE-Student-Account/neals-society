@@ -89,7 +89,17 @@ func ask_question():
 	ans = question["Answer"]
 	questions.get_node("Question").text = question["Question"]
 	for i in range(4):
-		questions.get_node("Options/NinePatchRect"+str(i+1)+"/Label").text = question["Options"][i]
+		var box = questions.get_node("Options/NinePatchRect" + str(i + 1))
+		# Match the interior of the four answer boxes in the background artwork.
+		box.position = Vector2(10 + (i % 2) * 116, 84 + (i / 2) * 34)
+		box.size = Vector2(104, 24)
+		var label: Label = box.get_node("Label")
+		label.position = Vector2.ZERO
+		label.size = box.size
+		label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		label.clip_text = false
+		label.add_theme_font_size_override("font_size", 8)
+		label.text = question["Options"][i]
 	
 	var vite = questions.get_node("Vitamins")
 	vite.visible = true
@@ -102,6 +112,14 @@ func ask_question():
 	else:
 		vite.visible = false
 	Utils.get_scene_manager().add_child(questions)
+	await get_tree().process_frame
+	for i in range(4):
+		var label: Label = questions.get_node("Options/NinePatchRect" + str(i + 1) + "/Label")
+		var font_size := 8
+		while label.get_line_count() * label.get_line_height() > 24 and font_size > 6:
+			font_size -= 1
+			label.add_theme_font_size_override("font_size", font_size)
+			await get_tree().process_frame
 	
 	input_state = InputState.QUESTIONING
 	selected_button = 0

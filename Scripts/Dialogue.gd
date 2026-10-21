@@ -210,6 +210,7 @@ func end_dialogue():
 	
 	var player = Utils.get_player()
 	player.set_physics_process(true)
+	player.anim_state.start("Idle")
 	player.anim_tree.active = true
 	player.player_state = player.PlayerState.IDLE
 	# Every exit, including a node without children, releases sign cooldowns.

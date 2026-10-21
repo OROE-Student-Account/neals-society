@@ -32,7 +32,7 @@
 		},
 		"Obstacles": {
 			"TeslaCoil1": {
-				"Broken": false
+				"Broken": true
 			},
 			"TeslaCoil2": {
 				"Broken": false
@@ -61,7 +61,7 @@
 				"Talked": false
 			},
 			"Lever1": {
-				"Talked": false
+				"Talked": true
 			},
 			"Lever2": {
 				"Talked": false
@@ -73,7 +73,7 @@
 				"Talked": false
 			},
 			"Team rammarG Grunt": {
-				"Talked": false
+				"Talked": true
 			}
 		}
 	},
