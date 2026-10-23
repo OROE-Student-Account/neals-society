@@ -15,6 +15,9 @@
 			"Appositive Adept": {
 				"Talked": false
 			},
+			"Clause Coach": {
+				"Talked": false
+			},
 			"Comma Cadet": {
 				"Talked": false
 			},
@@ -22,9 +25,6 @@
 				"Talked": false
 			},
 			"Kom Ma-King": {
-				"Talked": false
-			},
-			"Clause Coach": {
 				"Talked": false
 			},
 			"Punctuation Pupil": {
@@ -52,7 +52,7 @@
 				"Talked": false
 			},
 			"No. 1 Pencil Guy": {
-				"Talked": true
+				"Talked": false
 			},
 			"No. 2 Pencil Guy": {
 				"Talked": false
@@ -95,7 +95,7 @@
 		},
 		"Obstacles": {
 			"TeslaCoil1": {
-				"Broken": true
+				"Broken": false
 			},
 			"TeslaCoil2": {
 				"Broken": false
@@ -124,7 +124,7 @@
 				"Talked": false
 			},
 			"Lever1": {
-				"Talked": true
+				"Talked": false
 			},
 			"Lever2": {
 				"Talked": false
@@ -136,7 +136,7 @@
 				"Talked": false
 			},
 			"Team rammarG Grunt": {
-				"Talked": true
+				"Talked": false
 			}
 		}
 	},
