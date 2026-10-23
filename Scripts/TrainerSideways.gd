@@ -12,11 +12,18 @@ extends AnimatedSprite2D
 var player_in_range := false
 var used_up := false
 var disabled := false
+var facing_sign := 1
 
 
 func _ready():
-	flip_h = face_right
+	facing_sign = 1 if face_right else -1
+	flip_h = not face_right
 	frame = 7
+	$LineOfSight/CollisionShape2D.position.x = absf($LineOfSight/CollisionShape2D.position.x) * facing_sign
+	$RayCast2D.position.x = absf($RayCast2D.position.x) * facing_sign
+	$RayCast2D.target_position.x = 24 * facing_sign
+	$RayCast2D2.position.x = absf($RayCast2D2.position.x) * facing_sign
+	$RayCast2D2.target_position.x = 24 * facing_sign
 	var scene = Utils.get_scene_manager().get_node("CurrentScene").get_child(0).name
 	if Utils.check_trainer_attacked(name, scene):
 		used_up = true
@@ -25,7 +32,7 @@ func _ready():
 
 
 func approach_until_hit():
-	ray.target_position = Vector2(24, 0)
+	ray.target_position = Vector2(24 * facing_sign, 0)
 	ray.force_raycast_update()
 	
 	if !ray.is_colliding():
@@ -41,7 +48,7 @@ func approach_until_hit():
 		Utils.get_scene_manager().transition_to_dialogue(root_node)
 
 func _on_area_2d_body_entered(_body: Node2D = null) -> void:
-	flip_h = face_right
+	flip_h = not face_right
 	if used_up: return
 	
 	visible = true
@@ -56,7 +63,7 @@ func _on_area_2d_body_entered(_body: Node2D = null) -> void:
 	if not cutscene:
 		position.y = player.position.y
 	
-	$RayCast2D2.target_position = Vector2(24, 0)
+	$RayCast2D2.target_position = Vector2(24 * facing_sign, 0)
 	$RayCast2D2.force_raycast_update()
 	if !$RayCast2D2.is_colliding():
 		$AnimationPlayer.play("Approach")

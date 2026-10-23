@@ -3,7 +3,6 @@
 	"Old Man Ember": { "Party": [ "Cateraser" ], "Levels": [ 2 ], "XP": 25, "Money": 4 },
 	"Team rammarG Beater": { "Party": [ "Poishrub" ], "Levels": [ 3 ], "XP": 60, "Money": 8 },
 	
-	
 	"Chief Static": { "Party": [ "Lampert", "Ventomer", "Locusion" ], "Levels": [ 8, 9, 10 ], "XP": 100, "Money": 15 },
 	
 	"Team rammarG Grunt": { "Party": [ "Brainrouter", "Poishrub" ], "Levels": [ 2, 4 ], "XP": 50, "Money": 0 },
@@ -11,4 +10,13 @@
 	"Caisius": { "Party": [ "Impaper" ], "Levels": [ 4 ], "XP": 20, "Money": 3 },
 	"Commander Isold": { "Party": [ "Lampert", "Ventomer" ], "Levels": [ 1, 1, ], "XP": 100, "Money": 10 },
 	
+	
+	"No. 3 Pencil Guy": { "Party": [ "Pencilite" ], "Levels": [ 10 ], "XP": 80, "Money": 10 },
+	"Comma Cadet": { "Party": [ "Moustapler" ], "Levels": [ 10 ], "XP": 70, "Money": 12 },
+	"Appositive Adept": { "Party": [ "Impaper" ], "Levels": [ 11 ], "XP": 80, "Money": 14 },
+	"Semicolon Scholar": { "Party": [ "Scrawlking" ], "Levels": [ 12 ], "XP": 90, "Money": 16 },
+	"Grammar Graduate": { "Party": [ "Scrawlaive" ], "Levels": [ 14 ], "XP": 100, "Money": 18 },
+	"Punctuation Pupil": { "Party": [ "Pencilite" ], "Levels": [ 13 ], "XP": 90, "Money": 16 },
+	"Clause Coach": { "Party": [ "Scrawlking" ], "Levels": [ 15 ], "XP": 110, "Money": 20 },
+	"Kom Ma-King": { "Party": [ "Scrawlking", "Scrawlaive" ], "Levels": [ 18, 20 ], "XP": 250, "Money": 40 }
 }

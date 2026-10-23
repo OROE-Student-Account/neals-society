@@ -1,4 +1,67 @@
 {
+	"Castle": {
+		"Items": {
+			"Dash": {
+				"Collected": false
+			},
+			"Final Draft": {
+				"Collected": false
+			},
+			"Semicolon": {
+				"Collected": false
+			}
+		},
+		"Trainers": {
+			"Appositive Adept": {
+				"Talked": false
+			},
+			"Comma Cadet": {
+				"Talked": false
+			},
+			"Grammar Graduate": {
+				"Talked": false
+			},
+			"Kom Ma-King": {
+				"Talked": false
+			},
+			"Clause Coach": {
+				"Talked": false
+			},
+			"Punctuation Pupil": {
+				"Talked": false
+			},
+			"Semicolon Scholar": {
+				"Talked": false
+			}
+		}
+	},
+	"Cave": {
+		"Items": {
+			"Apple": {
+				"Collected": false
+			},
+			"Comma": {
+				"Collected": false
+			}
+		},
+		"Trainers": {
+			"Cave Geologist": {
+				"Talked": false
+			},
+			"Lost Explorer": {
+				"Talked": false
+			},
+			"No. 1 Pencil Guy": {
+				"Talked": true
+			},
+			"No. 2 Pencil Guy": {
+				"Talked": false
+			},
+			"No. 3 Pencil Guy": {
+				"Talked": false
+			}
+		}
+	},
 	"ChiefStaticHome": {
 		"Items": {
 			"Lampert": {

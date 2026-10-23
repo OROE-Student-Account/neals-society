@@ -10,6 +10,15 @@
 [ext_resource type="Texture2D" uid="uid://c33s6a8hsjrdn" path="res://Assets/Decoration/RoyalGrotto/castle_door_inside.png" id="6_c7kd0"]
 [ext_resource type="Texture2D" uid="uid://di6aw1pcroyhs" path="res://Assets/Decoration/RoyalGrotto/Throne.png" id="6_odu4r"]
 [ext_resource type="Texture2D" uid="uid://cclcw3nunbx4o" path="res://Assets/Decoration/RoyalGrotto/King's staff.png" id="7_bejco"]
+[ext_resource type="Texture2D" uid="uid://dh3uxk6tfukmy" path="res://Assets/Trainers/Kom_Ma-King.png" id="8_komma"]
+[ext_resource type="Script" uid="uid://bp28l32amhxsf" path="res://Scripts/DialogueNode.gd" id="10_dialogue"]
+[ext_resource type="PackedScene" uid="uid://budnp8nncumb2" path="res://Scenes/TrainerSideways.tscn" id="11_sideways"]
+[ext_resource type="Script" uid="uid://yexcpjuauyul" path="res://Scripts/Trainer.gd" id="11_vmkoj"]
+[ext_resource type="PackedScene" uid="uid://bdykq75yoljv" path="res://Scenes/Item.tscn" id="12_item"]
+[ext_resource type="Script" uid="uid://hvnvpuwe5g0b" path="res://Scripts/BattleStarter.gd" id="13_j454j"]
+[ext_resource type="PackedScene" uid="uid://r4t53bdghiwu" path="res://Scenes/Sign.tscn" id="13_sign"]
+[ext_resource type="Texture2D" uid="uid://b4jcrb80t4lo" path="res://Assets/Trainers/old-man.png" id="15_nr4h8"]
+[ext_resource type="Script" uid="uid://c1j00vj0b40h8" path="res://Scripts/TrainerSideways.gd" id="16_cm4an"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c7kd0"]
 texture = ExtResource("1_a2p64")
@@ -185,14 +194,682 @@ sources/1 = SubResource("TileSetAtlasSource_wo037")
 sources/3 = SubResource("TileSetAtlasSource_odu4r")
 sources/4 = SubResource("TileSetAtlasSource_bejco")
 
+[sub_resource type="AtlasTexture" id="KomMaKingFrame0"]
+atlas = ExtResource("8_komma")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="KomMaKingFrame1"]
+atlas = ExtResource("8_komma")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="KomMaKingFrame2"]
+atlas = ExtResource("8_komma")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="KomMaKingFrame3"]
+atlas = ExtResource("8_komma")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="KomMaKingFrame4"]
+atlas = ExtResource("8_komma")
+region = Rect2(16, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="KomMaKingFrame5"]
+atlas = ExtResource("8_komma")
+region = Rect2(32, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="KomMaKingFrame6"]
+atlas = ExtResource("8_komma")
+region = Rect2(0, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="KomMaKingFrame7"]
+atlas = ExtResource("8_komma")
+region = Rect2(16, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="KomMaKingFrame8"]
+atlas = ExtResource("8_komma")
+region = Rect2(32, 64, 16, 32)
+
+[sub_resource type="SpriteFrames" id="KomMaKingFrames"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("KomMaKingFrame0")
+}, {
+"duration": 1.0,
+"texture": SubResource("KomMaKingFrame1")
+}, {
+"duration": 1.0,
+"texture": SubResource("KomMaKingFrame2")
+}, {
+"duration": 1.0,
+"texture": SubResource("KomMaKingFrame3")
+}, {
+"duration": 1.0,
+"texture": SubResource("KomMaKingFrame4")
+}, {
+"duration": 1.0,
+"texture": SubResource("KomMaKingFrame5")
+}, {
+"duration": 1.0,
+"texture": SubResource("KomMaKingFrame6")
+}, {
+"duration": 1.0,
+"texture": SubResource("KomMaKingFrame7")
+}, {
+"duration": 1.0,
+"texture": SubResource("KomMaKingFrame8")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4unc"]
+size = Vector2(80, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lh2gh"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pe55j"]
+
+[sub_resource type="Animation" id="Animation_60ruy"]
+resource_name = "Approach"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 0, 1, 2]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"approach_until_hit"
+}, {
+"args": [],
+"method": &"approach_until_hit"
+}, {
+"args": [],
+"method": &"approach_until_hit"
+}, {
+"args": [],
+"method": &"approach_until_hit"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_gn7iv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_lh2gh"]
+resource_name = "TurnAround"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_slan3"]
+resource_name = "TurnDown"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_pe55j"]
+resource_name = "TurnLeft"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_avwyw"]
+resource_name = "TurnRight"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_8dr3w"]
+resource_name = "run_up"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [5, 4, 3, 4, 5, 4, 3, 4, 5, 4]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45000002, 0.5, 0.55, 0.6, 0.65, 0.70000005, 0.75, 0.8, 0.84999996, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_35qta"]
+_data = {
+&"Approach": SubResource("Animation_60ruy"),
+&"RESET": SubResource("Animation_gn7iv"),
+&"TurnAround": SubResource("Animation_lh2gh"),
+&"TurnDown": SubResource("Animation_slan3"),
+&"TurnLeft": SubResource("Animation_pe55j"),
+&"TurnRight": SubResource("Animation_avwyw"),
+&"run_up": SubResource("Animation_8dr3w")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slan3"]
+atlas = ExtResource("15_nr4h8")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dr3w"]
+atlas = ExtResource("15_nr4h8")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7d4mq"]
+atlas = ExtResource("15_nr4h8")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fe4gj"]
+atlas = ExtResource("15_nr4h8")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5ewi"]
+atlas = ExtResource("15_nr4h8")
+region = Rect2(16, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pifj1"]
+atlas = ExtResource("15_nr4h8")
+region = Rect2(32, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nd5rm"]
+atlas = ExtResource("15_nr4h8")
+region = Rect2(0, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5avt"]
+atlas = ExtResource("15_nr4h8")
+region = Rect2(16, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvxp1"]
+atlas = ExtResource("15_nr4h8")
+region = Rect2(32, 64, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d5kfv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slan3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dr3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7d4mq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fe4gj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5ewi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pifj1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nd5rm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5avt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvxp1")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfyf6"]
+size = Vector2(144, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfiuv"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u4yw6"]
+
+[sub_resource type="Animation" id="Animation_dbwql"]
+resource_name = "Approach"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [7, 6, 7, 8]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"approach_until_hit"
+}, {
+"args": [],
+"method": &"approach_until_hit"
+}, {
+"args": [],
+"method": &"approach_until_hit"
+}, {
+"args": [],
+"method": &"approach_until_hit"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_i36fg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_t8hcg"]
+resource_name = "TurnAround"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_8m36b"]
+resource_name = "TurnDown"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_xixr8"]
+resource_name = "TurnLeft"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_d72i1"]
+resource_name = "TurnRight"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_rlyn3"]
+resource_name = "run_up"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [5, 4, 3, 4, 5, 4, 3, 4, 5, 4]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45000002, 0.5, 0.55, 0.6, 0.65, 0.70000005, 0.75, 0.8, 0.84999996, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}, {
+"args": [],
+"method": &"up"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x4i7j"]
+_data = {
+&"Approach": SubResource("Animation_dbwql"),
+&"RESET": SubResource("Animation_i36fg"),
+&"TurnAround": SubResource("Animation_t8hcg"),
+&"TurnDown": SubResource("Animation_8m36b"),
+&"TurnLeft": SubResource("Animation_xixr8"),
+&"TurnRight": SubResource("Animation_d72i1"),
+&"run_up": SubResource("Animation_rlyn3")
+}
+
 [node name="Castle" type="Node2D" unique_id=1176928147]
 texture_filter = 1
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=330970763]
-offset_left = -464.0
-offset_top = -167.0
-offset_right = 568.0
-offset_bottom = 1080.0
+offset_left = -456.0
+offset_top = -112.0
+offset_right = 576.0
+offset_bottom = 1135.0
 color = Color(0, 0, 0, 1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=203811704]
@@ -224,10 +901,215 @@ texture = ExtResource("7_bejco")
 [node name="Player" parent="Node2D" unique_id=119606436 instance=ExtResource("3_xnynr")]
 position = Vector2(80, 80)
 
+[node name="Kom Ma-King" type="AnimatedSprite2D" parent="Node2D" unique_id=48503128]
+position = Vector2(64, 464)
+sprite_frames = SubResource("KomMaKingFrames")
+frame = 1
+centered = false
+offset = Vector2(0, -3)
+script = ExtResource("11_vmkoj")
+cutscene = true
+
+[node name="LineOfSight" type="Area2D" parent="Node2D/Kom Ma-King" unique_id=1506649704]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Kom Ma-King/LineOfSight" unique_id=1357964769]
+position = Vector2(8, 31)
+shape = SubResource("RectangleShape2D_q4unc")
+
+[node name="HitBox" type="Area2D" parent="Node2D/Kom Ma-King" unique_id=534457599]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Kom Ma-King/HitBox" unique_id=651429316]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_lh2gh")
+
+[node name="DetectPlayer" type="CollisionShape2D" parent="Node2D/Kom Ma-King/HitBox" unique_id=620086875]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_pe55j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/Kom Ma-King" unique_id=2126887194]
+libraries/ = SubResource("AnimationLibrary_35qta")
+
+[node name="RayCast2D" type="RayCast2D" parent="Node2D/Kom Ma-King" unique_id=1547218494]
+position = Vector2(8, 0)
+target_position = Vector2(0, 32)
+
+[node name="RayCast2D2" type="RayCast2D" parent="Node2D/Kom Ma-King" unique_id=1352974116]
+position = Vector2(8, 0)
+target_position = Vector2(0, 16)
+
+[node name="DialogueRoot" type="Node" parent="Node2D/Kom Ma-King" unique_id=1360333292]
+script = ExtResource("10_dialogue")
+text = "Welcome to my academy! Semicolons and appositives are advanced tools. Are you ready for a lesson?"
+
+[node name="SemicolonLesson" type="Node" parent="Node2D/Kom Ma-King/DialogueRoot" unique_id=1794429263 node_paths=PackedStringArray("func_node")]
+script = ExtResource("10_dialogue")
+is_end_node = true
+option_name = "Begin the lesson"
+text = "A semicolon joins two complete thoughts; an appositive adds detail beside the noun it renames. Now, show me what you have learned!"
+function = "begin_battle"
+func_node = NodePath("../../BattleStart")
+
+[node name="FinalDialogue" type="Node" parent="Node2D/Kom Ma-King" unique_id=922101857]
+script = ExtResource("10_dialogue")
+is_end_node = true
+text = "You have potential, but you aren't ready to tackle Team rammarG head-on. Polish up your vocabulary skills in Lluvia City, then return to your studies."
+
+[node name="BattleStart" type="Node" parent="Node2D/Kom Ma-King" unique_id=325007082]
+script = ExtResource("13_j454j")
+trainer_name = "Kom Ma-King"
+
+[node name="Comma Cadet" parent="Node2D" unique_id=148660179 instance=ExtResource("11_sideways")]
+position = Vector2(-96, 272)
+
+[node name="Appositive Adept" parent="Node2D" unique_id=1897919743 instance=ExtResource("11_sideways")]
+position = Vector2(-224, 400)
+
+[node name="Semicolon Scholar" parent="Node2D" unique_id=11586807 instance=ExtResource("11_sideways")]
+position = Vector2(240, 688)
+
+[node name="Grammar Graduate" parent="Node2D" unique_id=61753858 instance=ExtResource("11_sideways")]
+position = Vector2(128, 800)
+
+[node name="Punctuation Pupil" type="AnimatedSprite2D" parent="Node2D" unique_id=393642087]
+position = Vector2(240, 288)
+sprite_frames = SubResource("SpriteFrames_d5kfv")
+frame = 1
+centered = false
+offset = Vector2(0, -3)
+script = ExtResource("16_cm4an")
+face_right = false
+
+[node name="LineOfSight" type="Area2D" parent="Node2D/Punctuation Pupil" unique_id=1154450524]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Punctuation Pupil/LineOfSight" unique_id=1562302999]
+position = Vector2(-51.600006, 8)
+scale = Vector2(0.8, 0.8)
+shape = SubResource("RectangleShape2D_dfyf6")
+
+[node name="HitBox" type="Area2D" parent="Node2D/Punctuation Pupil" unique_id=2099838434]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Punctuation Pupil/HitBox" unique_id=245895911]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_yfiuv")
+
+[node name="DetectPlayer" type="CollisionShape2D" parent="Node2D/Punctuation Pupil/HitBox" unique_id=956270004]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_u4yw6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/Punctuation Pupil" unique_id=497907939]
+libraries/ = SubResource("AnimationLibrary_x4i7j")
+
+[node name="RayCast2D" type="RayCast2D" parent="Node2D/Punctuation Pupil" unique_id=1092457923]
+position = Vector2(8, 8)
+target_position = Vector2(-24, 0)
+
+[node name="RayCast2D2" type="RayCast2D" parent="Node2D/Punctuation Pupil" unique_id=263381296]
+position = Vector2(8, 8)
+target_position = Vector2(-8, 0)
+
+[node name="DialogueRoot" type="Node" parent="Node2D/Punctuation Pupil" unique_id=1099848367 node_paths=PackedStringArray("func_node")]
+script = ExtResource("10_dialogue")
+is_end_node = true
+text = "I keep mixing up commas and semicolons. Maybe a battle will help me remember!"
+function = "begin_battle"
+func_node = NodePath("../BattleStart")
+
+[node name="FinalDialogue" type="Node" parent="Node2D/Punctuation Pupil" unique_id=205770365]
+script = ExtResource("10_dialogue")
+is_end_node = true
+text = "That was a useful lesson. A semicolon joins two complete thoughts!"
+
+[node name="BattleStart" type="Node" parent="Node2D/Punctuation Pupil" unique_id=1258426791]
+script = ExtResource("13_j454j")
+trainer_name = "Punctuation Pupil"
+
+[node name="Clause Coach" type="AnimatedSprite2D" parent="Node2D" unique_id=1058229624]
+position = Vector2(-64, 736)
+sprite_frames = SubResource("SpriteFrames_d5kfv")
+frame = 1
+centered = false
+offset = Vector2(0, -3)
+script = ExtResource("16_cm4an")
+face_right = false
+
+[node name="LineOfSight" type="Area2D" parent="Node2D/Clause Coach" unique_id=753673458]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Clause Coach/LineOfSight" unique_id=1540544885]
+position = Vector2(-51.600006, 8)
+scale = Vector2(0.8, 0.8)
+shape = SubResource("RectangleShape2D_dfyf6")
+
+[node name="HitBox" type="Area2D" parent="Node2D/Clause Coach" unique_id=513545828]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Clause Coach/HitBox" unique_id=39488062]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_yfiuv")
+
+[node name="DetectPlayer" type="CollisionShape2D" parent="Node2D/Clause Coach/HitBox" unique_id=1962128747]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_u4yw6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/Clause Coach" unique_id=1687498643]
+libraries/ = SubResource("AnimationLibrary_x4i7j")
+
+[node name="RayCast2D" type="RayCast2D" parent="Node2D/Clause Coach" unique_id=318292129]
+position = Vector2(8, 8)
+target_position = Vector2(-24, 0)
+
+[node name="RayCast2D2" type="RayCast2D" parent="Node2D/Clause Coach" unique_id=874108073]
+position = Vector2(8, 8)
+target_position = Vector2(-8, 0)
+
+[node name="DialogueRoot" type="Node" parent="Node2D/Clause Coach" unique_id=2143128429 node_paths=PackedStringArray("func_node")]
+script = ExtResource("10_dialogue")
+is_end_node = true
+text = "A complete clause can stand on its own. Let's see if your Grammarites can do the same!"
+function = "begin_battle"
+func_node = NodePath("../BattleStart")
+
+[node name="FinalDialogue" type="Node" parent="Node2D/Clause Coach" unique_id=375253953]
+script = ExtResource("10_dialogue")
+is_end_node = true
+text = "Strong work. Two independent clauses can be joined with a semicolon."
+
+[node name="BattleStart" type="Node" parent="Node2D/Clause Coach" unique_id=1328080950]
+script = ExtResource("13_j454j")
+trainer_name = "Clause Coach"
+
+[node name="Academy Sign" parent="Node2D" unique_id=748220746 instance=ExtResource("13_sign")]
+position = Vector2(64, 240)
+text = "Kom Ma-King's Academy - lessons in advanced punctuation and appositives."
+
+[node name="Study Sign" parent="Node2D" unique_id=1758217595 instance=ExtResource("13_sign")]
+position = Vector2(64, 880)
+text = "Study Tip: A semicolon joins two complete thoughts; a comma helps organize a sentence."
+
+[node name="Final Draft" parent="Node2D" unique_id=504335650 instance=ExtResource("12_item")]
+position = Vector2(240, 736)
+
+[node name="Dash" parent="Node2D" unique_id=2076800337 instance=ExtResource("12_item")]
+position = Vector2(-112, 336)
+
+[node name="Semicolon" parent="Node2D" unique_id=337815721 instance=ExtResource("12_item")]
+position = Vector2(64, 944)
+
 [node name="Door" parent="." unique_id=434385045 instance=ExtResource("4_7pes4")]
 modulate = Color(0.12549, 0.313726, 0.85098, 1)
 position = Vector2(64, 112)
-next_scene_path = "res://Scenes/Cave.scn"
+next_scene_path = "res://Scenes/Cave.tscn"
 is_invisible = true
 spawn_location = Vector2(-608, 464)
 spawn_direction = Vector2(0, 1)
+
+[connection signal="body_entered" from="Node2D/Kom Ma-King/LineOfSight" to="Node2D/Kom Ma-King" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Node2D/Kom Ma-King/HitBox" to="Node2D/Kom Ma-King" method="_on_hit_box_body_entered"]
+[connection signal="body_exited" from="Node2D/Kom Ma-King/HitBox" to="Node2D/Kom Ma-King" method="_on_hit_box_body_exited"]
+[connection signal="body_entered" from="Node2D/Punctuation Pupil/LineOfSight" to="Node2D/Punctuation Pupil" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Node2D/Punctuation Pupil/HitBox" to="Node2D/Punctuation Pupil" method="_on_hit_box_body_entered"]
+[connection signal="body_exited" from="Node2D/Punctuation Pupil/HitBox" to="Node2D/Punctuation Pupil" method="_on_hit_box_body_exited"]
+[connection signal="body_entered" from="Node2D/Clause Coach/LineOfSight" to="Node2D/Clause Coach" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Node2D/Clause Coach/HitBox" to="Node2D/Clause Coach" method="_on_hit_box_body_entered"]
+[connection signal="body_exited" from="Node2D/Clause Coach/HitBox" to="Node2D/Clause Coach" method="_on_hit_box_body_exited"]
