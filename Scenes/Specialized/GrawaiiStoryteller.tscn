@@ -1,0 +1,26 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://Scripts/Specialized/GrawaiiReturnedStoryteller.gd" id="script"]
+[ext_resource type="Texture2D" path="res://Assets/Trainers/old-man.png" id="actor"]
+
+[sub_resource type="RectangleShape2D" id="tile"]
+size = Vector2(14, 14)
+
+[node name="ReturnedStoryteller" type="Node2D"]
+texture_filter = 1
+script = ExtResource("script")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("actor")
+centered = false
+hframes = 3
+vframes = 3
+frame = 1
+
+[node name="Body" type="StaticBody2D" parent="."]
+collision_layer = 18
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="./Body"]
+position = Vector2(8, 8)
+shape = SubResource("tile")

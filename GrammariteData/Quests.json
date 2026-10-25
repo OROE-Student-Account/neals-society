@@ -16,5 +16,6 @@
 		"Name": "Fix the signs",
 		"Description": "After helping Tom, correct the three Tech Town signs about pipe water, staying safe, and not running.",
 		"RequiredCount": 3
-	}
+	},
+ {"Name":"The Missing Storyteller","Description":"The Festival of Stories cannot begin without its Storyteller. Ask the villagers what they saw and bring their accounts to the organizer at Grawai’i’s festival green."}
 ]

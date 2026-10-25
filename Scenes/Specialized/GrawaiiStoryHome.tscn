@@ -1,0 +1,183 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/Specialized/GrawaiiStoryHome.gd" id="1_p0bd5"]
+[ext_resource type="Texture2D" path="res://Assets/Decoration/Universal/Inside house base.png" id="2_1txh7"]
+[ext_resource type="Texture2D" path="res://Assets/Decoration/house inside window.png" id="3_kctyq"]
+[ext_resource type="Texture2D" path="res://Assets/Decoration/Universal/Bed.png" id="4_ifwtj"]
+[ext_resource type="Texture2D" path="res://Assets/Trainers/rival sprite.png" id="5_88we2"]
+[ext_resource type="Texture2D" path="res://Assets/Decoration/Table.png" id="6_ll5th"]
+[ext_resource type="Texture2D" path="res://Assets/Items/Sticky Note.png" id="7_d6nb0"]
+[ext_resource type="PackedScene" path="res://Scenes/Player.tscn" id="8_8iu06"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="9_8ll3v"]
+[ext_resource type="Texture2D" path="res://Assets/Items/Story Book.png" id="10_xrlnh"]
+[ext_resource type="Texture2D" path="res://Assets/Decoration/Universal/Mats.png" id="11_3wpx7"]
+[ext_resource type="PackedScene" path="res://Scenes/Door.tscn" id="12_1fx5f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tjj5a"]
+size = Vector2(16, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5y054"]
+size = Vector2(16, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78u7d"]
+size = Vector2(192, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_804hx"]
+size = Vector2(80, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bkgnp"]
+size = Vector2(96, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8bq4d"]
+size = Vector2(32, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvfyb"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22p1c"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gqw2r"]
+size = Vector2(8, 8)
+
+[node name="GrawaiiStoryHome" type="Node2D" unique_id=1368790758]
+texture_filter = 1
+script = ExtResource("1_p0bd5")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1172301785]
+color = Color(0.09803922, 0.078431375, 0.07058824, 1)
+polygon = PackedVector2Array(-512, -512, 512, -512, 512, 512, -512, 512)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=247319925]
+offset_top = 16.0
+offset_right = 192.0
+offset_bottom = 144.0
+mouse_filter = 2
+texture = ExtResource("2_1txh7")
+
+[node name="Body" type="StaticBody2D" parent="." unique_id=243282697]
+collision_layer = 18
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body" unique_id=706229433]
+position = Vector2(8, 96)
+shape = SubResource("RectangleShape2D_tjj5a")
+
+[node name="Body2" type="StaticBody2D" parent="." unique_id=1030633599]
+collision_layer = 18
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body2" unique_id=1862622176]
+position = Vector2(184, 96)
+shape = SubResource("RectangleShape2D_5y054")
+
+[node name="Body3" type="StaticBody2D" parent="." unique_id=352929101]
+collision_layer = 18
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body3" unique_id=767935380]
+position = Vector2(96, 40)
+shape = SubResource("RectangleShape2D_78u7d")
+
+[node name="Body4" type="StaticBody2D" parent="." unique_id=684831848]
+collision_layer = 18
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body4" unique_id=1278510464]
+position = Vector2(40, 152)
+shape = SubResource("RectangleShape2D_804hx")
+
+[node name="Body5" type="StaticBody2D" parent="." unique_id=1885309994]
+collision_layer = 18
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body5" unique_id=915627993]
+position = Vector2(144, 152)
+shape = SubResource("RectangleShape2D_bkgnp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=317982598]
+position = Vector2(24, 18)
+texture = ExtResource("3_kctyq")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1390251948]
+position = Vector2(144, 48)
+texture = ExtResource("4_ifwtj")
+centered = false
+
+[node name="Body6" type="StaticBody2D" parent="." unique_id=1820264511]
+collision_layer = 18
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body6" unique_id=1621824545]
+position = Vector2(160, 72)
+shape = SubResource("RectangleShape2D_8bq4d")
+
+[node name="Sorted" type="Node2D" parent="." unique_id=1746856895]
+y_sort_enabled = true
+
+[node name="Apprentice" type="Node2D" parent="Sorted" unique_id=987826350]
+position = Vector2(48, 80)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sorted/Apprentice" unique_id=945639432]
+position = Vector2(0, -16)
+texture = ExtResource("5_88we2")
+centered = false
+hframes = 3
+vframes = 3
+frame = 1
+
+[node name="Body" type="StaticBody2D" parent="Sorted/Apprentice" unique_id=121393010]
+collision_layer = 18
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sorted/Apprentice/Body" unique_id=676216662]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_vvfyb")
+
+[node name="WritingDesk" type="Node2D" parent="Sorted" unique_id=45993452]
+position = Vector2(96, 80)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sorted/WritingDesk" unique_id=2051942359]
+position = Vector2(0, -16)
+texture = ExtResource("6_ll5th")
+centered = false
+
+[node name="Body" type="StaticBody2D" parent="Sorted/WritingDesk" unique_id=2070214739]
+collision_layer = 18
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sorted/WritingDesk/Body" unique_id=635702962]
+position = Vector2(16, 8)
+shape = SubResource("RectangleShape2D_22p1c")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sorted/WritingDesk" unique_id=619054536]
+position = Vector2(9, -10)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_d6nb0")
+centered = false
+
+[node name="Player" type="CharacterBody2D" parent="Sorted" unique_id=736689713 instance=ExtResource("8_8iu06")]
+position = Vector2(80, 112)
+collision_mask = 14
+script = ExtResource("9_8ll3v")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1675307229]
+position = Vector2(104, 48)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_xrlnh")
+centered = false
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=646471686]
+position = Vector2(80, 128)
+texture = ExtResource("11_3wpx7")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 16, 16, 16)
+
+[node name="Exit" parent="." instance=ExtResource("12_1fx5f")]
+position = Vector2(80, 144)
+next_scene_path = "res://Scenes/Town.scn"
+spawn_location = Vector2(6928, 32)
+spawn_direction = Vector2(0, 1)
+is_invisible = true

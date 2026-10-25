@@ -3,19 +3,31 @@
 		"Progress": "Incoming"
 	},
 	{
-		"LessonStep": 14.0,
-		"Progress": "Completed",
-		"RewardGranted": true
+		"Progress": "Incoming"
 	},
 	{
-		"CorrectedSigns": [
-			"please_run",
-			"staying_safe",
-			"pipe_water"
-		],
-		"Count": 3.0,
-		"PowerPlantBriefed": true,
-		"Progress": "Completed",
-		"StaticMeetingPrompted": true
+		"Progress": "Incoming"
+	},
+	{
+		"CurrentObjective": "Storyteller rescued! Meet him at the festival green with the recovered original ending.",
+		"GrawaiiApprenticeSpoken": true,
+		"GrawaiiArchiveCleared": true,
+		"GrawaiiArchiveHelpRequested": true,
+		"GrawaiiClues": {
+			"apprentice_note": true,
+			"cook_breakfast": true,
+			"fisherman_scout": true,
+			"keeper_rockfall": true,
+			"racer_route": true
+		},
+		"GrawaiiHomecomingSeen": true,
+		"GrawaiiIntroSeen": true,
+		"GrawaiiManuscriptRecovered": true,
+		"GrawaiiReconstructed": true,
+		"GrawaiiReconstructionStep": 6.0,
+		"GrawaiiScoutDefeated": true,
+		"GrawaiiSearchLocation": "coastal_archive",
+		"GrawaiiStorytellerRescued": true,
+		"Progress": "Started"
 	}
 ]

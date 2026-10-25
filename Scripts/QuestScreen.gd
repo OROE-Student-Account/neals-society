@@ -103,7 +103,7 @@ func _on_item_list_item_selected(index: int) -> void:
 	if quest == null:
 		return 
 	
-	$Info/Description.text = quest.get("Description", "")
+	$Info/Description.text = quest.get("Details", {}).get("CurrentObjective", quest.get("Description", ""))
 	$Info/Title.text = quest.get("Name", "")
 	
 	var status = quest.get("Details", {}).get("Progress", "Incoming")

@@ -1,0 +1,446 @@
+[gd_scene format=3 uid="uid://csev7v7r775fb"]
+
+[ext_resource type="Script" uid="uid://5xqrgr3n1ke2" path="res://Scripts/Specialized/GrawaiiOpening.gd" id="1_qo1bc"]
+[ext_resource type="Texture2D" uid="uid://b6bqxbkxjjlar" path="res://Assets/Trainers/nerd-trainer.png" id="2_6fh5s"]
+[ext_resource type="Texture2D" uid="uid://dyfj7olu847pj" path="res://Assets/Decoration/Grawaii/Story Stage-export.png" id="2_wfluy"]
+[ext_resource type="Texture2D" uid="uid://cxjcgl2cgepnd" path="res://Assets/Trainers/trainer1.png" id="4_oopta"]
+[ext_resource type="Texture2D" uid="uid://buqolry086kwp" path="res://Assets/Trainers/GrammasterSprite.png" id="4_wfluy"]
+[ext_resource type="Texture2D" uid="uid://cg66td5pcs13n" path="res://Assets/Decoration/Universal/Sign.png" id="5_xv1rf"]
+[ext_resource type="Texture2D" uid="uid://ktnoq2qj5jf" path="res://Assets/Decoration/Universal/Bench.png" id="6_6huna"]
+[ext_resource type="Texture2D" uid="uid://bm0617pdpifuj" path="res://Assets/Decoration/Table.png" id="7_kdxl2"]
+[ext_resource type="Texture2D" uid="uid://c20wvxucaup1k" path="res://Assets/Decoration/Flowers/red_flower.png" id="8_sy4ds"]
+[ext_resource type="PackedScene" path="res://Scenes/Specialized/GrawaiiArchiveApproach.tscn" id="archive_approach"]
+[ext_resource type="PackedScene" uid="uid://cme3cey4irw36" path="res://Scenes/Specialized/GrawaiiStoryHomeOutside.tscn" id="grawaii_home"]
+[ext_resource type="PackedScene" uid="uid://byxyp783c3f43" path="res://Scenes/Specialized/GrawaiiWitnesses.tscn" id="grawaii_witnesses"]
+[ext_resource type="PackedScene" path="res://Scenes/Specialized/GrawaiiStoryteller.tscn" id="returned_storyteller"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q52n4"]
+size = Vector2(80, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4fjft"]
+size = Vector2(96, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hiw6w"]
+size = Vector2(16, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mkcw0"]
+size = Vector2(10, 64)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wfluy"]
+radius = 11.313708
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_famuy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xv1rf"]
+radius = 11.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h44mm"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4lcai"]
+size = Vector2(64, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6254p"]
+size = Vector2(64, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6m5mo"]
+size = Vector2(27, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bvmx7"]
+size = Vector2(32, 16)
+
+[node name="GrawaiiOpening" type="Node2D" unique_id=222595507]
+y_sort_enabled = true
+position = Vector2(7040, 80)
+script = ExtResource("1_qo1bc")
+
+[node name="EmptyStage" type="Sprite2D" parent="." unique_id=826147367]
+texture_filter = 1
+position = Vector2(16, -32)
+texture = ExtResource("2_wfluy")
+
+[node name="Body" type="StaticBody2D" parent="EmptyStage" unique_id=2071141576]
+collision_layer = 19
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EmptyStage/Body" unique_id=556210780]
+position = Vector2(-16, 32)
+shape = SubResource("RectangleShape2D_q52n4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="EmptyStage/Body" unique_id=429465557]
+position = Vector2(0, -24)
+shape = SubResource("RectangleShape2D_4fjft")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="EmptyStage/Body" unique_id=85341990]
+position = Vector2(-56, -3)
+shape = SubResource("RectangleShape2D_hiw6w")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="EmptyStage/Body" unique_id=1162146044]
+position = Vector2(53, 0)
+shape = SubResource("RectangleShape2D_mkcw0")
+
+[node name="Organizer" type="Node2D" parent="." unique_id=1130865067]
+position = Vector2(-64, -48)
+
+[node name="Sprite2D" type="Sprite2D" parent="Organizer" unique_id=1467785894]
+texture_filter = 1
+texture = ExtResource("2_6fh5s")
+centered = false
+hframes = 3
+vframes = 3
+frame = 1
+
+[node name="Body" type="StaticBody2D" parent="Organizer" unique_id=1199789846]
+collision_layer = 18
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Organizer/Body" unique_id=1628189022]
+position = Vector2(8, 9)
+shape = SubResource("CircleShape2D_wfluy")
+
+[node name="Grammaster" type="Node2D" parent="." unique_id=1256242992]
+position = Vector2(112, -32)
+
+[node name="Sprite2D" type="Sprite2D" parent="Grammaster" unique_id=1407314478]
+texture_filter = 1
+position = Vector2(0, -16)
+texture = ExtResource("4_wfluy")
+centered = false
+hframes = 3
+vframes = 3
+frame = 1
+
+[node name="Body" type="StaticBody2D" parent="Grammaster" unique_id=1812473477]
+collision_layer = 18
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grammaster/Body" unique_id=1519437889]
+position = Vector2(8, -6)
+shape = SubResource("CircleShape2D_famuy")
+
+[node name="FestivalCook" type="Node2D" parent="." unique_id=878412253]
+y_sort_enabled = true
+position = Vector2(-80, 64)
+
+[node name="Sprite2D" type="Sprite2D" parent="FestivalCook" unique_id=2132078152]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(-32, -32)
+texture = ExtResource("4_oopta")
+centered = false
+hframes = 3
+vframes = 3
+frame = 1
+
+[node name="Body" type="StaticBody2D" parent="FestivalCook" unique_id=1657947332]
+collision_layer = 18
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FestivalCook/Body" unique_id=1895345935]
+y_sort_enabled = true
+position = Vector2(-24, -22)
+shape = SubResource("CircleShape2D_xv1rf")
+
+[node name="FestivalSign" type="Node2D" parent="." unique_id=1665348498]
+position = Vector2(-112, -32)
+
+[node name="Sprite2D" type="Sprite2D" parent="FestivalSign" unique_id=34904339]
+texture_filter = 1
+texture = ExtResource("5_xv1rf")
+centered = false
+
+[node name="Body" type="StaticBody2D" parent="FestivalSign" unique_id=367508553]
+collision_layer = 18
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FestivalSign/Body" unique_id=1944294112]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_h44mm")
+
+[node name="AudienceBench" type="Node2D" parent="." unique_id=1749724908]
+position = Vector2(-16, 48)
+
+[node name="Sprite2D" type="Sprite2D" parent="AudienceBench" unique_id=43544327]
+texture_filter = 1
+position = Vector2(-16, 0)
+texture = ExtResource("6_6huna")
+centered = false
+
+[node name="Body" type="StaticBody2D" parent="AudienceBench" unique_id=1770054240]
+collision_layer = 18
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AudienceBench/Body" unique_id=748562049]
+position = Vector2(16, 8)
+shape = SubResource("RectangleShape2D_4lcai")
+
+[node name="AudienceBench2" type="Node2D" parent="." unique_id=164701392]
+position = Vector2(64, 48)
+
+[node name="Sprite2D" type="Sprite2D" parent="AudienceBench2" unique_id=1522600871]
+texture_filter = 1
+texture = ExtResource("6_6huna")
+centered = false
+
+[node name="Body" type="StaticBody2D" parent="AudienceBench2" unique_id=993252924]
+collision_layer = 18
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AudienceBench2/Body" unique_id=180591321]
+position = Vector2(32, 10)
+shape = SubResource("RectangleShape2D_6254p")
+
+[node name="FestivalTable" type="Node2D" parent="." unique_id=1483347882]
+position = Vector2(-96, 32)
+
+[node name="Sprite2D" type="Sprite2D" parent="FestivalTable" unique_id=635061178]
+texture_filter = 1
+texture = ExtResource("7_kdxl2")
+centered = false
+
+[node name="Body" type="StaticBody2D" parent="FestivalTable" unique_id=1489908083]
+collision_layer = 18
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FestivalTable/Body" unique_id=207605312]
+position = Vector2(16.5, 16)
+shape = SubResource("RectangleShape2D_6m5mo")
+
+[node name="FestivalTable2" type="Node2D" parent="." unique_id=173548959]
+position = Vector2(128, 64)
+
+[node name="Sprite2D" type="Sprite2D" parent="FestivalTable2" unique_id=1959533304]
+texture_filter = 1
+texture = ExtResource("7_kdxl2")
+centered = false
+
+[node name="Body" type="StaticBody2D" parent="FestivalTable2" unique_id=152942549]
+collision_layer = 18
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FestivalTable2/Body" unique_id=239148395]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_bvmx7")
+
+[node name="Flowers" type="Node2D" parent="." unique_id=1733251972]
+position = Vector2(-128, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Flowers" unique_id=816517403]
+texture_filter = 1
+texture = ExtResource("8_sy4ds")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Flowers2" type="Node2D" parent="." unique_id=291409910]
+position = Vector2(-128, 80)
+
+[node name="Sprite2D" type="Sprite2D" parent="Flowers2" unique_id=603454919]
+texture_filter = 1
+texture = ExtResource("8_sy4ds")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Flowers3" type="Node2D" parent="." unique_id=768608887]
+position = Vector2(160, 16)
+
+[node name="Sprite2D" type="Sprite2D" parent="Flowers3" unique_id=1495046041]
+texture_filter = 1
+texture = ExtResource("8_sy4ds")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Flowers4" type="Node2D" parent="." unique_id=689152940]
+position = Vector2(160, 96)
+
+[node name="Sprite2D" type="Sprite2D" parent="Flowers4" unique_id=809699904]
+texture_filter = 1
+texture = ExtResource("8_sy4ds")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="FestivalBunting" type="Node2D" parent="." unique_id=519274847]
+z_index = 3
+
+[node name="Line2D" type="Line2D" parent="FestivalBunting" unique_id=303407761]
+points = PackedVector2Array(-112, -112, 152, -112)
+width = 1.0
+default_color = Color(0.44313726, 0.34117648, 0.23529412, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="FestivalBunting" unique_id=1023921187]
+position = Vector2(-104, -112)
+color = Color(0.9137255, 0.6745098, 0.2901961, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D2" type="Polygon2D" parent="FestivalBunting" unique_id=553921157]
+position = Vector2(-88, -112)
+color = Color(0.43137255, 0.6666667, 0.7058824, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D3" type="Polygon2D" parent="FestivalBunting" unique_id=620278313]
+position = Vector2(-72, -112)
+color = Color(0.8, 0.44313726, 0.53333336, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D4" type="Polygon2D" parent="FestivalBunting" unique_id=277602644]
+position = Vector2(-56, -112)
+color = Color(0.9529412, 0.8745098, 0.6745098, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D5" type="Polygon2D" parent="FestivalBunting" unique_id=1786498400]
+position = Vector2(-40, -112)
+color = Color(0.9137255, 0.6745098, 0.2901961, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D6" type="Polygon2D" parent="FestivalBunting" unique_id=492214394]
+position = Vector2(-24, -112)
+color = Color(0.43137255, 0.6666667, 0.7058824, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D7" type="Polygon2D" parent="FestivalBunting" unique_id=1496219006]
+position = Vector2(-8, -112)
+color = Color(0.8, 0.44313726, 0.53333336, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D8" type="Polygon2D" parent="FestivalBunting" unique_id=2098319824]
+position = Vector2(8, -112)
+color = Color(0.9529412, 0.8745098, 0.6745098, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D9" type="Polygon2D" parent="FestivalBunting" unique_id=1596310718]
+position = Vector2(24, -112)
+color = Color(0.9137255, 0.6745098, 0.2901961, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D10" type="Polygon2D" parent="FestivalBunting" unique_id=1883096189]
+position = Vector2(40, -112)
+color = Color(0.43137255, 0.6666667, 0.7058824, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D11" type="Polygon2D" parent="FestivalBunting" unique_id=986520383]
+position = Vector2(56, -112)
+color = Color(0.8, 0.44313726, 0.53333336, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D12" type="Polygon2D" parent="FestivalBunting" unique_id=2126340708]
+position = Vector2(72, -112)
+color = Color(0.9529412, 0.8745098, 0.6745098, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D13" type="Polygon2D" parent="FestivalBunting" unique_id=2135358182]
+position = Vector2(88, -112)
+color = Color(0.9137255, 0.6745098, 0.2901961, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D14" type="Polygon2D" parent="FestivalBunting" unique_id=1591882284]
+position = Vector2(104, -112)
+color = Color(0.43137255, 0.6666667, 0.7058824, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D15" type="Polygon2D" parent="FestivalBunting" unique_id=1614352425]
+position = Vector2(120, -112)
+color = Color(0.8, 0.44313726, 0.53333336, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D16" type="Polygon2D" parent="FestivalBunting" unique_id=619251831]
+position = Vector2(136, -112)
+color = Color(0.9529412, 0.8745098, 0.6745098, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Line2D2" type="Line2D" parent="FestivalBunting" unique_id=1540981005]
+points = PackedVector2Array(-112, 112, 152, 112)
+width = 1.0
+default_color = Color(0.44313726, 0.34117648, 0.23529412, 1)
+
+[node name="Polygon2D17" type="Polygon2D" parent="FestivalBunting" unique_id=297599609]
+position = Vector2(-104, 112)
+color = Color(0.9137255, 0.6745098, 0.2901961, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D18" type="Polygon2D" parent="FestivalBunting" unique_id=1494592973]
+position = Vector2(-88, 112)
+color = Color(0.43137255, 0.6666667, 0.7058824, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D19" type="Polygon2D" parent="FestivalBunting" unique_id=336648228]
+position = Vector2(-72, 112)
+color = Color(0.8, 0.44313726, 0.53333336, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D20" type="Polygon2D" parent="FestivalBunting" unique_id=1713801111]
+position = Vector2(-56, 112)
+color = Color(0.9529412, 0.8745098, 0.6745098, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D21" type="Polygon2D" parent="FestivalBunting" unique_id=2088638211]
+position = Vector2(-40, 112)
+color = Color(0.9137255, 0.6745098, 0.2901961, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D22" type="Polygon2D" parent="FestivalBunting" unique_id=379615077]
+position = Vector2(-24, 112)
+color = Color(0.43137255, 0.6666667, 0.7058824, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D23" type="Polygon2D" parent="FestivalBunting" unique_id=543948003]
+position = Vector2(-8, 112)
+color = Color(0.8, 0.44313726, 0.53333336, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D24" type="Polygon2D" parent="FestivalBunting" unique_id=1885973917]
+position = Vector2(8, 112)
+color = Color(0.9529412, 0.8745098, 0.6745098, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D25" type="Polygon2D" parent="FestivalBunting" unique_id=1547415437]
+position = Vector2(24, 112)
+color = Color(0.9137255, 0.6745098, 0.2901961, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D26" type="Polygon2D" parent="FestivalBunting" unique_id=909599020]
+position = Vector2(40, 112)
+color = Color(0.43137255, 0.6666667, 0.7058824, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D27" type="Polygon2D" parent="FestivalBunting" unique_id=1917477034]
+position = Vector2(56, 112)
+color = Color(0.8, 0.44313726, 0.53333336, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D28" type="Polygon2D" parent="FestivalBunting" unique_id=612308297]
+position = Vector2(72, 112)
+color = Color(0.9529412, 0.8745098, 0.6745098, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D29" type="Polygon2D" parent="FestivalBunting" unique_id=1339218155]
+position = Vector2(88, 112)
+color = Color(0.9137255, 0.6745098, 0.2901961, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D30" type="Polygon2D" parent="FestivalBunting" unique_id=735438150]
+position = Vector2(104, 112)
+color = Color(0.43137255, 0.6666667, 0.7058824, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D31" type="Polygon2D" parent="FestivalBunting" unique_id=1489048614]
+position = Vector2(120, 112)
+color = Color(0.8, 0.44313726, 0.53333336, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="Polygon2D32" type="Polygon2D" parent="FestivalBunting" unique_id=1328475356]
+position = Vector2(136, 112)
+color = Color(0.9529412, 0.8745098, 0.6745098, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 4, 7)
+
+[node name="StorytellerHome" parent="." unique_id=1165130159 instance=ExtResource("grawaii_home")]
+
+[node name="Witnesses" parent="." unique_id=639806034 instance=ExtResource("grawaii_witnesses")]
+
+[node name="ArchiveApproach" parent="." unique_id=1900629483 instance=ExtResource("archive_approach")]
+position = Vector2(320, 176)
+
+[node name="ReturnedStoryteller" parent="." unique_id=626239157 instance=ExtResource("returned_storyteller")]
+position = Vector2(16, 144)

@@ -25,11 +25,30 @@
 		"Crumpled Draft",
 		"Apple"
 	],
-	"Money": 10.0,
+	"Money": 129.0,
 	"Name": "Neal",
 	"Party": [
 		{
-			"Health": 4.0,
+			"Health": 16.0,
+			"Item": "",
+			"Level": 7.30663267088654,
+			"Moves": [
+				"Bite",
+				"Papercut",
+				"Howl",
+				"Dragon Dance"
+			],
+			"Name": "Moustapler",
+			"Nickname": "",
+			"PP": [
+				1.0,
+				18.0,
+				10.0,
+				5.0
+			]
+		},
+		{
+			"Health": 0.0,
 			"Item": "",
 			"Level": 7.0,
 			"Moves": [
@@ -43,25 +62,6 @@
 			"PP": [
 				3.0,
 				15.0,
-				10.0,
-				5.0
-			]
-		},
-		{
-			"Health": 40.0,
-			"Item": "",
-			"Level": 5.0,
-			"Moves": [
-				"Bite",
-				"Papercut",
-				"Howl",
-				"Dragon Dance"
-			],
-			"Name": "Moustapler",
-			"Nickname": "",
-			"PP": [
-				8.0,
-				18.0,
 				10.0,
 				5.0
 			]

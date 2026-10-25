@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bu03qnevtvpnr" path="res://Assets/Trainers/rammarGTrainer1.png" id="17_vnl58"]
 [ext_resource type="Script" uid="uid://yexcpjuauyul" path="res://Scripts/Trainer.gd" id="18_nnfiw"]
 [ext_resource type="Script" uid="uid://hvnvpuwe5g0b" path="res://Scripts/BattleStarter.gd" id="19_7tshw"]
+[ext_resource type="Texture2D" uid="uid://diugpxlfotomv" path="res://Assets/Trainers/rammarGMemberMohawkSpritesheet-export.png" id="19_xxb6j"]
 [ext_resource type="Texture2D" uid="uid://dh3uxk6tfukmy" path="res://Assets/Trainers/Kom_Ma-King.png" id="20_7tshw"]
 [ext_resource type="Texture2D" uid="uid://oyqtaaxaj8bh" path="res://Assets/Trainers/Daddy-Static.png" id="20_jdsbk"]
 [ext_resource type="Script" uid="uid://jtbmjplgstoq" path="res://Scripts/Hitbox.gd" id="20_qafev"]
@@ -375,39 +376,39 @@ _data = {
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0u3m1"]
-atlas = ExtResource("20_jdsbk")
+atlas = ExtResource("19_xxb6j")
 region = Rect2(0, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q63t6"]
-atlas = ExtResource("20_jdsbk")
+atlas = ExtResource("19_xxb6j")
 region = Rect2(16, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_velj4"]
-atlas = ExtResource("20_jdsbk")
+atlas = ExtResource("19_xxb6j")
 region = Rect2(32, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5a1ge"]
-atlas = ExtResource("20_jdsbk")
+atlas = ExtResource("19_xxb6j")
 region = Rect2(0, 32, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k7ppq"]
-atlas = ExtResource("20_jdsbk")
+atlas = ExtResource("19_xxb6j")
 region = Rect2(16, 32, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2tmqe"]
-atlas = ExtResource("20_jdsbk")
+atlas = ExtResource("19_xxb6j")
 region = Rect2(32, 32, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jccu3"]
-atlas = ExtResource("20_jdsbk")
+atlas = ExtResource("19_xxb6j")
 region = Rect2(0, 64, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d0tmc"]
-atlas = ExtResource("20_jdsbk")
+atlas = ExtResource("19_xxb6j")
 region = Rect2(16, 64, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fc0d8"]
-atlas = ExtResource("20_jdsbk")
+atlas = ExtResource("19_xxb6j")
 region = Rect2(32, 64, 16, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0k60w"]

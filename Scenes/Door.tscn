@@ -91,14 +91,13 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fllgw"]
-size = Vector2(16, 16)
+size = Vector2(17, 16)
 
 [node name="Door" type="Area2D" unique_id=609909115]
 collision_layer = 8
 script = ExtResource("2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1469022007]
-visible = false
 texture_filter = 1
 texture = ExtResource("2_mw28t")
 centered = false
@@ -110,7 +109,7 @@ frame = 2
 libraries/ = SubResource("AnimationLibrary_iu8q0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=930340026]
-position = Vector2(8, 8)
+position = Vector2(8.5, 8)
 shape = SubResource("RectangleShape2D_fllgw")
 
 [connection signal="body_entered" from="." to="." method="_on_Door_body_entered"]

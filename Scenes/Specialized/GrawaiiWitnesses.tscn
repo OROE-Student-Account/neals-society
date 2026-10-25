@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://jkg48ic55sbv"]
+
+[ext_resource type="Script" uid="uid://b48ntvowogcn2" path="res://Scripts/Specialized/GrawaiiWitnesses.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://b4jcrb80t4lo" path="res://Assets/Trainers/old-man.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cxjcgl2cgepnd" path="res://Assets/Trainers/trainer1.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://b6bqxbkxjjlar" path="res://Assets/Trainers/nerd-trainer.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://cg66td5pcs13n" path="res://Assets/Decoration/Universal/Sign.png" id="5"]
+
+[sub_resource type="RectangleShape2D" id="body"]
+size = Vector2(14, 14)
+
+[node name="Witnesses" type="Node2D" unique_id=1560892678]
+y_sort_enabled = true
+script = ExtResource("1")
+
+[node name="Fisherman" type="Node2D" parent="." unique_id=1519694391]
+position = Vector2(-240, -96)
+metadata/witness = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Fisherman" unique_id=1301661071]
+texture_filter = 1
+texture = ExtResource("2")
+centered = false
+hframes = 3
+vframes = 3
+frame = 1
+
+[node name="Body" type="StaticBody2D" parent="Fisherman" unique_id=282990601]
+collision_layer = 18
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fisherman/Body" unique_id=1937878633]
+position = Vector2(8, 8)
+shape = SubResource("body")
+
+[node name="CanoeRacer" type="Node2D" parent="." unique_id=558276647]
+position = Vector2(-176, 176)
+metadata/witness = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanoeRacer" unique_id=225403058]
+texture_filter = 1
+texture = ExtResource("3")
+centered = false
+hframes = 3
+vframes = 3
+frame = 1
+
+[node name="Body" type="StaticBody2D" parent="CanoeRacer" unique_id=1034774818]
+collision_layer = 18
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanoeRacer/Body" unique_id=1621020768]
+position = Vector2(8, 8)
+shape = SubResource("body")
+
+[node name="TrailKeeper" type="Node2D" parent="." unique_id=223439945]
+position = Vector2(240, 48)
+metadata/witness = true
+
+[node name="Sprite2D" type="Sprite2D" parent="TrailKeeper" unique_id=1384148598]
+texture_filter = 1
+texture = ExtResource("4")
+centered = false
+hframes = 3
+vframes = 3
+frame = 1
+
+[node name="Body" type="StaticBody2D" parent="TrailKeeper" unique_id=1997945615]
+collision_layer = 18
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrailKeeper/Body" unique_id=1283248334]
+position = Vector2(8, 8)
+shape = SubResource("body")
+
+[node name="TrailSign" type="Node2D" parent="." unique_id=2040660396]
+position = Vector2(208, 48)
+metadata/witness = true
+
+[node name="Sprite2D" type="Sprite2D" parent="TrailSign" unique_id=1333789143]
+texture_filter = 1
+texture = ExtResource("5")
+centered = false
+
+[node name="Body" type="StaticBody2D" parent="TrailSign" unique_id=618544935]
+collision_layer = 18
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrailSign/Body" unique_id=554071065]
+position = Vector2(8, 8)
+shape = SubResource("body")

@@ -156,7 +156,8 @@ func entered_door():
 
 func move(delta):
 	var step := input_direction * TILE_SIZE / 2
-	ray.target_position = step
+	# Check the entire destination step, including edges between grid positions.
+	ray.target_position = input_direction * TILE_SIZE
 	ledge_ray.target_position = step
 	door_ray.target_position = step
 	inside_door_ray.target_position = step

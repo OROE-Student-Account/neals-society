@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://mku8k4xgxp1o"]
+
+[ext_resource type="Texture2D" uid="uid://7w8oqy5j73dh" path="res://Assets/Decoration/HomegrownTown/House.png" id="1_v82t8"]
+[ext_resource type="PackedScene" uid="uid://fsubo0lgcrfo" path="res://Scenes/Door.tscn" id="2_4e0np"]
+[ext_resource type="Texture2D" uid="uid://g8psph4pnpx5" path="res://Assets/Decoration/HomegrownTown/HouseDoor.png" id="3_4e0np"]
+[ext_resource type="Texture2D" uid="uid://cg66td5pcs13n" path="res://Assets/Decoration/Universal/Sign.png" id="3_314ay"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0u8b1"]
+size = Vector2(68, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1rtng"]
+size = Vector2(41, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ial4"]
+size = Vector2(9, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_et2a8"]
+size = Vector2(16, 16)
+
+[node name="StorytellerHome" type="StaticBody2D" unique_id=882840534]
+texture_filter = 1
+position = Vector2(-160, -64)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=70580376]
+position = Vector2(0, -80)
+texture = ExtResource("1_v82t8")
+centered = false
+hframes = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=418515924]
+position = Vector2(40, -24)
+shape = SubResource("RectangleShape2D_0u8b1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1880327132]
+position = Vector2(27.5, -8)
+shape = SubResource("RectangleShape2D_1rtng")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=587832051]
+position = Vector2(68.5, -8)
+shape = SubResource("RectangleShape2D_7ial4")
+
+[node name="Door" parent="." unique_id=252084199 instance=ExtResource("2_4e0np")]
+position = Vector2(48, -16)
+next_scene_path = "res://Scenes/Specialized/GrawaiiStoryHome.tscn"
+texture = ExtResource("3_4e0np")
+spawn_location = Vector2(80, 112)
+spawn_direction = Vector2(0, -1)
+
+[node name="HomeSign" type="Node2D" parent="." unique_id=1536381579]
+position = Vector2(-16, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="HomeSign" unique_id=1702139075]
+texture = ExtResource("3_314ay")
+centered = false
+
+[node name="Body" type="StaticBody2D" parent="HomeSign" unique_id=169708486]
+collision_layer = 18
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HomeSign/Body" unique_id=864668533]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_et2a8")
