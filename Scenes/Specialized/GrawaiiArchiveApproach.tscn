@@ -1,341 +1,344 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://5r8lk2n64vxy"]
 
-[ext_resource type="Script" path="res://Scripts/Specialized/GrawaiiArchive.gd" id="script"]
-[ext_resource type="Texture2D" path="res://Assets/Tilesets/Cave.png" id="cave"]
-[ext_resource type="Texture2D" path="res://Assets/Decoration/TheHeights/cliff-edge.png" id="cliff"]
-[ext_resource type="Texture2D" path="res://Assets/Decoration/RoyalGrotto/Big rock.png" id="rock"]
-[ext_resource type="Texture2D" path="res://Assets/Trainers/rammarGTrainer1.png" id="scout"]
-[ext_resource type="Texture2D" path="res://Assets/Trainers/nerd-trainer.png" id="keeper"]
-[ext_resource type="Texture2D" path="res://Assets/Decoration/Universal/Sign.png" id="sign"]
-[ext_resource type="Texture2D" path="res://Assets/Items/Story Book.png" id="book"]
-[ext_resource type="PackedScene" path="res://Scenes/Door.tscn" id="door"]
+[ext_resource type="Texture2D" uid="uid://bxjfugenktmee" path="res://Assets/Items/Story Book.png" id="book"]
+[ext_resource type="Texture2D" uid="uid://spk4yaevbnm7" path="res://Assets/Tilesets/Cave.png" id="cave"]
+[ext_resource type="Texture2D" uid="uid://bev4tbiaf5akf" path="res://Assets/Decoration/TheHeights/cliff-edge.png" id="cliff"]
+[ext_resource type="PackedScene" uid="uid://fsubo0lgcrfo" path="res://Scenes/Door.tscn" id="door"]
+[ext_resource type="Texture2D" uid="uid://b6bqxbkxjjlar" path="res://Assets/Trainers/nerd-trainer.png" id="keeper"]
+[ext_resource type="Texture2D" uid="uid://cgmru8l3ie1uj" path="res://Assets/Decoration/RoyalGrotto/Big rock.png" id="rock"]
+[ext_resource type="Texture2D" uid="uid://bu03qnevtvpnr" path="res://Assets/Trainers/rammarGTrainer1.png" id="scout"]
+[ext_resource type="Script" uid="uid://dyqkhddis4ips" path="res://Scripts/Specialized/GrawaiiArchive.gd" id="script"]
+[ext_resource type="Texture2D" uid="uid://cg66td5pcs13n" path="res://Assets/Decoration/Universal/Sign.png" id="sign"]
 
-[sub_resource type="RectangleShape2D" id="tile"]
-size = Vector2(14, 14)
 [sub_resource type="RectangleShape2D" id="left"]
 size = Vector2(64, 64)
+
 [sub_resource type="RectangleShape2D" id="top"]
 size = Vector2(144, 64)
 
-[node name="ArchiveApproach" type="Node2D"]
-texture_filter = 1
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q52n4"]
+size = Vector2(20, 29)
+
+[sub_resource type="RectangleShape2D" id="tile"]
+size = Vector2(14, 19)
+
+[node name="ArchiveApproach" type="Node2D" unique_id=864301762]
 y_sort_enabled = true
+texture_filter = 1
 script = ExtResource("script")
 
-[node name="Cliff" type="Node2D" parent="."]
-z_index = 0
+[node name="Cliff" type="Node2D" parent="." unique_id=760314954]
 
-[node name="Outcrop-64_-96" type="Sprite2D" parent="Cliff"]
+[node name="Outcrop-64_-96" type="Sprite2D" parent="Cliff" unique_id=1927684192]
 position = Vector2(-64, -96)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Outcrop-48_-96" type="Sprite2D" parent="Cliff"]
+[node name="Outcrop-48_-96" type="Sprite2D" parent="Cliff" unique_id=1820451286]
 position = Vector2(-48, -96)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Outcrop-32_-96" type="Sprite2D" parent="Cliff"]
+[node name="Outcrop-32_-96" type="Sprite2D" parent="Cliff" unique_id=1013900748]
 position = Vector2(-32, -96)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Outcrop-16_-96" type="Sprite2D" parent="Cliff"]
+[node name="Outcrop-16_-96" type="Sprite2D" parent="Cliff" unique_id=466741136]
 position = Vector2(-16, -96)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Outcrop0_-96" type="Sprite2D" parent="Cliff"]
+[node name="Outcrop0_-96" type="Sprite2D" parent="Cliff" unique_id=460397981]
 position = Vector2(0, -96)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Outcrop16_-96" type="Sprite2D" parent="Cliff"]
+[node name="Outcrop16_-96" type="Sprite2D" parent="Cliff" unique_id=1193882576]
 position = Vector2(16, -96)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Outcrop32_-96" type="Sprite2D" parent="Cliff"]
+[node name="Outcrop32_-96" type="Sprite2D" parent="Cliff" unique_id=503251025]
 position = Vector2(32, -96)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Outcrop48_-96" type="Sprite2D" parent="Cliff"]
+[node name="Outcrop48_-96" type="Sprite2D" parent="Cliff" unique_id=562331176]
 position = Vector2(48, -96)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Outcrop64_-96" type="Sprite2D" parent="Cliff"]
+[node name="Outcrop64_-96" type="Sprite2D" parent="Cliff" unique_id=1730834603]
 position = Vector2(64, -96)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Outcrop-64_-80" type="Sprite2D" parent="Cliff"]
+[node name="Outcrop-64_-80" type="Sprite2D" parent="Cliff" unique_id=1940158354]
 position = Vector2(-64, -80)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Outcrop-48_-80" type="Sprite2D" parent="Cliff"]
+[node name="Outcrop-48_-80" type="Sprite2D" parent="Cliff" unique_id=2072041295]
 position = Vector2(-48, -80)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Outcrop-32_-80" type="Sprite2D" parent="Cliff"]
+[node name="Outcrop-32_-80" type="Sprite2D" parent="Cliff" unique_id=1697207936]
 position = Vector2(-32, -80)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Outcrop-16_-80" type="Sprite2D" parent="Cliff"]
+[node name="Outcrop-16_-80" type="Sprite2D" parent="Cliff" unique_id=1352745680]
 position = Vector2(-16, -80)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Outcrop0_-80" type="Sprite2D" parent="Cliff"]
+[node name="Outcrop0_-80" type="Sprite2D" parent="Cliff" unique_id=780052410]
 position = Vector2(0, -80)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Outcrop16_-80" type="Sprite2D" parent="Cliff"]
+[node name="Outcrop16_-80" type="Sprite2D" parent="Cliff" unique_id=936798468]
 position = Vector2(16, -80)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Outcrop32_-80" type="Sprite2D" parent="Cliff"]
+[node name="Outcrop32_-80" type="Sprite2D" parent="Cliff" unique_id=1697217878]
 position = Vector2(32, -80)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Outcrop48_-80" type="Sprite2D" parent="Cliff"]
+[node name="Outcrop48_-80" type="Sprite2D" parent="Cliff" unique_id=521087824]
 position = Vector2(48, -80)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Outcrop64_-80" type="Sprite2D" parent="Cliff"]
+[node name="Outcrop64_-80" type="Sprite2D" parent="Cliff" unique_id=1215009366]
 position = Vector2(64, -80)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Outcrop-64_-64" type="Sprite2D" parent="Cliff"]
+[node name="Outcrop-64_-64" type="Sprite2D" parent="Cliff" unique_id=800974570]
 position = Vector2(-64, -64)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Outcrop-48_-64" type="Sprite2D" parent="Cliff"]
+[node name="Outcrop-48_-64" type="Sprite2D" parent="Cliff" unique_id=275027752]
 position = Vector2(-48, -64)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Outcrop-32_-64" type="Sprite2D" parent="Cliff"]
+[node name="Outcrop-32_-64" type="Sprite2D" parent="Cliff" unique_id=396334609]
 position = Vector2(-32, -64)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Outcrop-16_-64" type="Sprite2D" parent="Cliff"]
+[node name="Outcrop-16_-64" type="Sprite2D" parent="Cliff" unique_id=708812997]
 position = Vector2(-16, -64)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Outcrop0_-64" type="Sprite2D" parent="Cliff"]
+[node name="Outcrop0_-64" type="Sprite2D" parent="Cliff" unique_id=1790980031]
 position = Vector2(0, -64)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Outcrop16_-64" type="Sprite2D" parent="Cliff"]
+[node name="Outcrop16_-64" type="Sprite2D" parent="Cliff" unique_id=343183880]
 position = Vector2(16, -64)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Outcrop32_-64" type="Sprite2D" parent="Cliff"]
+[node name="Outcrop32_-64" type="Sprite2D" parent="Cliff" unique_id=1583754676]
 position = Vector2(32, -64)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Outcrop48_-64" type="Sprite2D" parent="Cliff"]
+[node name="Outcrop48_-64" type="Sprite2D" parent="Cliff" unique_id=542983104]
 position = Vector2(48, -64)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Outcrop64_-64" type="Sprite2D" parent="Cliff"]
+[node name="Outcrop64_-64" type="Sprite2D" parent="Cliff" unique_id=1222838586]
 position = Vector2(64, -64)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Cliff-64" type="Sprite2D" parent="Cliff"]
+[node name="Cliff-64" type="Sprite2D" parent="Cliff" unique_id=1115500641]
 position = Vector2(-64, -48)
 texture = ExtResource("cliff")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 0, 16, 48)
 
-[node name="Cliff-48" type="Sprite2D" parent="Cliff"]
+[node name="Cliff-48" type="Sprite2D" parent="Cliff" unique_id=171252591]
 position = Vector2(-48, -48)
 texture = ExtResource("cliff")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 0, 16, 48)
 
-[node name="Cliff-32" type="Sprite2D" parent="Cliff"]
+[node name="Cliff-32" type="Sprite2D" parent="Cliff" unique_id=977535151]
 position = Vector2(-32, -48)
 texture = ExtResource("cliff")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 0, 16, 48)
 
-[node name="Cliff-16" type="Sprite2D" parent="Cliff"]
+[node name="Cliff-16" type="Sprite2D" parent="Cliff" unique_id=1448446411]
 position = Vector2(-16, -48)
 texture = ExtResource("cliff")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 0, 16, 48)
 
-[node name="Cliff0" type="Sprite2D" parent="Cliff"]
+[node name="Cliff0" type="Sprite2D" parent="Cliff" unique_id=1705732357]
 position = Vector2(0, -48)
 texture = ExtResource("cliff")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 0, 16, 48)
 
-[node name="Cliff16" type="Sprite2D" parent="Cliff"]
+[node name="Cliff16" type="Sprite2D" parent="Cliff" unique_id=377240293]
 position = Vector2(16, -48)
 texture = ExtResource("cliff")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 0, 16, 48)
 
-[node name="Cliff32" type="Sprite2D" parent="Cliff"]
+[node name="Cliff32" type="Sprite2D" parent="Cliff" unique_id=150844354]
 position = Vector2(32, -48)
 texture = ExtResource("cliff")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 0, 16, 48)
 
-[node name="Cliff48" type="Sprite2D" parent="Cliff"]
+[node name="Cliff48" type="Sprite2D" parent="Cliff" unique_id=1983021418]
 position = Vector2(48, -48)
 texture = ExtResource("cliff")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 0, 16, 48)
 
-[node name="Cliff64" type="Sprite2D" parent="Cliff"]
+[node name="Cliff64" type="Sprite2D" parent="Cliff" unique_id=1251562489]
 position = Vector2(64, -48)
 texture = ExtResource("cliff")
 centered = false
 region_enabled = true
 region_rect = Rect2(16, 0, 16, 48)
 
-[node name="CaveMouth" type="Sprite2D" parent="Cliff"]
+[node name="CaveMouth" type="Sprite2D" parent="Cliff" unique_id=120432869]
 position = Vector2(-16, -48)
 texture = ExtResource("cave")
 centered = false
 region_enabled = true
 region_rect = Rect2(48, 0, 40, 64)
 
-[node name="LeftWall" type="StaticBody2D" parent="Cliff"]
+[node name="LeftWall" type="StaticBody2D" parent="Cliff" unique_id=1249252864]
 collision_layer = 18
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cliff/LeftWall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cliff/LeftWall" unique_id=1283368820]
 position = Vector2(-32, -24)
 shape = SubResource("left")
 
-[node name="RightWall" type="StaticBody2D" parent="Cliff"]
+[node name="RightWall" type="StaticBody2D" parent="Cliff" unique_id=1951078770]
 collision_layer = 18
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cliff/RightWall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cliff/RightWall" unique_id=1858316957]
 position = Vector2(48, -24)
 shape = SubResource("left")
 
-[node name="TopWall" type="StaticBody2D" parent="Cliff"]
+[node name="TopWall" type="StaticBody2D" parent="Cliff" unique_id=1946957963]
 collision_layer = 18
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cliff/TopWall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cliff/TopWall" unique_id=1881614648]
 position = Vector2(8, -80)
 shape = SubResource("top")
 
-[node name="Entrance" parent="." instance=ExtResource("door")]
-position = Vector2(0, 0)
+[node name="Entrance" parent="." unique_id=805097739 instance=ExtResource("door")]
 next_scene_path = "res://Scenes/Specialized/GrawaiiArchiveInside.tscn"
+is_invisible = true
 spawn_location = Vector2(80, 128)
 spawn_direction = Vector2(0, -1)
-is_invisible = true
 
-[node name="Rubble" type="Node2D" parent="."]
+[node name="Rubble" type="Node2D" parent="." unique_id=1902825135]
 metadata/archive_action = true
 
-[node name="Rock" type="Sprite2D" parent="Rubble"]
+[node name="Rock" type="Sprite2D" parent="Rubble" unique_id=1484862791]
 position = Vector2(-8, -16)
 texture = ExtResource("rock")
 centered = false
 
-[node name="Body" type="StaticBody2D" parent="Rubble"]
+[node name="Body" type="StaticBody2D" parent="Rubble" unique_id=85817395]
 collision_layer = 18
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rubble/Body"]
-position = Vector2(8, 8)
-shape = SubResource("tile")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rubble/Body" unique_id=1459611609]
+position = Vector2(7, 0.5)
+shape = SubResource("RectangleShape2D_q52n4")
 
-[node name="Scout" type="Node2D" parent="."]
+[node name="Scout" type="Node2D" parent="." unique_id=1720161193]
 position = Vector2(48, 48)
 metadata/archive_action = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Scout"]
+[node name="Sprite2D" type="Sprite2D" parent="Scout" unique_id=1522874583]
 position = Vector2(0, -16)
 texture = ExtResource("scout")
 centered = false
@@ -343,19 +346,19 @@ hframes = 3
 vframes = 3
 frame = 1
 
-[node name="Body" type="StaticBody2D" parent="Scout"]
+[node name="Body" type="StaticBody2D" parent="Scout" unique_id=193753617]
 collision_layer = 18
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scout/Body"]
-position = Vector2(8, 8)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scout/Body" unique_id=770182738]
+position = Vector2(8, -6)
 shape = SubResource("tile")
 
-[node name="Keeper" type="Node2D" parent="."]
+[node name="Keeper" type="Node2D" parent="." unique_id=753468539]
 position = Vector2(-32, 32)
 metadata/archive_action = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Keeper"]
+[node name="Sprite2D" type="Sprite2D" parent="Keeper" unique_id=1850680346]
 position = Vector2(0, -16)
 texture = ExtResource("keeper")
 centered = false
@@ -363,42 +366,40 @@ hframes = 3
 vframes = 3
 frame = 1
 
-[node name="Body" type="StaticBody2D" parent="Keeper"]
+[node name="Body" type="StaticBody2D" parent="Keeper" unique_id=1307978219]
 collision_layer = 18
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Keeper/Body"]
-position = Vector2(8, 8)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Keeper/Body" unique_id=679277792]
+position = Vector2(8, -6.5)
 shape = SubResource("tile")
 
-[node name="ArchiveSign" type="Node2D" parent="."]
+[node name="ArchiveSign" type="Node2D" parent="." unique_id=1303631610]
 position = Vector2(80, 32)
 metadata/archive_action = true
 
-[node name="Sprite2D" type="Sprite2D" parent="ArchiveSign"]
-position = Vector2(0, 0)
+[node name="Sprite2D" type="Sprite2D" parent="ArchiveSign" unique_id=826362759]
 texture = ExtResource("sign")
 centered = false
 
-[node name="Body" type="StaticBody2D" parent="ArchiveSign"]
+[node name="Body" type="StaticBody2D" parent="ArchiveSign" unique_id=2008590836]
 collision_layer = 18
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ArchiveSign/Body"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArchiveSign/Body" unique_id=1630028433]
 position = Vector2(8, 8)
 shape = SubResource("tile")
 
-[node name="AlcovePages" type="Node2D" parent="."]
+[node name="AlcovePages" type="Node2D" parent="." unique_id=1990338883]
 position = Vector2(80, 64)
 
-[node name="Book" type="Sprite2D" parent="AlcovePages"]
+[node name="Book" type="Sprite2D" parent="AlcovePages" unique_id=1487165992]
+position = Vector2(-5.9999995, -4.9999995)
 scale = Vector2(0.35, 0.35)
-position = Vector2(0, 0)
 texture = ExtResource("book")
 centered = false
 
-[node name="TrailMarker" type="Line2D" parent="."]
-z_index = 0
+[node name="TrailMarker" type="Line2D" parent="." unique_id=2030474291]
 points = PackedVector2Array(-96, -96, -96, 64, -16, 64)
 width = 3.0
 default_color = Color(0.71, 0.61, 0.4, 0.7)

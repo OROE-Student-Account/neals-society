@@ -7,7 +7,7 @@ var seen_question_ids: Dictionary = {}
 
 # Testing only: set false to keep working quest progress between editor runs.
 # Saved slots are not changed; loading one restores its saved progress.
-@export var reset_quest_progress_in_editor := false
+@export var reset_quest_progress_in_editor := true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

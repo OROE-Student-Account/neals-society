@@ -1,17 +1,16 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://cokv64wkruvma"]
 
-[ext_resource type="Script" path="res://Scripts/Specialized/GrawaiiStoryHome.gd" id="1_p0bd5"]
-[ext_resource type="Texture2D" path="res://Assets/Decoration/Universal/Inside house base.png" id="2_1txh7"]
-[ext_resource type="Texture2D" path="res://Assets/Decoration/house inside window.png" id="3_kctyq"]
-[ext_resource type="Texture2D" path="res://Assets/Decoration/Universal/Bed.png" id="4_ifwtj"]
-[ext_resource type="Texture2D" path="res://Assets/Trainers/rival sprite.png" id="5_88we2"]
-[ext_resource type="Texture2D" path="res://Assets/Decoration/Table.png" id="6_ll5th"]
-[ext_resource type="Texture2D" path="res://Assets/Items/Sticky Note.png" id="7_d6nb0"]
-[ext_resource type="PackedScene" path="res://Scenes/Player.tscn" id="8_8iu06"]
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="9_8ll3v"]
-[ext_resource type="Texture2D" path="res://Assets/Items/Story Book.png" id="10_xrlnh"]
-[ext_resource type="Texture2D" path="res://Assets/Decoration/Universal/Mats.png" id="11_3wpx7"]
-[ext_resource type="PackedScene" path="res://Scenes/Door.tscn" id="12_1fx5f"]
+[ext_resource type="Script" uid="uid://553b60huxvy4" path="res://Scripts/Specialized/GrawaiiStoryHome.gd" id="1_p0bd5"]
+[ext_resource type="Texture2D" uid="uid://btbbtsqfx7tbh" path="res://Assets/Decoration/Universal/Inside house base.png" id="2_1txh7"]
+[ext_resource type="Texture2D" uid="uid://dlg26pmnn30kb" path="res://Assets/Decoration/house inside window.png" id="3_kctyq"]
+[ext_resource type="Texture2D" uid="uid://dqoyua8j1n8c1" path="res://Assets/Decoration/Universal/Bed.png" id="4_ifwtj"]
+[ext_resource type="Texture2D" uid="uid://ds44qfk8xaxh1" path="res://Assets/Trainers/rival sprite.png" id="5_88we2"]
+[ext_resource type="Texture2D" uid="uid://bm0617pdpifuj" path="res://Assets/Decoration/Table.png" id="6_ll5th"]
+[ext_resource type="Texture2D" uid="uid://cjppf1b7ej7e1" path="res://Assets/Items/Sticky Note.png" id="7_d6nb0"]
+[ext_resource type="PackedScene" uid="uid://i70qso44vgve" path="res://Scenes/Player.tscn" id="8_8iu06"]
+[ext_resource type="Texture2D" uid="uid://bxjfugenktmee" path="res://Assets/Items/Story Book.png" id="10_xrlnh"]
+[ext_resource type="Texture2D" uid="uid://b67xu1q3o5r1p" path="res://Assets/Decoration/Universal/Mats.png" id="11_3wpx7"]
+[ext_resource type="PackedScene" uid="uid://fsubo0lgcrfo" path="res://Scenes/Door.tscn" id="12_1fx5f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tjj5a"]
 size = Vector2(16, 112)
@@ -26,7 +25,7 @@ size = Vector2(192, 16)
 size = Vector2(80, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bkgnp"]
-size = Vector2(96, 16)
+size = Vector2(112, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8bq4d"]
 size = Vector2(32, 48)
@@ -35,10 +34,7 @@ size = Vector2(32, 48)
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22p1c"]
-size = Vector2(32, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gqw2r"]
-size = Vector2(8, 8)
+size = Vector2(32, 32)
 
 [node name="GrawaiiStoryHome" type="Node2D" unique_id=1368790758]
 texture_filter = 1
@@ -92,7 +88,7 @@ collision_layer = 18
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body5" unique_id=915627993]
-position = Vector2(144, 152)
+position = Vector2(136, 152)
 shape = SubResource("RectangleShape2D_bkgnp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=317982598]
@@ -112,6 +108,14 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body6" unique_id=1621824545]
 position = Vector2(160, 72)
 shape = SubResource("RectangleShape2D_8bq4d")
+
+[node name="Floor Mat" type="Sprite2D" parent="." unique_id=646471686]
+position = Vector2(80.00001, 127.99999)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("11_3wpx7")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 16, 20, 16)
 
 [node name="Sorted" type="Node2D" parent="." unique_id=1746856895]
 y_sort_enabled = true
@@ -148,7 +152,7 @@ collision_layer = 18
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sorted/WritingDesk/Body" unique_id=635702962]
-position = Vector2(16, 8)
+position = Vector2(16, 0)
 shape = SubResource("RectangleShape2D_22p1c")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sorted/WritingDesk" unique_id=619054536]
@@ -157,10 +161,8 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_d6nb0")
 centered = false
 
-[node name="Player" type="CharacterBody2D" parent="Sorted" unique_id=736689713 instance=ExtResource("8_8iu06")]
-position = Vector2(80, 112)
-collision_mask = 14
-script = ExtResource("9_8ll3v")
+[node name="Player" parent="Sorted" unique_id=736689713 instance=ExtResource("8_8iu06")]
+position = Vector2(80, 96)
 
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1675307229]
 position = Vector2(104, 48)
@@ -168,16 +170,9 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("10_xrlnh")
 centered = false
 
-[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=646471686]
-position = Vector2(80, 128)
-texture = ExtResource("11_3wpx7")
-centered = false
-region_enabled = true
-region_rect = Rect2(0, 16, 16, 16)
-
-[node name="Exit" parent="." instance=ExtResource("12_1fx5f")]
-position = Vector2(80, 144)
+[node name="Exit" parent="." unique_id=15344042 instance=ExtResource("12_1fx5f")]
+position = Vector2(82, 128)
 next_scene_path = "res://Scenes/Town.scn"
+is_invisible = true
 spawn_location = Vector2(6928, 32)
 spawn_direction = Vector2(0, 1)
-is_invisible = true
