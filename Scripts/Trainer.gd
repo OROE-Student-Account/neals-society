@@ -1,6 +1,7 @@
 extends AnimatedSprite2D
 
 @export var cutscene: bool = false
+@export var horizontal: bool = false
 
 @onready var root_node = $DialogueRoot
 @onready var final_dialogue = $FinalDialogue
@@ -22,11 +23,16 @@ func _ready():
 
 
 func approach_until_hit():
-	ray.target_position = Vector2(0, 16)
+	if !horizontal:
+		ray.target_position = Vector2(0, 16)
+	else:
+		ray.target_position = Vector2(16, 0)
 	ray.force_raycast_update()
 	
-	if !ray.is_colliding():
+	if !ray.is_colliding() && !horizontal:
 		position.y += 8
+	elif !ray.is_colliding():
+		position.x -= 8
 	else:
 		anim_player.stop()
 		used_up = true
@@ -36,17 +42,21 @@ func approach_until_hit():
 
 func _on_area_2d_body_entered(_body: Node2D = null) -> void:
 	if used_up: return
-	
 	visible = true
 	var player = Utils.get_player()
 	player.set_physics_process(false)
 	player.anim_tree.active = false
 	player.anim_player.play("TurnUp")
 	
-	if not cutscene:
+	if not cutscene and not horizontal:
 		position.x = player.position.x
+	elif not cutscene:
+		position.y = player.position.y
 	
-	$RayCast2D2.target_position = Vector2(0, 16)
+	if !horizontal:
+		$RayCast2D2.target_position = Vector2(0, 16)
+	else:
+		$RayCast2D2.target_position = Vector2(16, 0)
 	$RayCast2D2.force_raycast_update()
 	if !$RayCast2D2.is_colliding():
 		$AnimationPlayer.play("Approach")

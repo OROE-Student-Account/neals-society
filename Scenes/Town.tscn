@@ -1195,7 +1195,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d16so")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1269,7 +1269,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_f42gn")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1527,7 +1527,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jxftk")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1601,7 +1601,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4tqk7")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1844,7 +1844,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yvixb")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1861,7 +1861,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("33_q6m0i")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1962,7 +1962,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fllgw"]
 size = Vector2(16, 16)
 
-[node name="Town2" type="Node2D" unique_id=1494243782]
+[node name="OldmanBench" type="Node2D" unique_id=1494243782]
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=407294875]
 texture_filter = 1
