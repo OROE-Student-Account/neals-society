@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bm0617pdpifuj" path="res://Assets/Decoration/Table.png" id="6_ll5th"]
 [ext_resource type="Texture2D" uid="uid://cjppf1b7ej7e1" path="res://Assets/Items/Sticky Note.png" id="7_d6nb0"]
 [ext_resource type="PackedScene" uid="uid://i70qso44vgve" path="res://Scenes/Player.tscn" id="8_8iu06"]
-[ext_resource type="Texture2D" uid="uid://bxjfugenktmee" path="res://Assets/Items/Story Book.png" id="10_xrlnh"]
+[ext_resource type="PackedScene" uid="uid://bdykq75yoljv" path="res://Scenes/Item.tscn" id="10_l2cnc"]
 [ext_resource type="Texture2D" uid="uid://b67xu1q3o5r1p" path="res://Assets/Decoration/Universal/Mats.png" id="11_3wpx7"]
 [ext_resource type="PackedScene" uid="uid://fsubo0lgcrfo" path="res://Scenes/Door.tscn" id="12_1fx5f"]
 
@@ -25,7 +25,7 @@ size = Vector2(192, 16)
 size = Vector2(80, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bkgnp"]
-size = Vector2(112, 16)
+size = Vector2(96, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8bq4d"]
 size = Vector2(32, 48)
@@ -88,7 +88,7 @@ collision_layer = 18
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body5" unique_id=915627993]
-position = Vector2(136, 152)
+position = Vector2(144, 152)
 shape = SubResource("RectangleShape2D_bkgnp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=317982598]
@@ -124,7 +124,7 @@ y_sort_enabled = true
 position = Vector2(48, 80)
 
 [node name="Sprite2D" type="Sprite2D" parent="Sorted/Apprentice" unique_id=945639432]
-position = Vector2(0, -16)
+position = Vector2(0, -4)
 texture = ExtResource("5_88we2")
 centered = false
 hframes = 3
@@ -138,6 +138,9 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sorted/Apprentice/Body" unique_id=676216662]
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_vvfyb")
+
+[node name="Red Stamp" parent="Sorted" unique_id=270907436 instance=ExtResource("10_l2cnc")]
+position = Vector2(80, 48)
 
 [node name="WritingDesk" type="Node2D" parent="Sorted" unique_id=45993452]
 position = Vector2(96, 80)
@@ -164,14 +167,8 @@ centered = false
 [node name="Player" parent="Sorted" unique_id=736689713 instance=ExtResource("8_8iu06")]
 position = Vector2(80, 96)
 
-[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1675307229]
-position = Vector2(104, 48)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("10_xrlnh")
-centered = false
-
 [node name="Exit" parent="." unique_id=15344042 instance=ExtResource("12_1fx5f")]
-position = Vector2(82, 128)
+position = Vector2(80, 144)
 next_scene_path = "res://Scenes/Town.scn"
 is_invisible = true
 spawn_location = Vector2(6928, 32)

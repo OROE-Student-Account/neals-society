@@ -90,6 +90,12 @@ func set_spawn(location: Vector2, direction: Vector2):
 	stop_input = false
 	percent_moved_to_next_tile = 0.0
 	input_direction = direction
+	if direction != Vector2.ZERO:
+		facing_direction = [Vector2.LEFT, Vector2.RIGHT, Vector2.UP, Vector2.DOWN].find(direction)
+	sprite.position = Vector2(16, 0)
+	camera.position = Vector2(8, 8)
+	anim_tree.active = true
+	player_state = PlayerState.IDLE
 	position = location
 	initial_position = location
 	sprite.visible = true

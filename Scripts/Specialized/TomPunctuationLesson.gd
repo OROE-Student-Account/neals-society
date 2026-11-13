@@ -127,19 +127,10 @@ func _ask(question: Dictionary) -> bool:
 	overlay.add_child(question_ui)
 	question_ui.scale = get_viewport().get_visible_rect().size / Vector2(240, 160)
 	question_ui.get_node("Vitamins").hide()
-	question_ui.get_node("Question").text = question["Question"]
 	option_count = question["Options"].size()
 	selected = 0
-	for i in range(4):
-		var box = question_ui.get_node("Options/NinePatchRect" + str(i + 1))
-		box.visible = i < option_count
-		box.position = Vector2(16 + (i % 2) * 112, 78 + (i / 2) * 36)
-		box.size = Vector2(100, 32)
-		var label: Label = box.get_node("Label")
-		label.position = Vector2.ZERO
-		label.size = box.size
-		if i < option_count:
-			label.text = question["Options"][i]
+	question_ui.set_question_text(question["Question"], question["Options"])
+
 	var arrow: TextureRect = question_ui.get_node("TextureRect")
 	var outline := AtlasTexture.new()
 	outline.atlas = arrow.texture
@@ -155,19 +146,7 @@ func _ask(question: Dictionary) -> bool:
 	hint.add_theme_font_size_override("font_size", 9)
 	hint.add_theme_color_override("font_color", Color.BLACK)
 	question_ui.add_child(hint)
-	var animation: AnimationPlayer = question_ui.get_node("AnimationPlayer")
-	var explanation: Label = question_ui.get_node("Animation/Failure/Explanation")
-	explanation.text = question["Explanation"]
-	explanation.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	# Keep the scene's normal font sizes and crisp pixel edges. Duplicate the
-	# font so this screen does not change text elsewhere in the game.
-	var font: FontFile = question_ui.get_node("Question").get_theme_font("font").duplicate()
-	font.antialiasing = TextServer.FONT_ANTIALIASING_NONE
-	font.hinting = TextServer.HINTING_NONE
-	font.subpixel_positioning = TextServer.SUBPIXEL_POSITIONING_DISABLED
-	font.oversampling = 1.0
-	for label in question_ui.find_children("*", "Label", true, false):
-		label.add_theme_font_override("font", font)
+
 	while true:
 		_update_selection()
 		accepting_answers = true
@@ -176,13 +155,14 @@ func _ask(question: Dictionary) -> bool:
 		if answer < 0:
 			overlay.queue_free()
 			return false
-		animation.play("Success" if answer == question["Answer"] else "Failure")
-		await animation.animation_finished
+		hint.hide()
+		question_ui.show_result(answer == question["Answer"], question, answer)
+		await question_ui.result_continued
 		if answer == question["Answer"]:
 			overlay.queue_free()
 			return true
-		animation.play("RESET")
-		await animation.animation_finished
+		question_ui.hide_result()
+		hint.show()
 	return false
 
 func _input(event: InputEvent) -> void:

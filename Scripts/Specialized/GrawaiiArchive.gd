@@ -26,7 +26,7 @@ func refresh_story() -> void:
 	var entry: Dictionary = E.progress(Utils)
 	story_state = entry
 	if inside:
-		$Sorted/Storyteller.visible = not entry.get("GrawaiiStorytellerRescued", false)
+		$Sorted/Storyteller.visible = returning_to_green or not entry.get("GrawaiiStorytellerRescued", false)
 		$Sorted/Storyteller/Body.collision_layer = 0 if entry.get("GrawaiiStorytellerRescued", false) else 18
 		$Sorted/Manuscript/Note.visible = not entry.get("GrawaiiManuscriptRecovered", false)
 	else:
@@ -34,14 +34,21 @@ func refresh_story() -> void:
 		$Rubble.visible = not clear
 		$Rubble/Body.collision_layer = 0 if clear else 18
 		$Entrance.collision_layer = 8 if clear else 0
-		$Scout.visible = not entry.get("GrawaiiScoutDefeated", false)
-		$Scout/Body.collision_layer = 0 if entry.get("GrawaiiScoutDefeated", false) else 18
+		# A won battle and a completed departure are separate milestones.
+		# Keep the actor present through every page of the confession.
+		var defeated: bool = entry.get("GrawaiiScoutDefeated", false)
+		# Older completed saves have no departure field; do not bring their scout back.
+		var departure: bool = defeated and not entry.get("GrawaiiScoutDepartureSeen", true) and not entry.get("GrawaiiArchiveHelpRequested", false)
+		$Scout.visible = not defeated or departure
+		$Scout/Body.collision_layer = 18 if $Scout.visible else 0
+		if not busy: victory_pending = departure
 		var help_here: bool = entry.get("GrawaiiArchiveHelpRequested", false) and not entry.get("GrawaiiStorytellerRescued", false)
 		$Keeper.visible = help_here
 		$Keeper/Body.collision_layer = 18 if help_here else 0
 
 func _available() -> bool:
 	if busy or Time.get_ticks_msec() < interaction_after or not is_visible_in_tree(): return false
+	if Utils.get_scene_manager().get_node("ScreenTransition/AnimationPlayer").is_playing(): return false
 	var manager = Utils.get_scene_manager()
 	var player = Utils.get_player()
 	return player != null and player.is_physics_processing() and not player.is_moving and manager.menu.screen_loaded == manager.menu.ScreenLoaded.NOTHING
@@ -54,7 +61,7 @@ func _process(delta: float) -> void:
 			refresh_story()
 		return
 	if not _available(): return
-	if victory_pending:
+	if victory_pending and Utils.get_player().global_position.distance_to($Scout.global_position) <= 64.0:
 		victory_pending = false
 		_after_victory()
 		return
@@ -138,8 +145,8 @@ func talk_to(actor: String) -> void:
 				await _say("Here is the original ending. An old passage mentions the book, but the wording puzzles me. The Grammaster may be able to interpret it.", "The Storyteller")
 				await _say("Let's take the manuscript back to the festival green together.", "The Storyteller")
 				if E.advance_archive(Utils, "rescue"):
-					refresh_story()
 					returning_to_green = true
+					refresh_story()
 					Utils.get_scene_manager().transition_to_scene("res://Scenes/Town.scn", RETURN_SPAWN, Vector2.UP)
 					# Keep this scene locked until the fade removes it.
 					Utils.get_player().set_physics_process(false)
@@ -194,6 +201,9 @@ func _on_battle_ended(won: bool) -> void:
 func _after_victory() -> void:
 	busy = true
 	await _say("Fine! I posted the warning to keep people away while I searched these pages for the book. I didn't make the rocks fall. I'm leaving!", "rammarG Scout")
+	E.advance_archive(Utils, "scout_departure")
+	refresh_story()
+	victory_pending = false
 	await _say("The scout retreats. Someone is still tapping behind the rocks. Ask the trail keeper east of the festival green to bring tools.", "<none>")
 	_finish()
 

@@ -5,16 +5,13 @@
 		"Grammar Dex",
 		"Reading Glasses",
 		"Reading Glasses",
-		"Apple",
 		"Comma",
 		"Children's Book",
 		"Children's Book",
 		"Children's Book",
 		"Comma",
-		"Apple",
 		"Comma",
 		"Dash",
-		"Apple",
 		"Children's Book",
 		"Dash",
 		"Children's Book",
@@ -22,16 +19,35 @@
 		"Dash",
 		"Comma",
 		"Apple",
-		"Crumpled Draft",
-		"Apple"
+		"Children's Book",
+		"Red Stamp"
 	],
-	"Money": 129.0,
+	"Money": 119.0,
 	"Name": "Neal",
 	"Party": [
 		{
-			"Health": 16.0,
+			"Health": 46,
 			"Item": "",
-			"Level": 7.30663267088654,
+			"Level": 11.347293330393,
+			"Moves": [
+				"Bite",
+				"Papercut",
+				"Howl",
+				"Dragon Dance"
+			],
+			"Name": "Lampert",
+			"Nickname": "",
+			"PP": [
+				15.0,
+				25.0,
+				10.0,
+				5.0
+			]
+		},
+		{
+			"Health": 39,
+			"Item": "",
+			"Level": 8.80663267088654,
 			"Moves": [
 				"Bite",
 				"Papercut",
@@ -41,14 +57,14 @@
 			"Name": "Moustapler",
 			"Nickname": "",
 			"PP": [
-				1.0,
-				18.0,
+				15.0,
+				25.0,
 				10.0,
 				5.0
 			]
 		},
 		{
-			"Health": 0.0,
+			"Health": 36,
 			"Item": "",
 			"Level": 7.0,
 			"Moves": [
@@ -60,27 +76,8 @@
 			"Name": "Lampert",
 			"Nickname": "",
 			"PP": [
-				3.0,
 				15.0,
-				10.0,
-				5.0
-			]
-		},
-		{
-			"Health": 40.0,
-			"Item": "",
-			"Level": 5.0,
-			"Moves": [
-				"Bite",
-				"Papercut",
-				"Howl",
-				"Dragon Dance"
-			],
-			"Name": "Lampert",
-			"Nickname": "",
-			"PP": [
-				5.0,
-				17.0,
+				25.0,
 				10.0,
 				5.0
 			]

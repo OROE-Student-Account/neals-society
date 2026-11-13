@@ -9,10 +9,15 @@
 [ext_resource type="Texture2D" uid="uid://ktnoq2qj5jf" path="res://Assets/Decoration/Universal/Bench.png" id="6_6huna"]
 [ext_resource type="Texture2D" uid="uid://bm0617pdpifuj" path="res://Assets/Decoration/Table.png" id="7_kdxl2"]
 [ext_resource type="Texture2D" uid="uid://c20wvxucaup1k" path="res://Assets/Decoration/Flowers/red_flower.png" id="8_sy4ds"]
-[ext_resource type="PackedScene" path="res://Scenes/Specialized/GrawaiiArchiveApproach.tscn" id="archive_approach"]
-[ext_resource type="PackedScene" uid="uid://cme3cey4irw36" path="res://Scenes/Specialized/GrawaiiStoryHomeOutside.tscn" id="grawaii_home"]
-[ext_resource type="PackedScene" uid="uid://byxyp783c3f43" path="res://Scenes/Specialized/GrawaiiWitnesses.tscn" id="grawaii_witnesses"]
-[ext_resource type="PackedScene" path="res://Scenes/Specialized/GrawaiiStoryteller.tscn" id="returned_storyteller"]
+[ext_resource type="PackedScene" uid="uid://5r8lk2n64vxy" path="res://Scenes/Specialized/GrawaiiArchiveApproach.tscn" id="archive_approach"]
+[ext_resource type="Texture2D" uid="uid://byqs765j8b1i3" path="res://Assets/Decoration/Grawaii/Festival Banner.png" id="festival_banner"]
+[ext_resource type="Script" uid="uid://b6x3of61itxt2" path="res://Scripts/Specialized/GrawaiiFestival.gd" id="festival_controller"]
+[ext_resource type="Texture2D" uid="uid://boxsmirpxgh4m" path="res://Assets/Decoration/Grawaii/Totem torch.png" id="festival_torch"]
+[ext_resource type="Script" uid="uid://bqhojtf27ftpl" path="res://Scripts/Specialized/GrawaiiGrammaster.gd" id="grammaster_trial"]
+[ext_resource type="PackedScene" uid="uid://mku8k4xgxp1o" path="res://Scenes/Specialized/GrawaiiStoryHomeOutside.tscn" id="grawaii_home"]
+[ext_resource type="PackedScene" uid="uid://jkg48ic55sbv" path="res://Scenes/Specialized/GrawaiiWitnesses.tscn" id="grawaii_witnesses"]
+[ext_resource type="PackedScene" uid="uid://bmfk7p6xjdqur" path="res://Scenes/Specialized/GrawaiiStoryteller.tscn" id="returned_storyteller"]
+[ext_resource type="Script" uid="uid://c8o4n3c858hp0" path="res://Scripts/Specialized/GrawaiiStaging.gd" id="staging"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q52n4"]
 size = Vector2(80, 16)
@@ -27,12 +32,13 @@ size = Vector2(16, 58)
 size = Vector2(10, 64)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wfluy"]
-radius = 11.313708
+radius = 7.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_famuy"]
+radius = 7.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xv1rf"]
-radius = 11.0
+radius = 7.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h44mm"]
 size = Vector2(16, 16)
@@ -84,6 +90,7 @@ position = Vector2(-64, -48)
 
 [node name="Sprite2D" type="Sprite2D" parent="Organizer" unique_id=1467785894]
 texture_filter = 1
+position = Vector2(0, -4)
 texture = ExtResource("2_6fh5s")
 centered = false
 hframes = 3
@@ -95,7 +102,7 @@ collision_layer = 18
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Organizer/Body" unique_id=1628189022]
-position = Vector2(8, 9)
+position = Vector2(8, 8)
 shape = SubResource("CircleShape2D_wfluy")
 
 [node name="Grammaster" type="Node2D" parent="." unique_id=1256242992]
@@ -103,7 +110,7 @@ position = Vector2(112, -32)
 
 [node name="Sprite2D" type="Sprite2D" parent="Grammaster" unique_id=1407314478]
 texture_filter = 1
-position = Vector2(0, -16)
+position = Vector2(0, -4)
 texture = ExtResource("4_wfluy")
 centered = false
 hframes = 3
@@ -115,17 +122,17 @@ collision_layer = 18
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grammaster/Body" unique_id=1519437889]
-position = Vector2(8, -6)
+position = Vector2(8, 8)
 shape = SubResource("CircleShape2D_famuy")
 
 [node name="FestivalCook" type="Node2D" parent="." unique_id=878412253]
 y_sort_enabled = true
-position = Vector2(-80, 64)
+position = Vector2(-112, 32)
 
 [node name="Sprite2D" type="Sprite2D" parent="FestivalCook" unique_id=2132078152]
 y_sort_enabled = true
 texture_filter = 1
-position = Vector2(-32, -32)
+position = Vector2(0, -4)
 texture = ExtResource("4_oopta")
 centered = false
 hframes = 3
@@ -138,7 +145,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FestivalCook/Body" unique_id=1895345935]
 y_sort_enabled = true
-position = Vector2(-24, -22)
+position = Vector2(8, 8)
 shape = SubResource("CircleShape2D_xv1rf")
 
 [node name="FestivalSign" type="Node2D" parent="." unique_id=1665348498]
@@ -444,3 +451,35 @@ position = Vector2(320, 176)
 
 [node name="ReturnedStoryteller" parent="." unique_id=626239157 instance=ExtResource("returned_storyteller")]
 position = Vector2(16, 144)
+
+[node name="Festival" type="Node2D" parent="." unique_id=1951821196]
+y_sort_enabled = true
+script = ExtResource("festival_controller")
+
+[node name="Celebration" type="Node2D" parent="Festival" unique_id=1836933142]
+visible = false
+y_sort_enabled = true
+
+[node name="Banner" type="Sprite2D" parent="Festival/Celebration" unique_id=1287473609]
+texture_filter = 1
+position = Vector2(176, -48)
+texture = ExtResource("festival_banner")
+
+[node name="TorchLeft" type="Sprite2D" parent="Festival/Celebration" unique_id=563134612]
+z_index = 1
+texture_filter = 1
+position = Vector2(-32, -64)
+texture = ExtResource("festival_torch")
+
+[node name="TorchRight" type="Sprite2D" parent="Festival/Celebration" unique_id=1862867479]
+z_index = 1
+texture_filter = 1
+position = Vector2(64, -64)
+texture = ExtResource("festival_torch")
+
+[node name="Staging" type="CanvasLayer" parent="." unique_id=88102374]
+layer = 100
+script = ExtResource("staging")
+
+[node name="GrammasterTrial" type="Node" parent="." unique_id=192653576]
+script = ExtResource("grammaster_trial")

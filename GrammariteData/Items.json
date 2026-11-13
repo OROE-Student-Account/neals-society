@@ -182,6 +182,6 @@
 	"Machine Shard": {
 		"Description": "A shard from a Machine type Grammarite.",
 		"Type": "Shard"
-	}
-	
+	},
+	"Third Disciple Token": { "Description": "Awarded by Grawai'i's Grammaster for passing his written test and battle.", "Type": "Passive" }
 }

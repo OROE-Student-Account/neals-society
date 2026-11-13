@@ -107,15 +107,35 @@ func transition_to_grammarite_center():
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 
 
+func transition_exit_save_screen() -> void:
+	var current = scene.get_child(0)
+	var player = Utils.get_player()
+	# Older slots lack a location. Reload the current room at the current tile.
+	var saved: Dictionary = Utils.load_json_file("res://Data/OtherStuff.json").get("SavedLocation", {})
+	next_scene = current.scene_file_path
+	player_location = player.position
+	player_direction = [Vector2.LEFT, Vector2.RIGHT, Vector2.UP, Vector2.DOWN][player.facing_direction]
+	var path: String = saved.get("Scene", "")
+	if path.begins_with("res://Scenes/") and ResourceLoader.exists(path):
+		next_scene = path
+		player_location = Vector2(float(saved.get("x", player.position.x)), float(saved.get("y", player.position.y)))
+		player_direction = [Vector2.LEFT, Vector2.RIGHT, Vector2.UP, Vector2.DOWN][clampi(int(saved.get("Facing", 3)), 0, 3)]
+	transition_type = "Load Save"
+	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
+
 func finished_fading():
 	$ScreenTransition/AnimationPlayer.play("FadeToNormal")
 	match transition_type:
-		"New Scene", "Grammarite Center":
+		"New Scene", "Grammarite Center", "Load Save":
+			if transition_type == "Load Save":
+				menu.unload_submenu("Save")
+				menu.menu.hide()
+				menu.screen_loaded = menu.ScreenLoaded.NOTHING
 			while scene.get_child_count() > 0:
 				scene.get_child(0).free()
 			var child = load(next_scene).instantiate()
 			
-			if transition_type == "Grammarite Center":
+			if transition_type == "Grammarite Center" or (transition_type == "Load Save" and next_scene == "res://Scenes/GrammariteCenterInside.tscn"):
 				var last_center = Utils.get_last_center()
 				child.get_node("Door").next_scene_path = "res://Scenes/"+last_center["Scene"]+".scn"
 				child.get_node("Door").spawn_location = Vector2(last_center["x"], last_center["y"])

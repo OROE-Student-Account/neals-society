@@ -50,6 +50,11 @@ func talk_to(actor: String) -> void:
 		interaction_after = Time.get_ticks_msec() + 250
 		busy = false
 		return
+	if actor == "Apprentice" and EVIDENCE.progress(Utils).get("GrawaiiFestivalOpen", false):
+		await _say("I helped prepare the recovered ending! You'll find him on the stage at the festival. Thank you for bringing our teacher and his story home.", "Storyteller's Apprentice")
+		interaction_after = Time.get_ticks_msec() + 250
+		busy = false
+		return
 	if actor == "Apprentice" and EVIDENCE.progress(Utils).get("GrawaiiStorytellerRescued", false):
 		await _say("He's home! Thank you for following his note and bringing him back. You'll find him at the festival green with the original ending.", "Storyteller's Apprentice")
 		interaction_after = Time.get_ticks_msec() + 250

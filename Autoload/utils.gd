@@ -4,16 +4,17 @@ extends Node
 # var a = 2
 # var b = "text"
 var seen_question_ids: Dictionary = {}
+var last_question_by_grade: Dictionary = {}
 
 # Testing only: set false to keep working quest progress between editor runs.
 # Saved slots are not changed; loading one restores its saved progress.
-@export var reset_quest_progress_in_editor := true
+@export var reset_quest_progress_in_editor := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if OS.has_feature("editor") and reset_quest_progress_in_editor:
 		reset_quest_progress()
-	reset_scenes()
+		reset_scenes()
 	# pass
 
 func reset_quest_progress() -> void:
@@ -115,10 +116,20 @@ func get_item_data(item_name):
 
 
 func check_item_picked_up(item: String, scene = "Town"):
-	return load_json_file("res://Data/Scenes.json")[scene]["Items"][item]["Collected"]
+	var data = load_json_file("res://Data/Scenes.json")
+	# New rooms and newly placed items have not been collected yet.
+	return data.get(scene, {}).get("Items", {}).get(item, {}).get("Collected", false)
+
 func update_item_picked_up(item: String, value: bool, scene = "Town"):
 	var data = load_json_file("res://Data/Scenes.json")
+	if not data.has(scene):
+		data[scene] = {}
+	if not data[scene].has("Items"):
+		data[scene]["Items"] = {}
+	if not data[scene]["Items"].has(item):
+		data[scene]["Items"][item] = {}
 	data[scene]["Items"][item]["Collected"] = value
+
 	save_json_file("res://Data/Scenes.json", data)
 
 func check_trainer_attacked(node_name: String, scene = "Town"):
@@ -559,13 +570,24 @@ func get_question_by_grade(grade: int) -> Dictionary:
 				})
 
 	if eligible.is_empty():
-		push_warning("No unused questions for Grade " + str(grade))
-		return {}
+		# Reuse this grade's reviewed pool after every question has been shown.
+		# Keep other grades' history intact, and avoid a repeat across cycles.
+		for category in categories:
+			for q in bank.get(category, []):
+				if int(q.get("Grade", 0)) != grade: continue
+				seen_question_ids.erase(q["ID"])
+				eligible.append({"type": category, "data": q})
+		if eligible.is_empty():
+			push_warning("No questions for Grade " + str(grade))
+			return {}
+		if eligible.size() > 1:
+			eligible = eligible.filter(func(entry): return entry.data["ID"] != last_question_by_grade.get(grade, ""))
 
 	var selected = eligible.pick_random()
 	var item = selected["data"]
 
 	seen_question_ids[item["ID"]] = true
+	last_question_by_grade[grade] = item["ID"]
 
 	var options: Array = [item["Answer"]]
 	options.append_array(item["Distractors"])
@@ -574,7 +596,9 @@ func get_question_by_grade(grade: int) -> Dictionary:
 	print("Grade: ", grade, " | Category: ", selected["type"])
 
 	return {
+		"ID": item["ID"],
 		"Question": item["Question"],
+		"Explanation": item.get("Explanation", ""),
 		"Answer": options.find(item["Answer"]),
 		"Type": selected["type"],
 		"Options": options
@@ -582,17 +606,43 @@ func get_question_by_grade(grade: int) -> Dictionary:
 
 
 
+# Exported game resources are read-only. Keep editor data in its existing
+# location, and seed writable user data from the bundled defaults on first use.
+var _storage_root := "user://"
+var use_user_storage := not OS.has_feature("editor")
+
+func _storage_path(file_path: String) -> String:
+	if use_user_storage and (file_path.begins_with("res://Data/") or file_path.begins_with("res://Saves/")):
+		return _storage_root.path_join(file_path.trim_prefix("res://"))
+	return file_path
+
 func save_json_file(file_path, data):
-	var file = FileAccess.open(file_path, FileAccess.WRITE)
-	var json_string = JSON.stringify(data, "\t")  # "\t" adds good formatting with tabs
-	file.store_string(json_string)
+	var path := _storage_path(file_path)
+	DirAccess.make_dir_recursive_absolute(path.get_base_dir())
+	var file = FileAccess.open(path, FileAccess.WRITE)
+	if file == null:
+		push_error("Cannot save JSON: " + path)
+		return
+	file.store_string(JSON.stringify(data, "\t"))
 	file.close()
 
 func load_json_file(file_path):
-	var file = FileAccess.open(file_path, FileAccess.READ)
+	var path := _storage_path(file_path)
+	if path != file_path and not FileAccess.file_exists(path) and FileAccess.file_exists(file_path):
+		var bundled = FileAccess.open(file_path, FileAccess.READ)
+		var defaults = JSON.parse_string(bundled.get_as_text())
+		bundled.close()
+		save_json_file(file_path, defaults)
+	var file = FileAccess.open(path, FileAccess.READ)
+	if file == null:
+		push_error("Cannot load JSON: " + path)
+		return null
 	var json = JSON.new()
-	json.parse(file.get_as_text())
+	var result = json.parse(file.get_as_text())
 	file.close()
+	if result != OK:
+		push_error("Invalid JSON: " + path)
+		return null
 	return json.data
 
 
@@ -608,7 +658,15 @@ var data_file_names = [
 func save_to_save_slot(num: int):
 	var slot_path = "res://Saves/"+str(num)+"/"
 	for file_name in data_file_names:
-		save_json_file(slot_path+file_name+".json", load_json_file("res://Data/"+file_name+".json"))
+		var data = load_json_file("res://Data/"+file_name+".json")
+		if file_name == "OtherStuff":
+			var manager = get_node_or_null("/root/SceneManager")
+			if manager != null and manager.get_node("CurrentScene").get_child_count() > 0:
+				var current = manager.get_node("CurrentScene").get_child(0)
+				var player = get_player()
+				if player != null:
+					data["SavedLocation"] = {"Scene": current.scene_file_path, "x": player.position.x, "y": player.position.y, "Facing": player.facing_direction}
+		save_json_file(slot_path+file_name+".json", data)
 func load_slot(num: int):
 	var slot_path = "res://Saves/"+str(num)+"/"
 	for file_name in data_file_names:
@@ -653,12 +711,12 @@ func fill_empty_slot(num: int):
 	save_json_file(slot_path+"Scenes.json", scenes)
 	
 	
-	save_json_file(slot_path+"OtherStuff.json", {"Last Grammarite Center": 0.0})
+	save_json_file(slot_path+"OtherStuff.json", {"Last Grammarite Center": 0.0, "Rival Name": "Rival"})
 	
 	var quests = []
 	var quest_details = load_json_file("res://GrammariteData/Quests.json")
 	for i in range(len(quest_details)):
-		quests.append({"Progess": "None"})
+		quests.append({"Progress": "Incoming"})
 	save_json_file(slot_path+"Quests.json", quests)
 	
 	var bookshelf = []

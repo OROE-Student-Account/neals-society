@@ -15,6 +15,7 @@ var input_state = InputState.ACTION_BUTTONS
 
 
 var ans = -1
+var active_question: Dictionary = {}
 
 # for the action buttons
 enum Buttons { FIGHT, SWITCH, ITEM, RUN }
@@ -86,21 +87,9 @@ func set_active_option():
 func ask_question():
 	questions = question_screen.instantiate()
 	var question = Utils.get_question_by_grade(5)
+	active_question = question.duplicate(true)
 	ans = question["Answer"]
-	questions.get_node("Question").text = question["Question"]
-	for i in range(4):
-		var box = questions.get_node("Options/NinePatchRect" + str(i + 1))
-		# Match the interior of the four answer boxes in the background artwork.
-		box.position = Vector2(10 + (i % 2) * 116, 84 + (i / 2) * 34)
-		box.size = Vector2(104, 24)
-		var label: Label = box.get_node("Label")
-		label.position = Vector2.ZERO
-		label.size = box.size
-		label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-		label.clip_text = false
-		label.add_theme_font_size_override("font_size", 8)
-		label.text = question["Options"][i]
-	
+
 	var vite = questions.get_node("Vitamins")
 	vite.visible = true
 	if Utils.remove_from_inventory(question["Type"]+" Vitamin"):
@@ -112,15 +101,8 @@ func ask_question():
 	else:
 		vite.visible = false
 	Utils.get_scene_manager().add_child(questions)
-	await get_tree().process_frame
-	for i in range(4):
-		var label: Label = questions.get_node("Options/NinePatchRect" + str(i + 1) + "/Label")
-		var font_size := 8
-		while label.get_line_count() * label.get_line_height() > 24 and font_size > 6:
-			font_size -= 1
-			label.add_theme_font_size_override("font_size", font_size)
-			await get_tree().process_frame
-	
+	questions.set_question_text(question["Question"], question["Options"])
+
 	input_state = InputState.QUESTIONING
 	selected_button = 0
 	update_selected_option()
@@ -144,27 +126,11 @@ func ask_question():
 	return selected_button == question["Answer"]
 
 func handle_question_result(is_correct: bool, question: Dictionary):
-	# Assuming your QuestionScreen has an AnimationPlayer node
-	var anim_player = questions.get_node_or_null("AnimationPlayer")
 	pause = true
-	if is_correct:
-		anim_player.play("Success")
-		await anim_player.animation_finished
-		stop()
-		input_state = InputState.WAITING
-	else:
-		if anim_player and anim_player.has_animation("Failure"):
-			anim_player.play("Failure")
-		# Show explanation
-		# Assuming QuestionScreen has an ExplanationNode with a Label
-		var explanation_node = questions.get_node_or_null("Animation/Failure/Explanation")
-		
-		if explanation_node:
-			# Use explanation if provided in dictionary, otherwise just state correct answer
-			if question.has("Explanation"):
-				explanation_node.text = question["Explanation"]
-			else:
-				explanation_node.text = "The correct answer was:\n" + question["Options"][question["Answer"]]
+	questions.show_result(is_correct, question, selected_button)
+	await questions.result_continued
+	input_state = InputState.WAITING
+	pause = false
 
 func stop():
 	pause = true
@@ -270,10 +236,8 @@ func _input(event):
 				var is_correct = (selected_button == ans)
 				input_state = InputState.QUESTION_RESULT
 				stop()
-				handle_question_result(is_correct, Utils.get_question())
+				handle_question_result(is_correct, active_question)
 			elif event.is_action_pressed("q"):
 				input_state = InputState.EATING
 		InputState.QUESTION_RESULT:
-			for l in ["z", "q", "ui_down", "ui_right", "ui_up", "ui_left", "x"]:
-				if event.is_action_pressed(l):
-					input_state = InputState.WAITING
+			pass # The result screen owns its Continue input.

@@ -79,4 +79,3 @@ display = "<none>"
 script = ExtResource("4_lnori")
 trainer_name = "random"
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

@@ -74,6 +74,16 @@
 			}
 		}
 	},
+	"GrawaiiStoryHome": {
+		"Items": {
+			"Children's Book": {
+				"Collected": false
+			},
+			"Red Stamp": {
+				"Collected": false
+			}
+		}
+	},
 	"OaksLab": {
 		"Items": {
 			"Dog of Wood": {
@@ -223,6 +233,9 @@
 		},
 		"Trainers": {
 			"Daddy Static Intro": {
+				"Talked": false
+			},
+			"Grawaii Archive Scout": {
 				"Talked": false
 			},
 			"Grawaii Canoe Racer": {

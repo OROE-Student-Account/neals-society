@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bmbwuyg1k52wa"]
 
+[ext_resource type="Texture2D" path="res://Assets/UI/Battle/SharedArena.png" id="shared_arena"]
 [ext_resource type="Script" uid="uid://68man2oy86ff" path="res://Scripts/BattleUI.gd" id="1_c5ef4"]
 [ext_resource type="Script" uid="uid://oiemmmw7t3ir" path="res://Scripts/BattleManager.gd" id="1_qxnh6"]
 [ext_resource type="Texture2D" uid="uid://bh2l30vm3xyv1" path="res://Assets/UI/hp bar.png" id="2_qxnh6"]
@@ -3548,9 +3549,13 @@ _data = {
 anchor_mode = 0
 zoom = Vector2(5, 5)
 
-[node name="Background" type="ColorRect" parent="." unique_id=703872017]
+[node name="Background" type="TextureRect" parent="." unique_id=703872017]
+texture_filter = 1
 offset_right = 240.0
 offset_bottom = 160.0
+mouse_filter = 2
+texture = ExtResource("shared_arena")
+expand_mode = 1
 
 [node name="EnemyGrammarite" type="Node2D" parent="." unique_id=1611356939]
 position = Vector2(240, 0)

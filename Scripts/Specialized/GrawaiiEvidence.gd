@@ -11,6 +11,14 @@ const ACCOUNTS := [
 	"Keeper: He entered the archive before the rockfall blocked its entrance."
 ]
 
+const TRIAL_TOKEN := "Third Disciple Token"
+const FINAL_CLUE := "Beneath the sleeping summit, take the passage the sea cannot reach. At the split inscription, the mark that ends the sentence opens the way."
+const TRIAL_QUESTIONS := [
+	{"Evidence": "You are calling on the villagers themselves to help. They are the people you are addressing, rather than the people receiving help.", "Question": "Which sentence uses punctuation to preserve that meaning?", "Options": ["Let's help, villagers!", "Let's help villagers!"], "Answer": 0, "Hint": "The comma marks direct address: you are speaking to the villagers. Without it, 'villagers' becomes the people being helped."},
+	{"Evidence": "The fisherman says: 'I saw the scout travel alone.' A neighbor says: 'People are saying an eruption is certain.'", "Question": "Which claim is supported by a firsthand observation?", "Options": ["An eruption is certain", "The scout traveled alone"], "Answer": 1, "Hint": "The fisherman reports what he personally saw. The neighbor repeats a claim without verifying it. Repetition does not make an eruption certain."},
+	{"Evidence": "Only records bearing the keeper's seal are verified. This page has no keeper's seal.", "Question": "Which conclusion follows without assuming more than those statements say?", "Options": ["The page is verified", "Treat it as unverified"], "Answer": 1, "Hint": "'Only' makes the seal necessary for verification. A page without it is unverified. That does not prove the page's contents are false."}
+]
+
 # Each question includes the evidence needed to answer it; no memorization required.
 const RECONSTRUCTION := [
 	{"Evidence": "Cook: Breakfast came first. He then went home and left with a wrapped manuscript.", "Question": "After breakfast, what did the Storyteller collect?", "Options": ["His manuscript", "The scout's warning"], "Answer": 0, "Hint": "The cook saw him leave his house with a wrapped manuscript. Nobody says he collected a warning.", "Confirmed": "He collected his manuscript after breakfast."},
@@ -44,6 +52,7 @@ static func advance_reconstruction(utils: Node, expected_step: int) -> bool:
 static func advance_archive(utils: Node, event: String) -> bool:
 	var prerequisites := {
 		"scout": ["GrawaiiReconstructed", "GrawaiiScoutDefeated"],
+		"scout_departure": ["GrawaiiScoutDefeated", "GrawaiiScoutDepartureSeen"],
 		"help": ["GrawaiiScoutDefeated", "GrawaiiArchiveHelpRequested"],
 		"clear": ["GrawaiiArchiveHelpRequested", "GrawaiiArchiveCleared"],
 		"rescue": ["GrawaiiArchiveCleared", "GrawaiiStorytellerRescued"],
@@ -57,10 +66,88 @@ static func advance_archive(utils: Node, event: String) -> bool:
 	var pair: Array = prerequisites[event]
 	if count_clues(entry) != KEYS.size() or not entry.get(pair[0], false) or entry.get(pair[1], false): return false
 	entry[pair[1]] = true
+	if event == "scout": entry["GrawaiiScoutDepartureSeen"] = false
 	if event == "rescue": entry["GrawaiiManuscriptRecovered"] = true
 	entry["CurrentObjective"] = objective(entry)
 	utils.save_json_file("res://Data/Quests.json", entries)
 	return true
+
+# Celebration milestones are stored with the existing quest save data.
+static func advance_festival(utils: Node, event: String) -> bool:
+	var id := quest_id(utils)
+	var entries: Array = utils.load_json_file("res://Data/Quests.json")
+	if id < 0 or id >= entries.size(): return false
+	var entry: Dictionary = entries[id]
+	if count_clues(entry) != KEYS.size() or not entry.get("GrawaiiStorytellerRescued", false) or not entry.get("GrawaiiManuscriptRecovered", false) or not entry.get("GrawaiiHomecomingSeen", false): return false
+	var flag := ""
+	match event:
+		"open": flag = "GrawaiiFestivalOpen"
+		"ending":
+			if not entry.get("GrawaiiFestivalOpen", false): return false
+			flag = "GrawaiiFestivalEndingSeen"
+		_: return false
+	if entry.get(flag, false): return false
+	entry[flag] = true
+	entry["CurrentObjective"] = objective(entry)
+	utils.save_json_file("res://Data/Quests.json", entries)
+	return true
+
+static func trial_eligible(entry: Dictionary) -> bool:
+	return count_clues(entry) == KEYS.size() and entry.get("GrawaiiStorytellerRescued", false) and entry.get("GrawaiiManuscriptRecovered", false) and entry.get("GrawaiiHomecomingSeen", false) and entry.get("GrawaiiFestivalOpen", false) and entry.get("GrawaiiFestivalEndingSeen", false)
+
+static func trial_step(entry: Dictionary) -> int:
+	if entry.get("GrawaiiTrialTestPassed", false): return TRIAL_QUESTIONS.size()
+	return clampi(int(entry.get("GrawaiiTrialStep", 0)), 0, TRIAL_QUESTIONS.size() - 1)
+
+static func advance_trial_answer(utils: Node, expected_step: int, answer: int) -> bool:
+	var id := quest_id(utils)
+	var entries: Array = utils.load_json_file("res://Data/Quests.json")
+	if id < 0 or id >= entries.size() or expected_step < 0 or expected_step >= TRIAL_QUESTIONS.size(): return false
+	var entry: Dictionary = entries[id]
+	if not trial_eligible(entry) or entry.get("GrawaiiTrialTestPassed", false) or trial_step(entry) != expected_step or TRIAL_QUESTIONS[expected_step]["Answer"] != answer: return false
+	entry["GrawaiiTrialStep"] = expected_step + 1
+	if expected_step + 1 == TRIAL_QUESTIONS.size(): entry["GrawaiiTrialTestPassed"] = true
+	entry["CurrentObjective"] = objective(entry)
+	utils.save_json_file("res://Data/Quests.json", entries)
+	return true
+
+static func record_trial_victory(utils: Node) -> bool:
+	var id := quest_id(utils)
+	var entries: Array = utils.load_json_file("res://Data/Quests.json")
+	if id < 0 or id >= entries.size(): return false
+	var entry: Dictionary = entries[id]
+	if not trial_eligible(entry) or not entry.get("GrawaiiTrialTestPassed", false) or entry.get("GrawaiiGrammasterDefeated", false): return false
+	entry["GrawaiiGrammasterDefeated"] = true
+	entry["CurrentObjective"] = objective(entry)
+	utils.save_json_file("res://Data/Quests.json", entries)
+	return true
+
+static func claim_trial_reward(utils: Node) -> bool:
+	var id := quest_id(utils)
+	var entries: Array = utils.load_json_file("res://Data/Quests.json")
+	if id < 0 or id >= entries.size(): return false
+	var entry: Dictionary = entries[id]
+	if not trial_eligible(entry) or not entry.get("GrawaiiTrialTestPassed", false) or not entry.get("GrawaiiGrammasterDefeated", false): return false
+	var first_claim: bool = not entry.get("GrawaiiTrialRewardClaimed", false)
+	var inventory: Dictionary = utils.load_json_file("res://Data/Inventory.json")
+	# Write inventory first, checking for an existing token so an interrupted claim
+	# can be resumed without adding it twice. Passive tokens cannot be consumed.
+	if TRIAL_TOKEN not in inventory["Items"]:
+		inventory["Items"].append(TRIAL_TOKEN)
+		utils.save_json_file("res://Data/Inventory.json", inventory)
+	entry["GrawaiiTrialRewardClaimed"] = true
+	entry["GrawaiiThirdDiscipleToken"] = true
+	entry["GrawaiiFinalClue"] = FINAL_CLUE
+	entry["CurrentObjective"] = objective(entry)
+	utils.save_json_file("res://Data/Quests.json", entries)
+	return first_claim
+
+static func finish_trial_reward_dialogue(utils: Node) -> void:
+	var id := quest_id(utils)
+	var entries: Array = utils.load_json_file("res://Data/Quests.json")
+	if id < 0 or id >= entries.size() or not entries[id].get("GrawaiiTrialRewardClaimed", false): return
+	entries[id]["GrawaiiTrialRewardSeen"] = true
+	utils.save_json_file("res://Data/Quests.json", entries)
 
 static func quest_id(utils: Node) -> int:
 	var definitions: Array = utils.load_json_file("res://GrammariteData/Quests.json")
@@ -85,6 +172,20 @@ static func count_clues(entry: Dictionary) -> int:
 	return count
 
 static func objective(entry: Dictionary) -> String:
+	if entry.get("GrawaiiTrialRewardClaimed", false):
+		return "Grammaster's trial cleared. Third Disciple Token earned and final clue recorded. Speak to him to review the clue."
+	if entry.get("GrawaiiGrammasterDefeated", false):
+		return "You won the Grammaster's trial. Speak to him at the festival green for your token and the final clue."
+	if entry.get("GrawaiiTrialTestPassed", false):
+		return "Written test passed (3/3). Heal at the festival cook, then challenge the Grammaster when ready."
+	if trial_step(entry) > 0:
+		return "Grammaster's test: %d/3 answers confirmed. Speak to him at the green to continue." % trial_step(entry)
+	if entry.get("GrawaiiFestivalEndingSeen", false):
+		return "Enjoy the festival! The cook offers free healing. Speak to the Grammaster at the green about his next trial."
+	if entry.get("GrawaiiFestivalOpen", false):
+		return "Join the Storyteller's closing story. Speak to the stage from its front, or ask the festival organizer."
+	if entry.get("GrawaiiHomecomingSeen", false):
+		return "The Storyteller is home. Speak to the festival organizer to open the celebration when you're ready."
 	if entry.get("GrawaiiStorytellerRescued", false):
 		return "Storyteller rescued! Meet him at the festival green with the recovered original ending."
 	if entry.get("GrawaiiArchiveCleared", false):

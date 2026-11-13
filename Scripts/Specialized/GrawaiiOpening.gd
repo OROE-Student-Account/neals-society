@@ -40,6 +40,7 @@ func _available() -> bool:
 	if busy or Time.get_ticks_msec() < interaction_after or not is_visible_in_tree():
 		return false
 	var manager = Utils.get_scene_manager()
+	if $Staging.active or manager.get_node("ScreenTransition/AnimationPlayer").is_playing(): return false
 	if manager.menu.screen_loaded != manager.menu.ScreenLoaded.NOTHING:
 		return false
 	var player = Utils.get_player()
@@ -49,7 +50,7 @@ func _sync_story() -> void:
 	var entry: Dictionary = EVIDENCE.progress(Utils)
 	intro_seen = entry.get("GrawaiiIntroSeen", false)
 	var signature := 0
-	var flags := ["GrawaiiReconstructed", "GrawaiiScoutDefeated", "GrawaiiArchiveHelpRequested", "GrawaiiArchiveCleared", "GrawaiiStorytellerRescued", "GrawaiiHomecomingSeen"]
+	var flags := ["GrawaiiReconstructed", "GrawaiiScoutDefeated", "GrawaiiScoutDepartureSeen", "GrawaiiArchiveHelpRequested", "GrawaiiArchiveCleared", "GrawaiiStorytellerRescued", "GrawaiiHomecomingSeen", "GrawaiiFestivalOpen", "GrawaiiFestivalEndingSeen"]
 	for i in flags.size():
 		if entry.get(flags[i], false): signature |= 1 << i
 	if signature == story_signature: return
@@ -59,6 +60,7 @@ func _sync_story() -> void:
 	$ReturnedStoryteller.visible = rescued
 	$ReturnedStoryteller/Body.collision_layer = 18 if rescued else 0
 	$Witnesses.refresh_story_actors()
+	$Festival.refresh(entry)
 
 func _process(delta: float) -> void:
 	# Refresh loaded-save visuals at a modest rate, not with per-frame disk reads.
@@ -82,11 +84,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	for actor in [$Organizer, $Grammaster, $FestivalCook, $FestivalSign, $EmptyStage, $StorytellerHome/HomeSign, $ReturnedStoryteller]:
 		if not actor.is_visible_in_tree(): continue
 		var target_position: Vector2 = actor.global_position
-		if actor == $FestivalCook:
-			target_position += $FestivalCook/Sprite2D.position
 		# The stage is wider than an NPC; talk from its front edge.
-		if actor == $EmptyStage:
-			target_position += Vector2(0, 32)
+		if actor == $EmptyStage or (actor == $ReturnedStoryteller and EVIDENCE.progress(Utils).get("GrawaiiFestivalOpen", false)):
+			target_position = $EmptyStage.global_position + Vector2(0, 32)
 		var offset: Vector2 = target_position - player.global_position
 		if offset.dot(facing) >= 4.0 and offset.dot(facing) <= 24.0 and absf(offset.cross(facing)) <= 8.0:
 			get_viewport().set_input_as_handled()
@@ -121,9 +121,17 @@ func talk_to(actor: String) -> void:
 		"Organizer":
 			await _organizer()
 		"ReturnedStoryteller":
+			if EVIDENCE.progress(Utils).get("GrawaiiFestivalOpen", false):
+				await $Festival.perform()
+				_finish()
+				return
 			await _say("You followed the accounts all the way to the archive. Thank you for bringing me home. The original ending is safe, too.", "The Storyteller")
 			await _say("An old passage mentions the book, but its meaning is hidden in the wording. The Grammaster should examine it when the festival is ready.", "The Storyteller")
 		"Grammaster":
+			if EVIDENCE.progress(Utils).get("GrawaiiFestivalOpen", false):
+				await $Festival.grammaster()
+				_finish()
+				return
 			if EVIDENCE.progress(Utils).get("GrawaiiStorytellerRescued", false):
 				await _say("Our friend is safe, and the original ending has been recovered. Let him rest while we prepare the festival. There will be time to examine that passage.", "The Grammaster")
 			elif EVIDENCE.progress(Utils).get("GrawaiiReconstructed", false):
@@ -132,6 +140,10 @@ func talk_to(actor: String) -> void:
 				await _say("I am the Grammaster, the third disciple. Today, though, the festival and our missing friend come first.", "The Grammaster")
 				await _say("I'll coordinate the search here. Listen carefully to what people actually saw. A rumor and a memory are not the same thing.", "The Grammaster")
 		"FestivalCook":
+			if EVIDENCE.progress(Utils).get("GrawaiiFestivalOpen", false):
+				await $Festival.feast()
+				_finish()
+				return
 			if EVIDENCE.progress(Utils).get("GrawaiiStorytellerRescued", false):
 				await _say("He's back! Thank you for finding him. I'll get the festival food ready while he catches his breath.", "Festival Cook")
 				_finish()
@@ -147,6 +159,10 @@ func talk_to(actor: String) -> void:
 		"FestivalSign":
 			await _say("FESTIVAL OF STORIES\nGather at the green for stories, food, and friendly challenges. Opening performance: the Storyteller.", "<none>")
 		"EmptyStage":
+			if EVIDENCE.progress(Utils).get("GrawaiiFestivalOpen", false):
+				await $Festival.perform()
+				_finish()
+				return
 			await _say("A place has been prepared for the Storyteller. The benches face an empty stage.", "<none>")
 	_finish()
 
@@ -173,6 +189,9 @@ func _review_accounts(entry: Dictionary) -> void:
 
 func _organizer() -> void:
 	var entry: Dictionary = EVIDENCE.progress(Utils)
+	if entry.get("GrawaiiHomecomingSeen", false):
+		await $Festival.organizer()
+		return
 	if entry.get("GrawaiiStorytellerRescued", false):
 		await _say("The Storyteller is home, and the original ending has been recovered. We'll prepare the festival next. You can meet him just south of the stage.", "Festival Organizer")
 		if await _ask("Would you like to review the accounts that led us to him?", "Review accounts", "Later") == 0:
@@ -222,14 +241,14 @@ func _reconstruct() -> void:
 func _choose(value: String) -> void:
 	selected_choice = int(value)
 
-func _ask(text: String, first: String, second: String) -> int:
+func _ask(text: String, first: String, second: String, speaker: String = "Festival Organizer") -> int:
 	selected_choice = -1
 	var pages: Array[String] = EVIDENCE.dialogue_pages(Utils, text)
 	for i in pages.size() - 1:
-		await _say(pages[i], "Festival Organizer")
+		await _say(pages[i], speaker)
 	var line = DIALOGUE.new()
 	line.text = pages.back()
-	line.display = "Festival Organizer"
+	line.display = speaker
 	for i in 2:
 		var option = DIALOGUE.new()
 		option.option_name = first if i == 0 else second
@@ -249,6 +268,9 @@ func _ask(text: String, first: String, second: String) -> int:
 func _homecoming() -> void:
 	homecoming_pending = false
 	busy = true
+	# Fresh escorts already spawn here; older saves may approach from elsewhere.
+	if Utils.get_player().global_position != $Festival.REUNION_SPAWN:
+		await $Staging.fade_to($Festival.place_reunion, $Festival.REUNION_SPAWN)
 	await _say("You found him! Welcome home. We were so worried when you didn't return.", "Festival Organizer")
 	await _say("The original ending is safe. Your careful search brought us both back. Give me a moment to rest; then we can prepare our festival story.", "The Storyteller")
 	EVIDENCE.advance_archive(Utils, "homecoming")

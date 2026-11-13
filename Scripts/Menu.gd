@@ -80,6 +80,7 @@ func unload_submenu(submenu: String):
 	var node = get_node_or_null(submenu+"Screen")
 	if node:
 		remove_child(node)
+		node.queue_free()
 
 func unload_submenus(from_menu: bool):
 	emit_signal("close_menu")
@@ -95,6 +96,7 @@ func unload_submenus(from_menu: bool):
 		var node = get_node_or_null(i+"Screen")
 		if node: 
 			remove_child(node)
+			node.queue_free()
 
 
 func update_select_box():

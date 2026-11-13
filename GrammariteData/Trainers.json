@@ -3,7 +3,7 @@
 	"Old Man Ember": { "Party": [ "Cateraser" ], "Levels": [ 2 ], "XP": 25, "Money": 4 },
 	"Team rammarG Beater": { "Party": [ "Poishrub" ], "Levels": [ 3 ], "XP": 60, "Money": 8 },
 	
-	"Chief Static": { "Party": [ "Lampert", "Ventomer", "Locusion" ], "Levels": [ 8, 9, 10 ], "XP": 100, "Money": 15 },
+	"Chief Static": { "Party": [ "Lampert", "Ventomer", "Mechnant" ], "Levels": [ 8, 9, 10 ], "XP": 100, "Money": 15 },
 	
 	"Team rammarG Grunt": { "Party": [ "Brainrouter", "Poishrub" ], "Levels": [ 2, 4 ], "XP": 50, "Money": 0 },
 	"Draven": { "Party": [ "Impaper" ], "Levels": [ 5 ], "XP": 40, "Money": 4 },
@@ -19,8 +19,9 @@
 	"Punctuation Pupil": { "Party": [ "Pencilite" ], "Levels": [ 13 ], "XP": 90, "Money": 16 },
 	"Clause Coach": { "Party": [ "Scrawlking" ], "Levels": [ 15 ], "XP": 110, "Money": 20 },
 	"Kom Ma-King": { "Party": [ "Scrawlking", "Scrawlaive" ], "Levels": [ 18, 20 ], "XP": 250, "Money": 40 },
-	"Grawaii Canoe Racer": { "Party": [ "Monethy" ], "Levels": [ 10 ], "XP": 10, "Money": 5 },
-	"Grawaii Trail Keeper": { "Party": [ "Scrawlaive" ], "Levels": [ 12 ], "XP": 12, "Money": 6 },
-	"Grawaii Archive Scout": { "Party": [ "Impaper" ], "Levels": [ 10 ], "XP": 6, "Money": 8 },
+	"Grawaii Canoe Racer": { "Party": [ "Monethy" ], "Levels": [ 1 ], "XP": 10, "Money": 5 },
+	"Grawaii Trail Keeper": { "Party": [ "Scrawlaive" ], "Levels": [ 1 ], "XP": 12, "Money": 6 },
+	"Grawaii Archive Scout": { "Party": [ "Impaper" ], "Levels": [ 1 ], "XP": 6, "Money": 8 },
 
+	"Grawaii Grammaster": { "Party": [ "Scrawlking", "Lexmen" ], "Levels": [ 22, 24 ], "XP": 250, "Money": 45, "Moves": [ ["Syntax Slit", "Period Punch", "Lab Report", "Papercut"], ["Intellectual Impass", "Heavy Research", "Shakespearean Stymie", "Papercut"] ] },
 }

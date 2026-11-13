@@ -1,131 +1,139 @@
 [gd_scene format=3 uid="uid://sse02ea6deen"]
 
-[ext_resource type="Script" uid="uid://cm3xq24ov0e7j" path="res://Scripts/QuestScreen.gd" id="1_wsc7u"]
-[ext_resource type="Theme" uid="uid://ba51wo4d026l" path="res://Assets/UI/Plain/Fonts.tres" id="2_wsc7u"]
-[ext_resource type="Texture2D" uid="uid://l3rv0t6hbu6f" path="res://Assets/UI/Animation/circle.png" id="3_775l7"]
-[ext_resource type="Texture2D" uid="uid://bqio4uhjljbal" path="res://Assets/UI/Plain/PlainButton.png" id="3_e2y7k"]
+[ext_resource type="Script" uid="uid://cm3xq24ov0e7j" path="res://Scripts/QuestScreen.gd" id="script"]
+[ext_resource type="Theme" path="res://Assets/UI/Plain/Fonts.tres" id="font"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wsc7u"]
-content_margin_left = 5.0
-content_margin_top = 5.0
-content_margin_right = 5.0
+[sub_resource type="StyleBoxFlat" id="list_panel"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
 bg_color = Color(0.73333335, 0.6, 0.4509804, 1)
-border_width_left = 2
-border_width_bottom = 2
-border_color = Color(0.6328794, 0.43627632, 0.2849239, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-shadow_color = Color(0, 0, 0, 0.6745098)
+border_width_left = 1
+border_width_bottom = 1
+border_color = Color(0.63, 0.44, 0.28, 1)
 
-[node name="QuestScreen" type="Node2D" unique_id=1222627018]
+[node name="QuestScreen" type="Node2D"]
 texture_filter = 1
-script = ExtResource("1_wsc7u")
+script = ExtResource("script")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=320466981]
+[node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 240.0
 offset_bottom = 160.0
+color = Color(0.94, 0.9, 0.79, 1)
 
-[node name="Sidebar" type="Control" parent="." unique_id=400258677]
+[node name="Sidebar" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="Sidebar" unique_id=134601424]
-layout_mode = 0
+[node name="Label" type="Label" parent="Sidebar"]
 offset_left = 8.0
-offset_top = 8.0
+offset_top = 6.0
 offset_right = 88.0
-offset_bottom = 31.0
-theme = ExtResource("2_wsc7u")
+offset_bottom = 22.0
+theme = ExtResource("font")
+theme_override_font_sizes/font_size = 12
 text = "Quests"
 horizontal_alignment = 1
 
-[node name="ItemList" type="ItemList" parent="Sidebar" unique_id=1814926697]
-layout_mode = 0
+[node name="ItemList" type="ItemList" parent="Sidebar"]
 offset_left = 8.0
-offset_top = 24.0
-offset_right = 107.99999
-offset_bottom = 183.99998
-scale = Vector2(0.8, 0.8)
-theme = ExtResource("2_wsc7u")
+offset_top = 26.0
+offset_right = 88.0
+offset_bottom = 146.0
+theme = ExtResource("font")
+theme_override_font_sizes/font_size = 10
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hovered_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hovered_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
-theme_override_styles/panel = SubResource("StyleBoxFlat_wsc7u")
+theme_override_styles/panel = SubResource("list_panel")
+fixed_column_width = 72
+max_text_lines = 2
 allow_search = false
 
-[node name="Info" type="Control" parent="." unique_id=1830113566]
+[node name="Info" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
-[node name="ColorRect2" type="ColorRect" parent="Info" unique_id=1603091844]
-layout_mode = 0
-offset_left = 92.0
-offset_top = 40.0
-offset_right = 228.0
-offset_bottom = 136.0
-color = Color(0.52156866, 0.49803922, 0.49803922, 1)
+[node name="ColorRect2" type="ColorRect" parent="Info"]
+offset_left = 96.0
+offset_top = 8.0
+offset_right = 232.0
+offset_bottom = 146.0
+color = Color(0.82, 0.77, 0.66, 1)
 
-[node name="Title" type="Label" parent="Info" unique_id=1801493367]
-layout_mode = 0
-offset_left = 101.0
-offset_top = 48.0
-offset_right = 218.0
-offset_bottom = 71.0
-theme = ExtResource("2_wsc7u")
-text = "Example Quest"
-
-[node name="Description" type="Label" parent="Info" unique_id=1266439803]
-layout_mode = 0
+[node name="Title" type="Label" parent="Info"]
 offset_left = 104.0
-offset_top = 64.0
-offset_right = 243.99998
-offset_bottom = 123.99999
-scale = Vector2(0.8, 0.8)
-theme = ExtResource("2_wsc7u")
-text = "Capture or kill 67 grammarites to and turn them into shards to complete this quest"
-autowrap_mode = 2
+offset_top = 12.0
+offset_right = 224.0
+offset_bottom = 40.0
+theme = ExtResource("font")
+theme_override_font_sizes/font_size = 10
+autowrap_mode = 3
 
-[node name="Reward" type="Label" parent="Info" unique_id=1519755452]
-layout_mode = 0
-offset_left = 101.0
-offset_top = 118.0
-offset_right = 218.0
-offset_bottom = 141.0
-theme = ExtResource("2_wsc7u")
-text = "Reward: "
+[node name="Details" type="ScrollContainer" parent="Info"]
+offset_left = 104.0
+offset_top = 44.0
+offset_right = 224.0
+offset_bottom = 118.0
+horizontal_scroll_mode = 0
 
-[node name="AcceptButton" type="ColorRect" parent="Info" unique_id=360586006]
-layout_mode = 0
+[node name="Description" type="Label" parent="Info/Details"]
+custom_minimum_size = Vector2(108, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("font")
+theme_override_font_sizes/font_size = 10
+autowrap_mode = 3
+
+[node name="Reward" type="Label" parent="Info"]
+offset_left = 104.0
+offset_top = 124.0
+offset_right = 224.0
+offset_bottom = 140.0
+theme = ExtResource("font")
+theme_override_font_sizes/font_size = 8
+
+[node name="Hint" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 150.0
+offset_right = 232.0
+offset_bottom = 160.0
+theme = ExtResource("font")
+theme_override_font_sizes/font_size = 8
+text = "X: Back   PgUp/PgDn: Scroll details"
+
+[node name="AcceptButton" type="ColorRect" parent="Info"]
+visible = false
 offset_right = 240.0
 offset_bottom = 160.0
-color = Color(0, 0, 0, 0.2627451)
+color = Color(0, 0, 0, 0.6)
 
-[node name="Circle" type="Sprite2D" parent="Info/AcceptButton" unique_id=1667024072]
-position = Vector2(120, 80)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("3_775l7")
+[node name="Panel" type="ColorRect" parent="Info/AcceptButton"]
+offset_left = 56.0
+offset_top = 56.0
+offset_right = 184.0
+offset_bottom = 104.0
+color = Color(0.94, 0.9, 0.79, 1)
 
-[node name="AcceptButton" type="Sprite2D" parent="Info/AcceptButton" unique_id=255157582]
-position = Vector2(120, 80)
-scale = Vector2(2, 2)
-texture = ExtResource("3_e2y7k")
-hframes = 2
-frame = 1
+[node name="Question" type="Label" parent="Info/AcceptButton"]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 176.0
+offset_bottom = 80.0
+theme = ExtResource("font")
+theme_override_font_sizes/font_size = 10
+text = "Accept this quest?"
+horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="Info/AcceptButton/AcceptButton" unique_id=909754744]
-offset_left = -11.5
-offset_top = -2.5
-offset_right = 28.5
-offset_bottom = 20.5
-scale = Vector2(0.6, 0.6)
-theme = ExtResource("2_wsc7u")
-text = "Accept?"
+[node name="Hint" type="Label" parent="Info/AcceptButton"]
+offset_left = 64.0
+offset_top = 84.0
+offset_right = 176.0
+offset_bottom = 100.0
+theme = ExtResource("font")
+theme_override_font_sizes/font_size = 8
+text = "Z: Accept   X: Back"
+horizontal_alignment = 1
 
 [connection signal="item_selected" from="Sidebar/ItemList" to="." method="_on_item_list_item_selected"]

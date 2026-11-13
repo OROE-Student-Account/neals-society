@@ -18,6 +18,7 @@ position = Vector2(-240, -96)
 metadata/witness = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Fisherman" unique_id=1301661071]
+position = Vector2(0, -4)
 texture_filter = 1
 texture = ExtResource("2")
 centered = false
@@ -38,6 +39,7 @@ position = Vector2(-176, 176)
 metadata/witness = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CanoeRacer" unique_id=225403058]
+position = Vector2(0, -4)
 texture_filter = 1
 texture = ExtResource("3")
 centered = false
@@ -58,6 +60,7 @@ position = Vector2(240, 48)
 metadata/witness = true
 
 [node name="Sprite2D" type="Sprite2D" parent="TrailKeeper" unique_id=1384148598]
+position = Vector2(0, -4)
 texture_filter = 1
 texture = ExtResource("4")
 centered = false

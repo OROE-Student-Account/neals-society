@@ -52,6 +52,15 @@ func talk_to(actor: String) -> void:
 	if busy: return
 	busy = true
 	var story: Dictionary = EVIDENCE.progress(Utils)
+	if story.get("GrawaiiFestivalOpen", false) and actor in ["Fisherman", "CanoeRacer", "TrailKeeper"]:
+		var lines := {
+			"Fisherman": "A good story is like a net: every knot matters. I'm glad you kept what I saw separate from the rumor. Now we can all enjoy the real ending.",
+			"CanoeRacer": "The day's best finish wasn't at the canoe race. It was seeing him come home. I wouldn't miss his closing story!",
+			"TrailKeeper": "The archive path is clear, our friend is safe, and my tools can rest. Tonight I'll listen to a story instead of falling rocks."
+		}
+		await _say(lines[actor], "Fisherman" if actor == "Fisherman" else ("Canoe Racer" if actor == "CanoeRacer" else "Trail Keeper"))
+		_finish()
+		return
 	if story.get("GrawaiiStorytellerRescued", false) and actor in ["Fisherman", "CanoeRacer", "TrailKeeper"]:
 		await _say("The Storyteller is safely back at the festival green. I'm glad our accounts helped you find him. We'll get ready for the celebration next.", "Trail Keeper" if actor == "TrailKeeper" else ("Fisherman" if actor == "Fisherman" else "Canoe Racer"))
 		_finish()

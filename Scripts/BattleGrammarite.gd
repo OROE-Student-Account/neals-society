@@ -40,7 +40,17 @@ func setup():
 			move_info["Name"] = first_grammarite["Moves"][i]
 			grammarite_info["Moves"][i] = move_info
 	else:
-		grammarite_info = Utils.get_grammarite_details(grammarite_name) 
+		grammarite_info = Utils.get_grammarite_details(grammarite_name)
+		var manager = get_parent().get_node_or_null("BattleManager")
+		if manager != null and "random" not in manager.trainer:
+			var loadouts: Array = Utils.get_trainer(manager.trainer).get("Moves", [])
+			if manager.current_enemy_index < loadouts.size():
+				var moves: Array = []
+				for move_name in loadouts[manager.current_enemy_index]:
+					var move: Dictionary = Utils.get_move(move_name)
+					move["Name"] = move_name
+					moves.append(move)
+				grammarite_info["Moves"] = moves
 		max_health = Utils.max_hp(grammarite_name, level)
 		health = max_health
 	

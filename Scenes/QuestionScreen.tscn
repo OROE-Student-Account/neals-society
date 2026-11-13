@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://d1meh8owcgo7f"]
 
+[ext_resource type="Script" path="res://Scripts/QuestionScreen.gd" id="text_layout"]
 [ext_resource type="FontFile" uid="uid://buav1g0xgpfd" path="res://Assets/UI/Plain/pkmnfl.ttf" id="1_k2g2m"]
 [ext_resource type="Texture2D" uid="uid://h56xj2rqgrxb" path="res://Assets/UI/Battle/Battle Ui1.png" id="1_rludv"]
 [ext_resource type="Texture2D" uid="uid://cfrrqyfvusnl3" path="res://Assets/UI/Battle/Battle Ui2.png" id="3_4cuys"]
@@ -133,6 +134,7 @@ _data = {
 }
 
 [node name="Question" type="Node2D" unique_id=2106985433]
+script = ExtResource("text_layout")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1263284197]
 texture_filter = 1

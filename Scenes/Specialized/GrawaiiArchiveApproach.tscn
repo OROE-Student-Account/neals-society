@@ -20,7 +20,7 @@ size = Vector2(144, 64)
 size = Vector2(20, 29)
 
 [sub_resource type="RectangleShape2D" id="tile"]
-size = Vector2(14, 19)
+size = Vector2(14, 14)
 
 [node name="ArchiveApproach" type="Node2D" unique_id=864301762]
 y_sort_enabled = true
@@ -339,7 +339,7 @@ position = Vector2(48, 48)
 metadata/archive_action = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Scout" unique_id=1522874583]
-position = Vector2(0, -16)
+position = Vector2(0, -4)
 texture = ExtResource("scout")
 centered = false
 hframes = 3
@@ -351,7 +351,7 @@ collision_layer = 18
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scout/Body" unique_id=770182738]
-position = Vector2(8, -6)
+position = Vector2(8, 8)
 shape = SubResource("tile")
 
 [node name="Keeper" type="Node2D" parent="." unique_id=753468539]
@@ -359,7 +359,7 @@ position = Vector2(-32, 32)
 metadata/archive_action = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Keeper" unique_id=1850680346]
-position = Vector2(0, -16)
+position = Vector2(0, -4)
 texture = ExtResource("keeper")
 centered = false
 hframes = 3
@@ -371,7 +371,7 @@ collision_layer = 18
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Keeper/Body" unique_id=679277792]
-position = Vector2(8, -6.5)
+position = Vector2(8, 8)
 shape = SubResource("tile")
 
 [node name="ArchiveSign" type="Node2D" parent="." unique_id=1303631610]

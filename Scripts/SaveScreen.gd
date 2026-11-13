@@ -6,6 +6,7 @@ var selected_option = Options.SLOT1
 
 enum Modes { SAVE, LOAD, CLEAR }
 var mode = Modes.SAVE
+var transitioning := false
 
 func _ready():
 	select_button()
@@ -45,7 +46,9 @@ func select_button():
 
 
 func _input(event: InputEvent) -> void:
+	if transitioning or event.is_echo(): return
 	if event.is_action_pressed("x") or (selected_option == Options.CANCEL and event.is_action_pressed("z")):
+		transitioning = true
 		Utils.get_scene_manager().transition_exit_menu("Save")
 	
 	elif event.is_action_pressed("ui_down"):
@@ -86,8 +89,13 @@ func _input(event: InputEvent) -> void:
 				Modes.SAVE:
 					Utils.save_to_save_slot(selected_option)
 				Modes.LOAD:
+					if Utils.get_player_name(selected_option).is_empty():
+						$Text.text = "That slot is empty."
+						return
+					transitioning = true
 					Utils.load_slot(selected_option)
 					Utils.get_scene_manager().transition_exit_save_screen()
+					return
 				Modes.CLEAR:
 					Utils.fill_empty_slot(selected_option)
 			load_slots()

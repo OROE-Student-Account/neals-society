@@ -50,3 +50,10 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		player_entered = false
+
+# Older inherited doors in Town still use these signal names.
+func _on_Door_body_entered(body: Node2D) -> void:
+	_on_body_entered(body)
+
+func _on_Door_body_exited(body: Node2D) -> void:
+	_on_body_exited(body)

@@ -16,7 +16,7 @@
 	"Splotch": { "Types": [ "Ink" ], "Health": 75, "Attack": 20, "Defense": 85, "Speed": 30 },
 	"Splatterman": { "Types": [ "Ink" ], "Health": 125, "Attack": 60, "Defense": 115, "Speed": 50 },
 	"Papling": { "Types": [ "Paper", "Animal" ], "Health": 50, "Attack": 50, "Defense": 50, "Speed": 50 },
-	"Papirsaurus": { "Types": [ "Paper", "Nature" ], "Health": 85, "Attack": 80, "Defense": 70, "Speed": 65 },
+	"Papisaurus": { "Types": [ "Paper", "Nature" ], "Health": 85, "Attack": 80, "Defense": 70, "Speed": 65 },
 	"Papuscript": { "Types": [ "Paper", "Literature" ], "Health": 110, "Attack": 120, "Defense": 100, "Speed": 70 },
 	"Cateraser": { "Types": [ "Supply", "Nature" ], "Health": 40, "Attack": 45, "Defense": 90, "Speed": 75 },
 	"Shredafly": { "Types": [ "Supply", "Nature" ], "Health": 45, "Attack": 50, "Defense": 120, "Speed": 90 },
